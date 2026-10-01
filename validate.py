@@ -36,5 +36,16 @@ for o in json.load(open("data/officials.json")):
     if not o.get("photo", "").startswith("https://senate.gov.ph/"):
         errors.append(f"{o['id']}: missing photo")
 
+edu = json.load(open("data/education.json"))
+for i in ids:
+    if i not in edu:
+        errors.append(f"education.json: no entry for {i}")
+for k, items in edu.items():
+    if k != "_meta" and k not in ids:
+        errors.append(f"education.json: unknown id {k}")
+    for it in items if k != "_meta" else []:
+        if not it.get("source_url", "").startswith("http") or not it.get("school") or not it.get("level"):
+            errors.append(f"education.json {k}: item missing school/level/source_url")
+
 print("\n".join(errors) or "ok")
 sys.exit(bool(errors))

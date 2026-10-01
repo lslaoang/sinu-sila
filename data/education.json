@@ -1,0 +1,463 @@
+{
+ "_meta": {
+  "retrieved": "2026-10-01",
+  "note": "Only what the cited source states. Senate profile biographies are free text and incomplete; Wikipedia entries are third-party and may change. Levels: Basic, College, Graduate, Law, Military, Honorary, Other."
+ },
+ "win-gatchalian": [
+  {
+   "level": "Basic",
+   "school": "Grace Christian High School, Quezon City",
+   "detail": "Elementary and secondary education",
+   "source_url": "https://senate.gov.ph/senator/Win-Gatchalian"
+  },
+  {
+   "level": "College",
+   "school": "Boston University",
+   "detail": "Degree in Finance and Operations Management, 1995",
+   "source_url": "https://senate.gov.ph/senator/Win-Gatchalian"
+  },
+  {
+   "level": "Honorary",
+   "school": "Philippine Normal University",
+   "detail": "Doctor of Education, honoris causa, 2023",
+   "source_url": "https://senate.gov.ph/senator/Win-Gatchalian"
+  },
+  {
+   "level": "Honorary",
+   "school": "Bulacan State University",
+   "detail": "Doctor of Laws, honoris causa, 2023",
+   "source_url": "https://senate.gov.ph/senator/Win-Gatchalian"
+  }
+ ],
+ "vicente-c-sotto-iii": [
+  {
+   "level": "College",
+   "school": "Colegio de San Juan de Letran",
+   "detail": "Bachelor of Arts, major in English",
+   "source_url": "https://senate.gov.ph/senator/Vicente-C.-Sotto-III"
+  }
+ ],
+ "juan-miguel-f-zubiri": [
+  {
+   "level": "College",
+   "school": "University of the Philippines Los Baños",
+   "detail": "BS Agri-Business Management",
+   "source_url": "https://senate.gov.ph/senator/Juan-Miguel-F.-Zubiri"
+  },
+  {
+   "level": "Graduate",
+   "school": "University of the Philippines Open University",
+   "detail": "Master's in Environment and Natural Resources Management",
+   "source_url": "https://senate.gov.ph/senator/Juan-Miguel-F.-Zubiri"
+  },
+  {
+   "level": "Honorary",
+   "school": "Philippine Christian University, Polytechnic University of the Philippines, Southwestern University, Bukidnon State University, Visayas State University",
+   "detail": "Honoris causa doctorates",
+   "source_url": "https://senate.gov.ph/senator/Juan-Miguel-F.-Zubiri"
+  }
+ ],
+ "alan-peter-s-cayetano": [
+  {
+   "level": "Basic",
+   "school": "De La Salle Zobel",
+   "detail": "High school",
+   "source_url": "https://senate.gov.ph/senator/Alan-Peter-S.-Cayetano"
+  },
+  {
+   "level": "College",
+   "school": "University of the Philippines Diliman",
+   "detail": "BA Political Science, 1993",
+   "source_url": "https://senate.gov.ph/senator/Alan-Peter-S.-Cayetano"
+  },
+  {
+   "level": "Law",
+   "school": "Ateneo School of Law",
+   "detail": "Juris Doctor, 1997, 2nd Honors (Silver Medalist)",
+   "source_url": "https://senate.gov.ph/senator/Alan-Peter-S.-Cayetano"
+  }
+ ],
+ "paolo-benigno-aquino-iv": [
+  {
+   "level": "Basic",
+   "school": "Ateneo de Manila Grade School and Ateneo High School",
+   "detail": "Grade school 1983–1991, high school 1991–1995; valedictorian of both",
+   "source_url": "https://en.wikipedia.org/wiki/Bam_Aquino"
+  },
+  {
+   "level": "College",
+   "school": "Ateneo de Manila University",
+   "detail": "BS Management Engineering, 1995–1999, summa cum laude, valedictorian",
+   "source_url": "https://en.wikipedia.org/wiki/Bam_Aquino"
+  },
+  {
+   "level": "Law",
+   "school": "Ateneo de Manila Law School",
+   "detail": "Attended 2000–2001",
+   "source_url": "https://en.wikipedia.org/wiki/Bam_Aquino"
+  },
+  {
+   "level": "Other",
+   "school": "Harvard Kennedy School",
+   "detail": "Executive Education Program on Public Policy and Leadership, December 2008",
+   "source_url": "https://en.wikipedia.org/wiki/Bam_Aquino"
+  }
+ ],
+ "pia-s-cayetano": [
+  {
+   "level": "College",
+   "school": "University of the Philippines Diliman",
+   "detail": "BA Economics, 1985, cum laude",
+   "source_url": "https://en.wikipedia.org/wiki/Pia_Cayetano"
+  },
+  {
+   "level": "Law",
+   "school": "University of the Philippines College of Law",
+   "detail": "Bachelor of Laws, 1991, with academic distinction",
+   "source_url": "https://en.wikipedia.org/wiki/Pia_Cayetano"
+  }
+ ],
+ "ronald-m-dela-rosa": [
+  {
+   "level": "Graduate",
+   "school": "University of Southeastern Philippines, Davao City",
+   "detail": "Master's in Public Administration (1998); Doctorate in Development Administration (2006)",
+   "source_url": "https://senate.gov.ph/senator/Ronald-%22Bato%22-M.-Dela-Rosa"
+  },
+  {
+   "level": "Military",
+   "school": "Philippine Military Academy",
+   "detail": "Sinagtala Class of 1986",
+   "source_url": "https://senate.gov.ph/senator/Ronald-%22Bato%22-M.-Dela-Rosa"
+  }
+ ],
+ "joseph-victor-g-ejercito": [
+  {
+   "level": "Basic",
+   "school": "Xavier School",
+   "detail": "Elementary and secondary education",
+   "source_url": "https://senate.gov.ph/senator/Joseph-Victor-%22JV%22-G.-Ejercito"
+  },
+  {
+   "level": "College",
+   "school": "De La Salle University Manila",
+   "detail": "Political Science, 1991",
+   "source_url": "https://senate.gov.ph/senator/Joseph-Victor-%22JV%22-G.-Ejercito"
+  }
+ ],
+ "francis-g-escudero": [
+  {
+   "level": "Law",
+   "school": "University of the Philippines",
+   "detail": "Public school system of UP from kindergarten through law school",
+   "source_url": "https://senate.gov.ph/senator/Francis-%22Chiz%22-G.-Escudero"
+  },
+  {
+   "level": "Graduate",
+   "school": "Georgetown Law Center, Washington, D.C.",
+   "detail": "Master's in International and Comparative Law, 1996",
+   "source_url": "https://senate.gov.ph/senator/Francis-%22Chiz%22-G.-Escudero"
+  }
+ ],
+ "jinggoy-ejercito-estrada": [
+  {
+   "level": "Basic",
+   "school": "Ateneo de Manila University",
+   "detail": "Primary and secondary education",
+   "source_url": "https://senate.gov.ph/senator/Jinggoy-Ejercito-Estrada"
+  },
+  {
+   "level": "College",
+   "school": "University of the Philippines",
+   "detail": "AB Economics",
+   "source_url": "https://senate.gov.ph/senator/Jinggoy-Ejercito-Estrada"
+  },
+  {
+   "level": "Law",
+   "school": "Lyceum University",
+   "detail": "Studied Bachelor of Laws for four years (completion not stated)",
+   "source_url": "https://senate.gov.ph/senator/Jinggoy-Ejercito-Estrada"
+  }
+ ],
+ "christopher-lawrence-t-go": [
+  {
+   "level": "Basic",
+   "school": "La Salle Green Hills",
+   "detail": "High school",
+   "source_url": "https://en.wikipedia.org/wiki/Bong_Go"
+  },
+  {
+   "level": "College",
+   "school": "De La Salle University",
+   "detail": "Began a management degree, then transferred",
+   "source_url": "https://en.wikipedia.org/wiki/Bong_Go"
+  },
+  {
+   "level": "College",
+   "school": "Ateneo de Davao University",
+   "detail": "Bachelor's degree in Marketing",
+   "source_url": "https://en.wikipedia.org/wiki/Bong_Go"
+  }
+ ],
+ "risa-hontiveros": [
+  {
+   "level": "Basic",
+   "school": "Saint Scholastica's College",
+   "detail": "High school",
+   "source_url": "https://en.wikipedia.org/wiki/Risa_Hontiveros"
+  },
+  {
+   "level": "College",
+   "school": "Ateneo de Manila University",
+   "detail": "BA Social Sciences, 1987, cum laude",
+   "source_url": "https://en.wikipedia.org/wiki/Risa_Hontiveros"
+  }
+ ],
+ "panfilo-m-lacson": [
+  {
+   "level": "Basic",
+   "school": "Bayan Luma Elementary School; Imus Institute",
+   "detail": "Basic education",
+   "source_url": "https://senate.gov.ph/senator/Panfilo-%22Ping%22-M.-Lacson"
+  },
+  {
+   "level": "Military",
+   "school": "Philippine Military Academy",
+   "detail": "Matatag Class of 1971",
+   "source_url": "https://senate.gov.ph/senator/Panfilo-%22Ping%22-M.-Lacson"
+  },
+  {
+   "level": "Graduate",
+   "school": "Pamantasan ng Lungsod ng Maynila",
+   "detail": "Master's in Government Management, 1996",
+   "source_url": "https://senate.gov.ph/senator/Panfilo-%22Ping%22-M.-Lacson"
+  },
+  {
+   "level": "Honorary",
+   "school": "Pamantasan ng Lungsod ng Maynila",
+   "detail": "Doctor of Laws, honoris causa, March 2019",
+   "source_url": "https://senate.gov.ph/senator/Panfilo-%22Ping%22-M.-Lacson"
+  }
+ ],
+ "manuel-m-lapid": [
+  {
+   "level": "Basic",
+   "school": "Porac Central School",
+   "detail": "Elementary, 1968",
+   "source_url": "https://en.wikipedia.org/wiki/Lito_Lapid"
+  },
+  {
+   "level": "Basic",
+   "school": "St. Catherine's Academy, Porac",
+   "detail": "Secondary, 1972",
+   "source_url": "https://en.wikipedia.org/wiki/Lito_Lapid"
+  },
+  {
+   "level": "College",
+   "school": "No college",
+   "detail": "Did not enroll for tertiary education",
+   "source_url": "https://en.wikipedia.org/wiki/Lito_Lapid"
+  }
+ ],
+ "loren-legarda": [
+  {
+   "level": "Basic",
+   "school": "Assumption College",
+   "detail": "Primary through high school",
+   "source_url": "https://en.wikipedia.org/wiki/Loren_Legarda"
+  },
+  {
+   "level": "College",
+   "school": "University of the Philippines Diliman",
+   "detail": "Bachelor's in Broadcast Communications, 1981",
+   "source_url": "https://en.wikipedia.org/wiki/Loren_Legarda"
+  },
+  {
+   "level": "Graduate",
+   "school": "University of California, Los Angeles",
+   "detail": "Post-graduate courses in journalism",
+   "source_url": "https://en.wikipedia.org/wiki/Loren_Legarda"
+  },
+  {
+   "level": "Graduate",
+   "school": "National Defense College of the Philippines",
+   "detail": "Master's in National Security Administration",
+   "source_url": "https://en.wikipedia.org/wiki/Loren_Legarda"
+  }
+ ],
+ "rodante-d-marcoleta": [
+  {
+   "level": "College",
+   "school": "Not named in the source",
+   "detail": "Bachelor of Arts, cum laude, 1973",
+   "source_url": "https://en.wikipedia.org/wiki/Rodante_Marcoleta"
+  },
+  {
+   "level": "Law",
+   "school": "San Sebastian College – Recoletos",
+   "detail": "Law degree, 1989",
+   "source_url": "https://en.wikipedia.org/wiki/Rodante_Marcoleta"
+  },
+  {
+   "level": "Graduate",
+   "school": "University of the East",
+   "detail": "Master's in Business Administration",
+   "source_url": "https://en.wikipedia.org/wiki/Rodante_Marcoleta"
+  },
+  {
+   "level": "Graduate",
+   "school": "University of the Philippines Diliman",
+   "detail": "Doctorate in Public Administration, 2020",
+   "source_url": "https://en.wikipedia.org/wiki/Rodante_Marcoleta"
+  },
+  {
+   "level": "Other",
+   "school": "Harvard Kennedy School",
+   "detail": "Developmental leadership certificate",
+   "source_url": "https://en.wikipedia.org/wiki/Rodante_Marcoleta"
+  }
+ ],
+ "imee-r-marcos": [
+  {
+   "level": "Basic",
+   "school": "Institucion Teresiana (now Saint Pedro Poveda College), Quezon City",
+   "detail": "Kindergarten to Grade 4",
+   "source_url": "https://en.wikipedia.org/wiki/Imee_Marcos"
+  },
+  {
+   "level": "Basic",
+   "school": "Convent of Our Lady of Assumption, Herran, Manila",
+   "detail": "Grade 5 to first year high school",
+   "source_url": "https://en.wikipedia.org/wiki/Imee_Marcos"
+  },
+  {
+   "level": "Basic",
+   "school": "American School (now International School Manila), Makati",
+   "detail": "Secondary",
+   "source_url": "https://en.wikipedia.org/wiki/Imee_Marcos"
+  },
+  {
+   "level": "College",
+   "school": "Princeton University",
+   "detail": "Enrolled 1973–1979; no degree awarded",
+   "note": "Her educational record was publicly disputed in 2019. See the source for details.",
+   "source_url": "https://en.wikipedia.org/wiki/Imee_Marcos"
+  }
+ ],
+ "robinhood-c-padilla": [
+  {
+   "level": "Basic",
+   "school": "Siena College of Quezon City",
+   "detail": "Elementary",
+   "source_url": "https://en.wikipedia.org/wiki/Robin_Padilla"
+  },
+  {
+   "level": "Basic",
+   "school": "Saint Louis University Boys' High School",
+   "detail": "High school",
+   "source_url": "https://en.wikipedia.org/wiki/Robin_Padilla"
+  },
+  {
+   "level": "College",
+   "school": "Philippine College of Criminology",
+   "detail": "Bachelor's in Criminology",
+   "source_url": "https://en.wikipedia.org/wiki/Robin_Padilla"
+  }
+ ],
+ "francis-pangilinan": [
+  {
+   "level": "Law",
+   "school": "Law school not named in the Senate profile",
+   "detail": "Law degree",
+   "source_url": "https://senate.gov.ph/senator/Francis-%22Kiko%22-Pangilinan"
+  },
+  {
+   "level": "Graduate",
+   "school": "Harvard Kennedy School",
+   "detail": "Master's in Public Administration, 1998 (Edward S. Mason Fellow)",
+   "source_url": "https://senate.gov.ph/senator/Francis-%22Kiko%22-Pangilinan"
+  }
+ ],
+ "erwin-t-tulfo": [
+  {
+   "level": "College",
+   "school": "University of the East",
+   "detail": "BS Business Administration, 2005",
+   "source_url": "https://en.wikipedia.org/wiki/Erwin_Tulfo"
+  }
+ ],
+ "raffy-t-tulfo": [
+  {
+   "level": "Basic",
+   "school": "Holy Trinity College, Puerto Princesa City",
+   "detail": "Educated here (level not stated)",
+   "source_url": "https://senate.gov.ph/senator/Raffy-T.-Tulfo"
+  },
+  {
+   "level": "Basic",
+   "school": "Trinity College of Quezon City",
+   "detail": "Educated here (level not stated)",
+   "source_url": "https://senate.gov.ph/senator/Raffy-T.-Tulfo"
+  },
+  {
+   "level": "College",
+   "school": "Ateneo de Davao University",
+   "detail": "Educated here (level not stated)",
+   "source_url": "https://senate.gov.ph/senator/Raffy-T.-Tulfo"
+  }
+ ],
+ "joel-villanueva": [
+  {
+   "level": "Basic",
+   "school": "University of Santo Tomas",
+   "detail": "High school",
+   "source_url": "https://en.wikipedia.org/wiki/Joel_Villanueva"
+  },
+  {
+   "level": "College",
+   "school": "University of Santo Tomas",
+   "detail": "BS Commerce, major in Economics, 1996",
+   "source_url": "https://en.wikipedia.org/wiki/Joel_Villanueva"
+  },
+  {
+   "level": "Other",
+   "school": "Harvard Extension School",
+   "detail": "Special Studies in Business Administration, 1996–1998",
+   "source_url": "https://en.wikipedia.org/wiki/Joel_Villanueva"
+  }
+ ],
+ "camille-a-villar": [
+  {
+   "level": "College",
+   "school": "Ateneo de Manila University",
+   "detail": "Bachelor's degree in Business Management",
+   "source_url": "https://en.wikipedia.org/wiki/Camille_Villar"
+  },
+  {
+   "level": "Graduate",
+   "school": "IESE Business School, Barcelona, Spain",
+   "detail": "Master's degree",
+   "source_url": "https://en.wikipedia.org/wiki/Camille_Villar"
+  }
+ ],
+ "mark-a-villar": [
+  {
+   "level": "College",
+   "school": "University of Pennsylvania",
+   "detail": "BS in Political Science, Philosophy, and Economics",
+   "source_url": "https://senate.gov.ph/senator/Mark-A.-Villar"
+  },
+  {
+   "level": "Graduate",
+   "school": "University of Chicago Booth School of Business",
+   "detail": "Master's in Business Administration",
+   "source_url": "https://senate.gov.ph/senator/Mark-A.-Villar"
+  },
+  {
+   "level": "Honorary",
+   "school": "University of the Philippines College of Law",
+   "detail": "Doctor of Laws, honoris causa",
+   "source_url": "https://senate.gov.ph/senator/Mark-A.-Villar"
+  }
+ ]
+}

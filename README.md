@@ -20,9 +20,12 @@ Deploy anywhere static (GitHub Pages, Netlify, Cloudflare Pages). No build step.
 | `data/officials.json` | Senators: name, position, `lis_codes`, records (each with `source_url`, `retrieved`) | https://senate.gov.ph/senators/20-congress-senators |
 | `data/bills.json` | Per senator: total bills, count per month, count per status, 5 latest bills | https://senate.gov.ph/legislative-documents/bills |
 | `data/laws.json` | Bills approved by the President / lapsed into law / enrolled, with the Senate's author, co-author and co-sponsor roles | https://senate.gov.ph/legislative-documents/bills (filtered by status) |
+| `data/education.json` | Schools, degrees and years per senator; every item has its own `source_url` | Senate profile biography (12 senators) or Wikipedia (the other 12, whose Senate bios omit schooling) |
 | `photo` in `officials.json` | Senator photo URL on senate.gov.ph | `/hq/senators/congress/28` (`image_upload.file_url`) |
 
 "Bills authored" counts bills where the Senate lists the senator as author. "Laws backed" counts enacted bills (approved by the President, lapsed into law, or consolidated with a law) where the senator is author, co-author or co-sponsor, and the profile shows which role. A Senate bill folded into another bill is not detected unless the Senate marks it so. The Senate's own per-senator stats (`bills_passed_into_law`, `authored_bills`) are stale (all zero for laws), so they are not used.
+
+**Education** only records what the cited source states (e.g. Kiko Pangilinan's law school is not named in his Senate bio, so it is shown as not named). Senate bios are free text; where one says nothing about schooling, the Wikipedia article is used and labelled "Wikipedia" on the page. Wikipedia is third-party and can change, so re-check before launch, ideally against each senator's office or university records. Contested items (Imee Marcos's 2019 credentials dispute) are shown neutrally with a pointer to the source.
 
 **Photos** are hotlinked from senate.gov.ph in the visitor's browser (scripts get HTTP 403, so they are not downloaded or stored here). If an image fails, the initials avatar stays. Confirm reuse terms with the Senate.
 

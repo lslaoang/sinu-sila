@@ -60,6 +60,9 @@
     .skel{height:5rem;border-radius:var(--r);background:var(--line);margin:.5rem 0}
   @media (prefers-reduced-motion:no-preference){.skel{animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{50%{opacity:.5}}}
   .err{border:1px solid var(--red);border-radius:var(--r);padding:1rem;margin:1rem 0}
+  .edu{list-style:none;padding:0;margin:0 0 1rem} .edu li{display:grid;grid-template-columns:5.5rem 1fr auto;gap:.5rem 1rem;align-items:start;padding:.75rem 0;border-top:1px solid var(--line)}
+  .edu li:first-child{border-top:0} .edu .pill{justify-self:start} .warn{color:var(--red)}
+  @media (max-width:36rem){.edu li{grid-template-columns:1fr}}
   footer{color:var(--mute);font-size:.8rem;text-align:center;padding:2rem 1rem}
 </style>
 <a class="skip" href="#app">Skip to content</a>
@@ -79,7 +82,7 @@ const hue = s => [...s].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 360, 7);
 const av = (n, photo) => `<div class="av" style="background:hsl(${hue(n)} 60% 28%)" aria-hidden="true">${initials(n)}${photo ? `<img src="${esc(photo)}" alt="" loading="lazy" referrerpolicy="no-referrer" onload="this.parentNode.classList.add('ph')" onerror="this.remove()">` : ''}</div>`;
 const ICON = {membership:'🏛️', bill:'📜', vote:'🗳️', saln:'💼', campaign_finance:'💸', audit:'🔎', case:'⚖️', appointment:'📌'};
 const app = document.getElementById('app'), q = document.getElementById('q');
-let data = [], bills = {}, laws = {bills: []}, leadersOnly = false;
+let data = [], bills = {}, laws = {bills: []}, edu = {}, leadersOnly = false;
 
 let sortBy = 'az';
 const firstName = n => clean(n).split(' ')[0];
@@ -145,6 +148,15 @@ const title = t => t.split(/\s+/).map((w, i) => {
 
 const ROLES = [['author', 'Author'], ['coAuthors', 'Co-author'], ['coSponsors', 'Co-sponsor']];
 const rolesOf = id => laws.bills.map(l => ({...l, roles: ROLES.filter(([k]) => [].concat(l[k]).includes(id)).map(r => r[1]), law: !/^Enrolled/.test(l.status)})).filter(l => l.roles.length);
+const LEVELS = ['Basic', 'College', 'Law', 'Graduate', 'Military', 'Honorary', 'Other'];
+function eduHtml(id) {
+  const items = (edu[id] || []).slice().sort((a, b) => LEVELS.indexOf(a.level) - LEVELS.indexOf(b.level));
+  const src = u => /wikipedia/.test(u) ? 'Wikipedia' : 'Senate profile';
+  return `<h3>Education</h3>` + (items.length ? `<ul class="edu">${items.map(i => `<li><span class="pill">${esc(i.level)}</span>
+      <div><b>${esc(i.school)}</b><br><small>${esc(i.detail)}</small>${i.note ? `<br><small class="warn">${esc(i.note)}</small>` : ''}</div>
+      <a href="${esc(i.source_url)}" target="_blank" rel="noopener">${src(i.source_url)}<span class="sr"> (opens in a new tab)</span> ↗</a></li>`).join('')}</ul>`
+    : '<p class="soon">Not stated in the sources checked.</p>');
+}
 function lawsHtml(id) {
   const rs = rolesOf(id);
   return `<h3>Laws and bills sent to the President</h3>` + (rs.length ? rs.map(l => `<a class="bill" href="https://senate.gov.ph/legislative-documents/bills/${esc(l.id)}" target="_blank" rel="noopener">
@@ -176,7 +188,7 @@ function profile(o) {
       <div class="tile"><strong>${bills[o.id]?.total ?? '–'}</strong><span>bills authored</span></div>
       <div class="tile"><strong>${rolesOf(o.id).filter(l => l.law).length}</strong><span>laws backed (any role)</span></div>
       <div class="tile"><strong>${esc(last)}</strong><span>last checked</span></div></div>
-    ${lawsHtml(o.id)}${billsHtml(o.id)}
+    ${eduHtml(o.id)}${lawsHtml(o.id)}${billsHtml(o.id)}
     <h3>Record</h3><ul class="tl">${o.records.map(r => `<li><span class="badge"><span aria-hidden="true">${ICON[r.type] || '•'}</span> ${esc(r.type)}</span>
       <div>${esc(r.title)}</div><small>${esc(r.date)} · <a href="${esc(r.source_url)}" rel="noopener" target="_blank">view source ↗</a></small></li>`).join('')}</ul>
     <div class="soon">🗳️ Votes, SALN and more are coming soon.</div>`;
@@ -193,8 +205,8 @@ app.onclick = e => { const f = e.target.dataset.f; if (!f) return; if (f === 're
 q.oninput = () => { if (location.hash) location.hash = ''; else list(); };
 onhashchange = route;
 function load() {
-  Promise.all(['data/officials.json', 'data/bills.json', 'data/laws.json'].map(u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); })))
-    .then(([d, b, l]) => { data = d; bills = b; laws = l; route(); })
+  Promise.all(['data/officials.json', 'data/bills.json', 'data/laws.json', 'data/education.json'].map(u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); })))
+    .then(([d, b, l, e]) => { data = d; bills = b; laws = l; edu = e; route(); })
     .catch(() => { app.removeAttribute('aria-busy'); app.innerHTML = '<div class="err" role="alert"><b>Couldn’t load the records.</b><p>Check your connection and try again.</p><button class="chip" data-f="retry">Retry</button></div>'; });
 }
 load();
