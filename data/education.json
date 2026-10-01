@@ -1,7 +1,7 @@
 {
  "_meta": {
   "retrieved": "2026-10-01",
-  "note": "Only what the cited sources state. 12 senators' entries come from their Senate profile biography; the other 12 were cross-checked on 2026-10-01 against secondary sources (GMA candidate profiles, UP sa Halalan, news and fact-check outlets, the senators' own sites). Where sources disagree the entry says so. Some official pages (Senate bios, Inquirer, Rappler) could not be read by the checking tool. Levels: Basic, College, Graduate, Law, Military, Honorary, Other. 'more_sources' are additional links for the same item."
+  "note": "Only what the cited sources state. 12 senators' entries come from their Senate profile biography; the other 12 were cross-checked on 2026-10-01 against secondary sources (GMA candidate profiles, UP sa Halalan, news and fact-check outlets, the senators' own sites). Where sources disagree the entry says so. Some official pages (Senate bios, Inquirer, Rappler) could not be read by the checking tool. Levels: Basic, College, Graduate, Law, Military, Honorary, Other. 'more_sources' are additional links for the same item. Browser check 2026-10-01: Senate profile pages hold no further education data (six have no bio); Pia Cayetano's own archived CV and Vote Pilipinas (archived 2022) were read directly."
  },
  "win-gatchalian": [
   {
@@ -110,18 +110,20 @@
   {
    "level": "College",
    "school": "University of the Philippines Diliman",
-   "detail": "BA Economics, 1985, cum laude",
+   "detail": "BA Economics, School of Economics, 1985, cum laude",
    "source_url": "https://halalan.up.edu.ph/cayetano-pilar-juliana-pia-s-nacionalista",
    "more_sources": [
+    "https://web.archive.org/web/20161107215411/http://senatorpiacayetano.com/?page_id=2",
     "https://www.gmanetwork.com/news/eleksyon/2025/candidates/pia-cayetano/"
    ]
   },
   {
    "level": "Law",
    "school": "University of the Philippines College of Law",
-   "detail": "Bachelor of Laws, 1991; No. 7 of the graduating class",
+   "detail": "Bachelor of Laws, 1991; academic distinction, No. 7 in her class; member of the Honor Society, Order of the Purple Feather",
    "source_url": "https://halalan.up.edu.ph/cayetano-pilar-juliana-pia-s-nacionalista",
    "more_sources": [
+    "https://web.archive.org/web/20161107215411/http://senatorpiacayetano.com/?page_id=2",
     "https://www.gmanetwork.com/news/eleksyon/2025/candidates/pia-cayetano/"
    ]
   }
@@ -218,7 +220,7 @@
   {
    "level": "College",
    "school": "Ateneo de Davao University",
-   "detail": "Bachelor of Science in Marketing, per Wikipedia and a student publication; not listed in GMA or UP sa Halalan profiles",
+   "detail": "Bachelor of Science in Marketing, per Wikipedia (which gives no citation for it) and a student publication; not in GMA or UP sa Halalan profiles",
    "source_url": "https://en.wikipedia.org/wiki/Bong_Go",
    "more_sources": [
     "https://halalan2025.thebenildean.org/candidates-senatorial.html"
@@ -370,25 +372,27 @@
    "detail": "Master's in Business Administration (GMA lists years 1980/2009, unclear)",
    "source_url": "https://bluevote.addu.edu.ph/2024/11/03/rodante-dizon-marcoleta/",
    "more_sources": [
-    "https://www.gmanetwork.com/news/eleksyon/2025/candidates/rodante-marcoleta/"
+    "https://www.gmanetwork.com/news/eleksyon/2025/candidates/rodante-marcoleta/",
+    "https://web.archive.org/web/20220524000914/https://votepilipinas.com/candidate/marcoleta_rodante.html"
    ]
   },
   {
    "level": "Graduate",
-   "school": "University of the Philippines, National College of Public Administration and Governance",
-   "detail": "Doctoral program in Public Administration (GMA lists 2011; Wikipedia reports a doctorate in 2020)",
-   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/rodante-marcoleta/",
+   "school": "University of the Philippines Diliman",
+   "detail": "Doctorate in Public Administration, 2020 (Vote Pilipinas, Wikipedia); GMA lists a doctoral program dated 2011",
+   "source_url": "https://web.archive.org/web/20220524000914/https://votepilipinas.com/candidate/marcoleta_rodante.html",
    "more_sources": [
-    "https://bluevote.addu.edu.ph/2024/11/03/rodante-dizon-marcoleta/",
+    "https://www.gmanetwork.com/news/eleksyon/2025/candidates/rodante-marcoleta/",
     "https://en.wikipedia.org/wiki/Rodante_Marcoleta"
    ]
   },
   {
    "level": "Other",
    "school": "Harvard Kennedy School",
-   "detail": "Fellowship in Developmental Leadership, 2017",
-   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/rodante-marcoleta/",
+   "detail": "Developmental Leadership (Vote Pilipinas); GMA and a student-run profile call it a fellowship, 2017",
+   "source_url": "https://web.archive.org/web/20220524000914/https://votepilipinas.com/candidate/marcoleta_rodante.html",
    "more_sources": [
+    "https://www.gmanetwork.com/news/eleksyon/2025/candidates/rodante-marcoleta/",
     "https://bluevote.addu.edu.ph/2024/11/03/rodante-dizon-marcoleta/"
    ]
   }
