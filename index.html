@@ -7,7 +7,7 @@
   :root{--bg:#fafaf7;--card:#fff;--ink:#14213d;--mute:#6b7280;--line:#e5e7eb;--blue:#0038a8;--red:#ce1126;--gold:#fcd116;--r:16px}
   @media (prefers-color-scheme:dark){:root{--bg:#0d1321;--card:#161e33;--ink:#f1f5f9;--mute:#94a3b8;--line:#263050;--blue:#6ea0ff;--red:#ff6b7a}}
   *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,sans-serif}
-  header{padding:2.5rem 1rem 1.5rem;text-align:center;background:linear-gradient(135deg,var(--blue),#1a1f71 60%,var(--red));color:#fff}
+  header{padding:3.5rem 1rem 2.5rem;text-align:center;background:linear-gradient(135deg,var(--blue),#1a1f71 60%,var(--red));color:#fff}
   header h1{margin:0;font-size:clamp(2rem,6vw,3.2rem);letter-spacing:-.02em}
   header p{margin:.4rem auto 1.2rem;max-width:34rem;opacity:.9}
   .wrap{max-width:70rem;margin:0 auto;padding:1rem}
@@ -46,11 +46,18 @@
   .legend b{color:var(--ink)} .dot{display:inline-block;width:.7rem;height:.7rem;border-radius:50%;margin-right:.3rem}
   .bill{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:.7rem 1rem;margin:.5rem 0}
   .bill:hover{border-color:var(--blue)} .bill small{color:var(--mute)} .pill{font-size:.7rem;padding:.1rem .5rem;border-radius:99px;background:var(--line);color:var(--mute);white-space:nowrap}
+  .sec{margin:2rem 0 .6rem;font-size:1.3rem} .tiles.big strong{font-size:clamp(1.6rem,6vw,2.6rem)}
+  .strip{display:flex;gap:.8rem;overflow-x:auto;padding:.2rem 0 .8rem;scroll-snap-type:x proximity}
+  .chipcard{flex:0 0 14rem;margin:0;scroll-snap-align:start} .chipcard b{display:block;line-height:1.3;margin-bottom:.3rem}
+  .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem}
+  .barrow{display:grid;grid-template-columns:7.5rem 1fr 2.5rem;gap:.5rem;align-items:center;text-decoration:none;color:inherit;margin:.4rem 0;font-size:.9rem}
+  .bar{background:var(--line);border-radius:99px;height:.7rem;overflow:hidden} .bar i{display:block;height:100%;background:var(--red);border-radius:99px}
+  .barrow b{text-align:right} .note{color:var(--mute);font-size:.8rem;margin:.6rem 0 0} .sp{flex:1}
   footer{color:var(--mute);font-size:.8rem;text-align:center;padding:2rem 1rem}
 </style>
 <header>
   <h1>Sino Sila?</h1>
-  <p>Who are your officials, and what's on their public record? Every item links to its source.</p>
+  <p>Who are your officials, and what have they done? Public records, in plain view. Every item links to its source.</p>
   <input id="q" type="search" placeholder="Search a name…" aria-label="Search officials">
 </header>
 <main class="wrap" id="app"></main>
@@ -65,14 +72,48 @@ const ICON = {membership:'🏛️', bill:'📜', vote:'🗳️', saln:'💼', ca
 const app = document.getElementById('app'), q = document.getElementById('q');
 let data = [], bills = {}, leadersOnly = false;
 
+let sortBy = 'az';
+const firstName = n => clean(n).split(' ')[0];
+const last = o => clean(o.name).split(' ').filter(w => !/^(Jr\.?|II|III|IV)$/.test(w)).pop();
+const nameOf = id => clean((data.find(o => o.id === id) || {}).name || '');
+
+function overview() {
+  const ids = Object.keys(bills).filter(k => k !== '_meta');
+  const total = ids.reduce((n, k) => n + bills[k].total, 0);
+  const byMonth = MONTHS.map(m => ids.reduce((n, k) => n + (bills[k].byMonth[m] || 0), 0));
+  const max = Math.max(...byMonth);
+  const recent = ids.flatMap(k => bills[k].latest.map(b => ({id: k, no: b[0], t: b[1], d: b[2], bid: b[4]})))
+    .sort((x, y) => y.d.localeCompare(x.d)).slice(0, 8);
+  const top = [...ids].sort((x, y) => bills[y].total - bills[x].total).slice(0, 5);
+  return `<section class="tiles big">
+      <div class="tile"><strong>${data.length}</strong><span>senators, 20th Congress</span></div>
+      <div class="tile"><strong>${total.toLocaleString()}</strong><span>bills filed since July 2025</span></div>
+      <div class="tile"><strong>${new Date(recent[0].d + 'T00:00:00').toLocaleDateString('en', {month: 'short', day: 'numeric'})}</strong><span>most recent filing, ${recent[0].d.slice(0, 4)}</span></div></section>
+    <h2 class="sec">Just filed</h2>
+    <div class="strip">${recent.map(r => `<a class="bill chipcard" href="https://senate.gov.ph/legislative-documents/bills/${esc(r.bid)}" target="_blank" rel="noopener">
+      <b>${esc(title(r.t))}</b><small>${esc(nameOf(r.id))} · ${esc(r.d)}</small></a>`).join('')}</div>
+    <div class="two">
+      <div class="panel"><h3>Senate bills filed per month</h3>
+        <div class="chart" role="img" aria-label="Bills filed per month across the Senate">${byMonth.map((n, i) => `<i title="${monthName(MONTHS[i])}: ${n}" style="height:${n / max * 100}%"></i>`).join('')}</div>
+        <div class="axis"><span>${monthName(MONTHS[0])}</span><span>${monthName(MONTHS[MONTHS.length - 1])}</span></div>
+        <p class="note">Most bills are filed when a Congress opens (Jul–Aug 2025).</p></div>
+      <div class="panel"><h3>Most bills filed</h3>
+        ${top.map(k => `<a class="barrow" href="#${esc(k)}"><span>${esc(firstName(nameOf(k)))} ${esc(last(data.find(o => o.id === k)))}</span><span class="bar"><i style="width:${bills[k].total / bills[top[0]].total * 100}%"></i></span><b>${bills[k].total}</b></a>`).join('')}
+        <p class="note">Volume, not quality or importance.</p></div></div>
+    <h2 class="sec">All senators</h2>`;
+}
+
 function list() {
   const t = q.value.toLowerCase();
-  const rows = data.filter(o => o.name.toLowerCase().includes(t) && (!leadersOnly || o.position !== 'Senator'));
-  app.innerHTML = `<div class="chips">
-      <button class="chip" aria-pressed="${!leadersOnly}" data-f="all">All ${data.length}</button>
-      <button class="chip" aria-pressed="${leadersOnly}" data-f="lead">Leadership</button></div>
+  const rows = data.filter(o => o.name.toLowerCase().includes(t) && (!leadersOnly || o.position !== 'Senator'))
+    .sort((x, y) => sortBy === 'bills' ? (bills[y.id]?.total || 0) - (bills[x.id]?.total || 0) : last(x).localeCompare(last(y)));
+  const chip = (on, f, label) => `<button class="chip" aria-pressed="${on}" data-f="${f}">${label}</button>`;
+  app.innerHTML = (t ? '' : overview()) + `<div class="chips">
+      ${chip(!leadersOnly, 'all', 'All ' + data.length)}${chip(leadersOnly, 'lead', 'Leadership')}
+      <span class="sp"></span>${chip(sortBy === 'az', 'az', 'A–Z')}${chip(sortBy === 'bills', 'bills', 'Most bills')}</div>
     <ul class="grid">${rows.map(o => `<li><a class="card" href="#${esc(o.id)}">${av(o.name)}
-      <b>${esc(clean(o.name))}</b><span class="role ${o.position === 'Senator' ? 'sen' : ''}">${esc(o.position)}</span><small class="n">${bills[o.id] ? bills[o.id].total + ' bills' : ''}</small></a></li>`).join('')}</ul>`;
+      <b>${esc(clean(o.name))}</b><span class="role ${o.position === 'Senator' ? 'sen' : ''}">${esc(o.position)}</span><small class="n">${bills[o.id] ? bills[o.id].total + ' bills' : ''}</small></a></li>`).join('')}</ul>
+    ${rows.length ? '' : '<p class="soon">No senator matches that name.</p>'}`;
 }
 
 
@@ -123,7 +164,7 @@ function profile(o) {
 }
 
 function route() { const o = data.find(o => o.id === location.hash.slice(1)); o ? profile(o) : list(); scrollTo(0, 0); }
-app.onclick = e => { const f = e.target.dataset.f; if (f) { leadersOnly = f === 'lead'; list(); } };
+app.onclick = e => { const f = e.target.dataset.f; if (!f) return; if (f === 'az' || f === 'bills') sortBy = f; else leadersOnly = f === 'lead'; list(); };
 q.oninput = () => { if (location.hash) location.hash = ''; else list(); };
 onhashchange = route;
 Promise.all([fetch('data/officials.json'), fetch('data/bills.json')].map(p => p.then(r => r.json()))).then(([d, b]) => { data = d; bills = b; route(); });
