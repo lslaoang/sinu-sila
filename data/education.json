@@ -1,7 +1,7 @@
 {
  "_meta": {
   "retrieved": "2026-10-01",
-  "note": "Only what the cited source states. Senate profile biographies are free text and incomplete; Wikipedia entries are third-party and may change. Levels: Basic, College, Graduate, Law, Military, Honorary, Other."
+  "note": "Only what the cited sources state. 12 senators' entries come from their Senate profile biography; the other 12 were cross-checked on 2026-10-01 against secondary sources (GMA candidate profiles, UP sa Halalan, news and fact-check outlets, the senators' own sites). Where sources disagree the entry says so. Some official pages (Senate bios, Inquirer, Rappler) could not be read by the checking tool. Levels: Basic, College, Graduate, Law, Military, Honorary, Other. 'more_sources' are additional links for the same item."
  },
  "win-gatchalian": [
   {
@@ -81,26 +81,29 @@
   {
    "level": "Basic",
    "school": "Ateneo de Manila Grade School and Ateneo High School",
-   "detail": "Grade school 1983–1991, high school 1991–1995; valedictorian of both",
-   "source_url": "https://en.wikipedia.org/wiki/Bam_Aquino"
+   "detail": "Grade school 1983–1991, high school 1991–1995",
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/bam-aquino/"
   },
   {
    "level": "College",
    "school": "Ateneo de Manila University",
    "detail": "BS Management Engineering, 1995–1999, summa cum laude, valedictorian",
-   "source_url": "https://en.wikipedia.org/wiki/Bam_Aquino"
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/bam-aquino/",
+   "more_sources": [
+    "https://www.philstar.com/opinyon/2013/04/27/935373/bam-aquino"
+   ]
   },
   {
    "level": "Law",
    "school": "Ateneo de Manila Law School",
-   "detail": "Attended 2000–2001",
-   "source_url": "https://en.wikipedia.org/wiki/Bam_Aquino"
+   "detail": "2000–2001",
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/bam-aquino/"
   },
   {
    "level": "Other",
    "school": "Harvard Kennedy School",
    "detail": "Executive Education Program on Public Policy and Leadership, December 2008",
-   "source_url": "https://en.wikipedia.org/wiki/Bam_Aquino"
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/bam-aquino/"
   }
  ],
  "pia-s-cayetano": [
@@ -108,13 +111,19 @@
    "level": "College",
    "school": "University of the Philippines Diliman",
    "detail": "BA Economics, 1985, cum laude",
-   "source_url": "https://en.wikipedia.org/wiki/Pia_Cayetano"
+   "source_url": "https://halalan.up.edu.ph/cayetano-pilar-juliana-pia-s-nacionalista",
+   "more_sources": [
+    "https://www.gmanetwork.com/news/eleksyon/2025/candidates/pia-cayetano/"
+   ]
   },
   {
    "level": "Law",
    "school": "University of the Philippines College of Law",
-   "detail": "Bachelor of Laws, 1991, with academic distinction",
-   "source_url": "https://en.wikipedia.org/wiki/Pia_Cayetano"
+   "detail": "Bachelor of Laws, 1991; No. 7 of the graduating class",
+   "source_url": "https://halalan.up.edu.ph/cayetano-pilar-juliana-pia-s-nacionalista",
+   "more_sources": [
+    "https://www.gmanetwork.com/news/eleksyon/2025/candidates/pia-cayetano/"
+   ]
   }
  ],
  "ronald-m-dela-rosa": [
@@ -182,35 +191,56 @@
  "christopher-lawrence-t-go": [
   {
    "level": "Basic",
+   "school": "Stella Maris Academy of Davao",
+   "detail": "Elementary",
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/bong-go/"
+  },
+  {
+   "level": "Basic",
    "school": "La Salle Green Hills",
-   "detail": "High school",
-   "source_url": "https://en.wikipedia.org/wiki/Bong_Go"
+   "detail": "High school, per UP sa Halalan; GMA lists a different secondary school",
+   "source_url": "https://halalan.up.edu.ph/go-christopher-lawrence-bong-tesoro-pdp-laban/",
+   "more_sources": [
+    "https://www.gmanetwork.com/news/eleksyon/2025/candidates/bong-go/"
+   ]
   },
   {
    "level": "College",
    "school": "De La Salle University",
-   "detail": "Began a management degree, then transferred",
-   "source_url": "https://en.wikipedia.org/wiki/Bong_Go"
+   "detail": "Management; Philstar (2018) says he graduated with an AB Management degree",
+   "source_url": "https://halalan.up.edu.ph/go-christopher-lawrence-bong-tesoro-pdp-laban/",
+   "more_sources": [
+    "https://www.gmanetwork.com/news/eleksyon/2025/candidates/bong-go/",
+    "https://www.philstar.com/entertainment/2018/12/06/1874459/entertainment"
+   ],
+   "note": "Sources disagree on where he completed his degree."
   },
   {
    "level": "College",
    "school": "Ateneo de Davao University",
-   "detail": "Bachelor's degree in Marketing",
-   "source_url": "https://en.wikipedia.org/wiki/Bong_Go"
+   "detail": "Bachelor of Science in Marketing, per Wikipedia and a student publication; not listed in GMA or UP sa Halalan profiles",
+   "source_url": "https://en.wikipedia.org/wiki/Bong_Go",
+   "more_sources": [
+    "https://halalan2025.thebenildean.org/candidates-senatorial.html"
+   ],
+   "note": "Sources disagree on where he completed his degree."
   }
  ],
  "risa-hontiveros": [
   {
    "level": "Basic",
-   "school": "Saint Scholastica's College",
+   "school": "Saint Scholastica's College, Manila",
    "detail": "High school",
-   "source_url": "https://en.wikipedia.org/wiki/Risa_Hontiveros"
+   "source_url": "https://www.positivelyfilipino.com/magazine/senator-risa-hontiveros-woman-of-substance"
   },
   {
    "level": "College",
    "school": "Ateneo de Manila University",
-   "detail": "BA Social Sciences, 1987, cum laude",
-   "source_url": "https://en.wikipedia.org/wiki/Risa_Hontiveros"
+   "detail": "AB Social Sciences, cum laude (1987 per Wikipedia)",
+   "source_url": "https://atenews.ph/risa-hontiveros",
+   "more_sources": [
+    "https://en.wikipedia.org/wiki/Risa_Hontiveros"
+   ]
   }
  ],
  "panfilo-m-lacson": [
@@ -242,126 +272,193 @@
  "manuel-m-lapid": [
   {
    "level": "Basic",
-   "school": "Porac Central School",
-   "detail": "Elementary, 1968",
-   "source_url": "https://en.wikipedia.org/wiki/Lito_Lapid"
+   "school": "Porac Central School, Porac, Pampanga",
+   "detail": "Elementary, 1962–1968",
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/lito-lapid/"
   },
   {
    "level": "Basic",
-   "school": "St. Catherine's Academy, Porac",
-   "detail": "Secondary, 1972",
-   "source_url": "https://en.wikipedia.org/wiki/Lito_Lapid"
+   "school": "St. Catherine Academy, Porac, Pampanga",
+   "detail": "Secondary, 1968–1972",
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/lito-lapid/"
   },
   {
    "level": "College",
-   "school": "No college",
-   "detail": "Did not enroll for tertiary education",
-   "source_url": "https://en.wikipedia.org/wiki/Lito_Lapid"
+   "school": "No college listed",
+   "detail": "No college attendance or degree is listed in his candidate profile; Wikipedia says he did not enroll for tertiary education",
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/lito-lapid/",
+   "more_sources": [
+    "https://en.wikipedia.org/wiki/Lito_Lapid"
+   ]
+  },
+  {
+   "level": "Honorary",
+   "school": "Pampanga Agricultural College",
+   "detail": "Bachelor of Science in Agriculture, honoris causa (year not stated)",
+   "source_url": "https://verafiles.org/articles/manuel-lito-lapid"
   }
  ],
  "loren-legarda": [
   {
    "level": "Basic",
-   "school": "Assumption College",
-   "detail": "Primary through high school",
-   "source_url": "https://en.wikipedia.org/wiki/Loren_Legarda"
+   "school": "Assumption (San Lorenzo, Makati)",
+   "detail": "High school, graduated 1978",
+   "source_url": "https://lorenlegarda.com.ph/milestones",
+   "more_sources": [
+    "https://www.mmsu.edu.ph/news/a-glimpse-of-our-commencement-speaker"
+   ]
   },
   {
    "level": "College",
    "school": "University of the Philippines Diliman",
-   "detail": "Bachelor's in Broadcast Communications, 1981",
-   "source_url": "https://en.wikipedia.org/wiki/Loren_Legarda"
-  },
-  {
-   "level": "Graduate",
-   "school": "University of California, Los Angeles",
-   "detail": "Post-graduate courses in journalism",
-   "source_url": "https://en.wikipedia.org/wiki/Loren_Legarda"
+   "detail": "Broadcast Communications, 1981, cum laude",
+   "source_url": "https://lorenlegarda.com.ph/milestones",
+   "more_sources": [
+    "https://www.mmsu.edu.ph/news/a-glimpse-of-our-commencement-speaker"
+   ]
   },
   {
    "level": "Graduate",
    "school": "National Defense College of the Philippines",
-   "detail": "Master's in National Security Administration",
-   "source_url": "https://en.wikipedia.org/wiki/Loren_Legarda"
+   "detail": "Master's in National Security Administration, 1993",
+   "source_url": "https://lorenlegarda.com.ph/milestones",
+   "more_sources": [
+    "https://www.mmsu.edu.ph/news/a-glimpse-of-our-commencement-speaker"
+   ]
+  },
+  {
+   "level": "Honorary",
+   "school": "University of the Philippines",
+   "detail": "Doctor of Laws, honoris causa, 24 June 2018",
+   "source_url": "https://lorenlegarda.com.ph/legarda-receives-honorary-doctorate-degree-from-up/"
+  },
+  {
+   "level": "Honorary",
+   "school": "Nueva Vizcaya State University",
+   "detail": "Doctor of Education, honoris causa, October 2025",
+   "source_url": "https://lorenlegarda.com.ph/legarda-conferred-doctor-of-education-degree-honors-teachers-and-pushes-education-reform/"
+  },
+  {
+   "level": "Honorary",
+   "school": "University of Antique",
+   "detail": "Doctor of Humanities, honoris causa, 2025",
+   "source_url": "https://lorenlegarda.com.ph/legarda-conferred-doctor-of-education-degree-honors-teachers-and-pushes-education-reform/"
   }
  ],
  "rodante-d-marcoleta": [
   {
    "level": "College",
-   "school": "Not named in the source",
-   "detail": "Bachelor of Arts, cum laude, 1973",
-   "source_url": "https://en.wikipedia.org/wiki/Rodante_Marcoleta"
+   "school": "School not confirmed (a student-run profile says University of the Philippines)",
+   "detail": "Bachelor of Arts, 1973",
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/rodante-marcoleta/",
+   "more_sources": [
+    "https://bluevote.addu.edu.ph/2024/11/03/rodante-dizon-marcoleta/"
+   ]
   },
   {
    "level": "Law",
-   "school": "San Sebastian College – Recoletos",
-   "detail": "Law degree, 1989",
-   "source_url": "https://en.wikipedia.org/wiki/Rodante_Marcoleta"
+   "school": "San Sebastian College – Recoletos, per Wikipedia",
+   "detail": "Bachelor of Laws, 1989 (GMA lists the degree and year but not the school)",
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/rodante-marcoleta/",
+   "more_sources": [
+    "https://en.wikipedia.org/wiki/Rodante_Marcoleta"
+   ]
   },
   {
    "level": "Graduate",
    "school": "University of the East",
-   "detail": "Master's in Business Administration",
-   "source_url": "https://en.wikipedia.org/wiki/Rodante_Marcoleta"
+   "detail": "Master's in Business Administration (GMA lists years 1980/2009, unclear)",
+   "source_url": "https://bluevote.addu.edu.ph/2024/11/03/rodante-dizon-marcoleta/",
+   "more_sources": [
+    "https://www.gmanetwork.com/news/eleksyon/2025/candidates/rodante-marcoleta/"
+   ]
   },
   {
    "level": "Graduate",
-   "school": "University of the Philippines Diliman",
-   "detail": "Doctorate in Public Administration, 2020",
-   "source_url": "https://en.wikipedia.org/wiki/Rodante_Marcoleta"
+   "school": "University of the Philippines, National College of Public Administration and Governance",
+   "detail": "Doctoral program in Public Administration (GMA lists 2011; Wikipedia reports a doctorate in 2020)",
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/rodante-marcoleta/",
+   "more_sources": [
+    "https://bluevote.addu.edu.ph/2024/11/03/rodante-dizon-marcoleta/",
+    "https://en.wikipedia.org/wiki/Rodante_Marcoleta"
+   ]
   },
   {
    "level": "Other",
    "school": "Harvard Kennedy School",
-   "detail": "Developmental leadership certificate",
-   "source_url": "https://en.wikipedia.org/wiki/Rodante_Marcoleta"
+   "detail": "Fellowship in Developmental Leadership, 2017",
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/rodante-marcoleta/",
+   "more_sources": [
+    "https://bluevote.addu.edu.ph/2024/11/03/rodante-dizon-marcoleta/"
+   ]
   }
  ],
  "imee-r-marcos": [
   {
    "level": "Basic",
    "school": "Institucion Teresiana (now Saint Pedro Poveda College), Quezon City",
-   "detail": "Kindergarten to Grade 4",
-   "source_url": "https://en.wikipedia.org/wiki/Imee_Marcos"
+   "detail": "Until Grade 4",
+   "source_url": "https://www.martiallawchroniclesproject.com/remembering-archimedes-trajano/",
+   "more_sources": [
+    "https://en.wikipedia.org/wiki/Imee_Marcos"
+   ]
   },
   {
    "level": "Basic",
-   "school": "Convent of Our Lady of Assumption, Herran, Manila",
-   "detail": "Grade 5 to first year high school",
-   "source_url": "https://en.wikipedia.org/wiki/Imee_Marcos"
+   "school": "Assumption Convent, Manila",
+   "detail": "Grade 5 until first year high school",
+   "source_url": "https://www.martiallawchroniclesproject.com/remembering-archimedes-trajano/",
+   "more_sources": [
+    "https://en.wikipedia.org/wiki/Imee_Marcos"
+   ]
   },
   {
    "level": "Basic",
-   "school": "American School (now International School Manila), Makati",
+   "school": "American School, Makati",
    "detail": "Secondary",
-   "source_url": "https://en.wikipedia.org/wiki/Imee_Marcos"
+   "source_url": "https://www.martiallawchroniclesproject.com/remembering-archimedes-trajano/"
   },
   {
    "level": "College",
    "school": "Princeton University",
-   "detail": "Enrolled 1973–1979; no degree awarded",
-   "note": "Her educational record was publicly disputed in 2019. See the source for details.",
-   "source_url": "https://en.wikipedia.org/wiki/Imee_Marcos"
+   "detail": "Attended fall 1973 to spring 1976 and fall 1977 to spring 1979; a Princeton spokesperson said no record shows a degree was awarded",
+   "source_url": "https://www.philstar.com/headlines/2019/02/27/1897227/not-average-student-princeton-student-newspaper-reports-imee-marcos-didnt-graduate-there/amp/",
+   "more_sources": [
+    "https://2019.tsek.ph/articles/despite-evidence-imee-marcos-insists-she-graduated-princeton.html"
+   ],
+   "note": "Her educational record was publicly disputed in 2019. See the sources."
+  },
+  {
+   "level": "College",
+   "school": "University of the Philippines",
+   "detail": "UP's 2019 statement: no graduation or honors on record; non-degree courses in Arts and Sciences and in the College of Law",
+   "source_url": "https://2019.tsek.ph/articles/false-imee-marcos-graduated-cum-laude-college-law.html"
   }
  ],
  "robinhood-c-padilla": [
   {
    "level": "Basic",
-   "school": "Siena College of Quezon City",
+   "school": "Siena College, Quezon City",
    "detail": "Elementary",
-   "source_url": "https://en.wikipedia.org/wiki/Robin_Padilla"
+   "source_url": "https://www.philstar.com/entertainment/2009/04/17/458044/robin-educator",
+   "more_sources": [
+    "https://en.wikipedia.org/wiki/Robin_Padilla"
+   ]
   },
   {
    "level": "Basic",
-   "school": "Saint Louis University Boys' High School",
-   "detail": "High school",
-   "source_url": "https://en.wikipedia.org/wiki/Robin_Padilla"
+   "school": "Saint Louis University, Baguio",
+   "detail": "Early part of high school",
+   "source_url": "https://www.philstar.com/entertainment/2009/04/17/458044/robin-educator"
   },
   {
    "level": "College",
    "school": "Philippine College of Criminology",
-   "detail": "Bachelor's in Criminology",
-   "source_url": "https://en.wikipedia.org/wiki/Robin_Padilla"
+   "detail": "Took a BS Criminology course; the school calls him an alumnus; completion is not stated in these sources",
+   "source_url": "https://www.philstar.com/entertainment/2009/04/17/458044/robin-educator",
+   "more_sources": [
+    "https://pccr.edu.ph/2023/09/19/from-criminal-to-criminologist-sen-robin-padilla-on-pccr-transforming-his-life/"
+   ]
   }
  ],
  "francis-pangilinan": [
@@ -381,9 +478,12 @@
  "erwin-t-tulfo": [
   {
    "level": "College",
-   "school": "University of the East",
-   "detail": "BS Business Administration, 2005",
-   "source_url": "https://en.wikipedia.org/wiki/Erwin_Tulfo"
+   "school": "University of the East, Manila",
+   "detail": "BS Business Administration (Special Degree program), 2005",
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/erwin-tulfo/",
+   "more_sources": [
+    "https://verafiles.org/articles/erwin-tulfo"
+   ]
   }
  ],
  "raffy-t-tulfo": [
@@ -410,19 +510,22 @@
   {
    "level": "Basic",
    "school": "University of Santo Tomas",
-   "detail": "High school",
-   "source_url": "https://en.wikipedia.org/wiki/Joel_Villanueva"
+   "detail": "Junior High School alumnus",
+   "source_url": "https://www.ust.edu.ph/senator-joel-villanueva-jhs-and-commerce-alumnus-meets-fr-rector-gives-pep-talk-to-growling-tigers/"
   },
   {
    "level": "College",
    "school": "University of Santo Tomas",
-   "detail": "BS Commerce, major in Economics, 1996",
-   "source_url": "https://en.wikipedia.org/wiki/Joel_Villanueva"
+   "detail": "College of Commerce and Business Administration alumnus; BS Commerce, major in Economics, 1996 (degree details from Wikipedia only)",
+   "source_url": "https://www.ust.edu.ph/senator-joel-villanueva-jhs-and-commerce-alumnus-meets-fr-rector-gives-pep-talk-to-growling-tigers/",
+   "more_sources": [
+    "https://en.wikipedia.org/wiki/Joel_Villanueva"
+   ]
   },
   {
    "level": "Other",
    "school": "Harvard Extension School",
-   "detail": "Special Studies in Business Administration, 1996–1998",
+   "detail": "Special Studies in Business Administration, 1996–1998 (Wikipedia only; single source)",
    "source_url": "https://en.wikipedia.org/wiki/Joel_Villanueva"
   }
  ],
@@ -430,14 +533,20 @@
   {
    "level": "College",
    "school": "Ateneo de Manila University",
-   "detail": "Bachelor's degree in Business Management",
-   "source_url": "https://en.wikipedia.org/wiki/Camille_Villar"
+   "detail": "Bachelor of Science in Management (GMA); Lifestyle Asia says Business Management",
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/camille-villar/",
+   "more_sources": [
+    "https://lifestyleasia-onemega.com/people/a-contradiction-of-sorts-getting-to-know-the-multi-hyphenated-camille-villar/"
+   ]
   },
   {
    "level": "Graduate",
-   "school": "IESE Business School, Barcelona, Spain",
-   "detail": "Master's degree",
-   "source_url": "https://en.wikipedia.org/wiki/Camille_Villar"
+   "school": "IESE Business School, University of Navarra, Barcelona",
+   "detail": "Master of Business Administration",
+   "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/camille-villar/",
+   "more_sources": [
+    "https://lifestyleasia-onemega.com/people/a-contradiction-of-sorts-getting-to-know-the-multi-hyphenated-camille-villar/"
+   ]
   }
  ],
  "mark-a-villar": [
