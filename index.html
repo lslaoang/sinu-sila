@@ -2,132 +2,149 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sino Sila? PH Officials</title>
+<meta name="description" content="Meet the 24 senators of the Philippines: their bills, the laws they backed and where they studied. Every fact links to its source.">
+<title>Sino Sila? PH Senators</title>
 <style>
-  :root{--bg:#fafaf7;--card:#fff;--ink:#14213d;--mute:#6b7280;--line:#e5e7eb;--blue:#0038a8;--red:#ce1126;--gold:#fcd116;--r:8px;--hero:#0b2a6f;--on-accent:#fff}
-  @media (prefers-color-scheme:dark){:root{--bg:#0d1321;--card:#161e33;--ink:#f1f5f9;--mute:#94a3b8;--line:#263050;--blue:#7aa7ff;--red:#ff7a88;--hero:#0b2a6f;--on-accent:#0d1321}}
-  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,sans-serif}
-  header{padding:2.5rem 1rem 2rem;text-align:center;background:var(--hero);color:#fff;border-bottom:4px solid var(--red)}
-  header h1{margin:0;font-size:clamp(2rem,6vw,3.2rem);letter-spacing:-.02em}
-  header p{margin:.4rem auto 1.2rem;max-width:34rem;opacity:.9}
-  .wrap{max-width:70rem;margin:0 auto;padding:1rem}
-  #q{width:100%;max-width:28rem;padding:.75rem 1rem;border:0;border-radius:var(--r);font:inherit;color:#14213d;background:#fff}
-  .chips{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
-  .chip{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:.25rem .75rem;border-radius:var(--r);font:inherit;cursor:pointer}
-  .chip[aria-pressed=true]{background:var(--blue);color:var(--on-accent);border-color:var(--blue);font-weight:600}
-  :focus-visible{outline:2px solid var(--blue);outline-offset:2px}
-  .skip{position:absolute;left:-99rem;background:#fff;color:#000;padding:.5rem 1rem;z-index:9} .skip:focus{left:0}
+  :root{--bg:#f6f1e6;--paper:#fffdf7;--ink:#15120f;--mute:#5a5448;--line:#ddd4c2;--blue:#0b3a9e;--red:#c8102e;--yellow:#fcd116;--on-accent:#fff;--r:8px;
+    --serif:ui-serif,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;color-scheme:light}
+  @media (prefers-color-scheme:dark){:root{--bg:#0b0f20;--paper:#131936;--ink:#f6f1e4;--mute:#aab1c8;--line:#283056;--blue:#8fb2ff;--red:#ff7d8c;--on-accent:#0b0f20;color-scheme:dark}}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+  a{color:var(--blue)} :focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+  .skip{position:absolute;left:-99rem;background:#fff;color:#000;padding:.5rem 1rem;z-index:99} .skip:focus{left:0}
   .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:.5rem 1rem;list-style:none;padding:0}
-  .card{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:.75rem}
-  .card:hover,.bill:hover{border-color:var(--blue)}
-  .av{flex:none;width:3rem;height:3rem;border-radius:50%;display:grid;place-items:center;font-size:1.1rem;font-weight:700;color:#fff}
-  .av{position:relative;overflow:hidden} .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;background:#fff} .av.ph{color:transparent}
-  .card b{display:block;line-height:1.25}
-  .n{margin-left:.5rem;color:var(--mute);font-size:.85rem}
-  .role{display:inline-block;margin-top:.25rem;font-size:.75rem;padding:.25rem .5rem;border-radius:4px;background:var(--gold);color:#4a3b00}
+  .wrap{max-width:72rem;margin:0 auto;padding:0 1rem}
+
+  /* top bar */
+  .top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .top .wrap{display:flex;gap:1rem;align-items:center;padding-top:.6rem;padding-bottom:.6rem}
+  .brand{font:800 1.5rem var(--serif);letter-spacing:-.02em;color:var(--ink);text-decoration:none;white-space:nowrap}
+  mark{color:inherit;background:linear-gradient(var(--yellow),var(--yellow)) 0 90%/100% .4em no-repeat}
+  #q{flex:1;min-width:0;max-width:22rem;margin-left:auto;padding:.55rem .9rem;border:1px solid var(--line);border-radius:99px;background:var(--paper);color:var(--ink);font:inherit}
+
+  /* hero */
+  .eyebrow{font:700 .78rem system-ui;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:2rem 0 .5rem}
+  h1.big{font:800 clamp(2.3rem,7.2vw,4.6rem)/1.02 var(--serif);letter-spacing:-.025em;margin:0 0 .8rem;max-width:16ch}
+  .lede{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--mute);max-width:36rem;margin:0 0 1.2rem}
+  .lede b{color:var(--ink)}
+  @media (min-width:60rem){.herogrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:2.5rem;align-items:center;padding:1rem 0}.herogrid .eyebrow{margin-top:0}.herogrid .hemi{margin-top:0}.herogrid .ctl{justify-content:flex-start}.herogrid .info{text-align:left}}
+  .hemi{position:relative;width:100%;max-width:48rem;margin:1.5rem auto .5rem;padding-bottom:56%}
+  .seat{position:absolute;width:9%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%) scale(var(--k,1));
+    transition:left .8s cubic-bezier(.2,.8,.2,1),top .8s cubic-bezier(.2,.8,.2,1),transform .5s cubic-bezier(.2,.8,.2,1),opacity .3s,filter .3s;display:block}
+  .seat .av{width:100%;height:100%;font-size:clamp(.55rem,1.8vw,1.1rem);box-shadow:0 0 0 2px var(--bg)}
+  .seat.lead .av{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--yellow)}
+  .seat:hover,.seat:focus-visible{z-index:50!important;transform:translate(-50%,-50%) scale(calc(var(--k,1) * 1.2))}
+  .seat.dim{opacity:.14;filter:grayscale(1)}
+  .tip{position:fixed;z-index:60;pointer-events:none;background:var(--ink);color:var(--bg);padding:.4rem .65rem;border-radius:6px;font-size:.85rem;line-height:1.3;transform:translate(-50%,calc(-100% - 8px));opacity:0;transition:opacity .15s;white-space:nowrap}
+  .tip.on{opacity:1}
+  .ctl{display:flex;flex-wrap:wrap;gap:.5rem .75rem;align-items:center;justify-content:center;margin:.75rem 0}
+  .ctl .lbl{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+  .chip{border:1px solid var(--ink);background:transparent;color:var(--ink);padding:.3rem .8rem;border-radius:99px;font:inherit;font-size:.9rem;cursor:pointer}
+  .chip:hover{background:var(--yellow);color:#15120f;border-color:var(--yellow)}
+  .chip[aria-pressed=true]{background:var(--ink);color:var(--bg);font-weight:700}
+  .chip small{opacity:.7;margin-left:.2rem}
+  .info{min-height:3.2rem;text-align:center;max-width:40rem;margin:.5rem auto 1rem;font-size:1.05rem}
+  .info a{font-weight:700}
+
+  /* sections */
+  .sec{font:800 clamp(1.6rem,4vw,2.2rem)/1.1 var(--serif);letter-spacing:-.015em;margin:3rem 0 1rem;display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap}
+  .sec small{font:500 .95rem system-ui;color:var(--mute);letter-spacing:0}
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.5rem 2rem}
+  .fact{border-top:4px solid var(--ink);padding-top:.75rem;display:grid;grid-template-columns:auto 1fr;gap:.2rem 1rem;align-items:center}
+  .fact .av{grid-row:span 3;width:4rem;height:4rem;font-size:1.2rem}
+  .fact .n{font:800 2.8rem/1 var(--serif);letter-spacing:-.02em}
+  .fact .l{font-weight:700} .fact .s{color:var(--mute);font-size:.9rem}
+  .note{color:var(--mute);font-size:.85rem;margin:.75rem 0 0}
+  .feed{position:relative;display:flex;gap:.75rem;overflow-x:auto;padding:.25rem 0 1rem;scroll-snap-type:x proximity;margin:0 -1rem;padding-inline:1rem}
+  .fcard{position:relative;flex:0 0 16rem;scroll-snap-align:start;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:.8rem;text-decoration:none;color:var(--ink);display:grid;grid-template-columns:2.6rem 1fr;gap:.2rem .7rem}
+  .fcard:hover{border-color:var(--ink)} .fcard .av{width:2.6rem;height:2.6rem;font-size:.85rem;grid-row:span 2}
+  .fcard b{line-height:1.25} .fcard small{color:var(--mute)}
+
+  /* photo wall */
+  .chips{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 1rem;align-items:center}
+  .sp{flex:1}
+  .wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(9.5rem,1fr));gap:.75rem;list-style:none;padding:0;margin:0}
+  .pt{position:relative;display:block;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;color:#fff;text-decoration:none;background:hsl(var(--h) 42% 24%)}
+  .pt .ini{position:absolute;inset:0;display:grid;place-items:center;font:800 2.6rem var(--serif);opacity:.5}
+  .pt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 10%;transition:transform .4s}
+  .pt:hover img{transform:scale(1.05)}
+  .pt .cap{position:absolute;left:0;right:0;bottom:0;padding:2rem .65rem .6rem;background:linear-gradient(transparent,rgba(0,0,0,.82));line-height:1.2}
+  .pt .cap b{display:block;font-size:.95rem} .pt .cap span{font-size:.75rem;opacity:.9}
+  .pt .bd{position:absolute;top:.5rem;right:.5rem;background:var(--yellow);color:#15120f;font:700 .72rem system-ui;padding:.2rem .45rem;border-radius:4px}
+  .pt.rol::after{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--yellow)}
+
+  /* avatar (initials fallback + photo overlay) */
+  .av{position:relative;overflow:hidden;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;flex:none}
+  .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%;background:#fff}
+  .av.ph{color:transparent}
+
+  /* profile */
+  .back{display:inline-block;margin:1.2rem 0;color:var(--ink);font-weight:700;text-decoration:none}
+  .phero{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;margin-bottom:1.5rem}
+  .phero .av{width:8rem;height:8rem;font-size:2.4rem;box-shadow:0 0 0 4px var(--bg),0 0 0 7px var(--yellow)}
+  .phero h1{font:800 clamp(2rem,6vw,3.2rem)/1.05 var(--serif);letter-spacing:-.02em;margin:0 0 .4rem}
+  .role{display:inline-block;font-size:.78rem;font-weight:700;padding:.25rem .55rem;border-radius:4px;background:var(--yellow);color:#15120f}
   .role.sen{background:var(--line);color:var(--ink)}
-  a{color:var(--blue)}
-  .back{display:inline-block;margin-bottom:1rem;color:var(--blue);text-decoration:none;font-weight:600}
-  .hero{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap}
-  .hero .av{width:5rem;height:5rem;font-size:1.75rem} .hero h2{margin:0;font-size:1.8rem}
-  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.8rem;margin:1.5rem 0}
-  .tile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1rem}
-  .tile strong{display:block;font-size:2rem;line-height:1} .tile span{color:var(--mute);font-size:.85rem}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1rem 2rem;margin:1.5rem 0}
+  .tile{border-top:4px solid var(--ink);padding-top:.6rem} .tile strong{display:block;font:800 clamp(1.8rem,6vw,2.8rem)/1 var(--serif);white-space:nowrap} .tile span{color:var(--mute);font-size:.9rem}
+  h3.h{font:800 1.5rem var(--serif);margin:2.2rem 0 .8rem;letter-spacing:-.01em}
+  .share{margin-left:auto}
   .tl{list-style:none;padding:0 0 0 1.2rem;border-left:3px solid var(--line)}
-  .tl li{position:relative;margin:0 0 1rem;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:.8rem 1rem}
+  .tl li{position:relative;margin:0 0 1rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:.8rem 1rem}
   .tl li::before{content:"";position:absolute;left:-1.7rem;top:1.1rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--red)}
   .badge{font-size:.75rem;font-weight:700;text-transform:uppercase;color:var(--red)} .tl small{color:var(--mute)}
-  .tl a{color:var(--blue)} .tile strong{font-size:clamp(1.3rem,5vw,2rem);white-space:nowrap}
   .soon{border:2px dashed var(--line);border-radius:var(--r);padding:1rem;color:var(--mute);text-align:center}
   .chart{display:flex;align-items:flex-end;gap:3px;height:6rem;margin:.5rem 0 .2rem}
-  .chart i{flex:1;background:var(--blue);border-radius:2px 2px 0 0;min-height:2px;opacity:.85}
+  .chart i{flex:1;background:var(--blue);border-radius:2px 2px 0 0;min-height:2px}
   .axis{display:flex;justify-content:space-between;color:var(--mute);font-size:.75rem}
-  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1rem;margin:1rem 0}
-  .panel h3{margin:0 0 .5rem;font-size:1rem}
+  .panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1rem;margin:1rem 0}
+  .panel h4{margin:0 0 .5rem;font-size:1rem}
   .stack{display:flex;height:1rem;border-radius:4px;overflow:hidden;margin:.6rem 0}
   .legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.85rem;color:var(--mute)}
   .legend b{color:var(--ink)} .dot{display:inline-block;width:.7rem;height:.7rem;border-radius:50%;margin-right:.3rem}
-  .bill{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:.75rem 1rem;margin:.5rem 0}
-  .bill small{color:var(--mute)} .pill{font-size:.75rem;padding:.25rem .5rem;border-radius:4px;background:var(--line);color:var(--ink);white-space:nowrap}
-  .sec{margin:2rem 0 .6rem;font-size:1.3rem} .tiles.big strong{font-size:clamp(1.6rem,6vw,2.6rem)}
-  .strip{display:flex;gap:.8rem;overflow-x:auto;padding:.2rem 0 .8rem;scroll-snap-type:x proximity}
-  .chipcard{flex:0 0 14rem;margin:0;scroll-snap-align:start} .chipcard b{display:block;line-height:1.3;margin-bottom:.3rem}
-  .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem}
-  .barrow{display:grid;grid-template-columns:7.5rem 1fr 2.5rem;gap:.5rem;align-items:center;text-decoration:none;color:inherit;margin:.4rem 0;font-size:.9rem}
-  .bar{background:var(--line);border-radius:4px;height:.75rem;overflow:hidden} .bar i{display:block;height:100%;background:var(--red)}
-  .barrow b{text-align:right} .note{color:var(--mute);font-size:.8rem;margin:.6rem 0 0} .sp{flex:1}
-    .skel{height:5rem;border-radius:var(--r);background:var(--line);margin:.5rem 0}
-  @media (prefers-reduced-motion:no-preference){.skel{animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{50%{opacity:.5}}}
-  .err{border:1px solid var(--red);border-radius:var(--r);padding:1rem;margin:1rem 0}
+  .bill{position:relative;display:block;text-decoration:none;color:inherit;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:.75rem 1rem;margin:.5rem 0}
+  .bill:hover{border-color:var(--ink)} .bill small{color:var(--mute)}
+  .pill{font-size:.75rem;padding:.25rem .5rem;border-radius:4px;background:var(--line);color:var(--ink);white-space:nowrap;display:inline-block}
   .edu{list-style:none;padding:0;margin:0 0 1rem} .edu li{display:grid;grid-template-columns:5.5rem 1fr auto;gap:.5rem 1rem;align-items:start;padding:.75rem 0;border-top:1px solid var(--line)}
-  .edu li:first-child{border-top:0} .edu .pill{justify-self:start} .warn{color:var(--red)}
-  @media (max-width:36rem){.edu li{grid-template-columns:1fr}}
-  footer{color:var(--mute);font-size:.8rem;text-align:center;padding:2rem 1rem}
+  .edu li:first-child{border-top:0} .edu .pill{justify-self:start} .warn{color:var(--red)} .srcs{font-size:.85rem;text-align:right}
+  @media (max-width:36rem){.edu li{grid-template-columns:1fr}.srcs{text-align:left}}
+  .skel{height:6rem;border-radius:var(--r);background:var(--line);margin:.75rem 0}
+  .err{border:1px solid var(--red);border-radius:var(--r);padding:1rem;margin:1rem 0}
+  footer{margin-top:4rem;border-top:4px solid var(--ink);padding:1.5rem 0 3rem;color:var(--mute);font-size:.9rem}
+  footer b{color:var(--ink)}
+
+  /* motion */
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s} .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.seat,.pt img{transition:none}html{scroll-behavior:auto}}
+  @media (prefers-reduced-motion:no-preference){.skel{animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{50%{opacity:.5}}}
 </style>
 <a class="skip" href="#app">Skip to content</a>
-<header>
-  <h1>Sino Sila?</h1>
-  <p>Who are your officials, and what have they done? Public records, in plain view. Every item links to its source.</p>
-  <input id="q" type="search" placeholder="Search a name…" aria-label="Search officials">
-</header>
+<div class="top"><div class="wrap">
+  <a class="brand" href="#" aria-label="Sino Sila? Home">Sino <mark>Sila?</mark></a>
+  <input id="q" type="search" placeholder="Search a senator…" aria-label="Search senators">
+</div></div>
 <main class="wrap" id="app" tabindex="-1" aria-busy="true"><div class="skel"></div><div class="skel"></div><div class="skel"></div></main>
 <noscript><p class="wrap">This site needs JavaScript to show the records.</p></noscript>
-<footer>Public records only, each linked to its source. Not an accusation of wrongdoing. Unofficial, not affiliated with any government body.</footer>
+<footer><div class="wrap"><p><b>Sino Sila?</b> is an independent, unofficial project. Data comes from the Senate of the Philippines' public Legislative Information System and the sources linked on each item. It records public facts and is not an accusation of wrongdoing. Counts show volume, not quality or importance. Data as of October 1, 2026.</p></div></footer>
+<div class="tip" id="tip" aria-hidden="true"></div>
 <script>
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const clean = n => n.replace(/"[^"]*"/g, '').replace(/\s+/g, ' ').trim();           // drop nicknames for initials
+const clean = n => n.replace(/"[^"]*"/g, '').replace(/\s+/g, ' ').trim();
 const initials = n => { const p = clean(n).split(' ').filter(w => /^[A-Za-z]/.test(w) && !/^(Jr\.?|Sr\.?|II|III|IV)$/.test(w)); return (p[0][0] + (p[p.length-1][0] || '')).toUpperCase(); };
 const hue = s => [...s].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 360, 7);
-const av = (n, photo) => `<div class="av" style="background:hsl(${hue(n)} 60% 28%)" aria-hidden="true">${initials(n)}${photo ? `<img src="${esc(photo)}" alt="" loading="lazy" referrerpolicy="no-referrer" onload="this.parentNode.classList.add('ph')" onerror="this.remove()">` : ''}</div>`;
+const av = (n, photo, eager) => `<div class="av" style="background:hsl(${hue(n)} 60% 28%)" aria-hidden="true">${initials(n)}${photo ? `<img src="${esc(photo)}" alt="" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} referrerpolicy="no-referrer" onload="this.parentNode.classList.add('ph')" onerror="this.remove()">` : ''}</div>`;
 const ICON = {membership:'🏛️', bill:'📜', vote:'🗳️', saln:'💼', campaign_finance:'💸', audit:'🔎', case:'⚖️', appointment:'📌'};
-const app = document.getElementById('app'), q = document.getElementById('q');
-let data = [], bills = {}, laws = {bills: []}, edu = {}, leadersOnly = false;
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const app = document.getElementById('app'), q = document.getElementById('q'), tip = document.getElementById('tip');
+let data = [], bills = {}, laws = {bills: []}, edu = {};
+const state = {lens: 'bills', school: null, q: '', leaders: false, sort: 'az'};
 
-let sortBy = 'az';
 const firstName = n => clean(n).split(' ')[0];
-const last = o => clean(o.name).split(' ').filter(w => !/^(Jr\.?|II|III|IV)$/.test(w)).pop();
+const lastName = o => clean(o.name).split(' ').filter(w => !/^(Jr\.?|II|III|IV)$/.test(w)).pop();
 const nameOf = id => clean((data.find(o => o.id === id) || {}).name || '');
-
-function overview() {
-  const ids = Object.keys(bills).filter(k => k !== '_meta');
-  const total = ids.reduce((n, k) => n + bills[k].total, 0);
-  const byMonth = MONTHS.map(m => ids.reduce((n, k) => n + (bills[k].byMonth[m] || 0), 0));
-  const max = Math.max(...byMonth);
-  const recent = ids.flatMap(k => bills[k].latest.map(b => ({id: k, no: b[0], t: b[1], d: b[2], bid: b[4]})))
-    .sort((x, y) => y.d.localeCompare(x.d)).slice(0, 8);
-  const top = [...ids].sort((x, y) => bills[y].total - bills[x].total).slice(0, 5);
-  return `<h2 class="sr">Snapshot</h2><section class="tiles big">
-      <div class="tile"><strong>${data.length}</strong><span>senators, 20th Congress</span></div>
-      <div class="tile"><strong>${total.toLocaleString()}</strong><span>bills filed since July 2025</span></div>
-      <div class="tile"><strong>${new Date(recent[0].d + 'T00:00:00').toLocaleDateString('en', {month: 'short', day: 'numeric'})}</strong><span>most recent filing, ${recent[0].d.slice(0, 4)}</span></div></section>
-    <h2 class="sec">Just filed</h2>
-    <div class="strip">${recent.map(r => `<a class="bill chipcard" href="https://senate.gov.ph/legislative-documents/bills/${esc(r.bid)}" target="_blank" rel="noopener">
-      <b>${esc(title(r.t))}</b><small>${esc(nameOf(r.id))} · ${esc(r.d)}</small></a>`).join('')}</div>
-    <div class="two">
-      <div class="panel"><h3>Senate bills filed per month</h3>
-        <div class="chart" role="img" aria-label="Bills filed per month across the Senate, from ${monthName(MONTHS[0])} to ${monthName(MONTHS[MONTHS.length - 1])}. Peak ${Math.max(...byMonth)} in ${monthName(MONTHS[byMonth.indexOf(Math.max(...byMonth))])}.">${byMonth.map((n, i) => `<i title="${monthName(MONTHS[i])}: ${n}" style="height:${n / max * 100}%"></i>`).join('')}</div>
-        <div class="axis"><span>${monthName(MONTHS[0])}</span><span>${monthName(MONTHS[MONTHS.length - 1])}</span></div>
-        <p class="note">Most bills are filed when a Congress opens (Jul–Aug 2025).</p></div>
-      <div class="panel"><h3>Most bills filed</h3>
-        ${top.map(k => `<a class="barrow" href="#${esc(k)}"><span>${esc(firstName(nameOf(k)))} ${esc(last(data.find(o => o.id === k)))}</span><span class="bar"><i style="width:${bills[k].total / bills[top[0]].total * 100}%"></i></span><b>${bills[k].total}</b></a>`).join('')}
-        <p class="note">Volume, not quality or importance.</p></div></div>
-    <h2 class="sec">All senators</h2>`;
-}
-
-function list() {
-  const t = q.value.toLowerCase();
-  const rows = data.filter(o => o.name.toLowerCase().includes(t) && (!leadersOnly || o.position !== 'Senator'))
-    .sort((x, y) => sortBy === 'bills' ? (bills[y.id]?.total || 0) - (bills[x.id]?.total || 0) : last(x).localeCompare(last(y)));
-  const chip = (on, f, label) => `<button class="chip" aria-pressed="${on}" data-f="${f}">${label}</button>`;
-  app.innerHTML = (t ? '' : overview()) + `<div class="chips">
-      ${chip(!leadersOnly, 'all', 'All ' + data.length)}${chip(leadersOnly, 'lead', 'Leadership')}
-      <span class="sp"></span>${chip(sortBy === 'az', 'az', 'A–Z')}${chip(sortBy === 'bills', 'bills', 'Most bills')}</div>
-    <ul class="grid">${rows.map(o => `<li><a class="card" href="#${esc(o.id)}">${av(o.name, o.photo)}
-      <div><b>${esc(clean(o.name))}</b><br><span class="role ${o.position === 'Senator' ? 'sen' : ''}">${esc(o.position)}</span><small class="n">${bills[o.id] ? bills[o.id].total + ' bills' : ''}</small></div></a></li>`).join('')}</ul>
-    ${rows.length ? '' : '<p class="soon">No senator matches that name.</p>'}`;
-}
-
+const POS = ['Senate President', 'Senate President Pro Tempore', 'Senate Majority Leader', 'Senate Minority Leader'];
+const posRank = o => { const i = POS.indexOf(o.position); return i < 0 ? 9 : i; };
+const isLead = o => posRank(o) < 9;
 
 const BUCKETS = [
   ['Signed into law', '#16a34a', s => s === 'APPROVED BY THE PRESIDENT OF THE PHILIPPINES'],
@@ -142,73 +159,212 @@ const ACRONYMS = new Set('PNP BJMP BFP GSIS SK VAT SUC PWD HIV AIDS ID PRC MSME 
 const SMALL = new Set('OF THE AND FOR IN ON TO A AN OR'.split(' '));
 const title = t => t.split(/\s+/).map((w, i) => {
   const core = w.replace(/^\(+|[),.]+$/g, '');
-  if (/^\(.+\)$/.test(w) && core.length <= 7 || ACRONYMS.has(w.replace(/^\(|[),]+$/g, '')) || /^\d/.test(w)) return w;   // (E-VAWC), PNP, 30-DAY
+  if (/^\(.+\)$/.test(w) && core.length <= 7 || ACRONYMS.has(w.replace(/^\(|[),]+$/g, '')) || /^\d/.test(w)) return w;
   return i && SMALL.has(w) ? w.toLowerCase() : w.toLowerCase().replace(/(^|[(\-/])([a-z])/g, (m, a, b) => a + b.toUpperCase());
 }).join(' ');
+const dayLabel = d => new Date(d + 'T00:00:00').toLocaleDateString('en', {month: 'short', day: 'numeric'});
 
 const ROLES = [['author', 'Author'], ['coAuthors', 'Co-author'], ['coSponsors', 'Co-sponsor']];
 const rolesOf = id => laws.bills.map(l => ({...l, roles: ROLES.filter(([k]) => [].concat(l[k]).includes(id)).map(r => r[1]), law: !/^Enrolled/.test(l.status)})).filter(l => l.roles.length);
+const lawCount = id => rolesOf(id).filter(l => l.law).length;
+const billCount = id => bills[id]?.total || 0;
+
+/* where they studied: group schools, skipping items flagged match:false */
+const GROUPS = [['Ateneo', /ateneo/i], ['UP', /university of the philippines/i], ['La Salle', /la salle/i], ['UST', /santo tomas/i], ['Harvard', /harvard/i], ['UE', /university of the east/i], ['PMA', /military academy/i], ['Georgetown', /georgetown/i]];
+let groups = {};
+function buildGroups() {
+  groups = {};
+  for (const [name, re] of GROUPS) {
+    const ids = data.filter(o => (edu[o.id] || []).some(i => i.level !== 'Honorary' && i.match !== false && re.test(i.school))).map(o => o.id);
+    if (ids.length >= 2) groups[name] = new Set(ids);
+  }
+}
+
+/* ---------- hemicycle ---------- */
+const ASPECT = 0.56;
+const ARCS = [[6, 22], [8, 34], [10, 46]];
+const SLOTS = ARCS.flatMap(([n, r], a) => Array.from({length: n}, (_, i) => { const th = Math.PI * (1 - (i + .5) / n); return {a, th, x: 50 + r * Math.cos(th), y: 94 - r * Math.sin(th) / ASPECT}; }))
+  .sort((p, c) => p.a - c.a || Math.abs(p.th - Math.PI / 2) - Math.abs(c.th - Math.PI / 2));
+const lensVal = (id) => state.lens === 'bills' ? billCount(id) : state.lens === 'laws' ? lawCount(id) : 0;
+
+function layoutSeats() {
+  const order = [...data].sort((a, b) => state.lens === 'equal' ? posRank(a) - posRank(b) || lastName(a).localeCompare(lastName(b))
+    : lensVal(b.id) - lensVal(a.id) || lastName(a).localeCompare(lastName(b)));
+  const max = Math.max(...order.map(o => lensVal(o.id)), 1);
+  order.forEach((o, i) => {
+    const el = document.querySelector(`.seat[data-id="${o.id}"]`); if (!el) return;
+    el.style.left = SLOTS[i].x + '%'; el.style.top = SLOTS[i].y + '%';
+    el.style.setProperty('--k', state.lens === 'equal' ? 1 : (.78 + .42 * lensVal(o.id) / max).toFixed(3));
+    el.style.zIndex = state.lens === 'equal' ? 1 : Math.round(lensVal(o.id) / max * 20);
+  });
+}
+const visibleIds = () => { const t = state.q.toLowerCase();
+  return new Set(data.filter(o => (!t || o.name.toLowerCase().includes(t)) && (!state.school || groups[state.school]?.has(o.id)) && (!state.leaders || isLead(o))).map(o => o.id)); };
+
+function updateInfo() {
+  const el = document.getElementById('hemiInfo'); if (!el) return;
+  const names = ids => ids.map(id => `<a href="#${esc(id)}">${esc(nameOf(id))}</a>`).join(', ');
+  const top = [...data].sort((a, b) => lensVal(b.id) - lensVal(a.id))[0];
+  if (state.school) { const ids = data.filter(o => groups[state.school].has(o.id)).map(o => o.id);
+    el.innerHTML = `<b>${ids.length} senators</b> studied at <b>${esc(state.school)}</b> (any level, per the cited sources): ${names(ids)}.`; }
+  else if (state.q) el.innerHTML = `<b>${visibleIds().size}</b> match “${esc(state.q)}”.`;
+  else if (state.lens === 'bills') el.innerHTML = `Bigger face = more bills filed. <b>${esc(nameOf(top.id))}</b> filed the most: <b>${billCount(top.id)}</b>.`;
+  else if (state.lens === 'laws') el.innerHTML = `Bigger face = more laws backed (as author, co-author or co-sponsor). <b>${esc(nameOf(top.id))}</b> leads with <b>${lawCount(top.id)}</b>.`;
+  else el.innerHTML = `Hover or tap a face to meet a senator. Gold ring = Senate leadership.`;
+}
+function updateAll() {
+  const vis = visibleIds();
+  document.querySelectorAll('.seat').forEach(s => s.classList.toggle('dim', !vis.has(s.dataset.id)));
+  layoutSeats(); updateInfo(); updateWall();
+  document.querySelectorAll('[data-lens]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lens === state.lens));
+  document.querySelectorAll('[data-school]').forEach(b => b.setAttribute('aria-pressed', b.dataset.school === state.school));
+}
+function updateWall() {
+  const vis = visibleIds();
+  const rows = data.filter(o => vis.has(o.id) && (!state.leaders || isLead(o)))
+    .sort((x, y) => state.sort === 'bills' ? billCount(y.id) - billCount(x.id) : state.sort === 'laws' ? lawCount(y.id) - lawCount(x.id) : lastName(x).localeCompare(lastName(y)));
+  const w = document.getElementById('wall'); if (!w) return;
+  w.innerHTML = rows.map(o => `<li><a class="pt ${isLead(o) ? 'rol' : ''}" href="#${esc(o.id)}" style="--h:${hue(o.name)}" aria-label="${esc(clean(o.name))}, ${esc(o.position)}, ${billCount(o.id)} bills, ${lawCount(o.id)} laws backed">
+      <span class="ini" aria-hidden="true">${initials(o.name)}</span>${o.photo ? `<img src="${esc(o.photo)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
+      <span class="bd">${billCount(o.id)} bills</span><span class="cap"><b>${esc(clean(o.name))}</b><span>${esc(o.position)}</span></span></a></li>`).join('')
+    || '<li class="soon" style="grid-column:1/-1">No senator matches that.</li>';
+  document.querySelectorAll('[data-sort]').forEach(b => b.setAttribute('aria-pressed', b.dataset.sort === state.sort));
+  document.querySelectorAll('[data-lead]').forEach(b => b.setAttribute('aria-pressed', (b.dataset.lead === '1') === state.leaders));
+}
+
+/* ---------- home ---------- */
+const maxBy = (xs, f) => xs.reduce((b, x) => f(x) > f(b) ? x : b, xs[0]);
+function home() {
+  const ids = Object.keys(bills).filter(k => k !== '_meta');
+  const total = ids.reduce((n, k) => n + bills[k].total, 0);
+  const seen = new Set();
+  const recent = ids.flatMap(k => bills[k].latest.map(b => ({id: k, no: b[0], t: b[1], d: b[2], bid: b[4]})))
+    .sort((x, y) => y.d.localeCompare(x.d) || y.no.localeCompare(x.no, undefined, {numeric: true})).filter(r => !seen.has(r.no) && seen.add(r.no)).slice(0, 10);
+  let peak = {n: 0}; ids.forEach(k => Object.entries(bills[k].byMonth).forEach(([m, n]) => { if (n > peak.n) peak = {n, m, id: k}; }));
+  const topB = maxBy(ids, billCount), topL = maxBy(ids, lawCount);
+  const o = id => data.find(x => x.id === id);
+  const fact = (id, big, label, sub, count) => `<div class="fact rv">${av(nameOf(id), o(id).photo)}<div class="n" ${count ? `data-count="${count}"` : ''}>${count ? 0 : big}</div>
+      <div class="l">${label}</div><div class="s"><a href="#${esc(id)}">${esc(nameOf(id))}</a>${sub ? ' · ' + sub : ''}</div></div>`;
+  const chip = (attr, val, label, on) => `<button class="chip" ${attr}="${esc(val)}" aria-pressed="${on}">${label}</button>`;
+  app.innerHTML = `
+    <section aria-labelledby="h1" class="herogrid"><div class="htxt">
+      <p class="eyebrow">20th Congress · Senate of the Philippines</p>
+      <h1 class="big" id="h1">Kilala mo ba ang mga <mark>senador</mark> mo?</h1>
+      <p class="lede"><b>${data.length} senators. <span data-count="${total}">0</span> bills.</b> Who they are, what they filed, which laws they backed and where they studied. Every fact links to its source.</p></div><div class="hviz">
+      <div class="hemi" id="hemi" role="group" aria-label="The ${data.length} senators. Each face links to a profile.">
+        ${data.map(s => `<a class="seat ${isLead(s) ? 'lead' : ''}" data-id="${esc(s.id)}" href="#${esc(s.id)}" aria-label="${esc(clean(s.name))}, ${esc(s.position)}, ${billCount(s.id)} bills, ${lawCount(s.id)} laws backed">${av(s.name, s.photo, true)}</a>`).join('')}
+      </div>
+      <div class="ctl" role="group" aria-label="Size the faces by"><span class="lbl">Size by</span>
+        ${chip('data-lens', 'bills', 'Bills filed', true)}${chip('data-lens', 'laws', 'Laws backed', false)}${chip('data-lens', 'equal', 'Equal', false)}</div>
+      <div class="ctl" role="group" aria-label="Highlight senators by school"><span class="lbl">Where they studied</span>
+        ${Object.entries(groups).sort((a, b) => b[1].size - a[1].size).map(([g, s]) => chip('data-school', g, `${esc(g)}<small>${s.size}</small>`, false)).join('')}</div>
+      <p class="info" id="hemiInfo" aria-live="polite"></p>
+    </div></section>
+    <h2 class="sec rv">Standouts <small>volume, not quality or importance</small></h2>
+    <div class="facts">
+      ${fact(topB, '', 'Most bills filed', '20th Congress', billCount(topB))}
+      ${fact(topL, '', 'Most laws backed', 'any role', lawCount(topL))}
+      ${fact(peak.id, '', 'Most bills in a single month', monthName(peak.m), peak.n)}
+      ${fact(recent[0].id, dayLabel(recent[0].d), 'Newest filing', esc(title(recent[0].t)), 0)}
+    </div>
+    <h2 class="sec rv">Just filed <small>the newest bills in the Senate</small></h2>
+    <div class="feed rv">${recent.map(r => `<a class="fcard" href="https://senate.gov.ph/legislative-documents/bills/${esc(r.bid)}" target="_blank" rel="noopener">${av(nameOf(r.id), o(r.id).photo)}
+      <b>${esc(title(r.t))}</b><small>${esc(nameOf(r.id))} · ${esc(dayLabel(r.d))}<span class="sr"> (opens the Senate site)</span></small></a>`).join('')}</div>
+    <h2 class="sec rv">Meet all ${data.length}</h2>
+    <div class="chips rv">${chip('data-lead', '0', 'All', true)}${chip('data-lead', '1', 'Leadership', false)}<span class="sp"></span>
+      ${chip('data-sort', 'az', 'A–Z', true)}${chip('data-sort', 'bills', 'Most bills', false)}${chip('data-sort', 'laws', 'Most laws', false)}</div>
+    <ul class="wall" id="wall"></ul>`;
+  updateAll();
+  app.querySelectorAll('[data-count]').forEach(el => { const to = +el.dataset.count; if (reduce) { el.textContent = to.toLocaleString(); return; }
+    const t0 = performance.now(); (function f(t) { const p = Math.min(1, (t - t0) / 1100); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))).toLocaleString(); if (p < 1) requestAnimationFrame(f); })(t0); });
+  const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && (e.target.classList.add('in'), io.unobserve(e.target))), {threshold: .12});
+  app.querySelectorAll('.rv').forEach(el => io.observe(el));
+}
+
+/* ---------- profile ---------- */
+const NAMES = [[/wikipedia/, 'Wikipedia'], [/senatorpiacayetano/, 'Pia Cayetano\'s own CV (archived 2016)'], [/votepilipinas/, 'Vote Pilipinas (archived 2022)'], [/senate\.gov\.ph/, 'Senate profile'], [/gmanetwork/, 'GMA News'], [/halalan\.up/, 'UP sa Halalan'], [/philstar/, 'Philstar'], [/lorenlegarda/, "Legarda's office (self-published)"], [/atenews/, 'Atenews'], [/positivelyfilipino/, 'Positively Filipino'], [/verafiles/, 'Vera Files'], [/tsek/, 'Tsek.ph'], [/canvas\.ph/, 'Canvas.ph'], [/martiallaw/, 'Martial Law Chronicles'], [/bluevote/, 'ADDU BlueVote'], [/benildean/, 'The Benildean'], [/lifestyleasia/, 'Lifestyle Asia'], [/ust\.edu/, 'UST'], [/mmsu/, 'MMSU'], [/pccr/, 'PCCR']];
 const LEVELS = ['Basic', 'College', 'Law', 'Graduate', 'Military', 'Honorary', 'Other'];
 function eduHtml(id) {
   const items = (edu[id] || []).slice().sort((a, b) => LEVELS.indexOf(a.level) - LEVELS.indexOf(b.level));
-  const NAMES = [[/wikipedia/, 'Wikipedia'], [/senatorpiacayetano/, 'Pia Cayetano\'s own CV (archived 2016)'], [/votepilipinas/, 'Vote Pilipinas (archived 2022)'], [/senate\.gov\.ph/, 'Senate profile'], [/gmanetwork/, 'GMA News'], [/halalan\.up/, 'UP sa Halalan'], [/philstar/, 'Philstar'], [/lorenlegarda/, "Legarda's office (self-published)"], [/atenews/, 'Atenews'], [/positivelyfilipino/, 'Positively Filipino'], [/verafiles/, 'Vera Files'], [/tsek/, 'Tsek.ph'], [/canvas\.ph/, 'Canvas.ph'], [/martiallaw/, 'Martial Law Chronicles'], [/bluevote/, 'ADDU BlueVote'], [/benildean/, 'The Benildean'], [/lifestyleasia/, 'Lifestyle Asia'], [/ust\.edu/, 'UST'], [/mmsu/, 'MMSU'], [/pccr/, 'PCCR']];
   const src = u => (NAMES.find(([re]) => re.test(u)) || [0, new URL(u).hostname])[1];
   const links = i => [i.source_url, ...(i.more_sources || [])].map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(src(u))}<span class="sr"> (opens in a new tab)</span> ↗</a>`).join('<br>');
-  return `<h3>Education</h3>` + (items.length ? `<ul class="edu">${items.map(i => `<li><span class="pill">${esc(i.level)}</span>
+  return `<h3 class="h">Where they studied</h3>` + (items.length ? `<ul class="edu">${items.map(i => `<li><span class="pill">${esc(i.level)}</span>
       <div><b>${esc(i.school)}</b><br><small>${esc(i.detail)}</small>${i.note ? `<br><small class="warn">${esc(i.note)}</small>` : ''}</div>
       <div class="srcs">${links(i)}</div></li>`).join('')}</ul>`
     : '<p class="soon">Not stated in the sources checked.</p>');
 }
 function lawsHtml(id) {
   const rs = rolesOf(id);
-  return `<h3>Laws and bills sent to the President</h3>` + (rs.length ? rs.map(l => `<a class="bill" href="https://senate.gov.ph/legislative-documents/bills/${esc(l.id)}" target="_blank" rel="noopener">
+  return `<h3 class="h">Laws and bills sent to the President</h3>` + (rs.length ? rs.map(l => `<a class="bill" href="https://senate.gov.ph/legislative-documents/bills/${esc(l.id)}" target="_blank" rel="noopener">
       <b>${esc(title(l.title))}</b><br><small>${esc(l.no)} · ${esc(l.status)}</small>
       ${l.roles.map(r => `<span class="pill">${r}</span>`).join(' ')}</a>`).join('')
     : '<p class="soon">None yet in the 20th Congress, as author, co-author or co-sponsor.</p>')
-    + `<p><small>As listed by the Senate for the 20th Congress. Bills folded into another bill are not detected unless the Senate marks them so.</small></p>`;
+    + `<p class="note">As listed by the Senate for the 20th Congress. Bills folded into another bill are not detected unless the Senate marks them so.</p>`;
 }
 function billsHtml(id) {
   const b = bills[id]; if (!b) return '';
   const counts = {}; for (const [st, n] of Object.entries(b.byStatus)) counts[bucketOf(st)] = (counts[bucketOf(st)] || 0) + n;
   const max = Math.max(...MONTHS.map(m => b.byMonth[m] || 0), 1);
-  return `<div class="panel"><h3>Bills filed per month</h3>
+  return `<h3 class="h">Bills</h3><div class="panel"><h4>Filed per month</h4>
       <div class="chart" role="img" aria-label="Bills filed per month, ${MONTHS.length} months">${MONTHS.map(m => `<i title="${monthName(m)}: ${b.byMonth[m] || 0}" style="height:${(b.byMonth[m] || 0) / max * 100}%"></i>`).join('')}</div>
       <div class="axis"><span>${monthName(MONTHS[0])}</span><span>${monthName(MONTHS[MONTHS.length - 1])}</span></div></div>
-    <div class="panel"><h3>Where the bills stand</h3>
+    <div class="panel"><h4>Where the bills stand</h4>
       <div class="stack" role="img" aria-label="Bill status: ${BUCKETS.filter(x => counts[x[0]]).map(x => counts[x[0]] + ' ' + x[0]).join(', ')}">${BUCKETS.map(x => counts[x[0]] ? `<span title="${x[0]}: ${counts[x[0]]}" style="flex:${counts[x[0]]};background:${x[1]}"></span>` : '').join('')}</div>
       <div class="legend">${BUCKETS.filter(x => counts[x[0]]).map(x => `<span><span class="dot" style="background:${x[1]}"></span><b>${counts[x[0]]}</b> ${x[0]}</span>`).join('')}</div></div>
-    <h3>Latest bills</h3>${b.latest.map(([no, t, d, st, bid]) => `<a class="bill" href="https://senate.gov.ph/legislative-documents/bills/${esc(bid)}" target="_blank" rel="noopener">
+    <h4>Latest bills</h4>${b.latest.map(([no, t, d, st, bid]) => `<a class="bill" href="https://senate.gov.ph/legislative-documents/bills/${esc(bid)}" target="_blank" rel="noopener">
       <b>${esc(title(t))}</b><br><small>${esc(no)} · filed ${esc(d)}</small> <span class="pill">${esc(bucketOf(st))}</span></a>`).join('')}
-    <p><small>Bills where this senator is listed as author, 20th Congress. Source: <a href="${esc(bills._meta.source)}" target="_blank" rel="noopener">Senate Legislative Information System</a>, retrieved ${esc(bills._meta.retrieved)}.</small></p>`;
+    <p class="note">Bills where this senator is listed as author, 20th Congress. Source: <a href="${esc(bills._meta.source)}" target="_blank" rel="noopener">Senate Legislative Information System</a>, retrieved ${esc(bills._meta.retrieved)}.</p>`;
 }
-
 function profile(o) {
-  const last = o.records.map(r => r.retrieved).sort().pop();
-  app.innerHTML = `<a class="back" href="#">← Everyone</a>
-    <div class="hero">${av(o.name, o.photo)}<div><h2>${esc(o.name)}</h2><span class="role">${esc(o.position)}</span> <small>${esc(o.chamber)} · ${esc(o.term)}</small></div></div>
+  const checked = o.records.map(r => r.retrieved).sort().pop();
+  app.innerHTML = `<a class="back" href="#">← All senators</a>
+    <div class="phero">${av(o.name, o.photo, true)}<div><h1>${esc(o.name)}</h1><span class="role ${isLead(o) ? '' : 'sen'}">${esc(o.position)}</span> <small>${esc(o.chamber)} · ${esc(o.term)}</small></div>
+      <button class="chip share" data-f="share">Share</button></div>
     <div class="tiles">
       <div class="tile"><strong>${bills[o.id]?.total ?? '–'}</strong><span>bills authored</span></div>
-      <div class="tile"><strong>${rolesOf(o.id).filter(l => l.law).length}</strong><span>laws backed (any role)</span></div>
-      <div class="tile"><strong>${esc(last)}</strong><span>last checked</span></div></div>
+      <div class="tile"><strong>${lawCount(o.id)}</strong><span>laws backed (any role)</span></div>
+      <div class="tile"><strong>${esc(dayLabel(checked))}</strong><span>data checked, ${esc(checked.slice(0, 4))}</span></div></div>
     ${eduHtml(o.id)}${lawsHtml(o.id)}${billsHtml(o.id)}
-    <h3>Record</h3><ul class="tl">${o.records.map(r => `<li><span class="badge"><span aria-hidden="true">${ICON[r.type] || '•'}</span> ${esc(r.type)}</span>
+    <h3 class="h">Record</h3><ul class="tl">${o.records.map(r => `<li><span class="badge"><span aria-hidden="true">${ICON[r.type] || '•'}</span> ${esc(r.type)}</span>
       <div>${esc(r.title)}</div><small>${esc(r.date)} · <a href="${esc(r.source_url)}" rel="noopener" target="_blank">view source ↗</a></small></li>`).join('')}</ul>
-    <div class="soon">🗳️ Votes, SALN and more are coming soon.</div>`;
+    <div class="soon">Votes, SALN and more are coming soon.</div>`;
 }
 
+/* ---------- events ---------- */
 function route() {
   const o = data.find(o => o.id === location.hash.slice(1));
-  o ? profile(o) : list();
-  document.title = o ? clean(o.name) + ' – Sino Sila?' : 'Sino Sila? PH Officials';
+  tip.classList.remove('on');
+  o ? profile(o) : home();
+  document.title = o ? clean(o.name) + ' – Sino Sila?' : 'Sino Sila? PH Senators';
   app.removeAttribute('aria-busy'); scrollTo(0, 0);
-  if (o) app.querySelector('h2')?.setAttribute('tabindex', '-1'), app.querySelector('h2')?.focus();
+  if (o) { const h = app.querySelector('h1'); h?.setAttribute('tabindex', '-1'); h?.focus({preventScroll: true}); }
 }
-app.onclick = e => { const f = e.target.dataset.f; if (!f) return; if (f === 'retry') return load(); if (f === 'az' || f === 'bills') sortBy = f; else leadersOnly = f === 'lead'; list(); };
-q.oninput = () => { if (location.hash) location.hash = ''; else list(); };
+app.onclick = e => {
+  const b = e.target.closest('button'); if (!b) return;
+  const d = b.dataset;
+  if (d.f === 'retry') return load();
+  if (d.f === 'share') { const url = location.href, t = document.title;
+    if (navigator.share) navigator.share({title: t, url}).catch(() => {}); else navigator.clipboard?.writeText(url).then(() => { b.textContent = 'Link copied'; setTimeout(() => b.textContent = 'Share', 2000); }); return; }
+  if (d.lens) state.lens = d.lens;
+  if (d.school) state.school = state.school === d.school ? null : d.school;
+  if (d.sort) state.sort = d.sort;
+  if (d.lead != null) state.leaders = d.lead === '1';
+  updateAll();
+};
+document.addEventListener('mouseover', e => showTip(e.target.closest?.('.seat')));
+document.addEventListener('focusin', e => showTip(e.target.closest?.('.seat')));
+document.addEventListener('mouseout', e => { if (e.target.closest?.('.seat')) tip.classList.remove('on'); });
+document.addEventListener('focusout', () => tip.classList.remove('on'));
+function showTip(s) {
+  if (!s) return; const id = s.dataset.id, o = data.find(x => x.id === id), r = s.getBoundingClientRect();
+  tip.innerHTML = `<b>${esc(clean(o.name))}</b><br>${esc(o.position)} · ${billCount(id)} bills · ${lawCount(id)} laws`;
+  tip.style.left = Math.min(Math.max(r.left + r.width / 2, 90), innerWidth - 90) + 'px'; tip.style.top = r.top + 'px'; tip.classList.add('on');
+}
+q.oninput = () => { state.q = q.value; if (location.hash) location.hash = ''; else updateAll(); };
 onhashchange = route;
 function load() {
   Promise.all(['data/officials.json', 'data/bills.json', 'data/laws.json', 'data/education.json'].map(u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); })))
-    .then(([d, b, l, e]) => { data = d; bills = b; laws = l; edu = e; route(); })
+    .then(([d, b, l, e]) => { data = d; bills = b; laws = l; edu = e; buildGroups(); route(); })
     .catch(() => { app.removeAttribute('aria-busy'); app.innerHTML = '<div class="err" role="alert"><b>Couldn’t load the records.</b><p>Check your connection and try again.</p><button class="chip" data-f="retry">Retry</button></div>'; });
 }
 load();

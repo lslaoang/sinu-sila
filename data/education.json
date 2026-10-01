@@ -1,7 +1,7 @@
 {
  "_meta": {
   "retrieved": "2026-10-01",
-  "note": "Only what the cited sources state. 12 senators' entries come from their Senate profile biography; the other 12 were cross-checked on 2026-10-01 against secondary sources (GMA candidate profiles, UP sa Halalan, news and fact-check outlets, the senators' own sites). Where sources disagree the entry says so. Some official pages (Senate bios, Inquirer, Rappler) could not be read by the checking tool. Levels: Basic, College, Graduate, Law, Military, Honorary, Other. 'more_sources' are additional links for the same item. Browser check 2026-10-01: Senate profile pages hold no further education data (six have no bio); Pia Cayetano's own archived CV and Vote Pilipinas (archived 2022) were read directly."
+  "note": "Only what the cited sources state. 12 senators' entries come from their Senate profile biography; the other 12 were cross-checked on 2026-10-01 against secondary sources (GMA candidate profiles, UP sa Halalan, news and fact-check outlets, the senators' own sites). Where sources disagree the entry says so. Some official pages (Senate bios, Inquirer, Rappler) could not be read by the checking tool. Levels: Basic, College, Graduate, Law, Military, Honorary, Other. 'more_sources' are additional links for the same item. Browser check 2026-10-01: Senate profile pages hold no further education data (six have no bio); Pia Cayetano's own archived CV and Vote Pilipinas (archived 2022) were read directly. Items with match:false (disputed, unconfirmed or single-source) are left out of the 'where they studied' filter."
  },
  "win-gatchalian": [
   {
@@ -215,7 +215,8 @@
     "https://www.gmanetwork.com/news/eleksyon/2025/candidates/bong-go/",
     "https://www.philstar.com/entertainment/2018/12/06/1874459/entertainment"
    ],
-   "note": "Sources disagree on where he completed his degree."
+   "note": "Sources disagree on where he completed his degree.",
+   "match": false
   },
   {
    "level": "College",
@@ -225,7 +226,8 @@
    "more_sources": [
     "https://halalan2025.thebenildean.org/candidates-senatorial.html"
    ],
-   "note": "Sources disagree on where he completed his degree."
+   "note": "Sources disagree on where he completed his degree.",
+   "match": false
   }
  ],
  "risa-hontiveros": [
@@ -355,7 +357,8 @@
    "source_url": "https://www.gmanetwork.com/news/eleksyon/2025/candidates/rodante-marcoleta/",
    "more_sources": [
     "https://bluevote.addu.edu.ph/2024/11/03/rodante-dizon-marcoleta/"
-   ]
+   ],
+   "match": false
   },
   {
    "level": "Law",
@@ -430,13 +433,15 @@
    "more_sources": [
     "https://2019.tsek.ph/articles/despite-evidence-imee-marcos-insists-she-graduated-princeton.html"
    ],
-   "note": "Her educational record was publicly disputed in 2019. See the sources."
+   "note": "Her educational record was publicly disputed in 2019. See the sources.",
+   "match": false
   },
   {
    "level": "College",
    "school": "University of the Philippines",
    "detail": "UP's 2019 statement: no graduation or honors on record; non-degree courses in Arts and Sciences and in the College of Law",
-   "source_url": "https://2019.tsek.ph/articles/false-imee-marcos-graduated-cum-laude-college-law.html"
+   "source_url": "https://2019.tsek.ph/articles/false-imee-marcos-graduated-cum-laude-college-law.html",
+   "match": false
   }
  ],
  "robinhood-c-padilla": [
@@ -530,7 +535,8 @@
    "level": "Other",
    "school": "Harvard Extension School",
    "detail": "Special Studies in Business Administration, 1996–1998 (Wikipedia only; single source)",
-   "source_url": "https://en.wikipedia.org/wiki/Joel_Villanueva"
+   "source_url": "https://en.wikipedia.org/wiki/Joel_Villanueva",
+   "match": false
   }
  ],
  "camille-a-villar": [

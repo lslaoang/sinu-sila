@@ -27,6 +27,8 @@ Deploy anywhere static (GitHub Pages, Netlify, Cloudflare Pages). No build step.
 
 **Education** only records what the cited sources state, and each item can list several source links. Twelve senators' entries come from their Senate profile bio (not independently cross-checked). The other twelve, whose Senate bios omit schooling, were first taken from Wikipedia and then cross-checked on 2026-10-01 against GMA candidate profiles, UP sa Halalan, news and fact-check outlets and the senators' own sites. Unsupported claims were dropped (e.g. Legarda's UCLA courses, Marcoleta's "cum laude" and "certificate"), and where sources disagree the entry says so (e.g. Bong Go's college, Marcoleta's doctorate year). Some official pages (Senate bios, Inquirer, Rappler) returned 403 to the checking tool, so a human check against those and against university records is still worth doing before launch. Contested items (Imee Marcos) are shown with institutional statements and a neutral note, without editorial wording.
 
+**Homepage interactions** (seating chart sized by bills or laws, "where they studied" highlight) are computed in the browser from the data files. The school filter counts any non-honorary item whose school matches (Ateneo, UP, La Salle, UST, Harvard, UE, PMA, Georgetown) and skips items flagged `"match": false` in `education.json` (disputed, unconfirmed or single-source).
+
 **Photos** are hotlinked from senate.gov.ph in the visitor's browser (scripts get HTTP 403, so they are not downloaded or stored here). If an image fails, the initials avatar stays. Confirm reuse terms with the Senate.
 
 ## Refreshing the data (manual)
