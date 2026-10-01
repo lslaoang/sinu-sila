@@ -1,0 +1,462 @@
+[
+ {
+  "id": "win-gatchalian",
+  "name": "Win Gatchalian",
+  "position": "Senate President",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "GSHER"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "vicente-c-sotto-iii",
+  "name": "Vicente C. Sotto III",
+  "position": "Senate President Pro Tempore",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "SVICE"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "juan-miguel-f-zubiri",
+  "name": "Juan Miguel F. Zubiri",
+  "position": "Senate Majority Leader",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "ZJMIG",
+   "ZMIGU"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "alan-peter-s-cayetano",
+  "name": "Alan Peter S. Cayetano",
+  "position": "Senate Minority Leader",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "CALAN"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "paolo-benigno-aquino-iv",
+  "name": "Paolo Benigno \"Bam\" Aquino IV",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "BAQUI",
+   "APAOL"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "pia-s-cayetano",
+  "name": "Pia S. Cayetano",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "CPIAS"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "ronald-m-dela-rosa",
+  "name": "Ronald \"Bato\" M. Dela Rosa",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "DRONA"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "joseph-victor-g-ejercito",
+  "name": "Joseph Victor \"JV\" G. Ejercito",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "JVEJE",
+   "EVICT",
+   "EJOSE"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "francis-g-escudero",
+  "name": "Francis \"Chiz\" G. Escudero",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "EFRAN"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "jinggoy-ejercito-estrada",
+  "name": "Jinggoy Ejercito Estrada",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "EJING"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "christopher-lawrence-t-go",
+  "name": "Christopher Lawrence T. Go",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "GCHRI"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "risa-hontiveros",
+  "name": "Risa Hontiveros",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "HANAT"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "panfilo-m-lacson",
+  "name": "Panfilo \"Ping\" M. Lacson",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "LPANF"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "manuel-m-lapid",
+  "name": "Manuel \"Lito\" M. Lapid",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "LMANU"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "loren-legarda",
+  "name": "Loren Legarda",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "LLORE"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "rodante-d-marcoleta",
+  "name": "Rodante D. Marcoleta",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "MRODA"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "imee-r-marcos",
+  "name": "Imee R. Marcos",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "MIMEE"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "robinhood-c-padilla",
+  "name": "Robinhood C. Padilla",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "PROBI"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "francis-pangilinan",
+  "name": "Francis \"Kiko\" Pangilinan",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "PFRAN"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "erwin-t-tulfo",
+  "name": "Erwin T. Tulfo",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "TERWI"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "raffy-t-tulfo",
+  "name": "Raffy T. Tulfo",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "TRAFF"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "joel-villanueva",
+  "name": "Joel Villanueva",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "VEMMA"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "camille-a-villar",
+  "name": "Camille A. Villar",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "VCAMI"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ },
+ {
+  "id": "mark-a-villar",
+  "name": "Mark A. Villar",
+  "position": "Senator",
+  "chamber": "Senate",
+  "term": "20th Congress",
+  "lis_codes": [
+   "VMARK"
+  ],
+  "records": [
+   {
+    "type": "membership",
+    "title": "Member of the Senate, 20th Congress",
+    "date": "2025-07-01",
+    "source_url": "https://senate.gov.ph/senators/20-congress-senators",
+    "retrieved": "2026-10-01"
+   }
+  ]
+ }
+]
