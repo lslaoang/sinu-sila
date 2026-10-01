@@ -19,8 +19,12 @@ Deploy anywhere static (GitHub Pages, Netlify, Cloudflare Pages). No build step.
 |---|---|---|
 | `data/officials.json` | Senators: name, position, `lis_codes`, records (each with `source_url`, `retrieved`) | https://senate.gov.ph/senators/20-congress-senators |
 | `data/bills.json` | Per senator: total bills, count per month, count per status, 5 latest bills | https://senate.gov.ph/legislative-documents/bills |
+| `data/laws.json` | Bills approved by the President / lapsed into law / enrolled, with the Senate's author, co-author and co-sponsor roles | https://senate.gov.ph/legislative-documents/bills (filtered by status) |
+| `photo` in `officials.json` | Senator photo URL on senate.gov.ph | `/hq/senators/congress/28` (`image_upload.file_url`) |
 
-"Authored" means the Senate lists the senator as the bill's author. Co-authored bills are not counted. "Signed into law" means the Senate's status is "Approved by the President", not cross-checked against Republic Act records.
+"Bills authored" counts bills where the Senate lists the senator as author. "Laws backed" counts enacted bills (approved by the President, lapsed into law, or consolidated with a law) where the senator is author, co-author or co-sponsor, and the profile shows which role. A Senate bill folded into another bill is not detected unless the Senate marks it so. The Senate's own per-senator stats (`bills_passed_into_law`, `authored_bills`) are stale (all zero for laws), so they are not used.
+
+**Photos** are hotlinked from senate.gov.ph in the visitor's browser (scripts get HTTP 403, so they are not downloaded or stored here). If an image fails, the initials avatar stays. Confirm reuse terms with the Senate.
 
 ## Refreshing the data (manual)
 
@@ -35,6 +39,8 @@ To refresh, open https://senate.gov.ph in a browser, run the fetches from the pa
 - Some titles contain Cyrillic look-alike characters as HTML entities (`&#1057;`). Normalize to plain letters.
 - A few senators have several `lis_code`s. Query each and de-duplicate by bill `id`.
 - After rebuilding, check that each senator's per-month counts and per-status counts sum to `total`.
+- Senator ids come from `officials.json` (`francis-pangilinan`, not `francis-kiko-pangilinan`). `validate.py` fails if `bills.json` or `laws.json` use an unknown id.
+- Law roles: fetch `/lis/documents_v2?document_type=bills&congress=20th+Congress&status_code=<code>` for codes `6-200`, `6-210`, `6-220`, `6-320`, `4-590`; the `author`, `coAuthor`, `coSponsor` fields hold the roles.
 
 ## Before launch
 

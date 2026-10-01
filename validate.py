@@ -22,5 +22,19 @@ for o in json.load(open("data/officials.json")):
         elif not r["source_url"].startswith("http"):
             errors.append(f"{oid}[{i}]: source_url must be http(s)")
 
+ids = {o["id"] for o in json.load(open("data/officials.json"))}
+bills = json.load(open("data/bills.json"))
+for k in bills:
+    if k != "_meta" and k not in ids:
+        errors.append(f"bills.json: unknown senator id {k}")
+for k in ids - set(bills):
+    errors.append(f"bills.json: no data for {k}")
+for l in json.load(open("data/laws.json"))["bills"]:
+    for role in ("author", "coAuthors", "coSponsors"):
+        errors += [f"laws.json {l['no']}: unknown id {i}" for i in l[role] if i not in ids]
+for o in json.load(open("data/officials.json")):
+    if not o.get("photo", "").startswith("https://senate.gov.ph/"):
+        errors.append(f"{o['id']}: missing photo")
+
 print("\n".join(errors) or "ok")
 sys.exit(bool(errors))

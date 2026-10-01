@@ -1,0 +1,261 @@
+{
+ "_meta": {
+  "congress": "20th Congress",
+  "retrieved": "2026-10-01",
+  "source": "https://senate.gov.ph/legislative-documents/bills",
+  "note": "Bills the Senate lists as approved by the President, lapsed into law, consolidated with a law, or enrolled and sent to Malacanang. Roles are the Senate's author / co-author / co-sponsor fields. House bills with no listed senator role are omitted. A Senate bill folded into another bill is not detected unless the Senate marks it so."
+ },
+ "bills": [
+  {
+   "no": "SBN-1483",
+   "title": "EXTENDING THE DURATION OF SECOND CONGRESSIONAL COMMISSION ON EDUCATION (EDCOM II)",
+   "status": "Approved by the President",
+   "id": "610282",
+   "author": [
+    "alan-peter-s-cayetano"
+   ],
+   "coAuthors": [
+    "win-gatchalian",
+    "vicente-c-sotto-iii",
+    "juan-miguel-f-zubiri",
+    "paolo-benigno-aquino-iv",
+    "pia-s-cayetano",
+    "ronald-m-dela-rosa",
+    "joseph-victor-g-ejercito",
+    "francis-g-escudero",
+    "jinggoy-ejercito-estrada",
+    "christopher-lawrence-t-go",
+    "risa-hontiveros",
+    "panfilo-m-lacson",
+    "manuel-m-lapid",
+    "loren-legarda",
+    "rodante-d-marcoleta",
+    "imee-r-marcos",
+    "robinhood-c-padilla",
+    "francis-pangilinan",
+    "erwin-t-tulfo",
+    "raffy-t-tulfo",
+    "joel-villanueva",
+    "camille-a-villar",
+    "mark-a-villar"
+   ],
+   "coSponsors": [
+    "paolo-benigno-aquino-iv",
+    "pia-s-cayetano",
+    "christopher-lawrence-t-go",
+    "risa-hontiveros",
+    "robinhood-c-padilla",
+    "francis-pangilinan",
+    "joel-villanueva"
+   ]
+  },
+  {
+   "no": "SBN-1719",
+   "title": "PHILIPPINE VETERANS' MONTH ACT",
+   "status": "Approved by the President",
+   "id": "615634",
+   "author": [
+    "loren-legarda"
+   ],
+   "coAuthors": [],
+   "coSponsors": []
+  },
+  {
+   "no": "SBN-1823",
+   "title": "RESETTING THE FIRST REGULAR ELECTIONS IN THE BANGSAMORO AUTONOMOUS REGION IN MUSLIM MINDANAO",
+   "status": "Approved by the President",
+   "id": "617567",
+   "author": [
+    "juan-miguel-f-zubiri"
+   ],
+   "coAuthors": [
+    "win-gatchalian",
+    "joseph-victor-g-ejercito",
+    "jinggoy-ejercito-estrada",
+    "christopher-lawrence-t-go",
+    "loren-legarda",
+    "imee-r-marcos",
+    "robinhood-c-padilla",
+    "erwin-t-tulfo",
+    "joel-villanueva"
+   ],
+   "coSponsors": [
+    "win-gatchalian",
+    "joseph-victor-g-ejercito",
+    "jinggoy-ejercito-estrada",
+    "christopher-lawrence-t-go",
+    "loren-legarda",
+    "robinhood-c-padilla",
+    "erwin-t-tulfo",
+    "joel-villanueva"
+   ]
+  },
+  {
+   "no": "SBN-1894",
+   "title": "UNIVERSAL ACCESS TO QUALITY TERTIARY EDUCATION ACT",
+   "status": "Approved by the President",
+   "id": "619284",
+   "author": [
+    "pia-s-cayetano"
+   ],
+   "coAuthors": [
+    "win-gatchalian",
+    "paolo-benigno-aquino-iv",
+    "joseph-victor-g-ejercito",
+    "francis-g-escudero",
+    "jinggoy-ejercito-estrada",
+    "christopher-lawrence-t-go",
+    "risa-hontiveros",
+    "loren-legarda",
+    "robinhood-c-padilla",
+    "francis-pangilinan",
+    "raffy-t-tulfo",
+    "joel-villanueva",
+    "mark-a-villar"
+   ],
+   "coSponsors": [
+    "pia-s-cayetano",
+    "joseph-victor-g-ejercito",
+    "jinggoy-ejercito-estrada",
+    "christopher-lawrence-t-go",
+    "risa-hontiveros",
+    "robinhood-c-padilla",
+    "joel-villanueva"
+   ]
+  },
+  {
+   "no": "SBN-1937",
+   "title": "LAST MILE AND GIDA SCHOOLS ACT",
+   "status": "Approved by the President",
+   "id": "621069",
+   "author": [
+    "loren-legarda"
+   ],
+   "coAuthors": [
+    "juan-miguel-f-zubiri",
+    "paolo-benigno-aquino-iv",
+    "jinggoy-ejercito-estrada",
+    "risa-hontiveros",
+    "robinhood-c-padilla",
+    "francis-pangilinan",
+    "erwin-t-tulfo",
+    "raffy-t-tulfo",
+    "joel-villanueva",
+    "mark-a-villar"
+   ],
+   "coSponsors": [
+    "juan-miguel-f-zubiri",
+    "pia-s-cayetano",
+    "jinggoy-ejercito-estrada",
+    "christopher-lawrence-t-go",
+    "risa-hontiveros",
+    "francis-pangilinan",
+    "raffy-t-tulfo",
+    "joel-villanueva",
+    "mark-a-villar"
+   ]
+  },
+  {
+   "no": "SBN-1982",
+   "title": "AUTOMATIC SUSPENSION OR REDUCTION OF EXCISE TAX ON PETROLEUM PRODUCTS",
+   "status": "Approved by the President",
+   "id": "622541",
+   "author": [
+    "joseph-victor-g-ejercito"
+   ],
+   "coAuthors": [
+    "alan-peter-s-cayetano",
+    "paolo-benigno-aquino-iv",
+    "pia-s-cayetano",
+    "francis-g-escudero",
+    "jinggoy-ejercito-estrada",
+    "christopher-lawrence-t-go",
+    "manuel-m-lapid",
+    "loren-legarda",
+    "imee-r-marcos",
+    "francis-pangilinan",
+    "erwin-t-tulfo",
+    "joel-villanueva",
+    "camille-a-villar"
+   ],
+   "coSponsors": [
+    "paolo-benigno-aquino-iv",
+    "joseph-victor-g-ejercito",
+    "jinggoy-ejercito-estrada",
+    "christopher-lawrence-t-go",
+    "loren-legarda",
+    "robinhood-c-padilla",
+    "francis-pangilinan",
+    "erwin-t-tulfo",
+    "joel-villanueva",
+    "camille-a-villar"
+   ]
+  },
+  {
+   "no": "HBN-4058",
+   "title": "GENERAL APPROPRIATIONS ACT 2026",
+   "status": "Approved by the President, vetoed other parts",
+   "id": "609493",
+   "author": [],
+   "coAuthors": [],
+   "coSponsors": [
+    "pia-s-cayetano",
+    "ronald-m-dela-rosa",
+    "joseph-victor-g-ejercito",
+    "jinggoy-ejercito-estrada",
+    "christopher-lawrence-t-go",
+    "loren-legarda",
+    "imee-r-marcos",
+    "francis-pangilinan",
+    "erwin-t-tulfo",
+    "camille-a-villar",
+    "mark-a-villar"
+   ]
+  },
+  {
+   "no": "HBN-6641",
+   "title": "PHILIPPINE CITIZENSHIP TO ELIZABETH JEANETTE MEANS",
+   "status": "Lapsed into law",
+   "id": "613454",
+   "author": [],
+   "coAuthors": [],
+   "coSponsors": [
+    "pia-s-cayetano",
+    "jinggoy-ejercito-estrada",
+    "christopher-lawrence-t-go",
+    "risa-hontiveros"
+   ]
+  },
+  {
+   "no": "SBN-1899",
+   "title": "PEDAGOGICAL APPROACHES IN THE BASIC EDUCATION CURRICULUM",
+   "status": "Consolidated with a bill that lapsed into law",
+   "id": "619307",
+   "author": [
+    "loren-legarda"
+   ],
+   "coAuthors": [
+    "win-gatchalian",
+    "paolo-benigno-aquino-iv",
+    "joel-villanueva"
+   ],
+   "coSponsors": []
+  },
+  {
+   "no": "SBN-2387",
+   "title": "FIXING THE TERM OF OFFICE OF THE BARANGAY OFFICIALS AND MEMBERS OF THE SK",
+   "status": "Enrolled copy sent to Malacañang (awaiting signature)",
+   "id": "633418",
+   "author": [
+    "francis-g-escudero"
+   ],
+   "coAuthors": [
+    "imee-r-marcos",
+    "robinhood-c-padilla"
+   ],
+   "coSponsors": [
+    "robinhood-c-padilla"
+   ]
+  }
+ ]
+}
