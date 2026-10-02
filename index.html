@@ -144,7 +144,7 @@ const av = (n, photo, eager) => `<div class="av" style="background:hsl(${hue(n)}
 const ICON = {membership:'🏛️', bill:'📜', vote:'🗳️', saln:'💼', campaign_finance:'💸', audit:'🔎', case:'⚖️', appointment:'📌'};
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const app = document.getElementById('app'), q = document.getElementById('q'), tip = document.getElementById('tip');
-let data = [], house = [], houseMeta = {}, bills = {}, laws = {bills: []}, edu = {};
+let data = [], house = [], houseMeta = {}, bills = {}, laws = {bills: []}, edu = {}, fam = {};
 const state = {lens: 'bills', school: null, q: '', leaders: false, sort: 'az', hk: 'all', hp: null};
 
 const firstName = n => clean(n).split(' ')[0];
@@ -303,7 +303,7 @@ function home() {
       ${chip('data-sort', 'az', 'A–Z', true)}${chip('data-sort', 'bills', 'Most bills', false)}${chip('data-sort', 'laws', 'Most laws', false)}</div>
     <ul class="wall" id="wall"></ul>
     <h2 class="sec rv" id="house">House of Representatives <small>${house.length} members · first-pass data</small></h2>
-    <p class="note">Roster from Wikipedia, being cross-checked against a second source. Bills, laws and education for House members are not included yet.</p>
+    <p class="note">Roster from Wikipedia. A 32-member audit against news and election sources found every seat consistent. Party labels are “as of” the roster date, since members switch parties, and leadership roles are incomplete. Bills, laws and education for House members are not included yet.</p>
     <div class="chips rv" role="group" aria-label="Filter the House">${KINDS.map(([k, l]) => chip('data-hk', k, l, k === 'all')).join('')}<span class="sp"></span>
       ${topParties.map(([p, n]) => chip('data-hp', p, `${esc(p)}<small>${n}</small>`, false)).join('')}</div>
     <p class="info" id="houseInfo" aria-live="polite" style="text-align:left;min-height:0"></p>
@@ -349,6 +349,12 @@ function billsHtml(id) {
       <b>${esc(title(t))}</b><br><small>${esc(no)} · filed ${esc(d)}</small> <span class="pill">${esc(bucketOf(st))}</span></a>`).join('')}
     <p class="note">Bills where this senator is listed as author, 20th Congress. Source: <a href="${esc(bills._meta.source)}" target="_blank" rel="noopener">Senate Legislative Information System</a>, retrieved ${esc(bills._meta.retrieved)}.</p>`;
 }
+function famHtml(o) {
+  const ls = fam[o.id]; if (!ls) return '';
+  return `<h3 class="h">Political families</h3>
+    <p>Pulitiklan, a map of Philippine political families, lists ${esc(clean(o.name))} in: ${ls.map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.place)} family ↗<span class="sr"> (opens Pulitiklan)</span></a>`).join(', ')}.</p>
+    <p class="note">A link out only: we do not copy Pulitiklan's data. Relationships and their evidence are on their page. Matched by surname and place, with the name found on the page.</p>`;
+}
 function houseProfile(o) {
   const since = o.records[0]?.date;
   app.innerHTML = `<a class="back" href="#">← All lawmakers</a>
@@ -357,8 +363,9 @@ function houseProfile(o) {
     <div class="tiles">
       <div class="tile txt"><strong>${esc(o.party)}</strong><span>${o.kind === 'party-list' ? 'party-list group' : 'party'}</span></div>
       <div class="tile txt"><strong>${esc(o.bloc || '–')}</strong><span>bloc</span></div>
-      <div class="tile txt"><strong>${since ? esc(dayLabel(since)) : '–'}</strong><span>took office${since ? ', ' + esc(since.slice(0, 4)) : ''}</span></div></div>
-    <h3 class="h">Record</h3>${recordsHtml(o)}
+      <div class="tile txt"><strong>${{district: 'District', 'at-large': 'At-large', 'party-list': 'Party-list'}[o.kind] || '–'}</strong><span>seat type</span></div></div>
+    <p class="note">Party and bloc as listed on Wikipedia on ${esc(o.records[0]?.retrieved || '')}. Members change parties during a term (several did in 2026), so check before relying on it.</p>
+    ${famHtml(o)}<h3 class="h">Record</h3>${recordsHtml(o)}
     <p class="note">${o.wikipedia ? `More about ${esc(clean(o.name))}: <a href="${esc(o.wikipedia)}" target="_blank" rel="noopener">Wikipedia ↗</a>. ` : ''}${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a> (see the file page for author and licence).` : ''}</p>
     <div class="soon">Bills, laws, education and more for House members are coming soon.</div>`;
 }
@@ -375,7 +382,7 @@ function profile(o) {
       <div class="tile"><strong>${lawCount(o.id)}</strong><span>laws backed (any role)</span></div>
       <div class="tile"><strong>${esc(dayLabel(checked))}</strong><span>data checked, ${esc(checked.slice(0, 4))}</span></div></div>
     ${eduHtml(o.id)}${lawsHtml(o.id)}${billsHtml(o.id)}
-    <h3 class="h">Record</h3>${recordsHtml(o)}
+    ${famHtml(o)}<h3 class="h">Record</h3>${recordsHtml(o)}
     <div class="soon">Votes, SALN and more are coming soon.</div>`;
 }
 
@@ -417,8 +424,9 @@ document.querySelector('.top').onclick = e => { const b = e.target.closest('[dat
 q.oninput = () => { state.q = q.value; if (location.hash) location.hash = ''; else updateAll(); };
 onhashchange = route;
 function load() {
-  Promise.all(['data/officials.json', 'data/house.json', 'data/bills.json', 'data/laws.json', 'data/education.json'].map(u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); })))
-    .then(([d, h, b, l, e]) => { data = d.map(o => ({body: 'senate', constituency: 'Nationwide', ...o})); house = h.people; houseMeta = h._meta; bills = b; laws = l; edu = e; buildGroups(); route(); })
+  Promise.all(['data/officials.json', 'data/house.json', 'data/bills.json', 'data/laws.json', 'data/education.json', 'data/pulitiklan.json'].map(u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); }).catch(e => { if (/pulitiklan/.test(u)) return {links: {}}; throw e; })))
+    
+    .then(([d, h, b, l, e, f]) => { fam = f.links; data = d.map(o => ({body: 'senate', constituency: 'Nationwide', ...o})); house = h.people; houseMeta = h._meta; bills = b; laws = l; edu = e; buildGroups(); route(); })
     .catch(() => { app.removeAttribute('aria-busy'); app.innerHTML = '<div class="err" role="alert"><b>Couldn’t load the records.</b><p>Check your connection and try again.</p><button class="chip" data-f="retry">Retry</button></div>'; });
 }
 load();

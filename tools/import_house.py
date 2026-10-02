@@ -101,7 +101,7 @@ def main():
         p = {"id": pid, "name": name, "body": "house", "chamber": "House of Representatives", "position": leaders.get(name, "Representative"),
              "constituency": con["label"], "kind": con["kind"], "place": con["place"], "district": con["district"],
              "party": party, "bloc": bloc, "term": "20th Congress",
-             "records": [{"type": "membership", "title": f"Representative, {con['label']}, 20th Congress", "date": since or "2025-06-30",
+             "records": [{"type": "membership", "title": f"Representative, {con['label']}, 20th Congress", "date": max(since or "2025-06-30", "2025-06-30"),   # start of service in the 20th Congress; Wikipedia's own "took office" proved unreliable in the audit
                           "source_url": src, "retrieved": TODAY}]}
         if art: p["wikipedia"] = "https://en.wikipedia.org" + art
         if ph: p["photo"], p["photo_credit_url"] = ph, credit

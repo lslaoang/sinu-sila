@@ -65,5 +65,12 @@ for p in house:
     if p.get("photo") and not p.get("photo_credit_url", "").startswith("https://commons.wikimedia.org/"):
         errors.append(f"house.json {pid}: photo without a Commons credit link")
 
+import os
+if os.path.exists("data/pulitiklan.json"):
+    for k, ls in json.load(open("data/pulitiklan.json"))["links"].items():
+        if k not in hseen:
+            errors.append(f"pulitiklan.json: unknown id {k}")
+        errors += [f"pulitiklan.json {k}: bad url {l['url']}" for l in ls if not l["url"].startswith("https://pulitiklan.com/pamilya/")]
+
 print("\n".join(errors) or "ok")
 sys.exit(bool(errors))
