@@ -28,6 +28,9 @@
   .hlist{list-style:none;padding:0;margin:0 0 1rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:.35rem .75rem}
   .hrow{display:grid;grid-template-columns:2.6rem 1fr;gap:.05rem .7rem;align-items:center;padding:.5rem;border-radius:var(--r);text-decoration:none;color:var(--ink);border:1px solid transparent}
   .hrow:hover{border-color:var(--ink);background:var(--paper)} .hrow .av{width:2.6rem;height:2.6rem;font-size:.85rem;grid-row:span 2} .hn b{line-height:1.2} .hm{color:var(--mute);font-size:.85rem}
+  .case{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:.9rem 1rem;margin:.75rem 0}
+  .case .ch{display:flex;flex-wrap:wrap;gap:.4rem .5rem;align-items:center;margin-bottom:.2rem} .case small{color:var(--mute)}
+  .ev{list-style:none;padding:0;margin:.8rem 0 0;border-left:3px solid var(--line)} .ev li{padding:0 0 .8rem .9rem} .ev time{display:block;font-weight:700;font-size:.85rem;color:var(--mute)} .ev .srcs{text-align:left;margin-top:.2rem}
   .tile.txt strong{font-size:clamp(1.15rem,3.2vw,1.7rem);white-space:normal;line-height:1.15}
   /* long words (e.g. party-list names like Malasakit@Bayanihan) must wrap, never spill into a neighbour */
   .tiles>*,.facts>*,.hlist>*,.wall>*,.two>*,.phero>div{min-width:0}
@@ -148,7 +151,7 @@ const av = (n, photo, eager) => `<div class="av" style="background:hsl(${hue(n)}
 const ICON = {membership:'🏛️', bill:'📜', vote:'🗳️', saln:'💼', campaign_finance:'💸', audit:'🔎', case:'⚖️', appointment:'📌'};
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const app = document.getElementById('app'), q = document.getElementById('q'), tip = document.getElementById('tip');
-let data = [], house = [], houseMeta = {}, bills = {}, laws = {bills: []}, edu = {}, fam = {};
+let data = [], house = [], houseMeta = {}, bills = {}, laws = {bills: []}, edu = {}, fam = {}, cases = {_meta: {checked: {}}, cases: {}};
 const state = {lens: 'bills', school: null, q: '', leaders: false, sort: 'az', hk: 'all', hp: null};
 
 const firstName = n => clean(n).split(' ')[0];
@@ -320,7 +323,7 @@ function home() {
 }
 
 /* ---------- profile ---------- */
-const NAMES = [[/wikipedia/, 'Wikipedia'], [/senatorpiacayetano/, 'Pia Cayetano\'s own CV (archived 2016)'], [/votepilipinas/, 'Vote Pilipinas (archived 2022)'], [/senate\.gov\.ph/, 'Senate profile'], [/gmanetwork/, 'GMA News'], [/halalan\.up/, 'UP sa Halalan'], [/philstar/, 'Philstar'], [/lorenlegarda/, "Legarda's office (self-published)"], [/atenews/, 'Atenews'], [/positivelyfilipino/, 'Positively Filipino'], [/verafiles/, 'Vera Files'], [/tsek/, 'Tsek.ph'], [/canvas\.ph/, 'Canvas.ph'], [/martiallaw/, 'Martial Law Chronicles'], [/bluevote/, 'ADDU BlueVote'], [/benildean/, 'The Benildean'], [/lifestyleasia/, 'Lifestyle Asia'], [/ust\.edu/, 'UST'], [/mmsu/, 'MMSU'], [/pccr/, 'PCCR']];
+const NAMES = [[/wikipedia/, 'Wikipedia'], [/tribune\.net/, 'Daily Tribune'], [/politiko/, 'Politiko'], [/inquirer/, 'Inquirer'], [/rappler/, 'Rappler'], [/sunstar/, 'SunStar'], [/pna\.gov/, 'PNA'], [/mb\.com/, 'Manila Bulletin'], [/abs-cbn/, 'ABS-CBN'], [/manilatimes/, 'Manila Times'], [/ombudsman\.gov/, 'Office of the Ombudsman'], [/judiciary\.gov|lawphil/, 'Court record'], [/senatorpiacayetano/, 'Pia Cayetano\'s own CV (archived 2016)'], [/votepilipinas/, 'Vote Pilipinas (archived 2022)'], [/senate\.gov\.ph/, 'Senate profile'], [/gmanetwork/, 'GMA News'], [/halalan\.up/, 'UP sa Halalan'], [/philstar/, 'Philstar'], [/lorenlegarda/, "Legarda's office (self-published)"], [/atenews/, 'Atenews'], [/positivelyfilipino/, 'Positively Filipino'], [/verafiles/, 'Vera Files'], [/tsek/, 'Tsek.ph'], [/canvas\.ph/, 'Canvas.ph'], [/martiallaw/, 'Martial Law Chronicles'], [/bluevote/, 'ADDU BlueVote'], [/benildean/, 'The Benildean'], [/lifestyleasia/, 'Lifestyle Asia'], [/ust\.edu/, 'UST'], [/mmsu/, 'MMSU'], [/pccr/, 'PCCR']];
 const LEVELS = ['Basic', 'College', 'Law', 'Graduate', 'Military', 'Honorary', 'Other'];
 function eduHtml(id) {
   const items = (edu[id] || []).slice().sort((a, b) => LEVELS.indexOf(a.level) - LEVELS.indexOf(b.level));
@@ -353,6 +356,19 @@ function billsHtml(id) {
       <b>${esc(title(t))}</b><br><small>${esc(no)} · filed ${esc(d)}</small> <span class="pill">${esc(bucketOf(st))}</span></a>`).join('')}
     <p class="note">Bills where this senator is listed as author, 20th Congress. Source: <a href="${esc(bills._meta.source)}" target="_blank" rel="noopener">Senate Legislative Information System</a>, retrieved ${esc(bills._meta.retrieved)}.</p>`;
 }
+const KIND = {criminal: 'Criminal', administrative: 'Administrative', election: 'Election', other: 'Other'};
+const STATUS = {filed: 'Filed', pending: 'Pending', suspended: 'Suspended', appealed: 'On appeal', dismissed: 'Dismissed', acquitted: 'Acquitted', convicted: 'Convicted', decided: 'Decided'};
+const srcName = u => (NAMES.find(([re]) => re.test(u)) || [0, new URL(u).hostname.replace(/^www\./, '')])[1];
+function casesHtml(o) {
+  const list = cases.cases[o.id] || [], checked = cases._meta.checked[o.id];
+  const links = e => e.sources.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(srcName(u))}<span class="sr"> (opens in a new tab)</span> ↗</a>`).join(' · ');
+  const body = list.length ? `<p class="note">These are public records. A charge or complaint is an allegation, and a person is presumed innocent unless a court convicts them. A preventive suspension is not a finding of guilt. Dismissals, acquittals and the person's own response are included when reported. Status is as of the date shown.</p>`
+      + list.map(c => `<article class="case"><div class="ch"><span class="pill">${esc(STATUS[c.status] || c.status)}</span><span class="pill">${esc(KIND[c.kind] || c.kind)}</span><b>${esc(c.title)}</b></div>
+        <small>${esc(c.body)} · ${esc(c.role)} · status as of ${esc(c.status_date || '')}</small>
+        <ol class="ev">${c.events.map(e => `<li><time>${esc(e.date)}</time>${esc(e.text)}<div class="srcs">${links(e)}</div></li>`).join('')}</ol></article>`).join('')
+    : checked ? `<p class="soon">No court cases found in the sources checked on ${esc(checked)}.</p>` : `<p class="soon">Court cases: not yet checked.</p>`;
+  return `<h3 class="h">Court cases and proceedings</h3>${body}`;
+}
 function famHtml(o) {
   const ls = fam[o.id]; if (!ls) return '';
   return `<h3 class="h">Political families</h3>
@@ -369,7 +385,7 @@ function houseProfile(o) {
       <div class="tile txt"><strong>${esc(o.bloc || '–')}</strong><span>bloc</span></div>
       <div class="tile txt"><strong>${{district: 'District', 'at-large': 'At-large', 'party-list': 'Party-list'}[o.kind] || '–'}</strong><span>seat type</span></div></div>
     <p class="note">Party and bloc as listed on Wikipedia on ${esc(o.records[0]?.retrieved || '')}. Members change parties during a term (several did in 2026), so check before relying on it.</p>
-    ${famHtml(o)}<h3 class="h">Record</h3>${recordsHtml(o)}
+    ${casesHtml(o)}${famHtml(o)}<h3 class="h">Record</h3>${recordsHtml(o)}
     <p class="note">${o.wikipedia ? `More about ${esc(clean(o.name))}: <a href="${esc(o.wikipedia)}" target="_blank" rel="noopener">Wikipedia ↗</a>. ` : ''}${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a> (see the file page for author and licence).` : ''}</p>
     <div class="soon">Bills, laws, education and more for House members are coming soon.</div>`;
 }
@@ -386,7 +402,7 @@ function profile(o) {
       <div class="tile"><strong>${lawCount(o.id)}</strong><span>laws backed (any role)</span></div>
       <div class="tile"><strong>${esc(dayLabel(checked))}</strong><span>data checked, ${esc(checked.slice(0, 4))}</span></div></div>
     ${eduHtml(o.id)}${lawsHtml(o.id)}${billsHtml(o.id)}
-    ${famHtml(o)}<h3 class="h">Record</h3>${recordsHtml(o)}
+    ${casesHtml(o)}${famHtml(o)}<h3 class="h">Record</h3>${recordsHtml(o)}
     <div class="soon">Votes, SALN and more are coming soon.</div>`;
 }
 
@@ -428,9 +444,9 @@ document.querySelector('.top').onclick = e => { const b = e.target.closest('[dat
 q.oninput = () => { state.q = q.value; if (location.hash) location.hash = ''; else updateAll(); };
 onhashchange = route;
 function load() {
-  Promise.all(['data/officials.json', 'data/house.json', 'data/bills.json', 'data/laws.json', 'data/education.json', 'data/pulitiklan.json'].map(u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); }).catch(e => { if (/pulitiklan/.test(u)) return {links: {}}; throw e; })))
+  Promise.all(['data/officials.json', 'data/house.json', 'data/bills.json', 'data/laws.json', 'data/education.json', 'data/pulitiklan.json', 'data/cases.json'].map(u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); }).catch(e => { if (/pulitiklan/.test(u)) return {links: {}}; if (/cases/.test(u)) return {_meta: {checked: {}}, cases: {}}; throw e; })))
     
-    .then(([d, h, b, l, e, f]) => { fam = f.links; data = d.map(o => ({body: 'senate', constituency: 'Nationwide', ...o})); house = h.people; houseMeta = h._meta; bills = b; laws = l; edu = e; buildGroups(); route(); })
+    .then(([d, h, b, l, e, f, cs]) => { fam = f.links; cases = cs; data = d.map(o => ({body: 'senate', constituency: 'Nationwide', ...o})); house = h.people; houseMeta = h._meta; bills = b; laws = l; edu = e; buildGroups(); route(); })
     .catch(() => { app.removeAttribute('aria-busy'); app.innerHTML = '<div class="err" role="alert"><b>Couldn’t load the records.</b><p>Check your connection and try again.</p><button class="chip" data-f="retry">Retry</button></div>'; });
 }
 load();

@@ -1,0 +1,54 @@
+{
+ "_meta": {
+  "retrieved": "2026-10-02",
+  "policy": "Court, Ombudsman and election proceedings involving a lawmaker, with each event linked to its source. A charge or complaint is an allegation; a person is presumed innocent unless a court convicts. Dismissals, acquittals and the person's own response are recorded alongside charges. A case needs two independent outlets unless an official court or Ombudsman page is cited. Wording is neutral and limited to what the sources state.",
+  "scope": "Criminal, administrative and election cases, and rulings on a lawmaker's public acts. Private family or business disputes are left out unless they became a public-office matter.",
+  "checked": {
+   "bong-rivera": "2026-10-02",
+   "jojo-ang": "2026-10-02"
+  }
+ },
+ "cases": {
+  "bong-rivera": [
+   {
+    "id": "rivera-sandiganbayan-graft-2026",
+    "kind": "criminal",
+    "body": "Sandiganbayan (cases filed by the Office of the Ombudsman)",
+    "title": "Nine counts of graft (Anti-Graft and Corrupt Practices Act, Sec. 3(h)) over alleged conflict of interest in flood-control projects",
+    "role": "accused",
+    "status": "pending",
+    "status_date": "2026-09-30",
+    "events": [
+     {"date": "2026-08-07",
+      "text": "The Ombudsman said it had filed nine counts of graft before the Sandiganbayan against Rep. Noel Rivera over alleged conflict of interest in connection with the flood-control projects scandal. The counts were raffled to six divisions of the court. GMA reported it was still seeking his comment.",
+      "sources": ["https://www.gmanetwork.com/news/topstories/nation/997720/ombudsman-files-9-graft-counts-against-tarlac-congressman-noel-rivera/story/", "https://tribune.net.ph/2026/08/07/ombudsman-slaps-9-graft-raps-vs-tarlac-solon"]},
+     {"date": "2026-09-06",
+      "text": "The Sandiganbayan Sixth Division denied his motions to quash two of the counts, ruling the informations valid.",
+      "sources": ["https://www.gmanetwork.com/news/topstories/nation/1004289/sandiganbayan-suspends-tarlac-solon-for-90-days-over-graft/story/"]},
+     {"date": "2026-09-29",
+      "text": "The Sixth Division ordered his preventive suspension for 90 days as a member of the House of Representatives, under Sec. 13 of the Anti-Graft and Corrupt Practices Act (resolution dated September 29, released September 30).",
+      "sources": ["https://www.gmanetwork.com/news/topstories/nation/1004289/sandiganbayan-suspends-tarlac-solon-for-90-days-over-graft/story/"]}
+    ]
+   }
+  ],
+  "jojo-ang": [
+   {
+    "id": "ang-sandiganbayan-graft-2026",
+    "kind": "criminal",
+    "body": "Sandiganbayan (cases filed by the Office of the Ombudsman)",
+    "title": "14 counts of graft (Anti-Graft and Corrupt Practices Act, Sec. 3(h)) over alleged financial interest in a construction firm",
+    "role": "accused",
+    "status": "pending",
+    "status_date": "2026-09-21",
+    "events": [
+     {"date": "2026-07-25",
+      "text": "The Ombudsman filed 14 counts of graft against Rep. James Ang Dit Ang Jr., alleging that while serving in Congress he held a pecuniary interest in Allencon Development Corporation, a construction firm that won P214 million in DPWH contracts and was paid nearly P199 million.",
+      "sources": ["https://www.philstar.com/headlines/2026/09/22/2558114/sandiganbayan-suspends-uswag-ilonggo-rep-ang-90-days", "https://visayas.politiko.com.ph/2026/09/22/sandiganbayan-suspends-rep-jojo-ang/daily-feed/"]},
+     {"date": "2026-09-21",
+      "text": "The Sandiganbayan Sixth Division ordered his preventive suspension for 90 days from the House of Representatives and any other public office, pending resolution of the graft charges. It had earlier rejected his bid to quash the information and his request to consolidate the 14 cases, which are pending before different divisions.",
+      "sources": ["https://www.philstar.com/headlines/2026/09/22/2558114/sandiganbayan-suspends-uswag-ilonggo-rep-ang-90-days", "https://visayas.politiko.com.ph/2026/09/22/sandiganbayan-suspends-rep-jojo-ang/daily-feed/"]}
+    ]
+   }
+  ]
+ }
+}

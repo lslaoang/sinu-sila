@@ -72,5 +72,37 @@ if os.path.exists("data/pulitiklan.json"):
             errors.append(f"pulitiklan.json: unknown id {k}")
         errors += [f"pulitiklan.json {k}: bad url {l['url']}" for l in ls if not l["url"].startswith("https://pulitiklan.com/pamilya/")]
 
+import re
+OFFICIAL = ("judiciary.gov.ph", "sandiganbayan.", "ombudsman.gov.ph", "lawphil.net", "comelec.gov.ph", "hret.", "set.gov.ph")
+KINDS = {"criminal", "administrative", "election", "other"}
+STATUSES = {"filed", "pending", "suspended", "appealed", "dismissed", "acquitted", "convicted", "decided"}
+ROLES = {"accused", "respondent", "petitioner", "party"}
+cdata = json.load(open("data/cases.json"))
+for k in cdata["_meta"]["checked"]:
+    if k not in hseen:
+        errors.append(f"cases.json: checked id {k} unknown")
+for k, cl in cdata["cases"].items():
+    if k not in hseen:
+        errors.append(f"cases.json: unknown id {k}")
+    if k not in cdata["_meta"]["checked"]:
+        errors.append(f"cases.json {k}: has cases but is not in _meta.checked")
+    for c in cl:
+        cid = c.get("id", "?")
+        if c.get("kind") not in KINDS or c.get("status") not in STATUSES or c.get("role") not in ROLES:
+            errors.append(f"cases.json {cid}: bad kind/status/role")
+        if not c.get("title") or not c.get("body") or not c.get("events"):
+            errors.append(f"cases.json {cid}: missing title/body/events")
+        if c.get("status") in ("dismissed", "acquitted", "convicted", "decided") and not c.get("status_date"):
+            errors.append(f"cases.json {cid}: final status needs status_date")
+        hosts = set()
+        for e in c.get("events", []):
+            if not re.fullmatch(r"\d{4}(-\d\d(-\d\d)?)?", e.get("date", "")) or not e.get("text") or not e.get("sources"):
+                errors.append(f"cases.json {cid}: event needs ISO date, text and sources")
+            for u in e.get("sources", []):
+                if not u.startswith("http"): errors.append(f"cases.json {cid}: bad source {u}")
+                hosts.add(re.sub(r"^https?://(www\.)?([^/]+).*", r"\2", u))
+        if len(hosts) < 2 and not any(any(o in h for o in OFFICIAL) for h in hosts):
+            errors.append(f"cases.json {cid}: needs two independent outlets or an official court/Ombudsman source")
+
 print("\n".join(errors) or "ok")
 sys.exit(bool(errors))
