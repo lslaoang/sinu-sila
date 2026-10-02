@@ -187,6 +187,38 @@
    "ramon-nolasco": {
     "date": "2026-10-02",
     "queries": 2
+   },
+   "jinggoy-ejercito-estrada": {
+    "date": "2026-10-02",
+    "queries": 5
+   },
+   "rodante-d-marcoleta": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "francis-g-escudero": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "panfilo-m-lacson": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "christopher-lawrence-t-go": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "risa-hontiveros": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "leila-de-lima": {
+    "date": "2026-10-02",
+    "queries": 1
+   },
+   "perci-cendana": {
+    "date": "2026-10-02",
+    "queries": 1
    }
   }
  },
@@ -358,6 +390,24 @@
       "text": "Her spokesperson, Atty. Tony La Viña, said the criminal cases against Legarda and Leviste have 'zero merit' and are politically motivated, aimed at silencing Leviste.",
       "sources": [
        "https://tribune.net.ph/2026/09/14/legarda-camp-tells-ombudsman-plunder-graft-raps-wont-prosper-in-court-even-under-next-admin"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "loren-legarda-2",
+    "kind": "election",
+    "body": "Supreme Court sitting as the Presidential Electoral Tribunal (P.E.T. Case No. 003)",
+    "title": "Her electoral protest against Noli de Castro over the 2004 vice-presidential election",
+    "role": "petitioner",
+    "status": "dismissed",
+    "status_date": "2008-01-18",
+    "events": [
+     {
+      "date": "2008-01-18",
+      "text": "The Presidential Electoral Tribunal dismissed Loren Legarda's protest for lack of legal and factual basis, saying a pilot-tested revision of ballots or re-tabulation of canvass certificates would not affect the winning margin of protestee Noli de Castro, and citing abandonment or withdrawal by reason of her candidacy for, election to and assumption of the office of Senator. A second aspect had been dismissed on June 5, 2007, so the entire protest was deemed dismissed and terminated.",
+      "sources": [
+       "https://lawphil.net/judjuris/juri2008/jan2008/pet_003_2008.html"
       ]
      }
     ]
@@ -939,6 +989,284 @@
       "text": "The Senate Electoral Tribunal proclaimed Pimentel the duly elected senator over Zubiri, who had resigned a week earlier, finding that Pimentel led by 258,266 votes in its revised tally. It was the first time a new official had been proclaimed as a result of the tribunal's findings.",
       "sources": [
        "https://verafiles.org/articles/set-spurious-ballots-cocs-proved-pimentel-was-cheated"
+      ]
+     }
+    ]
+   }
+  ],
+  "jinggoy-ejercito-estrada": [
+   {
+    "id": "jinggoy-ejercito-estrada-1",
+    "kind": "criminal",
+    "body": "Sandiganbayan (Special Fifth Division)",
+    "title": "Plunder and bribery cases over alleged transfers of his pork barrel (PDAF) to non-government organizations of Janet Lim-Napoles",
+    "role": "accused",
+    "status": "acquitted",
+    "status_date": "2024-11-27",
+    "events": [
+     {
+      "date": "2024-01-19",
+      "text": "The Sandiganbayan acquitted Sen. Jinggoy Estrada of plunder for reasonable doubt, but convicted him of one count of direct bribery (8 to 9 years) and two counts of indirect bribery (2 to 3 years each), with a P3 million fine.",
+      "sources": [
+       "https://www.sunstar.com.ph/manila/jinggoy-estrada-acquitted-of-plunder-charges-convicted-of-bribery-in-pork-barrel-scam",
+       "https://www.philstar.com/headlines/2024/12/03/2404602/sandigan-affirms-jinggoy-acquittal/amp/"
+      ]
+     },
+     {
+      "date": "2024-08-22",
+      "text": "On reconsideration, the Sandiganbayan Special Fifth Division reversed the bribery convictions, clearing him of one count of direct bribery and two counts of indirect bribery for insufficient evidence. Estrada said he was deeply relieved and reiterated his innocence.",
+      "sources": [
+       "https://manilatimes.net/2024/08/24/news/national/estrada-relieved-over-sandiganbayan-reversal/1966436",
+       "https://www.philstar.com/headlines/2024/12/03/2404602/sandigan-affirms-jinggoy-acquittal/amp/"
+      ]
+     },
+     {
+      "date": "2024-11-27",
+      "text": "In a decision dated November 27, the Special Fifth Division denied the prosecutors' motion for reconsideration for lack of merit, saying it would place him in double jeopardy, so the August 22 resolution stands.",
+      "sources": [
+       "https://www.philstar.com/headlines/2024/12/03/2404602/sandigan-affirms-jinggoy-acquittal/amp/"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "jinggoy-ejercito-estrada-2",
+    "kind": "criminal",
+    "body": "Sandiganbayan (Fifth and Second Divisions)",
+    "title": "Plunder and two graft counts over alleged kickbacks of about P573 million from flood-control projects",
+    "role": "accused",
+    "status": "pending",
+    "status_date": "2026-08-04",
+    "events": [
+     {
+      "date": "2026-05-28",
+      "text": "The Office of the Ombudsman filed one plunder count and two graft counts at the Sandiganbayan against Sen. Estrada, former DPWH Secretary Manuel Bonoan and DPWH engineers over alleged kickbacks from flood-control projects. GMA noted it was the third time plunder and related charges had been filed against him in 25 years.",
+      "sources": [
+       "https://www.gmanetwork.com/news_duplicate/topstories/nation/989298/jinggoy-estrada-plunder-graft-flood-control-projects/story/",
+       "https://www.philstar.com/headlines/2026/06/01/2532002/jinggoy-estrada-ordered-arrested-plunder-flood-control-scandal/amp/"
+      ]
+     },
+     {
+      "date": "2026-05-29",
+      "text": "The Sandiganbayan Second Division ordered his arrest on the graft charge and he posted P90,000 bail the same day.",
+      "sources": [
+       "https://www.philstar.com/headlines/2026/06/01/2532002/jinggoy-estrada-ordered-arrested-plunder-flood-control-scandal/amp/"
+      ]
+     },
+     {
+      "date": "2026-06-01",
+      "text": "The Sandiganbayan Fifth Division issued an arrest warrant for plunder, a non-bailable offense when evidence of guilt is strong; bail may still be sought through a hearing.",
+      "sources": [
+       "https://www.philstar.com/headlines/2026/06/01/2532002/jinggoy-estrada-ordered-arrested-plunder-flood-control-scandal/amp/"
+      ]
+     },
+     {
+      "date": "2026-06-04",
+      "text": "The Second Division denied his omnibus motion to dismiss the graft case, suspend proceedings and remand the information for reinvestigation, and entered a not-guilty plea for him after he refused to plead (reported June 5).",
+      "sources": [
+       "https://www.philstar.com/metro/2026/06/05/2532965/sandigan-enters-not-guilty-plea-jinggoy"
+      ]
+     },
+     {
+      "date": "2026-07-24",
+      "text": "The Fifth Division denied his motion to fix bail in the plunder case as premature, saying bail for a capital offense is discretionary and that he must first file an application for bail.",
+      "sources": [
+       "https://gmanetwork.com/news/topstories/nation/996475/sandiganbayan-denies-jinggoy-estrada-s-motion-to-fix-bail-in-plunder-case/story"
+      ]
+     },
+     {
+      "date": "2026-07-30",
+      "text": "Estrada filed a petition for bail before the Fifth Division, arguing the evidence of guilt is not strong and that there is no strong evidence he acquired P573.75 million in ill-gotten wealth between July 2024 and March 2025.",
+      "sources": [
+       "https://www.dzrh.com.ph/post/jinggoy-files-petition-for-bail-in-plunder-case"
+      ]
+     },
+     {
+      "date": "2026-08-04",
+      "text": "GMA reported that Estrada appealed the denial of his motion to fix bail, saying he is no flight risk and citing the Supreme Court's 2015 bail ruling for the late Sen. Juan Ponce Enrile.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/997262/jinggoy-estrada-sandiganbayan-motion-bail-flood-control-projects/story/"
+      ]
+     }
+    ]
+   }
+  ],
+  "rodante-d-marcoleta": [
+   {
+    "id": "rodante-d-marcoleta-1",
+    "kind": "criminal",
+    "body": "Sandiganbayan Third Division (cases filed by the Office of the Ombudsman)",
+    "title": "Plunder and three counts of violating PD 46 (gifts to public officials) over P75 million in campaign contributions",
+    "role": "accused",
+    "status": "pending",
+    "status_date": "2026-07-22",
+    "events": [
+     {
+      "date": "2026-07-03",
+      "text": "The Ombudsman filed plunder and three related charges at the Sandiganbayan against Sen. Rodante Marcoleta over P75 million in campaign contributions he allegedly received ahead of the 2025 senatorial elections and did not declare in his Statement of Campaign Expenditures. Former Rep. Michael Defensor and businessmen Joseph Espiritu and Aristotle Viray were also charged. Prosecutors allege he unjustly enriched himself by accepting an 'unconscionable' gift.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/993578/ombudsman-p75m-charges-marcoleta-sandiganbayan/story/",
+       "https://www.philstar.com/metro/2026/07/22/2543903/marcoleta-pleads-not-guilty-plunder-gift-law-violation"
+      ]
+     },
+     {
+      "date": "2026-07-06",
+      "text": "Marcoleta was arrested and detained at the New Quezon City Jail in Payatas.",
+      "sources": [
+       "https://www.philstar.com/metro/2026/07/22/2543903/marcoleta-pleads-not-guilty-plunder-gift-law-violation"
+      ]
+     },
+     {
+      "date": "2026-07-22",
+      "text": "After his lawyers withdrew a motion to quash the plunder charge, Marcoleta pleaded not guilty to plunder and violating PD 46 before the Sandiganbayan Third Division.",
+      "sources": [
+       "https://www.philstar.com/metro/2026/07/22/2543903/marcoleta-pleads-not-guilty-plunder-gift-law-violation"
+      ]
+     }
+    ]
+   }
+  ],
+  "francis-g-escudero": [
+   {
+    "id": "francis-g-escudero-1",
+    "kind": "criminal",
+    "body": "Office of the Ombudsman",
+    "title": "Plunder, graft and indirect bribery complaint over alleged kickbacks from flood-control projects (alleged P586 million)",
+    "role": "respondent",
+    "status": "pending",
+    "status_date": "2026-05-27",
+    "events": [
+     {
+      "date": "2026-04-06",
+      "text": "Ombudsman Jesus Crispin Remulla said his office was seriously preparing a plunder case against former Senate President Francis Escudero and former Speaker Martin Romualdez over anomalous flood-control projects, after dismissed DPWH officials tagged both as recipients of kickbacks. SunStar reported both officials vehemently denied involvement.",
+      "sources": [
+       "https://www.sunstar.com.ph/manila/ombudsman-eyes-plunder-raps-vs-romualdez-escudero-in-may",
+       "https://tribune.net.ph/2026/04/06/ombudsman-escudero-romualdez-to-face-plunder-cases-in-may"
+      ]
+     },
+     {
+      "date": "2026-04-16",
+      "text": "GMA reported, from documents in Escudero's counter-affidavit, that the Ombudsman's Field Investigation Office recommended on April 16 the filing of plunder, graft and indirect bribery charges, alleging he indirectly received kickbacks of P306 million and P280 million based on the testimony of former DPWH Undersecretary Roberto Bernardo (reported May 27).",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/989200/escudero-plunder-flood-control/story/"
+      ]
+     }
+    ]
+   }
+  ],
+  "panfilo-m-lacson": [
+   {
+    "id": "panfilo-m-lacson-1",
+    "kind": "criminal",
+    "body": "Manila Regional Trial Court Branch 18; Court of Appeals; Department of Justice",
+    "title": "Dacer-Corbito double murder case (killings of publicist Salvador Dacer and Emmanuel Corbito, 2000)",
+    "role": "accused",
+    "status": "dismissed",
+    "status_date": "2011-02-03",
+    "events": [
+     {
+      "date": "2011-02-03",
+      "text": "The Court of Appeals' Special Sixth Division said there was no probable cause for the Manila RTC to try Panfilo Lacson for the killings, finding the DOJ's key witness, former police officer Cezar Mancao II, not credible, and ordered the case against him dismissed.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/218178/doj-to-reinvestigate-dacer-corbito-case/story"
+      ]
+     },
+     {
+      "date": "2011-04-19",
+      "text": "Justice Secretary Leila de Lima said the DOJ would reinvestigate whether Lacson should be held liable instead of appealing the Court of Appeals' ruling to the Supreme Court.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/218178/doj-to-reinvestigate-dacer-corbito-case/story"
+      ]
+     },
+     {
+      "date": "2025-02-07",
+      "text": "VERA Files' election profile of Lacson describes him as accused of being the brains behind the killings, who fled to Hong Kong in 2010 and returned after the Court of Appeals cleared him of all charges, insisting his flight was legal and necessary to avoid harassment.",
+      "sources": [
+       "https://verafiles.org/articles/elexprofile-issues/lacson-2"
+      ]
+     }
+    ]
+   }
+  ],
+  "christopher-lawrence-t-go": [
+   {
+    "id": "christopher-lawrence-t-go-1",
+    "kind": "criminal",
+    "body": "Office of the Ombudsman",
+    "title": "Plunder and graft complaint over alleged P7 billion in infrastructure contracts awarded to firms owned by his family",
+    "role": "respondent",
+    "status": "filed",
+    "status_date": "2025-10-21",
+    "events": [
+     {
+      "date": "2025-10-21",
+      "text": "Former Sen. Antonio Trillanes IV filed plunder, graft and ethics complaints at the Ombudsman against Sen. Bong Go, members of his family and former President Rodrigo Duterte, alleging that firms owned by Go's father and half-brother (CLTG Builders and Alfrego Builders) were awarded nearly P7 billion in government contracts from 2016 onward. Go said the real perpetrators of anomalous projects should be held liable, pointed to the Commission on Audit as the place to check, and said he was willing to see a case filed against anyone, even family.",
+      "sources": [
+       "https://www.philstar.com/headlines/2025/10/21/2481471/trillanes-files-plunder-raps-vs-duterte-bong-go-over-p7-b-davao-projects",
+       "https://www.gmanetwork.com/news/topstories/nation/963151/bong-go-on-trillanes-complaint-culprits-should-be-held-liable/story/"
+      ]
+     }
+    ]
+   }
+  ],
+  "risa-hontiveros": [
+   {
+    "id": "risa-hontiveros-1",
+    "kind": "criminal",
+    "body": "Complaints filed by Apollo Quiboloy's camp (Pasig Regional Trial Court per Philstar)",
+    "title": "Criminal and libel complaints over statements calling Apollo Quiboloy a 'sex offender' and 'sex trafficker'",
+    "role": "respondent",
+    "status": "filed",
+    "status_date": "2026-09-11",
+    "events": [
+     {
+      "date": "2026-09-10",
+      "text": "Detained pastor Apollo Quiboloy, through his lawyer Ferdinand Topacio, filed criminal and libel complaints against Sen. Risa Hontiveros, ML Rep. Leila de Lima and Akbayan Rep. Perci Cendaña over their statements after a US extradition request for Quiboloy. Quiboloy faces cases of qualified human trafficking and child abuse before a Pasig court. Hontiveros said she was not afraid and that the focus should stay on protecting the victims who came forward.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/1001919/quiboloy-lodges-libel-complaints-vs-hontiveros-house-lawmakers/story/",
+       "https://www.philstar.com/nation/2026/09/11/2555525/quiboloy-files-libel-raps-vs-hontiveros-de-lima"
+      ]
+     }
+    ]
+   }
+  ],
+  "leila-de-lima": [
+   {
+    "id": "leila-de-lima-1",
+    "kind": "criminal",
+    "body": "Complaints filed by Apollo Quiboloy's camp (Pasig Regional Trial Court per Philstar)",
+    "title": "Criminal and libel complaints over statements calling Apollo Quiboloy a 'sex offender' and 'sex trafficker'",
+    "role": "respondent",
+    "status": "filed",
+    "status_date": "2026-09-11",
+    "events": [
+     {
+      "date": "2026-09-10",
+      "text": "Detained pastor Apollo Quiboloy, through his lawyer Ferdinand Topacio, filed criminal and libel complaints against Sen. Risa Hontiveros, ML Rep. Leila de Lima and Akbayan Rep. Perci Cendaña over their statements after a US extradition request for Quiboloy. Quiboloy faces cases of qualified human trafficking and child abuse before a Pasig court.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/1001919/quiboloy-lodges-libel-complaints-vs-hontiveros-house-lawmakers/story/",
+       "https://www.philstar.com/nation/2026/09/11/2555525/quiboloy-files-libel-raps-vs-hontiveros-de-lima"
+      ]
+     }
+    ]
+   }
+  ],
+  "perci-cendana": [
+   {
+    "id": "perci-cendana-1",
+    "kind": "criminal",
+    "body": "Complaints filed by Apollo Quiboloy's camp (Pasig Regional Trial Court per Philstar)",
+    "title": "Criminal and libel complaints over statements calling Apollo Quiboloy a 'sex offender' and 'sex trafficker'",
+    "role": "respondent",
+    "status": "filed",
+    "status_date": "2026-09-11",
+    "events": [
+     {
+      "date": "2026-09-10",
+      "text": "Detained pastor Apollo Quiboloy, through his lawyer Ferdinand Topacio, filed criminal and libel complaints against Sen. Risa Hontiveros, ML Rep. Leila de Lima and Akbayan Rep. Perci Cendaña over their statements after a US extradition request for Quiboloy. Quiboloy faces cases of qualified human trafficking and child abuse before a Pasig court.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/1001919/quiboloy-lodges-libel-complaints-vs-hontiveros-house-lawmakers/story/",
+       "https://www.philstar.com/nation/2026/09/11/2555525/quiboloy-files-libel-raps-vs-hontiveros-de-lima"
       ]
      }
     ]
