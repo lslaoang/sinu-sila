@@ -459,6 +459,102 @@
    "antonio-tinio": {
     "date": "2026-10-03",
     "queries": 4
+   },
+   "maricar-zamora": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "jhong-ceniza": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "de-carlo-uy": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "john-tracy-cagas": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "emmarie-dizon": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "lolita-javier": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "ronald-singson": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "monique-lagdameo": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "alden-almario": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "alexandria-gonzales": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "mark-anthony-santos": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "anna-veloso-tuazon": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "carl-cari": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "dimple-mastura": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "loreto-amante": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "aminah-dimaporo": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "kristine-singson-meehan": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "kathryn-joyce-gorriceta": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "binky-april-tupas": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "tonypet-albano": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "ian-paul-dy": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "angelo-barba": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "julienne-baronda": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "zia-alonto-adiong": {
+    "date": "2026-10-03",
+    "queries": 3
    }
   }
  },
@@ -2122,6 +2218,107 @@
       "text": "The prosecutor's office recommended dismissal for lack of jurisdiction. Carpio's lawyer said the dismissal was without prejudice and not a ruling on the merits, and that Carpio could refile before the Ombudsman.",
       "sources": [
        "https://tribune.net.ph/2026/09/09/qc-prosecutor-dismisses-carpio-complaint-cites-lack-of-jurisdiction"
+      ]
+     }
+    ]
+   }
+  ],
+  "emmarie-dizon": [
+   {
+    "id": "emmarie-dizon-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman (Visayas) complaint alleging plunder, graft and falsification over a Mandaue reclaimed property, filed against Rep. Emmarie Ouano-Dizon and her husband",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2024-09-24",
+      "text": "Edward Ligas filed plunder, anti-graft, falsification of public documents and SALN complaints at the Office of the Ombudsman-Visayas. He alleges that the couple acquired reclaimed property belonging to Mandaue City and profited from selling it to Foton Motors for P20 million in 2012. These are allegations.",
+      "sources": [
+       "https://tribune.net.ph/2024/09/25/corruption-charges-filed-vs-ouano-dizon-husband",
+       "https://manilatimes.net/2024/09/26/regions/plunder-raps-filed-vs-lawmaker/1974206"
+      ]
+     },
+     {
+      "date": "2024-09-25",
+      "text": "Ouano-Dizon said the couple had not done anything wrong or illegal and described buying land from a private developer as no crime. No Ombudsman resolution was found.",
+      "sources": [
+       "https://tribune.net.ph/2024/09/25/corruption-charges-filed-vs-ouano-dizon-husband"
+      ]
+     }
+    ]
+   }
+  ],
+  "lolita-javier": [
+   {
+    "id": "lolita-javier-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Ong v. Javier (HRET Case No. 19-023): quo warranto petition over her residency, Leyte 2nd District",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2021",
+    "events": [
+     {
+      "date": "2019-07",
+      "text": "Former Rep. Henry Ong filed a petition for quo warranto at the House of Representatives Electoral Tribunal, alleging that Javier, who won the May 2019 election, was not a resident of the district.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/701075/ex-leyte-solon-asks-hret-to-stop-successor-from-holding-post/story/",
+       "https://www.hret.gov.ph/cases-2019-2022"
+      ]
+     },
+     {
+      "date": "2021",
+      "text": "The tribunal granted Javier's motion to file a demurrer to evidence and dismissed the petition for lack of clear and convincing evidence, according to the tribunal's case list for 2019 to 2022. The exact date is not shown there.",
+      "sources": [
+       "https://www.hret.gov.ph/cases-2019-2022"
+      ]
+     }
+    ]
+   }
+  ],
+  "ronald-singson": [
+   {
+    "id": "ronald-singson-1",
+    "kind": "criminal",
+    "body": "other",
+    "title": "Hong Kong drug-trafficking case over cocaine found at the airport, 2010",
+    "role": "accused",
+    "status": "convicted",
+    "status_date": "2011-01-31",
+    "events": [
+     {
+      "date": "2011-01-31",
+      "text": "Ronald Singson, then a sitting representative, pleaded guilty in Hong Kong's District Court to trafficking about 6.7 grams of cocaine into Hong Kong, after being caught at the airport in July 2010. He testified that he used cocaine on and off since 2004 and apologized to the court. Sentencing was pending when this was reported, and the sentence was not confirmed here.",
+      "sources": [
+       "http://www.gmanetwork.com/news/topstories/nation/211914/rep-singson-pleads-guilty-in-hk-drug-trafficking-case/story",
+       "https://www.philstar.com/nation/2014/01/02/1274167/poll-issue-vs-singson-reaches-sc"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "ronald-singson-2",
+    "kind": "election",
+    "body": "house",
+    "title": "Baterina v. HRET, Comelec and Singson (G.R. No. 210303): challenge over his 2013 election after the Hong Kong conviction",
+    "role": "respondent",
+    "status": "decided",
+    "status_date": "2015-04-21",
+    "events": [
+     {
+      "date": "2014-01-02",
+      "text": "His 2013 rival, Bertrand Baterina, asked the Supreme Court to nullify Singson's proclamation, arguing that the HRET and Comelec should have disqualified him over the Hong Kong drug-trafficking conviction. The HRET had dismissed Baterina's petition in August 2013 as filed out of time.",
+      "sources": [
+       "https://www.philstar.com/nation/2014/01/02/1274167/poll-issue-vs-singson-reaches-sc"
+      ]
+     },
+     {
+      "date": "2015-04-21",
+      "text": "The Supreme Court dismissed Baterina's petition, finding no grave abuse of discretion by the Comelec and HRET and that the HRET had no jurisdiction over the late petition, according to a summary of the decision.",
+      "sources": [
+       "https://legaldex.com/jurisprudence/baterina-v-house-of-representatives-electoral-tribunal"
       ]
      }
     ]
