@@ -70,6 +70,8 @@
   .plc h4{margin:0 0 .5rem;font-size:1rem;display:flex;justify-content:space-between;gap:.5rem} .plc h4 small{color:var(--mute);font-weight:500;white-space:nowrap}
   .plc a{display:grid;grid-template-columns:2.2rem 1fr;gap:0 .6rem;align-items:center;padding:.3rem 0;color:var(--ink);text-decoration:none} .plc a:hover b{text-decoration:underline}
   .plc .av{width:2.2rem;height:2.2rem;font-size:.75rem;grid-row:span 2}
+  .lg{position:relative;display:block;width:2.9rem;height:2.9rem;display:grid;place-items:center} .lg .crest{grid-area:1/1}
+  .lg img{grid-area:1/1;display:none;width:100%;height:100%;object-fit:contain;background:#fff;border-radius:50%;padding:.2rem} .lg.ok img{display:block} .lg.ok .crest{visibility:hidden}
   .crest{display:grid;place-items:center;width:2.6rem;height:2.9rem;background:var(--cb);color:var(--cf);clip-path:polygon(0 0,100% 0,100% 58%,50% 100%,0 58%);font:800 .72rem/1 var(--serif);letter-spacing:.02em}
   .crest span{transform:translateY(-.25rem)}
   .sch{display:grid;justify-items:center;gap:.15rem;padding:.4rem .5rem .3rem;border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--ink);font:inherit;cursor:pointer;min-width:3.6rem}
@@ -183,7 +185,7 @@
 </div></div>
 <main class="wrap" id="app" tabindex="-1" aria-busy="true"><div class="skel"></div><div class="skel"></div><div class="skel"></div></main>
 <noscript><p class="wrap">This site needs JavaScript to show the records.</p></noscript>
-<footer><div class="wrap"><p><b>Sino Sila?</b> is an independent project, not affiliated with the Senate or the House. Every fact links to the public source it came from. Senate data comes from the Senate's Legislative Information System. House rosters come from Wikipedia and are still being checked against other sources, and House portraits come from Wikimedia Commons, credited on each profile.</p>
+<footer><div class="wrap"><p><b>Sino Sila?</b> is an independent project, not affiliated with the Senate or the House. Every fact links to the public source it came from. Senate data comes from the Senate's Legislative Information System. House rosters come from Wikipedia and are still being checked against other sources, and House portraits come from Wikimedia Commons, credited on each profile. School seals come from Wikipedia and Wikimedia Commons and belong to their institutions.</p>
 <p>Court cases are being added person by person, so “not yet checked” means we haven't looked yet, not that a record is clean. A case listed here is a public record, not a finding of guilt. If you spot a mistake or something out of date, we want to fix it. Data as of October 1, 2026.</p></div></footer>
 <div class="tip" id="tip" aria-hidden="true"></div>
 <script>
@@ -241,7 +243,9 @@ const billCount = id => bills[id]?.total || 0;
 /* where they studied: group schools, skipping items flagged match:false */
 const GROUPS = [['Ateneo', /ateneo/i], ['UP', /university of the philippines/i], ['La Salle', /la salle/i], ['UST', /santo tomas/i], ['Harvard', /harvard/i], ['UE', /university of the east/i], ['PMA', /military academy/i], ['Georgetown', /georgetown/i]];
 const CREST = {Ateneo: ['#0b3b8c', '#fff', 'AdMU'], UP: ['#7b1113', '#fff', 'UP'], 'La Salle': ['#00573f', '#fff', 'DLSU'], UST: ['#fdb913', '#1a1200', 'UST'], Harvard: ['#a51c30', '#fff', 'H'], UE: ['#c8102e', '#fff', 'UE'], PMA: ['#1b2a49', '#f2c94c', 'PMA'], Georgetown: ['#041e42', '#c5c9d3', 'GU']};
-const crest = g => { const [bg, fg, ab] = CREST[g] || ['#444', '#fff', g.slice(0, 3)]; return `<span class="crest" style="--cb:${bg};--cf:${fg}" aria-hidden="true"><span>${esc(ab)}</span></span>`; };
+const LOGO = {Ateneo: 'ateneo', UP: 'up', 'La Salle': 'lasalle', UST: 'ust', Harvard: 'harvard', UE: 'ue', PMA: 'pma', Georgetown: 'georgetown'};
+const crest = g => { const [bg, fg, ab] = CREST[g] || ['#444', '#fff', g.slice(0, 3)];
+  return `<span class="lg" aria-hidden="true"><span class="crest" style="--cb:${bg};--cf:${fg}"><span>${esc(ab)}</span></span>${LOGO[g] ? `<img src="assets/schools/${LOGO[g]}.png" alt="" onload="this.parentNode.classList.add('ok')" onerror="this.remove()">` : ''}</span>`; };
 let groups = {};
 function buildGroups() {
   groups = {};

@@ -76,3 +76,7 @@ To refresh, open https://senate.gov.ph in a browser, run the fetches from the pa
 ## Ideas, not built
 
 House members, votes, SALN, COMELEC filings, a searchable full bill list, co-authored bills.
+
+## School seals
+
+`assets/schools/*.png` are 250 px renders of each school's seal, downloaded from Wikipedia and Wikimedia Commons (University of the Philippines, Ateneo de Manila, De La Salle, Santo Tomas and University of the East are non-free logos on Wikipedia; Harvard, PMA and Georgetown are public domain there). They belong to their institutions and are shown only to identify the school. Before a wide launch, get permission or replace them with files the schools provide.
