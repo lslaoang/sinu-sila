@@ -38,6 +38,19 @@ Deploy anywhere static (GitHub Pages, Netlify, Cloudflare Pages). No build step.
 
 **Photos** are hotlinked from senate.gov.ph in the visitor's browser (scripts get HTTP 403, so they are not downloaded or stored here). If an image fails, the initials avatar stays. Confirm reuse terms with the Senate.
 
+## Court cases and proceedings
+
+`data/cases.json` records criminal, administrative and election cases, and rulings on public acts, for lawmakers' whole public careers. It publishes real people's legal history, so the rules are strict:
+
+- Each case is a timeline of events, each event with its own source links. A case needs **two independent outlets or one official court/Ombudsman page** (`validate.py` enforces this).
+- Wording is neutral: charges are "alleged", guilt is stated only where a court or the Ombudsman decided, and dismissals, acquittals, appeals and the person's own response are recorded alongside charges. Profiles carry a standing note (allegation, presumption of innocence, preventive suspension is not a finding of guilt).
+- A profile says "No court cases found in the sources checked on <date>" only for people in `_meta.checked`; everyone else says "not yet checked". Absence of a result is never presented as a clean record.
+- Scope excludes private family or business disputes unless they became a public-office matter.
+
+Coverage so far (2026-10-02): 28 cases across 24 lawmakers, 46 people actually checked, 295 not yet checked. Each published case's sources were opened and read by a person (not just taken from an agent's summary). That check corrected the agents more than once (for example, *Guy v. Tulfo* is a damages ruling, not a reinstated conviction). People with only single-outlet leads are left "not yet checked" instead of being shown as clear. Institutional disputes between lawmakers (for example the June 2026 petitions over the Senate leadership session) are held out until their outcome is clear; the agents' search budgets also ran short, so many House members still need a proper pass in smaller batches.
+
+Workflow: research agents (`politician-researcher`) screen batches of people and return strict JSON; `python3 tools/ingest_cases.py report.json` validates and merges it (single-outlet items go to the git-ignored `review/unconfirmed.json`, never published); every published case should then be spot-checked against its sources before committing. Needed before launch: a Philippine lawyer's review, a visible corrections and right-of-reply channel, and a refresh routine (case statuses go stale quickly).
+
 ## Refreshing the data (manual)
 
 The Senate site blocks plain scripts (HTTP 403) but loads normally in a browser. Its pages read JSON from:

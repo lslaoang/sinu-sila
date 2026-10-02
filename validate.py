@@ -78,7 +78,9 @@ KINDS = {"criminal", "administrative", "election", "other"}
 STATUSES = {"filed", "pending", "suspended", "appealed", "dismissed", "acquitted", "convicted", "decided"}
 ROLES = {"accused", "respondent", "petitioner", "party"}
 cdata = json.load(open("data/cases.json"))
-for k in cdata["_meta"]["checked"]:
+for k, ck in cdata["_meta"]["checked"].items():
+    if not isinstance(ck, dict) or not ck.get("date"):
+        errors.append(f"cases.json: checked entry {k} needs a date")
     if k not in hseen:
         errors.append(f"cases.json: checked id {k} unknown")
 for k, cl in cdata["cases"].items():

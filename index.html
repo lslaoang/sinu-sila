@@ -360,13 +360,13 @@ const KIND = {criminal: 'Criminal', administrative: 'Administrative', election: 
 const STATUS = {filed: 'Filed', pending: 'Pending', suspended: 'Suspended', appealed: 'On appeal', dismissed: 'Dismissed', acquitted: 'Acquitted', convicted: 'Convicted', decided: 'Decided'};
 const srcName = u => (NAMES.find(([re]) => re.test(u)) || [0, new URL(u).hostname.replace(/^www\./, '')])[1];
 function casesHtml(o) {
-  const list = cases.cases[o.id] || [], checked = cases._meta.checked[o.id];
+  const list = cases.cases[o.id] || [], ck = cases._meta.checked[o.id], checked = ck && ck.date;
   const links = e => e.sources.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(srcName(u))}<span class="sr"> (opens in a new tab)</span> ↗</a>`).join(' · ');
-  const body = list.length ? `<p class="note">These are public records. A charge or complaint is an allegation, and a person is presumed innocent unless a court convicts them. A preventive suspension is not a finding of guilt. Dismissals, acquittals and the person's own response are included when reported. Status is as of the date shown.</p>`
+  const body = list.length ? `<p class="note">These are public records. A charge or complaint is an allegation, and a person is presumed innocent unless a court convicts them. A preventive suspension is not a finding of guilt. Dismissals, acquittals and the person's own response are included when reported. Status is as of the date shown, and this list may be incomplete.</p>`
       + list.map(c => `<article class="case"><div class="ch"><span class="pill">${esc(STATUS[c.status] || c.status)}</span><span class="pill">${esc(KIND[c.kind] || c.kind)}</span><b>${esc(c.title)}</b></div>
         <small>${esc(c.body)} · ${esc(c.role)} · status as of ${esc(c.status_date || '')}</small>
         <ol class="ev">${c.events.map(e => `<li><time>${esc(e.date)}</time>${esc(e.text)}<div class="srcs">${links(e)}</div></li>`).join('')}</ol></article>`).join('')
-    : checked ? `<p class="soon">No court cases found in the sources checked on ${esc(checked)}.</p>` : `<p class="soon">Court cases: not yet checked.</p>`;
+    : checked ? `<p class="soon">No court cases found in the news and court sources checked on ${esc(checked)}${ck.queries ? ` (${ck.queries} searches)` : ''}. That is not proof that none exist.</p>` : `<p class="soon">Court cases: not yet checked.</p>`;
   return `<h3 class="h">Court cases and proceedings</h3>${body}`;
 }
 function famHtml(o) {

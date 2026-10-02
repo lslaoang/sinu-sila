@@ -4,8 +4,190 @@
   "policy": "Court, Ombudsman and election proceedings involving a lawmaker, with each event linked to its source. A charge or complaint is an allegation; a person is presumed innocent unless a court convicts. Dismissals, acquittals and the person's own response are recorded alongside charges. A case needs two independent outlets unless an official court or Ombudsman page is cited. Wording is neutral and limited to what the sources state.",
   "scope": "Criminal, administrative and election cases, and rulings on a lawmaker's public acts. Private family or business disputes are left out unless they became a public-office matter.",
   "checked": {
-   "bong-rivera": "2026-10-02",
-   "jojo-ang": "2026-10-02"
+   "bong-rivera": {
+    "date": "2026-10-02",
+    "queries": null
+   },
+   "jojo-ang": {
+    "date": "2026-10-02",
+    "queries": null
+   },
+   "albee-benitez": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "leandro-leviste": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "loren-legarda": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "eric-yap": {
+    "date": "2026-10-02",
+    "queries": 5
+   },
+   "oscar-malapitan": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "edgar-erice": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "dean-asistio": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "arnulf-bryan-fuentebella": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "miguel-luis-villafuerte": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "dale-corvera": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "florencio-miraflores": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "bong-acop": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "salvador-pleyto": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "erwin-t-tulfo": {
+    "date": "2026-10-02",
+    "queries": 1
+   },
+   "raffy-t-tulfo": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "joel-villanueva": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "camille-a-villar": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "mark-a-villar": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "ronald-m-dela-rosa": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "robinhood-c-padilla": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "alan-peter-s-cayetano": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "juan-miguel-f-zubiri": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "eleanor-begtang": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "rommel-t-angara": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "antonino-roman-iii": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "albert-garcia": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "king-collantes": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "caloy-bolilia": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "beverley-dimacuha": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "ryan-recto": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "vanvan-aumentado": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "alexie-tutor": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "jose-manuel-alba": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "jonathan-keith-flores": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "audrey-zubiri": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "laarni-roque": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "cha-hernandez": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "josefina-tallado": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "rosemarie-panotes": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "hori-horibata": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "luigi-villafuerte": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "alfel-bascug": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "jess-marquez": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "ramon-nolasco": {
+    "date": "2026-10-02",
+    "queries": 2
+   }
   }
  },
  "cases": {
@@ -19,15 +201,28 @@
     "status": "pending",
     "status_date": "2026-09-30",
     "events": [
-     {"date": "2026-08-07",
+     {
+      "date": "2026-08-07",
       "text": "The Ombudsman said it had filed nine counts of graft before the Sandiganbayan against Rep. Noel Rivera over alleged conflict of interest in connection with the flood-control projects scandal. The counts were raffled to six divisions of the court. GMA reported it was still seeking his comment.",
-      "sources": ["https://www.gmanetwork.com/news/topstories/nation/997720/ombudsman-files-9-graft-counts-against-tarlac-congressman-noel-rivera/story/", "https://tribune.net.ph/2026/08/07/ombudsman-slaps-9-graft-raps-vs-tarlac-solon"]},
-     {"date": "2026-09-06",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/997720/ombudsman-files-9-graft-counts-against-tarlac-congressman-noel-rivera/story/",
+       "https://tribune.net.ph/2026/08/07/ombudsman-slaps-9-graft-raps-vs-tarlac-solon"
+      ]
+     },
+     {
+      "date": "2026-09-06",
       "text": "The Sandiganbayan Sixth Division denied his motions to quash two of the counts, ruling the informations valid.",
-      "sources": ["https://www.gmanetwork.com/news/topstories/nation/1004289/sandiganbayan-suspends-tarlac-solon-for-90-days-over-graft/story/"]},
-     {"date": "2026-09-29",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/1004289/sandiganbayan-suspends-tarlac-solon-for-90-days-over-graft/story/"
+      ]
+     },
+     {
+      "date": "2026-09-29",
       "text": "The Sixth Division ordered his preventive suspension for 90 days as a member of the House of Representatives, under Sec. 13 of the Anti-Graft and Corrupt Practices Act (resolution dated September 29, released September 30).",
-      "sources": ["https://www.gmanetwork.com/news/topstories/nation/1004289/sandiganbayan-suspends-tarlac-solon-for-90-days-over-graft/story/"]}
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/1004289/sandiganbayan-suspends-tarlac-solon-for-90-days-over-graft/story/"
+      ]
+     }
     ]
    }
   ],
@@ -41,12 +236,711 @@
     "status": "pending",
     "status_date": "2026-09-21",
     "events": [
-     {"date": "2026-07-25",
+     {
+      "date": "2026-07-25",
       "text": "The Ombudsman filed 14 counts of graft against Rep. James Ang Dit Ang Jr., alleging that while serving in Congress he held a pecuniary interest in Allencon Development Corporation, a construction firm that won P214 million in DPWH contracts and was paid nearly P199 million.",
-      "sources": ["https://www.philstar.com/headlines/2026/09/22/2558114/sandiganbayan-suspends-uswag-ilonggo-rep-ang-90-days", "https://visayas.politiko.com.ph/2026/09/22/sandiganbayan-suspends-rep-jojo-ang/daily-feed/"]},
-     {"date": "2026-09-21",
+      "sources": [
+       "https://www.philstar.com/headlines/2026/09/22/2558114/sandiganbayan-suspends-uswag-ilonggo-rep-ang-90-days",
+       "https://visayas.politiko.com.ph/2026/09/22/sandiganbayan-suspends-rep-jojo-ang/daily-feed/"
+      ]
+     },
+     {
+      "date": "2026-09-21",
       "text": "The Sandiganbayan Sixth Division ordered his preventive suspension for 90 days from the House of Representatives and any other public office, pending resolution of the graft charges. It had earlier rejected his bid to quash the information and his request to consolidate the 14 cases, which are pending before different divisions.",
-      "sources": ["https://www.philstar.com/headlines/2026/09/22/2558114/sandiganbayan-suspends-uswag-ilonggo-rep-ang-90-days", "https://visayas.politiko.com.ph/2026/09/22/sandiganbayan-suspends-rep-jojo-ang/daily-feed/"]}
+      "sources": [
+       "https://www.philstar.com/headlines/2026/09/22/2558114/sandiganbayan-suspends-uswag-ilonggo-rep-ang-90-days",
+       "https://visayas.politiko.com.ph/2026/09/22/sandiganbayan-suspends-rep-jojo-ang/daily-feed/"
+      ]
+     }
+    ]
+   }
+  ],
+  "albee-benitez": [
+   {
+    "id": "albee-benitez-1",
+    "kind": "criminal",
+    "body": "Office of the Ombudsman (Visayas)",
+    "title": "Criminal and administrative complaints over Bacolod City's purchase of land in Barangay Granada (alleged violations of RA 3019 Sec. 3(g), grave misconduct and RA 6713)",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2026-04-27",
+    "events": [
+     {
+      "date": "2025",
+      "text": "Roger Ledesma filed criminal and administrative complaints against then-Mayor Alfredo Abelardo Benitez, city councilors and other officials over the city's purchase of land in Hacienda Conchita, Barangay Granada, which the complaint alleged was overpriced.",
+      "sources": [
+       "https://www.sunstar.com.ph/bacolod/ombud-dismisses-raps-vs-benitez-18-others",
+       "https://negrosnowdaily.com/ombudsman-dismisses-complaint-vs-albee-other-bacolod-officials/"
+      ]
+     },
+     {
+      "date": "2026-04-27",
+      "text": "The Ombudsman Visayas dismissed the administrative and criminal complaints for lack of sufficient evidence (reported April 27, 2026).",
+      "sources": [
+       "https://www.sunstar.com.ph/bacolod/ombud-dismisses-raps-vs-benitez-18-others",
+       "https://negrosnowdaily.com/ombudsman-dismisses-complaint-vs-albee-other-bacolod-officials/"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "albee-benitez-2",
+    "kind": "election",
+    "body": "Bacolod Municipal Trial Court in Cities Branch 4; Regional Trial Court Branch 44",
+    "title": "Petition to exclude him from the list of registered voters of Bacolod City",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2022-02-15",
+    "events": [
+     {
+      "date": "2021-10-01",
+      "text": "Judge Francisco Pando of the Bacolod MTCC Branch 4 dismissed for lack of merit the petition to exclude then-former Rep. Benitez from the list of registered voters, finding no valid ground for exclusion (decision dated October 1, 2021; reported October 4).",
+      "sources": [
+       "https://negrosnowdaily.com/https-negrosnowdaily-com-exclusion-petition-vs-albee-dismissed/"
+      ]
+     },
+     {
+      "date": "2022-02",
+      "text": "The Bacolod RTC Branch 44 (Judge Ana Celeste Bernad) dismissed for lack of merit the case for his exclusion from the voters list in Barangay Mandalagan, stating the Election Registration Board had correctly applied the law (decision released over the weekend before February 15, 2022).",
+      "sources": [
+       "https://manilatimes.net/2022/02/15/news/regions/bacolod-rtc-junks-petition-vs-benitez/1833014/amp"
+      ]
+     }
+    ]
+   }
+  ],
+  "leandro-leviste": [
+   {
+    "id": "leandro-leviste-1",
+    "kind": "criminal",
+    "body": "Office of the Ombudsman (preliminary investigation)",
+    "title": "Plunder and graft complaints (RA 3019 Secs. 3(e), 3(h), 3(i)) over projects under the congressional solar franchise of Solar Para sa Bayan Corp.",
+    "role": "respondent",
+    "status": "pending",
+    "status_date": "2026-09-14",
+    "events": [
+     {
+      "date": "2026-07-31",
+      "text": "Ombudsman Jesus Crispin Remulla confirmed he signed the charge sheet to start a preliminary investigation of Sen. Loren Legarda, Rep. Leandro Leviste and former Energy Secretary Alfonso Cusi on plunder and graft complaints over projects valued at P10 billion under the company's 25-year congressional franchise.",
+      "sources": [
+       "https://www.philstar.com/headlines/2026/08/01/2546158/legarda-son-face-probe-over-p10-billion-solar-franchise"
+      ]
+     },
+     {
+      "date": "2026-09-14",
+      "text": "Legarda's spokesperson, Atty. Tony La Viña, said the criminal cases against Legarda and her son Leviste have 'zero merit' and are politically motivated, aimed at silencing Leviste.",
+      "sources": [
+       "https://tribune.net.ph/2026/09/14/legarda-camp-tells-ombudsman-plunder-graft-raps-wont-prosper-in-court-even-under-next-admin"
+      ]
+     }
+    ]
+   }
+  ],
+  "loren-legarda": [
+   {
+    "id": "loren-legarda-1",
+    "kind": "criminal",
+    "body": "Office of the Ombudsman (preliminary investigation)",
+    "title": "Plunder and graft complaints (RA 3019 Secs. 3(e), 3(h), 3(i)) over projects under the congressional solar franchise of Solar Para sa Bayan Corp., owned by her son",
+    "role": "respondent",
+    "status": "pending",
+    "status_date": "2026-09-14",
+    "events": [
+     {
+      "date": "2026-07-31",
+      "text": "Ombudsman Jesus Crispin Remulla confirmed he signed the charge sheet to start a preliminary investigation of Sen. Loren Legarda, Rep. Leandro Leviste and former Energy Secretary Alfonso Cusi on plunder and graft complaints over projects valued at P10 billion under the company's 25-year congressional franchise.",
+      "sources": [
+       "https://www.philstar.com/headlines/2026/08/01/2546158/legarda-son-face-probe-over-p10-billion-solar-franchise"
+      ]
+     },
+     {
+      "date": "2026-09-14",
+      "text": "Her spokesperson, Atty. Tony La Viña, said the criminal cases against Legarda and Leviste have 'zero merit' and are politically motivated, aimed at silencing Leviste.",
+      "sources": [
+       "https://tribune.net.ph/2026/09/14/legarda-camp-tells-ombudsman-plunder-graft-raps-wont-prosper-in-court-even-under-next-admin"
+      ]
+     }
+    ]
+   }
+  ],
+  "eric-yap": [
+   {
+    "id": "eric-yap-1",
+    "kind": "criminal",
+    "body": "Office of the Ombudsman (preliminary investigation); Sandiganbayan Second Division",
+    "title": "Complaints of malversation and graft over alleged involvement in flood-control projects",
+    "role": "respondent",
+    "status": "pending",
+    "status_date": "2026-03-03",
+    "events": [
+     {
+      "date": "2025-10-23",
+      "text": "Criminal complaints were filed by the Department of Public Works and Highways and the Independent Commission for Infrastructure over alleged flood-control anomalies.",
+      "sources": [
+       "https://tribune.net.ph/2026/03/03/sandiganbayan-issues-hdos-vs-solons-eric-edvic-yap",
+       "https://www.philstar.com/headlines/2026/03/04/2511892/hold-departure-order-issued-vs-eric-yap-brother"
+      ]
+     },
+     {
+      "date": "2026-03-03",
+      "text": "At the Ombudsman's request during its preliminary investigation, the Sandiganbayan Second Division issued precautionary hold departure orders against Rep. Eric Yap and his brother Edvic Yap. Assistant Ombudsman Mico Clavano said such orders are precautionary. Philstar reported that DPWH Secretary Vince Dizon had earlier named Yap a 'person of interest' after evidence pointed to him as the beneficial owner of Silverwolves Construction Corp.",
+      "sources": [
+       "https://tribune.net.ph/2026/03/03/sandiganbayan-issues-hdos-vs-solons-eric-edvic-yap",
+       "https://www.philstar.com/headlines/2026/03/04/2511892/hold-departure-order-issued-vs-eric-yap-brother"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "eric-yap-2",
+    "kind": "election",
+    "body": "COMELEC Second Division",
+    "title": "Petition to disqualify him from the 2025 Benguet race over alleged material misrepresentation on citizenship",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2025-07-02",
+    "events": [
+     {
+      "date": "2025-06-26",
+      "text": "The COMELEC Second Division dismissed the petition filed by Franklin Tino, lifted the suspension of his proclamation and directed the provincial board of canvassers to proclaim him the winner.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/regions/951319/comelec-certificate-of-finality-eric-yap-proclamation-benguet-congressman/story/",
+       "https://www.inquirer.net/448400/order-to-proclaim-yap-as-benguet-representative-now-final-executory/"
+      ]
+     },
+     {
+      "date": "2025-07-02",
+      "text": "The COMELEC Second Division issued a certificate of finality and entry of judgment after no motion for reconsideration or Supreme Court restraining order was filed within the period.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/regions/951319/comelec-certificate-of-finality-eric-yap-proclamation-benguet-congressman/story/",
+       "https://www.inquirer.net/448400/order-to-proclaim-yap-as-benguet-representative-now-final-executory/"
+      ]
+     }
+    ]
+   }
+  ],
+  "oscar-malapitan": [
+   {
+    "id": "oscar-malapitan-1",
+    "kind": "administrative",
+    "body": "Office of the Ombudsman; Court of Appeals; Supreme Court (G.R. No. 229811)",
+    "title": "Administrative complaint over the alleged use of P8 million in PDAF for Kalookan Assistance Council Inc. (2009)",
+    "role": "respondent",
+    "status": "decided",
+    "status_date": "2021-04",
+    "events": [
+     {
+      "date": "2021-04",
+      "text": "The Supreme Court denied the Ombudsman's petition and affirmed the Court of Appeals, which had set aside the Ombudsman's orders on the administrative complaint under the condonation doctrine. The Court stated it made no pronouncement on the criminal complaint against him.",
+      "sources": [
+       "https://lawphil.net/judjuris/juri2021/apr2021/gr_229811_2021.html"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "oscar-malapitan-2",
+    "kind": "criminal",
+    "body": "Office of the Ombudsman",
+    "title": "Graft and malversation complaints over P8 million in PDAF channeled to Kalookan Assistance Council Inc. (2007-2009)",
+    "role": "respondent",
+    "status": "filed",
+    "status_date": "2024-07-16",
+    "events": [
+     {
+      "date": "2024-07-16",
+      "text": "Former Caloocan Mayor Rey Malonzo filed graft and malversation complaints at the Ombudsman against Rep. Oscar Malapitan over the alleged anomalous use of his Priority Development Assistance Fund.",
+      "sources": [
+       "https://tribune.net.ph/2024/07/16/caloocan-lawmaker-charged-with-graft-malversation-raps",
+       "http://www.gmanetwork.com/news/topstories/metro/913576/ex-caloocan-mayor-files-graft-case-vs-caloocan-rep-malapitan/story"
+      ]
+     }
+    ]
+   }
+  ],
+  "edgar-erice": [
+   {
+    "id": "edgar-erice-1",
+    "kind": "election",
+    "body": "COMELEC; Supreme Court",
+    "title": "COMELEC disqualification of his 2025 candidacy, and his petition to the Supreme Court",
+    "role": "respondent",
+    "status": "appealed",
+    "status_date": "2025-01-14",
+    "events": [
+     {
+      "date": "2025-01-03",
+      "text": "Erice asked the Supreme Court for a temporary restraining order against his disqualification from the May 2025 elections. COMELEC Chair George Garcia said the poll body respected his opinion and had done its constitutional duty.",
+      "sources": [
+       "http://www.gmanetwork.com/news/topstories/nation/931710/erice-seeks-tro-vs-disqualification-from-may-2025-polls/story"
+      ]
+     },
+     {
+      "date": "2025-01-14",
+      "text": "The Supreme Court en banc issued a temporary restraining order preventing the COMELEC from disqualifying Erice from running as representative of Caloocan's 2nd district, and directed the COMELEC to comment within 10 days. A final ruling was not found.",
+      "sources": [
+       "https://tribune.net.ph/2025/01/14/sc-issue-tro-on-comelec-ruling-against-erice"
+      ]
+     }
+    ]
+   }
+  ],
+  "dean-asistio": [
+   {
+    "id": "dean-asistio-1",
+    "kind": "criminal",
+    "body": "Office of the Ombudsman",
+    "title": "Graft, malversation and falsification complaints over alleged 'ghost' or anomalous infrastructure projects in Caloocan's 3rd district (about P72.9-79.2 million)",
+    "role": "respondent",
+    "status": "filed",
+    "status_date": "2026-05-22",
+    "events": [
+     {
+      "date": "2026-05-21",
+      "text": "Former Caloocan Mayor Reynaldo Malonzo filed graft, misuse of public funds and falsification complaints at the Ombudsman against Rep. Dean Asistio, a DPWH district engineer and private contracting executives over projects he said appeared to have no corresponding implementation. The two outlets give the project value as P79.2 million and P72.9 million.",
+      "sources": [
+       "https://tribune.net.ph/2026/05/21/ex-caloocan-mayor-files-graft-raps-vs-asistio-dpwh-execs-over-ghost-projects",
+       "https://www.philstar.com/nation/2026/05/22/2529653/caloocan-lawmaker-faces-graft-raps/amp/"
+      ]
+     }
+    ]
+   }
+  ],
+  "arnulf-bryan-fuentebella": [
+   {
+    "id": "arnulf-bryan-fuentebella-1",
+    "kind": "administrative",
+    "body": "Office of the Deputy Ombudsman for Luzon",
+    "title": "Complaint over two allegedly substandard flood-control projects in Camarines Sur's 4th district (about P84.19 million)",
+    "role": "respondent",
+    "status": "filed",
+    "status_date": "2026-05-11",
+    "events": [
+     {
+      "date": "2026-04-13",
+      "text": "Romeo Penilla filed a complaint before the Deputy Ombudsman for Luzon against Rep. Arnulf Bryan Fuentebella, DPWH district engineers and contractors, alleging malversation, gross neglect of duty, grave misconduct and violations of the Anti-Graft Law and the Procurement Reform Act over a collapsed river structure and a washed-out seawall.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/regions/987121/complaint-filed-vs-2-camsur-flood-control-projects/story/",
+       "https://www.philstar.com/nation/2026/05/11/2527106/camarines-sur-lawmaker-faces-raps-over-flood-control-projects"
+      ]
+     }
+    ]
+   }
+  ],
+  "miguel-luis-villafuerte": [
+   {
+    "id": "miguel-luis-villafuerte-1",
+    "kind": "election",
+    "body": "Supreme Court (En Banc), G.R. No. 206698",
+    "title": "Villafuerte v. COMELEC: petition over a COMELEC ruling on Miguel Villafuerte's 2013 certificate of candidacy",
+    "role": "respondent",
+    "status": "decided",
+    "status_date": "2014-02-25",
+    "events": [
+     {
+      "date": "2014-02-25",
+      "text": "The Supreme Court en banc denied the petition of Luis R. Villafuerte and affirmed the COMELEC En Banc resolution of April 1, 2013.",
+      "sources": [
+       "https://lawphil.net/judjuris/juri2014/feb2014/gr_206698_2014.html"
+      ]
+     }
+    ]
+   }
+  ],
+  "dale-corvera": [
+   {
+    "id": "dale-corvera-1",
+    "kind": "criminal",
+    "body": "Office of the Ombudsman; Sandiganbayan Third Division",
+    "title": "Graft and malversation charges over personal travel expenses charged to Cabadbaran funds (2011-2014)",
+    "role": "accused",
+    "status": "acquitted",
+    "status_date": "2019-09-15",
+    "events": [
+     {
+      "date": "2016-01-14",
+      "text": "The Ombudsman announced it had filed graft charges against former Cabadbaran Mayor Dale Corvera over P362,154.85 in personal travel expenses charged to public funds from May 2011 to June 2014. Corvera had argued the trips were for Boy Scouts of the Philippines activities; the Ombudsman said the Boy Scouts' public character did not justify charging public funds.",
+      "sources": [
+       "https://www.philstar.com/nation/2016/01/15/1542936/ex-agusan-mayor-faces-graft-raps-over-travel-expenses"
+      ]
+     },
+     {
+      "date": "2019-09-15",
+      "text": "The Sandiganbayan Third Division acquitted Corvera of graft and malversation, saying there was no sufficient evidence that he misappropriated public funds for personal use (reported September 15, 2019).",
+      "sources": [
+       "https://www.manilatimes.net/2019/09/15/news/regions/court-acquits-agusan-del-norte-ex-mayor/616452/"
+      ]
+     }
+    ]
+   }
+  ],
+  "florencio-miraflores": [
+   {
+    "id": "florencio-miraflores-1",
+    "kind": "criminal",
+    "body": "Sandiganbayan (Special Second Division)",
+    "title": "Four counts under RA 6713 over alleged non-declaration of assets in 2006-2009 statements of assets, liabilities and net worth, with his wife",
+    "role": "accused",
+    "status": "dismissed",
+    "status_date": "2018-11-14",
+    "events": [
+     {
+      "date": "2018-11-14",
+      "text": "The Sandiganbayan dismissed the four criminal charges against then-Aklan Gov. Florencio Miraflores and his wife Ma. Lourdes, citing the Ombudsman's inordinate delay (more than eight years) in investigating and filing, which it said deprived them of the right to speedy disposition. The resolution was voted 4-1 and lifted the hold orders. The charges had alleged non-declaration of about P6 million in bank investments and four vehicles.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/regions/675421/sandiganbayan-clears-aklan-governor-wife-in-saln-case/story/",
+       "https://www.philstar.com/nation/2018/11/19/1869747/saln-cases-vs-aklan-governor-wife-junked"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "florencio-miraflores-2",
+    "kind": "administrative",
+    "body": "Office of the Ombudsman",
+    "title": "Administrative complaint over alleged negligence in the management of Boracay",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2019-05-17",
+    "events": [
+     {
+      "date": "2018-06-27",
+      "text": "DILG Undersecretary Epimaco Densing III filed administrative charges of grave misconduct, gross neglect of duty and conduct prejudicial to the service against Aklan Gov. Miraflores and 16 Malay officials over the management of Boracay.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/regions/658375/aklan-gov-malay-officials-sued-at-ombudsman-over-boracay-mess/story/"
+      ]
+     },
+     {
+      "date": "2019-05-17",
+      "text": "Philstar reported that the charges against Miraflores and 14 other local officials were dismissed for lack of merit, while Malay Mayor Ciceron Cawaling was dismissed from service (reported May 17, 2019).",
+      "sources": [
+       "https://www.philstar.com/headlines/2019/05/17/1918617/dismissed-aklan-mayor-reelected-despite-boracay-mess"
+      ]
+     }
+    ]
+   }
+  ],
+  "bong-acop": [
+   {
+    "id": "bong-acop-1",
+    "kind": "election",
+    "body": "COMELEC (Law Department)",
+    "title": "Disqualification complaint alleging vote-buying in the Antipolo 2nd District special election",
+    "role": "respondent",
+    "status": "pending",
+    "status_date": "2026-03-04",
+    "events": [
+     {
+      "date": "2026-03-02",
+      "text": "A resident, through lawyer Mark Tolentino, filed a disqualification complaint at the COMELEC alleging massive vote buying by Philip 'Bong' Acop before the March 14, 2026 special election. The COMELEC said the complaint had not been resolved and that filing a complaint does not automatically mean disqualification. The outcome was not found.",
+      "sources": [
+       "https://southluzon.politiko.com.ph/2026/03/03/disqualification-case-filed-vs-bong-acop-over-alleged-vote-buying/daily-feed/",
+       "https://www.philstar.com/nation/2026/03/04/2511802/comelec-flags-fake-news-antipolo-poll-bets-disqualification"
+      ]
+     }
+    ]
+   }
+  ],
+  "salvador-pleyto": [
+   {
+    "id": "salvador-pleyto-1",
+    "kind": "administrative",
+    "body": "Office of the Ombudsman; Court of Appeals; Supreme Court (G.R. No. 169982)",
+    "title": "Administrative case over his statement of assets and liabilities (Pleyto v. PNP-CIDG)",
+    "role": "respondent",
+    "status": "decided",
+    "status_date": "2007-11",
+    "events": [
+     {
+      "date": "2004-06-28",
+      "text": "The Office of the Ombudsman found Salvador Pleyto guilty of grave misconduct and dishonesty and ordered his dismissal from the service (decision dated June 28, 2004; reconsideration denied October 12, 2004). The Court of Appeals affirmed.",
+      "sources": [
+       "https://lawphil.net/judjuris/juri2007/nov2007/gr_169982_2007.html"
+      ]
+     },
+     {
+      "date": "2007-11",
+      "text": "The Supreme Court reversed and set aside the dismissal and instead found him guilty of negligence in accomplishing his Statement of Assets and Liabilities for 2002, imposing forfeiture of the equivalent of six months' salary from his retirement benefits.",
+      "sources": [
+       "https://lawphil.net/judjuris/juri2007/nov2007/gr_169982_2007.html",
+       "https://www.gmanetwork.com/news/topstories/nation/70917/ex-public-works-usec-acquitted-of-gross-misconduct/story/"
+      ]
+     }
+    ]
+   }
+  ],
+  "erwin-t-tulfo": [
+   {
+    "id": "erwin-t-tulfo-1",
+    "kind": "criminal",
+    "body": "Supreme Court, G.R. No. 161032 (Tulfo v. People of the Philippines and Atty. Carlos T. So)",
+    "title": "Four counts of libel over published articles about Atty. Carlos T. So",
+    "role": "accused",
+    "status": "convicted",
+    "status_date": "2008-09",
+    "events": [
+     {
+      "date": "2008-09",
+      "text": "The Supreme Court found Erwin Tulfo and four co-accused guilty beyond reasonable doubt of four counts of libel, sentencing each to a fine of P6,000 per count with subsidiary imprisonment in case of insolvency, and ordered them to pay Atty. Carlos T. So P1,000,000 in moral damages jointly and severally. The claim for actual and exemplary damages was denied.",
+      "sources": [
+       "https://lawphil.net/judjuris/juri2008/sep2008/gr_161032_2008.html"
+      ]
+     }
+    ]
+   }
+  ],
+  "raffy-t-tulfo": [
+   {
+    "id": "raffy-t-tulfo-1",
+    "kind": "criminal",
+    "body": "Supreme Court, G.R. Nos. 187113 and 187230",
+    "title": "Libel convictions over published articles about Atty. Carlos So (Tulfo, Macasaet and Quijano v. People)",
+    "role": "accused",
+    "status": "acquitted",
+    "status_date": "2021-01",
+    "events": [
+     {
+      "date": "2021-01",
+      "text": "The Supreme Court reversed and set aside the Court of Appeals' amended decision, which had affirmed the convictions of Raffy Tulfo, Allen Macasaet and Nicolas Quijano Jr. in six criminal cases, and acquitted them of the crime charged.",
+      "sources": [
+       "https://lawphil.net/judjuris/juri2021/jan2021/gr_187113_2021.html"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "raffy-t-tulfo-2",
+    "kind": "other",
+    "body": "Supreme Court, G.R. No. 213023",
+    "title": "Guy v. Tulfo: damages in a libel case filed by businessman Michael C. Guy over a newspaper article",
+    "role": "respondent",
+    "status": "decided",
+    "status_date": "2019-04-10",
+    "events": [
+     {
+      "date": "2019-04-10",
+      "text": "The Supreme Court partially granted Michael C. Guy's petition and affirmed with modification the Court of Appeals' amended decision, ordering Raffy Tulfo, Allen Macasaet and six others to pay him jointly P500,000 in moral damages, P1,000,000 in exemplary damages and P211,200 in attorney's fees, with 6% yearly interest.",
+      "sources": [
+       "https://lawphil.net/judjuris/juri2019/apr2019/gr_213023_2019.html"
+      ]
+     }
+    ]
+   }
+  ],
+  "joel-villanueva": [
+   {
+    "id": "joel-villanueva-1",
+    "kind": "administrative",
+    "body": "Office of the Ombudsman",
+    "title": "Administrative case over the alleged misuse of at least P10 million in PDAF (2008) as CIBAC party-list representative",
+    "role": "respondent",
+    "status": "decided",
+    "status_date": "2025-10-29",
+    "events": [
+     {
+      "date": "2016",
+      "text": "The Office of the Ombudsman issued an order dismissing then-Rep. Joel Villanueva from public office over the alleged misuse of at least P10 million of his Priority Development Assistance Fund in 2008.",
+      "sources": [
+       "https://tribune.net.ph/2025/10/23/villanueva-calls-ombudsmans-revived-dismissal-move-harassment",
+       "https://www.philstar.com/headlines/2025/10/29/2483288/start-records-morales-tells-remulla-villanueva-case"
+      ]
+     },
+     {
+      "date": "2019",
+      "text": "Then-Ombudsman Samuel Martires reversed the 2016 dismissal order on Villanueva's motion. In 2025 Ombudsman Jesus Crispin Remulla called it a 'secret decision' and said his office was examining the records.",
+      "sources": [
+       "https://www.philstar.com/headlines/2025/10/29/2483288/start-records-morales-tells-remulla-villanueva-case"
+      ]
+     },
+     {
+      "date": "2025-10-23",
+      "text": "Villanueva called Remulla's plan to enforce the 2016 order 'harassment', said he had no pending case before the Ombudsman or the Sandiganbayan, and presented clearances from both dated September 10. Remulla then said he would not send a letter to the Senate to implement the order.",
+      "sources": [
+       "https://tribune.net.ph/2025/10/23/villanueva-calls-ombudsmans-revived-dismissal-move-harassment"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "joel-villanueva-2",
+    "kind": "criminal",
+    "body": "Department of Justice; Office of the Ombudsman (preliminary investigation)",
+    "title": "Complaints over alleged ghost flood-control projects in Bulacan (malversation and related offenses)",
+    "role": "respondent",
+    "status": "pending",
+    "status_date": "2026-06-30",
+    "events": [
+     {
+      "date": "2026-01-04",
+      "text": "The Department of Justice began a preliminary investigation of complaints over Bulacan 1st District flood-control projects reported as 100 percent complete but found grossly deficient or non-existent, involving Wawao Builders and Topnotch Catalyst Builders Inc. Villanueva and former Sen. Ramon Revilla Jr. are respondents in two separate cases.",
+      "sources": [
+       "https://tribune.net.ph/2026/01/05/doj-opens-joel-bong-floodgate-inquest"
+      ]
+     },
+     {
+      "date": "2026-06-30",
+      "text": "In March the DOJ endorsed its findings on the malversation complaint to the Ombudsman, which Ombudsman Remulla said remains under preliminary investigation. Remulla said the DOJ's recommendation to file charges did not meet the Ombudsman's standards, and the DOJ said it would keep working with the Ombudsman on the case build-up.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/993197/ombudsman-flood-control-joel-villanueva/story/"
+      ]
+     }
+    ]
+   }
+  ],
+  "camille-a-villar": [
+   {
+    "id": "camille-a-villar-1",
+    "kind": "criminal",
+    "body": "Office of the Ombudsman",
+    "title": "Two counts of graft over PrimeWater's joint venture agreements with local water districts (2015-2022)",
+    "role": "respondent",
+    "status": "filed",
+    "status_date": "2026-09-18",
+    "events": [
+     {
+      "date": "2026-09-18",
+      "text": "The Office of the Ombudsman said two counts of graft had been filed against Senators Mark and Camille Villar, their parents Manuel and Cynthia Villar, their brother Paolo and officials of local water districts over poor water service of the Villar-owned PrimeWater Infrastructure Corporation, after about six months of investigation of its joint venture deals with water districts. Assistant Ombudsman Mico Clavano said the Villars were the beneficial owners of PrimeWater during the period.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/1002830/graft-raps-filed-vs-villars-over-primewater-s-failure-to-deliver-water-supply/story/",
+       "https://gulfnews.com/world/asia/philippines/philippines-billionaire-villar-family-hit-with-graft-complaints-over-primewater-deals-1.500680199"
+      ]
+     }
+    ]
+   }
+  ],
+  "mark-a-villar": [
+   {
+    "id": "mark-a-villar-1",
+    "kind": "criminal",
+    "body": "Office of the Ombudsman",
+    "title": "Two counts of graft over PrimeWater's joint venture agreements with local water districts (2015-2022)",
+    "role": "respondent",
+    "status": "filed",
+    "status_date": "2026-09-18",
+    "events": [
+     {
+      "date": "2026-09-18",
+      "text": "The Office of the Ombudsman said two counts of graft had been filed against Senators Mark and Camille Villar, their parents Manuel and Cynthia Villar, their brother Paolo and officials of local water districts over poor water service of the Villar-owned PrimeWater Infrastructure Corporation, after about six months of investigation of its joint venture deals with water districts. Assistant Ombudsman Mico Clavano said the Villars were the beneficial owners of PrimeWater during the period.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/1002830/graft-raps-filed-vs-villars-over-primewater-s-failure-to-deliver-water-supply/story/",
+       "https://gulfnews.com/world/asia/philippines/philippines-billionaire-villar-family-hit-with-graft-complaints-over-primewater-deals-1.500680199"
+      ]
+     }
+    ]
+   }
+  ],
+  "ronald-m-dela-rosa": [
+   {
+    "id": "ronald-m-dela-rosa-1",
+    "kind": "criminal",
+    "body": "International Criminal Court; Supreme Court",
+    "title": "ICC arrest warrant (crimes against humanity linked to the drug war) and his petition to the Supreme Court against arrest",
+    "role": "accused",
+    "status": "pending",
+    "status_date": "2026-05-20",
+    "events": [
+     {
+      "date": "2026-05-14",
+      "text": "Reuters reported that Sen. Ronald 'Bato' dela Rosa, wanted by the International Criminal Court for crimes against humanity, was no longer in the Senate building where he had been under Senate protection, according to Senate President Alan Peter Cayetano. Gunfire had been reported at the Senate the day before.",
+      "sources": [
+       "https://www.aljazeera.com/news/2026/5/14/philippine-politician-wanted-by-icc-flees-senate"
+      ]
+     },
+     {
+      "date": "2026-05-20",
+      "text": "The Supreme Court en banc, voting 9-5-1, denied his request for a temporary restraining order or status quo ante order to prevent agencies from arresting him on the basis of the ICC warrant without a Philippine judicial warrant. The Court said it decided only the interim relief and that the main issues remain.",
+      "sources": [
+       "https://www.sunstar.com.ph/manila/sc-denies-bato-dela-rosas-tro-petition-vs-arrest"
+      ]
+     }
+    ]
+   }
+  ],
+  "robinhood-c-padilla": [
+   {
+    "id": "robinhood-c-padilla-1",
+    "kind": "criminal",
+    "body": "Office of the Ombudsman",
+    "title": "Obstruction of justice complaint over the May 14, 2026 exit of Sen. Ronald dela Rosa from the Senate",
+    "role": "respondent",
+    "status": "pending",
+    "status_date": "2026-07-17",
+    "events": [
+     {
+      "date": "2026-06-03",
+      "text": "The civil society group Tindig Pilipinas filed an obstruction of justice complaint at the Ombudsman against Senate President Alan Peter Cayetano, Sen. Robinhood Padilla and suspended acting Senate Sergeant-at-Arms Mao Aplasca, alleging they blocked or delayed implementation of the ICC arrest warrant and facilitated dela Rosa's exit from the Senate on May 14.",
+      "sources": [
+       "https://www.dzrh.com.ph/post/cayetano-padilla-aplasca-face-obstruction-of-justice-complaint-at-ombudsman-over-bato-escape"
+      ]
+     },
+     {
+      "date": "2026-07-17",
+      "text": "Ombudsman Jesus Crispin Remulla said Padilla had not submitted a counter-affidavit, and that the deadline for respondents had been extended to July 23 after Aplasca asked for more time. Padilla had not yet submitted any pleading or communicated with the Ombudsman.",
+      "sources": [
+       "https://tribune.net.ph/2026/07/17/remulla-padilla-ignored-ombudsman-order-in-obstruction-case"
+      ]
+     }
+    ]
+   }
+  ],
+  "alan-peter-s-cayetano": [
+   {
+    "id": "alan-peter-s-cayetano-1",
+    "kind": "criminal",
+    "body": "Office of the Ombudsman",
+    "title": "Obstruction of justice complaint over the May 14, 2026 exit of Sen. Ronald dela Rosa from the Senate",
+    "role": "respondent",
+    "status": "pending",
+    "status_date": "2026-07-17",
+    "events": [
+     {
+      "date": "2026-06-03",
+      "text": "The civil society group Tindig Pilipinas filed an obstruction of justice complaint at the Ombudsman against Senate President Alan Peter Cayetano, Sen. Robinhood Padilla and suspended acting Senate Sergeant-at-Arms Mao Aplasca, alleging they blocked or delayed implementation of the ICC arrest warrant and facilitated dela Rosa's exit from the Senate on May 14.",
+      "sources": [
+       "https://www.dzrh.com.ph/post/cayetano-padilla-aplasca-face-obstruction-of-justice-complaint-at-ombudsman-over-bato-escape"
+      ]
+     },
+     {
+      "date": "2026-07-17",
+      "text": "Ombudsman Jesus Crispin Remulla said the deadline for respondents to file counter-affidavits had been extended to July 23 after Aplasca asked for more time.",
+      "sources": [
+       "https://tribune.net.ph/2026/07/17/remulla-padilla-ignored-ombudsman-order-in-obstruction-case"
+      ]
+     }
+    ]
+   }
+  ],
+  "juan-miguel-f-zubiri": [
+   {
+    "id": "juan-miguel-f-zubiri-1",
+    "kind": "election",
+    "body": "Senate Electoral Tribunal",
+    "title": "Election protest by Aquilino 'Koko' Pimentel III over the 12th Senate seat in the 2007 election",
+    "role": "respondent",
+    "status": "decided",
+    "status_date": "2011-08-11",
+    "events": [
+     {
+      "date": "2007-07-30",
+      "text": "Pimentel filed an electoral protest contesting results from 2,658 precincts in 44 municipalities in seven provinces after Zubiri was proclaimed the 12th winner of the May 2007 senatorial election.",
+      "sources": [
+       "https://verafiles.org/articles/set-spurious-ballots-cocs-proved-pimentel-was-cheated"
+      ]
+     },
+     {
+      "date": "2011-08",
+      "text": "Zubiri resigned as senator, saying in a Senate speech that he did so 'without admitting any fault and with my vehement denial of the alleged electoral fraud'.",
+      "sources": [
+       "https://www.arabnews.com/archive/386565"
+      ]
+     },
+     {
+      "date": "2011-08-11",
+      "text": "The Senate Electoral Tribunal proclaimed Pimentel the duly elected senator over Zubiri, who had resigned a week earlier, finding that Pimentel led by 258,266 votes in its revised tally. It was the first time a new official had been proclaimed as a result of the tribunal's findings.",
+      "sources": [
+       "https://verafiles.org/articles/set-spurious-ballots-cocs-proved-pimentel-was-cheated"
+      ]
+     }
     ]
    }
   ]
