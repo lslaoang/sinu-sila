@@ -53,7 +53,7 @@
   .seat.dim{opacity:.14;filter:grayscale(1)}
   .hemi.trk .seat .av{box-shadow:0 0 0 2px var(--bg),0 0 0 5px var(--tc)} .hemi.trk .seat.lead .av{box-shadow:0 0 0 2px var(--bg),0 0 0 5px var(--tc),0 0 0 7px var(--yellow)}
   .tk{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;font-weight:700} .tk::before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--tc);flex:none}
-  .pt .tk{position:absolute;left:.5rem;top:.5rem;background:rgba(0,0,0,.72);color:#fff;padding:.2rem .45rem;border-radius:4px}
+  .pt .tk{position:absolute;left:.5rem;top:2.1rem;max-width:calc(100% - 1rem);background:rgba(0,0,0,.72);color:#fff;padding:.2rem .45rem;border-radius:4px;line-height:1.2}
   .hm .tk{margin-left:.35rem;color:var(--ink)}
   /* congress at a glance */
   .glance{display:grid;gap:.75rem;align-content:center}
@@ -70,6 +70,16 @@
   .plc h4{margin:0 0 .5rem;font-size:1rem;display:flex;justify-content:space-between;gap:.5rem} .plc h4 small{color:var(--mute);font-weight:500;white-space:nowrap}
   .plc a{display:grid;grid-template-columns:2.2rem 1fr;gap:0 .6rem;align-items:center;padding:.3rem 0;color:var(--ink);text-decoration:none} .plc a:hover b{text-decoration:underline}
   .plc .av{width:2.2rem;height:2.2rem;font-size:.75rem;grid-row:span 2}
+  .crest{display:grid;place-items:center;width:2.6rem;height:2.9rem;background:var(--cb);color:var(--cf);clip-path:polygon(0 0,100% 0,100% 58%,50% 100%,0 58%);font:800 .72rem/1 var(--serif);letter-spacing:.02em}
+  .crest span{transform:translateY(-.25rem)}
+  .sch{display:grid;justify-items:center;gap:.15rem;padding:.4rem .5rem .3rem;border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--ink);font:inherit;cursor:pointer;min-width:3.6rem}
+  .sch small{font-size:.75rem;color:var(--mute);font-variant-numeric:tabular-nums} .sch:hover{border-color:var(--ink)}
+  .sch[aria-pressed=true]{background:var(--ink);border-color:var(--ink)} .sch[aria-pressed=true] small{color:var(--bg)}
+  .hfilters{display:grid;gap:.6rem;margin:0 0 1rem} @media (min-width:40rem){.hfilters{grid-template-columns:minmax(0,22rem) minmax(0,16rem)}}
+  .hfilters .seg{grid-template-columns:repeat(3,1fr)}
+  .sel select{width:100%;padding:.5rem .8rem;border:1px solid var(--ink);border-radius:99px;background:var(--paper);color:var(--ink);font:inherit;font-size:.9rem}
+  .offices{list-style:none;padding:0;margin:0 0 1rem;border-top:1px solid var(--line)} .offices li{display:grid;grid-template-columns:1fr auto;gap:.1rem 1rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
+  .offices small{color:var(--mute)} .offices a{grid-row:span 2;grid-column:2;align-self:center}
   .tip{position:fixed;z-index:60;pointer-events:none;background:var(--ink);color:var(--bg);padding:.4rem .65rem;border-radius:6px;font-size:.85rem;line-height:1.3;transform:translate(-50%,calc(-100% - 8px));opacity:0;transition:opacity .15s;white-space:nowrap}
   .tip.on{opacity:1}
   .panel{margin:1rem 0;padding:1rem;border:1px solid var(--line);border-radius:12px;background:var(--paper);display:grid;gap:1.1rem;text-align:left}
@@ -83,7 +93,7 @@
   .tg::before{content:"";width:.85rem;height:.85rem;border-radius:50%;border:2px solid var(--tc);background:var(--tc);flex:none}
   .tg span{flex:1} .tg b{font-variant-numeric:tabular-nums} .tg:hover{border-color:var(--ink)}
   .tg[aria-pressed=false]{color:var(--mute)} .tg[aria-pressed=false]::before{background:transparent}
-  .studs{display:flex;flex-wrap:wrap;gap:.4rem} .panel .info{font-size:.85rem;text-align:left;margin:0;color:var(--mute);min-height:0} .sec+.info,.note+.info,.chips+.info{margin:0 0 1rem;max-width:none} .studs .chip{flex:none;font-size:.85rem;padding:.25rem .7rem}
+  .studs{display:flex;flex-wrap:wrap;gap:.5rem} .panel .info{font-size:.85rem;text-align:left;margin:0;color:var(--mute);min-height:0} .sec+.info,.note+.info,.chips+.info{margin:0 0 1rem;max-width:none} .studs .chip{flex:none;font-size:.85rem;padding:.25rem .7rem}
   .ctl{display:flex;flex-wrap:wrap;gap:.5rem .75rem;align-items:center;justify-content:center;margin:.75rem 0}
   .ctl .lbl{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
   .chip{border:1px solid var(--ink);background:transparent;color:var(--ink);padding:.3rem .8rem;border-radius:99px;font:inherit;font-size:.9rem;cursor:pointer}
@@ -220,6 +230,7 @@ const title = t => t.split(/\s+/).map((w, i) => {
   if (/^\(.+\)$/.test(w) && core.length <= 7 || ACRONYMS.has(w.replace(/^\(|[),]+$/g, '')) || /^\d/.test(w)) return w;
   return i && SMALL.has(w) ? w.toLowerCase() : w.toLowerCase().replace(/(^|[(\-/])([a-z])/g, (m, a, b) => a + b.toUpperCase());
 }).join(' ');
+const dayLabelFull = d => /^\d{4}-\d\d-\d\d$/.test(d) ? new Date(d + 'T00:00:00').toLocaleDateString('en', {month: 'long', day: 'numeric', year: 'numeric'}) : d;
 const dayLabel = d => new Date(d + 'T00:00:00').toLocaleDateString('en', {month: 'short', day: 'numeric'});
 
 const ROLES = [['author', 'Author'], ['coAuthors', 'Co-author'], ['coSponsors', 'Co-sponsor']];
@@ -229,6 +240,8 @@ const billCount = id => bills[id]?.total || 0;
 
 /* where they studied: group schools, skipping items flagged match:false */
 const GROUPS = [['Ateneo', /ateneo/i], ['UP', /university of the philippines/i], ['La Salle', /la salle/i], ['UST', /santo tomas/i], ['Harvard', /harvard/i], ['UE', /university of the east/i], ['PMA', /military academy/i], ['Georgetown', /georgetown/i]];
+const CREST = {Ateneo: ['#0b3b8c', '#fff', 'AdMU'], UP: ['#7b1113', '#fff', 'UP'], 'La Salle': ['#00573f', '#fff', 'DLSU'], UST: ['#fdb913', '#1a1200', 'UST'], Harvard: ['#a51c30', '#fff', 'H'], UE: ['#c8102e', '#fff', 'UE'], PMA: ['#1b2a49', '#f2c94c', 'PMA'], Georgetown: ['#041e42', '#c5c9d3', 'GU']};
+const crest = g => { const [bg, fg, ab] = CREST[g] || ['#444', '#fff', g.slice(0, 3)]; return `<span class="crest" style="--cb:${bg};--cf:${fg}" aria-hidden="true"><span>${esc(ab)}</span></span>`; };
 let groups = {};
 function buildGroups() {
   groups = {};
@@ -288,7 +301,6 @@ function updateHouse() {
   const info = document.getElementById('houseInfo');
   if (info) info.textContent = `Showing ${rows.length} of ${house.length} representatives${house.length > rows.length && !state.q ? ` (turn on “Not yet checked” above to include the rest)` : ''}${state.q ? ` matching “${state.q}”` : ''}.`;
   document.querySelectorAll('[data-hk]').forEach(b => b.setAttribute('aria-pressed', b.dataset.hk === state.hk));
-  document.querySelectorAll('[data-hp]').forEach(b => b.setAttribute('aria-pressed', b.dataset.hp === state.hp));
 }
 function visiblePL() { const t = state.q.toLowerCase();
   return house.filter(o => o.kind === 'party-list' && (!t || (o.name + ' ' + o.party).toLowerCase().includes(t)) && (t || state.tr.has(trackOf(o.id)))); }
@@ -338,7 +350,6 @@ function home() {
   const o = id => data.find(x => x.id === id);
   const fact = (id, big, label, sub, count) => `<div class="fact rv">${av(nameOf(id), o(id).photo)}<div class="n" ${count ? `data-count="${count}"` : ''}>${count ? 0 : big}</div>
       <div class="l">${label}</div><div class="s"><a href="#${esc(id)}">${esc(nameOf(id))}</a>${sub ? ' · ' + sub : ''}</div></div>`;
-  const topParties = Object.entries(house.filter(o => o.kind !== 'party-list').reduce((m, o) => (m[o.party] = (m[o.party] || 0) + 1, m), {})).sort((a, b) => b[1] - a[1]).slice(0, 6);
   const chip = (attr, val, label, on) => `<button class="chip" ${attr}="${esc(val)}" aria-pressed="${on}">${label}</button>`;
   const dist = house.filter(o => o.kind !== 'party-list'), plm = house.filter(o => o.kind === 'party-list');
   const glance = (go, n, label, sub, people) => `<button class="gl rv" data-go="${go}"><span class="n">${n}</span><b>${label}</b><small>${sub}</small>
@@ -365,7 +376,7 @@ function home() {
         <div><h3 class="pl" id="plv">Faces show</h3><div class="seg" role="group" aria-labelledby="plv">
           ${[['track', 'Court cases'], ['bills', 'Bills'], ['laws', 'Laws']].map(([k, l]) => `<button data-lens="${k}" aria-pressed="${k === state.lens}">${l}</button>`).join('')}</div></div>
         <div><h3 class="pl" id="pls">Where senators studied</h3><div class="studs" role="group" aria-labelledby="pls">
-          ${Object.entries(groups).sort((a, b) => b[1].size - a[1].size).map(([g, s]) => chip('data-school', g, `${esc(g)}<small>${s.size}</small>`, false)).join('')}</div></div>
+          ${Object.entries(groups).sort((a, b) => b[1].size - a[1].size).map(([g, s]) => `<button class="sch" data-school="${esc(g)}" aria-pressed="false" aria-label="${esc(g)}: ${s.size} senators" title="${esc(g)}">${crest(g)}<small>${s.size}</small></button>`).join('')}</div></div>
         <p class="info" id="hemiInfo" aria-live="polite"></p>
       </div>
     </div>
@@ -386,8 +397,8 @@ function home() {
 
     <h2 class="sec rv" id="house">House of Representatives <small>${dist.length} district and at-large seats</small></h2>
     <p class="note">Names, districts and parties come from Wikipedia and were spot-checked against news and election sources (32 members, no mismatches). Parties change during a term, so labels are as of the roster date, and some leadership roles may be missing. Bills, laws and education for House members are not added yet.</p>
-    <div class="chips rv" role="group" aria-label="Filter the House">${KINDS.map(([k, l]) => chip('data-hk', k, l, k === 'all')).join('')}<span class="sp"></span>
-      ${topParties.map(([p, n]) => chip('data-hp', p, `${esc(p)}<small>${n}</small>`, false)).join('')}</div>
+    <div class="hfilters rv"><div class="seg" role="group" aria-label="Seat type">${KINDS.map(([k, l]) => `<button data-hk="${k}" aria-pressed="${k === state.hk}">${l}</button>`).join('')}</div>
+      <label class="sel"><span class="sr">Party</span><select id="hpSel" aria-label="Filter by party"><option value="">All parties</option>${Object.entries(dist.reduce((m, o) => (m[o.party] = (m[o.party] || 0) + 1, m), {})).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([p, n]) => `<option value="${esc(p)}">${esc(p)} (${n})</option>`).join('')}</select></label></div>
     <p class="info" id="houseInfo" aria-live="polite" style="text-align:left;min-height:0"></p>
     <ul class="hlist" id="hlist"></ul>
 
@@ -465,12 +476,11 @@ function houseProfile(o) {
       <div class="tile txt"><strong>${esc(o.bloc || '–')}</strong><span>bloc</span></div>
       <div class="tile txt"><strong>${{district: 'District', 'at-large': 'At-large', 'party-list': 'Party-list'}[o.kind] || '–'}</strong><span>seat type</span></div></div>
     <p class="note">Party and bloc as listed on Wikipedia on ${esc(o.records[0]?.retrieved || '')}. Members change parties during a term (several did in 2026), so check before relying on it.</p>
-    ${casesHtml(o)}${famHtml(o)}<h3 class="h">Record</h3>${recordsHtml(o)}
+    ${casesHtml(o)}${famHtml(o)}<h3 class="h">In office</h3>${recordsHtml(o)}
     <p class="note">${o.wikipedia ? `More about ${esc(clean(o.name))}: <a href="${esc(o.wikipedia)}" target="_blank" rel="noopener">Wikipedia ↗</a>. ` : ''}${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a> (see the file page for author and licence).` : ''}</p>
-    <div class="soon">Bills, laws, education and more for House members are coming soon.</div>`;
+    <p class="note">Coming later: bills, laws and education for House members.</p>`;
 }
-const recordsHtml = o => `<ul class="tl">${o.records.map(r => `<li><span class="badge"><span aria-hidden="true">${ICON[r.type] || '•'}</span> ${esc(r.type)}</span>
-      <div>${esc(r.title)}</div><small>${esc(r.date)} · <a href="${esc(r.source_url)}" rel="noopener" target="_blank">view source ↗</a></small></li>`).join('')}</ul>`;
+const recordsHtml = o => `<ul class="offices">${o.records.map(r => `<li><b>${esc(r.title)}</b><small>${r.type === 'membership' ? 'In office since ' : esc(r.type) + ' · '}${esc(dayLabelFull(r.date))}</small><a href="${esc(r.source_url)}" rel="noopener" target="_blank">Source<span class="sr"> (opens in a new tab)</span> ↗</a></li>`).join('')}</ul>`;
 function profile(o) {
   if (o.body === 'house') return houseProfile(o);
   const checked = o.records.map(r => r.retrieved).sort().pop();
@@ -482,8 +492,8 @@ function profile(o) {
       <div class="tile"><strong>${lawCount(o.id)}</strong><span>laws backed (any role)</span></div>
       <div class="tile"><strong>${esc(dayLabel(checked))}</strong><span>data checked, ${esc(checked.slice(0, 4))}</span></div></div>
     ${eduHtml(o.id)}${lawsHtml(o.id)}${billsHtml(o.id)}
-    ${casesHtml(o)}${famHtml(o)}<h3 class="h">Record</h3>${recordsHtml(o)}
-    <div class="soon">Votes, SALN and more are coming soon.</div>`;
+    ${casesHtml(o)}${famHtml(o)}<h3 class="h">In office</h3>${recordsHtml(o)}
+    <p class="note">Coming later: votes and asset declarations (SALN).</p>`;
 }
 
 /* ---------- events ---------- */
@@ -508,9 +518,9 @@ app.onclick = e => {
   if (d.sort) state.sort = d.sort;
   if (d.lead != null) state.leaders = d.lead === '1';
   if (d.hk) state.hk = d.hk;
-  if (d.hp) state.hp = state.hp === d.hp ? null : d.hp;
   updateAll();
 };
+app.onchange = e => { if (e.target.id === 'hpSel') { state.hp = e.target.value || null; updateAll(); } };
 document.addEventListener('mouseover', e => showTip(e.target.closest?.('.seat')));
 document.addEventListener('focusin', e => showTip(e.target.closest?.('.seat')));
 document.addEventListener('mouseout', e => { if (e.target.closest?.('.seat')) tip.classList.remove('on'); });
