@@ -53,7 +53,6 @@
   .seat.dim{opacity:.14;filter:grayscale(1)}
   .hemi.trk .seat .av{box-shadow:0 0 0 2px var(--bg),0 0 0 5px var(--tc)} .hemi.trk .seat.lead .av{box-shadow:0 0 0 2px var(--bg),0 0 0 5px var(--tc),0 0 0 7px var(--yellow)}
   .tk{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;font-weight:700} .tk::before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--tc);flex:none}
-  .pt .tk{position:absolute;left:.5rem;top:2.1rem;max-width:calc(100% - 1rem);background:rgba(0,0,0,.72);color:#fff;padding:.2rem .45rem;border-radius:4px;line-height:1.2}
   .hm .tk{margin-left:.35rem;color:var(--ink)}
   /* congress at a glance */
   .glance{display:grid;gap:.75rem;align-content:center}
@@ -123,13 +122,16 @@
   .chips{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 1rem;align-items:center}
   .sp{flex:1}
   .wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(9.5rem,1fr));gap:.75rem;list-style:none;padding:0;margin:0}
-  .pt{position:relative;display:block;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;color:#fff;text-decoration:none;background:hsl(var(--h) 42% 24%)}
+  .pt{position:relative;display:grid;grid-template-rows:auto 1fr;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;color:var(--ink);text-decoration:none;background:var(--paper)}
+  .pt:hover{border-color:var(--ink)}
+  .pt .ph{position:relative;display:block;aspect-ratio:1/1.08;overflow:hidden;background:hsl(var(--h) 42% 24%);color:#fff}
   .pt .ini{position:absolute;inset:0;display:grid;place-items:center;font:800 2.6rem var(--serif);opacity:.5}
-  .pt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 10%;transition:transform .4s}
-  .pt:hover img{transform:scale(1.05)}
-  .pt .cap{position:absolute;left:0;right:0;bottom:0;padding:2rem .65rem .6rem;background:linear-gradient(transparent,rgba(0,0,0,.82));line-height:1.2}
-  .pt .cap b{display:block;font-size:.95rem} .pt .cap span{font-size:.75rem;opacity:.9}
-  .pt .bd{position:absolute;top:.5rem;right:.5rem;background:var(--yellow);color:#15120f;font:700 .72rem system-ui;padding:.2rem .45rem;border-radius:4px}
+  .pt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 8%;transition:transform .4s}
+  .pt:hover img{transform:scale(1.04)}
+  .pt .cap{display:grid;align-content:start;gap:.15rem;padding:.6rem .7rem .7rem;line-height:1.25}
+  .pt .cap b{font-size:.95rem} .pt .pos{font-size:.8rem;color:var(--mute)}
+  .pt .meta{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .6rem;margin-top:.35rem}
+  .pt .bd{background:var(--yellow);color:#15120f;font:700 .72rem system-ui;padding:.15rem .45rem;border-radius:4px;white-space:nowrap}
   .pt.rol::after{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--yellow)}
 
   /* avatar (initials fallback + photo overlay) */
@@ -333,9 +335,10 @@ function updateWall() {
   const rows = data.filter(o => vis.has(o.id) && (!state.leaders || isLead(o)))
     .sort((x, y) => state.sort === 'bills' ? billCount(y.id) - billCount(x.id) : state.sort === 'laws' ? lawCount(y.id) - lawCount(x.id) : lastName(x).localeCompare(lastName(y)));
   const w = document.getElementById('wall'); if (!w) return;
-  w.innerHTML = rows.map(o => `<li><a class="pt ${isLead(o) ? 'rol' : ''}" href="#${esc(o.id)}" style="--h:${hue(o.name)}" aria-label="${esc(clean(o.name))}, ${esc(o.position)}, ${billCount(o.id)} bills, ${lawCount(o.id)} laws backed">
-      <span class="ini" aria-hidden="true">${initials(o.name)}</span>${o.photo ? `<img src="${esc(o.photo)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
-      <span class="tk" style="--tc:${trackColor(o.id)}">${esc(trackLabel(o.id))}</span><span class="bd">${billCount(o.id)} bills</span><span class="cap"><b>${esc(clean(o.name))}</b><span>${esc(o.position)}</span></span></a></li>`).join('')
+  w.innerHTML = rows.map(o => `<li><a class="pt ${isLead(o) ? 'rol' : ''}" href="#${esc(o.id)}" style="--h:${hue(o.name)}" aria-label="${esc(clean(o.name))}, ${esc(o.position)}, ${esc(trackLabel(o.id))}, ${billCount(o.id)} bills, ${lawCount(o.id)} laws backed">
+      <span class="ph"><span class="ini" aria-hidden="true">${initials(o.name)}</span>${o.photo ? `<img src="${esc(o.photo)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}</span>
+      <span class="cap"><b>${esc(clean(o.name))}</b><span class="pos">${esc(o.position)}</span>
+        <span class="meta"><span class="tk" style="--tc:${trackColor(o.id)}">${esc(trackLabel(o.id))}</span><span class="bd">${billCount(o.id)} bills</span></span></span></a></li>`).join('')
     || '<li class="soon" style="grid-column:1/-1">No senator matches that.</li>';
   document.querySelectorAll('[data-sort]').forEach(b => b.setAttribute('aria-pressed', b.dataset.sort === state.sort));
   document.querySelectorAll('[data-lead]').forEach(b => b.setAttribute('aria-pressed', (b.dataset.lead === '1') === state.leaders));
