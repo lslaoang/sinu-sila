@@ -338,7 +338,7 @@ function updateWall() {
   w.innerHTML = rows.map(o => `<li><a class="pt ${isLead(o) ? 'rol' : ''}" href="#${esc(o.id)}" style="--h:${hue(o.name)}" aria-label="${esc(clean(o.name))}, ${esc(o.position)}, ${esc(trackLabel(o.id))}, ${billCount(o.id)} bills, ${lawCount(o.id)} laws backed">
       <span class="ph"><span class="ini" aria-hidden="true">${initials(o.name)}</span>${o.photo ? `<img src="${esc(o.photo)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}</span>
       <span class="cap"><b>${esc(clean(o.name))}</b><span class="pos">${esc(o.position)}</span>
-        <span class="meta"><span class="tk" style="--tc:${trackColor(o.id)}">${esc(trackLabel(o.id))}</span><span class="bd">${billCount(o.id)} bills</span></span></span></a></li>`).join('')
+        <span class="meta"><span class="bd">${billCount(o.id)} bills</span></span></span></a></li>`).join('')
     || '<li class="soon" style="grid-column:1/-1">No senator matches that.</li>';
   document.querySelectorAll('[data-sort]').forEach(b => b.setAttribute('aria-pressed', b.dataset.sort === state.sort));
   document.querySelectorAll('[data-lead]').forEach(b => b.setAttribute('aria-pressed', (b.dataset.lead === '1') === state.leaders));
