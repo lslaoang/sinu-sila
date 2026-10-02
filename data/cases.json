@@ -213,11 +213,11 @@
     "queries": 3
    },
    "leila-de-lima": {
-    "date": "2026-10-02",
+    "date": "2026-10-03",
     "queries": 1
    },
    "perci-cendana": {
-    "date": "2026-10-02",
+    "date": "2026-10-03",
     "queries": 1
    },
    "joseph-bernos": {
@@ -434,6 +434,30 @@
    },
    "toby-tiangco": {
     "date": "2026-10-02",
+    "queries": 4
+   },
+   "ralph-tulfo": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "arjo-atayde": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "chel-diokno": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "gerville-luistro": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "sarah-elago": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "antonio-tinio": {
+    "date": "2026-10-03",
     "queries": 4
    }
   }
@@ -1465,6 +1489,31 @@
       ]
      }
     ]
+   },
+   {
+    "id": "leila-de-lima-2",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Complaint by Manases Carpio at the Quezon City prosecutor over disclosure of financial records in House impeachment proceedings (Bank Secrecy Law, Data Privacy Act, AMLA)",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2026-09-07",
+    "events": [
+     {
+      "date": "2026-04-27",
+      "text": "Manases Carpio, husband of Vice President Sara Duterte, filed a criminal complaint at the Quezon City prosecutor's office against BSP Governor Eli Remolona, the AMLC's executive director and House justice committee members including Gerville Luistro, Leila de Lima, Percy Cendaña and Chel Diokno, alleging violations of bank secrecy and data privacy laws over the committee's disclosure of AMLC records. These are allegations.",
+      "sources": [
+       "https://www.philstar.com/headlines/2026/04/28/2524097/carpio-files-suit-over-bank-secrecy-privacy-violations/amp/"
+      ]
+     },
+     {
+      "date": "2026-09-07",
+      "text": "The prosecutor's office recommended dismissal for lack of jurisdiction. Carpio's lawyer said the dismissal was without prejudice and not a ruling on the merits, and that Carpio could refile before the Ombudsman.",
+      "sources": [
+       "https://tribune.net.ph/2026/09/09/qc-prosecutor-dismisses-carpio-complaint-cites-lack-of-jurisdiction"
+      ]
+     }
+    ]
    }
   ],
   "perci-cendana": [
@@ -1483,6 +1532,31 @@
       "sources": [
        "https://www.gmanetwork.com/news/topstories/nation/1001919/quiboloy-lodges-libel-complaints-vs-hontiveros-house-lawmakers/story/",
        "https://www.philstar.com/nation/2026/09/11/2555525/quiboloy-files-libel-raps-vs-hontiveros-de-lima"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "perci-cendana-2",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Complaint by Manases Carpio at the Quezon City prosecutor over disclosure of financial records in House impeachment proceedings (Bank Secrecy Law, Data Privacy Act, AMLA)",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2026-09-07",
+    "events": [
+     {
+      "date": "2026-04-27",
+      "text": "Manases Carpio, husband of Vice President Sara Duterte, filed a criminal complaint at the Quezon City prosecutor's office against BSP Governor Eli Remolona, the AMLC's executive director and House justice committee members including Gerville Luistro, Leila de Lima, Percy Cendaña and Chel Diokno, alleging violations of bank secrecy and data privacy laws over the committee's disclosure of AMLC records. These are allegations.",
+      "sources": [
+       "https://www.philstar.com/headlines/2026/04/28/2524097/carpio-files-suit-over-bank-secrecy-privacy-violations/amp/"
+      ]
+     },
+     {
+      "date": "2026-09-07",
+      "text": "The prosecutor's office recommended dismissal for lack of jurisdiction. Carpio's lawyer said the dismissal was without prejudice and not a ruling on the merits, and that Carpio could refile before the Ombudsman.",
+      "sources": [
+       "https://tribune.net.ph/2026/09/09/qc-prosecutor-dismisses-carpio-complaint-cites-lack-of-jurisdiction"
       ]
      }
     ]
@@ -1934,6 +2008,120 @@
       "text": "Comelec issued a certificate of finality on its June 30 en banc ruling after receiving no Supreme Court restraining order. The outcome of any Supreme Court petition by Uy was not found.",
       "sources": [
        "https://www.inquirer.net/448788/comelec-abantes-win-in-house-race-final/"
+      ]
+     }
+    ]
+   }
+  ],
+  "ralph-tulfo": [
+   {
+    "id": "ralph-tulfo-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Comelec petition to disqualify five Tulfo family candidates, including Ralph Tulfo, before the May 2025 elections",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2025-05",
+    "events": [
+     {
+      "date": "2025-02-14",
+      "text": "Lawyer Virgilio Garcia filed a petition at the Commission on Elections to disqualify five Tulfo family members on political-dynasty grounds. These were the petitioner's allegations.",
+      "sources": [
+       "https://www.inquirer.net/431288/comelec-junks-case-to-disqualify-tulfos/"
+      ]
+     },
+     {
+      "date": "2025-03-04",
+      "text": "The Comelec First Division dismissed the petition as insufficient in form because the respondents' certificates of candidacy were not attached.",
+      "sources": [
+       "https://www.inquirer.net/431288/comelec-junks-case-to-disqualify-tulfos/"
+      ]
+     },
+     {
+      "date": "2025-05-29",
+      "text": "Comelec denied the petitioner's motion for reconsideration for lack of procedural compliance and merit, as reported by the Philippine Star.",
+      "sources": [
+       "https://www.philstar.com/headlines/2025/05/29/2446632/procedural-lapses-comelec-junks-appeal-tulfo-dq"
+      ]
+     }
+    ]
+   }
+  ],
+  "arjo-atayde": [
+   {
+    "id": "arjo-atayde-1",
+    "kind": "other",
+    "body": "house",
+    "title": "Flood-control allegations and appearance before the Independent Commission for Infrastructure (a fact-finding body, not a court)",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2025-09-08",
+      "text": "Contractors Curlee and Sarah Discaya named Atayde among officials they accused of pushing them into irregular biddings and seeking money for projects. Atayde categorically denied benefiting from any contractor and said he would use legal remedies against those spreading falsehoods.",
+      "sources": [
+       "https://tribune.net.ph/2025/09/08/arjo-atayde-denies-involvement-in-flood-control-controversy"
+      ]
+     },
+     {
+      "date": "2025-11-25",
+      "text": "Atayde appeared before the ICI and filed a counter-affidavit, saying the allegations were completely false. No Ombudsman, DOJ or court case against him was found.",
+      "sources": [
+       "https://www.philstar.com/headlines/2025/11/25/2489806/arjo-atayde-denies-role-flood-control-scandal"
+      ]
+     }
+    ]
+   }
+  ],
+  "chel-diokno": [
+   {
+    "id": "chel-diokno-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Complaint by Manases Carpio at the Quezon City prosecutor over disclosure of financial records in House impeachment proceedings (Bank Secrecy Law, Data Privacy Act, AMLA)",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2026-09-07",
+    "events": [
+     {
+      "date": "2026-04-27",
+      "text": "Manases Carpio, husband of Vice President Sara Duterte, filed a criminal complaint at the Quezon City prosecutor's office against BSP Governor Eli Remolona, the AMLC's executive director and House justice committee members including Gerville Luistro, Leila de Lima, Percy Cendaña and Chel Diokno, alleging violations of bank secrecy and data privacy laws over the committee's disclosure of AMLC records. These are allegations.",
+      "sources": [
+       "https://www.philstar.com/headlines/2026/04/28/2524097/carpio-files-suit-over-bank-secrecy-privacy-violations/amp/"
+      ]
+     },
+     {
+      "date": "2026-09-07",
+      "text": "The prosecutor's office recommended dismissal for lack of jurisdiction. Carpio's lawyer said the dismissal was without prejudice and not a ruling on the merits, and that Carpio could refile before the Ombudsman.",
+      "sources": [
+       "https://tribune.net.ph/2026/09/09/qc-prosecutor-dismisses-carpio-complaint-cites-lack-of-jurisdiction"
+      ]
+     }
+    ]
+   }
+  ],
+  "gerville-luistro": [
+   {
+    "id": "gerville-luistro-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Complaint by Manases Carpio at the Quezon City prosecutor over disclosure of financial records in House impeachment proceedings (Bank Secrecy Law, Data Privacy Act, AMLA)",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2026-09-07",
+    "events": [
+     {
+      "date": "2026-04-27",
+      "text": "Manases Carpio, husband of Vice President Sara Duterte, filed a criminal complaint at the Quezon City prosecutor's office against BSP Governor Eli Remolona, the AMLC's executive director and House justice committee members including Gerville Luistro, Leila de Lima, Percy Cendaña and Chel Diokno, alleging violations of bank secrecy and data privacy laws over the committee's disclosure of AMLC records. These are allegations.",
+      "sources": [
+       "https://www.philstar.com/headlines/2026/04/28/2524097/carpio-files-suit-over-bank-secrecy-privacy-violations/amp/"
+      ]
+     },
+     {
+      "date": "2026-09-07",
+      "text": "The prosecutor's office recommended dismissal for lack of jurisdiction. Carpio's lawyer said the dismissal was without prejudice and not a ruling on the merits, and that Carpio could refile before the Ombudsman.",
+      "sources": [
+       "https://tribune.net.ph/2026/09/09/qc-prosecutor-dismisses-carpio-complaint-cites-lack-of-jurisdiction"
       ]
      }
     ]
