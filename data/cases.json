@@ -555,6 +555,14 @@
    "zia-alonto-adiong": {
     "date": "2026-10-03",
     "queries": 3
+   },
+   "celso-regencia": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "jc-rahman-nava": {
+    "date": "2026-10-03",
+    "queries": 4
    }
   }
  },
@@ -2319,6 +2327,59 @@
       "text": "The Supreme Court dismissed Baterina's petition, finding no grave abuse of discretion by the Comelec and HRET and that the HRET had no jurisdiction over the late petition, according to a summary of the decision.",
       "sources": [
        "https://legaldex.com/jurisprudence/baterina-v-house-of-representatives-electoral-tribunal"
+      ]
+     }
+    ]
+   }
+  ],
+  "celso-regencia": [
+   {
+    "id": "celso-regencia-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Murder and frustrated murder complaints over the December 2014 ambush of then-Rep. Vicente Belmonte Jr.'s convoy",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2016-12-09",
+    "events": [
+     {
+      "date": "2015-07-06",
+      "text": "The Department of Justice found probable cause to charge Regencia, then Iligan City mayor, and others with three counts of murder and four counts of frustrated murder over the ambush. He was detained from October 2015.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/regions/595807/doj-clears-iligan-city-s-regencia-of-murder-and-frustrated-charges/story/",
+       "https://www.philstar.com/nation/2022/02/21/2162158/iligan-mayor-gets-1-year-usurpation"
+      ]
+     },
+     {
+      "date": "2016-12-09",
+      "text": "The DOJ reversed its earlier resolution, finding a suspect-turned-witness's affidavits inconsistent and inadmissible, ordered the complaints dismissed and directed the withdrawal of the informations in court. The ruling was released in January 2017.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/regions/595807/doj-clears-iligan-city-s-regencia-of-murder-and-frustrated-charges/story/"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "celso-regencia-2",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Usurpation of official functions case at the Sandiganbayan for acting as mayor while detained in 2015",
+    "role": "accused",
+    "status": "convicted",
+    "status_date": "2022-02-11",
+    "events": [
+     {
+      "date": "2022-02-11",
+      "text": "The Sandiganbayan Seventh Division found Regencia guilty of usurpation of official functions (Article 177, Revised Penal Code) for continuing to act as mayor from November 2015 while detained, and sentenced him to two months and one day up to one year and eight months in prison. The case was filed by the Ombudsman in 2017.",
+      "sources": [
+       "https://www.philstar.com/nation/2022/02/21/2162158/iligan-mayor-gets-1-year-usurpation"
+      ]
+     },
+     {
+      "date": "2022-04",
+      "text": "The Sandiganbayan was reported to have denied his motion for reconsideration and kept the conviction. Whether he appealed to the Supreme Court, and whether the conviction is final, was not found.",
+      "sources": [
+       "https://abogado.com.ph/sandiganbayan-affirms-conviction-for-usurpation-of-mayor-tagged-as-mastermind-in-solons-ambush/"
       ]
      }
     ]
