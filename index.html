@@ -39,7 +39,8 @@
   .tile strong{overflow-wrap:anywhere;white-space:normal}
   /* hero */
   .eyebrow{font:700 .78rem system-ui;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:2rem 0 .5rem}
-  h1.big{font:800 clamp(2.3rem,7.2vw,4.6rem)/1.02 var(--serif);letter-spacing:-.025em;margin:0 0 .8rem;max-width:16ch}
+  h1.big{font:800 clamp(2.3rem,7.2vw,4.6rem)/1.02 var(--serif);letter-spacing:-.025em;margin:0 0 .8rem;max-width:16ch;overflow-wrap:normal}
+  @media (min-width:60rem){.herogrid h1.big{font-size:clamp(2.2rem,4.2vw,4.2rem)}}
   .lede{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--mute);max-width:36rem;margin:0 0 1.2rem}
   .lede b{color:var(--ink)}
   @media (min-width:60rem){.herogrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:2.5rem;align-items:center;padding:1rem 0}.herogrid .eyebrow{margin-top:0}.herogrid .hemi{margin-top:0}.herogrid .ctl{justify-content:flex-start}.herogrid .info{text-align:left}}
@@ -56,6 +57,18 @@
   .hm .tk{margin-left:.35rem;color:var(--ink)}
   .tip{position:fixed;z-index:60;pointer-events:none;background:var(--ink);color:var(--bg);padding:.4rem .65rem;border-radius:6px;font-size:.85rem;line-height:1.3;transform:translate(-50%,calc(-100% - 8px));opacity:0;transition:opacity .15s;white-space:nowrap}
   .tip.on{opacity:1}
+  .panel{margin:1rem 0;padding:1rem;border:1px solid var(--line);border-radius:12px;background:var(--paper);display:grid;gap:1.1rem;text-align:left}
+  .pl{margin:0 0 .5rem;font:700 .72rem system-ui;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)} .pl small{font-weight:500;letter-spacing:0;text-transform:none;margin-left:.4rem}
+  .seg{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--ink);border-radius:99px;overflow:hidden}
+  .seg button{border:0;border-right:1px solid var(--line);background:transparent;color:var(--ink);padding:.5rem .3rem;font:inherit;font-size:.88rem;cursor:pointer} .seg button:last-child{border-right:0}
+  .seg button:hover{background:var(--yellow);color:#15120f} .seg button[aria-pressed=true]{background:var(--ink);color:var(--bg);font-weight:700}
+  .panel>*{min-width:0} @media (max-width:30rem){.seg{grid-template-columns:repeat(2,1fr);border-radius:12px}.seg button:nth-child(2){border-right:0}.seg button:nth-child(-n+2){border-bottom:1px solid var(--line)}.seg button:nth-child(3){border-right:1px solid var(--line)}}
+  .tgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(13.5rem,100%),1fr));gap:.4rem}
+  .tg{display:flex;align-items:center;gap:.6rem;padding:.45rem .7rem;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--ink);font:inherit;font-size:.88rem;cursor:pointer;text-align:left}
+  .tg::before{content:"";width:.85rem;height:.85rem;border-radius:50%;border:2px solid var(--tc);background:var(--tc);flex:none}
+  .tg span{flex:1} .tg b{font-variant-numeric:tabular-nums} .tg:hover{border-color:var(--ink)}
+  .tg[aria-pressed=false]{color:var(--mute)} .tg[aria-pressed=false]::before{background:transparent}
+  .studs{display:flex;gap:.4rem;overflow-x:auto;padding-bottom:.2rem} .studs .chip{flex:none;font-size:.85rem;padding:.25rem .7rem}
   .ctl{display:flex;flex-wrap:wrap;gap:.5rem .75rem;align-items:center;justify-content:center;margin:.75rem 0}
   .ctl .lbl{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
   .chip{border:1px solid var(--ink);background:transparent;color:var(--ink);padding:.3rem .8rem;border-radius:99px;font:inherit;font-size:.9rem;cursor:pointer}
@@ -306,12 +319,14 @@ function home() {
       <div class="hemi trk" id="hemi" role="group" aria-label="The ${data.length} senators. Each face links to a profile.">
         ${data.map(s => `<a class="seat ${isLead(s) ? 'lead' : ''}" data-id="${esc(s.id)}" style="--tc:${trackColor(s.id)}" href="#${esc(s.id)}" aria-label="${esc(clean(s.name))}, ${esc(s.position)}, ${esc(trackLabel(s.id))}, ${billCount(s.id)} bills, ${lawCount(s.id)} laws backed">${av(s.name, s.photo, true)}</a>`).join('')}
       </div>
-      <div class="ctl" role="group" aria-label="Size the faces by"><span class="lbl">Show</span>
-        ${chip('data-lens', 'track', 'Track record', true)}${chip('data-lens', 'bills', 'Bills filed', false)}${chip('data-lens', 'laws', 'Laws backed', false)}${chip('data-lens', 'equal', 'Equal', false)}</div>
-      <div class="ctl" role="group" aria-label="Filter by court-case record"><span class="lbl">Track record</span>
-        ${TRACKS.map(([k, l, c]) => `<button class="chip" data-tr="${k}" aria-pressed="${state.tr.has(k)}"><span class="tk" style="--tc:${c}">${esc(l)}</span><small>${everyone().filter(o => trackOf(o.id) === k).length}</small></button>`).join('')}</div>
-      <div class="ctl" role="group" aria-label="Highlight senators by school"><span class="lbl">Where they studied</span>
-        ${Object.entries(groups).sort((a, b) => b[1].size - a[1].size).map(([g, s]) => chip('data-school', g, `${esc(g)}<small>${s.size}</small>`, false)).join('')}</div>
+      <div class="panel">
+        <div><h3 class="pl" id="plv">View</h3><div class="seg" role="group" aria-labelledby="plv">
+          ${[['track', 'Track record'], ['bills', 'Bills filed'], ['laws', 'Laws backed'], ['equal', 'Equal']].map(([k, l]) => `<button data-lens="${k}" aria-pressed="${k === state.lens}">${l}</button>`).join('')}</div></div>
+        <div><h3 class="pl" id="plt">Court cases <small>tap to show or hide</small></h3><div class="tgs" role="group" aria-labelledby="plt">
+          ${TRACKS.map(([k, l, c]) => `<button class="tg" data-tr="${k}" aria-pressed="${state.tr.has(k)}" style="--tc:${c}"><span>${esc(l)}</span><b>${everyone().filter(o => trackOf(o.id) === k).length}</b></button>`).join('')}</div></div>
+        <div><h3 class="pl" id="pls">Where senators studied</h3><div class="studs" role="group" aria-labelledby="pls">
+          ${Object.entries(groups).sort((a, b) => b[1].size - a[1].size).map(([g, s]) => chip('data-school', g, `${esc(g)}<small>${s.size}</small>`, false)).join('')}</div></div>
+      </div>
       <p class="info" id="hemiInfo" aria-live="polite"></p>
     </div></section>
     <h2 class="sec rv">Standouts <small>volume, not quality or importance</small></h2>
