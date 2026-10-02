@@ -28,7 +28,11 @@
   .hlist{list-style:none;padding:0;margin:0 0 1rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:.35rem .75rem}
   .hrow{display:grid;grid-template-columns:2.6rem 1fr;gap:.05rem .7rem;align-items:center;padding:.5rem;border-radius:var(--r);text-decoration:none;color:var(--ink);border:1px solid transparent}
   .hrow:hover{border-color:var(--ink);background:var(--paper)} .hrow .av{width:2.6rem;height:2.6rem;font-size:.85rem;grid-row:span 2} .hn b{line-height:1.2} .hm{color:var(--mute);font-size:.85rem}
-  .tile.txt strong{font-size:clamp(1.3rem,4vw,1.9rem);white-space:normal;line-height:1.1}
+  .tile.txt strong{font-size:clamp(1.15rem,3.2vw,1.7rem);white-space:normal;line-height:1.15}
+  /* long words (e.g. party-list names like Malasakit@Bayanihan) must wrap, never spill into a neighbour */
+  .tiles>*,.facts>*,.hlist>*,.wall>*,.two>*,.phero>div{min-width:0}
+  h1,h2,h3,h4,b,strong,small,.hm,.hn,.cap,.pill,.role,.bill,.fcard,.edu li>div,.tl li,.info,.note{overflow-wrap:anywhere}
+  .tile strong{overflow-wrap:anywhere;white-space:normal}
   /* hero */
   .eyebrow{font:700 .78rem system-ui;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:2rem 0 .5rem}
   h1.big{font:800 clamp(2.3rem,7.2vw,4.6rem)/1.02 var(--serif);letter-spacing:-.025em;margin:0 0 .8rem;max-width:16ch}
