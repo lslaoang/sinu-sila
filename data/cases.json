@@ -219,6 +219,46 @@
    "perci-cendana": {
     "date": "2026-10-02",
     "queries": 1
+   },
+   "joseph-bernos": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "eddiebong-plaza": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "krisel-lagman": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "caloy-loria": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "adrian-salceda": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "rufus-rodriguez": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "lordan-suan": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "joseph-lara": {
+    "date": "2026-10-02",
+    "queries": 2
+   },
+   "yusop-alano": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "maria-angela-garcia": {
+    "date": "2026-10-02",
+    "queries": 3
    }
   }
  },
@@ -1267,6 +1307,67 @@
       "sources": [
        "https://www.gmanetwork.com/news/topstories/nation/1001919/quiboloy-lodges-libel-complaints-vs-hontiveros-house-lawmakers/story/",
        "https://www.philstar.com/nation/2026/09/11/2555525/quiboloy-files-libel-raps-vs-hontiveros-de-lima"
+      ]
+     }
+    ]
+   }
+  ],
+  "joseph-bernos": [
+   {
+    "id": "joseph-bernos-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Comelec complaint: alleged Omnibus Election Code violations (Sec. 261 pars. e, f, y), 2013 midterm polls",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2013",
+      "text": "Dolores Mayor Robert Victor Seares Jr. filed a complaint with Comelec against Bernos and two police officers over alleged election-related acts in the May 2013 polls.",
+      "sources": [
+       "https://www.manilatimes.net/2019/04/19/news/regions/542362-2/542362",
+       "https://verafiles.org/articles/vera-files-fact-check-comelec-order-disqualifying-abra-rep-m"
+      ]
+     },
+     {
+      "date": "2016",
+      "text": "Comelec en banc recommended the filing of a case in court against Bernos and the two officers.",
+      "sources": [
+       "https://verafiles.org/articles/vera-files-fact-check-comelec-order-disqualifying-abra-rep-m"
+      ]
+     },
+     {
+      "date": "2019-03-12",
+      "text": "Comelec declared its resolution denying the respondents' motion for reconsideration final and executory. Vera Files reported that a viral document claiming he was disqualified from the 2019 race was fabricated; the disqualification petitions were still unresolved, and he was proclaimed winner on 2019-05-14. The outcome in court was not found.",
+      "sources": [
+       "https://www.manilatimes.net/2019/04/19/news/regions/542362-2/542362",
+       "https://verafiles.org/articles/vera-files-fact-check-comelec-order-disqualifying-abra-rep-m"
+      ]
+     }
+    ]
+   }
+  ],
+  "rufus-rodriguez": [
+   {
+    "id": "rufus-rodriguez-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "PDAF (Napoles) complaints before the Ombudsman and related Supreme Court petition",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2015-08-07",
+      "text": "The NBI filed a third batch of pork-barrel (PDAF) complaints with the Ombudsman, naming Rodriguez among nine lawmakers for alleged malversation, graft and direct bribery. Rodriguez denied dealing with Napoles, said his signatures on the documents were forged, and said he would petition the Supreme Court over due process.",
+      "sources": [
+       "https://www.sunstar.com.ph/more-articles/rufus-denies-role-in-pdaf-scandal"
+      ]
+     },
+     {
+      "date": "2021-07-28",
+      "text": "The Supreme Court (G.R. No. 219781) dismissed his petition against the NBI and DOJ, finding no grave abuse of discretion because the NBI's role is investigative. The ruling concerned his petition only, not the merits of the complaint. The Ombudsman's final action was not confirmed.",
+      "sources": [
+       "https://legaldex.com/jurisprudence/rodriguez-v-national-bureau-of-investigation"
       ]
      }
     ]
