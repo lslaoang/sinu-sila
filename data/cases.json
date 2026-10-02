@@ -263,6 +263,82 @@
    "howard-guintu": {
     "date": "2026-10-02",
     "queries": 3
+   },
+   "linabelle-villarica": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "agay-cruz": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "jose-aquino-ii": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "aniela-tolentino": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "rachel-del-mar": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "rhea-gullas": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "patricia-calderon": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "edwin-cruzado": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "rudy-caoagdan": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "samantha-santos": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "paolo-duterte": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "omar-duterte": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "isidro-ungab": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "nelson-dayanghirang-jr": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "cheeno-almario": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "adrian-jay-advincula": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "jenny-barzaga": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "antonio-ferrer": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "claude-bautista": {
+    "date": "2026-10-02",
+    "queries": 3
    }
   }
  },
@@ -1372,6 +1448,52 @@
       "text": "The Supreme Court (G.R. No. 219781) dismissed his petition against the NBI and DOJ, finding no grave abuse of discretion because the NBI's role is investigative. The ruling concerned his petition only, not the merits of the complaint. The Ombudsman's final action was not confirmed.",
       "sources": [
        "https://legaldex.com/jurisprudence/rodriguez-v-national-bureau-of-investigation"
+      ]
+     }
+    ]
+   }
+  ],
+  "paolo-duterte": [
+   {
+    "id": "paolo-duterte-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "DOJ complaint over the 2017 P6.4-billion shabu shipment (alleged violations of the Dangerous Drugs Act and Anti-Graft law)",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2024-07-31",
+      "text": "Former Sen. Antonio Trillanes IV filed a complaint at the Department of Justice naming Paolo Duterte, Manases Carpio, former Customs chief Nicanor Faeldon and others over a 2017 shabu shipment in Valenzuela. These are allegations. Duterte called the filing a welcome development that would let the accusations be addressed through proper legal channels. What the DOJ later decided was not found.",
+      "sources": [
+       "https://philippines.licas.news/2024/07/31/dutertes-named-in-drug-smuggling-charge/",
+       "https://tribune.net.ph/2024/07/31/duterte-son-not-surprised-by-trillanes-charges"
+      ]
+     }
+    ]
+   }
+  ],
+  "claude-bautista": [
+   {
+    "id": "claude-bautista-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Election protest over the 2010 Davao del Sur governor race (Bautista v. Cagas) and related Supreme Court ruling",
+    "role": "petitioner",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2010-10-07",
+      "text": "Claude P. Bautista filed an election protest against Douglas R. Cagas over the May 2010 governor race (EPC No. 2010-42). The COMELEC First Division denied Cagas's affirmative defenses (order of 2010-08-13) and his motion for reconsideration (2010-10-07).",
+      "sources": [
+       "https://lawphil.net/judjuris/juri2012/jan2012/gr_194139_2012.html"
+      ]
+     },
+     {
+      "date": "2012-01-24",
+      "text": "In Cagas v. COMELEC (G.R. No. 194139), the Supreme Court dismissed Cagas's petition, holding that interlocutory COMELEC division orders cannot be taken directly to the Court, so the protest could proceed. This ruling concerned procedure only. The final outcome of the protest was not found.",
+      "sources": [
+       "https://lawphil.net/judjuris/juri2012/jan2012/gr_194139_2012.html"
       ]
      }
     ]
