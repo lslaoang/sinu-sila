@@ -55,20 +55,35 @@
   .tk{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;font-weight:700} .tk::before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--tc);flex:none}
   .pt .tk{position:absolute;left:.5rem;top:.5rem;background:rgba(0,0,0,.72);color:#fff;padding:.2rem .45rem;border-radius:4px}
   .hm .tk{margin-left:.35rem;color:var(--ink)}
+  /* congress at a glance */
+  .glance{display:grid;gap:.75rem;align-content:center}
+  .gl{display:grid;grid-template-columns:auto 1fr;gap:.15rem 1rem;align-items:center;text-align:left;width:100%;padding:.9rem 1.1rem;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);font:inherit;cursor:pointer}
+  .gl:hover{border-color:var(--ink)} .gl .n{grid-row:span 2;font:800 clamp(2.2rem,5vw,3rem)/1 var(--serif);min-width:3.2ch}
+  .gl b{font-size:1.05rem} .gl small{color:var(--mute);font-size:.85rem}
+  .bar{grid-column:1/-1;display:flex;height:.55rem;border-radius:99px;overflow:hidden;background:var(--line);margin-top:.5rem} .bar i{display:block;height:100%}
+  .fbar{margin:1.2rem 0 2rem;padding:1rem;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+  .fbar .pl{margin-bottom:.6rem}
+  .senviz{display:grid;gap:1rem;align-items:center} @media (min-width:60rem){.senviz{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}.senviz .hemi{margin:0}}
+  h3.sub{font:800 1.3rem var(--serif);margin:2.5rem 0 .8rem} h3.sub small{font:500 .9rem system-ui;color:var(--mute);margin-left:.4rem}
+  .plgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:.75rem;margin:0 0 1rem;padding:0;list-style:none}
+  .plc{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.8rem .9rem;min-width:0}
+  .plc h4{margin:0 0 .5rem;font-size:1rem;display:flex;justify-content:space-between;gap:.5rem} .plc h4 small{color:var(--mute);font-weight:500;white-space:nowrap}
+  .plc a{display:grid;grid-template-columns:2.2rem 1fr;gap:0 .6rem;align-items:center;padding:.3rem 0;color:var(--ink);text-decoration:none} .plc a:hover b{text-decoration:underline}
+  .plc .av{width:2.2rem;height:2.2rem;font-size:.75rem;grid-row:span 2}
   .tip{position:fixed;z-index:60;pointer-events:none;background:var(--ink);color:var(--bg);padding:.4rem .65rem;border-radius:6px;font-size:.85rem;line-height:1.3;transform:translate(-50%,calc(-100% - 8px));opacity:0;transition:opacity .15s;white-space:nowrap}
   .tip.on{opacity:1}
   .panel{margin:1rem 0;padding:1rem;border:1px solid var(--line);border-radius:12px;background:var(--paper);display:grid;gap:1.1rem;text-align:left}
   .pl{margin:0 0 .5rem;font:700 .72rem system-ui;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)} .pl small{font-weight:500;letter-spacing:0;text-transform:none;margin-left:.4rem}
-  .seg{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--ink);border-radius:99px;overflow:hidden}
+  .seg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ink);border-radius:99px;overflow:hidden}
   .seg button{border:0;border-right:1px solid var(--line);background:transparent;color:var(--ink);padding:.5rem .3rem;font:inherit;font-size:.88rem;cursor:pointer} .seg button:last-child{border-right:0}
   .seg button:hover{background:var(--yellow);color:#15120f} .seg button[aria-pressed=true]{background:var(--ink);color:var(--bg);font-weight:700}
-  .panel>*{min-width:0} @media (max-width:30rem){.seg{grid-template-columns:repeat(2,1fr);border-radius:12px}.seg button:nth-child(2){border-right:0}.seg button:nth-child(-n+2){border-bottom:1px solid var(--line)}.seg button:nth-child(3){border-right:1px solid var(--line)}}
+  .panel>*{min-width:0} 
   .tgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(13.5rem,100%),1fr));gap:.4rem}
   .tg{display:flex;align-items:center;gap:.6rem;padding:.45rem .7rem;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--ink);font:inherit;font-size:.88rem;cursor:pointer;text-align:left}
   .tg::before{content:"";width:.85rem;height:.85rem;border-radius:50%;border:2px solid var(--tc);background:var(--tc);flex:none}
   .tg span{flex:1} .tg b{font-variant-numeric:tabular-nums} .tg:hover{border-color:var(--ink)}
   .tg[aria-pressed=false]{color:var(--mute)} .tg[aria-pressed=false]::before{background:transparent}
-  .studs{display:flex;gap:.4rem;overflow-x:auto;padding-bottom:.2rem} .studs .chip{flex:none;font-size:.85rem;padding:.25rem .7rem}
+  .studs{display:flex;flex-wrap:wrap;gap:.4rem} .panel .info{font-size:.85rem;text-align:left;margin:0;color:var(--mute);min-height:0} .sec+.info,.note+.info,.chips+.info{margin:0 0 1rem;max-width:none} .studs .chip{flex:none;font-size:.85rem;padding:.25rem .7rem}
   .ctl{display:flex;flex-wrap:wrap;gap:.5rem .75rem;align-items:center;justify-content:center;margin:.75rem 0}
   .ctl .lbl{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
   .chip{border:1px solid var(--ink);background:transparent;color:var(--ink);padding:.3rem .8rem;border-radius:99px;font:inherit;font-size:.9rem;cursor:pointer}
@@ -153,12 +168,13 @@
 <a class="skip" href="#app">Skip to content</a>
 <div class="top"><div class="wrap">
   <a class="brand" href="#" aria-label="Sino Sila? Home">Sino <mark>Sila?</mark></a>
-  <nav class="nav" aria-label="Sections"><button class="lnk" data-go="senate">Senate</button><button class="lnk" data-go="house">House</button></nav>
+  <nav class="nav" aria-label="Sections"><button class="lnk" data-go="senate">Senate</button><button class="lnk" data-go="house">House</button><button class="lnk" data-go="partylist">Party-list</button></nav>
   <input id="q" type="search" placeholder="Search a name, district or party…" aria-label="Search senators and representatives">
 </div></div>
 <main class="wrap" id="app" tabindex="-1" aria-busy="true"><div class="skel"></div><div class="skel"></div><div class="skel"></div></main>
 <noscript><p class="wrap">This site needs JavaScript to show the records.</p></noscript>
-<footer><div class="wrap"><p><b>Sino Sila?</b> is an independent, unofficial project. House rosters come from Wikipedia and are being cross-checked; House portraits are from Wikimedia Commons, credited on each profile. Data comes from the Senate of the Philippines' public Legislative Information System and the sources linked on each item. It records public facts and is not an accusation of wrongdoing. Counts show volume, not quality or importance. Data as of October 1, 2026.</p></div></footer>
+<footer><div class="wrap"><p><b>Sino Sila?</b> is an independent project, not affiliated with the Senate or the House. Every fact links to the public source it came from. Senate data comes from the Senate's Legislative Information System. House rosters come from Wikipedia and are still being checked against other sources, and House portraits come from Wikimedia Commons, credited on each profile.</p>
+<p>Court cases are being added person by person, so “not yet checked” means we haven't looked yet, not that a record is clean. A case listed here is a public record, not a finding of guilt. If you spot a mistake or something out of date, we want to fix it. Data as of October 1, 2026.</p></div></footer>
 <div class="tip" id="tip" aria-hidden="true"></div>
 <script>
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -250,17 +266,17 @@ function updateInfo() {
   const top = [...data].sort((a, b) => lensVal(b.id) - lensVal(a.id))[0];
   if (state.school) { const ids = data.filter(o => groups[state.school].has(o.id)).map(o => o.id);
     el.innerHTML = `<b>${ids.length} senators</b> studied at <b>${esc(state.school)}</b> (any level, per the cited sources): ${names(ids)}.`; }
-  else if (state.q) el.innerHTML = `<b>${visibleIds().size}</b> senators and <b>${visibleHouse().length}</b> House members match “${esc(state.q)}”.`;
+  else if (state.q) el.innerHTML = `<b>${visibleIds().size}</b> senators and <b>${visibleHouse().length + visiblePL().length}</b> House members match “${esc(state.q)}”.`;
   else if (state.lens === 'track') { const n = k => data.filter(o => trackOf(o.id) === k).length;
-    el.innerHTML = `Ring colour = court-case record in the sources we checked: <b>${n('pending')}</b> with a pending case, <b>${n('resolved')}</b> dismissed, acquitted or decided, <b>${n('convicted')}</b> convicted in a case, <b>${n('none')}</b> none found, <b>${n('unchecked')}</b> not yet checked. A charge is not a finding of guilt, and “not yet checked” is not a clean record.`; }
+    el.innerHTML = `Ring colour shows the court-case record in the sources we checked. Among senators: <b>${n('pending')}</b> pending, <b>${n('resolved')}</b> dismissed, acquitted or decided, <b>${n('convicted')}</b> convicted in a case, <b>${n('none')}</b> none found, <b>${n('unchecked')}</b> not yet checked. A charge is not a finding of guilt.`; }
   else if (state.lens === 'bills') el.innerHTML = `Bigger face = more bills filed. <b>${esc(nameOf(top.id))}</b> filed the most: <b>${billCount(top.id)}</b>.`;
   else if (state.lens === 'laws') el.innerHTML = `Bigger face = more laws backed (as author, co-author or co-sponsor). <b>${esc(nameOf(top.id))}</b> leads with <b>${lawCount(top.id)}</b>.`;
   else el.innerHTML = `Hover or tap a face to meet a senator. Gold ring = Senate leadership.`;
 }
-const KINDS = [['all', 'All'], ['district', 'District'], ['at-large', 'At-large'], ['party-list', 'Party-list']];
+const KINDS = [['all', 'All'], ['district', 'District'], ['at-large', 'At-large']];
 function visibleHouse() {
   const t = state.q.toLowerCase();
-  return house.filter(o => (state.hk === 'all' || o.kind === state.hk) && (!state.hp || o.party === state.hp) && (t || state.tr.has(trackOf(o.id)))
+  return house.filter(o => o.kind !== 'party-list' && (state.hk === 'all' || o.kind === state.hk) && (!state.hp || o.party === state.hp) && (t || state.tr.has(trackOf(o.id)))
     && (!t || (o.name + ' ' + o.constituency + ' ' + o.party).toLowerCase().includes(t)));
 }
 function updateHouse() {
@@ -274,11 +290,24 @@ function updateHouse() {
   document.querySelectorAll('[data-hk]').forEach(b => b.setAttribute('aria-pressed', b.dataset.hk === state.hk));
   document.querySelectorAll('[data-hp]').forEach(b => b.setAttribute('aria-pressed', b.dataset.hp === state.hp));
 }
+function visiblePL() { const t = state.q.toLowerCase();
+  return house.filter(o => o.kind === 'party-list' && (!t || (o.name + ' ' + o.party).toLowerCase().includes(t)) && (t || state.tr.has(trackOf(o.id)))); }
+function updatePL() {
+  const l = document.getElementById('plgrid'); if (!l) return;
+  const rows = visiblePL(), by = {};
+  rows.forEach(o => (by[o.party] = by[o.party] || []).push(o));
+  const list = Object.entries(by).sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]));
+  l.innerHTML = list.map(([p, m]) => `<li class="plc"><h4><span>${esc(p)}</span><small>${m.length} seat${m.length > 1 ? 's' : ''}</small></h4>
+    ${m.map(o => `<a href="#${esc(o.id)}" aria-label="${esc(clean(o.name))}, ${esc(p)}, ${esc(trackLabel(o.id))}">${av(o.name, o.photo)}<b>${esc(clean(o.name))}</b><span class="tk" style="--tc:${trackColor(o.id)}">${esc(trackLabel(o.id))}</span></a>`).join('')}</li>`).join('')
+    || '<li class="soon" style="grid-column:1/-1">No party-list representative matches that.</li>';
+  const info = document.getElementById('plInfo'), all = house.filter(o => o.kind === 'party-list').length;
+  if (info) info.textContent = `Showing ${rows.length} of ${all} representatives from ${list.length} groups${state.q ? ` matching “${state.q}”` : ''}.`;
+}
 function updateAll() {
   const vis = visibleIds();
   document.querySelectorAll('.seat').forEach(s => s.classList.toggle('dim', !vis.has(s.dataset.id)));
   document.getElementById('hemi')?.classList.toggle('trk', state.lens === 'track');
-  layoutSeats(); updateInfo(); updateWall(); updateHouse();
+  layoutSeats(); updateInfo(); updateWall(); updateHouse(); updatePL();
   document.querySelectorAll('[data-lens]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lens === state.lens));
   document.querySelectorAll('[data-tr]').forEach(b => b.setAttribute('aria-pressed', state.tr.has(b.dataset.tr)));
   document.querySelectorAll('[data-school]').forEach(b => b.setAttribute('aria-pressed', b.dataset.school === state.school));
@@ -309,46 +338,63 @@ function home() {
   const o = id => data.find(x => x.id === id);
   const fact = (id, big, label, sub, count) => `<div class="fact rv">${av(nameOf(id), o(id).photo)}<div class="n" ${count ? `data-count="${count}"` : ''}>${count ? 0 : big}</div>
       <div class="l">${label}</div><div class="s"><a href="#${esc(id)}">${esc(nameOf(id))}</a>${sub ? ' · ' + sub : ''}</div></div>`;
-  const topParties = Object.entries(house.reduce((m, o) => (m[o.party] = (m[o.party] || 0) + 1, m), {})).sort((a, b) => b[1] - a[1]).slice(0, 6);
+  const topParties = Object.entries(house.filter(o => o.kind !== 'party-list').reduce((m, o) => (m[o.party] = (m[o.party] || 0) + 1, m), {})).sort((a, b) => b[1] - a[1]).slice(0, 6);
   const chip = (attr, val, label, on) => `<button class="chip" ${attr}="${esc(val)}" aria-pressed="${on}">${label}</button>`;
+  const dist = house.filter(o => o.kind !== 'party-list'), plm = house.filter(o => o.kind === 'party-list');
+  const glance = (go, n, label, sub, people) => `<button class="gl rv" data-go="${go}"><span class="n">${n}</span><b>${label}</b><small>${sub}</small>
+      <span class="bar" role="img" aria-label="Court-case record: ${TRACKS.map(([k, l]) => people.filter(p => trackOf(p.id) === k).length + ' ' + l.toLowerCase()).join(', ')}">${TRACKS.map(([k, , c]) => `<i style="width:${100 * people.filter(p => trackOf(p.id) === k).length / people.length}%;background:${c}"></i>`).join('')}</span></button>`;
   app.innerHTML = `
     <section aria-labelledby="h1" class="herogrid"><div class="htxt">
-      <p class="eyebrow">20th Congress · Senate and House of Representatives</p>
+      <p class="eyebrow">20th Congress · Senate, House and party-list</p>
       <h1 class="big" id="h1">Kilala mo ba ang mga <mark>mambabatas</mark> mo?</h1>
-      <p class="lede"><b>${data.length} senators. ${house.length} House members.</b> Who they are, what they filed (<span data-count="${total}">0</span> Senate bills so far), which laws they backed and where they studied. Every fact links to its source.</p></div><div class="hviz">
+      <p class="lede"><b>${everyone().length} lawmakers.</b> Who they are, what they filed, which laws they backed, where they studied and what the courts have said. Every fact links to its source.</p></div>
+      <div class="glance">
+        ${glance('senate', data.length, 'Senate', 'senators, elected nationwide', data)}
+        ${glance('house', dist.length, 'House of Representatives', 'district and at-large seats', dist)}
+        ${glance('partylist', plm.length, 'Party-list', `representatives from ${new Set(plm.map(o => o.party)).size} groups`, plm)}
+      </div></section>
+    <div class="fbar rv" role="group" aria-labelledby="plt"><h3 class="pl" id="plt">Court-case record <small>tap to show or hide · applies to everyone below</small></h3>
+      <div class="tgs">${TRACKS.map(([k, l, c]) => `<button class="tg" data-tr="${k}" aria-pressed="${state.tr.has(k)}" style="--tc:${c}"><span>${esc(l)}</span><b>${everyone().filter(o => trackOf(o.id) === k).length}</b></button>`).join('')}</div></div>
+
+    <h2 class="sec rv" id="senate">The Senate <small>${data.length} senators</small></h2>
+    <div class="senviz">
       <div class="hemi trk" id="hemi" role="group" aria-label="The ${data.length} senators. Each face links to a profile.">
         ${data.map(s => `<a class="seat ${isLead(s) ? 'lead' : ''}" data-id="${esc(s.id)}" style="--tc:${trackColor(s.id)}" href="#${esc(s.id)}" aria-label="${esc(clean(s.name))}, ${esc(s.position)}, ${esc(trackLabel(s.id))}, ${billCount(s.id)} bills, ${lawCount(s.id)} laws backed">${av(s.name, s.photo, true)}</a>`).join('')}
       </div>
       <div class="panel">
-        <div><h3 class="pl" id="plv">View</h3><div class="seg" role="group" aria-labelledby="plv">
-          ${[['track', 'Track record'], ['bills', 'Bills filed'], ['laws', 'Laws backed'], ['equal', 'Equal']].map(([k, l]) => `<button data-lens="${k}" aria-pressed="${k === state.lens}">${l}</button>`).join('')}</div></div>
-        <div><h3 class="pl" id="plt">Court cases <small>tap to show or hide</small></h3><div class="tgs" role="group" aria-labelledby="plt">
-          ${TRACKS.map(([k, l, c]) => `<button class="tg" data-tr="${k}" aria-pressed="${state.tr.has(k)}" style="--tc:${c}"><span>${esc(l)}</span><b>${everyone().filter(o => trackOf(o.id) === k).length}</b></button>`).join('')}</div></div>
+        <div><h3 class="pl" id="plv">Faces show</h3><div class="seg" role="group" aria-labelledby="plv">
+          ${[['track', 'Court cases'], ['bills', 'Bills'], ['laws', 'Laws']].map(([k, l]) => `<button data-lens="${k}" aria-pressed="${k === state.lens}">${l}</button>`).join('')}</div></div>
         <div><h3 class="pl" id="pls">Where senators studied</h3><div class="studs" role="group" aria-labelledby="pls">
           ${Object.entries(groups).sort((a, b) => b[1].size - a[1].size).map(([g, s]) => chip('data-school', g, `${esc(g)}<small>${s.size}</small>`, false)).join('')}</div></div>
+        <p class="info" id="hemiInfo" aria-live="polite"></p>
       </div>
-      <p class="info" id="hemiInfo" aria-live="polite"></p>
-    </div></section>
-    <h2 class="sec rv">Standouts <small>volume, not quality or importance</small></h2>
+    </div>
+    <h3 class="sub rv">Standouts <small>volume, not quality or importance</small></h3>
     <div class="facts">
       ${fact(topB, '', 'Most bills filed', '20th Congress', billCount(topB))}
       ${fact(topL, '', 'Most laws backed', 'any role', lawCount(topL))}
       ${fact(peak.id, '', 'Most bills in a single month', monthName(peak.m), peak.n)}
       ${fact(recent[0].id, dayLabel(recent[0].d), 'Newest filing', esc(title(recent[0].t)), 0)}
     </div>
-    <h2 class="sec rv">Just filed <small>the newest bills in the Senate</small></h2>
+    <h3 class="sub rv">Just filed <small>the newest bills in the Senate</small></h3>
     <div class="feed rv">${recent.map(r => `<a class="fcard" href="https://senate.gov.ph/legislative-documents/bills/${esc(r.bid)}" target="_blank" rel="noopener">${av(nameOf(r.id), o(r.id).photo)}
       <b>${esc(title(r.t))}</b><small>${esc(nameOf(r.id))} · ${esc(dayLabel(r.d))}<span class="sr"> (opens the Senate site)</span></small></a>`).join('')}</div>
-    <h2 class="sec rv" id="senate">The Senate <small>${data.length} senators</small></h2>
+    <h3 class="sub rv">All senators</h3>
     <div class="chips rv">${chip('data-lead', '0', 'All', true)}${chip('data-lead', '1', 'Leadership', false)}<span class="sp"></span>
       ${chip('data-sort', 'az', 'A–Z', true)}${chip('data-sort', 'bills', 'Most bills', false)}${chip('data-sort', 'laws', 'Most laws', false)}</div>
     <ul class="wall" id="wall"></ul>
-    <h2 class="sec rv" id="house">House of Representatives <small>${house.length} members · first-pass data</small></h2>
-    <p class="note">Roster from Wikipedia. A 32-member audit against news and election sources found every seat consistent. Party labels are “as of” the roster date, since members switch parties, and leadership roles are incomplete. Bills, laws and education for House members are not included yet.</p>
+
+    <h2 class="sec rv" id="house">House of Representatives <small>${dist.length} district and at-large seats</small></h2>
+    <p class="note">Names, districts and parties come from Wikipedia and were spot-checked against news and election sources (32 members, no mismatches). Parties change during a term, so labels are as of the roster date, and some leadership roles may be missing. Bills, laws and education for House members are not added yet.</p>
     <div class="chips rv" role="group" aria-label="Filter the House">${KINDS.map(([k, l]) => chip('data-hk', k, l, k === 'all')).join('')}<span class="sp"></span>
       ${topParties.map(([p, n]) => chip('data-hp', p, `${esc(p)}<small>${n}</small>`, false)).join('')}</div>
     <p class="info" id="houseInfo" aria-live="polite" style="text-align:left;min-height:0"></p>
-    <ul class="hlist" id="hlist"></ul>`;
+    <ul class="hlist" id="hlist"></ul>
+
+    <h2 class="sec rv" id="partylist">Party-list <small>${plm.length} representatives · ${new Set(plm.map(o => o.party)).size} groups</small></h2>
+    <p class="note">Party-list seats go to groups that represent sectors such as labour, farmers or youth. Each group below lists its representatives in the 20th Congress. Same roster source as the rest of the House.</p>
+    <p class="info" id="plInfo" aria-live="polite" style="text-align:left;min-height:0"></p>
+    <ul class="plgrid" id="plgrid"></ul>`;
   updateAll();
   app.querySelectorAll('[data-count]').forEach(el => { const to = +el.dataset.count; if (reduce) { el.textContent = to.toLocaleString(); return; }
     const t0 = performance.now(); (function f(t) { const p = Math.min(1, (t - t0) / 1100); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))).toLocaleString(); if (p < 1) requestAnimationFrame(f); })(t0); });
@@ -396,7 +442,7 @@ const srcName = u => (NAMES.find(([re]) => re.test(u)) || [0, new URL(u).hostnam
 function casesHtml(o) {
   const list = cases.cases[o.id] || [], ck = cases._meta.checked[o.id], checked = ck && ck.date;
   const links = e => e.sources.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(srcName(u))}<span class="sr"> (opens in a new tab)</span> ↗</a>`).join(' · ');
-  const body = list.length ? `<p class="note">These are public records. A charge or complaint is an allegation, and a person is presumed innocent unless a court convicts them. A preventive suspension is not a finding of guilt. Dismissals, acquittals and the person's own response are included when reported. Status is as of the date shown, and this list may be incomplete.</p>`
+  const body = list.length ? `<p class="note">From court records and news reports, each linked. A complaint or charge is an allegation until a court decides, and a suspension is not a verdict. Dismissals and acquittals are listed too, along with the person's own response when it was reported. Status is as of the date shown, and the list may not be complete.</p>`
       + list.map(c => `<article class="case"><div class="ch"><span class="pill">${esc(STATUS[c.status] || c.status)}</span><span class="pill">${esc(KIND[c.kind] || c.kind)}</span><b>${esc(c.title)}</b></div>
         <small>${esc(c.body)} · ${esc(c.role)} · status as of ${esc(c.status_date || '')}</small>
         <ol class="ev">${c.events.map(e => `<li><time>${esc(e.date)}</time>${esc(e.text)}<div class="srcs">${links(e)}</div></li>`).join('')}</ol></article>`).join('')
@@ -455,6 +501,7 @@ app.onclick = e => {
   if (d.f === 'retry') return load();
   if (d.f === 'share') { const url = location.href, t = document.title;
     if (navigator.share) navigator.share({title: t, url}).catch(() => {}); else navigator.clipboard?.writeText(url).then(() => { b.textContent = 'Link copied'; setTimeout(() => b.textContent = 'Share', 2000); }); return; }
+  if (d.go) { document.getElementById(d.go)?.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'}); return; }
   if (d.lens) state.lens = d.lens;
   if (d.tr) { state.tr.has(d.tr) ? state.tr.delete(d.tr) : state.tr.add(d.tr); }
   if (d.school) state.school = state.school === d.school ? null : d.school;
