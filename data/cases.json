@@ -339,6 +339,102 @@
    "claude-bautista": {
     "date": "2026-10-02",
     "queries": 3
+   },
+   "edsel-galeos": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "karen-flores-garcia": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "marcelino-libanan": {
+    "date": "2026-10-02",
+    "queries": 7
+   },
+   "jay-khonghun": {
+    "date": "2026-10-02",
+    "queries": 5
+   },
+   "paolo-ortega": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "ferjenel-biron": {
+    "date": "2026-10-02",
+    "queries": 5
+   },
+   "yasser-balindong": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "janette-garin": {
+    "date": "2026-10-02",
+    "queries": 6
+   },
+   "mark-cojuangco": {
+    "date": "2026-10-02",
+    "queries": 6
+   },
+   "imelda-dimaporo": {
+    "date": "2026-10-02",
+    "queries": 5
+   },
+   "esmael-mangudadatu": {
+    "date": "2026-10-02",
+    "queries": 6
+   },
+   "jocelyn-tulfo": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "kenneth-gatchalian": {
+    "date": "2026-10-02",
+    "queries": 5
+   },
+   "harold-duterte": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "paolo-marcoleta": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "claudine-bautista-lim": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "dinand-hernandez": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "lorenz-defensor": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "renee-co": {
+    "date": "2026-10-02",
+    "queries": 3
+   },
+   "martin-romualdez": {
+    "date": "2026-10-02",
+    "queries": 5
+   },
+   "gloria-macapagal-arroyo": {
+    "date": "2026-10-02",
+    "queries": 5
+   },
+   "benny-abante": {
+    "date": "2026-10-02",
+    "queries": 5
+   },
+   "sandro-marcos": {
+    "date": "2026-10-02",
+    "queries": 4
+   },
+   "toby-tiangco": {
+    "date": "2026-10-02",
+    "queries": 4
    }
   }
  },
@@ -1494,6 +1590,350 @@
       "text": "In Cagas v. COMELEC (G.R. No. 194139), the Supreme Court dismissed Cagas's petition, holding that interlocutory COMELEC division orders cannot be taken directly to the Court, so the protest could proceed. This ruling concerned procedure only. The final outcome of the protest was not found.",
       "sources": [
        "https://lawphil.net/judjuris/juri2012/jan2012/gr_194139_2012.html"
+      ]
+     }
+    ]
+   }
+  ],
+  "marcelino-libanan": [
+   {
+    "id": "marcelino-libanan-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Graft case (RA 3019) over a 2004 Eastern Samar fertilizer purchase (P3.25 million, Akame Marketing International)",
+    "role": "accused",
+    "status": "dismissed",
+    "status_date": "2022-12",
+    "events": [
+     {
+      "date": "2004-04",
+      "text": "The Eastern Samar provincial government bought 2,164 bags of fertilizer worth P3.25 million from Akame Marketing International without public bidding, according to the prosecution's allegation. Libanan was then the province's representative.",
+      "sources": [
+       "https://tribune.net.ph/2024/03/03/former-samar-execs-graft-case-dismissed",
+       "https://www.philstar.com/nation/2020/11/24/2058951/sandigan-affirms-ruling-vs-2-former-eastern-samar-officials"
+      ]
+     },
+     {
+      "date": "2020-10-20",
+      "text": "The Sandiganbayan, in resolutions of Oct. 5 and 20, 2020, denied Libanan's and former governor Clotilde Salazar's requests to file a demurrer to evidence. Libanan faced one count of violating RA 3019.",
+      "sources": [
+       "https://www.philstar.com/nation/2020/11/24/2058951/sandigan-affirms-ruling-vs-2-former-eastern-samar-officials"
+      ]
+     },
+     {
+      "date": "2022-12",
+      "text": "The Supreme Court granted Libanan's and his co-accused's motion to dismiss on the ground of their right to speedy disposition of cases (delay in the Ombudsman investigation), per Daily Tribune. The dismissal rested on delay, not on a ruling about the merits. The exact date and G.R. number were not found.",
+      "sources": [
+       "https://tribune.net.ph/2024/03/03/former-samar-execs-graft-case-dismissed"
+      ]
+     },
+     {
+      "date": "2024-02-29",
+      "text": "The Sandiganbayan quashed the same charge against co-accused Salazar and Manuel Japzon, applying the Supreme Court's ruling.",
+      "sources": [
+       "https://tribune.net.ph/2024/03/03/former-samar-execs-graft-case-dismissed"
+      ]
+     }
+    ]
+   }
+  ],
+  "janette-garin": [
+   {
+    "id": "janette-garin-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Graft and technical malversation charges before the Sandiganbayan over the 2015 Dengvaxia purchase (P3.5 billion)",
+    "role": "accused",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2023-10-24",
+      "text": "The Ombudsman filed graft (RA 3019) and technical malversation charges at the Sandiganbayan against Garin, then Health Secretary, and four other former health officials. Garin said no corruption was involved.",
+      "sources": [
+       "https://www.philstar.com/headlines/2023/10/26/2306536/garin-others-charged-over-dengvaxia/amp/"
+      ]
+     },
+     {
+      "date": "2024-01-10",
+      "text": "The Sandiganbayan denied her motion to quash, in which she argued that the five-year Ombudsman investigation violated her right to speedy disposition of cases. The court found the time spent reasonable.",
+      "sources": [
+       "https://tribune.net.ph/2024/01/11/sandigan-junks-garins-quash-motion"
+      ]
+     },
+     {
+      "date": "2024-07-16",
+      "text": "The Sandiganbayan Second Division allowed prosecutors to present additional documents. This is the latest ruling found; the current status may differ.",
+      "sources": [
+       "https://tribune.net.ph/2024/07/17/sandigan-nixes-garins-bid-to-block-prosecutions-addl-evidence-in-dengvaxia-case"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "janette-garin-2",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Reckless imprudence resulting in homicide cases and complaints over Dengvaxia deaths",
+    "role": "accused",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2024-09",
+      "text": "A Quezon City court (RTC Branch 229) granted a demurrer to evidence in the first batch of eight cases, finding Garin and her co-accused not guilty. The Volunteers Against Crime and Corruption said this covered only the first eight cases and that the decision was being questioned before the Court of Appeals.",
+      "sources": [
+       "https://tribune.net.ph/2024/09/02/garin-not-yet-off-dengvaxia-hook-vacc",
+       "https://manilatimes.net/2024/09/03/news/national/vacc-hits-garin-for-lying-on-dengvaxia-case/1968536"
+      ]
+     },
+     {
+      "date": "2025-01-10",
+      "text": "The Supreme Court court administrator directed a Quezon City family court (Branch 102) to begin pre-trial in 35 remaining cases after the first judge inhibited. Separately, Justice Secretary Remulla's resolution of the same date dismissed 98 further complaints against Garin and two co-respondents. The Public Attorney's Office filed a motion for reconsideration on January 29. No later outcome was found.",
+      "sources": [
+       "https://tribune.net.ph/2025/01/10/dengvaxia-cases-revived",
+       "https://www.philstar.com/headlines/2025/01/29/2417649/pao-seeks-reversal-order-withdraw-dengvaxia-cases/amp/"
+      ]
+     }
+    ]
+   }
+  ],
+  "mark-cojuangco": [
+   {
+    "id": "mark-cojuangco-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman complaint by tobacco farmers' group over 2010-2012 tobacco excise tax shares (Pangasinan 5th District)",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2016-03-16",
+      "text": "The North and Central Luzon Tobacco Farmers Association filed a complaint at the Office of the Ombudsman against Mark Cojuangco and his wife, Rep. Kimi Cojuangco, alleging plunder, graft and ethics violations over about P569 million in tobacco excise tax shares from 2010 to 2012. These are allegations. Rep. Kimi Cojuangco called the complaint frivolous and said the funds were fully liquidated. No Ombudsman resolution was found.",
+      "sources": [
+       "https://punch.dagupan.com/news/2016/03/cojuangcos-charged-for-plunder/",
+       "https://verafiles.org/articles/tobacco-farmers-yet-to-feel-benefits-of-excise-tax-shares"
+      ]
+     }
+    ]
+   }
+  ],
+  "imelda-dimaporo": [
+   {
+    "id": "imelda-dimaporo-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Dimaporo v. COMELEC and Belmonte (G.R. No. 179285): petition over the 2007 canvass, Lanao del Norte 1st District",
+    "role": "petitioner",
+    "status": "dismissed",
+    "status_date": "2008-02-11",
+    "events": [
+     {
+      "date": "2007-07-10",
+      "text": "The COMELEC Second Division ruled against Dimaporo's side in the canvass dispute for the 2007 congressional race against Vicente Belmonte, and the COMELEC en banc later denied reconsideration.",
+      "sources": [
+       "https://lawphil.net/judjuris/juri2008/feb2008/gr_179285_2008.html"
+      ]
+     },
+     {
+      "date": "2008-02-11",
+      "text": "The Supreme Court dismissed her petition for certiorari. The ruling was procedural: it held that jurisdiction had passed to the House of Representatives Electoral Tribunal after Belmonte's proclamation, so her remedy was an election protest there.",
+      "sources": [
+       "https://lawphil.net/judjuris/juri2008/feb2008/gr_179285_2008.html",
+       "https://chanrobles.com/scdecisions/jurisprudence2008/feb2008/gr_179285_2008.php"
+      ]
+     }
+    ]
+   }
+  ],
+  "esmael-mangudadatu": [
+   {
+    "id": "esmael-mangudadatu-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Murder complaint over the February 2010 shooting of Tamano Kamendan at a Davao City mall",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2011-07",
+    "events": [
+     {
+      "date": "2010-02-12",
+      "text": "Natividad Kamendan filed a murder complaint at the Davao City prosecutor's office against then Buluan Vice Mayor Esmael Mangudadatu and two police escorts over the death of her husband, Tamano Kamendan, who was shot at a mall on Feb. 11.",
+      "sources": [
+       "https://www.sunstar.com.ph/more-articles/mangudadatu-2-cops-face-murder-rap"
+      ]
+     },
+     {
+      "date": "2010-03-03",
+      "text": "A DOJ joint resolution found insufficient evidence against Mangudadatu, saying the complainant had not implicated him in her initial statement.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/229474/doj-junks-murder-raps-vs-toto-mangudadatu/story/"
+      ]
+     },
+     {
+      "date": "2011-07",
+      "text": "The DOJ granted the complainant's motion to withdraw her petition for review, so the dismissal stood. GMA reported this on 2011-08-15 and dated the resolution to July 2011.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/229474/doj-junks-murder-raps-vs-toto-mangudadatu/story/"
+      ]
+     }
+    ]
+   }
+  ],
+  "jocelyn-tulfo": [
+   {
+    "id": "jocelyn-tulfo-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Comelec petition to disqualify five Tulfo family candidates, including Jocelyn Tulfo, before the May 2025 elections",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2025-05",
+    "events": [
+     {
+      "date": "2025-02-14",
+      "text": "Lawyer Virgilio Garcia filed a petition at the Commission on Elections to disqualify five Tulfo family members, including Jocelyn Tulfo, on political-dynasty grounds. These were the petitioner's allegations.",
+      "sources": [
+       "https://www.inquirer.net/431288/comelec-junks-case-to-disqualify-tulfos/"
+      ]
+     },
+     {
+      "date": "2025-03-04",
+      "text": "The Comelec First Division dismissed the petition as insufficient in form because the respondents' certificates of candidacy were not attached.",
+      "sources": [
+       "https://www.inquirer.net/431288/comelec-junks-case-to-disqualify-tulfos/"
+      ]
+     },
+     {
+      "date": "2025-05-29",
+      "text": "Comelec denied the petitioner's motion for reconsideration for lack of procedural compliance and merit, as reported by the Philippine Star.",
+      "sources": [
+       "https://www.philstar.com/headlines/2025/05/29/2446632/procedural-lapses-comelec-junks-appeal-tulfo-dq"
+      ]
+     }
+    ]
+   }
+  ],
+  "kenneth-gatchalian": [
+   {
+    "id": "kenneth-gatchalian-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Sandiganbayan cases over the Local Water Utilities Administration's 2009 purchase of Express Savings Bank (Gatchalian family named among accused)",
+    "role": "accused",
+    "status": "dismissed",
+    "status_date": "2017-11-17",
+    "events": [
+     {
+      "date": "2017-11-17",
+      "text": "In a resolution promulgated Nov. 17, 2017, the Sandiganbayan Special Fourth Division found no probable cause for arrest warrants against the Gatchalian family and dismissed the cases against them, including Kenneth Gatchalian. It lifted their hold departure orders. Trial continued against Rep. Prospero Pichay and a former LWUA official.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/633836/sandigan-rules-in-favor-of-gatchalians-in-lwua-case/story/"
+      ]
+     },
+     {
+      "date": "2019-03-15",
+      "text": "The Philippine Star, reporting on the case against Pichay, again noted that the cases against Kenneth Gatchalian and his relatives had been dismissed.",
+      "sources": [
+       "https://www.philstar.com/nation/2019/03/15/1901534/prospero-pichay-suspended-sandiganbayan-graft"
+      ]
+     }
+    ]
+   }
+  ],
+  "martin-romualdez": [
+   {
+    "id": "martin-romualdez-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Plunder case at the Sandiganbayan over alleged flood-control kickbacks, with former Rep. Elizaldy Co and others",
+    "role": "accused",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2026-09-14",
+      "text": "The Sandiganbayan Third Division committed Romualdez, who is accused of plunder over alleged flood-control kickbacks (reported as P7.2 to P7.4 billion), to the Quezon City Jail male dormitory as a detention prisoner and set his arraignment for Sept. 16. His camp has maintained his innocence.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/1002333/sandiganbayan-commits-martin-romualdez-to-quezon-city-jail-arraignment-set/story/"
+      ]
+     },
+     {
+      "date": "2026-09-16",
+      "text": "Romualdez pleaded not guilty at his arraignment before the Sandiganbayan Third Division.",
+      "sources": [
+       "https://tribune.net.ph/2026/09/24/sandiganbayan-romualdez-yet-to-request-bail"
+      ]
+     },
+     {
+      "date": "2026-09-24",
+      "text": "The court's clerk confirmed that Romualdez had not yet filed a petition for bail. Plunder is generally non-bailable, but an accused may petition if they argue the evidence of guilt is not strong. The case is pending.",
+      "sources": [
+       "https://tribune.net.ph/2026/09/24/sandiganbayan-romualdez-yet-to-request-bail"
+      ]
+     }
+    ]
+   }
+  ],
+  "gloria-macapagal-arroyo": [
+   {
+    "id": "gloria-macapagal-arroyo-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Plunder case over alleged misuse of PCSO intelligence funds (G.R. No. 220598, with Benigno Aguas)",
+    "role": "accused",
+    "status": "dismissed",
+    "status_date": "2016-07-19",
+    "events": [
+     {
+      "date": "2016-07-19",
+      "text": "The Supreme Court en banc granted her petition for certiorari, set aside the Sandiganbayan's resolutions denying her demurrer to evidence, and dismissed the case against her for insufficiency of evidence, ordering her release from detention. Two justices dissented.",
+      "sources": [
+       "https://lawphil.net/judjuris/juri2016/jul2016/gr_220598_2016.html"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "gloria-macapagal-arroyo-2",
+    "kind": "election",
+    "body": "house",
+    "title": "Electoral sabotage case over the 2007 Maguindanao senatorial vote (Pasay RTC Branch 112)",
+    "role": "accused",
+    "status": "dismissed",
+    "status_date": "2018-12-17",
+    "events": [
+     {
+      "date": "2018-12-17",
+      "text": "Judge Jesus Mupas granted her demurrer to evidence and dismissed the case, which the Commission on Elections had filed in 2011. The court said only one of 13 prosecution witnesses named her and that testimony was uncorroborated. Her P1-million bail was ordered released.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/679710/pasay-city-court-junks-electoral-sabotage-case-vs-arroyo/story/",
+       "https://www.philstar.com/headlines/2018/12/29/1880675/court-junks-2007-electoral-sabotage-case-vs-gloria-arroyo"
+      ]
+     }
+    ]
+   }
+  ],
+  "benny-abante": [
+   {
+    "id": "benny-abante-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Abante v. Uy: Comelec petition over his rival's natural-born citizenship, Manila 6th District, 2025",
+    "role": "petitioner",
+    "status": "decided",
+    "status_date": "2025-07-07",
+    "events": [
+     {
+      "date": "2025-06-18",
+      "text": "The Comelec Second Division granted Abante's petition and voided rival Joey Uy's certificate of candidacy for material misrepresentation about being natural-born, declaring Abante the winner. Uy had led the count, 65,746 to 63,358.",
+      "sources": [
+       "https://www.philstar.com/nation/2025/06/19/2451747/comelec-disqualifies-opponent-declares-abante-winner-manilas-6th-district",
+       "https://www.inquirer.net/448788/comelec-abantes-win-in-house-race-final/"
+      ]
+     },
+     {
+      "date": "2025-07-07",
+      "text": "Comelec issued a certificate of finality on its June 30 en banc ruling after receiving no Supreme Court restraining order. The outcome of any Supreme Court petition by Uy was not found.",
+      "sources": [
+       "https://www.inquirer.net/448788/comelec-abantes-win-in-house-race-final/"
       ]
      }
     ]
