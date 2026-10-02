@@ -22,6 +22,13 @@
   mark{color:inherit;background:linear-gradient(var(--yellow),var(--yellow)) 0 90%/100% .4em no-repeat}
   #q{flex:1;min-width:0;max-width:22rem;margin-left:auto;padding:.55rem .9rem;border:1px solid var(--line);border-radius:99px;background:var(--paper);color:var(--ink);font:inherit}
 
+  .nav{display:flex;gap:.25rem} .lnk{background:none;border:0;font:inherit;font-weight:700;color:var(--ink);cursor:pointer;padding:.3rem .5rem;border-radius:6px} .lnk:hover{background:var(--yellow);color:#15120f}
+  @media (max-width:40rem){.top .wrap{flex-wrap:wrap}#q{order:3;flex:1 1 100%;max-width:none;margin-left:0}.nav{margin-left:auto}}
+  .sec{scroll-margin-top:4.5rem}
+  .hlist{list-style:none;padding:0;margin:0 0 1rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:.35rem .75rem}
+  .hrow{display:grid;grid-template-columns:2.6rem 1fr;gap:.05rem .7rem;align-items:center;padding:.5rem;border-radius:var(--r);text-decoration:none;color:var(--ink);border:1px solid transparent}
+  .hrow:hover{border-color:var(--ink);background:var(--paper)} .hrow .av{width:2.6rem;height:2.6rem;font-size:.85rem;grid-row:span 2} .hn b{line-height:1.2} .hm{color:var(--mute);font-size:.85rem}
+  .tile.txt strong{font-size:clamp(1.3rem,4vw,1.9rem);white-space:normal;line-height:1.1}
   /* hero */
   .eyebrow{font:700 .78rem system-ui;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:2rem 0 .5rem}
   h1.big{font:800 clamp(2.3rem,7.2vw,4.6rem)/1.02 var(--serif);letter-spacing:-.025em;margin:0 0 .8rem;max-width:16ch}
@@ -121,11 +128,12 @@
 <a class="skip" href="#app">Skip to content</a>
 <div class="top"><div class="wrap">
   <a class="brand" href="#" aria-label="Sino Sila? Home">Sino <mark>Sila?</mark></a>
-  <input id="q" type="search" placeholder="Search a senator…" aria-label="Search senators">
+  <nav class="nav" aria-label="Sections"><button class="lnk" data-go="senate">Senate</button><button class="lnk" data-go="house">House</button></nav>
+  <input id="q" type="search" placeholder="Search a name, district or party…" aria-label="Search senators and representatives">
 </div></div>
 <main class="wrap" id="app" tabindex="-1" aria-busy="true"><div class="skel"></div><div class="skel"></div><div class="skel"></div></main>
 <noscript><p class="wrap">This site needs JavaScript to show the records.</p></noscript>
-<footer><div class="wrap"><p><b>Sino Sila?</b> is an independent, unofficial project. Data comes from the Senate of the Philippines' public Legislative Information System and the sources linked on each item. It records public facts and is not an accusation of wrongdoing. Counts show volume, not quality or importance. Data as of October 1, 2026.</p></div></footer>
+<footer><div class="wrap"><p><b>Sino Sila?</b> is an independent, unofficial project. House rosters come from Wikipedia and are being cross-checked; House portraits are from Wikimedia Commons, credited on each profile. Data comes from the Senate of the Philippines' public Legislative Information System and the sources linked on each item. It records public facts and is not an accusation of wrongdoing. Counts show volume, not quality or importance. Data as of October 1, 2026.</p></div></footer>
 <div class="tip" id="tip" aria-hidden="true"></div>
 <script>
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -136,15 +144,17 @@ const av = (n, photo, eager) => `<div class="av" style="background:hsl(${hue(n)}
 const ICON = {membership:'🏛️', bill:'📜', vote:'🗳️', saln:'💼', campaign_finance:'💸', audit:'🔎', case:'⚖️', appointment:'📌'};
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const app = document.getElementById('app'), q = document.getElementById('q'), tip = document.getElementById('tip');
-let data = [], bills = {}, laws = {bills: []}, edu = {};
-const state = {lens: 'bills', school: null, q: '', leaders: false, sort: 'az'};
+let data = [], house = [], houseMeta = {}, bills = {}, laws = {bills: []}, edu = {};
+const state = {lens: 'bills', school: null, q: '', leaders: false, sort: 'az', hk: 'all', hp: null};
 
 const firstName = n => clean(n).split(' ')[0];
 const lastName = o => clean(o.name).split(' ').filter(w => !/^(Jr\.?|II|III|IV)$/.test(w)).pop();
-const nameOf = id => clean((data.find(o => o.id === id) || {}).name || '');
+const everyone = () => [...data, ...house];
+const findPerson = id => data.find(o => o.id === id) || house.find(o => o.id === id);
+const nameOf = id => clean((findPerson(id) || {}).name || '');
 const POS = ['Senate President', 'Senate President Pro Tempore', 'Senate Majority Leader', 'Senate Minority Leader'];
 const posRank = o => { const i = POS.indexOf(o.position); return i < 0 ? 9 : i; };
-const isLead = o => posRank(o) < 9;
+const isLead = o => o.body === 'house' ? o.position !== 'Representative' : posRank(o) < 9;
 
 const BUCKETS = [
   ['Signed into law', '#16a34a', s => s === 'APPROVED BY THE PRESIDENT OF THE PHILIPPINES'],
@@ -207,15 +217,32 @@ function updateInfo() {
   const top = [...data].sort((a, b) => lensVal(b.id) - lensVal(a.id))[0];
   if (state.school) { const ids = data.filter(o => groups[state.school].has(o.id)).map(o => o.id);
     el.innerHTML = `<b>${ids.length} senators</b> studied at <b>${esc(state.school)}</b> (any level, per the cited sources): ${names(ids)}.`; }
-  else if (state.q) el.innerHTML = `<b>${visibleIds().size}</b> match “${esc(state.q)}”.`;
+  else if (state.q) el.innerHTML = `<b>${visibleIds().size}</b> senators and <b>${visibleHouse().length}</b> House members match “${esc(state.q)}”.`;
   else if (state.lens === 'bills') el.innerHTML = `Bigger face = more bills filed. <b>${esc(nameOf(top.id))}</b> filed the most: <b>${billCount(top.id)}</b>.`;
   else if (state.lens === 'laws') el.innerHTML = `Bigger face = more laws backed (as author, co-author or co-sponsor). <b>${esc(nameOf(top.id))}</b> leads with <b>${lawCount(top.id)}</b>.`;
   else el.innerHTML = `Hover or tap a face to meet a senator. Gold ring = Senate leadership.`;
 }
+const KINDS = [['all', 'All'], ['district', 'District'], ['at-large', 'At-large'], ['party-list', 'Party-list']];
+function visibleHouse() {
+  const t = state.q.toLowerCase();
+  return house.filter(o => (state.hk === 'all' || o.kind === state.hk) && (!state.hp || o.party === state.hp)
+    && (!t || (o.name + ' ' + o.constituency + ' ' + o.party).toLowerCase().includes(t)));
+}
+function updateHouse() {
+  const l = document.getElementById('hlist'); if (!l) return;
+  const rows = visibleHouse();
+  l.innerHTML = rows.map(o => `<li><a class="hrow" href="#${esc(o.id)}" aria-label="${esc(clean(o.name))}, ${esc(o.constituency)}, ${esc(o.party)}">${av(o.name, o.photo)}
+      <span class="hn"><b>${esc(clean(o.name))}</b>${isLead(o) ? ` <span class="role">${esc(o.position)}</span>` : ''}</span>
+      <span class="hm">${esc(o.constituency)} · ${esc(o.party)}</span></a></li>`).join('') || '<li class="soon" style="grid-column:1/-1">No representative matches that.</li>';
+  const info = document.getElementById('houseInfo');
+  if (info) info.textContent = `Showing ${rows.length} of ${house.length} representatives${state.q ? ` matching “${state.q}”` : ''}.`;
+  document.querySelectorAll('[data-hk]').forEach(b => b.setAttribute('aria-pressed', b.dataset.hk === state.hk));
+  document.querySelectorAll('[data-hp]').forEach(b => b.setAttribute('aria-pressed', b.dataset.hp === state.hp));
+}
 function updateAll() {
   const vis = visibleIds();
   document.querySelectorAll('.seat').forEach(s => s.classList.toggle('dim', !vis.has(s.dataset.id)));
-  layoutSeats(); updateInfo(); updateWall();
+  layoutSeats(); updateInfo(); updateWall(); updateHouse();
   document.querySelectorAll('[data-lens]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lens === state.lens));
   document.querySelectorAll('[data-school]').forEach(b => b.setAttribute('aria-pressed', b.dataset.school === state.school));
 }
@@ -245,12 +272,13 @@ function home() {
   const o = id => data.find(x => x.id === id);
   const fact = (id, big, label, sub, count) => `<div class="fact rv">${av(nameOf(id), o(id).photo)}<div class="n" ${count ? `data-count="${count}"` : ''}>${count ? 0 : big}</div>
       <div class="l">${label}</div><div class="s"><a href="#${esc(id)}">${esc(nameOf(id))}</a>${sub ? ' · ' + sub : ''}</div></div>`;
+  const topParties = Object.entries(house.reduce((m, o) => (m[o.party] = (m[o.party] || 0) + 1, m), {})).sort((a, b) => b[1] - a[1]).slice(0, 6);
   const chip = (attr, val, label, on) => `<button class="chip" ${attr}="${esc(val)}" aria-pressed="${on}">${label}</button>`;
   app.innerHTML = `
     <section aria-labelledby="h1" class="herogrid"><div class="htxt">
-      <p class="eyebrow">20th Congress · Senate of the Philippines</p>
-      <h1 class="big" id="h1">Kilala mo ba ang mga <mark>senador</mark> mo?</h1>
-      <p class="lede"><b>${data.length} senators. <span data-count="${total}">0</span> bills.</b> Who they are, what they filed, which laws they backed and where they studied. Every fact links to its source.</p></div><div class="hviz">
+      <p class="eyebrow">20th Congress · Senate and House of Representatives</p>
+      <h1 class="big" id="h1">Kilala mo ba ang mga <mark>mambabatas</mark> mo?</h1>
+      <p class="lede"><b>${data.length} senators. ${house.length} House members.</b> Who they are, what they filed (<span data-count="${total}">0</span> Senate bills so far), which laws they backed and where they studied. Every fact links to its source.</p></div><div class="hviz">
       <div class="hemi" id="hemi" role="group" aria-label="The ${data.length} senators. Each face links to a profile.">
         ${data.map(s => `<a class="seat ${isLead(s) ? 'lead' : ''}" data-id="${esc(s.id)}" href="#${esc(s.id)}" aria-label="${esc(clean(s.name))}, ${esc(s.position)}, ${billCount(s.id)} bills, ${lawCount(s.id)} laws backed">${av(s.name, s.photo, true)}</a>`).join('')}
       </div>
@@ -270,10 +298,16 @@ function home() {
     <h2 class="sec rv">Just filed <small>the newest bills in the Senate</small></h2>
     <div class="feed rv">${recent.map(r => `<a class="fcard" href="https://senate.gov.ph/legislative-documents/bills/${esc(r.bid)}" target="_blank" rel="noopener">${av(nameOf(r.id), o(r.id).photo)}
       <b>${esc(title(r.t))}</b><small>${esc(nameOf(r.id))} · ${esc(dayLabel(r.d))}<span class="sr"> (opens the Senate site)</span></small></a>`).join('')}</div>
-    <h2 class="sec rv">Meet all ${data.length}</h2>
+    <h2 class="sec rv" id="senate">The Senate <small>${data.length} senators</small></h2>
     <div class="chips rv">${chip('data-lead', '0', 'All', true)}${chip('data-lead', '1', 'Leadership', false)}<span class="sp"></span>
       ${chip('data-sort', 'az', 'A–Z', true)}${chip('data-sort', 'bills', 'Most bills', false)}${chip('data-sort', 'laws', 'Most laws', false)}</div>
-    <ul class="wall" id="wall"></ul>`;
+    <ul class="wall" id="wall"></ul>
+    <h2 class="sec rv" id="house">House of Representatives <small>${house.length} members · first-pass data</small></h2>
+    <p class="note">Roster from Wikipedia, being cross-checked against a second source. Bills, laws and education for House members are not included yet.</p>
+    <div class="chips rv" role="group" aria-label="Filter the House">${KINDS.map(([k, l]) => chip('data-hk', k, l, k === 'all')).join('')}<span class="sp"></span>
+      ${topParties.map(([p, n]) => chip('data-hp', p, `${esc(p)}<small>${n}</small>`, false)).join('')}</div>
+    <p class="info" id="houseInfo" aria-live="polite" style="text-align:left;min-height:0"></p>
+    <ul class="hlist" id="hlist"></ul>`;
   updateAll();
   app.querySelectorAll('[data-count]').forEach(el => { const to = +el.dataset.count; if (reduce) { el.textContent = to.toLocaleString(); return; }
     const t0 = performance.now(); (function f(t) { const p = Math.min(1, (t - t0) / 1100); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))).toLocaleString(); if (p < 1) requestAnimationFrame(f); })(t0); });
@@ -315,7 +349,23 @@ function billsHtml(id) {
       <b>${esc(title(t))}</b><br><small>${esc(no)} · filed ${esc(d)}</small> <span class="pill">${esc(bucketOf(st))}</span></a>`).join('')}
     <p class="note">Bills where this senator is listed as author, 20th Congress. Source: <a href="${esc(bills._meta.source)}" target="_blank" rel="noopener">Senate Legislative Information System</a>, retrieved ${esc(bills._meta.retrieved)}.</p>`;
 }
+function houseProfile(o) {
+  const since = o.records[0]?.date;
+  app.innerHTML = `<a class="back" href="#">← All lawmakers</a>
+    <div class="phero">${av(o.name, o.photo, true)}<div><h1>${esc(o.name)}</h1><span class="role ${isLead(o) ? '' : 'sen'}">${esc(o.position)}</span> <small>${esc(o.constituency)} · ${esc(o.chamber)} · ${esc(o.term)}</small></div>
+      <button class="chip share" data-f="share">Share</button></div>
+    <div class="tiles">
+      <div class="tile txt"><strong>${esc(o.party)}</strong><span>${o.kind === 'party-list' ? 'party-list group' : 'party'}</span></div>
+      <div class="tile txt"><strong>${esc(o.bloc || '–')}</strong><span>bloc</span></div>
+      <div class="tile txt"><strong>${since ? esc(dayLabel(since)) : '–'}</strong><span>took office${since ? ', ' + esc(since.slice(0, 4)) : ''}</span></div></div>
+    <h3 class="h">Record</h3>${recordsHtml(o)}
+    <p class="note">${o.wikipedia ? `More about ${esc(clean(o.name))}: <a href="${esc(o.wikipedia)}" target="_blank" rel="noopener">Wikipedia ↗</a>. ` : ''}${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a> (see the file page for author and licence).` : ''}</p>
+    <div class="soon">Bills, laws, education and more for House members are coming soon.</div>`;
+}
+const recordsHtml = o => `<ul class="tl">${o.records.map(r => `<li><span class="badge"><span aria-hidden="true">${ICON[r.type] || '•'}</span> ${esc(r.type)}</span>
+      <div>${esc(r.title)}</div><small>${esc(r.date)} · <a href="${esc(r.source_url)}" rel="noopener" target="_blank">view source ↗</a></small></li>`).join('')}</ul>`;
 function profile(o) {
+  if (o.body === 'house') return houseProfile(o);
   const checked = o.records.map(r => r.retrieved).sort().pop();
   app.innerHTML = `<a class="back" href="#">← All senators</a>
     <div class="phero">${av(o.name, o.photo, true)}<div><h1>${esc(o.name)}</h1><span class="role ${isLead(o) ? '' : 'sen'}">${esc(o.position)}</span> <small>${esc(o.chamber)} · ${esc(o.term)}</small></div>
@@ -325,17 +375,16 @@ function profile(o) {
       <div class="tile"><strong>${lawCount(o.id)}</strong><span>laws backed (any role)</span></div>
       <div class="tile"><strong>${esc(dayLabel(checked))}</strong><span>data checked, ${esc(checked.slice(0, 4))}</span></div></div>
     ${eduHtml(o.id)}${lawsHtml(o.id)}${billsHtml(o.id)}
-    <h3 class="h">Record</h3><ul class="tl">${o.records.map(r => `<li><span class="badge"><span aria-hidden="true">${ICON[r.type] || '•'}</span> ${esc(r.type)}</span>
-      <div>${esc(r.title)}</div><small>${esc(r.date)} · <a href="${esc(r.source_url)}" rel="noopener" target="_blank">view source ↗</a></small></li>`).join('')}</ul>
+    <h3 class="h">Record</h3>${recordsHtml(o)}
     <div class="soon">Votes, SALN and more are coming soon.</div>`;
 }
 
 /* ---------- events ---------- */
 function route() {
-  const o = data.find(o => o.id === location.hash.slice(1));
+  const o = findPerson(location.hash.slice(1));
   tip.classList.remove('on');
   o ? profile(o) : home();
-  document.title = o ? clean(o.name) + ' – Sino Sila?' : 'Sino Sila? PH Senators';
+  document.title = o ? clean(o.name) + ' – Sino Sila?' : 'Sino Sila? PH Lawmakers';
   app.removeAttribute('aria-busy'); scrollTo(0, 0);
   if (o) { const h = app.querySelector('h1'); h?.setAttribute('tabindex', '-1'); h?.focus({preventScroll: true}); }
 }
@@ -349,6 +398,8 @@ app.onclick = e => {
   if (d.school) state.school = state.school === d.school ? null : d.school;
   if (d.sort) state.sort = d.sort;
   if (d.lead != null) state.leaders = d.lead === '1';
+  if (d.hk) state.hk = d.hk;
+  if (d.hp) state.hp = state.hp === d.hp ? null : d.hp;
   updateAll();
 };
 document.addEventListener('mouseover', e => showTip(e.target.closest?.('.seat')));
@@ -360,11 +411,14 @@ function showTip(s) {
   tip.innerHTML = `<b>${esc(clean(o.name))}</b><br>${esc(o.position)} · ${billCount(id)} bills · ${lawCount(id)} laws`;
   tip.style.left = Math.min(Math.max(r.left + r.width / 2, 90), innerWidth - 90) + 'px'; tip.style.top = r.top + 'px'; tip.classList.add('on');
 }
+document.querySelector('.top').onclick = e => { const b = e.target.closest('[data-go]'); if (!b) return;
+  const go = () => document.getElementById(b.dataset.go)?.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
+  if (location.hash) { location.hash = ''; setTimeout(go, 80); } else go(); };
 q.oninput = () => { state.q = q.value; if (location.hash) location.hash = ''; else updateAll(); };
 onhashchange = route;
 function load() {
-  Promise.all(['data/officials.json', 'data/bills.json', 'data/laws.json', 'data/education.json'].map(u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); })))
-    .then(([d, b, l, e]) => { data = d; bills = b; laws = l; edu = e; buildGroups(); route(); })
+  Promise.all(['data/officials.json', 'data/house.json', 'data/bills.json', 'data/laws.json', 'data/education.json'].map(u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); })))
+    .then(([d, h, b, l, e]) => { data = d.map(o => ({body: 'senate', constituency: 'Nationwide', ...o})); house = h.people; houseMeta = h._meta; bills = b; laws = l; edu = e; buildGroups(); route(); })
     .catch(() => { app.removeAttribute('aria-busy'); app.innerHTML = '<div class="err" role="alert"><b>Couldn’t load the records.</b><p>Check your connection and try again.</p><button class="chip" data-f="retry">Retry</button></div>'; });
 }
 load();

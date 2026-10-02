@@ -47,5 +47,23 @@ for k, items in edu.items():
         if not all(u.startswith("http") for u in [it.get("source_url", "")] + it.get("more_sources", [])) or not it.get("school") or not it.get("level"):
             errors.append(f"education.json {k}: item missing school/level/source_url")
 
+house = json.load(open("data/house.json"))["people"]
+HREQ = {"id", "name", "body", "position", "constituency", "kind", "party", "term", "records"}
+hseen = set(ids)
+for p in house:
+    pid = p.get("id", "?")
+    if HREQ - p.keys():
+        errors.append(f"house.json {pid}: missing {sorted(HREQ - p.keys())}")
+    if pid in hseen:
+        errors.append(f"house.json {pid}: duplicate id (also used by a senator or another member)")
+    hseen.add(pid)
+    if p.get("kind") not in ("district", "at-large", "party-list"):
+        errors.append(f"house.json {pid}: bad kind {p.get('kind')}")
+    for r in p.get("records", []):
+        if REC - r.keys() or not r["source_url"].startswith("http"):
+            errors.append(f"house.json {pid}: record missing fields or source_url")
+    if p.get("photo") and not p.get("photo_credit_url", "").startswith("https://commons.wikimedia.org/"):
+        errors.append(f"house.json {pid}: photo without a Commons credit link")
+
 print("\n".join(errors) or "ok")
 sys.exit(bool(errors))
