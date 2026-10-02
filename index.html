@@ -49,6 +49,10 @@
   .seat.lead .av{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--yellow)}
   .seat:hover,.seat:focus-visible{z-index:50!important;transform:translate(-50%,-50%) scale(calc(var(--k,1) * 1.2))}
   .seat.dim{opacity:.14;filter:grayscale(1)}
+  .hemi.trk .seat .av{box-shadow:0 0 0 2px var(--bg),0 0 0 5px var(--tc)} .hemi.trk .seat.lead .av{box-shadow:0 0 0 2px var(--bg),0 0 0 5px var(--tc),0 0 0 7px var(--yellow)}
+  .tk{display:inline-flex;align-items:center;gap:.3rem;font-size:.72rem;font-weight:700} .tk::before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--tc);flex:none}
+  .pt .tk{position:absolute;left:.5rem;top:.5rem;background:rgba(0,0,0,.72);color:#fff;padding:.2rem .45rem;border-radius:4px}
+  .hm .tk{margin-left:.35rem;color:var(--ink)}
   .tip{position:fixed;z-index:60;pointer-events:none;background:var(--ink);color:var(--bg);padding:.4rem .65rem;border-radius:6px;font-size:.85rem;line-height:1.3;transform:translate(-50%,calc(-100% - 8px));opacity:0;transition:opacity .15s;white-space:nowrap}
   .tip.on{opacity:1}
   .ctl{display:flex;flex-wrap:wrap;gap:.5rem .75rem;align-items:center;justify-content:center;margin:.75rem 0}
@@ -152,7 +156,14 @@ const ICON = {membership:'🏛️', bill:'📜', vote:'🗳️', saln:'💼', ca
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const app = document.getElementById('app'), q = document.getElementById('q'), tip = document.getElementById('tip');
 let data = [], house = [], houseMeta = {}, bills = {}, laws = {bills: []}, edu = {}, fam = {}, cases = {_meta: {checked: {}}, cases: {}};
-const state = {lens: 'bills', school: null, q: '', leaders: false, sort: 'az', hk: 'all', hp: null};
+const TRACKS = [['convicted', 'Convicted in a case', '#b91c1c'], ['pending', 'Pending case', '#d97706'], ['resolved', 'Dismissed, acquitted or decided', '#2563eb'], ['none', 'No case found', '#0f766e'], ['unchecked', 'Not yet checked', '#9ca3af']];
+const trackOf = id => { const l = cases.cases[id] || [];
+  if (l.some(c => c.status === 'convicted')) return 'convicted';
+  if (l.some(c => ['filed', 'pending', 'suspended', 'appealed'].includes(c.status))) return 'pending';
+  return l.length ? 'resolved' : cases._meta.checked[id] ? 'none' : 'unchecked'; };
+const trackRank = id => TRACKS.findIndex(t => t[0] === trackOf(id));
+const trackLabel = id => TRACKS[trackRank(id)][1], trackColor = id => TRACKS[trackRank(id)][2];
+const state = {lens: 'track', tr: new Set(['convicted', 'pending', 'resolved', 'none']), school: null, q: '', leaders: false, sort: 'az', hk: 'all', hp: null};
 
 const firstName = n => clean(n).split(' ')[0];
 const lastName = o => clean(o.name).split(' ').filter(w => !/^(Jr\.?|II|III|IV)$/.test(w)).pop();
@@ -205,18 +216,19 @@ const SLOTS = ARCS.flatMap(([n, r], a) => Array.from({length: n}, (_, i) => { co
 const lensVal = (id) => state.lens === 'bills' ? billCount(id) : state.lens === 'laws' ? lawCount(id) : 0;
 
 function layoutSeats() {
-  const order = [...data].sort((a, b) => state.lens === 'equal' ? posRank(a) - posRank(b) || lastName(a).localeCompare(lastName(b))
+  const eq = state.lens === 'equal' || state.lens === 'track';
+  const order = [...data].sort((a, b) => state.lens === 'track' ? trackRank(a.id) - trackRank(b.id) || lastName(a).localeCompare(lastName(b)) : eq ? posRank(a) - posRank(b) || lastName(a).localeCompare(lastName(b))
     : lensVal(b.id) - lensVal(a.id) || lastName(a).localeCompare(lastName(b)));
   const max = Math.max(...order.map(o => lensVal(o.id)), 1);
   order.forEach((o, i) => {
     const el = document.querySelector(`.seat[data-id="${o.id}"]`); if (!el) return;
     el.style.left = SLOTS[i].x + '%'; el.style.top = SLOTS[i].y + '%';
-    el.style.setProperty('--k', state.lens === 'equal' ? 1 : (.78 + .42 * lensVal(o.id) / max).toFixed(3));
-    el.style.zIndex = state.lens === 'equal' ? 1 : Math.round(lensVal(o.id) / max * 20);
+    el.style.setProperty('--k', eq ? 1 : (.78 + .42 * lensVal(o.id) / max).toFixed(3));
+    el.style.zIndex = eq ? 1 : Math.round(lensVal(o.id) / max * 20);
   });
 }
 const visibleIds = () => { const t = state.q.toLowerCase();
-  return new Set(data.filter(o => (!t || o.name.toLowerCase().includes(t)) && (!state.school || groups[state.school]?.has(o.id)) && (!state.leaders || isLead(o))).map(o => o.id)); };
+  return new Set(data.filter(o => (!t || o.name.toLowerCase().includes(t)) && (!state.school || groups[state.school]?.has(o.id)) && (!state.leaders || isLead(o)) && (t || state.tr.has(trackOf(o.id)))).map(o => o.id)); };
 
 function updateInfo() {
   const el = document.getElementById('hemiInfo'); if (!el) return;
@@ -225,6 +237,8 @@ function updateInfo() {
   if (state.school) { const ids = data.filter(o => groups[state.school].has(o.id)).map(o => o.id);
     el.innerHTML = `<b>${ids.length} senators</b> studied at <b>${esc(state.school)}</b> (any level, per the cited sources): ${names(ids)}.`; }
   else if (state.q) el.innerHTML = `<b>${visibleIds().size}</b> senators and <b>${visibleHouse().length}</b> House members match “${esc(state.q)}”.`;
+  else if (state.lens === 'track') { const n = k => data.filter(o => trackOf(o.id) === k).length;
+    el.innerHTML = `Ring colour = court-case record in the sources we checked: <b>${n('pending')}</b> with a pending case, <b>${n('resolved')}</b> dismissed, acquitted or decided, <b>${n('convicted')}</b> convicted in a case, <b>${n('none')}</b> none found, <b>${n('unchecked')}</b> not yet checked. A charge is not a finding of guilt, and “not yet checked” is not a clean record.`; }
   else if (state.lens === 'bills') el.innerHTML = `Bigger face = more bills filed. <b>${esc(nameOf(top.id))}</b> filed the most: <b>${billCount(top.id)}</b>.`;
   else if (state.lens === 'laws') el.innerHTML = `Bigger face = more laws backed (as author, co-author or co-sponsor). <b>${esc(nameOf(top.id))}</b> leads with <b>${lawCount(top.id)}</b>.`;
   else el.innerHTML = `Hover or tap a face to meet a senator. Gold ring = Senate leadership.`;
@@ -232,7 +246,7 @@ function updateInfo() {
 const KINDS = [['all', 'All'], ['district', 'District'], ['at-large', 'At-large'], ['party-list', 'Party-list']];
 function visibleHouse() {
   const t = state.q.toLowerCase();
-  return house.filter(o => (state.hk === 'all' || o.kind === state.hk) && (!state.hp || o.party === state.hp)
+  return house.filter(o => (state.hk === 'all' || o.kind === state.hk) && (!state.hp || o.party === state.hp) && (t || state.tr.has(trackOf(o.id)))
     && (!t || (o.name + ' ' + o.constituency + ' ' + o.party).toLowerCase().includes(t)));
 }
 function updateHouse() {
@@ -240,17 +254,19 @@ function updateHouse() {
   const rows = visibleHouse();
   l.innerHTML = rows.map(o => `<li><a class="hrow" href="#${esc(o.id)}" aria-label="${esc(clean(o.name))}, ${esc(o.constituency)}, ${esc(o.party)}">${av(o.name, o.photo)}
       <span class="hn"><b>${esc(clean(o.name))}</b>${isLead(o) ? ` <span class="role">${esc(o.position)}</span>` : ''}</span>
-      <span class="hm">${esc(o.constituency)} · ${esc(o.party)}</span></a></li>`).join('') || '<li class="soon" style="grid-column:1/-1">No representative matches that.</li>';
+      <span class="hm">${esc(o.constituency)} · ${esc(o.party)}<span class="tk" style="--tc:${trackColor(o.id)}">${esc(trackLabel(o.id))}</span></span></a></li>`).join('') || '<li class="soon" style="grid-column:1/-1">No representative matches that.</li>';
   const info = document.getElementById('houseInfo');
-  if (info) info.textContent = `Showing ${rows.length} of ${house.length} representatives${state.q ? ` matching “${state.q}”` : ''}.`;
+  if (info) info.textContent = `Showing ${rows.length} of ${house.length} representatives${house.length > rows.length && !state.q ? ` (turn on “Not yet checked” above to include the rest)` : ''}${state.q ? ` matching “${state.q}”` : ''}.`;
   document.querySelectorAll('[data-hk]').forEach(b => b.setAttribute('aria-pressed', b.dataset.hk === state.hk));
   document.querySelectorAll('[data-hp]').forEach(b => b.setAttribute('aria-pressed', b.dataset.hp === state.hp));
 }
 function updateAll() {
   const vis = visibleIds();
   document.querySelectorAll('.seat').forEach(s => s.classList.toggle('dim', !vis.has(s.dataset.id)));
+  document.getElementById('hemi')?.classList.toggle('trk', state.lens === 'track');
   layoutSeats(); updateInfo(); updateWall(); updateHouse();
   document.querySelectorAll('[data-lens]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lens === state.lens));
+  document.querySelectorAll('[data-tr]').forEach(b => b.setAttribute('aria-pressed', state.tr.has(b.dataset.tr)));
   document.querySelectorAll('[data-school]').forEach(b => b.setAttribute('aria-pressed', b.dataset.school === state.school));
 }
 function updateWall() {
@@ -260,7 +276,7 @@ function updateWall() {
   const w = document.getElementById('wall'); if (!w) return;
   w.innerHTML = rows.map(o => `<li><a class="pt ${isLead(o) ? 'rol' : ''}" href="#${esc(o.id)}" style="--h:${hue(o.name)}" aria-label="${esc(clean(o.name))}, ${esc(o.position)}, ${billCount(o.id)} bills, ${lawCount(o.id)} laws backed">
       <span class="ini" aria-hidden="true">${initials(o.name)}</span>${o.photo ? `<img src="${esc(o.photo)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
-      <span class="bd">${billCount(o.id)} bills</span><span class="cap"><b>${esc(clean(o.name))}</b><span>${esc(o.position)}</span></span></a></li>`).join('')
+      <span class="tk" style="--tc:${trackColor(o.id)}">${esc(trackLabel(o.id))}</span><span class="bd">${billCount(o.id)} bills</span><span class="cap"><b>${esc(clean(o.name))}</b><span>${esc(o.position)}</span></span></a></li>`).join('')
     || '<li class="soon" style="grid-column:1/-1">No senator matches that.</li>';
   document.querySelectorAll('[data-sort]').forEach(b => b.setAttribute('aria-pressed', b.dataset.sort === state.sort));
   document.querySelectorAll('[data-lead]').forEach(b => b.setAttribute('aria-pressed', (b.dataset.lead === '1') === state.leaders));
@@ -286,11 +302,13 @@ function home() {
       <p class="eyebrow">20th Congress · Senate and House of Representatives</p>
       <h1 class="big" id="h1">Kilala mo ba ang mga <mark>mambabatas</mark> mo?</h1>
       <p class="lede"><b>${data.length} senators. ${house.length} House members.</b> Who they are, what they filed (<span data-count="${total}">0</span> Senate bills so far), which laws they backed and where they studied. Every fact links to its source.</p></div><div class="hviz">
-      <div class="hemi" id="hemi" role="group" aria-label="The ${data.length} senators. Each face links to a profile.">
-        ${data.map(s => `<a class="seat ${isLead(s) ? 'lead' : ''}" data-id="${esc(s.id)}" href="#${esc(s.id)}" aria-label="${esc(clean(s.name))}, ${esc(s.position)}, ${billCount(s.id)} bills, ${lawCount(s.id)} laws backed">${av(s.name, s.photo, true)}</a>`).join('')}
+      <div class="hemi trk" id="hemi" role="group" aria-label="The ${data.length} senators. Each face links to a profile.">
+        ${data.map(s => `<a class="seat ${isLead(s) ? 'lead' : ''}" data-id="${esc(s.id)}" style="--tc:${trackColor(s.id)}" href="#${esc(s.id)}" aria-label="${esc(clean(s.name))}, ${esc(s.position)}, ${esc(trackLabel(s.id))}, ${billCount(s.id)} bills, ${lawCount(s.id)} laws backed">${av(s.name, s.photo, true)}</a>`).join('')}
       </div>
-      <div class="ctl" role="group" aria-label="Size the faces by"><span class="lbl">Size by</span>
-        ${chip('data-lens', 'bills', 'Bills filed', true)}${chip('data-lens', 'laws', 'Laws backed', false)}${chip('data-lens', 'equal', 'Equal', false)}</div>
+      <div class="ctl" role="group" aria-label="Size the faces by"><span class="lbl">Show</span>
+        ${chip('data-lens', 'track', 'Track record', true)}${chip('data-lens', 'bills', 'Bills filed', false)}${chip('data-lens', 'laws', 'Laws backed', false)}${chip('data-lens', 'equal', 'Equal', false)}</div>
+      <div class="ctl" role="group" aria-label="Filter by court-case record"><span class="lbl">Track record</span>
+        ${TRACKS.map(([k, l, c]) => `<button class="chip" data-tr="${k}" aria-pressed="${state.tr.has(k)}"><span class="tk" style="--tc:${c}">${esc(l)}</span><small>${everyone().filter(o => trackOf(o.id) === k).length}</small></button>`).join('')}</div>
       <div class="ctl" role="group" aria-label="Highlight senators by school"><span class="lbl">Where they studied</span>
         ${Object.entries(groups).sort((a, b) => b[1].size - a[1].size).map(([g, s]) => chip('data-school', g, `${esc(g)}<small>${s.size}</small>`, false)).join('')}</div>
       <p class="info" id="hemiInfo" aria-live="polite"></p>
@@ -422,6 +440,7 @@ app.onclick = e => {
   if (d.f === 'share') { const url = location.href, t = document.title;
     if (navigator.share) navigator.share({title: t, url}).catch(() => {}); else navigator.clipboard?.writeText(url).then(() => { b.textContent = 'Link copied'; setTimeout(() => b.textContent = 'Share', 2000); }); return; }
   if (d.lens) state.lens = d.lens;
+  if (d.tr) { state.tr.has(d.tr) ? state.tr.delete(d.tr) : state.tr.add(d.tr); }
   if (d.school) state.school = state.school === d.school ? null : d.school;
   if (d.sort) state.sort = d.sort;
   if (d.lead != null) state.leaders = d.lead === '1';
