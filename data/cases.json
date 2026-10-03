@@ -575,6 +575,114 @@
    "ann-matibag": {
     "date": "2026-10-03",
     "queries": 5
+   },
+   "jose-manuel-lagdameo": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "ernix-dionisio": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "giselle-lazaro-maceda": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "irwin-tieng": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "mercedes-alvarezlansang": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "emmanuel-iway": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "maisa-sagarbarria": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "niko-raul-daza": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "jason-almonte": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "ando-oaminal": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "karen-lagbas": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "maximo-dalog-jr": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "janice-degamo": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "gil-acosta-jr": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "anna-york-bondoc": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "carmelo-lazatin-jr": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "mica-gonzales": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "edwin-ongchuan": {
+    "date": "2026-10-03",
+    "queries": 7
+   },
+   "mika-suansing": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "kokoy-salvador": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "alfonso-umali-jr": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "leody-tarriela": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "marcelino-teodoro": {
+    "date": "2026-10-03",
+    "queries": 8
+   },
+   "antonio-kho": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "tim-cayton": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "rosalie-salvame": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "arnan-panaligan": {
+    "date": "2026-10-03",
+    "queries": 5
    }
   }
  },
@@ -2392,6 +2500,154 @@
       "text": "The Sandiganbayan was reported to have denied his motion for reconsideration and kept the conviction. Whether he appealed to the Supreme Court, and whether the conviction is final, was not found.",
       "sources": [
        "https://abogado.com.ph/sandiganbayan-affirms-conviction-for-usurpation-of-mayor-tagged-as-mastermind-in-solons-ambush/"
+      ]
+     }
+    ]
+   }
+  ],
+  "janice-degamo": [
+   {
+    "id": "janice-degamo-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Comelec disqualification complaint over her residency in Siaton, Negros Oriental 3rd District, 2025",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2025-05-08",
+      "text": "A disqualification complaint over her residency in Siaton was reported as filed with the Commission on Elections. The Comelec regional director said he had not received a copy and did not know who the complainant was, and that she remained a legitimate candidate. Her lawyer said she transferred her voter registration to Siaton on May 6, 2024, and called the complaint politically motivated.",
+      "sources": [
+       "https://visayandailystar.com/degamo-still-a-legitimate-candidate-comelec/",
+       "https://www.inquirer.net/441502/comelec-janice-degamo-remains-a-candidate-despite-dq-case/"
+      ]
+     },
+     {
+      "date": "2025-05-12",
+      "text": "Comelec said that an image circulating online of a supposed disqualification resolution was not authentic, and that she remained a candidate. No Comelec ruling on the complaint was found.",
+      "sources": [
+       "https://www.inquirer.net/441502/comelec-janice-degamo-remains-a-candidate-despite-dq-case/"
+      ]
+     }
+    ]
+   }
+  ],
+  "mica-gonzales": [
+   {
+    "id": "mica-gonzales-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman complaint over P359.37 million Abacan River flood-control projects in Mexico, Pampanga (named among relatives of a former representative)",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2026-08",
+      "text": "Barangay chairman Terence Sampang Napao filed a complaint at the Office of the Ombudsman against former Rep. Aurelio Gonzales Jr., his relatives, including Rep. Mica Gonzales, and DPWH Region III officials, alleging plunder, anti-graft violations, prohibited financial interest and malversation over two flood-control projects. These are allegations; no finding has been made. Neither article reported a response from the respondents, and no Ombudsman action was found.",
+      "sources": [
+       "https://www.sunstar.com.ph/pampanga/gonzales-faces-plunder-complaint",
+       "https://tribune.net.ph/2026/08/06/barangay-chief-revives-plunder-case-vs-ex-pampanga-solon-over-p359m-flood-projects"
+      ]
+     }
+    ]
+   }
+  ],
+  "alfonso-umali-jr": [
+   {
+    "id": "alfonso-umali-jr-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Graft case over a P2.5-million loan agreement with a ship operator, 1994 (Bawasanta, Valencia and Umali v. People, G.R. Nos. 219300, 219323 and 219343)",
+    "role": "accused",
+    "status": "acquitted",
+    "status_date": "2021-11-17",
+    "events": [
+     {
+      "date": "2015-04-20",
+      "text": "The Sandiganbayan Fourth Division found Umali, then Oriental Mindoro governor, former Gov. Rodolfo Valencia and former board member Romualdo Bawasanta guilty of graft over the award of a P2.5-million loan agreement, finding evident bad faith and manifest partiality.",
+      "sources": [
+       "http://www.gmanetwork.com/news/news/regions/506294/lp-exec-umali-wants-biased-sandiganbayan-justice-to-inhibit-from-graft-case/story",
+       "https://www.chanrobles.com/cralaw/2021novemberdecisions.php?id=1112"
+      ]
+     },
+     {
+      "date": "2015-06-18",
+      "text": "Umali asked the court's presiding justice to inhibit from deciding his motion for reconsideration, alleging bias toward the prosecution.",
+      "sources": [
+       "http://www.gmanetwork.com/news/news/regions/506294/lp-exec-umali-wants-biased-sandiganbayan-justice-to-inhibit-from-graft-case/story"
+      ]
+     },
+     {
+      "date": "2021-11-17",
+      "text": "The Supreme Court granted the petitions, reversed the Sandiganbayan's decision and acquitted Umali, Valencia and Bawasanta for failure of the prosecution to prove guilt beyond reasonable doubt. It lifted the hold departure orders and ordered bail returned. The decision text was read on a legal-text site; the Supreme Court's own site could not be opened.",
+      "sources": [
+       "https://www.chanrobles.com/cralaw/2021novemberdecisions.php?id=1112"
+      ]
+     }
+    ]
+   }
+  ],
+  "leody-tarriela": [
+   {
+    "id": "leody-tarriela-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman graft complaint over alleged commissions on Occidental Mindoro flood-control projects",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2026-03-10",
+      "text": "Occidental Mindoro resident Radamalyn Cardoza filed a graft complaint at the Office of the Ombudsman, citing testimony of contractors Curlee and Sarah Discaya at a Senate hearing in September 2025 that mentioned Tarriela among lawmakers who allegedly requested or received commissions. The complaint covers 33 projects worth about P3.2 billion. These are allegations. Tarriela denied them and called the complaint harassment. No finding by the Ombudsman was found.",
+      "sources": [
+       "https://tribune.net.ph/2026/03/10/graft-charges-filed-against-rep-odie-tarriela",
+       "https://www.philstar.com/nation/2026/03/12/2513693/graft-raps-filed-vs-mindoro-lawmaker"
+      ]
+     }
+    ]
+   }
+  ],
+  "marcelino-teodoro": [
+   {
+    "id": "marcelino-teodoro-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Criminal complaints by two former police security escorts (rape by sexual assault; acts of lasciviousness), now filed in court",
+    "role": "accused",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2025-09-25",
+      "text": "The Department of Justice said two police officers who had served as Teodoro's close-in security had filed complaints for acts of lasciviousness and rape by sexual assault. Teodoro called the accusations malicious, untrue and politically motivated.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/metro/960241/marcy-teodoro-sexual-assault-doj/story/"
+      ]
+     },
+     {
+      "date": "2026-08-18",
+      "text": "The DOJ filed four counts of rape by sexual assault in the Marikina Regional Trial Court and one count of acts of lasciviousness in the Metropolitan Trial Court. The DOJ said the filing is not a finding of guilt and that he remains entitled to due process. The cases are now with the courts.",
+      "sources": [
+       "https://www.dzrh.com.ph/post/doj-files-4-rape-2-acts-of-lasciviousness-charges-against-marcy-teodoro"
+      ]
+     }
+    ]
+   }
+  ],
+  "antonio-kho": [
+   {
+    "id": "antonio-kho-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman complaint for plunder, malversation and falsification over three road rehabilitation projects (P99.8 million)",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2024-08-21",
+      "text": "Two Masbate radio reporters filed a complaint at the Office of the Ombudsman against Gov. Kho, other provincial officials and contractors over three road projects financed by a loan. These are allegations. Kho could not be reached for comment in the reports, and no later status was found.",
+      "sources": [
+       "https://www.philstar.com/nation/2024/08/25/2380322/masbate-governor-9-others-charged-plunder/amp/",
+       "https://tribune.net.ph/2024/08/24/masbate-gov-slapped-with-p99m-plunder-case"
       ]
      }
     ]
