@@ -867,6 +867,130 @@
    "pinpin-uy": {
     "date": "2026-10-03",
     "queries": 4
+   },
+   "jose-arturo-garcia-jr": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "dennis-hernandez": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "reynolds-michael-tan": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "bel-zamora": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "roy-gonzales": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "marlo-bancoro": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "rodge-gutierrez": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "elmer-catulpos": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "iris-marie-montes": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "jonathan-clement-abalos": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "aiman-tan": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "allan-ty": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "ferdinand-beltran": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "girlie-veloso": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "maria-nina-francesca-lacson": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "jan-rurik-padiernos": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "caroline-tanchay": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "munir-arbison-jr": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "kenneth-paolo-tereng": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "bryan-revilla": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "dadah-kiram-ismula": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "jan-franz-chan": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "alfredo-garbin": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "richelle-singson-michael": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "alfred-delos-santos": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "sergio-dagooc": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "henry-oaminal-jr": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "eddie-villanueva": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "felimon-espares": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "brian-poe-llamanzares": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "edwin-gardiola": {
+    "date": "2026-10-03",
+    "queries": 3
    }
   }
  },
@@ -3137,6 +3261,32 @@
       "sources": [
        "https://www.dzrh.com.ph/post/sc-declares-uy-jr.-as-zamboanga-del-norte-1st-district-rep.",
        "https://www.gmanetwork.com/news/topstories/nation/878351/sc-annuls-proclamation-of-romeo-jalosjos-jr-as-zamboanga-1st-district-rep/story/"
+      ]
+     }
+    ]
+   }
+  ],
+  "edwin-gardiola": [
+   {
+    "id": "edwin-gardiola-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman preliminary investigation into alleged malversation and conflict of interest over flood-control contracts",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2026-07-31",
+      "text": "Ombudsman Jesus Crispin Remulla announced that a preliminary investigation against Construction Workers Solidarity party-list Rep. Edwin Gardiola for over 20 counts of malversation was underway, describing it as self-dealing and conflict of interest. Reports said three contractor firms linked to him were recorded in the DPWH transparency portal as receiving about P38.2 billion in infrastructure funding. These are allegations at the investigation stage, and no finding has been made.",
+      "sources": [
+       "https://www.dzrh.com.ph/post/ombudsman-to-file-malversation-rap-vs-cong-tractor-gardiola"
+      ]
+     },
+     {
+      "date": "2026-08-18",
+      "text": "A SunStar roundup listed Gardiola as facing a non-bailable malversation complaint (Article 217, Revised Penal Code) over his alleged involvement in flood-control corruption and conflict-of-interest allegations. No charge in court was reported.",
+      "sources": [
+       "https://www.sunstar.com.ph/manila/7-lawmakers-face-corruption-probe-over-flood-control-projects"
       ]
      }
     ]
