@@ -1063,6 +1063,30 @@
    "arthur-c-yap": {
     "date": "2026-10-04",
     "queries": 5
+   },
+   "ramil-hernandez": {
+    "date": "2026-10-04",
+    "queries": 5
+   },
+   "sun-shimura": {
+    "date": "2026-10-04",
+    "queries": 4
+   },
+   "duke-frasco": {
+    "date": "2026-10-04",
+    "queries": 5
+   },
+   "shirlyn-banas-nograles": {
+    "date": "2026-10-04",
+    "queries": 4
+   },
+   "ronaldo-puno": {
+    "date": "2026-10-04",
+    "queries": 3
+   },
+   "jurdin-jesus-romualdo": {
+    "date": "2026-10-04",
+    "queries": 4
    }
   }
  },
@@ -3552,6 +3576,148 @@
       "sources": [
        "https://lawyerly.ph/juris/view/c10c53",
        "https://www.philstar.com/the-freeman/opinion/2023/07/08/2279555/former-bohol-governor-acquitted-due-justice-delayed/amp/"
+      ]
+     }
+    ]
+   }
+  ],
+  "ramil-hernandez": [
+   {
+    "id": "ramil-hernandez-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Comelec disqualification petition over alleged vote-buying with provincial health cards, 2025 elections (against Ramil Hernandez and his wife Ruth)",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2025-05-05",
+    "events": [
+     {
+      "date": "2025-05-02",
+      "text": "Four petitioners filed a petition at Comelec to disqualify then-Laguna Gov. Ramil Hernandez, a congressional candidate, and his wife, Rep. Ruth Hernandez, a gubernatorial candidate, alleging vote-buying using provincial health cards in Cabuyao on April 24 and 25. These were allegations.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/regions/944807/laguna-governor-hernandez-wife-face-disqualification-cases-for-vote-buying/story/"
+      ]
+     },
+     {
+      "date": "2025-05-05",
+      "text": "The four named petitioners filed motions to withdraw their petition, saying through their lawyer that they were unaware their names had been used and that their signatures were forged. The case ended by this withdrawal, not on the merits. No formal Comelec dismissal order was found.",
+      "sources": [
+       "https://dzrh.com.ph/post/4-petitioners-withdraw-disqualification-case-vs-laguna-governor-hernandez-wife",
+       "https://www.inquirer.net/439793/comelec-dq-complaint-vs-laguna-officials-withdrawn/"
+      ]
+     }
+    ]
+   }
+  ],
+  "sun-shimura": [
+   {
+    "id": "sun-shimura-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Election dispute over the 2007 Daanbantayan mayor and vice-mayor race (Corro and de Leon v. Shimura and Loot)",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2010-02-22",
+      "text": "The Comelec First Division dismissed the petition for certiorari of then-Mayor Sun Shimura and Vice Mayor Ma. Luisa Loot against a Bogo City court order that declared Augusto Corro and Jose de Leon the winners. The incumbents said the decision was not yet final and that a motion for reconsideration would be filed. Thousands of their supporters gathered at the town hall.",
+      "sources": [
+       "https://www.philstar.com/cebu-news/2010/02/23/551871/daanbantayan-folk-barricade-town-hall/amp/"
+      ]
+     },
+     {
+      "date": "2010-02-27",
+      "text": "SunStar reported that the court's writ of execution had been returned after Shimura and Loot filed their motion for reconsideration, and that Corro said he would not back off his claim. The final outcome was not found.",
+      "sources": [
+       "https://www.sunstar.com.ph/more-articles/corro-awaits-comelec-order"
+      ]
+     }
+    ]
+   }
+  ],
+  "duke-frasco": [
+   {
+    "id": "duke-frasco-1",
+    "kind": "administrative",
+    "body": "house",
+    "title": "Ombudsman-Visayas complaints over a trip abroad during Typhoon Tino (Kalmaegi), November 2025",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2025-11-11",
+      "text": "Lawyer Julito Añora Jr. filed administrative and criminal complaints at the Office of the Ombudsman-Visayas against Rep. Duke Frasco and seven mayors over a trip abroad while the typhoon struck Cebu, alleging gross neglect of duty, grave misconduct and conduct prejudicial to the service. These are allegations. Frasco described the trip as an authorised mission using no government funds. The outcome was not found.",
+      "sources": [
+       "https://www.sunstar.com.ph/cebu/lawyer-sues-frasco-7-mayors-over-trip-abroad",
+       "https://asianews.network/cebu-officials-who-left-philippines-amid-typhoon-fung-wong-face-complaint/"
+      ]
+     }
+    ]
+   }
+  ],
+  "shirlyn-banas-nograles": [
+   {
+    "id": "shirlyn-banas-nograles-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Bañas-Nograles v. COMELEC (G.R. No. 246328): suspension of the 2019 result for South Cotabato's 1st District",
+    "role": "petitioner",
+    "status": "decided",
+    "status_date": "2019-09-10",
+    "events": [
+     {
+      "date": "2019-09-10",
+      "text": "The Supreme Court granted her petition, declared Comelec Resolution No. 10524 null and void and directed Comelec to proclaim her winner of the May 2019 election for the district, which includes General Santos City.",
+      "sources": [
+       "https://chanrobles.com/cralaw/2019septemberdecisions.php?id=694",
+       "https://www.philstar.com/nation/2019/09/23/1954009/nation"
+      ]
+     }
+    ]
+   }
+  ],
+  "ronaldo-puno": [
+   {
+    "id": "ronaldo-puno-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Graft case (RA 3019 Sec. 3(e)) over the cancellation of the PNP's Motorola multi-trunked radio contracts",
+    "role": "accused",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2004-07-08",
+      "text": "Ombudsman special prosecutors asked the Sandiganbayan Fourth Division to suspend newly elected Antipolo Rep. Ronaldo Puno pending the graft charges over the cancelled radio contract. Puno called the move harassment. A Supreme Court decision in a related case, DILG v. Berenguer, recounts that a complaint under the Anti-Graft Act was filed over the cancellation and that the Ombudsman filed the information at the Sandiganbayan. The outcome of the case was not found, and the newest news located is from 2004.",
+      "sources": [
+       "https://www.philstar.com/nation/2004/07/08/256732/suspend-puno-over-radio-contract-sandigan-asked/amp/",
+       "https://chanrobles.com/scdecisions/jurisprudence2006/sep2006/gr_149846_2006.php"
+      ]
+     }
+    ]
+   }
+  ],
+  "jurdin-jesus-romualdo": [
+   {
+    "id": "jurdin-jesus-romualdo-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Complaint by four journalists over an alleged election-eve incident in Catarman, Camiguin (May 2010)",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2010-06-10",
+      "text": "Four media workers filed a complaint at the Camiguin provincial prosecutor against then-Gov. Jurdin Jesus Romualdo and a Catarman mayoral candidate, alleging serious illegal detention, grave threats, robbery and an Omnibus Election Code firearms violation over a May 9, 2010 incident, when they said they were documenting alleged vote-buying. These are allegations.",
+      "sources": [
+       "https://davaotoday.com/inbox/journalists-file-case-vs-camiguin-governor/",
+       "https://cmfr-phil.org/press-freedom-protection/attacks-and-threats-against-the-media/two-journalists-attacked-after-filing-complaint-against-politician/"
+      ]
+     },
+     {
+      "date": "2011-05-11",
+      "text": "A press release published by Bulatlat in May 2011 reported that Department of Justice regional prosecutors dismissed the complaint for insufficiency of evidence in a resolution dated May 11, 2011. This comes from one outlet and the press release's own framing, and no appeal was found.",
+      "sources": [
+       "https://www.bulatlat.com/2011/05/28/prosecutors-dismiss-complaint-against-camiguin-governor-pr/"
       ]
      }
     ]
