@@ -1,5 +1,5 @@
 """Fail the build if any record lacks a source link. Run: python3 validate.py"""
-import json, sys
+import json, os, sys
 
 TYPES = {"bill", "vote", "saln", "campaign_finance", "audit", "case", "appointment", "membership"}
 REC = {"type", "title", "date", "source_url", "retrieved"}
@@ -33,8 +33,10 @@ for l in json.load(open("data/laws.json"))["bills"]:
     for role in ("author", "coAuthors", "coSponsors"):
         errors += [f"laws.json {l['no']}: unknown id {i}" for i in l[role] if i not in ids]
 for o in json.load(open("data/officials.json")):
-    if not o.get("photo", "").startswith("https://senate.gov.ph/"):
+    if not (o.get("photo", "").startswith("assets/photos/") and os.path.exists(o["photo"])):
         errors.append(f"{o['id']}: missing photo")
+    elif not o.get("photo_credit_url", "").startswith("https://commons.wikimedia.org/"):
+        errors.append(f"{o['id']}: photo without a Commons credit link")
 
 edu = json.load(open("data/education.json"))
 for i in ids:

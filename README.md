@@ -80,3 +80,7 @@ House members, votes, SALN, COMELEC filings, a searchable full bill list, co-aut
 ## School seals
 
 `assets/schools/*.png` are 250 px renders of each school's seal, downloaded from Wikipedia and Wikimedia Commons (University of the Philippines, Ateneo de Manila, De La Salle, Santo Tomas and University of the East are non-free logos on Wikipedia; Harvard, PMA and Georgetown are public domain there). They belong to their institutions and are shown only to identify the school. Before a wide launch, get permission or replace them with files the schools provide.
+
+## Portraits
+
+All 341 portraits are small WebP files in `assets/photos/` (made by `tools/mirror_photos.py` for the House and from Wikipedia's lead images for senators), so pages don't depend on other sites. Each profile links to its Wikimedia Commons file page. The senators' images are listed there as public domain or CC0. senate.gov.ph blocks scripted downloads, so its own photos are not used.

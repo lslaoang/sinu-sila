@@ -190,7 +190,7 @@
 </div></div>
 <main class="wrap" id="app" tabindex="-1" aria-busy="true"><div class="skel"></div><div class="skel"></div><div class="skel"></div></main>
 <noscript><p class="wrap">This site needs JavaScript to show the records.</p></noscript>
-<footer><div class="wrap"><p><b>Sino Sila?</b> is an independent project, not affiliated with the Senate or the House. Every fact links to the public source it came from. Senate data comes from the Senate's Legislative Information System. House rosters come from Wikipedia and are still being checked against other sources, and House portraits come from Wikimedia Commons, credited on each profile. School seals come from Wikipedia and Wikimedia Commons and belong to their institutions.</p>
+<footer><div class="wrap"><p><b>Sino Sila?</b> is an independent project, not affiliated with the Senate or the House. Every fact links to the public source it came from. Senate data comes from the Senate's Legislative Information System. House rosters come from Wikipedia and are still being checked against other sources. Portraits come from Wikimedia Commons, credited on each profile. School seals come from Wikipedia and Wikimedia Commons and belong to their institutions.</p>
 <p>Court cases are being added person by person, so “not yet checked” means we haven't looked yet, not that a record is clean. A case listed here is a public record, not a finding of guilt. If you spot a mistake or something out of date, we want to fix it. Data as of October 1, 2026.</p></div></footer>
 <div class="tip" id="tip" aria-hidden="true"></div>
 <script>
@@ -524,7 +524,7 @@ function profile(o) {
       <div class="tile"><strong>${esc(dayLabel(checked))}</strong><span>data checked, ${esc(checked.slice(0, 4))}</span></div></div>
     ${eduHtml(o.id)}${lawsHtml(o.id)}${billsHtml(o.id)}
     ${casesHtml(o)}${famHtml(o)}<h3 class="h">In office</h3>${recordsHtml(o)}
-    <p class="note">Coming later: votes and asset declarations (SALN).</p>`;
+    <p class="note">${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a>${o.photo_license ? ` (${esc(o.photo_license)})` : ''}. ` : ''}Coming later: votes and asset declarations (SALN).</p>`;
 }
 
 /* ---------- events ---------- */
