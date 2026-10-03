@@ -9,8 +9,8 @@
     "queries": null
    },
    "jojo-ang": {
-    "date": "2026-10-02",
-    "queries": null
+    "date": "2026-10-04",
+    "queries": 3
    },
    "albee-benitez": {
     "date": "2026-10-02",
@@ -249,8 +249,8 @@
     "queries": 2
    },
    "joseph-lara": {
-    "date": "2026-10-02",
-    "queries": 2
+    "date": "2026-10-04",
+    "queries": 3
    },
    "yusop-alano": {
     "date": "2026-10-02",
@@ -849,8 +849,8 @@
     "queries": 3
    },
    "francisco-matugas": {
-    "date": "2026-10-03",
-    "queries": 5
+    "date": "2026-10-04",
+    "queries": 1
    },
    "romeo-momo": {
     "date": "2026-10-03",
@@ -989,8 +989,80 @@
     "queries": 3
    },
    "edwin-gardiola": {
+    "date": "2026-10-04",
+    "queries": 1
+   },
+   "robert-raymond-estrella": {
+    "date": "2026-10-03",
+    "queries": 6
+   },
+   "maximo-rodriguez-jr": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "manuel-frederick-ko": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "jeffrey-soriano": {
     "date": "2026-10-03",
     "queries": 3
+   },
+   "nicanor-briones": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "yedda-romualdez": {
+    "date": "2026-10-04",
+    "queries": 5
+   },
+   "johanne-monich-bautista": {
+    "date": "2026-10-04",
+    "queries": 5
+   },
+   "raymond-mendoza": {
+    "date": "2026-10-04",
+    "queries": 5
+   },
+   "jernie-jett-nisay": {
+    "date": "2026-10-04",
+    "queries": 3
+   },
+   "tina-pancho": {
+    "date": "2026-10-04",
+    "queries": 4
+   },
+   "ching-bernos": {
+    "date": "2026-10-04",
+    "queries": 5
+   },
+   "arlyn-ayon": {
+    "date": "2026-10-04",
+    "queries": 4
+   },
+   "jose-teves-jr": {
+    "date": "2026-10-04",
+    "queries": 3
+   },
+   "andrew-julian-romualdez": {
+    "date": "2026-10-04",
+    "queries": 3
+   },
+   "jude-acidre": {
+    "date": "2026-10-04",
+    "queries": 3
+   },
+   "karl-josef-legazpi": {
+    "date": "2026-10-04",
+    "queries": 3
+   },
+   "rodolfo-ordanes": {
+    "date": "2026-10-04",
+    "queries": 3
+   },
+   "arthur-c-yap": {
+    "date": "2026-10-04",
+    "queries": 5
    }
   }
  },
@@ -1054,6 +1126,24 @@
       "sources": [
        "https://www.philstar.com/headlines/2026/09/22/2558114/sandiganbayan-suspends-uswag-ilonggo-rep-ang-90-days",
        "https://visayas.politiko.com.ph/2026/09/22/sandiganbayan-suspends-rep-jojo-ang/daily-feed/"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "jojo-ang-2",
+    "kind": "administrative",
+    "body": "house",
+    "title": "ICI and DPWH recommendation to the Ombudsman to file criminal and administrative cases over alleged links to flood-control contractors",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2025-11-26",
+      "text": "The Independent Commission for Infrastructure and the DPWH recommended to the Ombudsman that criminal and administrative cases be filed against eight current and former lawmakers, including this representative, saying they had links to contractor firms and may have violated the Code of Conduct for officials and the Anti-Graft Act's conflict-of-interest rules. These are recommendations, not findings, and any response was not reported in these articles.",
+      "sources": [
+       "https://tribune.net.ph/2025/11/26/ici-dpwh-ombudsman",
+       "https://ibctv13.com/ici-inirekomenda-ang-pagsampa-ng-kaso-laban-sa-8-kongresistang-sangkot-sa-umanoy-korapsyon-sa-flood-control-projects/"
       ]
      }
     ]
@@ -3161,6 +3251,24 @@
       ]
      }
     ]
+   },
+   {
+    "id": "francisco-matugas-3",
+    "kind": "administrative",
+    "body": "house",
+    "title": "ICI and DPWH recommendation to the Ombudsman to file criminal and administrative cases over alleged links to flood-control contractors",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2025-11-26",
+      "text": "The Independent Commission for Infrastructure and the DPWH recommended to the Ombudsman that criminal and administrative cases be filed against eight current and former lawmakers, including this representative, saying they had links to contractor firms and may have violated the Code of Conduct for officials and the Anti-Graft Act's conflict-of-interest rules. These are recommendations, not findings, and any response was not reported in these articles.",
+      "sources": [
+       "https://tribune.net.ph/2025/11/26/ici-dpwh-ombudsman",
+       "https://ibctv13.com/ici-inirekomenda-ang-pagsampa-ng-kaso-laban-sa-8-kongresistang-sangkot-sa-umanoy-korapsyon-sa-flood-control-projects/"
+      ]
+     }
+    ]
    }
   ],
   "romeo-momo": [
@@ -3287,6 +3395,163 @@
       "text": "A SunStar roundup listed Gardiola as facing a non-bailable malversation complaint (Article 217, Revised Penal Code) over his alleged involvement in flood-control corruption and conflict-of-interest allegations. No charge in court was reported.",
       "sources": [
        "https://www.sunstar.com.ph/manila/7-lawmakers-face-corruption-probe-over-flood-control-projects"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "edwin-gardiola-2",
+    "kind": "administrative",
+    "body": "house",
+    "title": "ICI and DPWH recommendation to the Ombudsman to file criminal and administrative cases over alleged links to flood-control contractors",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2025-11-26",
+      "text": "The Independent Commission for Infrastructure and the DPWH recommended to the Ombudsman that criminal and administrative cases be filed against eight current and former lawmakers, including this representative, saying they had links to contractor firms and may have violated the Code of Conduct for officials and the Anti-Graft Act's conflict-of-interest rules. These are recommendations, not findings, and any response was not reported in these articles.",
+      "sources": [
+       "https://tribune.net.ph/2025/11/26/ici-dpwh-ombudsman",
+       "https://ibctv13.com/ici-inirekomenda-ang-pagsampa-ng-kaso-laban-sa-8-kongresistang-sangkot-sa-umanoy-korapsyon-sa-flood-control-projects/"
+      ]
+     }
+    ]
+   }
+  ],
+  "robert-raymond-estrella": [
+   {
+    "id": "robert-raymond-estrella-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "NBI complaints (graft and malversation) at the Ombudsman over the Napoles pork-barrel (PDAF) scheme",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2015-08-07",
+      "text": "The NBI filed a third batch of complaints with the Office of the Ombudsman against nine current and former lawmakers, including former Abono party-list Rep. Robert Raymund Estrella, alleging that they channelled their PDAF allocations for 2007 to 2009 to fake NGOs linked to Janet Napoles in exchange for kickbacks. These are allegations. The Ombudsman's decision on them was not found.",
+      "sources": [
+       "https://gulf-times.com/story/450493/nine-more-booked-for-graft-in-pdaf-scam",
+       "https://www.sunstar.com.ph/more-articles/rufus-denies-role-in-pdaf-scandal"
+      ]
+     }
+    ]
+   }
+  ],
+  "jernie-jett-nisay": [
+   {
+    "id": "jernie-jett-nisay-1",
+    "kind": "administrative",
+    "body": "house",
+    "title": "ICI and DPWH recommendation to the Ombudsman to file criminal and administrative cases over alleged links to flood-control contractors",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2025-11-26",
+      "text": "The Independent Commission for Infrastructure and the DPWH recommended to the Ombudsman that criminal and administrative cases be filed against eight current and former lawmakers, including this representative, saying they had links to contractor firms and may have violated the Code of Conduct for officials and the Anti-Graft Act's conflict-of-interest rules. These are recommendations, not findings, and any response was not reported in these articles.",
+      "sources": [
+       "https://tribune.net.ph/2025/11/26/ici-dpwh-ombudsman",
+       "https://ibctv13.com/ici-inirekomenda-ang-pagsampa-ng-kaso-laban-sa-8-kongresistang-sangkot-sa-umanoy-korapsyon-sa-flood-control-projects/"
+      ]
+     }
+    ]
+   }
+  ],
+  "tina-pancho": [
+   {
+    "id": "tina-pancho-1",
+    "kind": "administrative",
+    "body": "house",
+    "title": "ICI and DPWH recommendation to the Ombudsman to file criminal and administrative cases over alleged links to flood-control contractors",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2025-11-26",
+      "text": "The Independent Commission for Infrastructure and the DPWH recommended to the Ombudsman that criminal and administrative cases be filed against eight current and former lawmakers, including this representative, saying they had links to contractor firms and may have violated the Code of Conduct for officials and the Anti-Graft Act's conflict-of-interest rules. These are recommendations, not findings, and any response was not reported in these articles.",
+      "sources": [
+       "https://tribune.net.ph/2025/11/26/ici-dpwh-ombudsman",
+       "https://ibctv13.com/ici-inirekomenda-ang-pagsampa-ng-kaso-laban-sa-8-kongresistang-sangkot-sa-umanoy-korapsyon-sa-flood-control-projects/"
+      ]
+     }
+    ]
+   }
+  ],
+  "joseph-lara": [
+   {
+    "id": "joseph-lara-1",
+    "kind": "administrative",
+    "body": "house",
+    "title": "ICI and DPWH recommendation to the Ombudsman to file criminal and administrative cases over alleged links to flood-control contractors",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2025-11-26",
+      "text": "The Independent Commission for Infrastructure and the DPWH recommended to the Ombudsman that criminal and administrative cases be filed against eight current and former lawmakers, including this representative, saying they had links to contractor firms and may have violated the Code of Conduct for officials and the Anti-Graft Act's conflict-of-interest rules. These are recommendations, not findings, and any response was not reported in these articles.",
+      "sources": [
+       "https://tribune.net.ph/2025/11/26/ici-dpwh-ombudsman",
+       "https://ibctv13.com/ici-inirekomenda-ang-pagsampa-ng-kaso-laban-sa-8-kongresistang-sangkot-sa-umanoy-korapsyon-sa-flood-control-projects/"
+      ]
+     }
+    ]
+   }
+  ],
+  "ching-bernos": [
+   {
+    "id": "ching-bernos-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Comelec vote-buying complaint over a DepEd education summit in Abra, February 2025 (Solid North party-list first nominee)",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2025-03-07",
+      "text": "Abra resident Herminio Zapata filed a complaint at the Commission on Elections against Solid North's first nominee, Menchie 'Ching' Bernos, and a DepEd Abra schools superintendent, alleging violations of the Omnibus Election Code over a February 15 education summit where attendees allegedly received tumblers containing P3,000 in cash bearing the party-list's logo. These are allegations. No Comelec finding was found.",
+      "sources": [
+       "https://www.inquirer.net/432095/",
+       "http://www.gmanetwork.com/news/topstories/nation/939145/vote-buying-complaint-filed-vs-solid-north-party-list-nominee/story"
+      ]
+     }
+    ]
+   }
+  ],
+  "arthur-c-yap": [
+   {
+    "id": "arthur-c-yap-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "PDAF-related graft cases at the Sandiganbayan (SB-17-CRM-1526, -1527, -1531 and -1544) and Supreme Court review (G.R. Nos. 232968, 232974 and 238584-87)",
+    "role": "accused",
+    "status": "dismissed",
+    "status_date": "2024-04-15",
+    "events": [
+     {
+      "date": "2024-04-15",
+      "text": "The Supreme Court Third Division granted Yap's petition, reversed the Sandiganbayan's resolutions of November 28, 2017 and March 1, 2018, granted his motion to quash the informations and dismissed the cases against him. It found the Sandiganbayan gravely abused its discretion. The companion petitions in G.R. 232968 and 232974 were dismissed as moot.",
+      "sources": [
+       "https://lawphil.net/judjuris/juri2024/apr2024/gr_232968_2024.html"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "arthur-c-yap-2",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Graft case over the 2008 PhilRice employee car plan (Yap v. Sandiganbayan, G.R. Nos. 246318-19)",
+    "role": "accused",
+    "status": "dismissed",
+    "status_date": "2023-01-18",
+    "events": [
+     {
+      "date": "2023-01-18",
+      "text": "The Supreme Court granted Yap's petition, reversed the Sandiganbayan Sixth Division's resolutions denying his motion to quash and ordered the charges dismissed for violating his right to speedy disposition of cases, stating that he is acquitted of the crimes charged. The case stemmed from a car plan approved in November 2008 by the PhilRice board, which he chaired as agriculture secretary. The dismissal was on speedy-disposition grounds, not a finding on the merits.",
+      "sources": [
+       "https://lawyerly.ph/juris/view/c10c53",
+       "https://www.philstar.com/the-freeman/opinion/2023/07/08/2279555/former-bohol-governor-acquitted-due-justice-delayed/amp/"
       ]
      }
     ]
