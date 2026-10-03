@@ -847,6 +847,26 @@
    "ading-cruz": {
     "date": "2026-10-03",
     "queries": 3
+   },
+   "francisco-matugas": {
+    "date": "2026-10-03",
+    "queries": 5
+   },
+   "romeo-momo": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "cristy-angeles": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "samier-tan": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "pinpin-uy": {
+    "date": "2026-10-03",
+    "queries": 4
    }
   }
  },
@@ -2968,6 +2988,155 @@
       "text": "The House voted 263 to 8, with 7 abstentions, to adopt the ethics committee's report and formally reprimand Suntay, with a public apology, community service and gender-sensitivity training. The report said he admitted his mistake at the hearing.",
       "sources": [
        "https://www.dzrh.com.ph/post/house-sanctions-suntay-for-remarks-about-anne-curtis"
+      ]
+     }
+    ]
+   }
+  ],
+  "francisco-matugas": [
+   {
+    "id": "francisco-matugas-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman graft case over P60 million in Surigao del Norte provincial funds transferred to DepEd (2022)",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2023-06-06",
+      "text": "Oscar Pospia Jr. filed a complaint at the Office of the Ombudsman over the transfer of P60 million in provincial funds, originally set aside for disaster response, to DepEd divisions for learning materials in 2022, when Matugas was governor.",
+      "sources": [
+       "https://tribune.net.ph/2025/07/27/ex-surigao-governor-indicted-over-p60-m-fund-diversion",
+       "https://www.philstar.com/headlines/2025/07/28/2461290/ex-governor-faces-graft-raps-over-disaster-response-funds"
+      ]
+     },
+     {
+      "date": "2025-06-24",
+      "text": "In a resolution dated June 24, 2025, the Ombudsman found probable cause to charge Matugas and a former provincial budget officer with violating Section 3 of the Anti-Graft Act, saying no ordinance authorised the transfer. It rejected their argument that they acted in good faith. Probable cause is not a finding of guilt. The court filing and its current status were not confirmed.",
+      "sources": [
+       "https://tribune.net.ph/2025/07/27/ex-surigao-governor-indicted-over-p60-m-fund-diversion",
+       "https://www.philstar.com/headlines/2025/07/28/2461290/ex-governor-faces-graft-raps-over-disaster-response-funds"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "francisco-matugas-2",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman graft and malversation complaints over the P80.61 million Majayjay-Tuburan road project, Del Carmen (with son Francisco 'Bingo' Matugas II)",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2026-08-28",
+      "text": "Assistant Ombudsman Mico Clavano announced that the Ombudsman had filed two counts of graft and a malversation complaint against Rep. Francisco 'Lalo' Matugas and his son, former Rep. Bingo Matugas, over a road project certified as complete but found 65 to 70 percent complete, alleging a conflict of interest through a contractor. The father and son said they had not yet received the complaint and that a recommendation is not a finding of guilt. The current status was not found.",
+      "sources": [
+       "https://tribune.net.ph/2026/08/28/ombudsman-flags-matugas-kin-for-graft",
+       "https://www.gmanetwork.com/news/topstories/nation/1000220/graft-malversation-complaints-filed-vs-matugas-father-son-over-unfinished-p80-m-road-project/story/"
+      ]
+     }
+    ]
+   }
+  ],
+  "romeo-momo": [
+   {
+    "id": "romeo-momo-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman plunder and graft complaints over P1.4 billion in government contracts won by a family-linked company (Surigao La Suerte Corp.)",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2025-12-12",
+      "text": "Groups of priests, lawyers and residents from Surigao del Sur filed plunder and graft complaints at the Office of the Ombudsman, alleging that Surigao La Suerte Corp., tied to the Momo family, received about P1.4 billion in contracts while Momo was a director of the company and a representative. These are allegations. Momo said he had divested long ago, that there was no conflict of interest, and that the complaints were baseless and politically motivated. No Ombudsman finding was found.",
+      "sources": [
+       "https://www.philstar.com/nation/2025/12/13/2493821/house-public-works-panel-chair-faces-plunder-raps",
+       "https://www.gmanetwork.com/news/topstories/nation/969314/plunder-graft-filed-vs-momo-over-alleged-p1-4b-contracts-won-by-family-s-firm/story/"
+      ]
+     }
+    ]
+   }
+  ],
+  "cristy-angeles": [
+   {
+    "id": "cristy-angeles-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman preliminary investigation over alleged conflict of interest linked to a flood-control contractor (Anti-Graft Act Sec. 3(h))",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2026-07-17",
+      "text": "Ombudsman Jesus Crispin Remulla said Rep. Cristy Angeles had been placed under preliminary investigation for a possible violation of Section 3(h) of the Anti-Graft Act. Her husband manages Northern Builders, which won flood-control projects from 2022 to 2024. A preliminary investigation does not determine guilt.",
+      "sources": [
+       "https://www.philstar.com/headlines/2026/07/18/2542812/ombudsman-probes-2-lawmakers-over-flood-control-contractor-links",
+       "https://www.sunstar.com.ph/manila/7-lawmakers-face-corruption-probe-over-flood-control-projects"
+      ]
+     },
+     {
+      "date": "2026-08",
+      "text": "A SunStar roundup of the Ombudsman's flood-control probes listed her among lawmakers under investigation. No charge in court was reported.",
+      "sources": [
+       "https://www.sunstar.com.ph/manila/7-lawmakers-face-corruption-probe-over-flood-control-projects"
+      ]
+     }
+    ]
+   }
+  ],
+  "samier-tan": [
+   {
+    "id": "samier-tan-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Sandiganbayan case over alleged non-filing of his statements of assets, liabilities and net worth (SALN) for 2010 and 2011, while Mayor of Maimbung",
+    "role": "accused",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2018-02-19",
+      "text": "The Ombudsman filed charges at the Sandiganbayan against former Sulu governor Abdusakur Tan and Maimbung Mayor Samier Tan over alleged failure to file SALNs. Samier Tan was charged with two counts of violating the Code of Conduct and Ethical Standards (RA 6713), for 2010 and 2011.",
+      "sources": [
+       "https://manilatimes.net/2018/02/19/news/regions/ex-sulu-gov-town-mayor-face-breach-conduct-raps/381345",
+       "https://www.philstar.com/nation/2018/04/14/1805718/ex-sulu-governor-fined-over-saln-violations"
+      ]
+     },
+     {
+      "date": "2018-04-14",
+      "text": "The Philippine Star reported that his father pleaded guilty and was fined P25,000, and that Samier Tan's arraignment was set for May 11. The Ombudsman had earlier suspended both for six months for habitual failure to file SALNs. The outcome of Samier Tan's case was not found, and this is the newest news located.",
+      "sources": [
+       "https://www.philstar.com/nation/2018/04/14/1805718/ex-sulu-governor-fined-over-saln-violations"
+      ]
+     }
+    ]
+   }
+  ],
+  "pinpin-uy": [
+   {
+    "id": "pinpin-uy-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Uy v. Comelec and Jalosjos: dispute over the 2022 proclamation for Zamboanga del Norte's 1st District",
+    "role": "party",
+    "status": "decided",
+    "status_date": "2023-08-09",
+    "events": [
+     {
+      "date": "2022-06",
+      "text": "After Comelec credited votes of a candidate it had declared a nuisance candidate to Romeo Jalosjos Jr., Jalosjos, who had placed second, was proclaimed the winner over Roberto 'Pinpin' Uy Jr., who had led the initial count. Uy went to the Supreme Court.",
+      "sources": [
+       "https://www.dzrh.com.ph/post/sc-declares-uy-jr.-as-zamboanga-del-norte-1st-district-rep.",
+       "https://www.gmanetwork.com/news/topstories/nation/878351/sc-annuls-proclamation-of-romeo-jalosjos-jr-as-zamboanga-1st-district-rep/story/"
+      ]
+     },
+     {
+      "date": "2023-08-09",
+      "text": "The Supreme Court, announced on August 9, 2023, annulled Jalosjos's proclamation and directed Comelec to proclaim Uy, ruling that Comelec gravely abused its discretion by suspending Uy's proclamation in a nuisance-candidate proceeding. Motions for reconsideration were later reported as unresolved, and their outcome was not found.",
+      "sources": [
+       "https://www.dzrh.com.ph/post/sc-declares-uy-jr.-as-zamboanga-del-norte-1st-district-rep.",
+       "https://www.gmanetwork.com/news/topstories/nation/878351/sc-annuls-proclamation-of-romeo-jalosjos-jr-as-zamboanga-1st-district-rep/story/"
       ]
      }
     ]
