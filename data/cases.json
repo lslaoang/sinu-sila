@@ -417,8 +417,8 @@
     "queries": 3
    },
    "martin-romualdez": {
-    "date": "2026-10-02",
-    "queries": 5
+    "date": "2026-10-03",
+    "queries": 1
    },
    "gloria-macapagal-arroyo": {
     "date": "2026-10-02",
@@ -683,6 +683,66 @@
    "arnan-panaligan": {
     "date": "2026-10-03",
     "queries": 5
+   },
+   "patrick-michael-vargas": {
+    "date": "2026-10-03",
+    "queries": 2
+   },
+   "maria-rachel-arenas": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "roger-mercado": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "eleandro-jesus-madrona": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "bong-suntay": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "wilton-kho": {
+    "date": "2026-10-03",
+    "queries": 4
+   },
+   "reynaldo-salvacion": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "arthur-celeste": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "gina-de-venecia": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "wowo-fortes": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "ed-lumayag": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "dibu-tuan": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "franz-pumaren": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "marivic-co-pilar": {
+    "date": "2026-10-03",
+    "queries": 3
+   },
+   "mark-enverga": {
+    "date": "2026-10-03",
+    "queries": 3
    }
   }
  },
@@ -2168,6 +2228,31 @@
       ]
      }
     ]
+   },
+   {
+    "id": "martin-romualdez-2",
+    "kind": "other",
+    "body": "house",
+    "title": "P1-billion civil case (abuse of rights, unjust enrichment) over alleged anomalous flood-control projects, filed by United People Against Corruption (Quezon City RTC)",
+    "role": "respondent",
+    "status": "appealed",
+    "events": [
+     {
+      "date": "2025-12",
+      "text": "United People Against Corruption (UPAC) filed a P1-billion civil case in a Quezon City court against former Speaker Martin Romualdez, former Ako Bicol Rep. Zaldy Co, Rep. Patrick Michael Vargas and others, alleging abuse of rights and unjust enrichment over flood-control projects. These are allegations.",
+      "sources": [
+       "https://tribune.net.ph/2026/06/29/lawyer-p1-b-case-vs-romualdez-others-dismissed-on-technicality"
+      ]
+     },
+     {
+      "date": "2026-04-15",
+      "text": "The court dismissed the case for non-payment of more than P20 million in filing fees, saying it could not act on the complaint. The order was made public on June 29, 2026. The dismissal was on jurisdictional grounds, not a ruling on the evidence. UPAC's lawyer said it had asked the Court of Appeals to recognise the plaintiffs as pauper litigants. Vargas said the dismissal showed the allegations were fabricated.",
+      "sources": [
+       "http://www.gmanetwork.com/news/topstories/metro/993032/qc-court-junks-p1-b-case-vs-martin-romualdez-zaldy-co-others-over-unpaid-filing-fees/story",
+       "https://tribune.net.ph/2026/06/29/lawyer-p1-b-case-vs-romualdez-others-dismissed-on-technicality"
+      ]
+     }
+    ]
    }
   ],
   "gloria-macapagal-arroyo": [
@@ -2648,6 +2733,137 @@
       "sources": [
        "https://www.philstar.com/nation/2024/08/25/2380322/masbate-governor-9-others-charged-plunder/amp/",
        "https://tribune.net.ph/2024/08/24/masbate-gov-slapped-with-p99m-plunder-case"
+      ]
+     }
+    ]
+   }
+  ],
+  "patrick-michael-vargas": [
+   {
+    "id": "patrick-michael-vargas-1",
+    "kind": "other",
+    "body": "house",
+    "title": "P1-billion civil case (abuse of rights, unjust enrichment) over alleged anomalous flood-control projects, filed by United People Against Corruption (Quezon City RTC)",
+    "role": "respondent",
+    "status": "appealed",
+    "events": [
+     {
+      "date": "2025-12",
+      "text": "United People Against Corruption (UPAC) filed a P1-billion civil case in a Quezon City court against former Speaker Martin Romualdez, former Ako Bicol Rep. Zaldy Co, Rep. Patrick Michael Vargas and others, alleging abuse of rights and unjust enrichment over flood-control projects. These are allegations.",
+      "sources": [
+       "https://tribune.net.ph/2026/06/29/lawyer-p1-b-case-vs-romualdez-others-dismissed-on-technicality"
+      ]
+     },
+     {
+      "date": "2026-04-15",
+      "text": "The court dismissed the case for non-payment of more than P20 million in filing fees, saying it could not act on the complaint. The order was made public on June 29, 2026. The dismissal was on jurisdictional grounds, not a ruling on the evidence. UPAC's lawyer said it had asked the Court of Appeals to recognise the plaintiffs as pauper litigants. Vargas said the dismissal showed the allegations were fabricated.",
+      "sources": [
+       "http://www.gmanetwork.com/news/topstories/metro/993032/qc-court-junks-p1-b-case-vs-martin-romualdez-zaldy-co-others-over-unpaid-filing-fees/story",
+       "https://tribune.net.ph/2026/06/29/lawyer-p1-b-case-vs-romualdez-others-dismissed-on-technicality"
+      ]
+     }
+    ]
+   }
+  ],
+  "maria-rachel-arenas": [
+   {
+    "id": "maria-rachel-arenas-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Election protests over the 2007 Pangasinan 3rd District race (HRET Cases 07-015 Tulagan v. Arenas and 07-018 Soriano v. Arenas)",
+    "role": "respondent",
+    "status": "decided",
+    "status_date": "2009-11-26",
+    "events": [
+     {
+      "date": "2007",
+      "text": "Two rival candidates, Generoso Tulagan Jr. and Gallant Soriano, filed election protests at the House of Representatives Electoral Tribunal against Arenas's 2007 election.",
+      "sources": [
+       "https://www.hret.gov.ph/case-2007-2010",
+       "https://punch.dagupan.com/?p=5310"
+      ]
+     },
+     {
+      "date": "2009-11-26",
+      "text": "The tribunal decided the protests on November 26, 2009, and later denied both protestants' motions for reconsideration with finality, affirming that decision. The tribunal's case list, as read here, does not state what the decision held.",
+      "sources": [
+       "https://www.hret.gov.ph/case-2007-2010"
+      ]
+     }
+    ]
+   }
+  ],
+  "roger-mercado": [
+   {
+    "id": "roger-mercado-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Lerias v. HRET and Mercado (G.R. No. 97105): 1987 election protest for Southern Leyte's lone district",
+    "role": "respondent",
+    "status": "decided",
+    "status_date": "1991-10-15",
+    "events": [
+     {
+      "date": "1991-10-15",
+      "text": "The Supreme Court reversed the House Electoral Tribunal's decision in the 1987 protest between Rosette Lerias and Roger Mercado and declared Lerias the duly elected representative of the district.",
+      "sources": [
+       "https://lawphil.net/judjuris/juri1991/oct1991/gr_97105_1991.html",
+       "https://hret.gov.ph/case-1987-1992"
+      ]
+     }
+    ]
+   }
+  ],
+  "eleandro-jesus-madrona": [
+   {
+    "id": "eleandro-jesus-madrona-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Graft case (RA 3019) at the Sandiganbayan over a 2004 Romblon provincial purchase of liquid organic fertilizer from Feshan Philippines Inc.",
+    "role": "accused",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2004",
+      "text": "The Ombudsman charged Madrona, then Romblon governor, and five other former provincial officials with graft over a P4.86-million purchase of 3,333 bottles of liquid organic fertilizer through direct contracting instead of public bidding. This is an allegation.",
+      "sources": [
+       "https://www.philstar.com/nation/2019/08/13/1942853/sandigan-suspends-romblon-lawmaker-90-days",
+       "https://www.manilatimes.net/court-suspends-lawmaker-for-graft/599130/"
+      ]
+     },
+     {
+      "date": "2019-08-05",
+      "text": "The Sandiganbayan Sixth Division ordered a 90-day preventive suspension, which the law makes mandatory for an incumbent official facing such a charge. Madrona said he would obey. The Supreme Court had earlier denied his petition against the finding of probable cause. A preventive suspension is not a finding of guilt. The latest news found is from 2019, so the current status may differ.",
+      "sources": [
+       "https://www.philstar.com/nation/2019/08/13/1942853/sandigan-suspends-romblon-lawmaker-90-days",
+       "https://www.manilatimes.net/court-suspends-lawmaker-for-graft/599130/"
+      ]
+     }
+    ]
+   }
+  ],
+  "bong-suntay": [
+   {
+    "id": "bong-suntay-1",
+    "kind": "administrative",
+    "body": "house",
+    "title": "House ethics case over remarks about a celebrity made at a House justice committee hearing",
+    "role": "respondent",
+    "status": "decided",
+    "status_date": "2026-06-03",
+    "events": [
+     {
+      "date": "2026-03-10",
+      "text": "Suntay attended a hearing of the House ethics committee over remarks he made on March 3 at a hearing on impeachment complaints against the Vice President. The committee chair said it would decide on the merits.",
+      "sources": [
+       "https://www.gmanetwork.com/news_duplicate/topstories/nation/979447/suntay-house-ethics-panel-remarks-anne-curtis/story/"
+      ]
+     },
+     {
+      "date": "2026-06-03",
+      "text": "The House voted 263 to 8, with 7 abstentions, to adopt the ethics committee's report and formally reprimand Suntay, with a public apology, community service and gender-sensitivity training. The report said he admitted his mistake at the hearing.",
+      "sources": [
+       "https://www.dzrh.com.ph/post/house-sanctions-suntay-for-remarks-about-anne-curtis"
       ]
      }
     ]
