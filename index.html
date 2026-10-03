@@ -90,11 +90,12 @@
   .seg button{border:0;border-right:1px solid var(--line);background:transparent;color:var(--ink);padding:.5rem .3rem;font:inherit;font-size:.88rem;cursor:pointer} .seg button:last-child{border-right:0}
   .seg button:hover{background:var(--yellow);color:#15120f} .seg button[aria-pressed=true]{background:var(--ink);color:var(--bg);font-weight:700}
   .panel>*{min-width:0} 
-  .tgs{display:grid;grid-template-columns:1fr;gap:.4rem} @media (min-width:48rem){.tgs{grid-template-columns:repeat(5,1fr)}.tgs .tg{flex-direction:column;align-items:flex-start;gap:.35rem;padding:.65rem .8rem}.tgs .tg b{order:-1;font:800 1.5rem/1 var(--serif)}.tgs .tg span{flex:0 1 auto;line-height:1.25}.tgs .tg::before{position:absolute;top:.7rem;right:.7rem}.tgs .tg{position:relative}}
-  .tg{display:flex;align-items:center;gap:.6rem;padding:.45rem .7rem;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--ink);font:inherit;font-size:.88rem;cursor:pointer;text-align:left}
-  .tg::before{content:"";width:.85rem;height:.85rem;border-radius:50%;border:2px solid var(--tc);background:var(--tc);flex:none}
+  .tgs{display:grid;grid-template-columns:1fr;gap:.4rem} @media (min-width:48rem){.tgs{grid-template-columns:repeat(6,1fr)}.tgs .tg{flex-direction:column;align-items:flex-start;gap:.35rem;padding:.65rem .8rem}.tgs .tg b{order:-1;font:800 1.5rem/1 var(--serif)}.tgs .tg span{flex:0 1 auto;line-height:1.25}.tgs .tg::before{position:absolute;top:.7rem;right:.7rem}.tgs .tg{position:relative}}
+  .tg{display:flex;align-items:center;gap:.6rem;padding:.5rem .7rem;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--ink);font:inherit;font-size:.88rem;cursor:pointer;text-align:left}
+  .tg::before{content:"";width:.9rem;height:.9rem;border-radius:50%;background:var(--tb);box-shadow:0 0 0 2px var(--tc);flex:none}
   .tg span{flex:1} .tg b{font-variant-numeric:tabular-nums} .tg:hover{border-color:var(--ink)}
-  .tg[aria-pressed=false]{color:var(--mute)} .tg[aria-pressed=false]::before{background:transparent}
+  .tg[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:700}
+  .fbar .info{font-size:.85rem;text-align:left;margin:.7rem 0 0;max-width:none;min-height:0;color:var(--mute)}
   .studs{display:grid;grid-template-columns:repeat(auto-fit,minmax(2.9rem,1fr));gap:.45rem} .panel .info{font-size:.85rem;text-align:left;margin:0;color:var(--mute);min-height:0} .sec+.info,.note+.info,.chips+.info{margin:0 0 1rem;max-width:none} .studs .chip{flex:none;font-size:.85rem;padding:.25rem .7rem}
   .ctl{display:flex;flex-wrap:wrap;gap:.5rem .75rem;align-items:center;justify-content:center;margin:.75rem 0}
   .ctl .lbl{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
@@ -208,7 +209,8 @@ const trackOf = id => { const l = cases.cases[id] || [];
   return l.length ? 'resolved' : cases._meta.checked[id] ? 'none' : 'unchecked'; };
 const trackRank = id => TRACKS.findIndex(t => t[0] === trackOf(id));
 const trackLabel = id => TRACKS[trackRank(id)][1], trackColor = id => TRACKS[trackRank(id)][2];
-const state = {lens: 'track', tr: new Set(['convicted', 'pending', 'resolved', 'none']), school: null, q: '', leaders: false, sort: 'az', hk: 'all', hp: null};
+const CHECKED = ['convicted', 'pending', 'resolved', 'none'];
+const state = {lens: 'track', sel: 'checked', tr: new Set(CHECKED), school: null, q: '', leaders: false, sort: 'az', hk: 'all', hp: null};
 
 const firstName = n => clean(n).split(' ')[0];
 const lastName = o => clean(o.name).split(' ').filter(w => !/^(Jr\.?|II|III|IV)$/.test(w)).pop();
@@ -328,7 +330,11 @@ function updateAll() {
   document.getElementById('hemi')?.classList.toggle('trk', state.lens === 'track');
   layoutSeats(); updateInfo(); updateWall(); updateHouse(); updatePL();
   document.querySelectorAll('[data-lens]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lens === state.lens));
-  document.querySelectorAll('[data-tr]').forEach(b => b.setAttribute('aria-pressed', state.tr.has(b.dataset.tr)));
+  document.querySelectorAll('[data-tr]').forEach(b => b.setAttribute('aria-pressed', b.dataset.tr === state.sel));
+  const ti = document.getElementById('trInfo');
+  if (ti) { const lbl = state.sel === 'checked' ? 'everyone we have checked so far' : `only “${(TRACKS.find(t => t[0] === state.sel) || [0, ''])[1]}”`;
+    const n = data.filter(o => state.tr.has(trackOf(o.id))).length + visibleHouse().length + visiblePL().length;
+    ti.textContent = `Showing ${lbl}: ${n} of ${everyone().length} lawmakers. Faces and cards that don't match are dimmed or hidden.`; }
   document.querySelectorAll('[data-school]').forEach(b => b.setAttribute('aria-pressed', b.dataset.school === state.school));
 }
 function updateWall() {
@@ -372,8 +378,10 @@ function home() {
         ${glance('house', dist.length, 'House of Representatives', 'district and at-large seats', dist)}
         ${glance('partylist', plm.length, 'Party-list', `representatives from ${new Set(plm.map(o => o.party)).size} groups`, plm)}
       </div></section>
-    <div class="fbar rv" role="group" aria-labelledby="plt"><h3 class="pl" id="plt">Court-case record <small>tap to show or hide · applies to everyone below</small></h3>
-      <div class="tgs">${TRACKS.map(([k, l, c]) => `<button class="tg" data-tr="${k}" aria-pressed="${state.tr.has(k)}" style="--tc:${c}"><span>${esc(l)}</span><b>${everyone().filter(o => trackOf(o.id) === k).length}</b></button>`).join('')}</div></div>
+    <div class="fbar rv" role="group" aria-labelledby="plt"><h3 class="pl" id="plt">Court-case record <small>pick one to focus on it · tap it again to go back · applies to everyone below</small></h3>
+      <div class="tgs">${[['checked', 'Checked so far', 'conic-gradient(#b91c1c 0 25%,#d97706 0 50%,#2563eb 0 75%,#0f766e 0)', '#9ca3af', everyone().filter(o => trackOf(o.id) !== 'unchecked').length],
+        ...TRACKS.map(([k, l, c]) => [k, l, c, c, everyone().filter(o => trackOf(o.id) === k).length])].map(([k, l, bg, c, n]) => `<button class="tg" data-tr="${k}" aria-pressed="${state.sel === k}" style="--tb:${bg};--tc:${c}"><span>${esc(l)}</span><b>${n}</b></button>`).join('')}</div>
+      <p class="info" id="trInfo" aria-live="polite"></p></div>
 
     <h2 class="sec rv" id="senate">The Senate <small>${data.length} senators</small></h2>
     <div class="senviz">
@@ -521,7 +529,7 @@ app.onclick = e => {
     if (navigator.share) navigator.share({title: t, url}).catch(() => {}); else navigator.clipboard?.writeText(url).then(() => { b.textContent = 'Link copied'; setTimeout(() => b.textContent = 'Share', 2000); }); return; }
   if (d.go) { document.getElementById(d.go)?.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'}); return; }
   if (d.lens) state.lens = d.lens;
-  if (d.tr) { state.tr.has(d.tr) ? state.tr.delete(d.tr) : state.tr.add(d.tr); }
+  if (d.tr) { state.sel = state.sel === d.tr && d.tr !== 'checked' ? 'checked' : d.tr; state.tr = new Set(state.sel === 'checked' ? CHECKED : [state.sel]); }
   if (d.school) state.school = state.school === d.school ? null : d.school;
   if (d.sort) state.sort = d.sort;
   if (d.lead != null) state.leaders = d.lead === '1';
