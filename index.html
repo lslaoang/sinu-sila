@@ -564,7 +564,7 @@ app.onclick = e => {
   updateAll();
 };
 app.onchange = e => { if (e.target.id === 'hpSel') { state.hp = e.target.value || null; updateAll(); } };
-const REPORT_URL = '';   // set to the Lambda function URL printed by tools/create_contact_form.sh
+const REPORT_URL = 'https://nx3hxaffgkf7ufau7cyb6zfa6i0wigzc.lambda-url.ap-southeast-1.on.aws/';   // set to the Lambda function URL printed by tools/create_contact_form.sh
 (() => { const b = document.getElementById('repB'), dlg = document.getElementById('rep'), f = document.getElementById('repF'), msg = document.getElementById('repMsg');
   if (!REPORT_URL) return; b.hidden = false;
   b.onclick = () => { msg.textContent = ''; dlg.showModal(); f.message.focus(); };

@@ -25,4 +25,5 @@ aws lambda create-function --function-name $FN --runtime python3.12 --handler ha
 aws lambda create-function-url-config --function-name $FN --auth-type NONE --region $REGION \
   --cors "AllowOrigins=$ORIGIN,AllowMethods=POST,AllowHeaders=content-type,MaxAge=3600" --query FunctionUrl --output text
 aws lambda add-permission --function-name $FN --statement-id public-url --action lambda:InvokeFunctionUrl --principal '*' --function-url-auth-type NONE --region $REGION >/dev/null
+aws lambda add-permission --function-name $FN --statement-id public-invoke --action lambda:InvokeFunction --principal '*' --invoked-via-function-url --region $REGION >/dev/null   # newer AWS accounts need both permissions
 echo ">>> Copy the https://....lambda-url...on.aws/ address printed above and give it to Claude. It is not a secret."
