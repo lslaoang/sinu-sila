@@ -211,7 +211,7 @@ const trackOf = id => { const l = cases.cases[id] || [];
 const trackRank = id => TRACKS.findIndex(t => t[0] === trackOf(id));
 const trackLabel = id => TRACKS[trackRank(id)][1], trackColor = id => TRACKS[trackRank(id)][2];
 const CHECKED = ['convicted', 'pending', 'resolved', 'none'], ALLTR = [...CHECKED, 'unchecked'];
-const state = {lens: 'track', sel: 'checked', ch: 'all', tr: new Set(CHECKED), school: null, q: '', leaders: false, sort: 'az', hk: 'all', hp: null};
+const state = {lens: 'track', sel: 'everyone', ch: 'all', tr: new Set(ALLTR), school: null, q: '', leaders: false, sort: 'az', hk: 'all', hp: null};
 
 const firstName = n => clean(n).split(' ')[0];
 const lastName = o => clean(o.name).split(' ').filter(w => !/^(Jr\.?|II|III|IV)$/.test(w)).pop();
@@ -309,7 +309,7 @@ function updateHouse() {
       <span class="hn"><b>${esc(clean(o.name))}</b>${isLead(o) ? ` <span class="role">${esc(o.position)}</span>` : ''}</span>
       <span class="hm">${esc(o.constituency)} · ${esc(o.party)}<span class="tk" style="--tc:${trackColor(o.id)}">${esc(trackLabel(o.id))}</span></span></a></li>`).join('') || '<li class="soon" style="grid-column:1/-1">No representative matches that.</li>';
   const info = document.getElementById('houseInfo');
-  if (info) info.textContent = `Showing ${rows.length} of ${house.length} representatives${house.length > rows.length && !state.q ? ` (turn on “Not yet checked” above to include the rest)` : ''}${state.q ? ` matching “${state.q}”` : ''}.`;
+  if (info) { const tot = house.filter(o => o.kind !== 'party-list').length; info.textContent = `Showing ${rows.length} of ${tot} representatives${state.sel !== 'everyone' && !state.q ? ' for the court-case record chosen above' : ''}${state.q ? ` matching “${state.q}”` : ''}.`; }
   document.querySelectorAll('[data-hk]').forEach(b => b.setAttribute('aria-pressed', b.dataset.hk === state.hk));
 }
 function visiblePL() { const t = state.q.toLowerCase();
@@ -338,10 +338,10 @@ function updateAll() {
   document.querySelectorAll('[data-n]').forEach(e => e.textContent = cnt(e.dataset.n));
   [['secSenate', 'senate'], ['secHouse', 'house'], ['secPL', 'partylist']].forEach(([id, k]) => { const e = document.getElementById(id); if (e) e.hidden = state.ch !== 'all' && state.ch !== k; });
   const ti = document.getElementById('trInfo');
-  if (ti) { const names = {all: 'all lawmakers', senate: 'the Senate', house: 'the House (district and at-large)', partylist: 'party-list'};
-    const lbl = state.sel === 'everyone' ? 'everyone' : state.sel === 'checked' ? 'everyone we have checked so far' : `only “${(TRACKS.find(t => t[0] === state.sel) || [0, ''])[1]}”`;
+  if (ti) { const who = {all: 'lawmakers', senate: 'senators', house: 'House members (district and at-large)', partylist: 'party-list representatives'}[state.ch];
     const n = pool.filter(o => state.tr.has(trackOf(o.id))).length;
-    ti.textContent = `Showing ${lbl} in ${names[state.ch]}: ${n} of ${pool.length}. Faces and cards that don't match are dimmed or hidden.`; }
+    ti.textContent = state.sel === 'everyone' ? `Showing all ${pool.length} ${who}.`
+      : `Showing only “${(TRACKS.find(t => t[0] === state.sel) || [0, ''])[1]}”: ${n} of ${pool.length} ${who}. Faces and cards that don't match are dimmed or hidden.`; }
   document.querySelectorAll('[data-school]').forEach(b => b.setAttribute('aria-pressed', b.dataset.school === state.school));
 }
 function updateWall() {
@@ -388,9 +388,7 @@ function home() {
     <div class="fbar rv" role="group" aria-label="Filters">
       <div class="frow"><h3 class="pl" id="plc">Chamber</h3><div class="seg seg4" role="group" aria-labelledby="plc">
         ${[['all', 'All'], ['senate', 'Senate'], ['house', 'House'], ['partylist', 'Party-list']].map(([k, l]) => `<button data-ch="${k}" aria-pressed="${k === state.ch}">${l}</button>`).join('')}</div></div>
-      <div class="frow"><h3 class="pl" id="pls2">Show</h3><div class="seg seg2" role="group" aria-labelledby="pls2">
-        ${[['everyone', 'Everyone'], ['checked', 'Checked so far']].map(([k, l]) => `<button data-tr="${k}" aria-pressed="${state.sel === k}">${l} <small data-n="${k}"></small></button>`).join('')}</div></div>
-      <div class="frow"><h3 class="pl" id="plt">Or focus on one court-case record</h3>
+      <div class="frow"><h3 class="pl" id="plt">Court-case record <small>pick one to focus on it · tap it again to show everyone</small></h3>
         <div class="tgs">${TRACKS.map(([k, l, c]) => `<button class="tg" data-tr="${k}" aria-pressed="${state.sel === k}" style="--tb:${c};--tc:${c}"><span>${esc(l)}</span><b data-n="${k}"></b></button>`).join('')}</div></div>
       <p class="info" id="trInfo" aria-live="polite"></p></div>
 
@@ -547,7 +545,7 @@ app.onclick = e => {
   if (d.go) { if (state.ch !== 'all') { state.ch = 'all'; updateAll(); } document.getElementById(d.go)?.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'}); return; }
   if (d.lens) state.lens = d.lens;
   if (d.ch) state.ch = d.ch;
-  if (d.tr) { state.sel = state.sel === d.tr && !['checked', 'everyone'].includes(d.tr) ? 'checked' : d.tr; state.tr = new Set(state.sel === 'everyone' ? ALLTR : state.sel === 'checked' ? CHECKED : [state.sel]); }
+  if (d.tr) { state.sel = state.sel === d.tr ? 'everyone' : d.tr; state.tr = new Set(state.sel === 'everyone' ? ALLTR : state.sel === 'checked' ? CHECKED : [state.sel]); }
   if (d.school) state.school = state.school === d.school ? null : d.school;
   if (d.sort) state.sort = d.sort;
   if (d.lead != null) state.leaders = d.lead === '1';
