@@ -175,7 +175,10 @@
   .skel{height:6rem;border-radius:var(--r);background:var(--line);margin:.75rem 0}
   .err{border:1px solid var(--red);border-radius:var(--r);padding:1rem;margin:1rem 0}
   footer{margin-top:4rem;border-top:4px solid var(--ink);padding:1.5rem 0 3rem;color:var(--mute);font-size:.9rem}
-  footer b{color:var(--ink)}
+  footer b{color:var(--ink)} footer .lnk{font-weight:700;color:var(--blue);text-decoration:underline}
+  dialog#rep{max-width:30rem;width:calc(100% - 2rem);border:1px solid var(--ink);border-radius:12px;background:var(--paper);color:var(--ink);padding:1.2rem} dialog#rep::backdrop{background:rgba(0,0,0,.6)}
+  #rep h2{margin:0 0 .4rem;font:800 1.4rem var(--serif)} #rep label{display:block;margin:.7rem 0;font-size:.9rem;font-weight:600} #rep textarea,#rep input{display:block;width:100%;margin-top:.25rem;padding:.5rem .7rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit}
+  #rep .hp{position:absolute;left:-99rem} #rep .row{display:flex;gap:.5rem;justify-content:flex-end;margin-top:.8rem} #repMsg{min-height:1.4rem;margin:.3rem 0}
 
   /* motion */
   .rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s} .rv.in{opacity:1;transform:none}
@@ -191,7 +194,15 @@
 <main class="wrap" id="app" tabindex="-1" aria-busy="true"><div class="skel"></div><div class="skel"></div><div class="skel"></div></main>
 <noscript><p class="wrap">This site needs JavaScript to show the records.</p></noscript>
 <footer><div class="wrap"><p><b>Sino Sila?</b> is an independent project, not affiliated with the Senate or the House. Every fact links to the public source it came from. Senate data comes from the Senate's Legislative Information System. House rosters come from Wikipedia and are still being checked against other sources. Portraits come from Wikimedia Commons, credited on each profile. School seals come from Wikipedia and Wikimedia Commons and belong to their institutions.</p>
-<p>Court cases are being added person by person, so “not yet checked” means we haven't looked yet, not that a record is clean. A case listed here is a public record, not a finding of guilt. If you spot a mistake or something out of date, we want to fix it. Data as of October 1, 2026.</p></div></footer>
+<p>Court cases are being added person by person, so “not yet checked” means we haven't looked yet, not that a record is clean. A case listed here is a public record, not a finding of guilt. If you spot a mistake or something out of date, we want to fix it. Data as of October 1, 2026. <button class="lnk" id="repB" hidden>Report an error</button></p></div></footer>
+<dialog id="rep" aria-labelledby="repT"><form method="dialog" id="repF"><h2 id="repT">Report an error</h2>
+  <p class="note">Tell us what is wrong or out of date on this page. A link to the right source helps most.</p>
+  <label>What is wrong<textarea name="message" rows="4" maxlength="2000" required></textarea></label>
+  <label>Link to a source <small>(optional)</small><input name="source" type="url" maxlength="300"></label>
+  <label>Your email <small>(optional, only if you want a reply)</small><input name="contact" type="email" maxlength="200"></label>
+  <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+  <p id="repMsg" role="status"></p>
+  <div class="row"><button type="button" class="chip" id="repX">Close</button><button type="submit" class="chip" id="repGo">Send</button></div></form></dialog>
 <div class="tip" id="tip" aria-hidden="true"></div>
 <script>
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -553,6 +564,15 @@ app.onclick = e => {
   updateAll();
 };
 app.onchange = e => { if (e.target.id === 'hpSel') { state.hp = e.target.value || null; updateAll(); } };
+const REPORT_URL = '';   // set to the Lambda function URL printed by tools/create_contact_form.sh
+(() => { const b = document.getElementById('repB'), dlg = document.getElementById('rep'), f = document.getElementById('repF'), msg = document.getElementById('repMsg');
+  if (!REPORT_URL) return; b.hidden = false;
+  b.onclick = () => { msg.textContent = ''; dlg.showModal(); f.message.focus(); };
+  document.getElementById('repX').onclick = () => dlg.close();
+  f.onsubmit = async e => { e.preventDefault(); const go = document.getElementById('repGo'); go.disabled = true; msg.textContent = 'Sending…';
+    try { const r = await fetch(REPORT_URL, {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify({...Object.fromEntries(new FormData(f)), page: location.href})});
+      const j = await r.json(); msg.textContent = j.message || 'Sent.'; if (j.ok) f.reset(); }
+    catch { msg.textContent = 'Could not send. Please try again later.'; } go.disabled = false; }; })();
 document.addEventListener('mouseover', e => showTip(e.target.closest?.('.seat')));
 document.addEventListener('focusin', e => showTip(e.target.closest?.('.seat')));
 document.addEventListener('mouseout', e => { if (e.target.closest?.('.seat')) tip.classList.remove('on'); });
