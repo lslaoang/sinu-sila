@@ -1087,6 +1087,18 @@
    "jurdin-jesus-romualdo": {
     "date": "2026-10-04",
     "queries": 4
+   },
+   "joseph-victor-g-ejercito": {
+    "date": "2026-10-04",
+    "queries": 4
+   },
+   "manuel-m-lapid": {
+    "date": "2026-10-04",
+    "queries": 4
+   },
+   "francis-pangilinan": {
+    "date": "2026-10-04",
+    "queries": 4
    }
   }
  },
@@ -3718,6 +3730,74 @@
       "text": "A press release published by Bulatlat in May 2011 reported that Department of Justice regional prosecutors dismissed the complaint for insufficiency of evidence in a resolution dated May 11, 2011. This comes from one outlet and the press release's own framing, and no appeal was found.",
       "sources": [
        "https://www.bulatlat.com/2011/05/28/prosecutors-dismiss-complaint-against-camiguin-governor-pr/"
+      ]
+     }
+    ]
+   }
+  ],
+  "joseph-victor-g-ejercito": [
+   {
+    "id": "joseph-victor-g-ejercito-1",
+    "kind": "criminal",
+    "body": "senate",
+    "title": "Graft case over the 2008 San Juan City purchase of P2.1 million in firearms (Sandiganbayan Fifth Division)",
+    "role": "accused",
+    "status": "acquitted",
+    "status_date": "2016-12-23",
+    "events": [
+     {
+      "date": "2016-12-23",
+      "text": "The Sandiganbayan Fifth Division acquitted Ejercito, then San Juan mayor, of graft over the purchase. Reports in December 2016 described the ruling, and in January 2017 he called the acquittal his best Christmas gift.",
+      "sources": [
+       "https://www.manilatimes.net/2016/12/23/news/top-stories/jv-ejercito-acquitted-graft-case/303308",
+       "https://www.gmanetwork.com/news/topstories/nation/594593/jv-ejercito-says-acquittal-best-christmas-gift/story/"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "joseph-victor-g-ejercito-2",
+    "kind": "criminal",
+    "body": "senate",
+    "title": "Technical malversation case over use of San Juan City's 2008 calamity fund for the firearms (Sandiganbayan Sixth Division)",
+    "role": "accused",
+    "status": "acquitted",
+    "status_date": "2017-08-10",
+    "events": [
+     {
+      "date": "2017-08-10",
+      "text": "In a decision promulgated August 10, 2017, the Sandiganbayan Sixth Division acquitted Ejercito and 14 others, ruling that the prosecution failed to prove beyond reasonable doubt that the 2008 calamity fund was used to buy and pay for the firearms.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/621484/sandiganbayan-acquits-jv-ejercito-over-anomalous-firearms-deal/story/",
+       "https://interaksyon.philstar.com/breaking-news/2017/08/11/90299/jv-ejercito-14-others-acquitted-of-malversation-raps-by-sandigan/"
+      ]
+     }
+    ]
+   }
+  ],
+  "manuel-m-lapid": [
+   {
+    "id": "manuel-m-lapid-1",
+    "kind": "criminal",
+    "body": "senate",
+    "title": "Graft case over a 2004 purchase of liquid fertilizer in Pampanga (Sandiganbayan; Supreme Court review)",
+    "role": "accused",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2016-09",
+      "text": "The Sandiganbayan dismissed the graft case against Lapid, former Pampanga governor, and three others, ruling that their right to speedy disposition had been violated by delay in the Ombudsman's investigation. The case concerned an alleged purchase of about P4.76 million of liquid fertilizer without public bidding in 2004, which is an allegation.",
+      "sources": [
+       "https://www.philstar.com/headlines/2019/12/05/1974510/sc-reverses-dismissal-graft-charges-vs-lito-lapid",
+       "https://www.gmanetwork.com/news/topstories/nation/718050/sc-reinstates-graft-case-vs-lito-lapid-over-fertilizer-fund-scam/story/"
+      ]
+     },
+     {
+      "date": "2019-12-05",
+      "text": "The Supreme Court Second Division, in a ruling made public December 5, 2019, reversed the dismissal, found the speedy-disposition right was not violated, and ordered the Sandiganbayan to resolve the case with reasonable dispatch. The newest status found is that 2019 order, so the case may have moved since.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/718050/sc-reinstates-graft-case-vs-lito-lapid-over-fertilizer-fund-scam/story/",
+       "https://www.philstar.com/headlines/2019/12/05/1974510/sc-reverses-dismissal-graft-charges-vs-lito-lapid"
       ]
      }
     ]
