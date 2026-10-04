@@ -1099,6 +1099,22 @@
    "francis-pangilinan": {
     "date": "2026-10-04",
     "queries": 4
+   },
+   "vicente-c-sotto-iii": {
+    "date": "2026-10-04",
+    "queries": 2
+   },
+   "win-gatchalian": {
+    "date": "2026-10-04",
+    "queries": 2
+   },
+   "paolo-benigno-aquino-iv": {
+    "date": "2026-10-04",
+    "queries": 1
+   },
+   "pia-s-cayetano": {
+    "date": "2026-10-04",
+    "queries": 1
    }
   }
  },
@@ -3798,6 +3814,33 @@
       "sources": [
        "https://www.gmanetwork.com/news/topstories/nation/718050/sc-reinstates-graft-case-vs-lito-lapid-over-fertilizer-fund-scam/story/",
        "https://www.philstar.com/headlines/2019/12/05/1974510/sc-reverses-dismissal-graft-charges-vs-lito-lapid"
+      ]
+     }
+    ]
+   }
+  ],
+  "vicente-c-sotto-iii": [
+   {
+    "id": "vicente-c-sotto-iii-1",
+    "kind": "other",
+    "body": "senate",
+    "title": "Supreme Court petition to cite Sotto in indirect contempt over remarks on the ruling on the impeachment of VP Sara Duterte",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2026-02-13",
+      "text": "Lawyers led by Ferdinand Topacio filed the petition. Sotto called it a nuisance suit and a publicity stunt and said disagreeing with a court ruling is not contempt (his statement).",
+      "sources": [
+       "https://www.dzrh.com.ph/post/sotto-calls-indirect-contempt-complaint-merely-a-publicity-stunt",
+       "https://www.gmanetwork.com/news/topstories/nation/986341/tito-sotto-petition-supreme-court/story/"
+      ]
+     },
+     {
+      "date": "2026-05-04",
+      "text": "The Supreme Court en banc directed Sotto to comment within 10 days; no later ruling was found.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/986341/tito-sotto-petition-supreme-court/story/"
       ]
      }
     ]
