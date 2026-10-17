@@ -1115,6 +1115,26 @@
    "pia-s-cayetano": {
     "date": "2026-10-04",
     "queries": 1
+   },
+   "richard-gomez": {
+    "date": "2026-10-17",
+    "queries": 2
+   },
+   "imee-r-marcos": {
+    "date": "2026-10-17",
+    "queries": 1
+   },
+   "roman-romulo": {
+    "date": "2026-10-17",
+    "queries": 1
+   },
+   "maria-cristina-lopez": {
+    "date": "2026-10-17",
+    "queries": 1
+   },
+   "florabel-yatco": {
+    "date": "2026-10-17",
+    "queries": 1
    }
   }
  },
@@ -3841,6 +3861,60 @@
       "text": "The Supreme Court en banc directed Sotto to comment within 10 days; no later ruling was found.",
       "sources": [
        "https://www.gmanetwork.com/news/topstories/nation/986341/tito-sotto-petition-supreme-court/story/"
+      ]
+     }
+    ]
+   }
+  ],
+  "richard-gomez": [
+   {
+    "id": "richard-gomez-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Comelec petition to disqualify Gomez over a shared Facebook video alleging planned election cheating in Palompon (Omnibus Election Code Sec. 261(z)(11))",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2025-03-17",
+      "text": "Palompon Mayor Ramon Oñate filed the petition at Comelec over a video Gomez shared with the caption 'Palompon is poised to do grave and massive election cheating this coming May'. Gomez denied wrongdoing (as reported).",
+      "sources": [
+       "https://www.inquirer.net/?p=432916",
+       "http://www.gmanetwork.com/news/topstories/regions/939561/leyte-rep-richard-gomez-faces-disqualification-case-over-false-alarming-info/story"
+      ]
+     },
+     {
+      "date": "2025-05-07",
+      "text": "PressOne reported Comelec had not yet issued a resolution; no later ruling was found.",
+      "sources": [
+       "https://pressone.ph/fact-check-richard-gomez-did-not-get-disqualified-for-being-a-duterte-supporter/"
+      ]
+     }
+    ]
+   }
+  ],
+  "imee-r-marcos": [
+   {
+    "id": "imee-r-marcos-1",
+    "kind": "other",
+    "body": "senate",
+    "title": "Supreme Court petition (G.R. No. 232395) against the House inquiry into Ilocos Norte tobacco excise funds, filed with provincial officials",
+    "role": "petitioner",
+    "status": "dismissed",
+    "status_date": "2018-07-03",
+    "events": [
+     {
+      "date": "2017-07-25",
+      "text": "Marcos, then Ilocos Norte governor, attended the House committee hearing after being subpoenaed. She denied wrongdoing.",
+      "sources": [
+       "https://www.philstar.com/headlines/2017/07/25/1721353/imee-marcos-attends-house-probe-alleged-misuse-tobacco-funds"
+      ]
+     },
+     {
+      "date": "2018-07-03",
+      "text": "The Supreme Court en banc dismissed the omnibus petition, in which she was co-petitioner seeking to stop the inquiry. The ruling concerned the inquiry's validity and made no finding on the underlying allegations. Decision text read via a law-database copy.",
+      "sources": [
+       "https://lawyerly.ph/juris/view/cfbe5"
       ]
      }
     ]
