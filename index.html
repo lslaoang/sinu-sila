@@ -78,8 +78,7 @@
   .sch{display:grid;justify-items:center;gap:.2rem;padding:.45rem .2rem .35rem;border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--ink);font:inherit;cursor:pointer;min-width:0}
   .sch small{font-size:.75rem;color:var(--mute);font-variant-numeric:tabular-nums} .sch:hover{border-color:var(--ink)}
   .sch[aria-pressed=true]{background:var(--ink);border-color:var(--ink)} .sch[aria-pressed=true] small{color:var(--bg)}
-  .hfilters{display:grid;gap:.6rem;margin:0 0 1rem} @media (min-width:40rem){.hfilters{grid-template-columns:minmax(0,22rem) minmax(0,16rem)}}
-  .hfilters .seg{grid-template-columns:repeat(3,1fr)}
+  .hfilters{display:grid;gap:.6rem;margin:0 0 1rem} @media (min-width:40rem){.hfilters{grid-template-columns:minmax(0,16rem) minmax(0,16rem)}}
   .sel select{width:100%;padding:.5rem .8rem;border:1px solid var(--ink);border-radius:99px;background:var(--paper);color:var(--ink);font:inherit;font-size:.9rem}
   .offices{list-style:none;padding:0;margin:0 0 1rem;border-top:1px solid var(--line)} .offices li{display:grid;grid-template-columns:1fr auto;gap:.1rem 1rem;padding:.7rem 0;border-bottom:1px solid var(--line)}
   .offices small{color:var(--mute)} .offices a{grid-row:span 2;grid-column:2;align-self:center}
@@ -222,7 +221,7 @@ const trackOf = id => { const l = cases.cases[id] || [];
 const trackRank = id => TRACKS.findIndex(t => t[0] === trackOf(id));
 const trackLabel = id => TRACKS[trackRank(id)][1], trackColor = id => TRACKS[trackRank(id)][2];
 const CHECKED = ['convicted', 'pending', 'resolved', 'none'], ALLTR = [...CHECKED, 'unchecked'];
-const state = {lens: 'track', sel: 'everyone', ch: 'all', tr: new Set(ALLTR), school: null, q: '', leaders: false, sort: 'az', hk: 'all', hp: null};
+const state = {lens: 'track', sel: 'everyone', ch: 'all', tr: new Set(ALLTR), school: null, q: '', leaders: false, sort: 'az', hpl: null, hp: null};
 
 const firstName = n => clean(n).split(' ')[0];
 const lastName = o => clean(o.name).split(' ').filter(w => !/^(Jr\.?|II|III|IV)$/.test(w)).pop();
@@ -307,10 +306,9 @@ function updateInfo() {
   else if (state.lens === 'laws') el.innerHTML = `Bigger face = more laws backed (as author, co-author or co-sponsor). <b>${esc(nameOf(top.id))}</b> leads with <b>${lawCount(top.id)}</b>.`;
   else el.innerHTML = `Hover or tap a face to meet a senator. Gold ring = Senate leadership.`;
 }
-const KINDS = [['all', 'All'], ['district', 'District'], ['at-large', 'At-large']];
 function visibleHouse() {
   const t = state.q.toLowerCase();
-  return house.filter(o => o.kind !== 'party-list' && (state.hk === 'all' || o.kind === state.hk) && (!state.hp || o.party === state.hp) && (t || state.tr.has(trackOf(o.id)))
+  return house.filter(o => o.kind !== 'party-list' && (!state.hpl || o.place === state.hpl) && (!state.hp || o.party === state.hp) && (t || state.tr.has(trackOf(o.id)))
     && (!t || (o.name + ' ' + o.constituency + ' ' + o.party).toLowerCase().includes(t)));
 }
 function updateHouse() {
@@ -321,7 +319,6 @@ function updateHouse() {
       <span class="hm">${esc(o.constituency)} · ${esc(o.party)}<span class="tk" style="--tc:${trackColor(o.id)}">${esc(trackLabel(o.id))}</span></span></a></li>`).join('') || '<li class="soon" style="grid-column:1/-1">No representative matches that.</li>';
   const info = document.getElementById('houseInfo');
   if (info) { const tot = house.filter(o => o.kind !== 'party-list').length; info.textContent = `Showing ${rows.length} of ${tot} representatives${state.sel !== 'everyone' && !state.q ? ' for the court-case record chosen above' : ''}${state.q ? ` matching “${state.q}”` : ''}.`; }
-  document.querySelectorAll('[data-hk]').forEach(b => b.setAttribute('aria-pressed', b.dataset.hk === state.hk));
 }
 function visiblePL() { const t = state.q.toLowerCase();
   return house.filter(o => o.kind === 'party-list' && (!t || (o.name + ' ' + o.party).toLowerCase().includes(t)) && (t || state.tr.has(trackOf(o.id)))); }
@@ -349,7 +346,7 @@ function updateAll() {
   document.querySelectorAll('[data-n]').forEach(e => e.textContent = cnt(e.dataset.n));
   [['secSenate', 'senate'], ['secHouse', 'house'], ['secPL', 'partylist']].forEach(([id, k]) => { const e = document.getElementById(id); if (e) e.hidden = state.ch !== 'all' && state.ch !== k; });
   const ti = document.getElementById('trInfo');
-  if (ti) { const who = {all: 'lawmakers', senate: 'senators', house: 'House members (district and at-large)', partylist: 'party-list representatives'}[state.ch];
+  if (ti) { const who = {all: 'lawmakers', senate: 'senators', house: 'House members (district seats)', partylist: 'party-list representatives'}[state.ch];
     const n = pool.filter(o => state.tr.has(trackOf(o.id))).length;
     ti.textContent = state.sel === 'everyone' ? `Showing all ${pool.length} ${who}.`
       : `Showing only “${(TRACKS.find(t => t[0] === state.sel) || [0, ''])[1]}”: ${n} of ${pool.length} ${who}. Faces and cards that don't match are dimmed or hidden.`; }
@@ -393,7 +390,7 @@ function home() {
       <p class="lede"><b>${everyone().length} lawmakers.</b> Who they are, what they filed, which laws they backed, where they studied and what the courts have said. Every fact links to its source.</p></div>
       <div class="glance">
         ${glance('senate', data.length, 'Senate', 'senators, elected nationwide', data)}
-        ${glance('house', dist.length, 'House of Representatives', 'district and at-large seats', dist)}
+        ${glance('house', dist.length, 'House of Representatives', 'district seats', dist)}
         ${glance('partylist', plm.length, 'Party-list', `representatives from ${new Set(plm.map(o => o.party)).size} groups`, plm)}
       </div></section>
     <div class="fbar rv" role="group" aria-label="Filters">
@@ -434,9 +431,9 @@ function home() {
     </div>
 
     <div id="secHouse">
-    <h2 class="sec rv" id="house">House of Representatives <small>${dist.length} district and at-large seats</small></h2>
+    <h2 class="sec rv" id="house">House of Representatives <small>${dist.length} district seats</small></h2>
     <p class="note">Names, districts and parties come from Wikipedia and were spot-checked against news and election sources (32 members, no mismatches). Parties change during a term, so labels are as of the roster date, and some leadership roles may be missing. Bills, laws and education for House members are not added yet.</p>
-    <div class="hfilters rv"><div class="seg" role="group" aria-label="Seat type">${KINDS.map(([k, l]) => `<button data-hk="${k}" aria-pressed="${k === state.hk}">${l}</button>`).join('')}</div>
+    <div class="hfilters rv"><label class="sel"><span class="sr">Province or city</span><select id="hplSel" aria-label="Filter by province or city"><option value="">All provinces and cities</option>${[...new Set(dist.map(o => o.place))].sort((a, b) => a.localeCompare(b)).map(p => `<option value="${esc(p)}">${esc(p)}</option>`).join('')}</select></label>
       <label class="sel"><span class="sr">Party</span><select id="hpSel" aria-label="Filter by party"><option value="">All parties</option>${Object.entries(dist.reduce((m, o) => (m[o.party] = (m[o.party] || 0) + 1, m), {})).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([p, n]) => `<option value="${esc(p)}">${esc(p)} (${n})</option>`).join('')}</select></label></div>
     <p class="info" id="houseInfo" aria-live="polite" style="text-align:left;min-height:0"></p>
     <ul class="hlist" id="hlist"></ul>
@@ -516,7 +513,7 @@ function houseProfile(o) {
     <div class="tiles">
       <div class="tile txt"><strong>${esc(o.party)}</strong><span>${o.kind === 'party-list' ? 'party-list group' : 'party'}</span></div>
       <div class="tile txt"><strong>${esc(o.bloc || '–')}</strong><span>bloc</span></div>
-      <div class="tile txt"><strong>${{district: 'District', 'at-large': 'At-large', 'party-list': 'Party-list'}[o.kind] || '–'}</strong><span>seat type</span></div></div>
+      <div class="tile txt"><strong>${{district: 'District', 'at-large': 'Lone district', 'party-list': 'Party-list'}[o.kind] || '–'}</strong><span>seat type</span></div></div>
     <p class="note">Party and bloc as listed on Wikipedia on ${esc(o.records[0]?.retrieved || '')}. Members change parties during a term (several did in 2026), so check before relying on it.</p>
     ${casesHtml(o)}${famHtml(o)}<h3 class="h">In office</h3>${recordsHtml(o)}
     <p class="note">${o.wikipedia ? `More about ${esc(clean(o.name))}: <a href="${esc(o.wikipedia)}" target="_blank" rel="noopener">Wikipedia ↗</a>. ` : ''}${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a> (see the file page for author and licence).` : ''}</p>
@@ -560,10 +557,9 @@ app.onclick = e => {
   if (d.school) state.school = state.school === d.school ? null : d.school;
   if (d.sort) state.sort = d.sort;
   if (d.lead != null) state.leaders = d.lead === '1';
-  if (d.hk) state.hk = d.hk;
   updateAll();
 };
-app.onchange = e => { if (e.target.id === 'hpSel') { state.hp = e.target.value || null; updateAll(); } };
+app.onchange = e => { if (e.target.id === 'hplSel') { state.hpl = e.target.value || null; updateAll(); } if (e.target.id === 'hpSel') { state.hp = e.target.value || null; updateAll(); } };
 const REPORT_URL = 'https://nx3hxaffgkf7ufau7cyb6zfa6i0wigzc.lambda-url.ap-southeast-1.on.aws/';   // set to the Lambda function URL printed by tools/create_contact_form.sh
 (() => { const b = document.getElementById('repB'), dlg = document.getElementById('rep'), f = document.getElementById('repF'), msg = document.getElementById('repMsg');
   if (!REPORT_URL) return; b.hidden = false;
