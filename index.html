@@ -11,6 +11,8 @@
   @media (prefers-color-scheme:dark){:root{--bg:#0b0f20;--paper:#131936;--ink:#f6f1e4;--mute:#aab1c8;--line:#283056;--blue:#8fb2ff;--red:#ff7d8c;--on-accent:#0b0f20;color-scheme:dark}}
   *{box-sizing:border-box} html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+  @media (pointer:coarse){.lnk,.chip,.tg,footer a{min-height:44px;display:inline-flex;align-items:center}.tg{display:flex} .chip{padding-block:.5rem}} footer p a{padding-block:.35rem}
+  #top{position:fixed;right:1rem;bottom:1rem;z-index:60;width:2.75rem;height:2.75rem;border-radius:50%;border:1px solid var(--ink);background:var(--bg);color:var(--ink);font-size:1.2rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25)} #top[hidden]{display:none}
   a{color:var(--blue)} :focus-visible{outline:3px solid var(--blue);outline-offset:2px}
   .skip{position:absolute;left:-99rem;background:#fff;color:#000;padding:.5rem 1rem;z-index:99} .skip:focus{left:0}
   .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -192,8 +194,9 @@
 </div></div>
 <main class="wrap" id="app" tabindex="-1" aria-busy="true"><div class="skel"></div><div class="skel"></div><div class="skel"></div></main>
 <noscript><p class="wrap">This site needs JavaScript to show the records.</p></noscript>
+<button id="top" type="button" aria-label="Back to top" hidden>↑</button>
 <footer><div class="wrap"><p><b>Sino Sila?</b> is an independent project, not affiliated with the Senate or the House. Every fact links to the public source it came from. Senate data comes from the Senate's Legislative Information System. House rosters come from Wikipedia and are still being checked against other sources. Portraits come from Wikimedia Commons, credited on each profile. School seals come from Wikipedia and Wikimedia Commons and belong to their institutions.</p>
-<p>Court cases are being added person by person, so “not yet checked” means we haven't looked yet, not that a record is clean. A case listed here is a public record, not a finding of guilt. If you spot a mistake or something out of date, we want to fix it. Data as of October 1, 2026. <button class="lnk" id="repB" hidden>Report an error</button></p></div></footer>
+<p>Court cases come from news and court records, one person at a time. “Not yet checked” means we have not confirmed a record from two independent sources, which is not the same as a clean record. A case listed here is a public record, not a finding of guilt. If you spot a mistake or something out of date, we want to fix it. Membership data as of October 1, 2026; court cases as of November 13, 2026. <button class="lnk" id="repB" hidden>Report an error</button></p></div></footer>
 <dialog id="rep" aria-labelledby="repT"><form method="dialog" id="repF"><h2 id="repT">Report an error</h2>
   <p class="note">Tell us what is wrong or out of date on this page. A link to the right source helps most.</p>
   <label>What is wrong<textarea name="message" rows="4" maxlength="2000" required></textarea></label>
@@ -496,7 +499,7 @@ function casesHtml(o) {
       + list.map(c => `<article class="case"><div class="ch"><span class="pill">${esc(STATUS[c.status] || c.status)}</span><span class="pill">${esc(KIND[c.kind] || c.kind)}</span><b>${esc(c.title)}</b></div>
         <small>${esc(c.body)} · ${esc(c.role)} · status as of ${esc(c.status_date || '')}</small>
         <ol class="ev">${c.events.map(e => `<li><time>${esc(e.date)}</time>${esc(e.text)}<div class="srcs">${links(e)}</div></li>`).join('')}</ol></article>`).join('')
-    : checked ? `<p class="soon">No court cases found in the news and court sources checked on ${esc(checked)}${ck.queries ? ` (${ck.queries} searches)` : ''}. That is not proof that none exist.</p>` : `<p class="soon">Court cases: not yet checked.</p>`;
+    : checked ? `<p class="soon">No court cases found in the news and court sources checked on ${esc(checked)}${ck.queries ? ` (${ck.queries} searches)` : ''}. That is not proof that none exist.</p>` : `<p class="soon">Court cases: not yet checked. Any reports we found were not confirmed by two independent sources, so this is not a clean record.</p>`;
   return `<h3 class="h">Court cases and proceedings</h3>${body}`;
 }
 function famHtml(o) {
@@ -560,6 +563,7 @@ app.onclick = e => {
   updateAll();
 };
 app.onchange = e => { if (e.target.id === 'hplSel') { state.hpl = e.target.value || null; updateAll(); } if (e.target.id === 'hpSel') { state.hp = e.target.value || null; updateAll(); } };
+(() => { const t = document.getElementById('top'); if (!t) return; addEventListener('scroll', () => { t.hidden = scrollY < 1500; }, {passive: true}); t.onclick = () => scrollTo({top: 0, behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth'}); })();
 const REPORT_URL = 'https://nx3hxaffgkf7ufau7cyb6zfa6i0wigzc.lambda-url.ap-southeast-1.on.aws/';   // set to the Lambda function URL printed by tools/create_contact_form.sh
 (() => { const b = document.getElementById('repB'), dlg = document.getElementById('rep'), f = document.getElementById('repF'), msg = document.getElementById('repMsg');
   if (!REPORT_URL) return; b.hidden = false;
