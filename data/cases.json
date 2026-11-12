@@ -169,8 +169,8 @@
     "queries": 2
    },
    "hori-horibata": {
-    "date": "2026-10-02",
-    "queries": 2
+    "date": "2026-11-12",
+    "queries": 1
    },
    "luigi-villafuerte": {
     "date": "2026-10-02",
@@ -1157,6 +1157,18 @@
     "queries": 1
    },
    "dette-escudero": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "sheen-gonzales": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "arthur-robes": {
+    "date": "2026-11-12",
+    "queries": 2
+   },
+   "eli-san-fernando": {
     "date": "2026-11-12",
     "queries": 1
    }
@@ -4047,6 +4059,123 @@
       "text": "The Supreme Court denied the Ombudsman's petition and affirmed the Court of Appeals, which had set aside the penalty under the condonation doctrine because he was re-elected. The ruling turned on that doctrine, not on the merits of the charge.",
       "sources": [
        "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/4/63642"
+      ]
+     }
+    ]
+   }
+  ],
+  "hori-horibata": [
+   {
+    "id": "hori-horibata-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Quo warranto petition at the House Electoral Tribunal (HRET Case No. 22-007) by Maria Belen Andaya-Eusebio, challenging his seat",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2023-09-21",
+    "events": [
+     {
+      "date": "2023-09-21",
+      "text": "The Tribunal granted the respondent's special and affirmative defenses and dismissed the petition in a resolution promulgated on this date, per its published case list.",
+      "sources": [
+       "https://hret.gov.ph/cases-2022-2025"
+      ]
+     }
+    ]
+   }
+  ],
+  "sheen-gonzales": [
+   {
+    "id": "sheen-gonzales-1",
+    "kind": "administrative",
+    "body": "house",
+    "title": "Ombudsman administrative case (grave misconduct, gross neglect of duty) over Guiuan's Yolanda recovery projects, while he was Guiuan mayor",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2019-02-12",
+      "text": "The Ombudsman ordered a six-month preventive suspension without pay for Gonzales and nine other officials, saying the contractors had not shown their qualifications and one deviated from approved plans. Preventive suspension is an interim measure, not a finding of guilt. It was reported on Feb 28, 2019.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/686490/ombudsman-orders-suspension-of-eastern-samar-mayor-9-others-over-irregular-yolanda-projects/story"
+      ]
+     },
+     {
+      "date": "2019-03-22",
+      "text": "Philstar reported the suspension had been implemented by the DILG. Gonzales denied wrongdoing. The final outcome of the case was not found.",
+      "sources": [
+       "https://www.philstar.com/nation/2019/03/22/1903476/eastern-samar-mayor-suspended-over-yolanda-fund-misuse"
+      ]
+     }
+    ]
+   }
+  ],
+  "arthur-robes": [
+   {
+    "id": "arthur-robes-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman complaint (murder and frustrated murder) over the October 2017 water tank collapse in San Jose del Monte, filed against him as city mayor",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2018-05-28",
+      "text": "Councilor Irene del Rosario, assisted by Volunteers Against Crime and Corruption, filed the complaint against Mayor Robes, his wife Rep. Florida Robes, water-district officials and others, alleging the collapse was deliberate. These are allegations resting on circumstantial evidence.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/regions/654769/sjdm-solon-mayor-sued-for-murder-over-water-tank-collapse/story",
+       "https://manilastandard.net/mobile/article/266742"
+      ]
+     },
+     {
+      "date": "2018-05-29",
+      "text": "The Robes couple denied involvement, saying the city government has no authority over the water district and the evidence was insufficient. No Ombudsman resolution was found.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/regions/654886/robes-couple-denies-role-in-2017-water-tank-collapse-in-san-jose-del-monte/story"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "arthur-robes-2",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman malversation complaint over 2007-2009 PDAF allocations, one of about 20 lawmakers named, filed while he was a representative",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2015-09-02",
+      "text": "Lawyer Levito Baligod filed the complaint, based on affidavits including those of a former employee of a lawmaker. These are allegations.",
+      "sources": [
+       "https://www.philstar.com/headlines/2015/09/02/1495335/jpe-bong-angara-face-new-pork-raps"
+      ]
+     },
+     {
+      "date": "2015-09-07",
+      "text": "In a privilege speech, Robes accused Baligod of conspiring with a former staff member and a political rival to implicate him and his wife. No Ombudsman resolution was found.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/content/535976/solon-accuses-baligod-of-conspiring-with-ex-staff-to-implicate-him-in-pork-barrel-scam/story/"
+      ]
+     }
+    ]
+   }
+  ],
+  "eli-san-fernando": [
+   {
+    "id": "eli-san-fernando-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Cyber libel complaint by Manila's city health chief over a 2024 social-media video on the health-certificate ordinance",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2024-08-16",
+      "text": "Dr. Arnold Pangan, head of the Manila City Health Department, filed a complaint over a video San Fernando posted on Aug 6, 2024, alleging malicious imputations. San Fernando, then a labor-federation vice president, said he would answer in a counter-affidavit. These are allegations.",
+      "sources": [
+       "https://abtheflame.net/news/2024/09/manila-health-chief-files-cyber-libel-case-vs-labor-leader",
+       "https://varsitarian.net/labor-leader-indicted-for-cyber-libel-over-video-on-health-certificate/"
       ]
      }
     ]
