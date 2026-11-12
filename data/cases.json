@@ -1219,6 +1219,10 @@
    "maria-kristina-jihan-glepa": {
     "date": "2026-11-12",
     "queries": 5
+   },
+   "bojie-dy": {
+    "date": "2026-11-13",
+    "queries": 1
    }
   }
  },
@@ -4389,6 +4393,32 @@
       "sources": [
        "https://www.gmanetwork.com/news/topstories/nation/947885/comelec-upholds-junking-of-dq-petition-vs-bh-party-list/story",
        "https://www.inquirer.net/?p=446272"
+      ]
+     }
+    ]
+   }
+  ],
+  "bojie-dy": [
+   {
+    "id": "bojie-dy-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Election protest by Grace Padaca over the 2010 Isabela governor race, while he was governor-elect",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2012-03-11",
+      "text": "Philstar reported that Padaca, who lost by about 3,500 votes, filed a protest alleging vote shaving and vote buying, and that Comelec granted a recount of ballots from 519 precincts. Dy's lawyers said they would respond, and he had a counter-protest pending. These are allegations.",
+      "sources": [
+       "https://philstar.com/nation/2012/03/11/785483/dy-lawyers-deal-padaca-recount-bid"
+      ]
+     },
+     {
+      "date": "2013-03-20",
+      "text": "GMA reported the protest was still pending before Comelec, with Dy asking that Padaca, by then a Comelec commissioner, step aside from hearing it. No later ruling was found, so the final outcome is unknown.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/regions/300153/isabela-s-dy-wants-padaca-to-inhibit-from-hearing-poll-protest-case/story/"
       ]
      }
     ]
