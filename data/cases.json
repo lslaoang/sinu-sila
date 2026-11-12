@@ -1195,6 +1195,30 @@
    "solomon-chungalao": {
     "date": "2026-11-12",
     "queries": 1
+   },
+   "roberto-nazal-jr": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "sonny-lagon": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "rolando-macasaet": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "roy-loyola": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "jane-castro": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "maria-kristina-jihan-glepa": {
+    "date": "2026-11-12",
+    "queries": 5
    }
   }
  },
@@ -1827,6 +1851,14 @@
       "sources": [
        "https://www.gmanetwork.com/news/topstories/nation/993197/ombudsman-flood-control-joel-villanueva/story/"
       ]
+     },
+     {
+      "date": "2026-09-03",
+      "text": "The Commission on Audit chair told a Senate hearing that its Bulacan fraud audits did not name or implicate Villanueva. This is a COA statement, not an Ombudsman decision; the preliminary investigation had no reported resolution.",
+      "sources": [
+       "https://tribune.net.ph/2026/09/03/coa-clears-villanueva-in-bulacan-flood-audit",
+       "https://www.gmanetwork.com/news/topstories/nation/1001021/bulacan-flood-control-fraud-audits-found-no-link-to-villanueva-says-coa/story/"
+      ]
      }
     ]
    }
@@ -2081,6 +2113,14 @@
       "sources": [
        "https://www.gmanetwork.com/news/topstories/nation/997262/jinggoy-estrada-sandiganbayan-motion-bail-flood-control-projects/story/"
       ]
+     },
+     {
+      "date": "2026-10-25",
+      "text": "The Sandiganbayan ordered a second 90-day preventive suspension; as of Oct 25 the Senate had not implemented it pending his motion for reconsideration. Preventive suspension is an interim measure, not a finding of guilt.",
+      "sources": [
+       "https://philstarlife.com/news-and-views/536385-sandiganbayan-suspends-jinggoy-estrada-for-another-90-days",
+       "https://tribune.net.ph/2026/10/25/marcoleta-estrada-suspensions-on-hold"
+      ]
      }
     ]
    }
@@ -2115,6 +2155,14 @@
       "text": "After his lawyers withdrew a motion to quash the plunder charge, Marcoleta pleaded not guilty to plunder and violating PD 46 before the Sandiganbayan Third Division.",
       "sources": [
        "https://www.philstar.com/metro/2026/07/22/2543903/marcoleta-pleads-not-guilty-plunder-gift-law-violation"
+      ]
+     },
+     {
+      "date": "2026-10-25",
+      "text": "The Sandiganbayan Third Division ordered a 90-day preventive suspension on Oct 19; as of Oct 25 the Senate had not implemented it pending his motion for reconsideration. Preventive suspension is an interim measure, not a finding of guilt.",
+      "sources": [
+       "https://tribune.net.ph/2026/10/19/court-suspends-marcoleta-as-senator-over-plunder-raps",
+       "https://philstarlife.com/news-and-views/282970-rodante-marcoleta-suspended-amid-plunder-case"
       ]
      }
     ]
@@ -2472,7 +2520,7 @@
     "body": "house",
     "title": "Graft and technical malversation charges before the Sandiganbayan over the 2015 Dengvaxia purchase (P3.5 billion)",
     "role": "accused",
-    "status": "pending",
+    "status": "acquitted",
     "events": [
      {
       "date": "2023-10-24",
@@ -2494,8 +2542,17 @@
       "sources": [
        "https://tribune.net.ph/2024/07/17/sandigan-nixes-garins-bid-to-block-prosecutions-addl-evidence-in-dengvaxia-case"
       ]
+     },
+     {
+      "date": "2026-10-13",
+      "text": "The Sandiganbayan Second Division acquitted Garin and her co-accused of graft in the Dengvaxia procurement case. Tribune reports the technical malversation charge was also resolved in her favour; GMA reports the graft acquittal. She said other cases remain pending against her.",
+      "sources": [
+       "https://tribune.net.ph/2026/10/13/sandiganbayan-acquits-garin-co-accused-of-p35-dengvaxia-case",
+       "https://www.gmanetwork.com/news/topstories/nation/1005767/sandiganbayan-acquits-janette-garin-co-accused-in-dengvaxia-graft-case/story/"
+      ]
      }
-    ]
+    ],
+    "status_date": "2026-10-13"
    },
    {
     "id": "janette-garin-2",
@@ -2695,6 +2752,14 @@
       "text": "The court's clerk confirmed that Romualdez had not yet filed a petition for bail. Plunder is generally non-bailable, but an accused may petition if they argue the evidence of guilt is not strong. The case is pending.",
       "sources": [
        "https://tribune.net.ph/2026/09/24/sandiganbayan-romualdez-yet-to-request-bail"
+      ]
+     },
+     {
+      "date": "2026-11-04",
+      "text": "After a columnist claimed Romualdez had been leaving the Quezon City jail, the Sandiganbayan Third Division ordered jail officials to testify on his detention status and to preserve CCTV records. The jail bureau shared footage and said it found no unauthorized movement. He pleaded not guilty on Sept 16 and has denied wrongdoing.",
+      "sources": [
+       "https://tribune.net.ph/2026/11/04/sandiganbayan-summons-jail-officials-over-romualdez-exit-allegations",
+       "https://www.gmanetwork.com/news/topstories/nation/1008260/sandiganbayan-orders-bjmp-officials-to-testify-on-romualdez-s-detention-status/story/"
       ]
      }
     ]
@@ -4295,6 +4360,35 @@
       "sources": [
        "https://philstar.com/nation/2011/09/08/724549/supreme-court-allows-recall-polls-samar/amp",
        "https://www.manilatimes.net/2011/09/09/news/regions/sc-junks-plea-to-halt-samar-recall-election/721427"
+      ]
+     }
+    ]
+   }
+  ],
+  "roberto-nazal-jr": [
+   {
+    "id": "roberto-nazal-jr-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Comelec petition to disqualify the Bagong Henerasyon party-list and its nominees, filed before the 2025 proclamation",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2025-05-22",
+    "events": [
+     {
+      "date": "2025-05-22",
+      "text": "The Comelec First Division dismissed the petition, naming Nazal among the respondents, because it was filed without the required personal service and without the certificate of nomination. The ruling was on procedure, not the merits.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/947088/comelec-1st-division-dismisses-dq-petition-vs-bagong-henerasyon/story",
+       "https://ptvnews.ph/comelec-junks-disqualification-petitions-vs-erwin-tulfo-bh-party-list-nominees/"
+      ]
+     },
+     {
+      "date": "2025-05-30",
+      "text": "The Comelec en banc denied the petitioner's motion for reconsideration. The party-list was proclaimed with Nazal as its nominee on June 5.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/947885/comelec-upholds-junking-of-dq-petition-vs-bh-party-list/story",
+       "https://www.inquirer.net/?p=446272"
       ]
      }
     ]
