@@ -1223,6 +1223,14 @@
    "bojie-dy": {
     "date": "2026-11-13",
     "queries": 1
+   },
+   "junard-chan": {
+    "date": "2026-11-13",
+    "queries": 1
+   },
+   "antolin-oreta-iii": {
+    "date": "2026-11-13",
+    "queries": 1
    }
   }
  },
@@ -4419,6 +4427,70 @@
       "text": "GMA reported the protest was still pending before Comelec, with Dy asking that Padaca, by then a Comelec commissioner, step aside from hearing it. No later ruling was found, so the final outcome is unknown.",
       "sources": [
        "https://www.gmanetwork.com/news/topstories/regions/300153/isabela-s-dy-wants-padaca-to-inhibit-from-hearing-poll-protest-case/story/"
+      ]
+     }
+    ]
+   }
+  ],
+  "junard-chan": [
+   {
+    "id": "junard-chan-1",
+    "kind": "administrative",
+    "body": "house",
+    "title": "Ombudsman-Visayas complaints by 28 barangay captains over alleged closure of a representative's City Hall office, filed while he was Lapu-Lapu mayor",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2019-09-04",
+      "text": "Twenty-eight of the city's 30 barangay captains filed criminal and administrative complaints (grave coercion, grave misconduct, abuse of authority and anti-graft law) and asked for a preventive suspension. These are allegations. No outcome was found.",
+      "sources": [
+       "https://www.sunstar.com.ph/article/1822779/Cebu/Local-News/Lapu-Lapus-village-chiefs-take-office-issue-to-Ombudsman",
+       "https://www.philstar.com/cebu-news/2019/09/12/1951133/28-lapu-lapu-city-captains-sue-chan"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "junard-chan-2",
+    "kind": "administrative",
+    "body": "house",
+    "title": "Ombudsman-Visayas complaint by 18 child development workers (abuse of authority, oppression), filed while he was Lapu-Lapu mayor",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2022-03-03",
+      "text": "SunStar reported the Ombudsman-Visayas received the complaint, which also named the city's social welfare officer. The city legal office said it had not received a copy.",
+      "sources": [
+       "https://www.sunstar.com.ph/cebu/local-news/18-workers-sue-lapu-lapu-mayor-for-oppression"
+      ]
+     },
+     {
+      "date": "2024-05-17",
+      "text": "The Freeman reported seeing an Ombudsman implementation order stating that a Sept 5, 2023 decision found Chan guilty of abuse of authority and oppression and imposed a six-month suspension. Chan said the cases were dismissed after reconsideration and that he never received a suspension order. The Freeman could not confirm the dismissal, so the final status is unclear.",
+      "sources": [
+       "https://www.philstar.com/the-freeman/cebu-news/2024/05/17/2355831/plaints-dismissed-i-am-not-guilty-chan"
+      ]
+     }
+    ]
+   }
+  ],
+  "antolin-oreta-iii": [
+   {
+    "id": "antolin-oreta-iii-1",
+    "kind": "other",
+    "body": "house",
+    "title": "Complaint over the P397 million Tugatog Cemetery rehabilitation in Malabon, naming him with the contractor's president (IMT News reports it was filed with the Ombudsman)",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2025-10-21",
+      "text": "A Malabon resident filed an 11-page complaint over alleged mishandling of remains during the rehabilitation, alleging graft, procurement and sanitation law violations. These are allegations. No response from Oreta and no Ombudsman action was found.",
+      "sources": [
+       "https://dzrh.com.ph/post/malabon-rep-oreta-faces-complaints-over-alleged-botched-rehabilitation-of-tugatog-cemetery",
+       "https://www.imtnews.ph/ibc-sued-over-alleged-anomalous-rehab-project"
       ]
      }
     ]
