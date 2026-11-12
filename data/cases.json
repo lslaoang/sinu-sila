@@ -1171,6 +1171,30 @@
    "eli-san-fernando": {
     "date": "2026-11-12",
     "queries": 1
+   },
+   "arman-dimaguila": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "john-geesnell-yap": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "javi-benitez": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "stephen-james-tan": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "danny-domingo": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "solomon-chungalao": {
+    "date": "2026-11-12",
+    "queries": 1
    }
   }
  },
@@ -4176,6 +4200,101 @@
       "sources": [
        "https://abtheflame.net/news/2024/09/manila-health-chief-files-cyber-libel-case-vs-labor-leader",
        "https://varsitarian.net/labor-leader-indicted-for-cyber-libel-over-video-on-health-certificate/"
+      ]
+     }
+    ]
+   }
+  ],
+  "arman-dimaguila": [
+   {
+    "id": "arman-dimaguila-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman complaint (plunder, graft, administrative) over Biñan's 2009 cemetery land purchase, filed while he was vice mayor; later Yatco v. Office of the Deputy Ombudsman, G.R. No. 244775",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2017-08-17",
+    "events": [
+     {
+      "date": "2016-04-12",
+      "text": "GMA reported that businesswoman Adelaida Yatco filed a complaint with the Ombudsman against then-mayor Marlyn Alonte-Naguiat and then-vice mayor Dimaguila over a land purchase for a cemetery expansion. The mayor denied wrongdoing. These were allegations.",
+      "sources": [
+       "http://www.gmanetwork.com/news/topstories/nation/562414/binan-mayor-vice-mayor-face-plunder-raps-over-overpriced-land-purchase/story"
+      ]
+     },
+     {
+      "date": "2017-08-17",
+      "text": "The Ombudsman dismissed the complaint for lack of probable cause (criminal) and lack of substantial evidence (administrative), according to the Supreme Court decision.",
+      "sources": [
+       "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/1/66358"
+      ]
+     },
+     {
+      "date": "2020-07-06",
+      "text": "The Supreme Court denied the complainant's petition and affirmed the Court of Appeals' dismissal of her challenge to the criminal aspect, on a point of procedure about which court hears it.",
+      "sources": [
+       "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/1/66358"
+      ]
+     }
+    ]
+   }
+  ],
+  "john-geesnell-yap": [
+   {
+    "id": "john-geesnell-yap-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Comelec disqualification petition alleging vote-buying, filed against him as a Bohol 1st district candidate before the 2025 elections",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2025-05-11",
+      "text": "Four Bohol residents filed the petition at Comelec, alleging cash was distributed with campaign materials. These are allegations. No Comelec ruling or response from Yap was found; he won the seat on May 12-13, 2025.",
+      "sources": [
+       "https://boholislandnews.com/2025/05/12/second-disqualification-complaint-filed-against-bohol-congressional-candidate-baba-yap-over-alleged-vote-buying",
+       "https://www.inquirer.net/?p=442121"
+      ]
+     }
+    ]
+   }
+  ],
+  "javi-benitez": [
+   {
+    "id": "javi-benitez-1",
+    "kind": "administrative",
+    "body": "house",
+    "title": "Ombudsman complaint (dishonesty, grave abuse of authority, graft) over permits issued for a Victorias City cockpit while he was mayor",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2026-01-10",
+      "text": "Benitez denied the allegations, saying no law requires a franchise for cockpits, and said he had filed a counter-affidavit. Reports said the proceedings are confidential at this stage. No finding has been reported.",
+      "sources": [
+       "https://tribune.net.ph/2026/01/10/benitez-denies-graft-abuse-claims-over-victorias-cockpit-operations",
+       "https://www.dailyguardian.com.ph/blog/rep-javi-benitez-denies-graft-allegations-in-ombudsman-case"
+      ]
+     }
+    ]
+   }
+  ],
+  "stephen-james-tan": [
+   {
+    "id": "stephen-james-tan-1",
+    "kind": "election",
+    "body": "house",
+    "title": "Supreme Court petition by the Samar governor and vice governor against Comelec rulings allowing 2010 recall petitions to proceed",
+    "role": "petitioner",
+    "status": "dismissed",
+    "status_date": "2011-09-08",
+    "events": [
+     {
+      "date": "2011-09-08",
+      "text": "A two-page Supreme Court resolution dismissed the Tan siblings' petition for failure to show grave abuse of discretion by Comelec, and the recall proceedings were allowed to continue. The recall petitions alleged the Tans were unfit to lead. Date is that of the first report.",
+      "sources": [
+       "https://philstar.com/nation/2011/09/08/724549/supreme-court-allows-recall-polls-samar/amp",
+       "https://www.manilatimes.net/2011/09/09/news/regions/sc-junks-plea-to-halt-samar-recall-election/721427"
       ]
      }
     ]
