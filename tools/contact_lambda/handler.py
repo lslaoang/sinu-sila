@@ -2,7 +2,8 @@
 import json, os, re, boto3
 
 ses = boto3.client("ses", region_name=os.environ.get("SES_REGION", "ap-southeast-1"))
-TO, ORIGIN = os.environ["TO"], os.environ["ORIGIN"]
+TO = os.environ["TO"]
+ORIGINS = tuple(o.strip() for o in os.environ["ORIGIN"].split(",") if o.strip())   # comma-separated: the domain and the CloudFront address
 
 
 def reply(code, msg):
@@ -18,7 +19,7 @@ def lambda_handler(event, _):
         return reply(200, "Thanks")
     msg, page = str(d.get("message", "")).strip(), str(d.get("page", ""))[:300]
     contact, source = str(d.get("contact", "")).strip()[:200], str(d.get("source", "")).strip()[:300]
-    if not 10 <= len(msg) <= 2000 or not page.startswith(ORIGIN):
+    if not 10 <= len(msg) <= 2000 or not page.startswith(ORIGINS):
         return reply(400, "Please describe the problem in a sentence or two.")
     body = f"Page: {page}\n\nWhat is wrong:\n{msg}\n\nSource for the correction: {source or '-'}\nContact: {contact or '-'}\n"
     kw = {"ReplyToAddresses": [contact]} if re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", contact) else {}

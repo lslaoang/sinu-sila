@@ -11,7 +11,22 @@ python3 -m http.server   # then open http://localhost:8000
 python3 validate.py      # checks every record has a source_url and a valid type
 ```
 
-Deploy anywhere static (GitHub Pages, Netlify, Cloudflare Pages). No build step.
+## Hosting
+
+Live at **https://sinu-sila.com** (also www, and the old https://d3kbf1pju0ogt8.cloudfront.net). No build step.
+
+- Files: S3 bucket `sino-sila-773994910221` (ap-southeast-1), served by CloudFront `E1QGRO3D7NQZVA`
+- Domain: registered at Spaceship, DNS in Route 53 zone `Z09479652U24CRJM3RBSM`; HTTPS cert in ACM us-east-1 (apex + www)
+- Report form: Lambda `sino-sila-report` (ap-southeast-1); allowed origins are its `ORIGIN` env var, comma-separated
+
+Deploy a change:
+
+```bash
+export AWS_PROFILE=laurel
+aws s3 cp index.html s3://sino-sila-773994910221/index.html --content-type "text/html; charset=utf-8"
+aws s3 sync data s3://sino-sila-773994910221/data      # when data changed
+aws cloudfront create-invalidation --distribution-id E1QGRO3D7NQZVA --paths "/*"
+```
 
 ## Data
 
