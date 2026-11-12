@@ -1135,6 +1135,30 @@
    "florabel-yatco": {
     "date": "2026-10-17",
     "queries": 1
+   },
+   "jose-alvarez": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "antonino-calixto": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "david-c-suarez": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "yevgeny-emano": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "jay-vergara": {
+    "date": "2026-11-12",
+    "queries": 1
+   },
+   "dette-escudero": {
+    "date": "2026-11-12",
+    "queries": 1
    }
   }
  },
@@ -3915,6 +3939,114 @@
       "text": "The Supreme Court en banc dismissed the omnibus petition, in which she was co-petitioner seeking to stop the inquiry. The ruling concerned the inquiry's validity and made no finding on the underlying allegations. Decision text read via a law-database copy.",
       "sources": [
        "https://lawyerly.ph/juris/view/cfbe5"
+      ]
+     }
+    ]
+   }
+  ],
+  "jose-alvarez": [
+   {
+    "id": "jose-alvarez-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman graft charge (RA 3019 Sec. 3(e)) over the 2004-2005 Cagayan de Oro City Water District bulk-water and supplemental contracts",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2018-03-29",
+      "text": "Reports said the Ombudsman found probable cause to charge Alvarez, then Palawan governor and earlier a representative of Rio Verde Water Consortium, with graft along with water-district officials. These are allegations.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/regions/648265/ombudsman-finds-basis-to-charge-palawan-gov-alvarez-with-graft-over-p193-m-water-deal/story",
+       "https://ptvnews.ph/cdo-water-district-execs-charged-p193-m-water-deal/"
+      ]
+     },
+     {
+      "date": "2018-04-04",
+      "text": "Alvarez filed a motion for reconsideration asking the Ombudsman to dismiss the charge, saying there was no proof he conspired. Later developments were not confirmed from pages we could read.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/regions/648816/palawan-gov-alvarez-appeals-ombudsman-indictment/story"
+      ]
+     }
+    ]
+   }
+  ],
+  "antonino-calixto": [
+   {
+    "id": "antonino-calixto-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman order to file graft and bribery charges over Pasay City garbage-disposal contracts (2004-2006), while he was Pasay mayor",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2011-07-20",
+      "text": "The Ombudsman ordered graft and bribery charges filed at the Sandiganbayan against then-Mayor Calixto, a former mayor, councilors and contractors over contracts awarded without public bidding. These are allegations. Both reports spell his first name 'Antonio'. The Sandiganbayan outcome was not found.",
+      "sources": [
+       "https://philstar.com/metro/2011/07/20/707562/pasay-mayor-councilors-face-graft-bribery-raps",
+       "https://www.gmanetwork.com/news/topstories/nation/226672/ombudsman-orders-graft-raps-vs-peewee-trinidad-other-pasay-officials/story"
+      ]
+     }
+    ]
+   }
+  ],
+  "david-c-suarez": [
+   {
+    "id": "david-c-suarez-1",
+    "kind": "criminal",
+    "body": "house",
+    "title": "Ombudsman complaint for plunder and graft over Quezon's share of Pagbilao Power Plant proceeds (P812.73 million), filed against him and eight provincial board members",
+    "role": "respondent",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2020-11-02",
+      "text": "Philstar and Sentinel Times reported that Fidel Verdad Jr. filed a 16-page complaint in June 2020. These are allegations. Neither report carried a response from Suarez, and no resolution was found.",
+      "sources": [
+       "https://www.philstar.com/nation/2020/11/02/2053969/lawmaker-8-others-charged-fund-misuse",
+       "https://www.sentineltimes.net/2020/11/quezon-province-lawmaker-8-others.html"
+      ]
+     }
+    ]
+   }
+  ],
+  "yevgeny-emano": [
+   {
+    "id": "yevgeny-emano-1",
+    "kind": "administrative",
+    "body": "house",
+    "title": "Ombudsman complaint of nepotism and graft over the appointment of his brother-in-law as manager of the Misamis Oriental Integrated Sports Complex, filed while he was governor",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2018-07-27",
+    "events": [
+     {
+      "date": "2018-07-27",
+      "text": "In a joint resolution the Ombudsman dismissed the complaints against Emano and the appointee for insufficient evidence. Both men received the copy in 2019 and called it vindication.",
+      "sources": [
+       "https://www.sunstar.com.ph/cagayan-de-oro/local-news/ombud-clears-misamis-oriental-board-member",
+       "https://davaotoday.com/?p=66641"
+      ]
+     }
+    ]
+   }
+  ],
+  "jay-vergara": [
+   {
+    "id": "jay-vergara-1",
+    "kind": "administrative",
+    "body": "house",
+    "title": "Administrative complaint over an open-burning dumpsite while he was Cabanatuan mayor (Office of the Ombudsman v. Vergara, G.R. No. 216871)",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2017-12-06",
+    "events": [
+     {
+      "date": "2017-12-06",
+      "text": "The Supreme Court denied the Ombudsman's petition and affirmed the Court of Appeals, which had set aside the penalty under the condonation doctrine because he was re-elected. The ruling turned on that doctrine, not on the merits of the charge.",
+      "sources": [
+       "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/4/63642"
       ]
      }
     ]
