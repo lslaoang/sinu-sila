@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="fil">
+<html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Sino ang mga mambabatas mo? Hanapin ang kinatawan mo sa Kamara at ang mga senador: mga kaso, batas at panukalang batas, bawat isa may link sa pinagmulan.">
+<meta name="description" content="Who are your lawmakers? Find your House representative and the senators: their court cases, laws, bills, SALN and election results, each linked to its source.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b3a9e'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='Georgia,serif' font-weight='900' font-size='46' fill='%23fcd116'%3E%3F%3C/text%3E%3C/svg%3E">
-<title>Sino Sila? Mga mambabatas ng Pilipinas</title>
+<title>Sino Sila? Philippine lawmakers</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sino Sila?">
-<meta property="og:title" content="Sino Sila? Mga mambabatas ng Pilipinas">
-<meta property="og:description" content="Hanapin ang mga senador at kinatawan mo: kanilang mga kaso, batas at panukalang batas, bawat isa may link sa pinagmulan.">
+<meta property="og:title" content="Sino Sila? Philippine lawmakers">
+<meta property="og:description" content="Find your senators and representatives: their bills, laws, court cases, SALN and election results. Every fact links to its source.">
 <meta property="og:url" content="https://sinu-sila.com/"><link rel="canonical" href="https://sinu-sila.com/">
 <meta property="og:image" content="https://sinu-sila.com/assets/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -20,7 +20,8 @@
   :root{--bg:#f5efe2;--paper:#fffcf5;--ink:#1a1714;--rule:#1a1714;--mute:#5e574b;--line:#ddd3bf;--blue:#0038a8;--red:#b00e22;--yellow:#fcd116;--gold:#6b5600;--on-accent:#fff;--r:8px;
     --serif:"Newsreader",ui-serif,Georgia,serif;--sans:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;color-scheme:light}
   /* dark: "night edition" — cool charcoal paper, warm cream ink, flag colours softened */
-  @media (prefers-color-scheme:dark){:root{--bg:#0f1115;--paper:#171a21;--ink:#eee8dc;--rule:#4b525f;--mute:#a7adb8;--line:#272c36;--blue:#9dbbff;--red:#ff8f9b;--gold:#f0cf5a;--on-accent:#0f1115;--photo:#232833;color-scheme:dark}}
+  /* dark: the same newspaper, printed on dark stock. Warm paper tones, cards clearly raised, borders visible like the light theme's ink rules */
+  @media (prefers-color-scheme:dark){:root{--bg:#13110e;--paper:#1f1b17;--ink:#f4eee3;--rule:#8c8373;--mute:#bcb2a0;--line:#39332b;--blue:#9fbcff;--red:#ff9ba6;--gold:#f2d36b;--on-accent:#13110e;--photo:#2b2620;color-scheme:dark}}
   *{box-sizing:border-box} html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans);overflow-x:clip}
   .flag{display:flex;height:6px} .flag i{flex:1} .flag i:nth-child(1){background:#0038a8} .flag i:nth-child(2){background:#ce1126} .flag i:nth-child(3){background:#fcd116}
@@ -32,19 +33,8 @@
   .st-convicted{background:#8e1b1b;color:#fff} .st-pending{background:#f2b544;color:#1a1714} .st-resolved{background:#2b55a6;color:#fff}
   .st-none{background:#dceadc;color:#1d4a2c;border-color:#1d4a2c} .st-unchecked{background:#eae5d9;color:#4a443a;border:1px dashed #6e675a}
   .tk.band{display:flex;width:100%;border-radius:0;border:0;border-top:1.5px solid var(--rule);padding:.55rem .8rem;font-size:.85rem;white-space:normal}
-  @media (prefers-color-scheme:dark){
-    /* tinted chips instead of solid blocks: same hue order, readable light text, no glare */
-    .st-convicted{background:rgba(229,83,83,.2);color:#ffb3b3;border-color:rgba(229,83,83,.55)}
-    .st-pending{background:rgba(242,181,68,.17);color:#f7cd78;border-color:rgba(242,181,68,.5)}
-    .st-resolved{background:rgba(120,160,255,.18);color:#bccfff;border-color:rgba(120,160,255,.5)}
-    .st-none{background:rgba(95,195,135,.13);color:#9ddcb5;border-color:rgba(95,195,135,.45)}
-    .st-unchecked{background:transparent;color:#c3c8d1;border-color:#6b7280}
-    .tk.band{border-top:1px solid var(--line)}
-    .dist .stack span{border-color:var(--bg)!important}
-    .dist .stack .st-convicted{background:#c24a4a} .dist .stack .st-pending{background:#d9a13c} .dist .stack .st-resolved{background:#5f86d6} .dist .stack .st-none{background:#4f9a6e} .dist .stack .st-unchecked{background:#5b616c}
-    img{filter:brightness(.92)}
-    .flag{opacity:.85}
-  }
+
+
   @media (pointer:coarse){.lnk,.chip,.tg,footer a{min-height:44px;display:inline-flex;align-items:center}.tg{display:flex} .chip{padding-block:.5rem}} footer p a{padding-block:.35rem}
   #top{position:fixed;right:1rem;bottom:1rem;z-index:60;width:2.75rem;height:2.75rem;border-radius:50%;border:1px solid var(--ink);background:var(--bg);color:var(--ink);font-size:1.2rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25)} #top[hidden]{display:none}
   a{color:var(--blue)} :focus-visible{outline:3px solid var(--blue);outline-offset:2px}
@@ -58,7 +48,6 @@
   .brand{font:700 1.65rem var(--serif);letter-spacing:-.01em;color:var(--ink);text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:.2em;text-underline-offset:.22em;white-space:nowrap}
   .brand mark{background:none;color:inherit}
   mark{color:inherit;background:linear-gradient(transparent 60%,var(--yellow) 60%);padding:0 .08em}
-  @media (prefers-color-scheme:dark){mark{background:linear-gradient(transparent 84%,var(--yellow) 84%)}}
   #q{flex:1;min-width:0;max-width:20rem;margin-left:auto;padding:.6rem 1rem;border:1.5px solid var(--rule);border-radius:99px;background:var(--paper);color:var(--ink);font:inherit}
   body.home #q{visibility:hidden}
 
@@ -314,13 +303,33 @@
   .rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s} .rv.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.seat,.pt img{transition:none}html{scroll-behavior:auto}}
   @media (prefers-reduced-motion:no-preference){.skel{animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{50%{opacity:.5}}}
-</style>
-<a class="skip" href="#app" data-i18n="skip">Lumaktaw sa nilalaman</a>
+  /* dark-mode overrides: last in the sheet so they win over the base rules above */
+  @media (prefers-color-scheme:dark){
+    /* status chips: deep solid fills with light text, mirroring the light theme's solid chips (no neon, no glare) */
+    .st-convicted{background:#5e1f1f;color:#ffd4d4;border-color:#a54848}
+    .st-pending{background:#5b4416;color:#ffe3a3;border-color:#a8822f}
+    .st-resolved{background:#1f3567;color:#d6e2ff;border-color:#4f73c2}
+    .st-none{background:#1d3a29;color:#c6edd4;border-color:#3f8a5c}
+    .st-unchecked{background:transparent;color:#d0c7b6;border-color:#8c8373}
+    .dist .stack span{border-color:var(--bg)!important}
+    .dist .stack .st-convicted{background:#c4504a} .dist .stack .st-pending{background:#dcaa45} .dist .stack .st-resolved{background:#6a8fdb} .dist .stack .st-none{background:#56a676} .dist .stack .st-unchecked{background:#6b6457}
+    img{filter:brightness(.9) contrast(1.05)}
+    .flag i:nth-child(1){background:#2f5fd0} .flag i:nth-child(2){background:#d8344a}
+    /* the yellow highlighter stays a full yellow block, with dark ink on it, like a marker on newsprint */
+    mark{background:var(--yellow);color:#1a1714;padding:0 .12em;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+    .brand{text-decoration-color:var(--yellow)}
+    .chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+    .hsearch .box,.finder .fs,.finder select,.bigsel select,#q{background:#191612}
+    .bc{border-top-width:10px}
+    .howto{background:#1a1713}
+    .pt .tag{background:#f4eee3;color:#1a1714}
+  }</style>
+<a class="skip" href="#app" data-i18n="skip">Skip to content</a>
 <div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="top"><div class="wrap">
   <a class="brand" href="#" aria-label="Sino Sila? Home" data-i18n-al="homeAl">Sino <mark>Sila?</mark></a>
-  <nav class="nav" aria-label="Sections"><a class="lnk" href="#senado" data-i18n="navSen">Senado</a><a class="lnk" href="#kamara" data-i18n="navHouse">Kamara</a><a class="lnk" href="#party-list" data-i18n="navPL">Party-list</a><button class="lnk lang" id="langB" type="button" lang="en">English</button></nav>
-  <input id="q" type="search" placeholder="Hanapin ang pangalan, lugar o partido…" aria-label="Hanapin" data-i18n-ph="searchPh" data-i18n-al="searchAl">
+  <nav class="nav" aria-label="Sections"><a class="lnk" href="#senado" data-i18n="navSen">Senate</a><a class="lnk" href="#kamara" data-i18n="navHouse">House</a><a class="lnk" href="#party-list" data-i18n="navPL">Party-list</a><button class="lnk lang" id="langB" type="button" lang="fil">Filipino</button></nav>
+  <input id="q" type="search" placeholder="Search a name, place or party…" aria-label="Search lawmakers" data-i18n-ph="searchPh" data-i18n-al="searchAl">
 </div></div>
 <main class="wrap" id="app" tabindex="-1" aria-busy="true"><div class="skel"></div><div class="skel"></div><div class="skel"></div></main>
 <noscript><p class="wrap">This site needs JavaScript to show the records.</p></noscript>
@@ -366,7 +375,7 @@ const state = {lens: 'track', sel: 'everyone', ch: 'all', tr: new Set(ALLTR), sc
 const hashName = () => decodeURIComponent(location.hash.slice(1)), onHome = () => !hashName(), onExplore = () => hashName() === 'explore';
 
 /* ---------- language (Filipino by default, English on request) ---------- */
-let lang = (() => { try { return localStorage.getItem('lang') === 'en' ? 'en' : 'fil'; } catch { return 'fil'; } })();
+let lang = (() => { try { return localStorage.getItem('lang') === 'fil' ? 'fil' : 'en'; } catch { return 'en'; } })();   // English unless the visitor picked Filipino
 const T = {
   fil: {
     kicker: 'Talaan ng mga mambabatas · Ika-20 Kongreso', searchL: 'Hanapin ang mambabatas mo', tryL: 'Subukan:',
