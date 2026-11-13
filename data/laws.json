@@ -1,7 +1,7 @@
 {
  "_meta": {
   "congress": "20th Congress",
-  "retrieved": "2026-10-01",
+  "retrieved": "2026-11-13",
   "source": "https://senate.gov.ph/legislative-documents/bills",
   "note": "Bills the Senate lists as approved by the President, lapsed into law, consolidated with a law, or enrolled and sent to Malacanang. Roles are the Senate's author / co-author / co-sponsor fields. House bills with no listed senator role are omitted. A Senate bill folded into another bill is not detected unless the Senate marks it so."
  },
@@ -15,38 +15,38 @@
     "alan-peter-s-cayetano"
    ],
    "coAuthors": [
-    "win-gatchalian",
-    "vicente-c-sotto-iii",
-    "juan-miguel-f-zubiri",
-    "paolo-benigno-aquino-iv",
     "pia-s-cayetano",
+    "francis-g-escudero",
+    "joel-villanueva",
+    "loren-legarda",
+    "risa-hontiveros",
+    "paolo-benigno-aquino-iv",
     "ronald-m-dela-rosa",
     "joseph-victor-g-ejercito",
-    "francis-g-escudero",
     "jinggoy-ejercito-estrada",
+    "win-gatchalian",
     "christopher-lawrence-t-go",
-    "risa-hontiveros",
     "panfilo-m-lacson",
     "manuel-m-lapid",
-    "loren-legarda",
     "rodante-d-marcoleta",
     "imee-r-marcos",
     "robinhood-c-padilla",
     "francis-pangilinan",
+    "vicente-c-sotto-iii",
     "erwin-t-tulfo",
     "raffy-t-tulfo",
-    "joel-villanueva",
+    "mark-a-villar",
     "camille-a-villar",
-    "mark-a-villar"
+    "juan-miguel-f-zubiri"
    ],
    "coSponsors": [
-    "paolo-benigno-aquino-iv",
-    "pia-s-cayetano",
-    "christopher-lawrence-t-go",
-    "risa-hontiveros",
-    "robinhood-c-padilla",
     "francis-pangilinan",
-    "joel-villanueva"
+    "joel-villanueva",
+    "paolo-benigno-aquino-iv",
+    "risa-hontiveros",
+    "pia-s-cayetano",
+    "robinhood-c-padilla",
+    "christopher-lawrence-t-go"
    ]
   },
   {
@@ -69,24 +69,24 @@
     "juan-miguel-f-zubiri"
    ],
    "coAuthors": [
-    "win-gatchalian",
-    "joseph-victor-g-ejercito",
     "jinggoy-ejercito-estrada",
-    "christopher-lawrence-t-go",
-    "loren-legarda",
     "imee-r-marcos",
+    "joseph-victor-g-ejercito",
     "robinhood-c-padilla",
+    "loren-legarda",
     "erwin-t-tulfo",
+    "christopher-lawrence-t-go",
+    "win-gatchalian",
     "joel-villanueva"
    ],
    "coSponsors": [
-    "win-gatchalian",
     "joseph-victor-g-ejercito",
-    "jinggoy-ejercito-estrada",
-    "christopher-lawrence-t-go",
-    "loren-legarda",
     "robinhood-c-padilla",
+    "loren-legarda",
+    "jinggoy-ejercito-estrada",
     "erwin-t-tulfo",
+    "christopher-lawrence-t-go",
+    "win-gatchalian",
     "joel-villanueva"
    ]
   },
@@ -99,131 +99,28 @@
     "pia-s-cayetano"
    ],
    "coAuthors": [
+    "paolo-benigno-aquino-iv",
+    "christopher-lawrence-t-go",
+    "francis-g-escudero",
+    "loren-legarda",
+    "jinggoy-ejercito-estrada",
+    "risa-hontiveros",
+    "joel-villanueva",
+    "joseph-victor-g-ejercito",
+    "robinhood-c-padilla",
+    "raffy-t-tulfo",
     "win-gatchalian",
-    "paolo-benigno-aquino-iv",
-    "joseph-victor-g-ejercito",
-    "francis-g-escudero",
-    "jinggoy-ejercito-estrada",
-    "christopher-lawrence-t-go",
-    "risa-hontiveros",
-    "loren-legarda",
-    "robinhood-c-padilla",
     "francis-pangilinan",
-    "raffy-t-tulfo",
-    "joel-villanueva",
     "mark-a-villar"
    ],
    "coSponsors": [
+    "joel-villanueva",
     "pia-s-cayetano",
-    "joseph-victor-g-ejercito",
-    "jinggoy-ejercito-estrada",
-    "christopher-lawrence-t-go",
-    "risa-hontiveros",
     "robinhood-c-padilla",
-    "joel-villanueva"
-   ]
-  },
-  {
-   "no": "SBN-1937",
-   "title": "LAST MILE AND GIDA SCHOOLS ACT",
-   "status": "Approved by the President",
-   "id": "621069",
-   "author": [
-    "loren-legarda"
-   ],
-   "coAuthors": [
-    "juan-miguel-f-zubiri",
-    "paolo-benigno-aquino-iv",
-    "jinggoy-ejercito-estrada",
     "risa-hontiveros",
-    "robinhood-c-padilla",
-    "francis-pangilinan",
-    "erwin-t-tulfo",
-    "raffy-t-tulfo",
-    "joel-villanueva",
-    "mark-a-villar"
-   ],
-   "coSponsors": [
-    "juan-miguel-f-zubiri",
-    "pia-s-cayetano",
-    "jinggoy-ejercito-estrada",
-    "christopher-lawrence-t-go",
-    "risa-hontiveros",
-    "francis-pangilinan",
-    "raffy-t-tulfo",
-    "joel-villanueva",
-    "mark-a-villar"
-   ]
-  },
-  {
-   "no": "SBN-1982",
-   "title": "AUTOMATIC SUSPENSION OR REDUCTION OF EXCISE TAX ON PETROLEUM PRODUCTS",
-   "status": "Approved by the President",
-   "id": "622541",
-   "author": [
-    "joseph-victor-g-ejercito"
-   ],
-   "coAuthors": [
-    "alan-peter-s-cayetano",
-    "paolo-benigno-aquino-iv",
-    "pia-s-cayetano",
-    "francis-g-escudero",
-    "jinggoy-ejercito-estrada",
-    "christopher-lawrence-t-go",
-    "manuel-m-lapid",
-    "loren-legarda",
-    "imee-r-marcos",
-    "francis-pangilinan",
-    "erwin-t-tulfo",
-    "joel-villanueva",
-    "camille-a-villar"
-   ],
-   "coSponsors": [
-    "paolo-benigno-aquino-iv",
     "joseph-victor-g-ejercito",
-    "jinggoy-ejercito-estrada",
     "christopher-lawrence-t-go",
-    "loren-legarda",
-    "robinhood-c-padilla",
-    "francis-pangilinan",
-    "erwin-t-tulfo",
-    "joel-villanueva",
-    "camille-a-villar"
-   ]
-  },
-  {
-   "no": "HBN-4058",
-   "title": "GENERAL APPROPRIATIONS ACT 2026",
-   "status": "Approved by the President, vetoed other parts",
-   "id": "609493",
-   "author": [],
-   "coAuthors": [],
-   "coSponsors": [
-    "pia-s-cayetano",
-    "ronald-m-dela-rosa",
-    "joseph-victor-g-ejercito",
-    "jinggoy-ejercito-estrada",
-    "christopher-lawrence-t-go",
-    "loren-legarda",
-    "imee-r-marcos",
-    "francis-pangilinan",
-    "erwin-t-tulfo",
-    "camille-a-villar",
-    "mark-a-villar"
-   ]
-  },
-  {
-   "no": "HBN-6641",
-   "title": "PHILIPPINE CITIZENSHIP TO ELIZABETH JEANETTE MEANS",
-   "status": "Lapsed into law",
-   "id": "613454",
-   "author": [],
-   "coAuthors": [],
-   "coSponsors": [
-    "pia-s-cayetano",
-    "jinggoy-ejercito-estrada",
-    "christopher-lawrence-t-go",
-    "risa-hontiveros"
+    "jinggoy-ejercito-estrada"
    ]
   },
   {
@@ -242,9 +139,77 @@
    "coSponsors": []
   },
   {
+   "no": "SBN-1937",
+   "title": "LAST MILE AND GIDA SCHOOLS ACT",
+   "status": "Approved by the President",
+   "id": "621069",
+   "author": [
+    "loren-legarda"
+   ],
+   "coAuthors": [
+    "erwin-t-tulfo",
+    "joel-villanueva",
+    "francis-pangilinan",
+    "paolo-benigno-aquino-iv",
+    "jinggoy-ejercito-estrada",
+    "risa-hontiveros",
+    "raffy-t-tulfo",
+    "mark-a-villar",
+    "juan-miguel-f-zubiri",
+    "robinhood-c-padilla"
+   ],
+   "coSponsors": [
+    "joel-villanueva",
+    "jinggoy-ejercito-estrada",
+    "francis-pangilinan",
+    "raffy-t-tulfo",
+    "christopher-lawrence-t-go",
+    "risa-hontiveros",
+    "pia-s-cayetano",
+    "mark-a-villar",
+    "juan-miguel-f-zubiri"
+   ]
+  },
+  {
+   "no": "SBN-1982",
+   "title": "AUTOMATIC SUSPENSION OR REDUCTION OF EXCISE TAX ON PETROLEUM PRODUCTS",
+   "status": "Approved by the President",
+   "id": "622541",
+   "author": [
+    "joseph-victor-g-ejercito"
+   ],
+   "coAuthors": [
+    "imee-r-marcos",
+    "paolo-benigno-aquino-iv",
+    "manuel-m-lapid",
+    "joel-villanueva",
+    "pia-s-cayetano",
+    "alan-peter-s-cayetano",
+    "erwin-t-tulfo",
+    "francis-g-escudero",
+    "francis-pangilinan",
+    "loren-legarda",
+    "christopher-lawrence-t-go",
+    "camille-a-villar",
+    "jinggoy-ejercito-estrada"
+   ],
+   "coSponsors": [
+    "joel-villanueva",
+    "paolo-benigno-aquino-iv",
+    "erwin-t-tulfo",
+    "francis-pangilinan",
+    "joseph-victor-g-ejercito",
+    "loren-legarda",
+    "robinhood-c-padilla",
+    "christopher-lawrence-t-go",
+    "camille-a-villar",
+    "jinggoy-ejercito-estrada"
+   ]
+  },
+  {
    "no": "SBN-2387",
    "title": "FIXING THE TERM OF OFFICE OF THE BARANGAY OFFICIALS AND MEMBERS OF THE SK",
-   "status": "Enrolled copy sent to Malacañang (awaiting signature)",
+   "status": "Approved by the President",
    "id": "633418",
    "author": [
     "francis-g-escudero"
@@ -255,6 +220,86 @@
    ],
    "coSponsors": [
     "robinhood-c-padilla"
+   ]
+  },
+  {
+   "no": "HBN-4058",
+   "title": "GENERAL APPROPRIATIONS ACT 2026",
+   "status": "Approved by the President, vetoed other parts",
+   "id": "609493",
+   "author": [],
+   "coAuthors": [],
+   "coSponsors": [
+    "jinggoy-ejercito-estrada",
+    "mark-a-villar",
+    "pia-s-cayetano",
+    "ronald-m-dela-rosa",
+    "joseph-victor-g-ejercito",
+    "christopher-lawrence-t-go",
+    "loren-legarda",
+    "imee-r-marcos",
+    "francis-pangilinan",
+    "erwin-t-tulfo",
+    "camille-a-villar"
+   ]
+  },
+  {
+   "no": "HBN-6639",
+   "title": "PHILIPPINE CITIZENSHIP TO BENNIE FRANCOIS BOATWRIGHT III",
+   "status": "Lapsed into law",
+   "id": "613470",
+   "author": [],
+   "coAuthors": [],
+   "coSponsors": [
+    "jinggoy-ejercito-estrada",
+    "pia-s-cayetano",
+    "christopher-lawrence-t-go",
+    "paolo-benigno-aquino-iv",
+    "alan-peter-s-cayetano",
+    "joseph-victor-g-ejercito",
+    "francis-g-escudero",
+    "win-gatchalian",
+    "risa-hontiveros",
+    "panfilo-m-lacson",
+    "manuel-m-lapid",
+    "loren-legarda",
+    "rodante-d-marcoleta",
+    "imee-r-marcos",
+    "robinhood-c-padilla",
+    "vicente-c-sotto-iii",
+    "erwin-t-tulfo",
+    "raffy-t-tulfo",
+    "joel-villanueva",
+    "camille-a-villar",
+    "mark-a-villar",
+    "juan-miguel-f-zubiri"
+   ]
+  },
+  {
+   "no": "HBN-6641",
+   "title": "PHILIPPINE CITIZENSHIP TO ELIZABETH JEANETTE MEANS",
+   "status": "Lapsed into law",
+   "id": "613454",
+   "author": [],
+   "coAuthors": [],
+   "coSponsors": [
+    "pia-s-cayetano",
+    "risa-hontiveros",
+    "jinggoy-ejercito-estrada",
+    "christopher-lawrence-t-go"
+   ]
+  },
+  {
+   "no": "HBN-6644",
+   "title": "PHILIPPINE CITIZENSHIP TO MATTHEW JAMES RAMOS",
+   "status": "Lapsed into law",
+   "id": "613446",
+   "author": [],
+   "coAuthors": [],
+   "coSponsors": [
+    "jinggoy-ejercito-estrada",
+    "pia-s-cayetano",
+    "christopher-lawrence-t-go"
    ]
   }
  ]
