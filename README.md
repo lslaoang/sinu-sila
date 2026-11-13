@@ -34,8 +34,8 @@ Every fact links to its public source.
 No build step and no dependencies: one HTML file plus JSON data.
 
 ```bash
-git clone https://github.com/lslaoang/ph-politicians.git
-cd ph-politicians
+git clone https://github.com/lslaoang/sinu-sila.git
+cd sinu-sila
 python3 -m http.server 8000      # then open http://localhost:8000
 python3 validate.py              # checks every record has a valid source
 ```
@@ -73,7 +73,7 @@ Methods, coverage and known gaps: **[docs/data.md](docs/data.md)**. Hosting, dep
 
 Corrections, new sources, translations and code are all welcome. Read **[CONTRIBUTING.md](CONTRIBUTING.md)** first;
 the rules for court cases are strict on purpose. To report a factual error, use the "Report an error" button on the
-page or [open a correction issue](https://github.com/lslaoang/ph-politicians/issues/new?template=correction.yml).
+page or [open a correction issue](https://github.com/lslaoang/sinu-sila/issues/new?template=correction.yml).
 
 ## License
 

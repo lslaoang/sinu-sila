@@ -8,7 +8,7 @@ import io, json, os, sys, time, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from PIL import Image
 
-UA = {"User-Agent": "ph-politicians/0.1 (+https://sinu-sila.com; https://github.com/lslaoang/ph-politicians)"}
+UA = {"User-Agent": "ph-politicians/0.1 (+https://sinu-sila.com; https://github.com/lslaoang/sinu-sila)"}
 OUT = "assets/photos"
 WIDTH = {"senate": 480, "house": 300}
 

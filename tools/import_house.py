@@ -9,7 +9,7 @@ from datetime import date, datetime
 from html.parser import HTMLParser
 
 PAGE = "List of current members of the House of Representatives of the Philippines"
-UA = {"User-Agent": "ph-politicians/0.1 (+https://sinu-sila.com; https://github.com/lslaoang/ph-politicians)"}
+UA = {"User-Agent": "ph-politicians/0.1 (+https://sinu-sila.com; https://github.com/lslaoang/sinu-sila)"}
 TODAY = date.today().isoformat()
 
 

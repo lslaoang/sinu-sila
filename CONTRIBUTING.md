@@ -5,7 +5,7 @@ Thank you for helping. This project publishes records about real people, so accu
 ## Report a factual error
 
 - On the site: the **Report an error** button on any page (no account needed).
-- On GitHub: [open a correction issue](https://github.com/lslaoang/ph-politicians/issues/new?template=correction.yml).
+- On GitHub: [open a correction issue](https://github.com/lslaoang/sinu-sila/issues/new?template=correction.yml).
 
 A link to the right source helps most. Officials and their staff are welcome to reply to any data point the same way.
 
