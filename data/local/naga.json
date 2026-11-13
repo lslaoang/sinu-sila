@@ -1,0 +1,218 @@
+{
+ "_meta": {
+  "place": "Naga City",
+  "province": "camarines-sur",
+  "town": "naga",
+  "retrieved": "2026-11-13",
+  "source": "https://dynasties.bettergov.ph/regional",
+  "api": "https://dynasties.bettergov.ph/api/v1/contests?year=2025&province=camarines-sur&town=naga",
+  "credit": "BetterGov.ph Dynasties (CC0), from Open Halalan (Leung, Robert R.)"
+ },
+ "officials": [
+  {
+   "name": "Leni Gerona Robredo",
+   "position": "Mayor",
+   "party": "LP",
+   "votes": 84377,
+   "rank": 1,
+   "seats": 1,
+   "candidates": 4,
+   "contest": "2025-camarines-sur-naga-_-mayor",
+   "bettergov_person": "97b29998e6"
+  },
+  {
+   "name": "Gabby Hidalgo Bordado",
+   "position": "Vice Mayor",
+   "party": "LP",
+   "votes": 46690,
+   "rank": 1,
+   "seats": 1,
+   "candidates": 4,
+   "contest": "2025-camarines-sur-naga-_-vmayor",
+   "bettergov_person": "83bc0fc5f9"
+  },
+  {
+   "name": "Elmer San Pascual Baldemoro",
+   "position": "Councilor",
+   "party": "LP",
+   "votes": 53144,
+   "rank": 1,
+   "seats": 8,
+   "candidates": 24,
+   "contest": "2025-camarines-sur-naga-lone-coun",
+   "bettergov_person": "fbcf990608"
+  },
+  {
+   "name": "Doc-Jess Roque Albeus",
+   "position": "Councilor",
+   "party": "LP",
+   "votes": 48497,
+   "rank": 2,
+   "seats": 8,
+   "candidates": 24,
+   "contest": "2025-camarines-sur-naga-lone-coun",
+   "bettergov_person": "5ee57e7d0b"
+  },
+  {
+   "name": "Oying Gomez Rosales",
+   "position": "Councilor",
+   "party": "LP",
+   "votes": 44784,
+   "rank": 3,
+   "seats": 8,
+   "candidates": 24,
+   "contest": "2025-camarines-sur-naga-lone-coun",
+   "bettergov_person": "fa500b904f"
+  },
+  {
+   "name": "Vito Chung Borja",
+   "position": "Councilor",
+   "party": "LP",
+   "votes": 39061,
+   "rank": 4,
+   "seats": 8,
+   "candidates": 24,
+   "contest": "2025-camarines-sur-naga-lone-coun",
+   "bettergov_person": "50091dd479"
+  },
+  {
+   "name": "Gayle Abonal-Gomez",
+   "position": "Councilor",
+   "party": "LP",
+   "votes": 37857,
+   "rank": 5,
+   "seats": 8,
+   "candidates": 24,
+   "contest": "2025-camarines-sur-naga-lone-coun",
+   "bettergov_person": "c18e517083"
+  },
+  {
+   "name": "Brad-Omar Garrido Buenafe",
+   "position": "Councilor",
+   "party": "LP",
+   "votes": 37728,
+   "rank": 6,
+   "seats": 8,
+   "candidates": 24,
+   "contest": "2025-camarines-sur-naga-lone-coun",
+   "bettergov_person": "04120714a9"
+  },
+  {
+   "name": "Jude Altamarino Diokno",
+   "position": "Councilor",
+   "party": "IND",
+   "votes": 34984,
+   "rank": 7,
+   "seats": 8,
+   "candidates": 24,
+   "contest": "2025-camarines-sur-naga-lone-coun",
+   "bettergov_person": "d97a1dc1af"
+  },
+  {
+   "name": "Frank Montalban Mendoza",
+   "position": "Councilor",
+   "party": "LP",
+   "votes": 34749,
+   "rank": 8,
+   "seats": 8,
+   "candidates": 24,
+   "contest": "2025-camarines-sur-naga-lone-coun",
+   "bettergov_person": "b9b8074a1c"
+  }
+ ],
+ "checklist": [
+  {
+   "item": "Approved budget, line by line",
+   "points": 8,
+   "status": "partial",
+   "evidence": [
+    {
+     "label": "BetterGov Naga AIP 2026 dashboard",
+     "url": "https://github.com/bettergovph/naga"
+    }
+   ],
+   "note": "The 2026 Annual Investment Program is published line by line (₱2.85B, 1,216 programs and projects, 94 offices). The approved annual budget ordinance itself is not yet checked."
+  },
+  {
+   "item": "Actual spending vs budget, quarterly",
+   "points": 8,
+   "status": "not_checked",
+   "where": [
+    {
+     "label": "DILG (Full Disclosure Policy)",
+     "url": "https://www.dilg.gov.ph/"
+    }
+   ]
+  },
+  {
+   "item": "Every contract: supplier, amount, date",
+   "points": 8,
+   "status": "not_checked",
+   "where": [
+    {
+     "label": "BetterGov Transparency Dashboard (procurement records)",
+     "url": "https://transparency.bettergov.ph/"
+    }
+   ]
+  },
+  {
+   "item": "Project tracker with % done and photos",
+   "points": 8,
+   "status": "not_checked",
+   "where": [
+    {
+     "label": "Naga City Government website",
+     "url": "https://www2.naga.gov.ph/"
+    }
+   ]
+  },
+  {
+   "item": "Figures match COA's audit report",
+   "points": 8,
+   "status": "not_checked",
+   "where": [
+    {
+     "label": "COA annual audit reports",
+     "url": "https://www.coa.gov.ph/"
+    }
+   ]
+  },
+  {
+   "item": "SALN of elected officials",
+   "points": 20,
+   "status": "not_checked",
+   "where": [
+    {
+     "label": "BetterGov SALN Tracker",
+     "url": "https://github.com/bettergovph/saln-tracker-ph"
+    },
+    {
+     "label": "Office of the Ombudsman",
+     "url": "https://www.ombudsman.gov.ph/"
+    }
+   ]
+  },
+  {
+   "item": "COA audit opinion",
+   "points": 20,
+   "status": "not_checked",
+   "where": [
+    {
+     "label": "COA annual audit reports",
+     "url": "https://www.coa.gov.ph/"
+    }
+   ]
+  },
+  {
+   "item": "Full Disclosure Policy and FOI",
+   "points": 20,
+   "status": "not_checked",
+   "where": [
+    {
+     "label": "DILG (Full Disclosure Policy)",
+     "url": "https://www.dilg.gov.ph/"
+    }
+   ]
+  }
+ ]
+}

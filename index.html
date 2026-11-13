@@ -53,7 +53,7 @@
 
   .nav{display:flex;gap:.25rem;align-items:center} .lnk{background:none;border:0;font:inherit;font-weight:600;color:var(--ink);cursor:pointer;padding:.35rem .6rem;border-radius:6px;text-decoration:none} .lnk:hover{color:var(--blue);text-decoration:underline;text-underline-offset:.4em}
   .lnk[aria-current=page]{color:var(--blue);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:.5em}
-  @media (max-width:40rem){.top .wrap{flex-wrap:wrap}#q{order:3;flex:1 1 100%;max-width:none;margin-left:0}body.home #q{display:none}.nav{margin-left:auto}}
+  @media (max-width:40rem){.top .wrap{flex-wrap:wrap}#q{order:3;flex:1 1 100%;max-width:none;margin-left:0}body.home #q{display:none}.nav{order:2;flex:1 1 100%;flex-wrap:wrap;gap:0 .1rem;margin-left:-.6rem}.lnk{white-space:nowrap}.nav .lang{margin-left:auto}}
   .sec{scroll-margin-top:4.5rem}
   /* Kamara: one card per province, flowing top-to-bottom in columns so a province's districts stay together */
   .hlist{list-style:none;padding:0;margin:0 0 1rem;columns:20rem;column-gap:1.1rem}
@@ -303,6 +303,41 @@
   .rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s} .rv.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.seat,.pt img{transition:none}html{scroll-behavior:auto}}
   @media (prefers-reduced-motion:no-preference){.skel{animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{50%{opacity:.5}}}
+  /* report cards */
+  .stage{position:sticky;top:0;z-index:30;background:repeating-linear-gradient(135deg,#fcd116 0 14px,#f2c300 14px 28px);color:#1a1714;font:700 .85rem var(--sans);text-align:center;padding:.4rem 1rem}
+  .gbox{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:5.5rem;padding:.5rem .7rem;border:1.5px solid var(--rule);border-radius:var(--r);background:var(--paper);text-align:center}
+  .gbox b{font:600 1.6rem/1 var(--mono)} .gbox small{font-size:.72rem;margin-top:.3rem;line-height:1.2;max-width:8rem}
+  .gbox.big{min-width:8.5rem;padding:.9rem 1rem} .gbox.big b{font-size:2.8rem}
+  .gb-out{background:#2f6b45;color:#fff;border-color:#2f6b45} .gb-vs{background:#cfe6d3;color:#173d25} .gb-sat{background:var(--paper)} .gb-fs{background:#f4c7bd;color:#5a1a10} .gb-dnm{background:#8e1b1b;color:#fff;border-color:#8e1b1b}
+  .gb-none{background:transparent;border-style:dashed;color:var(--mute)}
+  .rcard{margin:0 0 1.2rem;background:var(--paper);border:1.5px solid var(--rule);border-radius:var(--r);padding:1.1rem 1.2rem}
+  .rch{display:flex;flex-wrap:wrap;gap:1rem 1.5rem;align-items:center;justify-content:space-between;margin-bottom:.9rem} .rch>div:first-child{flex:1 1 18rem}
+  .rch h3{font:600 1.6rem var(--serif);margin:0 0 .6rem} .rch .kick{margin:0 0 .2rem}
+  .comp{display:block;height:.5rem;background:var(--line);border-radius:99px;overflow:hidden;max-width:24rem} .comp span{display:block;height:100%;background:var(--blue)} .comp.sm{height:.3rem;margin-top:.35rem;max-width:12rem}
+  .cm{display:block;color:var(--mute);margin-top:.35rem;font-size:.85rem}
+  .f138{border-top:1.5px solid var(--rule)} .f138 .fr{display:grid;grid-template-columns:minmax(10rem,1.3fr) minmax(10rem,2fr) 4rem minmax(7rem,1fr);gap:.3rem 1rem;padding:.55rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .f138 .fh{font:500 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)} .f138 .ft{border-bottom:1.5px solid var(--rule)}
+  .f138 .na{color:var(--mute)} .f138 small{color:var(--mute)} .f138 a{font-size:.85rem}
+  .rcf{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem;margin:.8rem 0 0;font-size:.9rem} .rcf .lnk{padding-inline:0;color:var(--blue);text-decoration:underline;font-weight:600}
+  @media (max-width:40rem){.f138 .fh{display:none}.f138 .fr{grid-template-columns:1fr auto;row-gap:.15rem}.f138 .fr>span:nth-child(2){grid-column:1/-1;grid-row:2;font-size:.85rem}.f138 .fr>span:nth-child(4){display:none}}
+  .layers{list-style:none;padding:0;margin:0 0 1.5rem;display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+  .layers li{display:flex;flex-direction:column;gap:.15rem;padding:.9rem 1rem;border:1.5px solid var(--rule);border-radius:var(--r);background:var(--paper)} .layers li.later{border-style:dashed;background:transparent}
+  .layers .num{font:600 .8rem var(--mono);color:var(--blue)} .layers b{font:600 1.15rem var(--serif)} .layers small{color:var(--mute)}
+  .mk{display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start} .wpanel{flex:1 1 16rem;position:sticky;top:5rem;background:var(--paper);border:1.5px solid var(--rule);border-radius:var(--r);padding:1rem 1.1rem}
+  .wpanel h2{font:600 1.3rem var(--serif);margin:0 0 .6rem} .wrow{display:grid;grid-template-columns:1fr auto;gap:.2rem .6rem;align-items:center;margin:0 0 .7rem;font-size:.9rem;font-weight:600}
+  .wrow input{grid-column:1;width:100%;accent-color:var(--blue);min-height:28px} .wrow b{grid-row:1/3;grid-column:2;font-size:1.1rem}
+  .mlist{flex:999 1 30rem;min-width:0;list-style:none;padding:0;margin:0;border-top:1.5px solid var(--rule)}
+  .mrow{display:grid;grid-template-columns:2rem 3rem 1fr auto;gap:.8rem;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none}
+  .mrow:hover b{color:var(--blue);text-decoration:underline} .mrow .av{width:3rem;height:3rem} .mr{font:600 1rem var(--mono);color:var(--mute);text-align:right}
+  .mn{display:flex;flex-direction:column;min-width:0} .mn small{color:var(--mute);font-size:.8rem}
+  @media (max-width:40rem){.wpanel{position:static}.mrow{grid-template-columns:1.6rem 2.6rem 1fr auto;gap:.5rem}.mrow .av{width:2.6rem;height:2.6rem}.mn small{display:none}.mrow .gbox{min-width:4.2rem}.mrow .gbox small{display:none}}
+  .pt .pg{position:absolute;top:.5rem;right:.5rem;z-index:1;padding:.15rem .45rem;border:1.5px solid var(--rule);border-radius:4px;background:var(--paper)} .pt .pg b{font:600 .85rem var(--mono)}
+  .lok .pc .tk{justify-self:start;margin-top:.25rem;font-size:.75rem;white-space:normal}
+  .ck .fr{grid-template-columns:minmax(12rem,2fr) 4rem 9rem minmax(10rem,2fr)} .ckn{display:block;margin-top:.2rem;font-size:.82rem}
+  @media (max-width:40rem){.ck .fr{grid-template-columns:1fr auto}.ck .fr>span:nth-child(2){display:none}.ck .fr>span:nth-child(4){grid-column:1/-1}}
+  .method{max-width:46rem} .method h1{font:600 clamp(2rem,5vw,3rem)/1.05 var(--serif);margin:.4rem 0 1rem} .method h2{font:600 1.5rem var(--serif);margin:2rem 0 .6rem}
+  .mt{width:100%;border-collapse:collapse;font-size:.92rem;margin:.4rem 0 1rem} .mt th,.mt td{text-align:left;padding:.45rem .6rem .45rem 0;border-bottom:1px solid var(--line);vertical-align:top} .mt th{font:500 .72rem var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--mute);border-bottom:1.5px solid var(--rule)}
+  .method li{margin:.35rem 0}
   /* dark-mode overrides: last in the sheet so they win over the base rules above */
   @media (prefers-color-scheme:dark){
     /* status chips: deep solid fills with light text, mirroring the light theme's solid chips (no neon, no glare) */
@@ -323,12 +358,13 @@
     .bc{border-top-width:10px}
     .howto{background:#1a1713}
     .pt .tag{background:#f4eee3;color:#1a1714}
+    .gb-out{background:#2f6b45;color:#fff;border-color:#57a06f} .gb-vs{background:#22432e;color:#cdeed7;border-color:#3f8a5c} .gb-fs{background:#5a2a20;color:#ffd6cc;border-color:#a45a48} .gb-dnm{background:#6e1d1d;color:#ffd4d4;border-color:#a54848}
   }</style>
 <a class="skip" href="#app" data-i18n="skip">Skip to content</a>
 <div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="top"><div class="wrap">
   <a class="brand" href="#" aria-label="Sino Sila? Home" data-i18n-al="homeAl">Sino <mark>Sila?</mark></a>
-  <nav class="nav" aria-label="Sections"><a class="lnk" href="#senado" data-i18n="navSen">Senate</a><a class="lnk" href="#kamara" data-i18n="navHouse">House</a><a class="lnk" href="#party-list" data-i18n="navPL">Party-list</a><button class="lnk lang" id="langB" type="button" lang="fil">Filipino</button></nav>
+  <nav class="nav" aria-label="Sections"><a class="lnk" href="#senado" data-i18n="navSen">Senate</a><a class="lnk" href="#kamara" data-i18n="navHouse">House</a><a class="lnk" href="#party-list" data-i18n="navPL">Party-list</a><a class="lnk" href="#marka" data-i18n="navMarka">Report cards</a><button class="lnk lang" id="langB" type="button" lang="fil">Filipino</button></nav>
   <input id="q" type="search" placeholder="Search a name, place or party…" aria-label="Search lawmakers" data-i18n-ph="searchPh" data-i18n-al="searchAl">
 </div></div>
 <main class="wrap" id="app" tabindex="-1" aria-busy="true"><div class="skel"></div><div class="skel"></div><div class="skel"></div></main>
@@ -358,7 +394,7 @@ const av = (n, photo, eager) => `<div class="av" style="background:hsl(${hue(n)}
 const ICON = {membership:'🏛️', bill:'📜', vote:'🗳️', saln:'💼', campaign_finance:'💸', audit:'🔎', case:'⚖️', appointment:'📌'};
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const app = document.getElementById('app'), q = document.getElementById('q'), tip = document.getElementById('tip');
-let data = [], house = [], houseMeta = {}, bills = {}, laws = {bills: []}, edu = {}, fam = {}, cases = {_meta: {checked: {}}, cases: {}}, saln = {_meta: {}, people: {}}, elec = {_meta: {}, senate: {}, house: {}, partylist: {}};
+let data = [], house = [], houseMeta = {}, bills = {}, laws = {bills: []}, edu = {}, fam = {}, cases = {_meta: {checked: {}}, cases: {}}, saln = {_meta: {}, people: {}}, elec = {_meta: {}, senate: {}, house: {}, partylist: {}}, local = null;
 const TRACKS = [['convicted', 'Convicted in a case', '#8e1b1b'], ['pending', 'Pending case', '#e29a1f'], ['resolved', 'Dismissed, acquitted or decided', '#2b55a6'], ['none', 'No case found', '#2f7d4a'], ['unchecked', 'Not yet checked', '#8a8373']];
 const TR_ICON = {convicted: '<path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/>', pending: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
   resolved: '<circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/>', none: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>', unchecked: '<circle cx="12" cy="12" r="9" stroke-dasharray="3 3"/>'};
@@ -389,7 +425,22 @@ const T = {
     senK: n => `Mataas na Kapulungan · ${n} senador`, distSen: n => `Rekord sa kaso ng ${n} senador`, distHouse: n => `Rekord sa kaso ng ${n} kinatawan`, distPL: n => `Rekord sa kaso ng ${n} party-list rep`,
     billsLaws: (b, l) => `${b} panukala · ${l} batas`, inEnglish: 'Nasa Ingles ang detalye', sectionsAl: 'Mga seksyon', backTo: x => `← ${x}`,
     senator: 'Senador', dataAsOf: 'Datos hanggang', casesChecked: 'kaso sinuri', tCases: 'kaso nakatala',
-    tabCases: 'Kaso', tabLaws: 'Batas', tabBills: 'Panukala', tabEdu: 'Pinag-aralan', tabFam: 'Pamilya', tabOffice: 'Puwesto', tabElec: 'Halalan',
+    tabCases: 'Kaso', tabLaws: 'Batas', tabBills: 'Panukala', tabEdu: 'Pinag-aralan', tabFam: 'Pamilya', tabOffice: 'Puwesto', tabElec: 'Halalan', navMarka: 'Marka', tabCard: 'Marka',
+    mkH: 'Marka ng mga senador', mkK: 'Report card · Paraan v0.1 · draft', mkLede: 'Isang grado mula sa pampublikong rekord, sa DepEd scale kung saan 75 ang pasado. Iisang pormula para sa lahat, at ikaw ang pipili ng bigat ng bawat sukatan.',
+    mkLayers: [['Rekord', 'Bawat numero may link sa pinagmulan.'], ['Grado', 'Kinuwenta mula sa rekord gamit ang nakalathalang pormula.'], ['Boses ng mamamayan', 'Susunod pa. Hiwalay sa grado at hindi kailanman idaragdag dito.']],
+    mkLeft: 'Hindi kasama sa grado ang mga kaso (paratang hangga’t walang hatol), pinag-aralan at pamilya. Nasa profile pa rin sila bilang datos.',
+    wH: 'Ang iyong timbang', wReset: 'Ibalik sa default', wNote: 'Ikaw lang ang makakakita ng pagbabago. Default: 25 bawat isa.',
+    i_bills: 'Mga panukalang batas', i_laws: 'Mga batas na sinuportahan', i_saln: 'Paglalathala ng SALN', i_attend: 'Pagdalo sa sesyon',
+    v_bills: n => `${n} inihain`, v_laws: n => `${n} naging batas`, v_saln_new: 'Pinakabagong SALN, publiko', v_saln_old: 'Lumang SALN lang', v_none: 'Hindi pa nakokolekta',
+    b_out: 'Natatangi', b_vs: 'Napakahusay', b_sat: 'Mahusay', b_fs: 'Katamtaman', b_dnm: 'Hindi nakaabot', withheld: 'Walang grado pa', withheldWhy: 'Kulang pa ang datos (kailangan ng 70%).',
+    complete: p => `${p}% kumpletong datos`, cIndicator: 'Sukatan', cValue: 'Rekord', cGrade: 'Grado', cRemarks: 'Puna', cFinal: 'Pangkalahatang grado',
+    cMethod: 'Paano kinuwenta', cCorrect: 'Ikaw ba ito? Magpadala ng pagtutuwid', cardH: 'Marka (report card)', rankN: (r, n) => `ika-${r} sa ${n}`,
+    staging: 'Staging preview: hindi pa ito publiko. Draft ang paraan ng pagmamarka (v0.1).',
+    lkK: 'Lokal na pilot · Paraan v0.1 · draft', lkLede: 'Ang unang lokal na pilot: bawat halal na opisyal ng lungsod, mamarkahan gamit ang parehong pampublikong rekord. Inuuna ang datos mula sa BetterGov.ph.',
+    lkOff: 'Mga halal na opisyal', lkCk: 'Transparency ng lungsod', lkCkNote: 'Ang listahan ng susuriin para sa mga ehekutibo. Walang grado hangga’t hindi bababa sa 70% ang nasuri. Ang bahagyang ebidensya ay hindi pa binibilang.',
+    lkPts: 'Puntos', lkStatus: 'Kalagayan', lkEvid: 'Ebidensya', lkWhere: 'Saan titingnan:', stVer: 'Nasuri', stPart: 'Bahagya', stNot: 'Hindi pa nasusuri',
+    lkHelp: 'May rekord ka para sa listahang ito? Ipadala at susuriin ng pangalawang volunteer.', lkSend: 'Magpadala ng rekord', lkLink: 'Lokal na pilot: Naga City',
+
     hElec: 'Halalan na nagpanalo sa kanya', elecSrc: 'Bilang ng boto mula sa', elecNone: 'Wala pang tumugmang resulta ng halalan para sa kanya.', votes: 'boto', votesGroup: g => `boto ng ${g}`,
     eYear: 'Halalan', eRank: 'Puwesto sa bilangan', eSeats: 'Mga puwestong pinaglabanan', eRunner: 'Pumangalawa', eMargin: 'Lamang', seatsN: n => `${n}`, unopposed: 'Walang kalaban',
     rankOf: (r, n) => `ika-${r} sa ${n} kandidato`, rankOfPL: (r, n) => `ika-${r} sa ${n} party-list`, rankOfSeats: (r, n, s) => `ika-${r} sa ${n} kandidato (${s} puwesto)`,
@@ -457,7 +508,22 @@ const T = {
     senK: n => `Upper house · ${n} senators`, distSen: n => `Court-case record of ${n} senators`, distHouse: n => `Court-case record of ${n} representatives`, distPL: n => `Court-case record of ${n} party-list reps`,
     billsLaws: (b, l) => `${b} bills · ${l} laws`, inEnglish: '', sectionsAl: 'Sections', backTo: x => `← ${x}`,
     senator: 'Senator', dataAsOf: 'Data as of', casesChecked: 'cases checked', tCases: 'cases listed',
-    tabCases: 'Cases', tabLaws: 'Laws', tabBills: 'Bills', tabEdu: 'Education', tabFam: 'Family', tabOffice: 'Office', tabElec: 'Election',
+    tabCases: 'Cases', tabLaws: 'Laws', tabBills: 'Bills', tabEdu: 'Education', tabFam: 'Family', tabOffice: 'Office', tabElec: 'Election', navMarka: 'Report cards', tabCard: 'Report card',
+    mkH: 'Senators’ report cards', mkK: 'Report card · Method v0.1 · draft', mkLede: 'A grade built only from public records, on the DepEd scale where 75 is passing. One formula for everyone, and you choose how much each measure counts.',
+    mkLayers: [['Records', 'Every number links to its public source.'], ['Grade', 'Computed from the records with a published formula.'], ['Citizen pulse', 'Coming later. Shown separately, never added to the grade.']],
+    mkLeft: 'The grade leaves out court cases (an allegation until decided), schooling and family. They stay on each profile as facts.',
+    wH: 'Your weights', wReset: 'Reset to default', wNote: 'Only you see this change. Default: 25 each.',
+    i_bills: 'Bills authored', i_laws: 'Laws backed', i_saln: 'SALN disclosure', i_attend: 'Session attendance',
+    v_bills: n => `${n} filed`, v_laws: n => `${n} enacted`, v_saln_new: 'Latest SALN public', v_saln_old: 'Only an older SALN', v_none: 'Not yet collected',
+    b_out: 'Outstanding', b_vs: 'Very satisfactory', b_sat: 'Satisfactory', b_fs: 'Fairly satisfactory', b_dnm: 'Did not meet expectations', withheld: 'No grade yet', withheldWhy: 'Not enough verified data (70% needed).',
+    complete: p => `${p}% of data verified`, cIndicator: 'Indicator', cValue: 'Record', cGrade: 'Grade', cRemarks: 'Remarks', cFinal: 'Overall grade',
+    cMethod: 'How this is computed', cCorrect: 'Are you this official? Submit a correction', cardH: 'Report card', rankN: (r, n) => `${r} of ${n}`,
+    staging: 'Staging preview: not public yet. The grading method is a draft (v0.1).',
+    lkK: 'Local pilot · Method v0.1 · draft', lkLede: 'The first local pilot: every elected city official, to be graded on the same public records. BetterGov.ph data comes first.',
+    lkOff: 'Elected officials', lkCk: 'City transparency checklist', lkCkNote: 'What the executive scorecard checks. No grade until at least 70% of the points are verified. Partial evidence does not count yet.',
+    lkPts: 'Points', lkStatus: 'Status', lkEvid: 'Evidence', lkWhere: 'Where to check:', stVer: 'Verified', stPart: 'Partial', stNot: 'Not yet checked',
+    lkHelp: 'Have a record for this checklist? Send it in and a second volunteer will check it.', lkSend: 'Send a record', lkLink: 'Local pilot: Naga City',
+
     hElec: 'The election that put them in office', elecSrc: 'Vote counts from', elecNone: 'No matching election result yet.', votes: 'votes', votesGroup: g => `votes for ${g}`,
     eYear: 'Election', eRank: 'Finish', eSeats: 'Seats contested', eRunner: 'Runner-up', eMargin: 'Margin', seatsN: n => `${n}`, unopposed: 'Unopposed',
     rankOf: (r, n) => `${r} of ${n} candidates`, rankOfPL: (r, n) => `${r} of ${n} party-list groups`, rankOfSeats: (r, n, s) => `${r} of ${n} candidates (${s} seats)`,
@@ -671,6 +737,7 @@ function updateWall() {
   const w = document.getElementById('wall'); if (!w) return;
   w.innerHTML = rows.map(o => `<li><a class="pt" href="#${esc(o.id)}" aria-label="${esc(clean(o.name))}, ${esc(o.position)}, ${esc(trackLabel(o.id))}, ${billCount(o.id)} bills, ${lawCount(o.id)} laws backed">
       ${isLead(o) ? `<span class="tag" aria-hidden="true">${esc(o.position.replace(/^Senate /, ''))}</span>` : ''}
+      ${(gr => `<span class="pg gb-${band(gr)[0]}" title="${esc(t('cardH'))}"><b class="num">${g1(gr)}</b></span>`)(grade(o).g)}
       <span class="ph"><span class="ini" aria-hidden="true">${initials(o.name)}</span>${o.photo ? `<img src="${esc(o.photo)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}</span>
       <span class="cap"><b>${esc(lastName(o))}</b><span class="pos">${esc(clean(o.name))}</span>
         <span class="bd">${t('billsLaws', billCount(o.id), lawCount(o.id))}</span></span>${tkHtml(o.id, 'band')}</a></li>`).join('')
@@ -914,6 +981,98 @@ const ptabs = tabs => `<nav class="ptabs" aria-label="${esc(t('sectionsAl'))}">$
 const phero = (o, sub, meta) => `<a class="back" href="#${o.body === 'house' ? (o.kind === 'party-list' ? 'party-list' : 'kamara') : 'senado'}">${t('backTo', o.body === 'house' ? (o.kind === 'party-list' ? t('plH') : t('houseH')) : t('senH'))}</a>
     <div class="phero">${av(o.name, o.photo, true)}<div><p class="kick">${esc(sub)}</p><h1>${esc(o.name)}</h1>${isLead(o) ? `<span class="role">${esc(o.position)}</span>` : ''}${meta ? `<p class="meta">${meta}</p>` : ''}</div>
       <button class="chip share" data-f="share">${t('share')}</button></div>`;
+/* ---------- report cards (method v0.1, senators): see docs/report-cards-plan.md and the #paraan page ---------- */
+const METHOD = 'v0.1', IND = ['bills', 'laws', 'saln', 'attend'], WDEF = {bills: 25, laws: 25, saln: 25, attend: 25};
+let weights = (() => { try { return {...WDEF, ...JSON.parse(localStorage.getItem('weights') || '{}')}; } catch { return {...WDEF}; } })();
+const top5 = xs => { const t = [...xs].sort((a, b) => b - a).slice(0, 5); return t.reduce((a, b) => a + b, 0) / (t.length || 1); };
+const bench = () => ({bills: top5(data.map(o => billCount(o.id))), laws: top5(data.map(o => lawCount(o.id))),
+  salnCycle: (Object.values(saln.people).flat().map(r => r.date_filed).sort().pop() || '').slice(0, 4)});
+const curve = (v, b) => 60 + 40 * Math.min(1, b ? v / b : 0);   // DepEd-style floor of 60, top-5 average earns 100
+function indicators(o, B = bench()) {
+  const sr = (saln.people[o.id] || [])[0], bs = bills._meta?.source, ls = 'https://senate.gov.ph/legislative-documents/bills';
+  return [
+    {k: 'bills', v: billCount(o.id), text: t('v_bills', billCount(o.id)), s: curve(billCount(o.id), B.bills), src: bs},
+    {k: 'laws', v: lawCount(o.id), text: t('v_laws', lawCount(o.id)), s: curve(lawCount(o.id), B.laws), src: ls},
+    sr ? {k: 'saln', text: t(sr.date_filed.startsWith(B.salnCycle) ? 'v_saln_new' : 'v_saln_old'), s: sr.date_filed.startsWith(B.salnCycle) ? 100 : 80, src: sr.source_url}
+       : {k: 'saln', text: t('v_none'), s: null},
+    {k: 'attend', text: t('v_none'), s: null}];
+}
+function grade(o, B) {
+  const ind = indicators(o, B), got = ind.filter(i => i.s != null);
+  // completeness measures data coverage, so it uses the published default weights; the visitor's weights only change the average
+  const comp = got.reduce((a, i) => a + WDEF[i.k], 0) / IND.reduce((a, k) => a + WDEF[k], 0);
+  const wsum = got.reduce((a, i) => a + (+weights[i.k] || 0), 0);
+  const g = comp >= 0.7 && wsum ? got.reduce((a, i) => a + i.s * (+weights[i.k] || 0), 0) / wsum : null;
+  return {ind, comp, g};
+}
+const band = g => g == null ? ['none', t('withheld')] : g >= 90 ? ['out', t('b_out')] : g >= 85 ? ['vs', t('b_vs')] : g >= 80 ? ['sat', t('b_sat')] : g >= 75 ? ['fs', t('b_fs')] : ['dnm', t('b_dnm')];
+const g1 = g => g == null ? '—' : (Math.round(g * 10) / 10).toFixed(1);
+const gbox = (g, big) => { const [k, l] = band(g); return `<div class="gbox gb-${k}${big ? ' big' : ''}"><b class="num">${g1(g)}</b><small>${esc(l)}</small></div>`; };
+function cardHtml(o) {
+  if (o.body === 'house') return '';
+  const {ind, comp, g} = grade(o);
+  return `<section class="rcard" aria-labelledby="markaH" id="marka-card"><div class="rch"><div><p class="kick">${t('mkK')}</p><h3 id="markaH">${t('cardH')}</h3>
+      <div class="comp"><span style="width:${Math.round(comp * 100)}%"></span></div><small class="cm">${t('complete', Math.round(comp * 100))}${g == null ? ` · ${t('withheldWhy')}` : ''}</small></div>${gbox(g, true)}</div>
+    <div class="f138" role="table"><div class="fr fh" role="row"><span role="columnheader">${t('cIndicator')}</span><span role="columnheader">${t('cValue')}</span><span role="columnheader">${t('cGrade')}</span><span role="columnheader">${t('cRemarks')}</span></div>
+    ${ind.map(i => `<div class="fr${i.s == null ? ' na' : ''}" role="row"><span role="cell"><b>${t('i_' + i.k)}</b> <small class="num">×${+weights[i.k] || 0}</small></span>
+      <span role="cell">${esc(i.text)}${i.src ? ` · ${srcA(i.src, t('source'))}` : ''}</span><span role="cell" class="num">${i.s == null ? '—' : Math.round(i.s)}</span><span role="cell">${i.s == null ? '—' : esc(band(i.s)[1])}</span></div>`).join('')}
+    <div class="fr ft" role="row"><span role="cell"><b>${t('cFinal')}</b></span><span role="cell"></span><span role="cell" class="num"><b>${g1(g)}</b></span><span role="cell"><b>${esc(band(g)[1])}</b></span></div></div>
+    <p class="rcf"><a href="#paraan">${t('cMethod')} →</a><button class="lnk" data-f="report">${t('cCorrect')}</button></p></section>`;
+}
+function markaPage() {
+  app.innerHTML = `<a class="back" href="#">${t('back')}</a><div class="ph1"><div><p class="kick">${t('mkK')}</p><h1>${t('mkH')}</h1><p class="note">${t('mkLede')}</p></div></div>
+    <ol class="layers">${t('mkLayers').map(([h, d], i) => `<li class="${i === 2 ? 'later' : ''}"><span class="num">0${i + 1}</span><b>${esc(h)}</b><small>${esc(d)}</small></li>`).join('')}</ol>
+    <div class="mk"><aside class="wpanel" aria-labelledby="wH"><h2 id="wH">${t('wH')}</h2>
+      ${IND.map(k => `<label class="wrow"><span>${t('i_' + k)}</span><input type="range" min="0" max="50" step="5" id="w-${k}" value="${+weights[k] || 0}"><b class="num" id="wv-${k}">${+weights[k] || 0}</b></label>`).join('')}
+      <button class="chip" data-f="wreset">${t('wReset')}</button><p class="note">${t('wNote')}</p><p class="note">${t('mkLeft')}</p><p><a href="#paraan">${t('cMethod')} →</a><br><a href="#lokal">${t('lkLink')} →</a></p></aside>
+    <ol class="mlist" id="mlist"></ol></div>`;
+  markaList();
+}
+function markaList() {
+  const el = document.getElementById('mlist'); if (!el) return; const B = bench();
+  const rows = data.map(o => ({o, ...grade(o, B)})).sort((a, b) => (b.g ?? -1) - (a.g ?? -1) || lastName(a.o).localeCompare(lastName(b.o)));
+  el.innerHTML = rows.map((r, i) => `<li><a class="mrow" href="#${esc(r.o.id)}"><span class="mr num">${r.g == null ? '' : i + 1}</span>${av(r.o.name, r.o.photo)}
+    <span class="mn"><b>${esc(clean(r.o.name))}</b><small>${r.ind.map(x => `${t('i_' + x.k)}: ${x.s == null ? '—' : Math.round(x.s)}`).join(' · ')}</small>
+    <span class="comp sm"><span style="width:${Math.round(r.comp * 100)}%"></span></span></span>${gbox(r.g)}</a></li>`).join('');
+}
+async function lokalPage() {
+  if (!local) { try { local = await (await fetch('data/local/naga.json')).json(); } catch { app.innerHTML = '<p class="soon">Could not load the pilot data.</p>'; return; } }
+  const L = local, ck = L.checklist, tot = ck.reduce((a, i) => a + i.points, 0), ver = ck.filter(i => i.status === 'verified').reduce((a, i) => a + i.points, 0);
+  const st = {verified: ['none', t('stVer')], partial: ['pending', t('stPart')], not_checked: ['unchecked', t('stNot')]};
+  const links = xs => (xs || []).map(x => srcA(x.url, x.label)).join(' · ');
+  app.innerHTML = `<a class="back" href="#marka">← ${t('navMarka')}</a><div class="ph1"><div><p class="kick">${t('lkK')}</p><h1>${esc(L._meta.place)}</h1><p class="note">${t('lkLede')}</p></div></div>
+    <div class="shead"><h2>${t('lkOff')}</h2><small>${L.officials.length} · 2025</small></div>
+    <ul class="pcs lok">${L.officials.map(o => `<li><div class="pc">${av(o.name)}<b>${esc(o.name)}</b><small>${esc(o.position)} · ${esc(o.party || '–')} · ${num(o.votes)} ${t('votes')}</small>
+      ${trChip('unchecked', `${t('withheld')} · ${t('complete', Math.round(100 * ver / tot))}`)}</div></li>`).join('')}</ul>
+    <p class="note">${t('elecSrc')} ${srcA(L._meta.source, 'BetterGov Dynasties')} (${srcA('https://robertrleung.github.io/OpenHalalan/', 'Open Halalan')}).</p>
+    <div class="shead"><h2>${t('lkCk')}</h2><small>${t('complete', Math.round(100 * ver / tot))}</small></div><p class="note">${t('lkCkNote')}</p>
+    <div class="f138 ck" role="table"><div class="fr fh" role="row"><span role="columnheader">${t('cIndicator')}</span><span role="columnheader">${t('lkPts')}</span><span role="columnheader">${t('lkStatus')}</span><span role="columnheader">${t('lkEvid')}</span></div>
+    ${ck.map(i => `<div class="fr" role="row"><span role="cell"><b>${esc(i.item)}</b>${i.note ? `<small class="ckn">${esc(i.note)}</small>` : ''}</span><span role="cell" class="num">${i.points}</span>
+      <span role="cell">${trChip(st[i.status][0], st[i.status][1])}</span><span role="cell">${i.evidence ? links(i.evidence) : `<small>${t('lkWhere')}</small> ${links(i.where)}`}</span></div>`).join('')}</div>
+    <p class="rcf"><span>${t('lkHelp')}</span><button class="lnk" data-f="report">${t('lkSend')}</button></p>`;
+}
+function paraanPage() {
+  const B = bench();
+  app.innerHTML = `<a class="back" href="#marka">← ${t('navMarka')}</a><article class="method"><p class="kick">Method ${METHOD} · draft for review</p><h1>How report cards are computed</h1>
+    ${lang === 'fil' ? `<p class="note">${t('inEnglish')}.</p>` : ''}
+    <p>A report card turns public records into one grade, using the same formula for every senator. It is an opinion built from facts; the facts themselves are on each profile with their sources.</p>
+    <h2>Scale</h2><table class="mt"><tr><th>Grade</th><th>Description</th></tr><tr><td>90–100</td><td>Outstanding</td></tr><tr><td>85–89</td><td>Very satisfactory</td></tr><tr><td>80–84</td><td>Satisfactory</td></tr><tr><td>75–79</td><td>Fairly satisfactory</td></tr><tr><td>Below 75</td><td>Did not meet expectations</td></tr></table>
+    <p>Each indicator scores <b class="num">60 + 40 × min(1, value ÷ benchmark)</b>. The benchmark is the average of the top 5 senators, so the target comes from what peers actually do. The 60 floor follows DepEd's transmutation table, where a raw zero becomes 60.</p>
+    <h2>Indicators (senators)</h2><table class="mt"><tr><th>Indicator</th><th>Default weight</th><th>How it scores</th><th>Source</th></tr>
+      <tr><td>Bills authored</td><td>25</td><td>Formula above. Benchmark now: <span class="num">${B.bills.toFixed(1)}</span> bills</td><td>Senate Legislative Information System</td></tr>
+      <tr><td>Laws backed</td><td>25</td><td>Formula above, counting enacted bills where the senator is author, co-author or co-sponsor. Benchmark now: <span class="num">${B.laws.toFixed(1)}</span></td><td>Senate Legislative Information System</td></tr>
+      <tr><td>SALN disclosure</td><td>25</td><td>100 if the latest SALN cycle (${esc(B.salnCycle)}) is public with a source; 80 if only an older one; no score if none is on file</td><td>BetterGov SALN Tracker, with each SALN's own source</td></tr>
+      <tr><td>Session attendance</td><td>25</td><td>Not collected yet (Senate journals). Counts against completeness</td><td>—</td></tr></table>
+    <h2>Rules</h2><ul><li><b>Peer group.</b> Senators are compared only with senators. House members and local officials will get their own scorecards.</li>
+      <li><b>70% rule.</b> No overall grade unless indicators with data carry at least 70% of the default weight. The grade is the weighted average of those indicators, using your weights if you changed them.</li>
+      <li><b>Your weights.</b> Anyone can change the weights on the report cards page. The defaults are equal.</li>
+      <li><b>Left out on purpose.</b> Court cases (an allegation until a court decides), schooling (the Constitution requires literacy, not a degree) and political family (a surname match is not proof of a relationship). They remain on profiles as facts.</li>
+      <li><b>Corrections.</b> Officials and anyone else can contest a data point with the "Report an error" form; corrections will be logged.</li></ul>
+    <h2>Known limits of v0.1</h2><ul><li>Counting bills rewards volume, not quality or impact.</li><li>The 20th Congress began in July 2025, so few bills have become law yet.</li>
+      <li>The Senate President and floor leaders file fewer bills because of their roles.</li><li>SALN disclosure is near-universal this cycle, so it separates senators very little.</li>
+      <li>Attendance and committee work are not in yet; when they are, grades will change.</li></ul>
+    <p class="note">Full plan: report cards for House members, attendance, a one-city local pilot, a grade map and a separate citizen pulse come in later phases.</p></article>`;
+}
 const loc = () => lang === 'fil' ? 'fil-PH' : 'en-PH';
 const peso = n => n == null ? '–' : new Intl.NumberFormat(loc(), {style: 'currency', currency: 'PHP', notation: 'compact', maximumFractionDigits: 1}).format(n);
 const num = n => n == null ? '–' : n.toLocaleString(loc());
@@ -966,6 +1125,7 @@ function profile(o) {
   const checked = o.records.map(r => r.retrieved).sort().pop(), nc = (cases.cases[o.id] || []).length, ck = cases._meta.checked[o.id]?.date;
   app.innerHTML = `${phero(o, `${o.chamber === 'Senate' ? t('senator') : o.chamber} · ${o.term}`, `${t('dataAsOf')} ${esc(dayLabelFull(checked))}${ck ? ` · ${t('casesChecked')} ${esc(dayLabelFull(ck))}` : ''}`)}
     ${summary(o, [[bills[o.id]?.total ?? '–', t('tBills')], [lawCount(o.id), t('tLaws')], [nc, t('tCases')]])}
+    ${cardHtml(o)}
     ${ptabs([['kaso', t('tabCases'), nc], ['batas', t('tabLaws'), lawCount(o.id)], ['panukala', t('tabBills'), bills[o.id]?.total], ['saln', 'SALN'], ['halalan', t('tabElec')], ['aral', t('tabEdu')], ...(fam[o.id] ? [['pamilya', t('tabFam')]] : []), ['puwesto', t('tabOffice')]])}
     ${casesHtml(o)}${lawsHtml(o.id)}${billsHtml(o.id)}${salnHtml(o)}${elecHtml(o)}${eduHtml(o.id)}
     ${famHtml(o)}<h3 class="h" id="puwesto">${t('hOffice')}</h3>${recordsHtml(o)}
@@ -973,7 +1133,7 @@ function profile(o) {
 }
 
 /* ---------- events ---------- */
-const PAGES = {'': home, explore, senado: senPage, kamara: housePage, 'party-list': plPage};
+const PAGES = {'': home, explore, senado: senPage, kamara: housePage, 'party-list': plPage, marka: markaPage, paraan: paraanPage, lokal: lokalPage};
 function route() {
   const h = hashName(), o = findPerson(h);
   tip.classList.remove('on');
@@ -981,7 +1141,7 @@ function route() {
   o ? profile(o) : page();
   document.body.classList.toggle('home', page === home);
   if (page === home && document.activeElement === q) document.getElementById('hq')?.focus();   // header search is hidden on home; keep typing in the big one
-  const sec = o ? (o.body === 'house' ? (o.kind === 'party-list' ? 'party-list' : 'kamara') : 'senado') : h;
+  const sec = o ? (o.body === 'house' ? (o.kind === 'party-list' ? 'party-list' : 'kamara') : 'senado') : ['paraan', 'lokal'].includes(h) ? 'marka' : h;
   document.querySelectorAll('.nav a.lnk').forEach(a => a.getAttribute('href') === '#' + sec ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
   document.title = o ? clean(o.name) + ' – Sino Sila?' : t('title');
   app.removeAttribute('aria-busy'); scrollTo(0, 0);
@@ -993,6 +1153,7 @@ app.onclick = e => {
   if (d.f === 'retry') return load();
   if (d.jump) return document.getElementById(d.jump)?.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'});
   if (d.f === 'report') return document.getElementById('repB').click();
+  if (d.f === 'wreset') { weights = {...WDEF}; try { localStorage.removeItem('weights'); } catch {} return markaPage(); }
   if (d.f === 'hclear') { Object.assign(state, {hs: '', hpl: null, hp: null, sel: 'everyone', tr: new Set(ALLTR)}); housePage(); return document.getElementById('hs')?.focus(); }
   if (d.try != null) { const hq = document.getElementById('hq'); hq.value = q.value = state.q = d.try; hq.focus(); return homeOut(); }
   if (d.f === 'share') { const url = location.href, ti = document.title;
@@ -1009,7 +1170,8 @@ app.onclick = e => {
 app.onchange = e => { const v = e.target.value;
   if (e.target.id === 'placeSel') { place = v; try { localStorage.setItem('place', v); } catch {} return homeOut(); }
   if (e.target.id === 'hplSel') { state.hpl = e.target.value || null; updateAll(); } if (e.target.id === 'hpSel') { state.hp = e.target.value || null; updateAll(); } };
-app.oninput = e => { if (e.target.id === 'hq') { state.q = q.value = e.target.value; homeOut(); } if (e.target.id === 'hs') { state.hs = e.target.value; updateHouse(); } };
+app.oninput = e => { if (e.target.id === 'hq') { state.q = q.value = e.target.value; homeOut(); } if (e.target.id === 'hs') { state.hs = e.target.value; updateHouse(); }
+  if (e.target.id.startsWith('w-')) { const k = e.target.id.slice(2); weights[k] = +e.target.value; document.getElementById('wv-' + k).textContent = e.target.value; try { localStorage.setItem('weights', JSON.stringify(weights)); } catch {} markaList(); } };
 (() => { const t = document.getElementById('top'); if (!t) return; addEventListener('scroll', () => { t.hidden = scrollY < 1500; }, {passive: true}); t.onclick = () => scrollTo({top: 0, behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth'}); })();
 const REPORT_URL = 'https://nx3hxaffgkf7ufau7cyb6zfa6i0wigzc.lambda-url.ap-southeast-1.on.aws/';   // set to the Lambda function URL printed by tools/create_contact_form.sh
 (() => { const b = document.getElementById('repB'), dlg = document.getElementById('rep'), f = document.getElementById('repF'), msg = document.getElementById('repMsg');
@@ -1033,6 +1195,7 @@ document.getElementById('langB').onclick = () => { lang = lang === 'fil' ? 'en' 
 q.oninput = () => { state.q = q.value; if (onExplore()) return updateAll(); if (!onHome()) location.hash = ''; else homeOut(); };
 applyLang();
 onhashchange = route;
+if (location.pathname.includes('/staging/')) { const b = document.createElement('div'); b.className = 'stage'; b.setAttribute('role', 'note'); b.textContent = t('staging'); document.body.prepend(b); }
 function load() {
   Promise.all(['data/officials.json', 'data/house.json', 'data/bills.json', 'data/laws.json', 'data/education.json', 'data/pulitiklan.json', 'data/cases.json', 'data/saln.json', 'data/elections.json'].map(u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); }).catch(e => { if (/pulitiklan/.test(u)) return {links: {}}; if (/cases/.test(u)) return {_meta: {checked: {}}, cases: {}}; if (/saln/.test(u)) return saln; if (/elections/.test(u)) return elec; throw e; })))
     
