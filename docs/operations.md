@@ -9,7 +9,7 @@ For maintainers. Everything runs on AWS; there is no build step.
 | Site files | S3 bucket `sino-sila-773994910221` (ap-southeast-1), private, served through CloudFront |
 | CDN | CloudFront distribution `E1QGRO3D7NQZVA` (https://sinu-sila.com, www, and d3kbf1pju0ogt8.cloudfront.net) |
 | Domain | `sinu-sila.com`, DNS in Route 53, HTTPS certificate in ACM (us-east-1) |
-| "Report an error" form | Lambda `sino-sila-report` (ap-southeast-1), emails reports through SES; code in `tools/contact_lambda/`, setup in `tools/create_contact_form.sh` |
+| "Report an error" form | Lambda `sino-sila-report` (ap-southeast-1), saves reports to the corrections inbox and emails them through SES; code in `tools/contact_lambda/`, setup in `tools/create_contact_form.sh` |
 | Visit counter | Lambda `sinosila-stats` + DynamoDB `sinosila-stats` (ap-southeast-1), behind CloudFront `/e` and `/e/*`; code in `tools/stats_lambda/` |
 | Staging | `https://sinu-sila.com/staging/index.html` (S3 prefix `staging/`, `noindex`, banner shown) |
 
@@ -70,6 +70,13 @@ views, visits (first page of a browser-tab session), page, referrer site, countr
 The dashboard is `https://sinu-sila.com/stats.html` (unlisted, `noindex`). It reads `/e/stats` with a key sent in the
 `x-stats-key` header. The key is the Lambda's `STATS_KEY` setting and is kept locally in the git-ignored
 `tools/.stats_key`; never commit it.
+
+## Corrections inbox
+
+The "Report an error" form posts to the `sino-sila-report` Lambda, which saves each note in the `sinosila-stats` table
+(partition `reports`) and also emails it. The dashboard's **Corrections from visitors** section lists them newest first
+(`GET /e/reports`) and marks them done or reopens them (`POST /e/reports`), both with the dashboard key. Notes and reply
+addresses are private: the form tells visitors so, and they are never published.
 
 ## Secrets and private files
 

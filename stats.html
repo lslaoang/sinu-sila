@@ -37,6 +37,11 @@
   .lock input{width:100%;padding:.6rem .8rem;border:1.5px solid var(--rule);border-radius:var(--r);background:var(--bg);margin:.5rem 0}
   details summary{cursor:pointer;font-weight:600;font-size:.85rem;margin-top:.7rem} table{border-collapse:collapse;font-size:.85rem;margin-top:.4rem} td,th{padding:.2rem .8rem .2rem 0;text-align:left;border-bottom:1px solid var(--line)}
   .err{color:#b00e22;font-weight:600}
+  .inbox{list-style:none;margin:0;padding:0} .inbox li{display:grid;grid-template-columns:1fr auto;gap:.3rem 1rem;padding:.8rem 0;border-bottom:1px solid var(--line)}
+  .inbox li.done{opacity:.6} .inbox .meta{font:500 .78rem var(--mono);color:var(--mute)} .inbox .msg{grid-column:1/-1;white-space:pre-wrap;margin:0}
+  .inbox .more{grid-column:1/-1;font-size:.85rem;display:flex;flex-wrap:wrap;gap:.2rem 1rem} .inbox a{color:inherit}
+  .badge{display:inline-block;font:700 .72rem var(--sans);padding:.1rem .45rem;border-radius:4px;border:1px solid var(--rule);margin-right:.4rem} .badge.new{background:#fcd116;color:#1a1714;border-color:#1a1714}
+  .tabs2{display:flex;gap:.4rem;margin:0 0 .4rem}
 </style>
 <div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="wrap" id="app"></div>
@@ -45,6 +50,7 @@
 const app = document.getElementById('app');
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
 const fmt = n => (n || 0).toLocaleString('en-PH');
+let reports = [], showDone = false;
 let key = (() => { try { return localStorage.getItem('ss-stats-key') || ''; } catch { return ''; } })(), days = 30, names = {};
 const country = (() => { try { const d = new Intl.DisplayNames(['en'], {type: 'region'}); return c => c === '??' ? 'Unknown' : d.of(c) || c; } catch { return c => c; } })();
 const PAGE = {home: 'Home', senado: 'Senate list', kamara: 'House list', 'party-list': 'Party-list', explore: 'Explore (data)', marka: 'Report cards'};
@@ -63,7 +69,8 @@ async function load() {
     if (r.status === 401) { try { localStorage.removeItem('ss-stats-key'); } catch {} return lock('That key did not work.'); }
     if (!r.ok) throw new Error(r.status);
     try { localStorage.setItem('ss-stats-key', key); } catch {}
-    render(await r.json());
+    const rr = await fetch('/e/reports', {headers: {'x-stats-key': key}, cache: 'no-store'}).then(x => x.ok ? x.json() : {reports: []}).catch(() => ({reports: []}));
+    reports = rr.reports || []; render(await r.json());
   } catch (e) { app.innerHTML = `<p class="err" style="margin-top:3rem">Could not load the numbers (${esc(e.message)}). <button class="chip" onclick="load()">Retry</button></p>`; }
 }
 function sum(rows, prefix) {
@@ -81,7 +88,9 @@ function render(d) {
     <div class="bar-row" role="group" aria-label="Range">${[7, 30, 90].map(n => `<button class="chip" data-d="${n}" aria-pressed="${n === days}">Last ${n} days</button>`).join('')}
       <button class="chip" id="out" style="margin-left:auto">Lock</button></div>
     <div class="tiles"><div class="tile"><b>${fmt(visits)}</b><span>visits</span></div><div class="tile"><b>${fmt(views)}</b><span>page views</span></div>
-      <div class="tile"><b>${visits ? (views / visits).toFixed(1) : '–'}</b><span>pages per visit</span></div><div class="tile"><b>${fmt(today.visits)}</b><span>visits today (Manila time)</span></div></div>
+      <div class="tile"><b>${visits ? (views / visits).toFixed(1) : '–'}</b><span>pages per visit</span></div><div class="tile"><b>${fmt(today.visits)}</b><span>visits today (Manila time)</span></div>
+      <div class="tile"><b>${fmt(reports.filter(x => x.status !== 'done').length)}</b><span>corrections to check</span></div></div>
+    <section class="card" id="corr"></section>
     <section class="card"><h2>Visits per day</h2><div class="chart" id="ch" role="img" aria-label="Visits per day, last ${days} days, peak ${peak}">
       ${dates.map(x => `<button type="button" data-t="${esc(day(x))}: ${fmt(d.days[x].visits)} visits, ${fmt(d.days[x].views)} views" aria-label="${esc(day(x))}: ${fmt(d.days[x].visits)} visits"><i style="height:${100 * (d.days[x].visits || 0) / peak}%"></i></button>`).join('')}</div>
       <div class="axis"><span>${esc(day(dates[0]))}</span><span>${esc(day(dates[dates.length - 1]))}</span></div>
@@ -94,12 +103,33 @@ function render(d) {
       <section class="card"><h2>Devices</h2>${rank(sum(rows, 'device#'), k => k[0].toUpperCase() + k.slice(1))}</section>
       <section class="card"><h2>Language</h2>${rank(sum(rows, 'lang#'), k => k === 'fil' ? 'Filipino' : 'English')}</section></div>
     <p class="note">Counts only: no cookies, no IP addresses, nothing that identifies a person. A visit is the first page opened in a browser tab; bots are left out. Days roll over at midnight Manila time.</p>`;
+  inbox();
   app.querySelectorAll('[data-d]').forEach(b => b.onclick = () => { days = +b.dataset.d; load(); });
   document.getElementById('out').onclick = () => { try { localStorage.removeItem('ss-stats-key'); } catch {} key = ''; lock(); };
   const ch = document.getElementById('ch'); let tip;
   const show = b => { tip?.remove(); tip = document.createElement('div'); tip.className = 'tip'; tip.textContent = b.dataset.t; ch.appendChild(tip);
     tip.style.left = Math.min(Math.max(b.offsetLeft + b.offsetWidth / 2, tip.offsetWidth / 2), ch.offsetWidth - tip.offsetWidth / 2) + 'px'; };
   ch.querySelectorAll('button').forEach(b => { b.onmouseenter = b.onfocus = () => show(b); b.onmouseleave = b.onblur = () => tip?.remove(); });
+}
+function inbox() {
+  const el = document.getElementById('corr'); if (!el) return;
+  const open = reports.filter(x => x.status !== 'done'), list = showDone ? reports : open;
+  const when = k => new Date(k.split('#')[0]).toLocaleString('en-PH', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit'});
+  const where = u => { try { const x = new URL(u); return x.hash ? pageName(decodeURIComponent(x.hash.slice(1))) + (x.pathname.includes('/staging/') ? ' (staging)' : '') : 'Home'; } catch { return u; } };
+  const safe = u => /^https?:\/\//.test(u) ? u : '';
+  el.innerHTML = `<h2>Corrections from visitors</h2><div class="tabs2" role="group" aria-label="Show">
+      <button class="chip" data-s="0" aria-pressed="${!showDone}">To check (${open.length})</button><button class="chip" data-s="1" aria-pressed="${showDone}">All (${reports.length})</button></div>
+    ${list.length ? `<ol class="inbox">${list.map(x => `<li class="${x.status === 'done' ? 'done' : ''}"><span class="meta"><span class="badge ${x.status === 'done' ? '' : 'new'}">${x.status === 'done' ? 'Done' : 'New'}</span>${esc(when(x.k))} · <a href="${esc(safe(x.page))}" target="_blank" rel="noopener">${esc(where(x.page))}</a></span>
+      <button class="chip" data-k="${esc(x.k)}" data-to="${x.status === 'done' ? 'new' : 'done'}">${x.status === 'done' ? 'Reopen' : 'Mark done'}</button>
+      <p class="msg">${esc(x.message)}</p><span class="more">${x.source ? `<span>Source: <a href="${esc(safe(x.source))}" target="_blank" rel="noopener noreferrer">${esc(x.source)}</a></span>` : ''}${x.contact ? `<span>Reply to: ${/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(x.contact) ? `<a href="mailto:${esc(x.contact)}">${esc(x.contact)}</a>` : esc(x.contact)}</span>` : ''}</span></li>`).join('')}</ol>`
+      : `<p class="note">${showDone ? 'No corrections yet.' : 'Nothing to check right now.'}</p>`}
+    <p class="note">From the "Report an error" form. Notes and reply addresses are private: never publish them.</p>`;
+  el.querySelectorAll('[data-s]').forEach(b => b.onclick = () => { showDone = b.dataset.s === '1'; inbox(); });
+  el.querySelectorAll('[data-k]').forEach(b => b.onclick = async () => {
+    b.disabled = true;
+    const r = await fetch('/e/reports', {method: 'POST', headers: {'x-stats-key': key, 'content-type': 'text/plain'}, body: JSON.stringify({k: b.dataset.k, status: b.dataset.to})}).catch(() => null);
+    if (r && r.ok) { reports.find(x => x.k === b.dataset.k).status = b.dataset.to; inbox(); document.querySelectorAll('.tile b')[4].textContent = fmt(reports.filter(x => x.status !== 'done').length); }
+    else { b.disabled = false; b.textContent = 'Try again'; } });
 }
 Promise.all(['data/officials.json', 'data/house.json'].map(u => fetch(u).then(r => r.json()).catch(() => null))).then(([o, h]) => {
   [...(o || []), ...((h && h.people) || [])].forEach(p => names[p.id] = p.name.replace(/"[^"]*"\s*/g, ''));

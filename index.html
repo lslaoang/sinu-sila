@@ -341,7 +341,7 @@
     <p data-i18n="foot2">Court cases come from news and court records, one person at a time. “Not yet checked” means we have not confirmed a record from two independent sources, which is not the same as a clean record. A case listed here is a public record, not a finding of guilt. If you spot a mistake or something out of date, we want to fix it.</p></details>
 </div></footer>
 <dialog id="rep" aria-labelledby="repT"><form method="dialog" id="repF"><h2 id="repT" data-i18n="repB">Report an error</h2>
-  <p class="note" data-i18n="repIntro">Tell us what is wrong or out of date on this page. A link to the right source helps most.</p>
+  <p class="note" data-i18n="repIntro">Tell us what is wrong or out of date on this page. A link to the right source helps most. We keep your note (and your email, if you give one) privately so we can follow up. It is never published.</p>
   <label><span data-i18n="repWhat">What is wrong</span><textarea name="message" rows="4" maxlength="2000" required></textarea></label>
   <label><span data-i18n="repSrc">Link to a source</span> <small data-i18n="optional">(optional)</small><input name="source" type="url" maxlength="300"></label>
   <label><span data-i18n="repEmail">Your email</span> <small data-i18n="optReply">(optional, only if you want a reply)</small><input name="contact" type="email" maxlength="200"></label>
@@ -442,7 +442,7 @@ const T = {
     r_accused: 'akusado', r_respondent: 'respondent', r_petitioner: 'nagpetisyon', r_party: 'partido sa kaso',
     foot1: 'Bawat impormasyon ay may link sa pampublikong pinagmulan nito. Ang datos ng Senado ay mula sa Legislative Information System ng Senado. Ang listahan ng Kamara ay mula sa Wikipedia at sinusuri pa laban sa ibang source. Ang mga larawan ay mula sa Wikimedia Commons, may kredito sa bawat profile. Ang mga selyo ng paaralan ay pag-aari ng kani-kanilang institusyon.',
     foot2: 'Ang mga kaso ay mula sa mga balita at rekord ng korte, isa-isang tao. Ang “Hindi pa nasusuri” ay nangangahulugang hindi pa namin nakukumpirma ang rekord mula sa dalawang magkahiwalay na source, at hindi ito pareho sa malinis na rekord. Ang kasong nakalista ay pampublikong rekord, hindi hatol ng pagkakasala. Kung may nakita kang mali, gusto naming ayusin ito.',
-    repB: 'Mag-ulat ng mali', repIntro: 'Sabihin sa amin kung ano ang mali o luma na sa pahinang ito. Malaking tulong ang link sa tamang source.',
+    repB: 'Mag-ulat ng mali', repIntro: 'Sabihin sa amin kung ano ang mali o luma na sa pahinang ito. Malaking tulong ang link sa tamang source. Pribado naming itatago ang mensahe mo (at email mo kung ilalagay mo) para masundan ito. Hindi ito ilalathala.',
     repWhat: 'Ano ang mali', repSrc: 'Link sa source', optional: '(opsyonal)', repEmail: 'Email mo', optReply: '(opsyonal, kung gusto mo ng sagot)', close: 'Isara', send: 'Ipadala',
   },
   en: {
@@ -510,7 +510,7 @@ const T = {
     r_accused: 'accused', r_respondent: 'respondent', r_petitioner: 'petitioner', r_party: 'party',
     foot1: 'Every fact links to the public source it came from. Senate data comes from the Senate\'s Legislative Information System. House rosters come from Wikipedia and are still being checked against other sources. Portraits come from Wikimedia Commons, credited on each profile. School seals come from Wikipedia and Wikimedia Commons and belong to their institutions.',
     foot2: 'Court cases come from news and court records, one person at a time. “Not yet checked” means we have not confirmed a record from two independent sources, which is not the same as a clean record. A case listed here is a public record, not a finding of guilt. If you spot a mistake or something out of date, we want to fix it.',
-    repB: 'Report an error', repIntro: 'Tell us what is wrong or out of date on this page. A link to the right source helps most.',
+    repB: 'Report an error', repIntro: 'Tell us what is wrong or out of date on this page. A link to the right source helps most. We keep your note (and your email, if you give one) privately so we can follow up. It is never published.',
     repWhat: 'What is wrong', repSrc: 'Link to a source', optional: '(optional)', repEmail: 'Your email', optReply: '(optional, only if you want a reply)', close: 'Close', send: 'Send',
   }};
 const t = (k, ...a) => { const v = T[lang][k] ?? T.en[k] ?? k; return typeof v === 'function' ? v(...a) : v; };

@@ -3,6 +3,8 @@
 POST /e        body {"p": "<route>", "r": "<referrer>", "n": 1 if first page of the tab session, "l": "en"|"fil"}
                -> adds 1 to today's counters (views, visits, page, referrer host, country, device, language)
 GET  /e/stats?days=30  header x-stats-key: <STATS_KEY>  -> the counters for the last N days (the dashboard reads this)
+GET  /e/reports        header x-stats-key                -> the newest 200 correction notes from the report form
+POST /e/reports        header x-stats-key, body {"k": "<report key>", "status": "new"|"done"} -> mark a note done or reopen it
 
 Country and device come from CloudFront's own headers (CloudFront-Viewer-Country, CloudFront-Is-*-Viewer).
 Table: STATS_TABLE (pk "d" = YYYY-MM-DD, sk "k" = "views" | "visits" | "page#senado" | "ref#facebook.com" | ...).
@@ -63,9 +65,33 @@ def stats(event):
     return out(200, {"days": rows, "generated": datetime.now(PH).isoformat(timespec="seconds")})
 
 
+def authorized(event):
+    h = {k.lower(): v for k, v in (event.get("headers") or {}).items()}
+    return hmac.compare_digest(h.get("x-stats-key", ""), KEY)
+
+
+def reports(event, method):
+    """Correction notes saved by the report form (Lambda sino-sila-report) under partition d="reports"."""
+    if not authorized(event): return out(401, {"error": "bad key"})
+    if method == "GET":
+        items = T.query(KeyConditionExpression=Key("d").eq("reports"), ScanIndexForward=False, Limit=200)["Items"]
+        return out(200, {"reports": [{k: it.get(k, "") for k in ("k", "message", "page", "source", "contact", "status")} for it in items]})
+    raw = event.get("body") or "{}"
+    try: b = json.loads(base64.b64decode(raw) if event.get("isBase64Encoded") else raw)
+    except ValueError: return out(400)
+    if b.get("status") not in ("new", "done") or not str(b.get("k", "")).strip(): return out(400)
+    try:
+        T.update_item(Key={"d": "reports", "k": str(b["k"])}, UpdateExpression="SET #s = :s", ConditionExpression="attribute_exists(k)",
+                      ExpressionAttributeNames={"#s": "status"}, ExpressionAttributeValues={":s": b["status"]})
+    except T.meta.client.exceptions.ConditionalCheckFailedException:
+        return out(404)
+    return out(200, {"ok": True})
+
+
 def lambda_handler(event, _):
     method = event.get("requestContext", {}).get("http", {}).get("method", "GET")
     path = event.get("rawPath", "")
     if method == "POST" and path.rstrip("/").endswith("/e"): return hit(event)
     if method == "GET" and path.rstrip("/").endswith("/e/stats"): return stats(event)
+    if method in ("GET", "POST") and path.rstrip("/").endswith("/e/reports"): return reports(event, method)
     return out(404)
