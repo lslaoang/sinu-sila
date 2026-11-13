@@ -1,139 +1,88 @@
-# Sino Sila? PH Officials
+# Sino Sila?
 
-Static site of public records on Philippine officials. Rule: no record without a source link.
+**Who are your lawmakers?** A free, open record of the Philippines' senators and House representatives: the bills they
+file, the laws they pass, their court cases, their declared wealth, how they were elected and where they studied.
+Every fact links to its public source.
 
-**Covers so far:** the 24 senators of the 20th Congress and the bills they authored (snapshot retrieved 2026-10-01).
+**Live site: https://sinu-sila.com** · English and Filipino · works on any phone
 
-## Run
+![Sino Sila? link preview](assets/og.png)
+
+## What's on the site
+
+- **Find your lawmakers.** Search a name, province, city or party, or pick where you live to see your district
+  representative and all 24 senators.
+- **Senate** (24 senators): bills authored per month and where they stand, laws passed with each senator's role,
+  education, SALN (declared assets, liabilities and net worth), the 2025 or 2022 election result, and court cases.
+- **House of Representatives** (253 district representatives and 64 party-list representatives): grouped by province,
+  with party, bloc, 2025 election result and court cases.
+- **Court cases, handled carefully.** A case needs two independent sources or an official court record. A charge is
+  shown as an allegation unless a court decided it, and "not yet checked" is never presented as a clean record.
+- **Updated weekly**: Senate bills and laws, the House roster and SALN totals refresh every Monday.
+
+## Principles
+
+1. **No record without a source.** `validate.py` refuses data without a source link.
+2. **Facts, not verdicts.** Neutral wording, presumption of innocence, dismissals and acquittals listed alongside charges.
+3. **Open data first.** Where [BetterGov.ph](https://bettergov.ph) already publishes clean open data (SALN, election
+   results), we build on it and credit it.
+4. **Private by design.** No trackers, no cookies, no ads. The visit counter keeps daily totals only.
+5. **Corrections welcome.** Every page has a "Report an error" button, and officials can reply to any data point.
+
+## Run it locally
+
+No build step and no dependencies: one HTML file plus JSON data.
 
 ```bash
-python3 -m http.server   # then open http://localhost:8000
-python3 validate.py      # checks every record has a source_url and a valid type
+git clone https://github.com/lslaoang/ph-politicians.git
+cd ph-politicians
+python3 -m http.server 8000      # then open http://localhost:8000
+python3 validate.py              # checks every record has a valid source
 ```
 
-## Hosting
+## Repository layout
 
-Live at **https://sinu-sila.com** (also www, and the old https://d3kbf1pju0ogt8.cloudfront.net). No build step.
-
-- Files: S3 bucket `sino-sila-773994910221` (ap-southeast-1), served by CloudFront `E1QGRO3D7NQZVA`
-- Domain: registered at Spaceship, DNS in Route 53 zone `Z09479652U24CRJM3RBSM`; HTTPS cert in ACM us-east-1 (apex + www)
-- Report form: Lambda `sino-sila-report` (ap-southeast-1); allowed origins are its `ORIGIN` env var, comma-separated
-
-Deploy a change:
-
-```bash
-export AWS_PROFILE=laurel
-aws s3 cp index.html s3://sino-sila-773994910221/index.html --content-type "text/html; charset=utf-8"
-aws s3 sync data s3://sino-sila-773994910221/data      # when data changed
-aws cloudfront create-invalidation --distribution-id E1QGRO3D7NQZVA --paths "/*"
+```
+index.html            the whole site (HTML, CSS and JavaScript in one file)
+stats.html            private visit dashboard (key-protected, not linked)
+data/                 JSON data, one file per topic (see docs/data.md)
+assets/photos/        portraits (Wikimedia Commons, credited on each profile)
+assets/schools/       school seals (identification only)
+tools/                importers, the weekly update runbook and the two small AWS Lambda functions
+docs/                 data sources and methods, operations
+validate.py           data checks, run before every publish
 ```
 
-## Data
+## Data sources
 
-| File | Contents | Source |
-|---|---|---|
-| `data/officials.json` | Senators: name, position, `lis_codes`, records (each with `source_url`, `retrieved`) | https://senate.gov.ph/senators/20-congress-senators |
-| `data/bills.json` | Per senator: total bills, count per month, count per status, 5 latest bills | https://senate.gov.ph/legislative-documents/bills |
-| `data/laws.json` | Bills approved by the President / lapsed into law / enrolled, with the Senate's author, co-author and co-sponsor roles | https://senate.gov.ph/legislative-documents/bills (filtered by status) |
-| `data/education.json` | Schools, degrees and years per senator; every item has its own `source_url` | Senate profile biography (12 senators) or Wikipedia (the other 12, whose Senate bios omit schooling) |
-| `data/house.json` | House of Representatives members (317 + 1 vacant seat): name, constituency, kind, party, bloc, leadership role, Commons photo with credit link; every record cites the exact Wikipedia revision | `python3 tools/import_house.py` (Wikipedia list of current members) |
-| `photo` in `officials.json` | Senator photo URL on senate.gov.ph | `/hq/senators/congress/28` (`image_upload.file_url`) |
+| Data | Source |
+|---|---|
+| Senators, bills, laws | [Senate of the Philippines](https://senate.gov.ph), Legislative Information System |
+| House roster | Wikipedia's list of current members (each record cites the exact revision) |
+| SALN | [BetterGov.ph SALN Tracker](https://github.com/bettergovph/saln-tracker-ph) |
+| Election results | [BetterGov.ph Dynasties](https://dynasties.bettergov.ph), built from [Open Halalan](https://robertrleung.github.io/OpenHalalan/) |
+| Court cases | News outlets and court or Ombudsman records, linked per event |
+| Education | Senate profiles, Wikipedia, cross-checked against news and fact-check outlets |
+| Political families | Links to [Pulitiklan](https://pulitiklan.com) |
+| Portraits | Wikimedia Commons |
 
-"Bills authored" counts bills where the Senate lists the senator as author. "Laws backed" counts enacted bills (approved by the President, lapsed into law, or consolidated with a law) where the senator is author, co-author or co-sponsor, and the profile shows which role. A Senate bill folded into another bill is not detected unless the Senate marks it so. The Senate's own per-senator stats (`bills_passed_into_law`, `authored_bills`) are stale (all zero for laws), so they are not used.
+Methods, coverage and known gaps: **[docs/data.md](docs/data.md)**. Hosting, deploys and automation:
+**[docs/operations.md](docs/operations.md)**.
 
-**Education** only records what the cited sources state, and each item can list several source links. Twelve senators' entries come from their Senate profile bio (not independently cross-checked). The other twelve, whose Senate bios omit schooling, were first taken from Wikipedia and then cross-checked on 2026-10-01 against GMA candidate profiles, UP sa Halalan, news and fact-check outlets and the senators' own sites. Unsupported claims were dropped (e.g. Legarda's UCLA courses, Marcoleta's "cum laude" and "certificate"), and where sources disagree the entry says so (e.g. Bong Go's college, Marcoleta's doctorate year). Some official pages (Senate bios, Inquirer, Rappler) returned 403 to the checking tool, so a human check against those and against university records is still worth doing before launch. Contested items (Imee Marcos) are shown with institutional statements and a neutral note, without editorial wording.
+## Contributing
 
-**Scope is the Senate plus the House of Representatives for now**, with nationwide search as the goal (see below). Senate data is rich (bills, laws, education); House data is a first-pass roster only. It rests on Wikipedia alone until each member is cross-checked against a second source (GMA candidate profiles, UP sa Halalan, COMELEC). House portraits are free-licensed Wikimedia Commons files, credited on each profile; check each file's licence before launch. The House website (congress.gov.ph) sits behind a Cloudflare bot check, so it is not used.
+Corrections, new sources, translations and code are all welcome. Read **[CONTRIBUTING.md](CONTRIBUTING.md)** first;
+the rules for court cases are strict on purpose. To report a factual error, use the "Report an error" button on the
+page or [open a correction issue](https://github.com/lslaoang/ph-politicians/issues/new?template=correction.yml).
 
-**Political families:** pulitiklan.com maps relatives by place, citing sources such as the DBM 2026 Government Directory and PCIJ. It has no stated reuse terms, so its data is not copied. `python3 tools/link_pulitiklan.py` matches our people to its published family-page URLs by surname and place, keeps a link only if the person's name appears on that page (page text is used for the check and discarded), and stores URLs only in `data/pulitiklan.json` (208 links: 190 House, 18 Senate). Profiles show it as a clearly labelled link-out. Our own relationship layer, built from public documents with our own source links, is still to do.
+## License
 
-**House audit (2026-10-02):** a stratified sample of 32 members was checked against non-Wikipedia sources (details in `data/house.json` `_meta.audit`). Seats held up; party labels are time-dependent (2026 party switching), "took office" dates from Wikipedia were unreliable (records now use the 20th Congress start), and leadership roles are incomplete. Two sampled members face court proceedings reported by news outlets; charges are allegations, not findings, and are not yet recorded on the site (needs careful, sourced wording).
+Code: [MIT](LICENSE). Data and images keep the terms of their sources; see **[DATA_LICENSE.md](DATA_LICENSE.md)**
+(our compilations are CC BY 4.0, the House roster is CC BY-SA 4.0 because it comes from Wikipedia, election data is
+CC0, school seals are not licensed for reuse).
 
-**Homepage interactions** (seating chart sized by bills or laws, "where they studied" highlight) are computed in the browser from the data files. The school filter counts any non-honorary item whose school matches (Ateneo, UP, La Salle, UST, Harvard, UE, PMA, Georgetown) and skips items flagged `"match": false` in `education.json` (disputed, unconfirmed or single-source).
+## Disclaimer
 
-**Photos** are hotlinked from senate.gov.ph in the visitor's browser (scripts get HTTP 403, so they are not downloaded or stored here). If an image fails, the initials avatar stays. Confirm reuse terms with the Senate.
-
-## SALN and election results (from BetterGov.ph)
-
-- `data/saln.json` (`python3 tools/import_saln.py`): senators' declared net worth, assets and liabilities, from the
-  [BetterGov SALN Tracker](https://github.com/bettergovph/saln-tracker-ph) (MIT). Every figure keeps its own source link
-  (Senate SALN pages, ABS-CBN, Rappler, PCIJ). Upstream "year" labels are inconsistent (the same October 2025 release is
-  labelled 2024 for some senators and 2025 for others), so profiles show dates: "as of Dec 31, YYYY" or "reported <date>".
-  Records whose year and date contradict each other are dropped (Raffy Tulfo's only record, so he shows none). Figures are
-  as declared, not audited, and profiles say so.
-- `data/elections.json` (`python3 tools/import_elections.py`): the race that put each lawmaker in office, from
-  BetterGov's [Dynasties API](https://dynasties.bettergov.ph/developers) (derived data CC0, built from
-  [Open Halalan](https://robertrleung.github.io/OpenHalalan/), which is credited on every profile). Senators: rank and
-  votes in 2025 or 2022 (24/24). District representatives: 2025 votes, share, margin and runner-up (246/253), matched
-  by race, not by BetterGov's person records (those split some people). A winner is accepted only when the surname plus a
-  given name or nickname matches inside the same province or city, or when the seat matches plus a shared surname or
-  given name (ballot nicknames such as "ABET" for Albert). Multi-seat races (Taguig) show rank only. Party-list: each
-  group's 2025 national votes (56/57). The seven unmatched House seats (Batanes vacancy, Manila 6th, Maguindanao del Sur,
-  Butuan, Cagayan de Oro 2nd, Cavite 2nd, Ilocos Sur 2nd, Santa Rosa) show "no matching result" rather than a guess.
-  Re-run only after an election; the data changes once per election.
-
-## Visit counter and dashboard
-
-Privacy-first: no cookies, no IP addresses, no visitor IDs, only daily totals. `index.html` sends one small beacon per
-page to `https://sinu-sila.com/e` (only on sinu-sila.com, never on localhost or `/staging/`). CloudFront routes `/e` and
-`/e/*` to the Lambda `sinosila-stats` (ap-southeast-1, code in `tools/stats_lambda/`), which adds 1 to counters in the
-DynamoDB table `sinosila-stats`: views, visits (first page of a browser-tab session), page, referrer site, country
-(CloudFront-Viewer-Country), device and language. Bots are skipped.
-
-Dashboard: https://sinu-sila.com/stats.html (unlisted, `noindex`). It asks for the key in `tools/.stats_key`
-(git-ignored; also the Lambda's `STATS_KEY` env var) and keeps it in that browser only.
-
-## Weekly update agent
-
-A scheduled Claude task (`sinosila-weekly-update`, Mondays 6:00 AM, runs while the Claude desktop app is open) follows
-`tools/weekly_update.md`: Senate bills and laws through Chrome (`tools/senate_fetch.js` + `tools/apply_senate.py --clipboard`),
-the House roster (`tools/import_house.py`, which now prints ADDED/REMOVED/CHANGED and keeps `_meta.audit`), then
-validates, publishes the data files and commits them. Court cases are researched into `review/` only and never
-published without a person checking the sources.
-
-## Court cases and proceedings
-
-`data/cases.json` records criminal, administrative and election cases, and rulings on public acts, for lawmakers' whole public careers. It publishes real people's legal history, so the rules are strict:
-
-- Each case is a timeline of events, each event with its own source links. A case needs **two independent outlets or one official court/Ombudsman page** (`validate.py` enforces this).
-- Wording is neutral: charges are "alleged", guilt is stated only where a court or the Ombudsman decided, and dismissals, acquittals, appeals and the person's own response are recorded alongside charges. Profiles carry a standing note (allegation, presumption of innocence, preventive suspension is not a finding of guilt).
-- A profile says "No court cases found in the sources checked on <date>" only for people in `_meta.checked`; everyone else says "not yet checked". Absence of a result is never presented as a clean record.
-- Scope excludes private family or business disputes unless they became a public-office matter.
-
-Coverage so far (2026-11-13): 128 cases across 105 lawmakers, 307 people actually checked, 34 not yet checked. Each published case's sources were opened and read by a person (not just taken from an agent's summary). That check corrected the agents more than once (for example, *Guy v. Tulfo* is a damages ruling, not a reinstated conviction). People with only single-outlet leads are left "not yet checked" instead of being shown as clear. Institutional disputes between lawmakers (for example the June 2026 petitions over the Senate leadership session) are held out until their outcome is clear; the agents' search budgets also ran short, so many House members still need a proper pass in smaller batches.
-
-Workflow: research agents (`politician-researcher`) screen batches of people and return strict JSON; `python3 tools/ingest_cases.py report.json` validates and merges it (single-outlet items go to the git-ignored `review/unconfirmed.json`, never published); every published case should then be spot-checked against its sources before committing. Needed before launch: a Philippine lawyer's review, a visible corrections and right-of-reply channel, and a refresh routine (case statuses go stale quickly).
-
-## Refreshing the data (manual)
-
-The Senate site blocks plain scripts (HTTP 403) but loads normally in a browser. Its pages read JSON from:
-
-- Senators: `/hq/senators/congress/28?per_page=100`
-- Bills: `/lis/documents_v2?document_type=bills&congress=20th+Congress&author_code=<lis_code>&page=<n>&per_page=100`
-
-To refresh, open https://senate.gov.ph in a browser, run the fetches from the page's console one request at a time (~600 ms apart, with retries), and rebuild `data/bills.json`. Gotchas learned:
-
-- Parse dates like `"August 25, 2026"` as strings. `new Date(...).toISOString()` shifts dates a day early in UTC+8 and puts bills in the wrong month.
-- Some titles contain Cyrillic look-alike characters as HTML entities (`&#1057;`). Normalize to plain letters.
-- A few senators have several `lis_code`s. Query each and de-duplicate by bill `id`.
-- After rebuilding, check that each senator's per-month counts and per-status counts sum to `total`.
-- Senator ids come from `officials.json` (`francis-pangilinan`, not `francis-kiko-pangilinan`). `validate.py` fails if `bills.json` or `laws.json` use an unknown id.
-- Law roles: fetch `/lis/documents_v2?document_type=bills&congress=20th+Congress&status_code=<code>` for codes `6-200`, `6-210`, `6-220`, `6-320`, `4-590`; the `author`, `coAuthor`, `coSponsor` fields hold the roles.
-
-## Before launch
-
-- Get written permission or a data feed from the Senate (and House) ICT offices.
-- Have a Philippine lawyer review the wording (cyber libel, RA 10173).
-- The data source terms and robots rules could not be read (403), so confirm them with the Senate.
-
-## Ideas, not built
-
-House members, votes, SALN, COMELEC filings, a searchable full bill list, co-authored bills.
-
-## School seals
-
-`assets/schools/*.png` are 250 px renders of each school's seal, downloaded from Wikipedia and Wikimedia Commons (University of the Philippines, Ateneo de Manila, De La Salle, Santo Tomas and University of the East are non-free logos on Wikipedia; Harvard, PMA and Georgetown are public domain there). They belong to their institutions and are shown only to identify the school. Before a wide launch, get permission or replace them with files the schools provide.
-
-## Portraits
-
-All 341 portraits are small WebP files in `assets/photos/` (made by `tools/mirror_photos.py` for the House and from Wikipedia's lead images for senators), so pages don't depend on other sites. Each profile links to its Wikimedia Commons file page. The senators' images are listed there as public domain or CC0. senate.gov.ph blocks scripted downloads, so its own photos are not used.
+Sino Sila? is an independent project, not affiliated with the Senate, the House of Representatives, COMELEC or any
+party. The data is compiled with care from public sources but may contain errors or be out of date. A court case listed
+here is a public record, not a finding of guilt.

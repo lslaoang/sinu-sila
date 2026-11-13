@@ -52,7 +52,7 @@ const PAGE = {home: 'Home', senado: 'Senate list', kamara: 'House list', 'party-
 function lock(msg) {
   app.innerHTML = `<div class="lock"><p class="kick">Sino Sila? · private</p><h1>Visits</h1><form id="f"><label for="k">Dashboard key</label>
     <input id="k" type="password" autocomplete="current-password" required><button class="chip" type="submit">Open</button></form>${msg ? `<p class="err">${esc(msg)}</p>` : ''}
-    <p class="note">The key is in <code>tools/.stats_key</code> on Laurel's Mac. It stays in this browser only.</p></div>`;
+    <p class="note">The key is in <code>tools/.stats_key</code> on the maintainer's computer. It stays in this browser only.</p></div>`;
   document.getElementById('f').onsubmit = e => { e.preventDefault(); key = document.getElementById('k').value.trim(); load(); };
 }
 async function load() {

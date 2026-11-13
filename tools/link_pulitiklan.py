@@ -10,7 +10,7 @@ data (see README). A listed name means Pulitiklan documents this person in that 
 import collections, html, json, re, time, unicodedata, urllib.request
 from datetime import date
 
-UA = {"User-Agent": "ph-politicians/0.1 (contact: [removed])"}
+UA = {"User-Agent": "ph-politicians/0.1 (+https://sinu-sila.com; https://github.com/lslaoang/ph-politicians)"}
 SITEMAP = "https://pulitiklan.com/sitemap.xml"
 SUFFIX = {"jr", "sr", "ii", "iii", "iv"}
 

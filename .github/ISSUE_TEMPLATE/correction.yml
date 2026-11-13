@@ -1,0 +1,36 @@
+name: Correction
+description: Report something wrong or out of date on sinu-sila.com
+title: "Correction: "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the record accurate. Please don't post private information (home addresses, private phone numbers).
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: The link to the page with the error (for example https://sinu-sila.com/#manuel-m-lapid)
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong
+      description: What the page says, and what it should say.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A link to an official record or news report that shows the correct information.
+  - type: dropdown
+    id: who
+    attributes:
+      label: Are you the official or their staff?
+      options:
+        - "No"
+        - "Yes, I am the official"
+        - "Yes, I work for the official"

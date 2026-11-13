@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# Run this YOURSELF as the AWS root/admin user (aws login). It makes the "Report an error" form work without publishing your email:
-# the page posts to a tiny Lambda, and the Lambda emails [removed] through Amazon SES.
+# Run this yourself with an AWS admin profile. It makes the "Report an error" form work without publishing an email address:
+# the page posts to a tiny Lambda, and the Lambda emails the address in $TO through Amazon SES.
+# Usage: TO=you@example.com ./tools/create_contact_form.sh   (the address is kept only in the Lambda settings)
 set -euo pipefail
 REGION=ap-southeast-1
-TO=[removed]
+TO="${TO:?set TO to the address that should receive reports, e.g. TO=you@example.com $0}"
 ORIGIN=https://sinu-sila.com,https://www.sinu-sila.com,https://d3kbf1pju0ogt8.cloudfront.net
 ACCOUNT=$(aws sts get-caller-identity --query Account --output text)
 ROLE=sino-sila-report-role

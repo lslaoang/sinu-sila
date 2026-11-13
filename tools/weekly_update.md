@@ -1,11 +1,11 @@
 # Weekly update runbook (for the scheduled agent)
 
 Runs every Monday 6:00 AM (Asia/Manila) as the scheduled task `sinosila-weekly-update`.
-Repo: `~/dev/ph-politicians`. Live site: https://sinu-sila.com. AWS: always `export AWS_PROFILE=laurel`.
+Repo: `~/dev/ph-politicians`. Live site: https://sinu-sila.com. AWS: use the maintainer's deploy profile (the scheduled task exports `AWS_PROFILE`).
 
-**Publishing rule (decided by Laurel, 2026-11-13):** Senate bills, laws and the House roster go live
+**Publishing rule (decided by the maintainer, 2026-11-13):** Senate bills, laws and the House roster go live
 automatically once every check below passes. **Court cases are never published by this agent.** Case findings go
-to `review/` (git-ignored) for Laurel to check against the sources first. When in doubt, hold a file back
+to `review/` (git-ignored) for the maintainer to check against the sources first. When in doubt, hold a file back
 and say why in the report; a stale page is better than a wrong one.
 
 ## 0. Start clean
@@ -60,7 +60,7 @@ Do **not** edit `data/cases.json`.
 
 ## 5. Publish (only the files that changed)
 ```bash
-export AWS_PROFILE=laurel; B=s3://sino-sila-773994910221
+B=s3://sino-sila-773994910221
 git status --short data assets            # see what changed
 aws s3 cp data/<file>.json $B/data/<file>.json --content-type application/json     # each changed data file
 aws s3 sync assets/photos $B/assets/photos --size-only                              # if photos changed
@@ -76,7 +76,7 @@ Never upload `review/`, `tools/` or anything outside `data/` and `assets/photos/
 No `Co-Authored-By` trailer. Do not push.
 
 ## 7. Report
-Finish with a short summary (this is what Laurel reads):
+Finish with a short summary (this is what the maintainer reads):
 - **Published:** bill count changes, new laws, House roster changes, or "no changes".
 - **Held back:** anything not published and why.
 - **Needs you:** case leads in `review/weekly-<date>.md` (count), names not matched, anything that failed.
