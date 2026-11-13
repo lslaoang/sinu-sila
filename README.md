@@ -72,6 +72,17 @@ aws cloudfront create-invalidation --distribution-id E1QGRO3D7NQZVA --paths "/*"
   Butuan, Cagayan de Oro 2nd, Cavite 2nd, Ilocos Sur 2nd, Santa Rosa) show "no matching result" rather than a guess.
   Re-run only after an election; the data changes once per election.
 
+## Visit counter and dashboard
+
+Privacy-first: no cookies, no IP addresses, no visitor IDs, only daily totals. `index.html` sends one small beacon per
+page to `https://sinu-sila.com/e` (only on sinu-sila.com, never on localhost or `/staging/`). CloudFront routes `/e` and
+`/e/*` to the Lambda `sinosila-stats` (ap-southeast-1, code in `tools/stats_lambda/`), which adds 1 to counters in the
+DynamoDB table `sinosila-stats`: views, visits (first page of a browser-tab session), page, referrer site, country
+(CloudFront-Viewer-Country), device and language. Bots are skipped.
+
+Dashboard: https://sinu-sila.com/stats.html (unlisted, `noindex`). It asks for the key in `tools/.stats_key`
+(git-ignored; also the Lambda's `STATS_KEY` env var) and keeps it in that browser only.
+
 ## Weekly update agent
 
 A scheduled Claude task (`sinosila-weekly-update`, Mondays 6:00 AM, runs while the Claude desktop app is open) follows

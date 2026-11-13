@@ -986,6 +986,13 @@ function route() {
   document.title = o ? clean(o.name) + ' – Sino Sila?' : t('title');
   app.removeAttribute('aria-busy'); scrollTo(0, 0);
   if (o) { const h = app.querySelector('h1'); h?.setAttribute('tabindex', '-1'); h?.focus({preventScroll: true}); }
+  count(o ? 'p:' + o.id : h || 'home');
+}
+/* visit counter: daily totals only (tools/stats_lambda). No cookies, no IDs; "first page of this tab" is a sessionStorage flag. */
+function count(page) {
+  if (!/(^|\.)sinu-sila\.com$/.test(location.hostname) || location.pathname.includes('/staging/') || !navigator.sendBeacon) return;
+  let first = false; try { first = !sessionStorage.getItem('ss-v'); sessionStorage.setItem('ss-v', '1'); } catch {}
+  try { navigator.sendBeacon('/e', JSON.stringify({p: page.slice(0, 60), r: first ? document.referrer : '', n: first ? 1 : 0, l: lang})); } catch {}
 }
 app.onclick = e => {
   const b = e.target.closest('button'); if (!b) return;

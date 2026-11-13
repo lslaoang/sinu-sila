@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Visits · Sino Sila?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{--bg:#f5efe2;--paper:#fffcf5;--ink:#1a1714;--rule:#1a1714;--mute:#5e574b;--line:#ddd3bf;--bar:#0038a8;--r:8px;
+    --serif:"Newsreader",Georgia,serif;--sans:"Public Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
+  @media (prefers-color-scheme:dark){:root{--bg:#13110e;--paper:#1f1b17;--ink:#f4eee3;--rule:#8c8373;--mute:#bcb2a0;--line:#39332b;--bar:#9fbcff;color-scheme:dark}}
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--sans)}
+  .flag{display:flex;height:6px} .flag i{flex:1} .flag i:nth-child(1){background:#0038a8} .flag i:nth-child(2){background:#ce1126} .flag i:nth-child(3){background:#fcd116}
+  .wrap{max-width:68rem;margin:0 auto;padding:0 1rem 3rem}
+  header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.5rem 1rem;padding:1rem 0 .6rem;border-bottom:3px double var(--rule);margin-bottom:1.2rem}
+  .brand{font:700 1.5rem var(--serif);color:var(--ink);text-decoration:underline;text-decoration-color:#fcd116;text-decoration-thickness:.2em;text-underline-offset:.2em}
+  h1{font:600 2rem var(--serif);margin:0} .kick{font:500 .75rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
+  .bar-row{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:0 0 1rem}
+  button,select,input{font:inherit;color:var(--ink)} .chip{border:1.5px solid var(--rule);background:var(--paper);border-radius:99px;padding:.4rem .9rem;cursor:pointer;min-height:40px}
+  .chip[aria-pressed=true]{background:var(--ink);color:var(--bg)} .note{color:var(--mute);font-size:.85rem}
+  .tiles{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));margin:0 0 1.2rem}
+  .tile{background:var(--paper);border:1.5px solid var(--rule);border-radius:var(--r);padding:.8rem 1rem} .tile b{display:block;font:600 2rem/1.1 var(--mono)} .tile span{color:var(--mute);font-size:.85rem}
+  .card{background:var(--paper);border:1.5px solid var(--rule);border-radius:var(--r);padding:1rem 1.1rem;margin:0 0 1rem;min-width:0}
+  .card h2{font:600 1.25rem var(--serif);margin:0 0 .7rem}
+  .chart{position:relative;height:190px;display:flex;align-items:flex-end;gap:2px;border-bottom:1px solid var(--line);margin-top:1.2rem}
+  .chart button{flex:1;height:100%;border:0;background:none;padding:0;display:flex;align-items:flex-end;cursor:default;min-width:0}
+  .chart button i{display:block;width:100%;background:var(--bar);border-radius:4px 4px 0 0;min-height:2px;opacity:.9}
+  .chart button:hover i,.chart button:focus-visible i{opacity:1;outline:2px solid var(--ink);outline-offset:1px}
+  .axis{display:flex;justify-content:space-between;font:500 .75rem var(--mono);color:var(--mute);margin-top:.3rem}
+  .tip{position:absolute;top:-1.6rem;transform:translateX(-50%);background:var(--ink);color:var(--bg);font:600 .78rem var(--mono);padding:.2rem .5rem;border-radius:4px;white-space:nowrap;pointer-events:none}
+  .grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(19rem,1fr))}
+  .rank{list-style:none;margin:0;padding:0} .rank li{display:grid;grid-template-columns:1fr auto;gap:.15rem .8rem;padding:.35rem 0;border-bottom:1px solid var(--line);font-size:.9rem}
+  .rank li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap} .rank li b{font:600 .9rem var(--mono)}
+  .rank li i{grid-column:1/-1;display:block;height:4px;background:var(--bar);border-radius:2px;opacity:.85}
+  .lock{max-width:26rem;margin:4rem auto;background:var(--paper);border:1.5px solid var(--rule);border-radius:var(--r);padding:1.2rem}
+  .lock input{width:100%;padding:.6rem .8rem;border:1.5px solid var(--rule);border-radius:var(--r);background:var(--bg);margin:.5rem 0}
+  details summary{cursor:pointer;font-weight:600;font-size:.85rem;margin-top:.7rem} table{border-collapse:collapse;font-size:.85rem;margin-top:.4rem} td,th{padding:.2rem .8rem .2rem 0;text-align:left;border-bottom:1px solid var(--line)}
+  .err{color:#b00e22;font-weight:600}
+</style>
+<div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="wrap" id="app"></div>
+<script>
+/* Reads the visit counter (tools/stats_lambda) through /e/stats. Totals only: no visitor is identifiable. */
+const app = document.getElementById('app');
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+const fmt = n => (n || 0).toLocaleString('en-PH');
+let key = (() => { try { return localStorage.getItem('ss-stats-key') || ''; } catch { return ''; } })(), days = 30, names = {};
+const country = (() => { try { const d = new Intl.DisplayNames(['en'], {type: 'region'}); return c => c === '??' ? 'Unknown' : d.of(c) || c; } catch { return c => c; } })();
+const PAGE = {home: 'Home', senado: 'Senate list', kamara: 'House list', 'party-list': 'Party-list', explore: 'Explore (data)', marka: 'Report cards'};
+
+function lock(msg) {
+  app.innerHTML = `<div class="lock"><p class="kick">Sino Sila? · private</p><h1>Visits</h1><form id="f"><label for="k">Dashboard key</label>
+    <input id="k" type="password" autocomplete="current-password" required><button class="chip" type="submit">Open</button></form>${msg ? `<p class="err">${esc(msg)}</p>` : ''}
+    <p class="note">The key is in <code>tools/.stats_key</code> on Laurel's Mac. It stays in this browser only.</p></div>`;
+  document.getElementById('f').onsubmit = e => { e.preventDefault(); key = document.getElementById('k').value.trim(); load(); };
+}
+async function load() {
+  if (!key) return lock();
+  app.innerHTML = '<p class="note" style="margin-top:3rem">Loading…</p>';
+  try {
+    const r = await fetch(`/e/stats?days=${days}`, {headers: {'x-stats-key': key}, cache: 'no-store'});
+    if (r.status === 401) { try { localStorage.removeItem('ss-stats-key'); } catch {} return lock('That key did not work.'); }
+    if (!r.ok) throw new Error(r.status);
+    try { localStorage.setItem('ss-stats-key', key); } catch {}
+    render(await r.json());
+  } catch (e) { app.innerHTML = `<p class="err" style="margin-top:3rem">Could not load the numbers (${esc(e.message)}). <button class="chip" onclick="load()">Retry</button></p>`; }
+}
+function sum(rows, prefix) {
+  const m = {}; rows.forEach(d => Object.entries(d).forEach(([k, n]) => { if (k.startsWith(prefix)) m[k.slice(prefix.length)] = (m[k.slice(prefix.length)] || 0) + n; })); return Object.entries(m).sort((a, b) => b[1] - a[1]);
+}
+const rank = (list, label, cap = 10) => { const max = list[0]?.[1] || 1; return list.length ? `<ol class="rank">${list.slice(0, cap).map(([k, n]) => `<li><span title="${esc(label(k))}">${esc(label(k))}</span><b>${fmt(n)}</b><i style="width:${Math.max(2, 100 * n / max)}%"></i></li>`).join('')}</ol>` : '<p class="note">No data yet.</p>'; };
+const pageName = k => k.startsWith('p:') ? (names[k.slice(2)] || k.slice(2)) : PAGE[k] || k;
+function render(d) {
+  const dates = Object.keys(d.days).sort(), rows = dates.map(x => d.days[x]);
+  const tot = k => rows.reduce((a, r) => a + (r[k] || 0), 0), visits = tot('visits'), views = tot('views');
+  const today = d.days[dates[dates.length - 1]] || {}, peak = Math.max(1, ...rows.map(r => r.visits || 0));
+  const pages = sum(rows, 'page#'), people = pages.filter(([k]) => k.startsWith('p:')), sections = pages.filter(([k]) => !k.startsWith('p:'));
+  const day = x => new Date(x + 'T00:00:00').toLocaleDateString('en-PH', {month: 'short', day: 'numeric'});
+  app.innerHTML = `<header><div><a class="brand" href="/">Sino Sila?</a><p class="kick">Visits · private dashboard</p></div><p class="note">Updated ${esc(new Date(d.generated).toLocaleString('en-PH'))}</p></header>
+    <div class="bar-row" role="group" aria-label="Range">${[7, 30, 90].map(n => `<button class="chip" data-d="${n}" aria-pressed="${n === days}">Last ${n} days</button>`).join('')}
+      <button class="chip" id="out" style="margin-left:auto">Lock</button></div>
+    <div class="tiles"><div class="tile"><b>${fmt(visits)}</b><span>visits</span></div><div class="tile"><b>${fmt(views)}</b><span>page views</span></div>
+      <div class="tile"><b>${visits ? (views / visits).toFixed(1) : '–'}</b><span>pages per visit</span></div><div class="tile"><b>${fmt(today.visits)}</b><span>visits today (Manila time)</span></div></div>
+    <section class="card"><h2>Visits per day</h2><div class="chart" id="ch" role="img" aria-label="Visits per day, last ${days} days, peak ${peak}">
+      ${dates.map(x => `<button type="button" data-t="${esc(day(x))}: ${fmt(d.days[x].visits)} visits, ${fmt(d.days[x].views)} views" aria-label="${esc(day(x))}: ${fmt(d.days[x].visits)} visits"><i style="height:${100 * (d.days[x].visits || 0) / peak}%"></i></button>`).join('')}</div>
+      <div class="axis"><span>${esc(day(dates[0]))}</span><span>${esc(day(dates[dates.length - 1]))}</span></div>
+      <details><summary>Show as table</summary><table><tr><th>Day</th><th>Visits</th><th>Views</th></tr>${dates.slice().reverse().map(x => `<tr><td>${esc(day(x))}</td><td>${fmt(d.days[x].visits)}</td><td>${fmt(d.days[x].views)}</td></tr>`).join('')}</table></details></section>
+    <div class="grid">
+      <section class="card"><h2>Most-viewed lawmakers</h2>${rank(people, pageName)}</section>
+      <section class="card"><h2>Sections</h2>${rank(sections, pageName)}</section>
+      <section class="card"><h2>Where visitors came from</h2>${rank(sum(rows, 'ref#'), k => k === 'direct' ? 'Direct or unknown' : k)}</section>
+      <section class="card"><h2>Countries</h2>${rank(sum(rows, 'country#'), country)}</section>
+      <section class="card"><h2>Devices</h2>${rank(sum(rows, 'device#'), k => k[0].toUpperCase() + k.slice(1))}</section>
+      <section class="card"><h2>Language</h2>${rank(sum(rows, 'lang#'), k => k === 'fil' ? 'Filipino' : 'English')}</section></div>
+    <p class="note">Counts only: no cookies, no IP addresses, nothing that identifies a person. A visit is the first page opened in a browser tab; bots are left out. Days roll over at midnight Manila time.</p>`;
+  app.querySelectorAll('[data-d]').forEach(b => b.onclick = () => { days = +b.dataset.d; load(); });
+  document.getElementById('out').onclick = () => { try { localStorage.removeItem('ss-stats-key'); } catch {} key = ''; lock(); };
+  const ch = document.getElementById('ch'); let tip;
+  const show = b => { tip?.remove(); tip = document.createElement('div'); tip.className = 'tip'; tip.textContent = b.dataset.t; ch.appendChild(tip);
+    tip.style.left = Math.min(Math.max(b.offsetLeft + b.offsetWidth / 2, tip.offsetWidth / 2), ch.offsetWidth - tip.offsetWidth / 2) + 'px'; };
+  ch.querySelectorAll('button').forEach(b => { b.onmouseenter = b.onfocus = () => show(b); b.onmouseleave = b.onblur = () => tip?.remove(); });
+}
+Promise.all(['data/officials.json', 'data/house.json'].map(u => fetch(u).then(r => r.json()).catch(() => null))).then(([o, h]) => {
+  [...(o || []), ...((h && h.people) || [])].forEach(p => names[p.id] = p.name.replace(/"[^"]*"\s*/g, ''));
+  key ? load() : lock();
+});
+</script>
