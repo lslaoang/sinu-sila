@@ -1,0 +1,4815 @@
+{
+ "_meta": {
+  "source": "https://dynasties.bettergov.ph/developers",
+  "retrieved": "2026-11-13",
+  "credit": "Leung, Robert R. Open Halalan: The Philippine National and Local Election Dataset. https://robertrleung.github.io/OpenHalalan/",
+  "license": "Derived data CC0 1.0 by BetterGov.ph (Dynasties)",
+  "note": "Vote counts as compiled by Open Halalan. District results are matched to members by name inside the same province or city."
+ },
+ "senate": {
+  "christopher-lawrence-t-go": {
+   "year": 2025,
+   "rank": 1,
+   "of": 66,
+   "votes": 26866683,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "paolo-benigno-aquino-iv": {
+   "year": 2025,
+   "rank": 2,
+   "of": 66,
+   "votes": 20800423,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "ronald-m-dela-rosa": {
+   "year": 2025,
+   "rank": 3,
+   "of": 66,
+   "votes": 20547083,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "erwin-t-tulfo": {
+   "year": 2025,
+   "rank": 4,
+   "of": 66,
+   "votes": 16994791,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "francis-pangilinan": {
+   "year": 2025,
+   "rank": 5,
+   "of": 66,
+   "votes": 15202610,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "rodante-d-marcoleta": {
+   "year": 2025,
+   "rank": 6,
+   "of": 66,
+   "votes": 15051942,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "panfilo-m-lacson": {
+   "year": 2025,
+   "rank": 7,
+   "of": 66,
+   "votes": 14971710,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "vicente-c-sotto-iii": {
+   "year": 2025,
+   "rank": 8,
+   "of": 66,
+   "votes": 14704832,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "pia-s-cayetano": {
+   "year": 2025,
+   "rank": 9,
+   "of": 66,
+   "votes": 14459661,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "camille-a-villar": {
+   "year": 2025,
+   "rank": 10,
+   "of": 66,
+   "votes": 13556225,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "manuel-m-lapid": {
+   "year": 2025,
+   "rank": 11,
+   "of": 66,
+   "votes": 13326442,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "imee-r-marcos": {
+   "year": 2025,
+   "rank": 12,
+   "of": 66,
+   "votes": 13222309,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "robinhood-c-padilla": {
+   "year": 2022,
+   "rank": 1,
+   "of": 64,
+   "votes": 26898213,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "loren-legarda": {
+   "year": 2022,
+   "rank": 2,
+   "of": 64,
+   "votes": 24294394,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "raffy-t-tulfo": {
+   "year": 2022,
+   "rank": 3,
+   "of": 64,
+   "votes": 23431643,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "win-gatchalian": {
+   "year": 2022,
+   "rank": 4,
+   "of": 64,
+   "votes": 20610678,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "francis-g-escudero": {
+   "year": 2022,
+   "rank": 5,
+   "of": 64,
+   "votes": 20274193,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "mark-a-villar": {
+   "year": 2022,
+   "rank": 6,
+   "of": 64,
+   "votes": 19467531,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "alan-peter-s-cayetano": {
+   "year": 2022,
+   "rank": 7,
+   "of": 64,
+   "votes": 19309930,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "juan-miguel-f-zubiri": {
+   "year": 2022,
+   "rank": 8,
+   "of": 64,
+   "votes": 18842136,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "joel-villanueva": {
+   "year": 2022,
+   "rank": 9,
+   "of": 64,
+   "votes": 18488602,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "joseph-victor-g-ejercito": {
+   "year": 2022,
+   "rank": 10,
+   "of": 64,
+   "votes": 15860576,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "risa-hontiveros": {
+   "year": 2022,
+   "rank": 11,
+   "of": 64,
+   "votes": 15430320,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "jinggoy-ejercito-estrada": {
+   "year": 2022,
+   "rank": 12,
+   "of": 64,
+   "votes": 15139728,
+   "seats": 12,
+   "url": "https://dynasties.bettergov.ph/national"
+  }
+ },
+ "house": {
+  "joseph-bernos": {
+   "year": 2025,
+   "contest": "2025-abra-_-lone-rep",
+   "votes": 140446,
+   "total": 165039,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 117138,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Mila Acosta Valera",
+    "party": "ASENSO",
+    "votes": 23308
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "dale-corvera": {
+   "year": 2025,
+   "contest": "2025-agusan-del-norte-_-lone-rep",
+   "votes": 177431,
+   "total": 177431,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "alfel-bascug": {
+   "year": 2025,
+   "contest": "2025-agusan-del-sur-_-first-rep",
+   "votes": 110340,
+   "total": 110340,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NUP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "eddiebong-plaza": {
+   "year": 2025,
+   "contest": "2025-agusan-del-sur-_-second-rep",
+   "votes": 130965,
+   "total": 130965,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NUP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jess-marquez": {
+   "year": 2025,
+   "contest": "2025-aklan-_-first-rep",
+   "votes": 88054,
+   "total": 163340,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 12768,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Rodell Romo Ramos",
+    "party": "AKSYON",
+    "votes": 75286
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "florencio-miraflores": {
+   "year": 2025,
+   "contest": "2025-aklan-_-second-rep",
+   "votes": 88795,
+   "total": 174733,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 3542,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Nonong Haresco",
+    "party": "NP",
+    "votes": 85253
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "krisel-lagman": {
+   "year": 2025,
+   "contest": "2025-albay-_-first-rep",
+   "votes": 128871,
+   "total": 236527,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 21215,
+   "uncontested": false,
+   "party": "LP",
+   "runner_up": {
+    "name": "Jil Bongalon",
+    "party": "LAKAS",
+    "votes": 107656
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "caloy-loria": {
+   "year": 2025,
+   "contest": "2025-albay-_-second-rep",
+   "votes": 143436,
+   "total": 283562,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 3310,
+   "uncontested": false,
+   "party": "PDPLBN",
+   "runner_up": {
+    "name": "Kito Co",
+    "party": "LAKAS",
+    "votes": 140126
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "adrian-salceda": {
+   "year": 2025,
+   "contest": "2025-albay-_-third-rep",
+   "votes": 144693,
+   "total": 284001,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 5385,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Fernando Cabredo",
+    "party": "NUP",
+    "votes": 139308
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "antonio-legarda-jr": {
+   "year": 2025,
+   "contest": "2025-antique-_-lone-rep",
+   "votes": 210491,
+   "total": 332386,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 90288,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Gov Dodod Cadiao",
+    "party": "NUP",
+    "votes": 120203
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "eleanor-begtang": {
+   "year": 2025,
+   "contest": "2025-apayao-_-lone-rep",
+   "votes": 58041,
+   "total": 58041,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NPC",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "rommel-t-angara": {
+   "year": 2025,
+   "contest": "2025-aurora-_-lone-rep",
+   "votes": 102615,
+   "total": 102615,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LDP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "yusop-alano": {
+   "year": 2025,
+   "contest": "2025-basilan-_-lone-rep",
+   "votes": 131501,
+   "total": 232707,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 30295,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Hanie Ain Bud",
+    "party": "LP",
+    "votes": 101206
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "antonino-roman-iii": {
+   "year": 2025,
+   "contest": "2025-bataan-_-first-rep",
+   "votes": 114677,
+   "total": 114677,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "albert-garcia": {
+   "year": 2025,
+   "contest": "2025-bataan-_-second-rep",
+   "votes": 149614,
+   "total": 149614,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NUP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "maria-angela-garcia": {
+   "year": 2025,
+   "contest": "2025-bataan-_-third-rep",
+   "votes": 144517,
+   "total": 165144,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 123890,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Ernesto Manalo",
+    "party": "IND",
+    "votes": 20627
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "beverley-dimacuha": {
+   "year": 2025,
+   "contest": "2025-batangas-_-fifth-rep",
+   "votes": 156049,
+   "total": 178747,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 133351,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Carlito Bisa",
+    "party": "MKBYN",
+    "votes": 22698
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "leandro-leviste": {
+   "year": 2025,
+   "contest": "2025-batangas-_-first-rep",
+   "votes": 268764,
+   "total": 360352,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 177176,
+   "uncontested": false,
+   "party": "IND",
+   "runner_up": {
+    "name": "Eric Buhain",
+    "party": "NP",
+    "votes": 91588
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "caloy-bolilia": {
+   "year": 2025,
+   "contest": "2025-batangas-_-fourth-rep",
+   "votes": 142884,
+   "total": 274047,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 16248,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Jp Gozos",
+    "party": "IND",
+    "votes": 126636
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "gerville-luistro": {
+   "year": 2025,
+   "contest": "2025-batangas-_-second-rep",
+   "votes": 109478,
+   "total": 176061,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 42895,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Ranie Abu",
+    "party": "NP",
+    "votes": 66583
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ryan-recto": {
+   "year": 2025,
+   "contest": "2025-batangas-_-sixth-rep",
+   "votes": 92823,
+   "total": 202069,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 19847,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Bernadette Sabili",
+    "party": "IND",
+    "votes": 72976
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "king-collantes": {
+   "year": 2025,
+   "contest": "2025-batangas-_-third-rep",
+   "votes": 244340,
+   "total": 398023,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 100589,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Mark Leviste",
+    "party": "IND",
+    "votes": 143751
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "eric-yap": {
+   "year": 2025,
+   "contest": "2025-benguet-_-lone-rep",
+   "votes": 144093,
+   "total": 207541,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 81722,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Tagel Felipe",
+    "party": "PFP",
+    "votes": 62371
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "mauricio-domogan": {
+   "year": 2025,
+   "contest": "2025-benguet-baguio-lone-rep",
+   "votes": 45767,
+   "total": 128267,
+   "rank": 1,
+   "candidates": 7,
+   "seats": 1,
+   "margin": 13077,
+   "uncontested": false,
+   "party": "IND",
+   "runner_up": {
+    "name": "Isabelo Bastian Cosalan Jr",
+    "party": "PFP",
+    "votes": 32690
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "gerardo-espina-jr": {
+   "year": 2025,
+   "contest": "2025-biliran-_-lone-rep",
+   "votes": 76884,
+   "total": 76884,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "john-geesnell-yap": {
+   "year": 2025,
+   "contest": "2025-bohol-_-first-rep",
+   "votes": 130661,
+   "total": 278973,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 25474,
+   "uncontested": false,
+   "party": "LDP",
+   "runner_up": {
+    "name": "Edgardo M. Chatto",
+    "party": "NUP",
+    "votes": 105187
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "vanvan-aumentado": {
+   "year": 2025,
+   "contest": "2025-bohol-_-second-rep",
+   "votes": 187719,
+   "total": 238027,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 137411,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Modesto Membreve",
+    "party": "LP",
+    "votes": 50308
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "alexie-tutor": {
+   "year": 2025,
+   "contest": "2025-bohol-_-third-rep",
+   "votes": 184280,
+   "total": 255129,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 113431,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Makdo Castañares",
+    "party": "LP",
+    "votes": 70849
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jose-manuel-alba": {
+   "year": 2025,
+   "contest": "2025-bukidnon-_-first-rep",
+   "votes": 101011,
+   "total": 182818,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 28192,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Jose Earl Navarro",
+    "party": "PFP",
+    "votes": 72819
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "laarni-roque": {
+   "year": 2025,
+   "contest": "2025-bukidnon-_-fourth-rep",
+   "votes": 76663,
+   "total": 146793,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 10723,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Dan Dangallo",
+    "party": "IND",
+    "votes": 65940
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jonathan-keith-flores": {
+   "year": 2025,
+   "contest": "2025-bukidnon-_-second-rep",
+   "votes": 158115,
+   "total": 189428,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 126802,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Bernardo Mendoza",
+    "party": "IND",
+    "votes": 31313
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "audrey-zubiri": {
+   "year": 2025,
+   "contest": "2025-bukidnon-_-third-rep",
+   "votes": 225970,
+   "total": 240712,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 212983,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Jay Longakit Areja",
+    "party": "AKSYON",
+    "votes": 12987
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "agay-cruz": {
+   "year": 2025,
+   "contest": "2025-bulacan-_-fifth-rep",
+   "votes": 188973,
+   "total": 222024,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 155922,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Vic Fernando",
+    "party": "IND",
+    "votes": 33051
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "danny-domingo": {
+   "year": 2025,
+   "contest": "2025-bulacan-_-first-rep",
+   "votes": 283905,
+   "total": 352693,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 219152,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Allan Perlas Andan",
+    "party": "AKSYON",
+    "votes": 64753
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "linabelle-villarica": {
+   "year": 2025,
+   "contest": "2025-bulacan-_-fourth-rep",
+   "votes": 155351,
+   "total": 219917,
+   "rank": 1,
+   "candidates": 6,
+   "seats": 1,
+   "margin": 112339,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Andre Favian Dayrit Santos",
+    "party": "NUP",
+    "votes": 43012
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "tina-pancho": {
+   "year": 2025,
+   "contest": "2025-bulacan-_-second-rep",
+   "votes": 167236,
+   "total": 177431,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 157041,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Jimmy Villafuerte",
+    "party": "IND",
+    "votes": 10195
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "salvador-pleyto": {
+   "year": 2025,
+   "contest": "2025-bulacan-_-sixth-rep",
+   "votes": 164503,
+   "total": 164503,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "cholo-violago": {
+   "year": 2025,
+   "contest": "2025-bulacan-_-third-rep",
+   "votes": 146672,
+   "total": 242380,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 52041,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Kuya Vic Silverio",
+    "party": "NUP",
+    "votes": 94631
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "arthur-robes": {
+   "year": 2025,
+   "contest": "2025-bulacan-san-jose-del-monte-lone-rep",
+   "votes": 170741,
+   "total": 229586,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 111896,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Dan Florentino",
+    "party": "LP",
+    "votes": 58845
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ramon-nolasco": {
+   "year": 2025,
+   "contest": "2025-cagayan-_-first-rep",
+   "votes": 127434,
+   "total": 218690,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 36178,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Florante Corpuz Pascual",
+    "party": "NP",
+    "votes": 91256
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "baby-alfonso": {
+   "year": 2025,
+   "contest": "2025-cagayan-_-second-rep",
+   "votes": 100692,
+   "total": 171601,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 36765,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Harry Leon Florida",
+    "party": "NP",
+    "votes": 63927
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "joseph-lara": {
+   "year": 2025,
+   "contest": "2025-cagayan-_-third-rep",
+   "votes": 144276,
+   "total": 238784,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 49768,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Randy Ting",
+    "party": "NUP",
+    "votes": 94508
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "josefina-tallado": {
+   "year": 2025,
+   "contest": "2025-camarines-norte-_-first-rep",
+   "votes": 79781,
+   "total": 158619,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 943,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Dok Cathy Pfp Barcelona-Reyes",
+    "party": "",
+    "votes": 78838
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "rosemarie-panotes": {
+   "year": 2025,
+   "contest": "2025-camarines-norte-_-second-rep",
+   "votes": 122393,
+   "total": 158460,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 88565,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Concon Panotes",
+    "party": "NPC",
+    "votes": 33828
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "miguel-luis-villafuerte": {
+   "year": 2025,
+   "contest": "2025-camarines-sur-_-fifth-rep",
+   "votes": 192182,
+   "total": 245032,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 139332,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Phil Fortuno",
+    "party": "NPC",
+    "votes": 52850
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "hori-horibata": {
+   "year": 2025,
+   "contest": "2025-camarines-sur-_-first-rep",
+   "votes": 66522,
+   "total": 116054,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 16990,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Thaddy Abengoza Ramos",
+    "party": "NPC",
+    "votes": 49532
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "arnulf-bryan-fuentebella": {
+   "year": 2025,
+   "contest": "2025-camarines-sur-_-fourth-rep",
+   "votes": 144731,
+   "total": 257960,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 31502,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Marco Gabriel Gumabao",
+    "party": "NUP",
+    "votes": 113229
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "luigi-villafuerte": {
+   "year": 2025,
+   "contest": "2025-camarines-sur-_-second-rep",
+   "votes": 107445,
+   "total": 168614,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 46276,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Fermin Mulleda Mabulo",
+    "party": "NPC",
+    "votes": 61169
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "nelson-legacion": {
+   "year": 2025,
+   "contest": "2025-camarines-sur-_-third-rep",
+   "votes": 112088,
+   "total": 258100,
+   "rank": 1,
+   "candidates": 6,
+   "seats": 1,
+   "margin": 3644,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Kuya Nonoy Magtuto",
+    "party": "NUP",
+    "votes": 108444
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jurdin-jesus-romualdo": {
+   "year": 2025,
+   "contest": "2025-camiguin-_-lone-rep",
+   "votes": 39864,
+   "total": 59581,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 20147,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Papa Paul Rodriguez",
+    "party": "IND",
+    "votes": 19717
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "howard-guintu": {
+   "year": 2025,
+   "contest": "2025-capiz-_-first-rep",
+   "votes": 131545,
+   "total": 240794,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 22296,
+   "uncontested": false,
+   "party": "IND",
+   "runner_up": {
+    "name": "Paolo Roxas",
+    "party": "1CAPIZ",
+    "votes": 109249
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jane-castro": {
+   "year": 2025,
+   "contest": "2025-capiz-_-second-rep",
+   "votes": 157199,
+   "total": 157199,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "eulogio-rodriguez": {
+   "year": 2025,
+   "contest": "2025-catanduanes-_-lone-rep",
+   "votes": 61575,
+   "total": 166143,
+   "rank": 1,
+   "candidates": 5,
+   "seats": 1,
+   "margin": 977,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Sammy Villanueva Laynes",
+    "party": "LAKAS",
+    "votes": 60598
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "aniela-tolentino": {
+   "year": 2025,
+   "contest": "2025-cavite-_-eighth-rep",
+   "votes": 167163,
+   "total": 218237,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 121765,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Irene De Padua Bencito",
+    "party": "AKSYON",
+    "votes": 45398
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "roy-loyola": {
+   "year": 2025,
+   "contest": "2025-cavite-_-fifth-rep",
+   "votes": 149622,
+   "total": 245268,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 53976,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Julie Tolentino",
+    "party": "IND",
+    "votes": 95646
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jolo-revilla": {
+   "year": 2025,
+   "contest": "2025-cavite-_-second-rep",
+   "votes": 172694,
+   "total": 172694,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jenny-barzaga": {
+   "year": 2025,
+   "contest": "2025-cavite-_-fourth-rep",
+   "votes": 165942,
+   "total": 329432,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 15626,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Jess Frani",
+    "party": "IND",
+    "votes": 150316
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "crispin-diego-remulla": {
+   "year": 2025,
+   "contest": "2025-cavite-_-seventh-rep",
+   "votes": 190499,
+   "total": 235535,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 162994,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Michael Angelo Santos",
+    "party": "IND",
+    "votes": 27505
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "antonio-ferrer": {
+   "year": 2025,
+   "contest": "2025-cavite-_-sixth-rep",
+   "votes": 121284,
+   "total": 121284,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NUP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "adrian-jay-advincula": {
+   "year": 2025,
+   "contest": "2025-cavite-_-third-rep",
+   "votes": 98072,
+   "total": 184688,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 19156,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Emmanuel Leonardo Maliksi",
+    "party": "AKSYON",
+    "votes": 78916
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "duke-frasco": {
+   "year": 2025,
+   "contest": "2025-cebu-_-fifth-rep",
+   "votes": 217303,
+   "total": 350405,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 84201,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Mix Durano",
+    "party": "IND",
+    "votes": 133102
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "rhea-gullas": {
+   "year": 2025,
+   "contest": "2025-cebu-_-first-rep",
+   "votes": 282814,
+   "total": 282814,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "sun-shimura": {
+   "year": 2025,
+   "contest": "2025-cebu-_-fourth-rep",
+   "votes": 149336,
+   "total": 284147,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 17034,
+   "uncontested": false,
+   "party": "PMP",
+   "runner_up": {
+    "name": "Janice Salimbangon",
+    "party": "NUP",
+    "votes": 132302
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "edsel-galeos": {
+   "year": 2025,
+   "contest": "2025-cebu-_-second-rep",
+   "votes": 91984,
+   "total": 152095,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 31873,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Junjun Davide",
+    "party": "IND",
+    "votes": 60111
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "patricia-calderon": {
+   "year": 2025,
+   "contest": "2025-cebu-_-seventh-rep",
+   "votes": 74936,
+   "total": 125490,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 31211,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Maria Fema Duterte",
+    "party": "PDPLBN",
+    "votes": 43725
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "daphne-lagon": {
+   "year": 2025,
+   "contest": "2025-cebu-_-sixth-rep",
+   "votes": 104768,
+   "total": 104768,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "karen-flores-garcia": {
+   "year": 2025,
+   "contest": "2025-cebu-_-third-rep",
+   "votes": 155730,
+   "total": 155730,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NUP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "rachel-del-mar": {
+   "year": 2025,
+   "contest": "2025-cebu-cebu-first-rep",
+   "votes": 105581,
+   "total": 249825,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 23876,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Franklyn-Bopk Ong",
+    "party": "LDP",
+    "votes": 81705
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "eduardo-rama-jr": {
+   "year": 2025,
+   "contest": "2025-cebu-cebu-second-rep",
+   "votes": 181055,
+   "total": 312778,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 49332,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Bebot Bg-Bopk Abellanosa",
+    "party": "IND",
+    "votes": 131723
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "junard-chan": {
+   "year": 2025,
+   "contest": "2025-cebu-lapu-lapu-lone-rep",
+   "votes": 160447,
+   "total": 222303,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 98591,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Ryan Yuson",
+    "party": "PDPLBN",
+    "votes": 61856
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "emmarie-dizon": {
+   "year": 2025,
+   "contest": "2025-cebu-mandaue-lone-rep",
+   "votes": 117107,
+   "total": 196655,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 37559,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Regal Oliva",
+    "party": "AKSYON",
+    "votes": 79548
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "edwin-cruzado": {
+   "year": 2025,
+   "contest": "2025-cotabato-_-first-rep",
+   "votes": 98210,
+   "total": 192889,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 3531,
+   "uncontested": false,
+   "party": "PMP",
+   "runner_up": {
+    "name": "Joel Sacdalan",
+    "party": "NPC",
+    "votes": 94679
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "rudy-caoagdan": {
+   "year": 2025,
+   "contest": "2025-cotabato-_-second-rep",
+   "votes": 195870,
+   "total": 206744,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 184996,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Greg Andolana",
+    "party": "IND",
+    "votes": 10874
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "samantha-santos": {
+   "year": 2025,
+   "contest": "2025-cotabato-_-third-rep",
+   "votes": 169867,
+   "total": 169867,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "maricar-zamora": {
+   "year": 2025,
+   "contest": "2025-davao-de-oro-_-first-rep",
+   "votes": 134782,
+   "total": 200708,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 86794,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Franco Tito",
+    "party": "IND",
+    "votes": 47988
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jhong-ceniza": {
+   "year": 2025,
+   "contest": "2025-davao-de-oro-_-second-rep",
+   "votes": 148478,
+   "total": 263294,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 33662,
+   "uncontested": false,
+   "party": "IND",
+   "runner_up": {
+    "name": "Butchoy Taojo",
+    "party": "PFP",
+    "votes": 114816
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "de-carlo-uy": {
+   "year": 2025,
+   "contest": "2025-davao-del-norte-_-first-rep",
+   "votes": 147057,
+   "total": 263682,
+   "rank": 1,
+   "candidates": 5,
+   "seats": 1,
+   "margin": 49538,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Nickel Suaybaguio",
+    "party": "PFP",
+    "votes": 97519
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jose-manuel-lagdameo": {
+   "year": 2025,
+   "contest": "2025-davao-del-norte-_-second-rep",
+   "votes": 154306,
+   "total": 266526,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 82752,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Rico Peligro",
+    "party": "IND",
+    "votes": 71554
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "john-tracy-cagas": {
+   "year": 2025,
+   "contest": "2025-davao-del-sur-_-lone-rep",
+   "votes": 193123,
+   "total": 273512,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 112734,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Jun Blanco Malaza",
+    "party": "IND",
+    "votes": 80389
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "paolo-duterte": {
+   "year": 2025,
+   "contest": "2025-davao-del-sur-davao-first-rep",
+   "votes": 203557,
+   "total": 258474,
+   "rank": 1,
+   "candidates": 5,
+   "seats": 1,
+   "margin": 154371,
+   "uncontested": false,
+   "party": "HTL",
+   "runner_up": {
+    "name": "Migs Nograles",
+    "party": "IND",
+    "votes": 49186
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "omar-duterte": {
+   "year": 2025,
+   "contest": "2025-davao-del-sur-davao-second-rep",
+   "votes": 160432,
+   "total": 252483,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 70276,
+   "uncontested": false,
+   "party": "HTL",
+   "runner_up": {
+    "name": "Javi Garcia Campos Iii",
+    "party": "PFP",
+    "votes": 90156
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "isidro-ungab": {
+   "year": 2025,
+   "contest": "2025-davao-del-sur-davao-third-rep",
+   "votes": 178721,
+   "total": 230396,
+   "rank": 1,
+   "candidates": 5,
+   "seats": 1,
+   "margin": 148034,
+   "uncontested": false,
+   "party": "HTL",
+   "runner_up": {
+    "name": "Nonoy Echavez Al-Ag",
+    "party": "LAKAS",
+    "votes": 30687
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "claude-bautista": {
+   "year": 2025,
+   "contest": "2025-davao-occidental-_-lone-rep",
+   "votes": 112722,
+   "total": 112722,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NPC",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "nelson-dayanghirang-jr": {
+   "year": 2025,
+   "contest": "2025-davao-oriental-_-first-rep",
+   "votes": 89269,
+   "total": 144693,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 33845,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Pepot Velasco Lara",
+    "party": "PFP",
+    "votes": 55424
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "cheeno-almario": {
+   "year": 2025,
+   "contest": "2025-davao-oriental-_-second-rep",
+   "votes": 128454,
+   "total": 210812,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 46096,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Sito Rabat",
+    "party": "PFP",
+    "votes": 82358
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "kaka-bag-ao": {
+   "year": 2025,
+   "contest": "2025-dinagat-islands-_-lone-rep",
+   "votes": 36958,
+   "total": 67305,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 6611,
+   "uncontested": false,
+   "party": "LP",
+   "runner_up": {
+    "name": "Alan Uno Ecleo",
+    "party": "LAKAS",
+    "votes": 30347
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "sheen-gonzales": {
+   "year": 2025,
+   "contest": "2025-eastern-samar-_-lone-rep",
+   "votes": 180393,
+   "total": 294652,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 71615,
+   "uncontested": false,
+   "party": "IND",
+   "runner_up": {
+    "name": "Maria Fe Romerica Abunda",
+    "party": "LAKAS",
+    "votes": 108778
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jc-rahman-nava": {
+   "year": 2025,
+   "contest": "2025-guimaras-_-lone-rep",
+   "votes": 91194,
+   "total": 101499,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 80889,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Vicente Etik De Asis",
+    "party": "IND",
+    "votes": 10305
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "solomon-chungalao": {
+   "year": 2025,
+   "contest": "2025-ifugao-_-lone-rep",
+   "votes": 63771,
+   "total": 116585,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 11457,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Francis Cuyop",
+    "party": "PFP",
+    "votes": 52314
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "sandro-marcos": {
+   "year": 2025,
+   "contest": "2025-ilocos-norte-_-first-rep",
+   "votes": 169880,
+   "total": 169880,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "PFP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "angelo-barba": {
+   "year": 2025,
+   "contest": "2025-ilocos-norte-_-second-rep",
+   "votes": 137658,
+   "total": 137658,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ronald-singson": {
+   "year": 2025,
+   "contest": "2025-ilocos-sur-_-second-rep",
+   "votes": 163262,
+   "total": 239443,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 87081,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Roque Supnet Verzosa Jr",
+    "party": "IND",
+    "votes": 76181
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "binky-april-tupas": {
+   "year": 2025,
+   "contest": "2025-iloilo-_-fifth-rep",
+   "votes": 145283,
+   "total": 258596,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 31970,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Niel Junjun Tupas",
+    "party": "NPC",
+    "votes": 113313
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "janette-garin": {
+   "year": 2025,
+   "contest": "2025-iloilo-_-first-rep",
+   "votes": 154031,
+   "total": 177860,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 134102,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Victor Tababa Tabaquirao",
+    "party": "PDPLBN",
+    "votes": 19929
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ferjenel-biron": {
+   "year": 2025,
+   "contest": "2025-iloilo-_-fourth-rep",
+   "votes": 139202,
+   "total": 218438,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 59966,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Major Sustento",
+    "party": "RP",
+    "votes": 79236
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "kathryn-joyce-gorriceta": {
+   "year": 2025,
+   "contest": "2025-iloilo-_-second-rep",
+   "votes": 143184,
+   "total": 143184,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "lorenz-defensor": {
+   "year": 2025,
+   "contest": "2025-iloilo-_-third-rep",
+   "votes": 194791,
+   "total": 197470,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 192112,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Thelma Langusta",
+    "party": "IND",
+    "votes": 2679
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "julienne-baronda": {
+   "year": 2025,
+   "contest": "2025-iloilo-iloilo-lone-rep",
+   "votes": 178056,
+   "total": 227909,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 133143,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Mel Carreon",
+    "party": "IND",
+    "votes": 44913
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "mike-dy-iii": {
+   "year": 2025,
+   "contest": "2025-isabela-_-fifth-rep",
+   "votes": 98151,
+   "total": 98151,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "tonypet-albano": {
+   "year": 2025,
+   "contest": "2025-isabela-_-first-rep",
+   "votes": 172333,
+   "total": 172333,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "joseph-tan": {
+   "year": 2025,
+   "contest": "2025-isabela-_-fourth-rep",
+   "votes": 112993,
+   "total": 153944,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 73085,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Gigi Aggabao",
+    "party": "NPC",
+    "votes": 39908
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ed-christopher-go": {
+   "year": 2025,
+   "contest": "2025-isabela-_-second-rep",
+   "votes": 90186,
+   "total": 90186,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "bojie-dy": {
+   "year": 2025,
+   "contest": "2025-isabela-_-sixth-rep",
+   "votes": 129097,
+   "total": 129097,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "PFP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ian-paul-dy": {
+   "year": 2025,
+   "contest": "2025-isabela-_-third-rep",
+   "votes": 118333,
+   "total": 118333,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "caroline-agyao": {
+   "year": 2025,
+   "contest": "2025-kalinga-_-lone-rep",
+   "votes": 60419,
+   "total": 137393,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 20731,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Steve Ludan",
+    "party": "NPC",
+    "votes": 39688
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "paolo-ortega": {
+   "year": 2025,
+   "contest": "2025-la-union-_-first-rep",
+   "votes": 143823,
+   "total": 195821,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 95403,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Joy Ortega",
+    "party": "NP",
+    "votes": 48420
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "dante-garcia": {
+   "year": 2025,
+   "contest": "2025-la-union-_-second-rep",
+   "votes": 212781,
+   "total": 261763,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 164904,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Pacoy Ortega",
+    "party": "NPC",
+    "votes": 47877
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ann-matibag": {
+   "year": 2025,
+   "contest": "2025-laguna-_-first-rep",
+   "votes": 111214,
+   "total": 111214,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "benjamin-agarao-jr": {
+   "year": 2025,
+   "contest": "2025-laguna-_-fourth-rep",
+   "votes": 150553,
+   "total": 300770,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 336,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Tony Maraña Carolino",
+    "party": "NUP",
+    "votes": 150217
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ramil-hernandez": {
+   "year": 2025,
+   "contest": "2025-laguna-_-second-rep",
+   "votes": 50815,
+   "total": 95229,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 6401,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Dondon Richard Hain",
+    "party": "NUP",
+    "votes": 44414
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "loreto-amante": {
+   "year": 2025,
+   "contest": "2025-laguna-_-third-rep",
+   "votes": 238140,
+   "total": 275673,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 209410,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Empelight Empemano",
+    "party": "RP",
+    "votes": 28730
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "arman-dimaguila": {
+   "year": 2025,
+   "contest": "2025-laguna-binan-lone-rep",
+   "votes": 102049,
+   "total": 162971,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 41127,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Pareng Mike Yatco Yatco",
+    "party": "PFP",
+    "votes": 60922
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "cha-hernandez": {
+   "year": 2025,
+   "contest": "2025-laguna-calamba-lone-rep",
+   "votes": 167282,
+   "total": 251857,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 127989,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Jun Chipeco",
+    "party": "NP",
+    "votes": 39293
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "imelda-dimaporo": {
+   "year": 2025,
+   "contest": "2025-lanao-del-norte-_-first-rep",
+   "votes": 111639,
+   "total": 128950,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 94328,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Joe Abbas",
+    "party": "UNA",
+    "votes": 17311
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "aminah-dimaporo": {
+   "year": 2025,
+   "contest": "2025-lanao-del-norte-_-second-rep",
+   "votes": 142181,
+   "total": 159568,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 124794,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Amer Nagamura Sr. Moner",
+    "party": "UNA",
+    "votes": 17387
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "celso-regencia": {
+   "year": 2025,
+   "contest": "2025-lanao-del-norte-iligan-lone-rep",
+   "votes": 74818,
+   "total": 151652,
+   "rank": 1,
+   "candidates": 5,
+   "seats": 1,
+   "margin": 15923,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Oskie Badelles",
+    "party": "NP",
+    "votes": 58895
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "zia-alonto-adiong": {
+   "year": 2025,
+   "contest": "2025-lanao-del-sur-_-first-rep",
+   "votes": 200787,
+   "total": 282152,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 126332,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Abofarhan Hadjiomar",
+    "party": "UBJP",
+    "votes": 74455
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "yasser-balindong": {
+   "year": 2025,
+   "contest": "2025-lanao-del-sur-_-second-rep",
+   "votes": 156000,
+   "total": 194227,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 117773,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Rehan Lao",
+    "party": "UBJP",
+    "votes": 38227
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "carl-cari": {
+   "year": 2025,
+   "contest": "2025-leyte-_-fifth-rep",
+   "votes": 154025,
+   "total": 202831,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 105219,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Levi Baligod",
+    "party": "IND",
+    "votes": 48806
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "martin-romualdez": {
+   "year": 2025,
+   "contest": "2025-leyte-_-first-rep",
+   "votes": 177486,
+   "total": 177486,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "richard-gomez": {
+   "year": 2025,
+   "contest": "2025-leyte-_-fourth-rep",
+   "votes": 172483,
+   "total": 302898,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 42068,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Chinggay Veloso",
+    "party": "NUP",
+    "votes": 130415
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "lolita-javier": {
+   "year": 2025,
+   "contest": "2025-leyte-_-second-rep",
+   "votes": 177875,
+   "total": 222262,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 133488,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Abet Hidalgo",
+    "party": "IND",
+    "votes": 44387
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "anna-veloso-tuazon": {
+   "year": 2025,
+   "contest": "2025-leyte-_-third-rep",
+   "votes": 57303,
+   "total": 107164,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 7442,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Wingwing Veloso",
+    "party": "PFP",
+    "votes": 49861
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "dimple-mastura": {
+   "year": 2025,
+   "contest": "2025-maguindanao-del-norte-_-lone-rep",
+   "votes": 231745,
+   "total": 351256,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 114482,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Sandra Sema",
+    "party": "UBJP",
+    "votes": 117263
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "reynaldo-salvacion": {
+   "year": 2025,
+   "contest": "2025-marinduque-_-lone-rep",
+   "votes": 73677,
+   "total": 130204,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 17150,
+   "uncontested": false,
+   "party": "IND",
+   "runner_up": {
+    "name": "Presby Velasco",
+    "party": "PFP",
+    "votes": 56527
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "antonio-kho": {
+   "year": 2025,
+   "contest": "2025-masbate-_-first-rep",
+   "votes": 70214,
+   "total": 70214,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "elisa-olga-kho": {
+   "year": 2025,
+   "contest": "2025-masbate-_-second-rep",
+   "votes": 141264,
+   "total": 196814,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 87668,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Noel Tuason",
+    "party": "LP",
+    "votes": 53596
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "wilton-kho": {
+   "year": 2025,
+   "contest": "2025-masbate-_-third-rep",
+   "votes": 127161,
+   "total": 142597,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 111725,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Ricar Nueva Vasquez",
+    "party": "LP",
+    "votes": 15436
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jason-almonte": {
+   "year": 2025,
+   "contest": "2025-misamis-occidental-_-first-rep",
+   "votes": 122329,
+   "total": 150871,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 93787,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Roy Yap Jr",
+    "party": "NUP",
+    "votes": 28542
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ando-oaminal": {
+   "year": 2025,
+   "contest": "2025-misamis-occidental-_-second-rep",
+   "votes": 176532,
+   "total": 189116,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 163948,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Rudy Luna",
+    "party": "NUP",
+    "votes": 12584
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "karen-lagbas": {
+   "year": 2025,
+   "contest": "2025-misamis-oriental-_-first-rep",
+   "votes": 140549,
+   "total": 253307,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 27791,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Christian Unabia",
+    "party": "LAKAS",
+    "votes": 112758
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "yevgeny-emano": {
+   "year": 2025,
+   "contest": "2025-misamis-oriental-_-second-rep",
+   "votes": 241177,
+   "total": 266785,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 215569,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Manuel Po",
+    "party": "IND",
+    "votes": 25608
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "lordan-suan": {
+   "year": 2025,
+   "contest": "2025-misamis-oriental-cagayan-de-oro-first-rep",
+   "votes": 88526,
+   "total": 173625,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 3427,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Kikang Kapkik Uy",
+    "party": "AKSYON",
+    "votes": 85099
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "maximo-dalog-jr": {
+   "year": 2025,
+   "contest": "2025-mountain-province-_-lone-rep",
+   "votes": 85006,
+   "total": 85006,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "irwin-tieng": {
+   "year": 2025,
+   "contest": "2025-ncr-first-district-manila-fifth-rep",
+   "votes": 87003,
+   "total": 167067,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 6939,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Amado Bagatsing",
+    "party": "AKSYON",
+    "votes": 80064
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ernix-dionisio": {
+   "year": 2025,
+   "contest": "2025-ncr-first-district-manila-first-rep",
+   "votes": 109838,
+   "total": 214740,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 22655,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Joseph Lumbad",
+    "party": "FRPAMM",
+    "votes": 87183
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "giselle-lazaro-maceda": {
+   "year": 2025,
+   "contest": "2025-ncr-first-district-manila-fourth-rep",
+   "votes": 54446,
+   "total": 130405,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 18795,
+   "uncontested": false,
+   "party": "ASENSO",
+   "runner_up": {
+    "name": "Jtv Tagle Villanueva",
+    "party": "AKSYON",
+    "votes": 35651
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "rolan-valeriano": {
+   "year": 2025,
+   "contest": "2025-ncr-first-district-manila-second-rep",
+   "votes": 59865,
+   "total": 113515,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 6215,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Carlo Paulino Lopez",
+    "party": "NP",
+    "votes": 53650
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "joel-chua": {
+   "year": 2025,
+   "contest": "2025-ncr-first-district-manila-third-rep",
+   "votes": 55007,
+   "total": 115015,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 3724,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Apple Cruz Nieto",
+    "party": "AKSYON",
+    "votes": 51283
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "mark-anthony-santos": {
+   "year": 2025,
+   "contest": "2025-ncr-fourth-district-las-pinas-lone-rep",
+   "votes": 109220,
+   "total": 233624,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 29905,
+   "uncontested": false,
+   "party": "IND",
+   "runner_up": {
+    "name": "Cynthia Villar",
+    "party": "NP",
+    "votes": 79315
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "monique-lagdameo": {
+   "year": 2025,
+   "contest": "2025-ncr-fourth-district-makati-first-rep",
+   "votes": 130355,
+   "total": 145137,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 122031,
+   "uncontested": false,
+   "party": "MKTZNU",
+   "runner_up": {
+    "name": "Angelo Base",
+    "party": "IND",
+    "votes": 8324
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "alden-almario": {
+   "year": 2025,
+   "contest": "2025-ncr-fourth-district-makati-second-rep",
+   "votes": 19834,
+   "total": 35935,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 3733,
+   "uncontested": false,
+   "party": "MKTZNU",
+   "runner_up": {
+    "name": "Vincent Tejada Sese",
+    "party": "UNA",
+    "votes": 16101
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jaime-fresnedi": {
+   "year": 2025,
+   "contest": "2025-ncr-fourth-district-muntinlupa-lone-rep",
+   "votes": 177504,
+   "total": 234214,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 120794,
+   "uncontested": false,
+   "party": "LP",
+   "runner_up": {
+    "name": "Biyong Garing",
+    "party": "PDPLBN",
+    "votes": 56710
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "eric-olivarez": {
+   "year": 2025,
+   "contest": "2025-ncr-fourth-district-paranaque-first-rep",
+   "votes": 73351,
+   "total": 73351,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "brian-yamsuan": {
+   "year": 2025,
+   "contest": "2025-ncr-fourth-district-paranaque-second-rep",
+   "votes": 82700,
+   "total": 162231,
+   "rank": 1,
+   "candidates": 5,
+   "seats": 1,
+   "margin": 9935,
+   "uncontested": false,
+   "party": "IND",
+   "runner_up": {
+    "name": "Gustavo Suarez Tambunting",
+    "party": "NUP",
+    "votes": 72765
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "antonino-calixto": {
+   "year": 2025,
+   "contest": "2025-ncr-fourth-district-pasay-lone-rep",
+   "votes": 131640,
+   "total": 205103,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 58177,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Onie Bayona",
+    "party": "AKSYON",
+    "votes": 73463
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jorge-daniel-bocobo": {
+   "year": 2025,
+   "contest": "2025-ncr-fourth-district-taguig-lone-rep",
+   "votes": 144014,
+   "total": 525167,
+   "rank": 1,
+   "candidates": 8,
+   "seats": 2,
+   "margin": null,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": false,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ading-cruz": {
+   "year": 2025,
+   "contest": "2025-ncr-fourth-district-taguig-lone-rep",
+   "votes": 118205,
+   "total": 525167,
+   "rank": 2,
+   "candidates": 8,
+   "seats": 2,
+   "margin": null,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": false,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "alexandria-gonzales": {
+   "year": 2025,
+   "contest": "2025-ncr-second-district-mandaluyong-lone-rep",
+   "votes": 141464,
+   "total": 141464,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NUP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "marcelino-teodoro": {
+   "year": 2025,
+   "contest": "2025-ncr-second-district-marikina-first-rep",
+   "votes": 75062,
+   "total": 104153,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 45971,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Koko Pimentel",
+    "party": "NP",
+    "votes": 29091
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "miro-quimbo": {
+   "year": 2025,
+   "contest": "2025-ncr-second-district-marikina-second-rep",
+   "votes": 86984,
+   "total": 142722,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 33528,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Donn Carlo Buenacamino Favis",
+    "party": "NUP",
+    "votes": 53456
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "roman-romulo": {
+   "year": 2025,
+   "contest": "2025-ncr-second-district-pasig-lone-rep",
+   "votes": 348939,
+   "total": 365768,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 332110,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Ian Sia",
+    "party": "IND",
+    "votes": 16829
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "patrick-michael-vargas": {
+   "year": 2025,
+   "contest": "2025-ncr-second-district-quezon-fifth-rep",
+   "votes": 104266,
+   "total": 208269,
+   "rank": 1,
+   "candidates": 5,
+   "seats": 1,
+   "margin": 11282,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Ate Rose Lin",
+    "party": "IND",
+    "votes": 92984
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "arjo-atayde": {
+   "year": 2025,
+   "contest": "2025-ncr-second-district-quezon-first-rep",
+   "votes": 93999,
+   "total": 160605,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 27393,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Bingbong Crisologo",
+    "party": "PFP",
+    "votes": 66606
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "bong-suntay": {
+   "year": 2025,
+   "contest": "2025-ncr-second-district-quezon-fourth-rep",
+   "votes": 91856,
+   "total": 183473,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 239,
+   "uncontested": false,
+   "party": "UNA",
+   "runner_up": {
+    "name": "Marvin Castro Rillo",
+    "party": "LAKAS",
+    "votes": 91617
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ralph-tulfo": {
+   "year": 2025,
+   "contest": "2025-ncr-second-district-quezon-second-rep",
+   "votes": 185164,
+   "total": 226646,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 153752,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Virgil Garcia",
+    "party": "IND",
+    "votes": 31412
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "marivic-co-pilar": {
+   "year": 2025,
+   "contest": "2025-ncr-second-district-quezon-sixth-rep",
+   "votes": 141794,
+   "total": 141794,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NUP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "franz-pumaren": {
+   "year": 2025,
+   "contest": "2025-ncr-second-district-quezon-third-rep",
+   "votes": 73946,
+   "total": 131820,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 16072,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Allan Benedict Reyes",
+    "party": "PFP",
+    "votes": 57874
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "bel-zamora": {
+   "year": 2025,
+   "contest": "2025-ncr-second-district-san-juan-lone-rep",
+   "votes": 44545,
+   "total": 66948,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 22142,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Jana Altarejos Ejercito",
+    "party": "PMP",
+    "votes": 22403
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "oscar-malapitan": {
+   "year": 2025,
+   "contest": "2025-ncr-third-district-caloocan-first-rep",
+   "votes": 198244,
+   "total": 276138,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 128946,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Reynaldo Oliver Malonzo",
+    "party": "KNP",
+    "votes": 69298
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "edgar-erice": {
+   "year": 2025,
+   "contest": "2025-ncr-third-district-caloocan-second-rep",
+   "votes": 105363,
+   "total": 181082,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 29644,
+   "uncontested": false,
+   "party": "LP",
+   "runner_up": {
+    "name": "Mitch Cajayon-Uy",
+    "party": "LAKAS",
+    "votes": 75719
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "dean-asistio": {
+   "year": 2025,
+   "contest": "2025-ncr-third-district-caloocan-third-rep",
+   "votes": 93708,
+   "total": 93708,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "antolin-oreta-iii": {
+   "year": 2025,
+   "contest": "2025-ncr-third-district-malabon-lone-rep",
+   "votes": 84940,
+   "total": 185822,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 17116,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Ricky Sandoval",
+    "party": "LAKAS",
+    "votes": 67824
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "toby-tiangco": {
+   "year": 2025,
+   "contest": "2025-ncr-third-district-navotas-lone-rep",
+   "votes": 116622,
+   "total": 122025,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 111219,
+   "uncontested": false,
+   "party": "NVTEÑO",
+   "runner_up": {
+    "name": "Coach Tony Ibañez",
+    "party": "IND",
+    "votes": 5403
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "kenneth-gatchalian": {
+   "year": 2025,
+   "contest": "2025-ncr-third-district-valenzuela-first-rep",
+   "votes": 80410,
+   "total": 162625,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 781,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Tony Roque Espiritu",
+    "party": "AKSYON",
+    "votes": 79629
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "gerald-galang": {
+   "year": 2025,
+   "contest": "2025-ncr-third-district-valenzuela-second-rep",
+   "votes": 95878,
+   "total": 176368,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 15388,
+   "uncontested": false,
+   "party": "IND",
+   "runner_up": {
+    "name": "Kat Martinez",
+    "party": "NUP",
+    "votes": 80490
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "dino-yulo": {
+   "year": 2025,
+   "contest": "2025-negros-occidental-_-fifth-rep",
+   "votes": 201003,
+   "total": 237409,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 164597,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Anton Occeño",
+    "party": "PFP",
+    "votes": 36406
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jules-ledesma": {
+   "year": 2025,
+   "contest": "2025-negros-occidental-_-first-rep",
+   "votes": 157328,
+   "total": 165147,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 149509,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Erie Mahinay",
+    "party": "PLM",
+    "votes": 7819
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jeffrey-ferrer": {
+   "year": 2025,
+   "contest": "2025-negros-occidental-_-fourth-rep",
+   "votes": 130023,
+   "total": 202526,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 57520,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Lea Napagao Delfinado",
+    "party": "NPC",
+    "votes": 72503
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "alfredo-maranon-iii": {
+   "year": 2025,
+   "contest": "2025-negros-occidental-_-second-rep",
+   "votes": 121482,
+   "total": 121482,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NUP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "mercedes-alvarezlansang": {
+   "year": 2025,
+   "contest": "2025-negros-occidental-_-sixth-rep",
+   "votes": 180266,
+   "total": 214231,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 146301,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Ernesto Alquiza Estrao",
+    "party": "PDPLBN",
+    "votes": 33965
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "javi-benitez": {
+   "year": 2025,
+   "contest": "2025-negros-occidental-_-third-rep",
+   "votes": 200044,
+   "total": 217380,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 182708,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Joel Bantigue",
+    "party": "PLM",
+    "votes": 17336
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "albee-benitez": {
+   "year": 2025,
+   "contest": "2025-negros-occidental-bacolod-lone-rep",
+   "votes": 164145,
+   "total": 288154,
+   "rank": 1,
+   "candidates": 5,
+   "seats": 1,
+   "margin": 44714,
+   "uncontested": false,
+   "party": "IND",
+   "runner_up": {
+    "name": "Bing Ramos Leonardia",
+    "party": "NP",
+    "votes": 119431
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "emmanuel-iway": {
+   "year": 2025,
+   "contest": "2025-negros-oriental-_-first-rep",
+   "votes": 138507,
+   "total": 221484,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 55530,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Kingking Mijares",
+    "party": "LP",
+    "votes": 82977
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "maisa-sagarbarria": {
+   "year": 2025,
+   "contest": "2025-negros-oriental-_-second-rep",
+   "votes": 159412,
+   "total": 270809,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 54301,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Ipe Buscato Remollo",
+    "party": "LP",
+    "votes": 105111
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "janice-degamo": {
+   "year": 2025,
+   "contest": "2025-negros-oriental-_-third-rep",
+   "votes": 128007,
+   "total": 219448,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 62433,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Janice Teves",
+    "party": "LP",
+    "votes": 65574
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "niko-raul-daza": {
+   "year": 2025,
+   "contest": "2025-northern-samar-_-first-rep",
+   "votes": 141867,
+   "total": 158957,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 124777,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Rodolfo R. Del Valle",
+    "party": "IND",
+    "votes": 17090
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "edwin-ongchuan": {
+   "year": 2025,
+   "contest": "2025-northern-samar-_-second-rep",
+   "votes": 96304,
+   "total": 113213,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 83760,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Roselyn Capoquian",
+    "party": "AKSYON",
+    "votes": 12544
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "mika-suansing": {
+   "year": 2025,
+   "contest": "2025-nueva-ecija-_-first-rep",
+   "votes": 234820,
+   "total": 280818,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 193963,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Argel Joseph Cabatbat",
+    "party": "IND",
+    "votes": 40857
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "emerson-pascual": {
+   "year": 2025,
+   "contest": "2025-nueva-ecija-_-fourth-rep",
+   "votes": 197350,
+   "total": 344314,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 50386,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Maricel Natividad(Sigaw Nagaño",
+    "party": "PRP",
+    "votes": 146964
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "kokoy-salvador": {
+   "year": 2025,
+   "contest": "2025-nueva-ecija-_-second-rep",
+   "votes": 130421,
+   "total": 262029,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 764,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Mikki Violago",
+    "party": "LAKAS",
+    "votes": 129657
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jay-vergara": {
+   "year": 2025,
+   "contest": "2025-nueva-ecija-_-third-rep",
+   "votes": 194650,
+   "total": 378562,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 10738,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Cherry Umali",
+    "party": "SIGAW",
+    "votes": 183912
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "tim-cayton": {
+   "year": 2025,
+   "contest": "2025-nueva-vizcaya-_-lone-rep",
+   "votes": 100291,
+   "total": 247528,
+   "rank": 1,
+   "candidates": 7,
+   "seats": 1,
+   "margin": 23593,
+   "uncontested": false,
+   "party": "AKSYON",
+   "runner_up": {
+    "name": "Tam-An Tomas",
+    "party": "LAKAS",
+    "votes": 76698
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "leody-tarriela": {
+   "year": 2025,
+   "contest": "2025-occidental-mindoro-_-lone-rep",
+   "votes": 155102,
+   "total": 244800,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 65404,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Nene Sato",
+    "party": "LP",
+    "votes": 89698
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "arnan-panaligan": {
+   "year": 2025,
+   "contest": "2025-oriental-mindoro-_-first-rep",
+   "votes": 192998,
+   "total": 192998,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "alfonso-umali-jr": {
+   "year": 2025,
+   "contest": "2025-oriental-mindoro-_-second-rep",
+   "votes": 114121,
+   "total": 205830,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 23048,
+   "uncontested": false,
+   "party": "LP",
+   "runner_up": {
+    "name": "Ejay Lasap Falcon",
+    "party": "GSM",
+    "votes": 91073
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "rosalie-salvame": {
+   "year": 2025,
+   "contest": "2025-palawan-_-first-rep",
+   "votes": 145701,
+   "total": 246354,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 45048,
+   "uncontested": false,
+   "party": "PRP",
+   "runner_up": {
+    "name": "Chicoy Alvarez",
+    "party": "NUP",
+    "votes": 100653
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jose-alvarez": {
+   "year": 2025,
+   "contest": "2025-palawan-_-second-rep",
+   "votes": 139469,
+   "total": 207270,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 71668,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Beng Abueg",
+    "party": "LP",
+    "votes": 67801
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "gil-acosta-jr": {
+   "year": 2025,
+   "contest": "2025-palawan-_-third-rep",
+   "votes": 79019,
+   "total": 172305,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 6649,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Baham Mitra",
+    "party": "NP",
+    "votes": 72370
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "carmelo-lazatin-jr": {
+   "year": 2025,
+   "contest": "2025-pampanga-_-first-rep",
+   "votes": 262517,
+   "total": 262517,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "PFP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "anna-york-bondoc": {
+   "year": 2025,
+   "contest": "2025-pampanga-_-fourth-rep",
+   "votes": 203602,
+   "total": 311702,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 97658,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Patrol Bustos",
+    "party": "IND",
+    "votes": 105944
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "gloria-macapagal-arroyo": {
+   "year": 2025,
+   "contest": "2025-pampanga-_-second-rep",
+   "votes": 227254,
+   "total": 227254,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "mica-gonzales": {
+   "year": 2025,
+   "contest": "2025-pampanga-_-third-rep",
+   "votes": 213914,
+   "total": 388415,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 48759,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Dra Hazel Tumang",
+    "party": "NP",
+    "votes": 165155
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ramon-guico-jr": {
+   "year": 2025,
+   "contest": "2025-pangasinan-_-fifth-rep",
+   "votes": 187934,
+   "total": 287801,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 88067,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Franco Paolo Sr. Del Prado Sr",
+    "party": "IND",
+    "votes": 99867
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "arthur-celeste": {
+   "year": 2025,
+   "contest": "2025-pangasinan-_-first-rep",
+   "votes": 187173,
+   "total": 187173,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "gina-de-venecia": {
+   "year": 2025,
+   "contest": "2025-pangasinan-_-fourth-rep",
+   "votes": 229189,
+   "total": 270428,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 187950,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Alvin Fernandez",
+    "party": "IND",
+    "votes": 41239
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "mark-cojuangco": {
+   "year": 2025,
+   "contest": "2025-pangasinan-_-second-rep",
+   "votes": 231839,
+   "total": 300558,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 163120,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Pol Bataoil",
+    "party": "NUP",
+    "votes": 68719
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "marlyn-primicias-agabas": {
+   "year": 2025,
+   "contest": "2025-pangasinan-_-sixth-rep",
+   "votes": 168185,
+   "total": 285230,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 51140,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Gilbert Estrella",
+    "party": "NPC",
+    "votes": 117045
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "maria-rachel-arenas": {
+   "year": 2025,
+   "contest": "2025-pangasinan-_-third-rep",
+   "votes": 328672,
+   "total": 358473,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 304099,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Gener Tulagan",
+    "party": "IND",
+    "votes": 24573
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "mark-enverga": {
+   "year": 2025,
+   "contest": "2025-quezon-_-first-rep",
+   "votes": 252236,
+   "total": 252236,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NPC",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "keith-micah-tan": {
+   "year": 2025,
+   "contest": "2025-quezon-_-fourth-rep",
+   "votes": 199930,
+   "total": 199930,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NPC",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "david-c-suarez": {
+   "year": 2025,
+   "contest": "2025-quezon-_-second-rep",
+   "votes": 286091,
+   "total": 286091,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "reynante-arrogancia": {
+   "year": 2025,
+   "contest": "2025-quezon-_-third-rep",
+   "votes": 163239,
+   "total": 234704,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 91774,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Matt With Aheart Florido",
+    "party": "IND",
+    "votes": 71465
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "midy-cua": {
+   "year": 2025,
+   "contest": "2025-quirino-_-lone-rep",
+   "votes": 97151,
+   "total": 97151,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "mia-ynares": {
+   "year": 2025,
+   "contest": "2025-rizal-_-first-rep",
+   "votes": 255258,
+   "total": 354355,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 180554,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Kuya Pallasigue",
+    "party": "IND",
+    "votes": 74704
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "dennis-hernandez": {
+   "year": 2025,
+   "contest": "2025-rizal-_-fourth-rep",
+   "votes": 87659,
+   "total": 167663,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 7655,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Fidel Nograles",
+    "party": "LAKAS",
+    "votes": 80004
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "dino-tanjuatco": {
+   "year": 2025,
+   "contest": "2025-rizal-_-second-rep",
+   "votes": 182212,
+   "total": 212008,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 152416,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Boy Mendiola",
+    "party": "IND",
+    "votes": 29796
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jose-arturo-garcia-jr": {
+   "year": 2025,
+   "contest": "2025-rizal-_-third-rep",
+   "votes": 67417,
+   "total": 101627,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 33207,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Paeng Diaz",
+    "party": "AKAY",
+    "votes": 34210
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ronaldo-puno": {
+   "year": 2025,
+   "contest": "2025-rizal-antipolo-first-rep",
+   "votes": 119885,
+   "total": 137330,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 110772,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Manuel Relorcasa",
+    "party": "IND",
+    "votes": 9113
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "bong-acop": {
+   "year": 2025,
+   "contest": "2025-rizal-antipolo-second-rep",
+   "votes": 131925,
+   "total": 131925,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NUP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "eleandro-jesus-madrona": {
+   "year": 2025,
+   "contest": "2025-romblon-_-lone-rep",
+   "votes": 129273,
+   "total": 156933,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 103661,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Vivien Carmona",
+    "party": "IND",
+    "votes": 25612
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "stephen-james-tan": {
+   "year": 2025,
+   "contest": "2025-samar-_-first-rep",
+   "votes": 203330,
+   "total": 203330,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "reynolds-michael-tan": {
+   "year": 2025,
+   "contest": "2025-samar-_-second-rep",
+   "votes": 219640,
+   "total": 219640,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "steve-solon": {
+   "year": 2025,
+   "contest": "2025-sarangani-_-lone-rep",
+   "votes": 187041,
+   "total": 232589,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 145678,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "King Belimac",
+    "party": "PDPLBN",
+    "votes": 41363
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "zaldy-villa": {
+   "year": 2025,
+   "contest": "2025-siquijor-_-lone-rep",
+   "votes": 41221,
+   "total": 72343,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 10363,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Mimi Quezon",
+    "party": "AKSYON",
+    "votes": 30858
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "dette-escudero": {
+   "year": 2025,
+   "contest": "2025-sorsogon-_-first-rep",
+   "votes": 197919,
+   "total": 197919,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NPC",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "wowo-fortes": {
+   "year": 2025,
+   "contest": "2025-sorsogon-_-second-rep",
+   "votes": 154962,
+   "total": 211249,
+   "rank": 1,
+   "candidates": 5,
+   "seats": 1,
+   "margin": 103203,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Krunimar Daen Escudero",
+    "party": "PFP",
+    "votes": 51759
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ed-lumayag": {
+   "year": 2025,
+   "contest": "2025-south-cotabato-_-first-rep",
+   "votes": 69965,
+   "total": 145982,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 18556,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Gerry Barrientos",
+    "party": "AKSYON",
+    "votes": 51409
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "dinand-hernandez": {
+   "year": 2025,
+   "contest": "2025-south-cotabato-_-second-rep",
+   "votes": 103984,
+   "total": 179030,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 28938,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Peter Bascon Miguel",
+    "party": "LAKAS",
+    "votes": 75046
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "dibu-tuan": {
+   "year": 2025,
+   "contest": "2025-south-cotabato-_-third-rep",
+   "votes": 81365,
+   "total": 173870,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 8103,
+   "uncontested": false,
+   "party": "AKSYON",
+   "runner_up": {
+    "name": "Antonio Ogatis Bendita",
+    "party": "PFP",
+    "votes": 73262
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "shirlyn-banas-nograles": {
+   "year": 2025,
+   "contest": "2025-south-cotabato-general-santos-lone-rep",
+   "votes": 163511,
+   "total": 260619,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 70740,
+   "uncontested": false,
+   "party": "PDPLBN",
+   "runner_up": {
+    "name": "Tonton Acharon",
+    "party": "NPC",
+    "votes": 92771
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "roger-mercado": {
+   "year": 2025,
+   "contest": "2025-southern-leyte-_-first-rep",
+   "votes": 68306,
+   "total": 99537,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 39197,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Marisa Lerias",
+    "party": "KNP",
+    "votes": 29109
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "christopherson-yap": {
+   "year": 2025,
+   "contest": "2025-southern-leyte-_-second-rep",
+   "votes": 74505,
+   "total": 142793,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 6217,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Emie Uy Tan",
+    "party": "IND",
+    "votes": 68288
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ruth-sakaluran": {
+   "year": 2025,
+   "contest": "2025-sultan-kudarat-_-first-rep",
+   "votes": 158034,
+   "total": 158034,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "bella-suansing": {
+   "year": 2025,
+   "contest": "2025-sultan-kudarat-_-second-rep",
+   "votes": 138151,
+   "total": 138151,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "PFP",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "samier-tan": {
+   "year": 2025,
+   "contest": "2025-sulu-_-first-rep",
+   "votes": 204178,
+   "total": 207731,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 201658,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Bensaudi Tulawie",
+    "party": "IND",
+    "votes": 2520
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "abdulmunir-arbison": {
+   "year": 2025,
+   "contest": "2025-sulu-_-second-rep",
+   "votes": 146663,
+   "total": 146663,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "francisco-matugas": {
+   "year": 2025,
+   "contest": "2025-surigao-del-norte-_-first-rep",
+   "votes": 60350,
+   "total": 97022,
+   "rank": 1,
+   "candidates": 3,
+   "seats": 1,
+   "margin": 24416,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Lucille Sering",
+    "party": "NP",
+    "votes": 35934
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "bernadette-barbers": {
+   "year": 2025,
+   "contest": "2025-surigao-del-norte-_-second-rep",
+   "votes": 124526,
+   "total": 230159,
+   "rank": 1,
+   "candidates": 5,
+   "seats": 1,
+   "margin": 24670,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Jun-Jun Jun Egay",
+    "party": "PSP",
+    "votes": 99856
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "romeo-momo": {
+   "year": 2025,
+   "contest": "2025-surigao-del-sur-_-first-rep",
+   "votes": 161895,
+   "total": 222311,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 101479,
+   "uncontested": false,
+   "party": "NP",
+   "runner_up": {
+    "name": "Justin Lim Pelenio",
+    "party": "AKSYON",
+    "votes": 60416
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "alexander-pimentel": {
+   "year": 2025,
+   "contest": "2025-surigao-del-sur-_-second-rep",
+   "votes": 86026,
+   "total": 165311,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 12851,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Carla Lopez-Pichay",
+    "party": "LAKAS",
+    "votes": 73175
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jaime-cojuangco": {
+   "year": 2025,
+   "contest": "2025-tarlac-_-first-rep",
+   "votes": 182032,
+   "total": 182032,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "NPC",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "cristy-angeles": {
+   "year": 2025,
+   "contest": "2025-tarlac-_-second-rep",
+   "votes": 167716,
+   "total": 311584,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 23848,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Victor James Yap",
+    "party": "SST",
+    "votes": 143868
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "bong-rivera": {
+   "year": 2025,
+   "contest": "2025-tarlac-_-third-rep",
+   "votes": 186630,
+   "total": 219719,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 161387,
+   "uncontested": false,
+   "party": "NPC",
+   "runner_up": {
+    "name": "Fernando David",
+    "party": "PFP",
+    "votes": 25243
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "dimszar-sali": {
+   "year": 2025,
+   "contest": "2025-tawi-tawi-_-lone-rep",
+   "votes": 140294,
+   "total": 186108,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 94480,
+   "uncontested": false,
+   "party": "NUP",
+   "runner_up": {
+    "name": "Anuar Abubakar",
+    "party": "AKSYON",
+    "votes": 45814
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jay-khonghun": {
+   "year": 2025,
+   "contest": "2025-zambales-_-first-rep",
+   "votes": 160887,
+   "total": 160887,
+   "rank": 1,
+   "candidates": 1,
+   "seats": 1,
+   "margin": null,
+   "uncontested": true,
+   "party": "LAKAS",
+   "runner_up": null,
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "doris-maniquiz": {
+   "year": 2025,
+   "contest": "2025-zambales-_-second-rep",
+   "votes": 173074,
+   "total": 253002,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 93146,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Cheryl Deloso-Montalla",
+    "party": "NPC",
+    "votes": 79928
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "pinpin-uy": {
+   "year": 2025,
+   "contest": "2025-zamboanga-del-norte-_-first-rep",
+   "votes": 92806,
+   "total": 158910,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 34763,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Cely Jalosjos Carreon",
+    "party": "NP",
+    "votes": 58043
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "irene-labadlabad": {
+   "year": 2025,
+   "contest": "2025-zamboanga-del-norte-_-second-rep",
+   "votes": 165985,
+   "total": 228205,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 103765,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Tata Monteclaro",
+    "party": "NP",
+    "votes": 62220
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "ian-amatong": {
+   "year": 2025,
+   "contest": "2025-zamboanga-del-norte-_-third-rep",
+   "votes": 129731,
+   "total": 205002,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 54460,
+   "uncontested": false,
+   "party": "LP",
+   "runner_up": {
+    "name": "Cesar F P. Jalosjos",
+    "party": "NP",
+    "votes": 75271
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "joseph-yu": {
+   "year": 2025,
+   "contest": "2025-zamboanga-del-sur-_-first-rep",
+   "votes": 190907,
+   "total": 327322,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 54492,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Eddie Demata Relacion",
+    "party": "NPC",
+    "votes": 136415
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "victoria-yu": {
+   "year": 2025,
+   "contest": "2025-zamboanga-del-sur-_-second-rep",
+   "votes": 125668,
+   "total": 228472,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 22864,
+   "uncontested": false,
+   "party": "LAKAS",
+   "runner_up": {
+    "name": "Auring Cerilles",
+    "party": "NPC",
+    "votes": 102804
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "kat-chua": {
+   "year": 2025,
+   "contest": "2025-zamboanga-del-sur-zamboanga-first-rep",
+   "votes": 54444,
+   "total": 157671,
+   "rank": 1,
+   "candidates": 4,
+   "seats": 1,
+   "margin": 1063,
+   "uncontested": false,
+   "party": "IND",
+   "runner_up": {
+    "name": "Pin-Pin Espadilla Pareja",
+    "party": "LAKAS",
+    "votes": 53381
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "jerry-perez": {
+   "year": 2025,
+   "contest": "2025-zamboanga-del-sur-zamboanga-second-rep",
+   "votes": 100035,
+   "total": 185504,
+   "rank": 1,
+   "candidates": 5,
+   "seats": 1,
+   "margin": 33272,
+   "uncontested": false,
+   "party": "AZAP",
+   "runner_up": {
+    "name": "John Mendoza Dalipe",
+    "party": "LAKAS",
+    "votes": 66763
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "marlo-bancoro": {
+   "year": 2025,
+   "contest": "2025-zamboanga-sibugay-_-first-rep",
+   "votes": 81915,
+   "total": 146330,
+   "rank": 1,
+   "candidates": 2,
+   "seats": 1,
+   "margin": 17500,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Wilter Yap Palma Ii",
+    "party": "LAKAS",
+    "votes": 64415
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  },
+  "marly-hoferhasim": {
+   "year": 2025,
+   "contest": "2025-zamboanga-sibugay-_-second-rep",
+   "votes": 92835,
+   "total": 189662,
+   "rank": 1,
+   "candidates": 6,
+   "seats": 1,
+   "margin": 21012,
+   "uncontested": false,
+   "party": "PFP",
+   "runner_up": {
+    "name": "Ate Tata Eudela",
+    "party": "LAKAS",
+    "votes": 71823
+   },
+   "url": "https://dynasties.bettergov.ph/regional"
+  }
+ },
+ "partylist": {
+  "1-Rider": {
+   "year": 2025,
+   "rank": 31,
+   "of": 156,
+   "votes": 380291,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "1Tahanan": {
+   "year": 2025,
+   "rank": 42,
+   "of": 156,
+   "votes": 309587,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "4K": {
+   "year": 2025,
+   "rank": 17,
+   "of": 156,
+   "votes": 520491,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "4Ps": {
+   "year": 2025,
+   "rank": 4,
+   "of": 156,
+   "votes": 1463500,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "ACT Teachers": {
+   "year": 2025,
+   "rank": 35,
+   "of": 156,
+   "votes": 350333,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "ACT-CIS": {
+   "year": 2025,
+   "rank": 5,
+   "of": 156,
+   "votes": 1223792,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "AGAP": {
+   "year": 2025,
+   "rank": 23,
+   "of": 156,
+   "votes": 465958,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "ALONA": {
+   "year": 2025,
+   "rank": 28,
+   "of": 156,
+   "votes": 388782,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "APEC": {
+   "year": 2025,
+   "rank": 41,
+   "of": 156,
+   "votes": 310164,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Abamin": {
+   "year": 2025,
+   "rank": 38,
+   "of": 156,
+   "votes": 319710,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Abang Lingkod": {
+   "year": 2025,
+   "rank": 51,
+   "of": 156,
+   "votes": 274656,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Abono": {
+   "year": 2025,
+   "rank": 55,
+   "of": 156,
+   "votes": 254143,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Agimat": {
+   "year": 2025,
+   "rank": 25,
+   "of": 156,
+   "votes": 420434,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Akbayan": {
+   "year": 2025,
+   "rank": 1,
+   "of": 156,
+   "votes": 2746205,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Ako Bicol": {
+   "year": 2025,
+   "rank": 6,
+   "of": 156,
+   "votes": 1068676,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Ako Bisaya": {
+   "year": 2025,
+   "rank": 20,
+   "of": 156,
+   "votes": 477086,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Ako Ilocano Ako": {
+   "year": 2025,
+   "rank": 46,
+   "of": 156,
+   "votes": 300222,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Asenso Pinoy": {
+   "year": 2025,
+   "rank": 24,
+   "of": 156,
+   "votes": 422693,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "BH": {
+   "year": 2025,
+   "rank": 39,
+   "of": 156,
+   "votes": 315906,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Bicol Saro": {
+   "year": 2025,
+   "rank": 34,
+   "of": 156,
+   "votes": 363249,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "CIBAC": {
+   "year": 2025,
+   "rank": 10,
+   "of": 156,
+   "votes": 581342,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "CWS": {
+   "year": 2025,
+   "rank": 22,
+   "of": 156,
+   "votes": 471355,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Coop-NATCCO": {
+   "year": 2025,
+   "rank": 19,
+   "of": 156,
+   "votes": 509043,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "DUMPER PTDA": {
+   "year": 2025,
+   "rank": 50,
+   "of": 156,
+   "votes": 279302,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "FPJ Panday Bayanihan": {
+   "year": 2025,
+   "rank": 14,
+   "of": 156,
+   "votes": 534990,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "GP": {
+   "year": 2025,
+   "rank": 29,
+   "of": 156,
+   "votes": 381660,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Gabriela": {
+   "year": 2025,
+   "rank": 56,
+   "of": 156,
+   "votes": 251763,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "KAPUSO PM": {
+   "year": 2025,
+   "rank": 48,
+   "of": 156,
+   "votes": 288662,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "KM Ngayon Na": {
+   "year": 2025,
+   "rank": 37,
+   "of": 156,
+   "votes": 324086,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Kabataan": {
+   "year": 2025,
+   "rank": 44,
+   "of": 156,
+   "votes": 308437,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Kamalayan": {
+   "year": 2025,
+   "rank": 30,
+   "of": 156,
+   "votes": 380840,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Kamanggagawa": {
+   "year": 2025,
+   "rank": 32,
+   "of": 156,
+   "votes": 377021,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Kusug Tausug": {
+   "year": 2025,
+   "rank": 33,
+   "of": 156,
+   "votes": 365522,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "LPGMA": {
+   "year": 2025,
+   "rank": 18,
+   "of": 156,
+   "votes": 517449,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "MAGBUBUKID": {
+   "year": 2025,
+   "rank": 43,
+   "of": 156,
+   "votes": 309118,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "ML": {
+   "year": 2025,
+   "rank": 15,
+   "of": 156,
+   "votes": 533679,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Malasakit@Bayanihan": {
+   "year": 2025,
+   "rank": 11,
+   "of": 156,
+   "votes": 576307,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Manila Teachers": {
+   "year": 2025,
+   "rank": 45,
+   "of": 156,
+   "votes": 300944,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Murang Kuryente": {
+   "year": 2025,
+   "rank": 58,
+   "of": 156,
+   "votes": 245294,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Nanay": {
+   "year": 2025,
+   "rank": 47,
+   "of": 156,
+   "votes": 292180,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "ONE COOP": {
+   "year": 2025,
+   "rank": 36,
+   "of": 156,
+   "votes": 333998,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "PHILRECA": {
+   "year": 2025,
+   "rank": 54,
+   "of": 156,
+   "votes": 260569,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "PPP": {
+   "year": 2025,
+   "rank": 13,
+   "of": 156,
+   "votes": 572255,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Pinoy Workers": {
+   "year": 2025,
+   "rank": 21,
+   "of": 156,
+   "votes": 474799,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Pusong Pinoy": {
+   "year": 2025,
+   "rank": 52,
+   "of": 156,
+   "votes": 266235,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "SAGIP": {
+   "year": 2025,
+   "rank": 27,
+   "of": 156,
+   "votes": 403150,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "SSS-GSIS Pensyonado": {
+   "year": 2025,
+   "rank": 49,
+   "of": 156,
+   "votes": 288596,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "SWERTE": {
+   "year": 2025,
+   "rank": 53,
+   "of": 156,
+   "votes": 261310,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Senior Citizens": {
+   "year": 2025,
+   "rank": 12,
+   "of": 156,
+   "votes": 573268,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Solid North": {
+   "year": 2025,
+   "rank": 8,
+   "of": 156,
+   "votes": 762900,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "TGP": {
+   "year": 2025,
+   "rank": 26,
+   "of": 156,
+   "votes": 404452,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "TRABAHO": {
+   "year": 2025,
+   "rank": 9,
+   "of": 156,
+   "votes": 696248,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "TUCP": {
+   "year": 2025,
+   "rank": 40,
+   "of": 156,
+   "votes": 314450,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Tingog": {
+   "year": 2025,
+   "rank": 3,
+   "of": 156,
+   "votes": 1819200,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "United Senior Citizens": {
+   "year": 2025,
+   "rank": 16,
+   "of": 156,
+   "votes": 529661,
+   "url": "https://dynasties.bettergov.ph/national"
+  },
+  "Uswag Ilonggo": {
+   "year": 2025,
+   "rank": 7,
+   "of": 156,
+   "votes": 775672,
+   "url": "https://dynasties.bettergov.ph/national"
+  }
+ }
+}

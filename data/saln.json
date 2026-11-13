@@ -1,0 +1,678 @@
+{
+ "_meta": {
+  "source": "https://github.com/bettergovph/saln-tracker-ph",
+  "license": "MIT, BetterGov.ph SALN Tracker",
+  "retrieved": "2026-11-13",
+  "upstream_updated": "2025-11-02T05:28:00Z",
+  "note": "Totals as declared in each SALN and as reported by the linked source. Not audited. A date ending -12-31 is the SALN's as-of date; other dates are when the source reported it. Upstream 'year' labels are inconsistent, so the site shows dates."
+ },
+ "people": {
+  "francis-g-escudero": [
+   {
+    "year": 2024,
+    "net_worth": 18840082.62,
+    "total_assets": 18840082.62,
+    "total_liabilities": 0,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   },
+   {
+    "year": 2018,
+    "net_worth": 10575228,
+    "total_assets": 15575228,
+    "total_liabilities": 5000000,
+    "date_filed": "2018-12-31",
+    "source_url": "https://legacy.senate.gov.ph/Summary%202018%20SALN.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2017,
+    "net_worth": 8502082.09,
+    "total_assets": 8502082.09,
+    "total_liabilities": 0,
+    "date_filed": "2017-12-31",
+    "source_url": "https://www.rappler.com/philippines/202728-senators-2017-saln-villar-pacquiao-richest/",
+    "source_description": "Rappler News Report"
+   }
+  ],
+  "alan-peter-s-cayetano": [
+   {
+    "year": 2024,
+    "net_worth": 109130757,
+    "total_assets": 110662791,
+    "total_liabilities": 1532034,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   }
+  ],
+  "joseph-victor-g-ejercito": [
+   {
+    "year": 2024,
+    "net_worth": 137073459.63,
+    "total_assets": 179065861.12,
+    "total_liabilities": 41992401.49,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   }
+  ],
+  "jinggoy-ejercito-estrada": [
+   {
+    "year": 2025,
+    "net_worth": 221218595.15,
+    "total_assets": 252689843.31,
+    "total_liabilities": 31471248.16,
+    "date_filed": "2025-10-28",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   }
+  ],
+  "win-gatchalian": [
+   {
+    "year": 2025,
+    "net_worth": 89521016.57,
+    "total_assets": 89521016.57,
+    "total_liabilities": 0,
+    "date_filed": "2025-10-24",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   },
+   {
+    "year": 2020,
+    "net_worth": 91213596.57,
+    "total_assets": 91213596.57,
+    "total_liabilities": 0,
+    "date_filed": "2020-12-31",
+    "source_url": "https://web.senate.gov.ph/2020%20SALN%20table%20summary.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2019,
+    "net_worth": 95404344.93,
+    "total_assets": 125404344.93,
+    "total_liabilities": 30000000,
+    "date_filed": "2019-12-31",
+    "source_url": "https://legacy.senate.gov.ph/2019%20SALN%20table%20summary%20Senate%20website.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2018,
+    "net_worth": 96210607.14,
+    "total_assets": 96210607.14,
+    "total_liabilities": 0,
+    "date_filed": "2018-12-31",
+    "source_url": "https://legacy.senate.gov.ph/Summary%202018%20SALN.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2017,
+    "net_worth": 88226485.77,
+    "total_assets": 88226485.77,
+    "total_liabilities": 0,
+    "date_filed": "2017-12-31",
+    "source_url": "https://www.rappler.com/philippines/202728-senators-2017-saln-villar-pacquiao-richest/",
+    "source_description": "Rappler News Report"
+   }
+  ],
+  "risa-hontiveros": [
+   {
+    "year": 2024,
+    "net_worth": 18986258,
+    "total_assets": 19884098,
+    "total_liabilities": 897840,
+    "date_filed": "2025-10-20",
+    "source_url": "https://www.facebook.com/share/p/1TU7ZSVPjq/",
+    "source_description": "Risa Hontiveros' Official FB Page"
+   },
+   {
+    "year": 2020,
+    "net_worth": 16720359.73,
+    "total_assets": 16720359.73,
+    "total_liabilities": 0,
+    "date_filed": "2020-12-31",
+    "source_url": "https://web.senate.gov.ph/2020%20SALN%20table%20summary.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2019,
+    "net_worth": 16050112.22,
+    "total_assets": 16050112.22,
+    "total_liabilities": 0,
+    "date_filed": "2019-12-31",
+    "source_url": "https://legacy.senate.gov.ph/2019%20SALN%20table%20summary%20Senate%20website.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2018,
+    "net_worth": 15627176.04,
+    "total_assets": 15776787.04,
+    "total_liabilities": 149611,
+    "date_filed": "2018-12-31",
+    "source_url": "https://legacy.senate.gov.ph/Summary%202018%20SALN.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2017,
+    "net_worth": 16196665.71,
+    "total_assets": 16196665.71,
+    "total_liabilities": 0,
+    "date_filed": "2017-12-31",
+    "source_url": "https://www.rappler.com/philippines/202728-senators-2017-saln-villar-pacquiao-richest/",
+    "source_description": "Rappler News Report"
+   }
+  ],
+  "loren-legarda": [
+   {
+    "year": 2024,
+    "net_worth": 79210952.71,
+    "total_assets": 100735952.71,
+    "total_liabilities": 21525000,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   }
+  ],
+  "joel-villanueva": [
+   {
+    "year": 2024,
+    "net_worth": 49505360,
+    "total_assets": 72505360,
+    "total_liabilities": 23000000,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   },
+   {
+    "year": 2020,
+    "net_worth": 33029725,
+    "total_assets": 57529725,
+    "total_liabilities": 24500000,
+    "date_filed": "2020-12-31",
+    "source_url": "https://web.senate.gov.ph/2020%20SALN%20table%20summary.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2019,
+    "net_worth": 30249305,
+    "total_assets": 56249305,
+    "total_liabilities": 26000000,
+    "date_filed": "2019-12-31",
+    "source_url": "https://legacy.senate.gov.ph/2019%20SALN%20table%20summary%20Senate%20website.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2018,
+    "net_worth": 26921555,
+    "total_assets": 54421555,
+    "total_liabilities": 27500000,
+    "date_filed": "2018-12-31",
+    "source_url": "https://legacy.senate.gov.ph/Summary%202018%20SALN.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2017,
+    "net_worth": 23727895,
+    "total_assets": 23727895,
+    "total_liabilities": 0,
+    "date_filed": "2017-12-31",
+    "source_url": "https://www.rappler.com/philippines/202728-senators-2017-saln-villar-pacquiao-richest/",
+    "source_description": "Rappler News Report"
+   }
+  ],
+  "robinhood-c-padilla": [
+   {
+    "year": 2025,
+    "net_worth": 244042908.57,
+    "total_assets": 244042908.57,
+    "total_liabilities": 0,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   }
+  ],
+  "mark-a-villar": [
+   {
+    "year": 2025,
+    "net_worth": 1261337817,
+    "total_assets": 1261337817,
+    "total_liabilities": 0,
+    "date_filed": "2025-10-30",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   }
+  ],
+  "juan-miguel-f-zubiri": [
+   {
+    "year": 2025,
+    "net_worth": 431779401.92,
+    "total_assets": 631788168.43,
+    "total_liabilities": 200008766.51,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   },
+   {
+    "year": 2020,
+    "net_worth": 220736702.43,
+    "total_assets": 368947827.67,
+    "total_liabilities": 148211125.25,
+    "date_filed": "2020-12-31",
+    "source_url": "https://web.senate.gov.ph/2020%20SALN%20table%20summary.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2019,
+    "net_worth": 203667746.67,
+    "total_assets": 344597827.67,
+    "total_liabilities": 140930081,
+    "date_filed": "2019-12-31",
+    "source_url": "https://legacy.senate.gov.ph/2019%20SALN%20table%20summary%20Senate%20website.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2018,
+    "net_worth": 182851570.34,
+    "total_assets": 316171328.67,
+    "total_liabilities": 133319758.33,
+    "date_filed": "2018-12-31",
+    "source_url": "https://legacy.senate.gov.ph/Summary%202018%20SALN.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2017,
+    "net_worth": 152094252.72,
+    "total_assets": 152094252.72,
+    "total_liabilities": 0,
+    "date_filed": "2017-12-31",
+    "source_url": "https://www.rappler.com/philippines/202728-senators-2017-saln-villar-pacquiao-richest/",
+    "source_description": "Rappler News Report"
+   },
+   {
+    "year": 2016,
+    "net_worth": 121768713.77,
+    "total_assets": 121768713.77,
+    "total_liabilities": 0,
+    "date_filed": "2016-12-31",
+    "source_url": "https://www.rappler.com/philippines/202728-senators-2017-saln-villar-pacquiao-richest/",
+    "source_description": "Rappler News Report"
+   }
+  ],
+  "christopher-lawrence-t-go": [
+   {
+    "year": 2025,
+    "net_worth": 32431512.61,
+    "total_assets": 44531512.61,
+    "total_liabilities": 12100000,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   },
+   {
+    "year": 2020,
+    "net_worth": 22274508.68,
+    "total_assets": 42357371.1,
+    "total_liabilities": 20082862.42,
+    "date_filed": "2020-12-31",
+    "source_url": "https://web.senate.gov.ph/2020%20SALN%20table%20summary.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2019,
+    "net_worth": 18391012.8,
+    "total_assets": 38961465.22,
+    "total_liabilities": 20570452.42,
+    "date_filed": "2019-12-31",
+    "source_url": "https://legacy.senate.gov.ph/2019%20SALN%20table%20summary%20Senate%20website.pdf",
+    "source_description": "Philippine Senate Official Website"
+   }
+  ],
+  "paolo-benigno-aquino-iv": [
+   {
+    "year": 2025,
+    "net_worth": 86553651.25,
+    "total_assets": 86553651.25,
+    "total_liabilities": 0,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   },
+   {
+    "year": 2018,
+    "net_worth": 45205138.25,
+    "total_assets": 47901749.25,
+    "total_liabilities": 2696611,
+    "date_filed": "2018-12-31",
+    "source_url": "https://legacy.senate.gov.ph/Summary%202018%20SALN.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2017,
+    "net_worth": 39192743.62,
+    "total_assets": 39192743.62,
+    "total_liabilities": 0,
+    "date_filed": "2017-12-31",
+    "source_url": "https://www.rappler.com/philippines/202728-senators-2017-saln-villar-pacquiao-richest/",
+    "source_description": "Rappler News Report"
+   }
+  ],
+  "ronald-m-dela-rosa": [
+   {
+    "year": 2025,
+    "net_worth": 32293018.05,
+    "total_assets": 61314073.99,
+    "total_liabilities": 29021055.94,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   },
+   {
+    "year": 2020,
+    "net_worth": 34383136.29,
+    "total_assets": 36985720.88,
+    "total_liabilities": 2602584.59,
+    "date_filed": "2020-12-31",
+    "source_url": "https://web.senate.gov.ph/2020%20SALN%20table%20summary.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2019,
+    "net_worth": 33025241.41,
+    "total_assets": 36265531.68,
+    "total_liabilities": 3240290.27,
+    "date_filed": "2019-12-31",
+    "source_url": "https://legacy.senate.gov.ph/2019%20SALN%20table%20summary%20Senate%20website.pdf",
+    "source_description": "Philippine Senate Official Website"
+   }
+  ],
+  "erwin-t-tulfo": [
+   {
+    "year": 2025,
+    "net_worth": 497003425.13,
+    "total_assets": 656302962.13,
+    "total_liabilities": 159299537,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   }
+  ],
+  "francis-pangilinan": [
+   {
+    "year": 2025,
+    "net_worth": 26738597.97,
+    "total_assets": 26738597.97,
+    "total_liabilities": 0,
+    "date_filed": "2025-10-25",
+    "source_url": "https://legacy.senate.gov.ph/2019%20SALN%20table%20summary%20Senate%20website.pdfhttps://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   },
+   {
+    "year": 2019,
+    "net_worth": 19975821.25,
+    "total_assets": 20635213.25,
+    "total_liabilities": 659392,
+    "date_filed": "2019-12-31",
+    "source_url": "https://legacy.senate.gov.ph/2019%20SALN%20table%20summary%20Senate%20website.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2018,
+    "net_worth": 16695048.17,
+    "total_assets": 18848984.17,
+    "total_liabilities": 2153936,
+    "date_filed": "2018-12-31",
+    "source_url": "https://legacy.senate.gov.ph/Summary%202018%20SALN.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2017,
+    "net_worth": 13471564.17,
+    "total_assets": 13471564.17,
+    "total_liabilities": 0,
+    "date_filed": "2017-12-31",
+    "source_url": "https://www.rappler.com/philippines/202728-senators-2017-saln-villar-pacquiao-richest/",
+    "source_description": "Rappler News Report"
+   }
+  ],
+  "rodante-d-marcoleta": [
+   {
+    "year": 2025,
+    "net_worth": 51961550,
+    "total_assets": 80401700,
+    "total_liabilities": 28440150,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   },
+   {
+    "year": 2018,
+    "net_worth": 28950447.48,
+    "total_assets": 30185440,
+    "total_liabilities": 1234992.52,
+    "date_filed": "2018-12-31",
+    "source_url": "https://docs.congress.hrep.online/download/docs/saln.cy2018.alpha.pdf",
+    "source_description": "House of Representatives Database"
+   },
+   {
+    "year": 2017,
+    "net_worth": 26449095,
+    "total_assets": 28350000,
+    "total_liabilities": 1900905,
+    "date_filed": "2017-12-31",
+    "source_url": "https://docs.congress.hrep.online/download/docs/saln.cy2017.12312017.amended.pdf",
+    "source_description": "House of Representatives Database"
+   },
+   {
+    "year": 2016,
+    "net_worth": 25231190,
+    "total_assets": 26300000,
+    "total_liabilities": 1068810,
+    "date_filed": "2016-12-31",
+    "source_url": "https://docs.congress.hrep.online/download/docs/saln.alpha.31Dec2016.pdf",
+    "source_description": "House of Representatives Database"
+   }
+  ],
+  "panfilo-m-lacson": [
+   {
+    "year": 2025,
+    "net_worth": 244940509.6,
+    "total_assets": 0,
+    "total_liabilities": 0,
+    "date_filed": "2025-06-30",
+    "source_url": "https://www.gmanetwork.com/news/topstories/nation/963093/ping-lacson-saln-p244-million-net-worth/story/",
+    "source_description": "GMA Network"
+   },
+   {
+    "year": 2020,
+    "net_worth": 58330268.5,
+    "total_assets": 58791068.5,
+    "total_liabilities": 460800,
+    "date_filed": "2020-12-31",
+    "source_url": "https://web.senate.gov.ph/2020%20SALN%20table%20summary.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2019,
+    "net_worth": 48959138.98,
+    "total_assets": 50125538.98,
+    "total_liabilities": 1166400,
+    "date_filed": "2019-12-31",
+    "source_url": "https://legacy.senate.gov.ph/2019%20SALN%20table%20summary%20Senate%20website.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2017,
+    "net_worth": 36305440.9,
+    "total_assets": 36305440.9,
+    "total_liabilities": 0,
+    "date_filed": "2017-12-31",
+    "source_url": "https://www.rappler.com/philippines/202728-senators-2017-saln-villar-pacquiao-richest/",
+    "source_description": "Rappler News Report"
+   }
+  ],
+  "vicente-c-sotto-iii": [
+   {
+    "year": 2025,
+    "net_worth": 188868123.4,
+    "total_assets": 465604461.4,
+    "total_liabilities": 276736338,
+    "date_filed": "2025-10-24",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   },
+   {
+    "year": 2019,
+    "net_worth": 77772861.57,
+    "total_assets": 383769804.3,
+    "total_liabilities": 305996942.73,
+    "date_filed": "2019-12-31",
+    "source_url": "https://legacy.senate.gov.ph/2019%20SALN%20table%20summary%20Senate%20website.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2018,
+    "net_worth": 70120700.3,
+    "total_assets": 129051804.3,
+    "total_liabilities": 58931104,
+    "date_filed": "2018-12-31",
+    "source_url": "https://legacy.senate.gov.ph/Summary%202018%20SALN.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2017,
+    "net_worth": 64730400,
+    "total_assets": 64730400,
+    "total_liabilities": 0,
+    "date_filed": "2017-12-31",
+    "source_url": "https://www.rappler.com/philippines/202728-senators-2017-saln-villar-pacquiao-richest/",
+    "source_description": "Rappler News Report"
+   }
+  ],
+  "pia-s-cayetano": [
+   {
+    "year": 2025,
+    "net_worth": 128294965.73,
+    "total_assets": 151088656.14,
+    "total_liabilities": 22793690.41,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   },
+   {
+    "year": 2020,
+    "net_worth": 84591678.21,
+    "total_assets": 89983845.8,
+    "total_liabilities": 5392167.59,
+    "date_filed": "2020-12-31",
+    "source_url": "https://web.senate.gov.ph/2020%20SALN%20table%20summary.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2019,
+    "net_worth": 82774150.15,
+    "total_assets": 89896030.63,
+    "total_liabilities": 7121880.48,
+    "date_filed": "2019-12-31",
+    "source_url": "https://legacy.senate.gov.ph/2019%20SALN%20table%20summary%20Senate%20website.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2018,
+    "net_worth": 76388279.52,
+    "total_assets": 81970994.97,
+    "total_liabilities": 5582715.45,
+    "date_filed": "2018-12-31",
+    "source_url": "https://docs.congress.hrep.online/download/docs/saln.cy2018.alpha.pdf",
+    "source_description": "House of Representatives Database"
+   },
+   {
+    "year": 2017,
+    "net_worth": 73109829.18,
+    "total_assets": 79298873.23,
+    "total_liabilities": 6189044.05,
+    "date_filed": "2017-12-31",
+    "source_url": "https://docs.congress.hrep.online/download/docs/saln.cy2017.12312017.amended.pdf",
+    "source_description": "House of Representatives Database"
+   },
+   {
+    "year": 2016,
+    "net_worth": 73929349.65,
+    "total_assets": 80056900.06,
+    "total_liabilities": 6127550.41,
+    "date_filed": "2016-12-31",
+    "source_url": "https://docs.congress.hrep.online/download/docs/saln.asof.20151231.pdf",
+    "source_description": "House of Representatives Database"
+   }
+  ],
+  "manuel-m-lapid": [
+   {
+    "year": 2025,
+    "net_worth": 202036375.68,
+    "total_assets": 294383580.35,
+    "total_liabilities": 92347204.67,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   },
+   {
+    "year": 2020,
+    "net_worth": 74948600,
+    "total_assets": 175810000,
+    "total_liabilities": 100861400,
+    "date_filed": "2020-12-31",
+    "source_url": "https://web.senate.gov.ph/2020%20SALN%20table%20summary.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2019,
+    "net_worth": 70948600,
+    "total_assets": 171810000,
+    "total_liabilities": 100861400,
+    "date_filed": "2019-12-31",
+    "source_url": "https://legacy.senate.gov.ph/2019%20SALN%20table%20summary%20Senate%20website.pdf",
+    "source_description": "Philippine Senate Official Website"
+   }
+  ],
+  "camille-a-villar": [
+   {
+    "year": 2025,
+    "net_worth": 362073052,
+    "total_assets": 362073052,
+    "total_liabilities": 0,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   }
+  ],
+  "imee-r-marcos": [
+   {
+    "year": 2025,
+    "net_worth": 164995467,
+    "total_assets": 164995467,
+    "total_liabilities": 0,
+    "date_filed": "2025-10-29",
+    "source_url": "https://www.abs-cbn.com/news/nation/2025/10/29/all-24-senators-of-20th-congress-release-salns-1343",
+    "source_description": "ABS-CBN Network"
+   },
+   {
+    "year": 2020,
+    "net_worth": 36270467,
+    "total_assets": 52270467,
+    "total_liabilities": 16000000,
+    "date_filed": "2020-12-31",
+    "source_url": "https://web.senate.gov.ph/2020%20SALN%20table%20summary.pdf",
+    "source_description": "Philippine Senate Official Website"
+   },
+   {
+    "year": 2019,
+    "net_worth": 34020467,
+    "total_assets": 45020467,
+    "total_liabilities": 11000000,
+    "date_filed": "2019-12-31",
+    "source_url": "https://legacy.senate.gov.ph/2019%20SALN%20table%20summary%20Senate%20website.pdf",
+    "source_description": "Philippine Senate Official Website"
+   }
+  ]
+ }
+}

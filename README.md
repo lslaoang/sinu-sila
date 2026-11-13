@@ -53,6 +53,33 @@ aws cloudfront create-invalidation --distribution-id E1QGRO3D7NQZVA --paths "/*"
 
 **Photos** are hotlinked from senate.gov.ph in the visitor's browser (scripts get HTTP 403, so they are not downloaded or stored here). If an image fails, the initials avatar stays. Confirm reuse terms with the Senate.
 
+## SALN and election results (from BetterGov.ph)
+
+- `data/saln.json` (`python3 tools/import_saln.py`): senators' declared net worth, assets and liabilities, from the
+  [BetterGov SALN Tracker](https://github.com/bettergovph/saln-tracker-ph) (MIT). Every figure keeps its own source link
+  (Senate SALN pages, ABS-CBN, Rappler, PCIJ). Upstream "year" labels are inconsistent (the same October 2025 release is
+  labelled 2024 for some senators and 2025 for others), so profiles show dates: "as of Dec 31, YYYY" or "reported <date>".
+  Records whose year and date contradict each other are dropped (Raffy Tulfo's only record, so he shows none). Figures are
+  as declared, not audited, and profiles say so.
+- `data/elections.json` (`python3 tools/import_elections.py`): the race that put each lawmaker in office, from
+  BetterGov's [Dynasties API](https://dynasties.bettergov.ph/developers) (derived data CC0, built from
+  [Open Halalan](https://robertrleung.github.io/OpenHalalan/), which is credited on every profile). Senators: rank and
+  votes in 2025 or 2022 (24/24). District representatives: 2025 votes, share, margin and runner-up (246/253), matched
+  by race, not by BetterGov's person records (those split some people). A winner is accepted only when the surname plus a
+  given name or nickname matches inside the same province or city, or when the seat matches plus a shared surname or
+  given name (ballot nicknames such as "ABET" for Albert). Multi-seat races (Taguig) show rank only. Party-list: each
+  group's 2025 national votes (56/57). The seven unmatched House seats (Batanes vacancy, Manila 6th, Maguindanao del Sur,
+  Butuan, Cagayan de Oro 2nd, Cavite 2nd, Ilocos Sur 2nd, Santa Rosa) show "no matching result" rather than a guess.
+  Re-run only after an election; the data changes once per election.
+
+## Weekly update agent
+
+A scheduled Claude task (`sinosila-weekly-update`, Mondays 6:00 AM, runs while the Claude desktop app is open) follows
+`tools/weekly_update.md`: Senate bills and laws through Chrome (`tools/senate_fetch.js` + `tools/apply_senate.py --clipboard`),
+the House roster (`tools/import_house.py`, which now prints ADDED/REMOVED/CHANGED and keeps `_meta.audit`), then
+validates, publishes the data files and commits them. Court cases are researched into `review/` only and never
+published without a person checking the sources.
+
 ## Court cases and proceedings
 
 `data/cases.json` records criminal, administrative and election cases, and rulings on public acts, for lawmakers' whole public careers. It publishes real people's legal history, so the rules are strict:

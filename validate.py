@@ -108,5 +108,19 @@ for k, cl in cdata["cases"].items():
         if len(hosts) < 2 and not any(any(o in h for o in OFFICIAL) for h in hosts):
             errors.append(f"cases.json {cid}: needs two independent outlets or an official court/Ombudsman source")
 
+# SALN totals (tools/import_saln.py) and election results (tools/import_elections.py): optional files, but if present
+# every SALN figure needs its own source link and every key must be a known person / party-list group
+hids = {p["id"] for p in house}
+if os.path.exists("data/saln.json"):
+    for k, rs in json.load(open("data/saln.json"))["people"].items():
+        if k not in ids: errors.append(f"saln.json: unknown senator id {k}")
+        errors += [f"saln.json {k}: record without an http source_url" for r in rs if not str(r.get("source_url", "")).startswith("http")]
+if os.path.exists("data/elections.json"):
+    el = json.load(open("data/elections.json"))
+    errors += [f"elections.json senate: unknown id {k}" for k in el["senate"] if k not in ids]
+    errors += [f"elections.json house: unknown id {k}" for k in el["house"] if k not in hids]
+    groups = {p["party"] for p in house if p.get("kind") == "party-list"}
+    errors += [f"elections.json partylist: unknown group {k}" for k in el["partylist"] if k not in groups]
+
 print("\n".join(errors) or "ok")
 sys.exit(bool(errors))
