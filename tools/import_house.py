@@ -107,9 +107,19 @@ def main():
         if ph: p["photo"], p["photo_credit_url"] = ph, credit
         people.append(p)
     people.sort(key=lambda p: (p["kind"] == "party-list", p["constituency"]))
-    json.dump({"_meta": {"source": src, "retrieved": TODAY, "revid": revid, "vacant": vacant,
-                         "note": "First-pass roster from Wikipedia; cross-check against a second source before relying on it."},
-               "people": people}, open("data/house.json", "w"), indent=1, ensure_ascii=False)
+    try: old = json.load(open("data/house.json"))
+    except (OSError, ValueError): old = {"_meta": {}, "people": []}
+    meta = {"source": src, "retrieved": TODAY, "revid": revid, "vacant": vacant,
+            "note": "First-pass roster from Wikipedia; cross-check against a second source before relying on it."}
+    if "audit" in old["_meta"]: meta["audit"] = old["_meta"]["audit"]          # hand-made audit notes survive a re-import
+    json.dump({"_meta": meta, "people": people}, open("data/house.json", "w"), indent=1, ensure_ascii=False)
+    # what changed since the last import (the weekly agent reads this)
+    was, now = {p["id"]: p for p in old["people"]}, {p["id"]: p for p in people}
+    for i in sorted(now.keys() - was.keys()): print(f"ADDED   {i} ({now[i]['constituency']}, {now[i]['party']})")
+    for i in sorted(was.keys() - now.keys()): print(f"REMOVED {i} ({was[i]['constituency']}, {was[i]['party']})")
+    for i in sorted(now.keys() & was.keys()):
+        for k in ("party", "bloc", "position", "constituency"):
+            if now[i].get(k) != was[i].get(k): print(f"CHANGED {i} {k}: {was[i].get(k)!r} -> {now[i].get(k)!r}")
     kinds = {k: sum(p["kind"] == k for p in people) for k in ("district", "at-large", "party-list")}
     print(len(people), "members", kinds, "vacant:", vacant, "photos:", sum("photo" in p for p in people), "leaders:", sum(p["position"] != "Representative" for p in people))
 
