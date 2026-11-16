@@ -2,7 +2,7 @@
  "_meta": {
   "source": "https://github.com/bettergovph/saln-tracker-ph",
   "license": "MIT, BetterGov.ph SALN Tracker",
-  "retrieved": "2026-11-13",
+  "retrieved": "2026-11-17",
   "upstream_updated": "2025-11-02T05:28:00Z",
   "note": "Totals as declared in each SALN and as reported by the linked source. Not audited. A date ending -12-31 is the SALN's as-of date; other dates are when the source reported it. Upstream 'year' labels are inconsistent, so the site shows dates."
  },
