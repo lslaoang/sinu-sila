@@ -13,24 +13,39 @@ and say why in the report; a stale page is better than a wrong one.
   (someone is mid-edit). Never stash, reset or discard their work.
 - `git pull --ff-only` only if a remote is configured and it succeeds cleanly; otherwise carry on with local main.
 
-## 1. Senate bills and laws (needs Claude in Chrome)
-senate.gov.ph blocks scripts, so the data is read from inside a real browser tab.
+## 1. Senate bills and laws (built-in browser first, Chrome as fallback)
+senate.gov.ph sits behind a Cloudflare bot check: plain scripts and headless browsers get "Attention Required".
+Never try to get around it. The data is read from inside a real browser tab, which loads the site normally.
+
+**A. Built-in browser (preferred: the Claude app's own browser pane, tools named `mcp__Claude_Browser__*`)**
 1. `python3 tools/apply_senate.py --print-js > /tmp/sinosila-snippet.js` and read that file.
-2. Open https://senate.gov.ph/legislative-documents/bills in Chrome and run the snippet's full text with the
-   javascript tool. It returns `started` right away.
-3. Every ~20 s, read `window.__ss.status` until it starts with `done:` (about 2 min) or `error:`.
-   The javascript tool truncates results at ~1,000 characters, so never read the data through it.
-4. Save the current clipboard first: `pbpaste > /tmp/sinosila-clip-backup.txt`.
-5. Take a screenshot, then left-click the yellow **Copy Sino Sila data** button (top left of the page) with the
-   computer tool. It must be a real click: the clipboard API refuses script clicks. The button then reads `Copied`
-   and `window.__ss.copied` is `true`. (Chrome blocks repeated automatic downloads, which is why a file isn't used.)
-6. `python3 tools/apply_senate.py --clipboard`, then restore the clipboard:
-   `pbcopy < /tmp/sinosila-clip-backup.txt && rm /tmp/sinosila-clip-backup.txt`.
+2. Open https://senate.gov.ph/legislative-documents/bills with `preview_start` (`url`), then run the snippet's full
+   text with `javascript_tool`. It returns `started` right away.
+3. Poll `window.__ss.status` (wait about 30 s per call, the tool times out at 45 s) until it starts with `done:`
+   (about 2 min) or `error:`. Ignore the yellow copy button; its clipboard is blocked in this browser.
+4. `python3 tools/apply_senate.py --print-diff-js > /tmp/sinosila-diff.js`, read it, and run its full text in the same
+   tab. It returns JSON with only the senators whose data changed (`changed_ids`, `entries`), plus `laws_raw` if the
+   laws changed. If `pages` is more than 1, also run `--print-diff-js --page 1`, `--page 2`, ... in the same tab.
+5. Save each reply **exactly as returned** to `/tmp/sinosila-p0.json`, `/tmp/sinosila-p1.json`, ... (Write tool).
+   Every entry carries a SHA-256 hash, so a copying slip is caught in the next step instead of reaching the site.
+6. `python3 tools/apply_senate.py --patch /tmp/sinosila-p*.json`.
+   - "hash mismatch": re-copy that page's reply exactly and run again. Never edit an entry to make it pass.
    - Exit 2 = the data looks broken (a senator with no bills, a big drop). Do **not** use `--force`.
      Restore `git checkout data/bills.json data/laws.json` if touched, go on to section 2, and report it.
    - "NAME NOT MATCHED" lines are usually House members or former senators: just list them in the report.
-7. Close the senate.gov.ph tab.
-If Chrome is not connected or the site is down, skip this step and say so in the report.
+   - "no changes since the last refresh" is normal; the files still get today's date.
+7. Delete the `/tmp/sinosila-*` files.
+
+**B. Fallback: Claude in Chrome** (only if the built-in browser is unavailable). Chrome's script results are cut at
+about 1,000 characters, so use the copy button instead of steps 4–6:
+1. Run the `--print-js` snippet in a senate.gov.ph tab in Chrome and poll `window.__ss.status` as above.
+2. Save the clipboard (`pbpaste > /tmp/sinosila-clip-backup.txt`), take a screenshot and left-click the yellow
+   **Copy Sino Sila data** button with the computer tool (a real click; script clicks are refused).
+3. `python3 tools/apply_senate.py --clipboard`, then restore the clipboard
+   (`pbcopy < /tmp/sinosila-clip-backup.txt && rm /tmp/sinosila-clip-backup.txt`). Same exit-code rules as above.
+4. Close the tab.
+
+If neither browser can open the site, skip this step and say so in the report.
 
 ## 2. House roster (Wikipedia, plain script)
 1. `python3 tools/import_house.py` prints ADDED / REMOVED / CHANGED lines.

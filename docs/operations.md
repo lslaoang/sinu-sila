@@ -31,7 +31,7 @@ added, sync `data/` and `assets/` under `staging/`, and invalidate `/staging/*`.
 A scheduled Claude task (`sinosila-weekly-update`, Mondays 6:00 AM Manila time, runs while the Claude desktop app is
 open) follows [`tools/weekly_update.md`](../tools/weekly_update.md):
 
-1. Senate bills and laws through a browser tab (`tools/senate_fetch.js` → `tools/apply_senate.py --clipboard`).
+1. Senate bills and laws through a browser tab: the app's built-in browser (`tools/senate_fetch.js` → `tools/senate_diff.js` → `apply_senate.py --patch`), or Chrome as a fallback.
 2. House roster (`tools/import_house.py` prints ADDED / REMOVED / CHANGED) and photos (`tools/mirror_photos.py`).
 3. SALN totals (`tools/import_saln.py`).
 4. Court cases: research only, into `review/`, never published by the agent.
@@ -49,11 +49,14 @@ senate.gov.ph blocks plain scripts (HTTP 403) but loads in a browser, and its pa
 - Laws by status: same endpoint with `status_code=` `6-200`, `6-210`, `6-220`, `6-320`, `4-590`; the `author`,
   `coAuthor`, `coSponsor` fields hold the roles as "SURNAME, GIVEN" lists
 
-`python3 tools/apply_senate.py --print-js` prints a snippet to run in a senate.gov.ph tab. It fetches everything about
-600 ms apart with retries and then shows a "Copy Sino Sila data" button; a real click copies the data (Chrome blocks
-repeated automatic downloads, and browser-automation tools truncate long results). `python3 tools/apply_senate.py --clipboard`
-then rebuilds `bills.json` and `laws.json`. It refuses to write if a senator has no bills, a total drops by more than 5,
-or fewer laws come back than before. Pitfalls it already handles:
+`python3 tools/apply_senate.py --print-js` prints a snippet to run in a senate.gov.ph tab; it fetches everything
+about 600 ms apart with retries and keeps the result in the page. Then, in the Claude app's built-in browser,
+`--print-diff-js` builds every senator's `bills.json` entry inside the page, compares SHA-256 hashes with ours and returns
+only the entries that changed (paged, 8 senators per reply), plus the raw law rows if their hash differs from
+`laws.json` → `_meta.raw_sha`. `--patch` applies those replies and refuses any entry whose hash does not match, so a
+copying mistake can't reach the site. In Chrome, whose automation tool cuts results at about 1,000 characters, a
+"Copy Sino Sila data" button and `--clipboard` do the same job. Either way `apply_senate.py` refuses to write if a
+senator has no bills, a total drops by more than 5, or fewer laws come back than before. Pitfalls it handles:
 
 - Dates like `"August 25, 2026"` are parsed as strings (converting through UTC shifts them a day in UTC+8).
 - Some titles use Cyrillic look-alike letters as HTML entities; they are normalised to Latin.

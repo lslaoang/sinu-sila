@@ -1,14 +1,19 @@
-"""Rebuild data/bills.json and data/laws.json from a Senate download.
+"""Rebuild data/bills.json and data/laws.json from the Senate's own data (read inside a browser tab; see tools/senate_fetch.js).
 
-  python3 tools/apply_senate.py --print-js      prints the snippet to run in a senate.gov.ph tab (see tools/senate_fetch.js)
-  python3 tools/apply_senate.py --clipboard      reads the data the page's "Copy Sino Sila data" button put on the clipboard
-  python3 tools/apply_senate.py <file> [--force]  reads a saved copy instead
+Main route (works in the Claude app's built-in browser, no Chrome needed):
+  python3 tools/apply_senate.py --print-js                 snippet that fetches everything inside a senate.gov.ph tab
+  python3 tools/apply_senate.py --print-diff-js [--page N]  snippet that returns only what changed vs. our data, with hashes
+  python3 tools/apply_senate.py --patch p0.json [p1.json …] apply those replies (every item's hash is checked)
 
-Refuses to write (exit 2) if the download looks broken: a senator with zero bills, a total that dropped by more
-than 5, or fewer laws than before. A real drop (the Senate does withdraw bills) can be accepted with --force after a
-person checks it. Prints a short change summary either way.
+Fallback route (Claude in Chrome, whose script results are cut at ~1,000 characters):
+  python3 tools/apply_senate.py --clipboard                after clicking the page's "Copy Sino Sila data" button
+  python3 tools/apply_senate.py <file> [--force]            a saved copy of the full download
+
+Refuses to write (exit 2) if the data looks broken: a senator with zero bills, a total that dropped by more than 5, or
+fewer laws than before. A real drop (the Senate does withdraw bills) can be accepted with --force after a person checks
+it. Prints a short change summary either way.
 """
-import html, json, os, re, subprocess, sys
+import hashlib, html, json, os, re, subprocess, sys
 from collections import Counter
 from datetime import datetime, date
 
@@ -20,40 +25,34 @@ LAW_STATUS = {"6-200": "Approved by the President", "6-210": "Approved by the Pr
               "4-590": "Enrolled copy sent to Malacañang (awaiting signature)"}
 
 officials = json.load(open(D("officials.json")))
+old_bills, old_laws = json.load(open(D("bills.json"))), json.load(open(D("laws.json")))
+sha = lambda v: hashlib.sha256(json.dumps(v, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest()
+arg = lambda flag, default=None: sys.argv[sys.argv.index(flag) + 1] if flag in sys.argv else default
+
+
+def snippet(name, *params):
+    js = open(os.path.join(ROOT, "tools", name)).read()
+    return f"({js[js.index('*/') + 2:].strip()})({', '.join(json.dumps(p, separators=(',', ':')) for p in params)})"
+
 
 if "--print-js" in sys.argv:
-    js = open(os.path.join(ROOT, "tools", "senate_fetch.js")).read()
-    js = js[js.index("*/") + 2:].strip()
-    lis = {o["id"]: o["lis_codes"] for o in officials}
-    print(f"({js})({json.dumps(lis, separators=(',', ':'))}, {json.dumps(date.today().isoformat())})")
-    sys.exit()
+    print(snippet("senate_fetch.js", {o["id"]: o["lis_codes"] for o in officials}, date.today().isoformat())); sys.exit()
+if "--print-diff-js" in sys.argv:
+    ours = {"bills": {o["id"]: sha(old_bills[o["id"]]) for o in officials if o["id"] in old_bills},
+            "laws_raw": old_laws["_meta"].get("raw_sha", "")}
+    print(snippet("senate_diff.js", ours, int(arg("--page", "0")))); sys.exit()
 
-args = [a for a in sys.argv[1:] if not a.startswith("--")]
-if "--clipboard" in sys.argv:
-    path, raw = "clipboard", subprocess.run(["pbpaste"], capture_output=True, text=True).stdout
-elif args: path, raw = args[0], open(args[0]).read()
-else: sys.exit(__doc__)
-try: src = json.loads(raw); assert {"retrieved", "bills", "laws"} <= src.keys()
-except (ValueError, AssertionError, AttributeError): sys.exit(f"{path} does not hold Senate data. Click the yellow button in the senate.gov.ph tab first.")
 title = lambda t: re.sub(r"\s+", " ", html.unescape(t or "").translate(CYR)).strip()
 iso = lambda s: datetime.strptime(s.strip(), "%B %d, %Y").date().isoformat()
 
-# ---- bills: per senator totals, per month, per status, 5 latest ----
-old_bills = json.load(open(D("bills.json")))
-bills = {"_meta": {**old_bills["_meta"], "retrieved": src["retrieved"]}}
-problems, notes = [], []
-for o in officials:
-    rows = src["bills"].get(o["id"])
-    if not rows: problems.append(f"{o['id']}: no bills in the download"); continue
+
+def entry(rows):
+    """One senator's bills.json entry from raw rows [no, title, 'Month D, YYYY', status, id]."""
     rows = [(no, title(t), iso(d), st, bid) for no, t, d, st, bid in rows]
     rows.sort(key=lambda r: (r[2], int(r[4])), reverse=True)
-    bills[o["id"]] = {"total": len(rows), "byMonth": dict(sorted(Counter(r[2][:7] for r in rows).items())),
-                      "byStatus": dict(Counter(r[3] for r in rows).most_common()), "latest": [list(r) for r in rows[:5]]}
-    was = old_bills.get(o["id"], {}).get("total", 0)
-    if len(rows) < was - 5: problems.append(f"{o['id']}: total fell from {was} to {len(rows)}")
-    elif len(rows) != was: notes.append(f"{o['id']}: {was} -> {len(rows)} bills")
-for k, v in bills.items():
-    if k != "_meta": assert sum(v["byMonth"].values()) == sum(v["byStatus"].values()) == v["total"], k
+    return {"total": len(rows), "byMonth": dict(sorted(Counter(r[2][:7] for r in rows).items())),
+            "byStatus": dict(Counter(r[3] for r in rows).most_common()), "latest": [list(r) for r in rows[:5]]}
+
 
 # ---- laws: map the Senate's "SURNAME, GIVEN" name lists to our ids ----
 def keys(o):
@@ -63,6 +62,8 @@ def keys(o):
     given = {n[0].upper()} | {x.upper() for x in re.findall(r'"([^"]+)"', o["name"])}
     return sur, given
 KEYS = {o["id"]: keys(o) for o in officials}
+
+
 def ids(names, unmatched):
     if not names or names == "null": return []
     parts = [p.strip() for p in names.split(",")]
@@ -76,25 +77,74 @@ def ids(names, unmatched):
         else: unmatched.add(f"{sur}, {given}")
     return out
 
-old_laws = json.load(open(D("laws.json")))
-unmatched, laws = set(), []
-for code, no, t, st, bid, au, co, sp in src["laws"]:
-    e = {"no": no, "title": title(t), "status": LAW_STATUS[code], "id": bid,
-         "author": ids(au, unmatched), "coAuthors": ids(co, unmatched), "coSponsors": ids(sp, unmatched)}
-    if e["author"] or e["coAuthors"] or e["coSponsors"]: laws.append(e)
-laws.sort(key=lambda e: (e["no"][:3] != "SBN", int(re.sub(r"\D", "", e["no"]) or 0)))
+
+def build_laws(raw, unmatched):
+    laws = []
+    for code, no, t, st, bid, au, co, sp in raw:
+        e = {"no": no, "title": title(t), "status": LAW_STATUS[code], "id": bid,
+             "author": ids(au, unmatched), "coAuthors": ids(co, unmatched), "coSponsors": ids(sp, unmatched)}
+        if e["author"] or e["coAuthors"] or e["coSponsors"]: laws.append(e)
+    return sorted(laws, key=lambda e: (e["no"][:3] != "SBN", int(re.sub(r"\D", "", e["no"]) or 0)))
+
+
+# ---- read the input ----
+problems, notes, unmatched = [], [], set()
+bills = {k: v for k, v in old_bills.items()}
+laws, raw_sha = old_laws["bills"], old_laws["_meta"].get("raw_sha")
+args = [a for a in sys.argv[1:] if not a.startswith("--") and a != arg("--page")]
+if "--patch" in sys.argv:
+    parts = [json.load(open(p)) for p in args]
+    if not parts: sys.exit("--patch needs the saved reply file(s) of --print-diff-js")
+    src_label, retrieved = ", ".join(args), parts[0]["retrieved"]
+    want, got = set(parts[0]["changed_ids"]), {}
+    for p in parts:
+        for i, item in p["entries"].items():
+            if sha(item["entry"]) != item["sha"]: sys.exit(f"{i}: hash mismatch, the reply was not copied exactly. Nothing written.")
+            e = item["entry"]   # same content, our usual key order (hashes ignore order, git diffs don't)
+            got[i] = {"total": e["total"], "byMonth": dict(sorted(e["byMonth"].items())),
+                      "byStatus": dict(sorted(e["byStatus"].items(), key=lambda kv: (-kv[1], kv[0]))), "latest": e["latest"]}
+        if "laws_raw" in p:
+            if sha(p["laws_raw"]["rows"]) != p["laws_raw"]["sha"]: sys.exit("laws_raw: hash mismatch. Nothing written.")
+            laws, raw_sha = build_laws(p["laws_raw"]["rows"], unmatched), p["laws_raw"]["sha"]
+    if want - got.keys(): sys.exit(f"missing pages: no entries for {sorted(want - got.keys())}. Run --print-diff-js --page N for every page.")
+    if parts[0]["senators"] != len(officials): problems.append(f"the page saw {parts[0]['senators']} senators, we have {len(officials)}")
+    for i, e in got.items(): bills[i] = e
+else:
+    if "--clipboard" in sys.argv: src_label, raw = "clipboard", subprocess.run(["pbpaste"], capture_output=True, text=True).stdout
+    elif args: src_label, raw = args[0], open(args[0]).read()
+    else: sys.exit(__doc__)
+    try: src = json.loads(raw); assert {"retrieved", "bills", "laws"} <= src.keys()
+    except (ValueError, AssertionError, AttributeError): sys.exit(f"{src_label} does not hold Senate data. Click the yellow button in the senate.gov.ph tab first.")
+    retrieved = src["retrieved"]
+    for o in officials:
+        if src["bills"].get(o["id"]): bills[o["id"]] = entry(src["bills"][o["id"]])
+        else: problems.append(f"{o['id']}: no bills in the download")
+    laws, raw_sha = build_laws(src["laws"], unmatched), sha(src["laws"])
+
+# ---- checks and summary ----
+bills["_meta"] = {**old_bills["_meta"], "retrieved": retrieved}
+for o in officials:
+    v, was = bills.get(o["id"]), old_bills.get(o["id"], {}).get("total", 0)
+    if not v or not v["total"]: problems.append(f"{o['id']}: no bills"); continue
+    assert sum(v["byMonth"].values()) == sum(v["byStatus"].values()) == v["total"], o["id"]
+    if v["total"] < was - 5: problems.append(f"{o['id']}: total fell from {was} to {v['total']}")
+    elif v["total"] != was: notes.append(f"{o['id']}: {was} -> {v['total']} bills")
+    elif v != old_bills.get(o["id"]): notes.append(f"{o['id']}: statuses or latest bills changed")
 if len(laws) < len(old_laws["bills"]): problems.append(f"laws fell from {len(old_laws['bills'])} to {len(laws)}")
 new_laws = sorted({e["no"] for e in laws} - {e["no"] for e in old_laws["bills"]})
 moved = [e["no"] for e in laws for p in old_laws["bills"] if p["no"] == e["no"] and p["status"] != e["status"]]
 
-print(f"Download: {path} (retrieved {src['retrieved']})")
+print(f"Source: {src_label} (retrieved {retrieved})")
 for n in notes: print("  BILLS ", n)
 for n in new_laws: print("  NEW LAW", n)
 for n in moved: print("  LAW STATUS CHANGED", n)
 for n in sorted(unmatched): print("  NAME NOT MATCHED (not a current senator, or a new spelling):", n)
+if not (notes or new_laws or moved): print("  no changes since the last refresh (only the date moves)")
 if problems and "--force" not in sys.argv:
     for p in problems: print("  PROBLEM", p)
     sys.exit(2)
 json.dump(bills, open(D("bills.json"), "w"), ensure_ascii=False, separators=(",", ":"))
-json.dump({"_meta": {**old_laws["_meta"], "retrieved": src["retrieved"]}, "bills": laws}, open(D("laws.json"), "w"), indent=1, ensure_ascii=False)
+meta = {**old_laws["_meta"], "retrieved": retrieved}
+if raw_sha: meta["raw_sha"] = raw_sha
+json.dump({"_meta": meta, "bills": laws}, open(D("laws.json"), "w"), indent=1, ensure_ascii=False)
 print(f"Wrote bills.json ({len(bills) - 1} senators) and laws.json ({len(laws)} laws).")

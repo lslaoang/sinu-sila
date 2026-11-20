@@ -3,7 +3,8 @@
   "congress": "20th Congress",
   "retrieved": "2026-11-20",
   "source": "https://senate.gov.ph/legislative-documents/bills",
-  "note": "Bills the Senate lists as approved by the President, lapsed into law, consolidated with a law, or enrolled and sent to Malacanang. Roles are the Senate's author / co-author / co-sponsor fields. House bills with no listed senator role are omitted. A Senate bill folded into another bill is not detected unless the Senate marks it so."
+  "note": "Bills the Senate lists as approved by the President, lapsed into law, consolidated with a law, or enrolled and sent to Malacanang. Roles are the Senate's author / co-author / co-sponsor fields. House bills with no listed senator role are omitted. A Senate bill folded into another bill is not detected unless the Senate marks it so.",
+  "raw_sha": "cb28d698bb17263a885069bcacab36891de7cbeaf42745d1114b9e2b78e07b35"
  },
  "bills": [
   {
