@@ -45,7 +45,7 @@
   /* top bar */
   .top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:3px double var(--rule)}
   .top .wrap{display:flex;gap:1rem;align-items:center;padding-top:.7rem;padding-bottom:.7rem}
-  .brand{font:700 1.65rem var(--serif);letter-spacing:-.01em;color:var(--ink);text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:.2em;text-underline-offset:.22em;white-space:nowrap}
+  .brand{font:700 1.65rem var(--serif);letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap;display:inline-block;padding:.6rem 0 .55rem;background:linear-gradient(var(--yellow),var(--yellow)) 0 calc(100% - .35rem)/100% .2em no-repeat}
   .brand mark{background:none;color:inherit}
   mark{color:inherit;background:linear-gradient(transparent 60%,var(--yellow) 60%);padding:0 .08em}
   #q{flex:1;min-width:0;max-width:20rem;margin-left:auto;padding:.6rem 1rem;border:1.5px solid var(--rule);border-radius:99px;background:var(--paper);color:var(--ink);font:inherit}
@@ -86,8 +86,8 @@
   h1,h2,h3,h4,b,strong,small,.hm,.hn,.cap,.pill,.role,.bill,.fcard,.edu li>div,.tl li,.info,.note{overflow-wrap:anywhere}
   .tile strong{overflow-wrap:anywhere;white-space:normal}
   /* hero */
-  .eyebrow{font:700 .78rem system-ui;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:2rem 0 .5rem}
-  h1.big{font:800 clamp(2.3rem,7.2vw,4.6rem)/1.02 var(--serif);letter-spacing:-.025em;margin:0 0 .8rem;max-width:16ch;overflow-wrap:normal}
+  .eyebrow{font:500 .8rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:2rem 0 .5rem}
+  h1.big{font:600 clamp(2.3rem,7.2vw,4.6rem)/1.02 var(--serif);letter-spacing:-.025em;margin:0 0 .8rem;max-width:16ch;overflow-wrap:normal}
   @media (min-width:60rem){.herogrid h1.big{font-size:clamp(2.2rem,4.2vw,4.2rem)}}
   .lede{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--mute);max-width:36rem;margin:0 0 1.2rem}
   .lede b{color:var(--ink)}
@@ -103,11 +103,11 @@
   .hm .tk{margin-left:.4rem}
   /* congress at a glance */
   .glance{display:grid;gap:.75rem;align-content:center}
-  .gl{display:grid;grid-template-columns:auto 1fr;gap:.15rem 1rem;align-items:center;text-align:left;width:100%;padding:.9rem 1.1rem;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);font:inherit;cursor:pointer}
-  .gl:hover{border-color:var(--ink)} .gl .n{grid-row:span 2;font:800 clamp(2.2rem,5vw,3rem)/1 var(--serif);min-width:3.2ch}
+  .gl{display:grid;grid-template-columns:auto 1fr;gap:.15rem 1rem;align-items:center;text-align:left;width:100%;padding:.9rem 1.1rem;border:1.5px solid var(--rule);border-radius:var(--r);background:var(--paper);color:var(--ink);font:inherit;cursor:pointer}
+  .gl:hover{box-shadow:0 0 0 1.5px var(--rule)} .gl .n{grid-row:span 2;font:600 clamp(2.2rem,5vw,3rem)/1 var(--serif);min-width:3.2ch}
   .gl b{font-size:1.05rem} .gl small{color:var(--mute);font-size:.85rem}
   .bar{grid-column:1/-1;display:flex;height:.55rem;border-radius:99px;overflow:hidden;background:var(--line);margin-top:.5rem} .bar i{display:block;height:100%}
-  .fbar{margin:1.2rem 0 2rem;padding:1rem;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+  .fbar{margin:1.2rem 0 2rem;padding:1rem;border:1.5px solid var(--rule);border-radius:var(--r);background:var(--paper)}
   .fbar .pl{margin-bottom:.5rem} .frow+.frow{margin-top:1rem} [hidden]{display:none!important}
   .seg.seg4{grid-template-columns:repeat(4,1fr)} .seg.seg2{grid-template-columns:repeat(2,1fr);max-width:26rem} .seg small{opacity:.7;margin-left:.2rem;font-variant-numeric:tabular-nums}
   .senviz{display:grid;gap:1rem;align-items:center} @media (min-width:60rem){.senviz{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}.senviz .hemi{margin:0}}
@@ -207,6 +207,9 @@
   .tile{border-top:3px solid var(--rule);padding-top:.6rem} .tile strong{display:block;font:600 clamp(1.6rem,5vw,2.4rem)/1.05 var(--serif);white-space:nowrap} .tile span{color:var(--mute);font-size:.9rem}
   h3.h{font:600 clamp(1.6rem,3.5vw,2.1rem) var(--serif);margin:2.8rem 0 .9rem;letter-spacing:-.01em;scroll-margin-top:8rem}
   .share{margin-left:auto}
+  @media (max-width:40rem){.phero{display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:.5rem 1rem;align-items:center;margin-bottom:1.2rem}
+    .phero .av{width:5.5rem;height:6.6rem;font-size:1.6rem} .phero h1{font-size:clamp(1.6rem,7vw,2.1rem);margin:0 0 .3rem} .phero .kick{margin:0 0 .3rem;font-size:.7rem}
+    .phero .meta{font-size:.72rem;margin:.3rem 0 0} .phero .share{grid-column:2;justify-self:start;margin:0}}
   .tl{list-style:none;padding:0 0 0 1.2rem;border-left:3px solid var(--line)}
   .tl li{position:relative;margin:0 0 1rem;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:.8rem 1rem}
   .tl li::before{content:"";position:absolute;left:-1.7rem;top:1.1rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--red)}
@@ -258,7 +261,7 @@
   .hsearch .box:focus-within{outline:3px solid var(--blue);outline-offset:2px}
   .hsearch input{flex:1;min-width:0;height:100%;border:0;background:transparent;color:var(--ink);font:inherit;font-size:1.1rem;outline:none}
   .try{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:.8rem 0 0;font-size:.9rem;color:var(--mute)}
-  .try button{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:99px;padding:.35rem .8rem;font:inherit;cursor:pointer;min-height:2.25rem} .try button:hover{border-color:var(--rule)}
+  .try button{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:99px;padding:.35rem .8rem;font:inherit;cursor:pointer;min-height:44px} .try button:hover{border-color:var(--rule)}
   .bigsel{display:block;max-width:40rem;margin:1.4rem 0 0} .bigsel span{display:block;font-weight:700;margin-bottom:.4rem}
   .bigsel select{width:100%;padding:.75rem 1rem;font:inherit;border:1.5px solid var(--rule);border-radius:var(--r);background:var(--paper);color:var(--ink)}
   .glance2{background:var(--paper);border:1.5px solid var(--rule);border-radius:var(--r);padding:1.4rem 1.5rem}
@@ -284,6 +287,7 @@
   .howto h2{font:600 clamp(1.6rem,3.6vw,2.1rem) var(--serif);margin:0 0 .3rem} .howto>p{color:var(--mute);margin:0 0 1.2rem}
   .vows{display:grid;gap:1.5rem 2rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin:2.5rem 0 0}
   .vows p{margin:.3rem 0 0;font:500 1.3rem/1.3 var(--serif)} .vows .kick{margin:0}
+  .vows p .lnk{display:inline;font:inherit;padding:0;min-height:0;color:var(--blue);text-decoration:underline;text-underline-offset:.15em;border-radius:0} .vows p .lnk:hover{background:none;color:var(--blue)}
   .sum{border:1.5px solid var(--rule);border-radius:var(--r);margin:0 0 1rem;background:var(--paper);overflow:hidden}
   .sum>.tk.band{border-top:0;border-bottom:1.5px solid var(--rule);font-size:1rem;padding:.7rem 1.2rem}
   .sum .sb{display:flex;flex-wrap:wrap;gap:1.2rem 2.5rem;padding:1.1rem 1.2rem 1.3rem}
@@ -293,7 +297,7 @@
   .sum .lnk{padding-inline:0;color:var(--blue)}
   .filters{display:grid;gap:.6rem;margin:0 0 1rem} @media (min-width:40rem){.filters{grid-template-columns:repeat(auto-fit,minmax(13rem,16rem))}}
   .filters label>span{display:block;font-size:.8rem;font-weight:700;color:var(--mute);margin:0 0 .2rem}
-  .exp{border:1px dashed var(--rule);border-radius:var(--r);padding:.8rem 1rem;margin:2rem 0 0;color:var(--mute)}
+  .exp{border:1px dashed var(--rule);border-radius:var(--r);padding:.8rem 1rem;margin:2rem 0 0;color:var(--mute)} .exp a{display:inline-block;padding:.75rem 0;margin:-.75rem 0}
   .ph1{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.5rem 2rem;margin:.5rem 0 1.5rem}
   .ph1>div{flex:1 1 26rem} .ph1 h1{font:600 clamp(2.6rem,6vw,4rem)/1 var(--serif);letter-spacing:-.02em;margin:0} .ph1 .note{font-size:1rem;max-width:36rem}
   .ph1 .dist{flex:1 1 20rem;margin:0}
@@ -317,7 +321,6 @@
     .flag i:nth-child(1){background:#2f5fd0} .flag i:nth-child(2){background:#d8344a}
     /* the yellow highlighter stays a full yellow block, with dark ink on it, like a marker on newsprint */
     mark{background:var(--yellow);color:#1a1714;padding:0 .12em;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-    .brand{text-decoration-color:var(--yellow)}
     .chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
     .hsearch .box,.finder .fs,.finder select,.bigsel select,#q{background:#191612}
     .bc{border-top-width:10px}
@@ -485,7 +488,7 @@ const T = {
     tr_convicted: 'Convicted in a case', tr_pending: 'Pending case', tr_resolved: 'Dismissed, acquitted or decided', tr_none: 'No case found', tr_unchecked: 'Not yet checked',
     explore: 'Want more detail, like charts and comparisons? <a href="#explore">Explore the data →</a>',
     exploreBanner: 'The detailed view, for readers who want to dig into the data. <a href="#">← Back to start</a>',
-    results: (n, q) => `${n} results for “${q}”`, noResults: 'No match. Try a surname or a province or city name.',
+    results: (n, q) => `${n} result${n === 1 ? '' : 's'} for “${q}”`, noResults: 'No match. Try a surname or a province or city name.',
     senH: 'Senate', senNote: 'Elected nationwide. Tap a photo to see their cases, laws and bills.',
     houseH: 'House of Representatives', houseS: n => `${n} district representatives`, houseNote: 'One representative per district. Choose your province or city.',
     plH: 'Party-list', plS: (n, g) => `${n} representatives · ${g} groups`,
@@ -496,7 +499,7 @@ const T = {
     s_resolved: 'Had cases that are now closed: dismissed, acquitted or decided.', s_none: 'We found no court cases in the news and court records we checked.',
     s_unchecked: 'We have not yet confirmed their court-case record from two sources.',
    
-    tBills: 'bills authored', tLaws: 'laws backed (any role)', tParty: 'party', tPLGroup: 'party-list group', tBloc: 'bloc', tSeat: 'seat type',
+    tBills: 'bills authored', tLaws: 'laws backed', tParty: 'party', tPLGroup: 'party-list group', tBloc: 'bloc', tSeat: 'seat type',
     kDistrict: 'District', kLone: 'Lone district', kNth: n => `${n}${[, 'st', 'nd', 'rd'][n % 100 > 10 && n % 100 < 14 ? 0 : n % 10] || 'th'} district`, showingB: (n, tot, p) => `<b>${n}</b> of ${tot} representatives · ${p} places`, clearF: 'Clear filters', hsL: 'Search', hsPh: 'Name, place or party', kPL: 'Party-list',
     hCases: 'Court cases and proceedings', hLaws: 'Laws and bills sent to the President', hBills: 'Bills', hEdu: 'Where they studied', hFam: 'Political families', hOffice: 'In office',
     casesNote: 'From court records and news reports, each linked. A complaint or charge is an allegation until a court decides, and a suspension is not a verdict. Dismissals and acquittals are listed too, along with the person\'s own response when it was reported. Status is as of the date shown, and the list may not be complete.',
@@ -698,8 +701,8 @@ function explore() {
       <span class="bar" role="img" aria-label="Court-case record: ${TRACKS.map(([k, l]) => people.filter(p => trackOf(p.id) === k).length + ' ' + l.toLowerCase()).join(', ')}">${TRACKS.map(([k, , c]) => `<i style="width:${100 * people.filter(p => trackOf(p.id) === k).length / people.length}%;background:${c}"></i>`).join('')}</span></button>`;
   app.innerHTML = `<p class="exp">${t('exploreBanner')}</p>
     <section aria-labelledby="h1" class="herogrid"><div class="htxt">
-      <p class="eyebrow">20th Congress · Senate, House and party-list</p>
-      <h1 class="big" id="h1">Kilala mo ba ang mga <mark>mambabatas</mark> mo?</h1>
+      <p class="kick">${t('kicker')}</p>
+      <h1 class="big" id="h1">${t('h1')}</h1>
       <p class="lede"><b>${everyone().length} lawmakers.</b> Who they are, what they filed, which laws they backed, where they studied and what the courts have said. Every fact links to its source.</p></div>
       <div class="glance">
         ${glance('senate', data.length, 'Senate', 'senators, elected nationwide', data)}
@@ -818,15 +821,19 @@ function home() {
 function homeOut() {
   const el = document.getElementById('homeOut'); if (!el) return;
   const qq = state.q.trim().toLowerCase();
+  const pm = qq && (places().find(p => p.toLowerCase() === qq) || (qq.length > 2 && places().filter(p => p.toLowerCase().startsWith(qq)).length === 1 ? places().find(p => p.toLowerCase().startsWith(qq)) : null));
+  if (pm) { el.innerHTML = placeView(pm); return; }   // "Pampanga", "quezon c…": same answer as picking it in the dropdown
   if (qq) {
     const hits = everyone().filter(o => (o.name + ' ' + (o.constituency || '') + ' ' + (o.place || '') + ' ' + (o.party || '') + ' ' + (o.position || '')).toLowerCase().includes(qq)).slice(0, 80);
     el.innerHTML = `<h2>${esc(t('results', hits.length, state.q.trim()))}</h2>` + (hits.length ? `<ul class="pcs">${hits.map(pcard).join('')}</ul>` : `<p class="soon">${t('noResults')}</p>`);
     return;
   }
-  if (!place) { el.innerHTML = ''; return; }
+  el.innerHTML = place ? placeView(place) : '';
+}
+function placeView(place) {
   const reps = districts().filter(o => o.place === place).sort((a, b) => (a.district || 0) - (b.district || 0));
   const sens = [...data].sort((a, b) => lastName(a).localeCompare(lastName(b)));
-  el.innerHTML = `<h2>${t('yourRep')}</h2><p class="note">${esc(reps.length > 1 ? t('repMany', reps.length, place) : t('repOne', place))}</p><ul class="pcs">${reps.map(pcard).join('')}</ul>
+  return `<h2>${t('yourRep')}</h2><p class="note">${esc(reps.length > 1 ? t('repMany', reps.length, place) : t('repOne', place))}</p><ul class="pcs">${reps.map(pcard).join('')}</ul>
     <h2>${t('yourSen')}</h2><p class="note">${t('yourSenNote')}</p><ul class="pcs">${sens.map(pcard).join('')}</ul>
     <h2>${t('bPL')}</h2><p class="note">${t('plNote')} <a href="#party-list">${t('plAll', partylist().length)}</a></p>`;
 }
@@ -947,8 +954,11 @@ function salnHtml(o) {
       <span role="cell">${srcA(r.source_url, srcName(r.source_url))}</span></div>`).join('')}</div>
     <p class="note">${t('salnSrc')} ${srcA(saln._meta.source || 'https://github.com/bettergovph/saln-tracker-ph', 'BetterGov SALN Tracker')}${saln._meta.upstream_updated ? ` (${t('updated')} ${fmtDay(saln._meta.upstream_updated.slice(0, 10))})` : ''}.</p>`;
 }
+/* "data as of": the newest refresh of the data this profile shows (the weekly agent moves it), plus the case check */
+const asOfLine = (o, dates) => { const d = [...dates, ...o.records.map(r => r.retrieved)].filter(Boolean).sort().pop(), ck = cases._meta.checked[o.id]?.date;
+  return `${t('dataAsOf')} ${esc(fmtDay(d))}${ck ? ` · ${t('casesChecked')} ${esc(fmtDay(ck))}` : ''}`; };
 function houseProfile(o) {
-  app.innerHTML = `${phero(o, `${o.constituency} · ${o.term}`)}
+  app.innerHTML = `${phero(o, `${o.constituency} · ${o.term}`, asOfLine(o, [houseMeta.retrieved]))}
     ${summary(o)}
     <div class="tiles">
       <div class="tile txt"><strong>${esc(o.party)}</strong><span>${o.kind === 'party-list' ? t('tPLGroup') : t('tParty')}</span></div>
@@ -963,8 +973,8 @@ function houseProfile(o) {
 const recordsHtml = o => `<ul class="offices">${o.records.map(r => `<li><b>${esc(r.title)}</b><small>${r.type === 'membership' ? t('since') : esc(r.type) + ' · '}${esc(dayLabelFull(r.date))}</small><a href="${esc(r.source_url)}" rel="noopener" target="_blank">${t('source')}<span class="sr"> (opens in a new tab)</span> ↗</a></li>`).join('')}</ul>`;
 function profile(o) {
   if (o.body === 'house') return houseProfile(o);
-  const checked = o.records.map(r => r.retrieved).sort().pop(), nc = (cases.cases[o.id] || []).length, ck = cases._meta.checked[o.id]?.date;
-  app.innerHTML = `${phero(o, `${o.chamber === 'Senate' ? t('senator') : o.chamber} · ${o.term}`, `${t('dataAsOf')} ${esc(dayLabelFull(checked))}${ck ? ` · ${t('casesChecked')} ${esc(dayLabelFull(ck))}` : ''}`)}
+  const nc = (cases.cases[o.id] || []).length;
+  app.innerHTML = `${phero(o, `${o.chamber === 'Senate' ? t('senator') : o.chamber} · ${o.term}`, asOfLine(o, [bills._meta?.retrieved, saln._meta?.retrieved]))}
     ${summary(o, [[bills[o.id]?.total ?? '–', t('tBills')], [lawCount(o.id), t('tLaws')], [nc, t('tCases')]])}
     ${ptabs([['kaso', t('tabCases'), nc], ['batas', t('tabLaws'), lawCount(o.id)], ['panukala', t('tabBills'), bills[o.id]?.total], ['saln', 'SALN'], ['halalan', t('tabElec')], ['aral', t('tabEdu')], ...(fam[o.id] ? [['pamilya', t('tabFam')]] : []), ['puwesto', t('tabOffice')]])}
     ${casesHtml(o)}${lawsHtml(o.id)}${billsHtml(o.id)}${salnHtml(o)}${elecHtml(o)}${eduHtml(o.id)}
