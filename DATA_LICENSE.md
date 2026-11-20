@@ -13,7 +13,7 @@ and the original source named below. Every record in the data files also carries
 | `data/saln.json` | Senators' declared assets, liabilities and net worth | MIT (see notice below) | [BetterGov.ph SALN Tracker](https://github.com/bettergovph/saln-tracker-ph), and the source linked on each figure |
 | `data/elections.json`, `data/local/*.json` | Election results and local officials | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | [BetterGov.ph Dynasties](https://dynasties.bettergov.ph/developers), built from [Open Halalan](https://robertrleung.github.io/OpenHalalan/) (Leung, Robert R.). Please cite Open Halalan for election results. |
 | `data/pulitiklan.json` | Links to Pulitiklan family pages | URLs only, no Pulitiklan data is copied | [Pulitiklan](https://pulitiklan.com) |
-| `assets/photos/*.webp` | Portraits | Each file's own licence on Wikimedia Commons (mostly public domain, CC0 or CC BY-SA) | The Commons file page linked on each profile (`photo_credit_url` in the data) |
+| `assets/photos/*.webp` | Portraits, resized and with the background removed (a modification of the original) | Each file's own licence on Wikimedia Commons (mostly public domain, CC0 or CC BY-SA); our edits are offered under the same licence as the original | The Commons file page linked on each profile (`photo_credit_url` in the data) |
 | `assets/schools/*.png` | School seals | **Not licensed for reuse.** Trademarks of their institutions, shown only to identify a school | The institution |
 | `assets/og.png` | Link-preview image | CC BY 4.0 | Sino Sila? |
 

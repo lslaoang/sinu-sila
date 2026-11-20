@@ -49,7 +49,8 @@ If neither browser can open the site, skip this step and say so in the report.
 
 ## 2. House roster (Wikipedia, plain script)
 1. `python3 tools/import_house.py` prints ADDED / REMOVED / CHANGED lines.
-2. `python3 tools/mirror_photos.py` (re-points photos to `assets/photos/*.webp`, downloads any new member's photo).
+2. `python3 tools/mirror_photos.py` (re-points photos to `assets/photos/*.webp`, downloads any new member's photo and
+   removes its background so it matches the others; a `skip` line means that photo kept its original background, so list it).
 3. Hold the roster back (`git checkout data/house.json data/officials.json assets/photos`) if:
    - more than 15 ADDED/REMOVED lines in one week (probably a page restructure, not real change), or
    - a REMOVED id has entries in `data/cases.json` or `data/pulitiklan.json` (they would be orphaned), or

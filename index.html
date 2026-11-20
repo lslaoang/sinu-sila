@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
-  :root{--bg:#f5efe2;--paper:#fffcf5;--ink:#1a1714;--rule:#1a1714;--mute:#5e574b;--line:#ddd3bf;--blue:#0038a8;--red:#b00e22;--yellow:#fcd116;--gold:#6b5600;--on-accent:#fff;--r:8px;
+  :root{--bg:#f5efe2;--paper:#fffcf5;--ink:#1a1714;--rule:#1a1714;--mute:#5e574b;--line:#ddd3bf;--blue:#0038a8;--red:#b00e22;--yellow:#fcd116;--gold:#6b5600;--on-accent:#fff;--photo:#e7dfcc;--r:8px;
     --serif:"Newsreader",ui-serif,Georgia,serif;--sans:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;color-scheme:light}
   /* dark: "night edition" — cool charcoal paper, warm cream ink, flag colours softened */
   /* dark: the same newspaper, printed on dark stock. Warm paper tones, cards clearly raised, borders visible like the light theme's ink rules */
@@ -189,7 +189,7 @@
 
   /* avatar (initials fallback + photo overlay) */
   .av{position:relative;overflow:hidden;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;flex:none}
-  .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%;background:#fff}
+  .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%;background:var(--photo)}
   .av.ph{color:transparent}
 
   /* profile */
@@ -971,7 +971,7 @@ function houseProfile(o) {
     <p class="note">${esc(t('partyNote', o.records[0]?.retrieved || ''))}</p>
     ${ptabs([['kaso', t('tabCases'), (cases.cases[o.id] || []).length], ['halalan', t('tabElec')], ...(fam[o.id] ? [['pamilya', t('tabFam')]] : []), ['puwesto', t('tabOffice')]])}
     ${casesHtml(o)}${elecHtml(o)}${famHtml(o)}<h3 class="h" id="puwesto">${t('hOffice')}</h3>${recordsHtml(o)}
-    <p class="note">${o.wikipedia ? `More about ${esc(clean(o.name))}: <a href="${esc(o.wikipedia)}" target="_blank" rel="noopener">Wikipedia ↗</a>. ` : ''}${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a> (see the file page for author and licence).` : ''}</p>
+    <p class="note">${o.wikipedia ? `More about ${esc(clean(o.name))}: <a href="${esc(o.wikipedia)}" target="_blank" rel="noopener">Wikipedia ↗</a>. ` : ''}${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a>, background removed (see the file page for author and licence).` : ''}</p>
     <p class="note">${t('houseLater')}</p>`;
 }
 const recordsHtml = o => `<ul class="offices">${o.records.map(r => `<li><b>${esc(r.title)}</b><small>${r.type === 'membership' ? t('since') : esc(r.type) + ' · '}${esc(dayLabelFull(r.date))}</small><a href="${esc(r.source_url)}" rel="noopener" target="_blank">${t('source')}<span class="sr"> (opens in a new tab)</span> ↗</a></li>`).join('')}</ul>`;
@@ -983,7 +983,7 @@ function profile(o) {
     ${ptabs([['kaso', t('tabCases'), nc], ['batas', t('tabLaws'), lawCount(o.id)], ['panukala', t('tabBills'), bills[o.id]?.total], ['saln', 'SALN'], ['halalan', t('tabElec')], ['aral', t('tabEdu')], ...(fam[o.id] ? [['pamilya', t('tabFam')]] : []), ['puwesto', t('tabOffice')]])}
     ${casesHtml(o)}${lawsHtml(o.id)}${billsHtml(o.id)}${salnHtml(o)}${elecHtml(o)}${eduHtml(o.id)}
     ${famHtml(o)}<h3 class="h" id="puwesto">${t('hOffice')}</h3>${recordsHtml(o)}
-    <p class="note">${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a>${o.photo_license ? ` (${esc(o.photo_license)})` : ''}. ` : ''}${t('laterVotes')}</p>`;
+    <p class="note">${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a>${o.photo_license ? ` (${esc(o.photo_license)})` : ''}, background removed. ` : ''}${t('laterVotes')}</p>`;
 }
 
 /* ---------- events ---------- */

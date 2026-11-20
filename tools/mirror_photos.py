@@ -1,10 +1,11 @@
 """Copy every portrait onto our own host so pages don't wait on senate.gov.ph or Wikimedia.
 
-Run: python3 tools/mirror_photos.py   (needs Pillow; safe to re-run, skips files already saved)
+Run: python3 tools/mirror_photos.py   (needs Pillow; safe to re-run, skips files already saved; then removes the
+background of new photos with tools/cutout_photos.py)
 For each person with a remote `photo`, it saves a resized WebP to assets/photos/<id>.webp, keeps the original
 URL in `photo_src` (provenance) and points `photo` at the local file. Credits (`photo_credit_url`) are unchanged.
 """
-import io, json, os, sys, time, urllib.request
+import io, json, os, subprocess, sys, time, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from PIL import Image
 
@@ -50,6 +51,7 @@ def main():
     json.dump(hs, open("data/house.json", "w"), indent=1, ensure_ascii=False)
     kb = sum(os.path.getsize(f"{OUT}/{f}") for f in os.listdir(OUT)) // 1024
     print(f"{len(people) - len(failed)}/{len(people)} saved, {kb} KB total; failed: {failed}")
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "cutout_photos.py")])   # same background for new faces
 
 
 main()

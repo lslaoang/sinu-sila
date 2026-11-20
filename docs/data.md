@@ -17,7 +17,7 @@ Licensing is in [DATA_LICENSE.md](../DATA_LICENSE.md).
 | `data/saln.json` | Senators' declared assets, liabilities and net worth | [BetterGov.ph SALN Tracker](https://github.com/bettergovph/saln-tracker-ph) | `tools/import_saln.py` |
 | `data/elections.json` | The race that put each lawmaker in office | [BetterGov.ph Dynasties](https://dynasties.bettergov.ph/developers), from [Open Halalan](https://robertrleung.github.io/OpenHalalan/) | `tools/import_elections.py` |
 | `data/pulitiklan.json` | Links to political-family pages | [Pulitiklan](https://pulitiklan.com) (links only) | `tools/link_pulitiklan.py` |
-| `assets/photos/*.webp` | 341 portraits | Wikimedia Commons | `tools/mirror_photos.py` |
+| `assets/photos/*.webp` | 341 portraits, background removed so all share one colour | Wikimedia Commons | `tools/mirror_photos.py`, then `tools/cutout_photos.py` (macOS Vision, on-device) |
 
 **BetterGov.ph first.** Where [BetterGov.ph](https://bettergov.ph) already publishes clean, open data, we use it instead
 of re-scraping, and credit it (and its upstream sources) on every profile.
