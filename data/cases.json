@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "retrieved": "2026-10-02",
+  "retrieved": "2026-11-21",
   "policy": "Court, Ombudsman and election proceedings involving a lawmaker, with each event linked to its source. A charge or complaint is an allegation; a person is presumed innocent unless a court convicts. Dismissals, acquittals and the person's own response are recorded alongside charges. A case needs two independent outlets unless an official court or Ombudsman page is cited. Wording is neutral and limited to what the sources state.",
   "scope": "Criminal, administrative and election cases, and rulings on a lawmaker's public acts. Private family or business disputes are left out unless they became a public-office matter.",
   "checked": {
@@ -1231,6 +1231,142 @@
    "antolin-oreta-iii": {
     "date": "2026-11-13",
     "queries": 1
+   },
+   "antonio-legarda-jr": {
+    "date": "2026-11-21",
+    "queries": 3
+   },
+   "mauricio-domogan": {
+    "date": "2026-11-21",
+    "queries": 5
+   },
+   "gerardo-espina-jr": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "cholo-violago": {
+    "date": "2026-11-21",
+    "queries": 5
+   },
+   "baby-alfonso": {
+    "date": "2026-11-21",
+    "queries": 3
+   },
+   "nelson-legacion": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "eulogio-rodriguez": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "jolo-revilla": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "lani-mercado": {
+    "date": "2026-11-21",
+    "queries": 3
+   },
+   "crispin-diego-remulla": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "eduardo-rama-jr": {
+    "date": "2026-11-21",
+    "queries": 5
+   },
+   "daphne-lagon": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "kaka-bag-ao": {
+    "date": "2026-11-21",
+    "queries": 5
+   },
+   "ed-christopher-go": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "joseph-tan": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "dante-garcia": {
+    "date": "2026-11-21",
+    "queries": 5
+   },
+   "benjamin-agarao-jr": {
+    "date": "2026-11-21",
+    "queries": 5
+   },
+   "rolan-valeriano": {
+    "date": "2026-11-21",
+    "queries": 3
+   },
+   "joel-chua": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "miro-quimbo": {
+    "date": "2026-11-21",
+    "queries": 5
+   },
+   "jaime-fresnedi": {
+    "date": "2026-11-21",
+    "queries": 6
+   },
+   "jules-ledesma": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "jeffrey-ferrer": {
+    "date": "2026-11-21",
+    "queries": 5
+   },
+   "emerson-pascual": {
+    "date": "2026-11-21",
+    "queries": 5
+   },
+   "eric-olivarez": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "reynante-arrogancia": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "steve-solon": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "zaldy-villa": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "christopherson-yap": {
+    "date": "2026-11-21",
+    "queries": 3
+   },
+   "abdulmunir-arbison": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "alexander-pimentel": {
+    "date": "2026-11-21",
+    "queries": 6
+   },
+   "terry-ridon": {
+    "date": "2026-11-21",
+    "queries": 6
+   },
+   "presley-de-jesus": {
+    "date": "2026-11-21",
+    "queries": 4
+   },
+   "milagros-aquino-magsaysay": {
+    "date": "2026-11-21",
+    "queries": 3
    }
   }
  },
@@ -4491,6 +4627,249 @@
       "sources": [
        "https://dzrh.com.ph/post/malabon-rep-oreta-faces-complaints-over-alleged-botched-rehabilitation-of-tugatog-cemetery",
        "https://www.imtnews.ph/ibc-sued-over-alleged-anomalous-rehab-project"
+      ]
+     }
+    ]
+   }
+  ],
+  "eulogio-rodriguez": [
+   {
+    "id": "eulogio-rodriguez-1",
+    "kind": "election",
+    "body": "House of Representatives Electoral Tribunal",
+    "title": "Election protest, Sanchez v. Rodriguez (HRET Case No. 22-003 (EP)), Lone District of Catanduanes",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2023",
+    "events": [
+     {
+      "date": "2022",
+      "text": "Hectory S. Sanchez filed an election protest at the House of Representatives Electoral Tribunal over the 2022 congressional race in the Lone District of Catanduanes, with Rodriguez as protestee.",
+      "sources": [
+       "https://hret.gov.ph/cases-2022-2025"
+      ]
+     },
+     {
+      "date": "2023",
+      "text": "The Tribunal granted the protestee's motion for reconsideration dated March 23, 2023, set aside its Resolution No. 23-006 of February 23, 2023, dismissed the protest and the counter-protest, and affirmed Rodriguez's proclamation.",
+      "sources": [
+       "https://hret.gov.ph/cases-2022-2025"
+      ]
+     }
+    ]
+   }
+  ],
+  "lani-mercado": [
+   {
+    "id": "lani-mercado-1",
+    "kind": "other",
+    "body": "Office of the Ombudsman",
+    "title": "Ombudsman complaint by fisherfolk groups over Bacoor reclamation projects (as Bacoor City mayor)",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2020-02-17",
+      "text": "Pamalakaya and Anakpawis filed a complaint with the Office of the Ombudsman against Bacoor Mayor Lani Mercado-Revilla over the proposed 420-hectare Bacoor and Diamond reclamation projects, alleging violations of the Fisheries Code and the Supreme Court's Manila Bay mandamus. The mayor's office said it had not yet received a copy and would respond at the proper time. No outcome was found.",
+      "sources": [
+       "https://philstar.com/nation/2020/02/17/1993894/fishers-file-complaint-vs-bacoor-mayor-over-manila-bay-reclamation-projects",
+       "https://www.abs-cbn.com/news/02/17/20/fisherfolk-file-raps-vs-bacoor-mayor-over-alleged-reclamation-project",
+       "https://currentph.com/2020/02/18/pamalakaya-files-complaint-vs-lani-mercado-regarding-proposed-420-reclamation-in-cavite/"
+      ]
+     }
+    ]
+   }
+  ],
+  "eduardo-rama-jr": [
+   {
+    "id": "eduardo-rama-jr-1",
+    "kind": "criminal",
+    "body": "Office of the Ombudsman",
+    "title": "Ombudsman complaint over donated chickens distributed in Cebu City (2020)",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2022-04-20",
+    "events": [
+     {
+      "date": "2020-09",
+      "text": "Barangay Labangon resident Jonel Salceda filed a complaint with the Office of the Ombudsman against then-Councilor Eduardo Rama Jr. and his executive assistant, alleging malversation of public property, violation of Sec. 3 of RA 3019, grave misconduct and conduct unbecoming, over chickens donated to the city in May 2020. Rama said the allegations were politically motivated.",
+      "sources": [
+       "https://philstar.com/cebu-news/2020/09/02/2039554/edu-aide-face-malversation-raps"
+      ]
+     },
+     {
+      "date": "2022-04-20",
+      "text": "In a joint resolution, the Ombudsman dismissed the criminal complaints (usurpation of official functions and RA 3019 Sec. 3) against Rama, then-Vice Mayor Raymond Garcia and another official for lack of probable cause. The dismissal was reported on 2023-06-24.",
+      "sources": [
+       "https://web.archive.org/web/2024/https://cebudailynews.inquirer.net/?p=511956"
+      ]
+     }
+    ]
+   }
+  ],
+  "kaka-bag-ao": [
+   {
+    "id": "kaka-bag-ao-1",
+    "kind": "election",
+    "body": "House of Representatives Electoral Tribunal",
+    "title": "Ontua v. Bag-ao: HRET quo warranto petition over party-list seat (party affiliation)",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2013-02-07",
+    "events": [
+     {
+      "date": "2013-01-28",
+      "text": "Dinagat resident Rogelio Ontua filed a petition with the HRET arguing that then-Akbayan Rep. Bag-ao forfeited her party-list seat under RA 7941 by running for the Dinagat district seat under the Liberal Party. Bag-ao said she was a guest candidate and called the petition political harassment.",
+      "sources": [
+       "https://web.archive.org/web/2023/https://newsinfo.inquirer.net/351751/dinagat-resident-files-petition-to-disqualify-lawmaker-bag-ao",
+       "https://www.rappler.com/nation/21324-can-akbayan-rep-still-be-ousted"
+      ]
+     },
+     {
+      "date": "2013-02-07",
+      "text": "The HRET dismissed the petition as filed out of time, without ruling on the merits.",
+      "sources": [
+       "https://www.rappler.com/nation/21324-can-akbayan-rep-still-be-ousted"
+      ]
+     }
+    ]
+   }
+  ],
+  "ed-christopher-go": [
+   {
+    "id": "ed-christopher-go-1",
+    "kind": "criminal",
+    "body": "Quezon City Prosecutor's Office",
+    "title": "Reckless imprudence resulting in homicide and drunk-driving complaint over 2018 Quezon City road crash",
+    "role": "accused",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2018-10-03",
+      "text": "Police arrested then-Isabela board member Go after a vehicle he was driving fatally struck parking attendant Celso Calacat on Tomas Morato Avenue, Quezon City. Police said he faced charges of reckless imprudence resulting in homicide and driving under the influence, and referred the cases to the Quezon City Prosecutor's Office.",
+      "sources": [
+       "https://www.rappler.com/nation/213481-ed-christopher-go-arrested-over-death-pedestrian-quezon-city-october-2018",
+       "https://philstar.com/nation/2018/10/04/1856985/isabela-exec-faces-raps-over-parking-attendants-slay",
+       "https://web.archive.org/web/2019/https://newsinfo.inquirer.net/1038951/solons-son-faces-raps-for-qc-road-death-drunk-driving"
+      ]
+     }
+    ]
+   }
+  ],
+  "dante-garcia": [
+   {
+    "id": "dante-garcia-1",
+    "kind": "criminal",
+    "body": "Sandiganbayan (First Division)",
+    "title": "Sandiganbayan graft case over 2005-2006 purchase of fogging chemicals (Tubao, La Union)",
+    "role": "accused",
+    "status": "convicted",
+    "status_date": "2018-02-09",
+    "events": [
+     {
+      "date": "2018-02-09",
+      "text": "The Sandiganbayan First Division found then-Tubao Mayor Dante Garcia guilty on nine counts of violating Section 3(e) of RA 3019 over about P1.35 million in fogging chemicals bought through 'shopping' without public bidding in 2005-2006. The court capped the prison term at 40 years. Six co-accused officials and one supplier were also convicted; one supplier was acquitted. His counsel said they would seek reconsideration. A later ruling on reconsideration or appeal was not found as of November 2026.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/regions/643649/la-union-mayor-faces-40-year-jail-term-for-overpriced-fogging-chemicals/story/",
+       "https://www.philstar.com/nation/2018/02/15/1787873/la-union-mayor-gets-40-years-graft",
+       "https://news.mb.com.ph/2018/02/16/sandigan-convicts-la-union-mayor/",
+       "https://manilatimes.net/la-union-mayor-7-others-convicted-purchases-fogging-chemical/380453"
+      ]
+     }
+    ]
+   }
+  ],
+  "rolan-valeriano": [
+   {
+    "id": "rolan-valeriano-1",
+    "kind": "criminal",
+    "body": "Manila City Prosecutor's Office; Manila Regional Trial Court",
+    "title": "Cyberlibel complaint filed by Rep. Valeriano against then-Cavite Rep. Kiko Barzaga",
+    "role": "party",
+    "status": "pending",
+    "events": [
+     {
+      "date": "2026-01-21",
+      "text": "Valeriano filed a cyberlibel complaint at the Manila City Prosecutor's Office against Rep. Francisco 'Kiko' Barzaga over a Jan 9, 2026 Facebook post alleging NUP lawmakers were bribed. It was the third such complaint against Barzaga.",
+      "sources": [
+       "https://www.gmanetwork.com/news/topstories/nation/973584/kiko-barzaga-cyberlibel-manila-rep-valeriano/story",
+       "https://tribune.net.ph/2026/01/21/manila-solon-files-cyberlibel-case-vs-barzaga"
+      ]
+     },
+     {
+      "date": "2026-07",
+      "text": "Prosecutors found prima facie evidence and filed the case before the Manila RTC, recommending P10,000 bail for Barzaga.",
+      "sources": [
+       "https://www.dzrh.com.ph/post/cyberlibel-filed-vs-barzaga-before-manila-court"
+      ]
+     }
+    ]
+   }
+  ],
+  "miro-quimbo": [
+   {
+    "id": "miro-quimbo-1",
+    "kind": "election",
+    "body": "Comelec Committee on Kontra Bigay",
+    "title": "Comelec show-cause order over alleged vote buying and abuse of state resources (2025 elections)",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2025-04-26",
+      "text": "Comelec's Committee on Kontra Bigay issued show-cause orders to Romero 'Miro' Quimbo, then a Marikina 2nd district candidate, and Rep. Stella Quimbo over alleged vote buying and abuse of state resources. The couple denied buying votes, said the order is part of a complaint and not a case, and said they would answer.",
+      "sources": [
+       "https://philstarlife.com/news-and-views/478855-comelec-orders-quimbo-lacuna-and-other-local-bets-to-explain-alleged-vote-buying",
+       "http://www.gmanetwork.com/news/topstories/nation/944157/honey-lacuna-stella-quimbo-miro-quimbo-respond-to-comelec-order/story"
+      ]
+     }
+    ]
+   }
+  ],
+  "emerson-pascual": [
+   {
+    "id": "emerson-pascual-1",
+    "kind": "election",
+    "body": "Comelec Committee on Kontra Bigay",
+    "title": "Comelec Committee on Kontra Bigay show cause order over alleged vote buying (2025 elections)",
+    "role": "respondent",
+    "status": "filed",
+    "events": [
+     {
+      "date": "2025-04-23",
+      "text": "Comelec's Committee on Kontra Bigay issued a show cause order to Pascual, a reelection candidate for Nueva Ecija's 4th district, over a campaign speech in two Gapan barangays where he allegedly promised money and help, which the committee said may be presumed vote buying. He was given three days to explain in writing why no election offense complaint or disqualification petition should be filed.",
+      "sources": [
+       "https://www.inquirer.net/437814/comelec-orders-3-local-bets-to-explain-actions-that-may-be-vote-buying/",
+       "https://www.gmanetwork.com/news/topstories/regions/943681/2-oriental-mindoro-bets-asked-to-explain-involvement-in-alleged-vote-buying-incidents/story"
+      ]
+     }
+    ]
+   }
+  ],
+  "christopherson-yap": [
+   {
+    "id": "christopherson-yap-1",
+    "kind": "criminal",
+    "body": "Southern Leyte Provincial Prosecutor's Office",
+    "title": "Rape and attempted rape complaint (Southern Leyte Provincial Prosecutor)",
+    "role": "respondent",
+    "status": "dismissed",
+    "status_date": "2018-04-12",
+    "events": [
+     {
+      "date": "2017",
+      "text": "A complaint was filed by a complainant who was a minor when the alleged incidents in late 2016 took place. Yap was vice governor at the time. He and his family denied the accusation.",
+      "sources": [
+       "https://www.philstar.com/the-freeman/region/2018/05/10/1813802/rape-attempted-rape-cases-vs-southern-leyte-governor-junked",
+       "https://www.philstar.com/nation/2019/08/23/1945639/nation"
+      ]
+     },
+     {
+      "date": "2018-04-12",
+      "text": "The Southern Leyte Provincial Prosecutor's Office dismissed the rape and attempted rape complaints for lack of probable cause.",
+      "sources": [
+       "https://ptvnews.ph/southern-leyte-gov-relieved-rape-case-dismissal/",
+       "https://www.philstar.com/the-freeman/region/2018/05/10/1813802/rape-attempted-rape-cases-vs-southern-leyte-governor-junked"
       ]
      }
     ]
