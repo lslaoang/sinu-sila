@@ -15,10 +15,11 @@ Every fact links to its public source.
 - **Senate** (24 senators): bills authored per month and where they stand, laws passed with each senator's role,
   education, SALN (declared assets, liabilities and net worth), the 2025 or 2022 election result, and court cases.
 - **House of Representatives** (253 district representatives and 64 party-list representatives): grouped by province,
-  with party, bloc, 2025 election result and court cases.
+  with party, bloc, 2025 election result, court cases and the district's DPWH budget: the 2027 NEP against the House
+  bill on the same projects, the projects only one version has, and enacted budgets since 2020.
 - **Court cases, handled carefully.** A case needs two independent sources or an official court record. A charge is
   shown as an allegation unless a court decided it, and "not yet checked" is never presented as a clean record.
-- **Updated weekly**: Senate bills and laws, the House roster and SALN totals refresh every Monday.
+- **Updated weekly**: Senate bills and laws, the House roster, SALN totals and district budgets refresh every Monday.
 
 ## Principles
 
@@ -60,6 +61,7 @@ validate.py           data checks, run before every publish
 | Senators, bills, laws | [Senate of the Philippines](https://senate.gov.ph), Legislative Information System |
 | House roster | Wikipedia's list of current members (each record cites the exact revision) |
 | SALN | [BetterGov.ph SALN Tracker](https://github.com/bettergovph/saln-tracker-ph) |
+| District budgets (DPWH) | [BetterGov Budget](https://budget.bettergov.ph), from DBM and House budget documents |
 | Election results | [BetterGov.ph Dynasties](https://dynasties.bettergov.ph), built from [Open Halalan](https://robertrleung.github.io/OpenHalalan/) |
 | Court cases | News outlets and court or Ombudsman records, linked per event |
 | Education | Senate profiles, Wikipedia, cross-checked against news and fact-check outlets |

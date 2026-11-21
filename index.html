@@ -233,6 +233,11 @@
   .panel{background:var(--paper);border:1.5px solid var(--rule);border-radius:var(--r);padding:1.1rem 1.2rem;margin:1rem 0}
   .panel h4{margin:0 0 .6rem;font-size:1rem}
   .stack{display:flex;height:1rem;border-radius:4px;overflow:hidden;margin:.6rem 0}
+  .btier{margin:.8rem 0 0;max-width:62ch} .btier .pill{margin-right:.3rem}
+  .bt{margin:.4rem 0 .2rem;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem} .bt .tile strong{font-size:clamp(1.15rem,4.5vw,2rem)} .bt .tile span{font-size:.8rem}
+  .bgrp{list-style:none;padding:0;margin:0;display:grid;gap:.35rem} .bgrp li{display:flex;flex-wrap:wrap;gap:0 .4rem;align-items:baseline}
+  .bgrp li .num:last-child{margin-left:auto;font-family:var(--mono);font-size:.9rem} .bgrp small{color:var(--mute)}
+  .bnote{border-left:3px solid var(--gold);padding:.6rem .9rem;background:var(--paper);color:var(--ink);font-size:.9rem;max-width:70ch;margin:1.2rem 0 0}
   .legend{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.85rem;color:var(--mute)}
   .legend b{color:var(--ink)} .dot{display:inline-block;width:.7rem;height:.7rem;border-radius:50%;margin-right:.3rem}
   .bill{position:relative;display:block;text-decoration:none;color:inherit;border-bottom:1px solid var(--line);padding:.8rem 0}
@@ -393,7 +398,15 @@ const T = {
     senK: n => `Mataas na Kapulungan · ${n} senador`, distSen: n => `Rekord sa kaso ng ${n} senador`, distHouse: n => `Rekord sa kaso ng ${n} kinatawan`, distPL: n => `Rekord sa kaso ng ${n} party-list rep`,
     billsLaws: (b, l) => `${b} panukala · ${l} batas`, inEnglish: 'Nasa Ingles ang detalye', sectionsAl: 'Mga seksyon', backTo: x => `← ${x}`,
     senator: 'Senador', dataAsOf: 'Datos hanggang', casesChecked: 'kaso sinuri', tCases: 'kaso nakatala',
-    tabCases: 'Kaso', tabLaws: 'Batas', tabBills: 'Panukala', tabEdu: 'Pinag-aralan', tabFam: 'Pamilya', tabOffice: 'Puwesto', tabElec: 'Halalan',
+    tabCases: 'Kaso', tabLaws: 'Batas', tabBills: 'Panukala', tabEdu: 'Pinag-aralan', tabFam: 'Pamilya', tabOffice: 'Puwesto', tabElec: 'Halalan', tabBudget: 'Badyet', pLone: 'Sariling opisina', pShared: 'Hatid na opisina',
+    hBudget: 'Badyet ng DPWH sa distrito', budgetIntro: 'Pera ng DPWH na dumadaan sa district engineering office na nagtatayo sa distritong ito. Para makita mo ang distrito, hindi para sabihing hiniling o kontrolado ito ng kinatawan.',
+    bLoading: 'Kinukuha ang datos ng badyet…', bNone: 'Walang district engineering office na itinugma sa distritong ito sa mga dokumento ng badyet.', bFail: 'Hindi makuha ang datos ng badyet ngayon.',
+    bLone: 'Ang opisina ay para lang sa distritong ito, kaya ang halaga ay sa distritong ito.', bShared: n => `Kasama rin ang ${n}. Buo ang halaga at hindi hinati sa mga distrito.`,
+    b27: 'Badyet 2027, parehong mga proyekto', bNep: 'NEP (mungkahi)', bHB: 'Bersyon ng Kamara', bNet: 'Pagbabago', bGaa27: 'GAA 2027: hindi pa naisasabatas.',
+    bGroups: 'Paghahambing ng NEP at bersyon ng Kamara', gHouse: 'Nasa bersyon lang ng Kamara', gNep: 'Nasa NEP lang', gUp: 'Itinaas', gDown: 'Ibinaba', gSame: 'Walang pagbabago', gReview: 'Sinusuri pa',
+    gHouseS: 'kandidatong isiningit (insertion candidate)', gNepS: 'kandidatong tinanggal', bTop: 'Pinakamalalaking pagbabago', bAll: 'Lahat ng proyekto sa BetterGov',
+    bHist: 'Naisabatas na badyet ng opisina (GAA), bawat taon', bNotice: 'Hindi opisyal. Ito ay paghahambing ng BetterGov sa mga nailathalang dokumento ng badyet. Ang “kandidatong idinagdag” ay pagkakaiba ng dalawang dokumento, hindi patunay ng mali, at hindi nito ipinapakita na ang kinatawan ang humiling nito.',
+    bMethod: 'Paano ito binasa', bSrc: 'Datos mula sa BetterGov Budget (budget.bettergov.ph), mula sa mga dokumento ng DBM at ng Kamara. Kinuha noong',
     hElec: 'Halalan na nagpanalo sa kanya', elecSrc: 'Bilang ng boto mula sa', elecNone: 'Wala pang tumugmang resulta ng halalan para sa kanya.', votes: 'boto', votesGroup: g => `boto ng ${g}`,
     eYear: 'Halalan', eRank: 'Puwesto sa bilangan', eSeats: 'Mga puwestong pinaglabanan', eRunner: 'Pumangalawa', eMargin: 'Lamang', seatsN: n => `${n}`, unopposed: 'Walang kalaban',
     rankOf: (r, n) => `ika-${r} sa ${n} kandidato`, rankOfPL: (r, n) => `ika-${r} sa ${n} party-list`, rankOfSeats: (r, n, s) => `ika-${r} sa ${n} kandidato (${s} puwesto)`,
@@ -461,7 +474,15 @@ const T = {
     senK: n => `Upper house · ${n} senators`, distSen: n => `Court-case record of ${n} senators`, distHouse: n => `Court-case record of ${n} representatives`, distPL: n => `Court-case record of ${n} party-list reps`,
     billsLaws: (b, l) => `${b} bills · ${l} laws`, inEnglish: '', sectionsAl: 'Sections', backTo: x => `← ${x}`,
     senator: 'Senator', dataAsOf: 'Data as of', casesChecked: 'cases checked', tCases: 'cases listed',
-    tabCases: 'Cases', tabLaws: 'Laws', tabBills: 'Bills', tabEdu: 'Education', tabFam: 'Family', tabOffice: 'Office', tabElec: 'Election',
+    tabCases: 'Cases', tabLaws: 'Laws', tabBills: 'Bills', tabEdu: 'Education', tabFam: 'Family', tabOffice: 'Office', tabElec: 'Election', tabBudget: 'Budget', pLone: 'Lone office', pShared: 'Shared office',
+    hBudget: 'District budget (DPWH)', budgetIntro: 'DPWH money through the district engineering office that builds in this district. The representative is shown so you can find the district, not because they asked for or control this money.',
+    bLoading: 'Loading the budget data…', bNone: 'No DPWH district engineering office is matched to this district in the budget documents.', bFail: 'The budget data could not be loaded right now.',
+    bLone: 'It serves only this district, so its figures are this district’s.', bShared: n => `It also serves ${n}. Its figures are the whole office’s and are not split between districts.`,
+    b27: '2027 budget, same named projects', bNep: 'NEP (proposal)', bHB: 'House bill', bNet: 'Net change', bGaa27: 'GAA 2027: not yet enacted.',
+    bGroups: 'NEP against the House bill', gHouse: 'Only in the House bill', gNep: 'Only in the NEP', gUp: 'Raised', gDown: 'Cut', gSame: 'Unchanged', gReview: 'Under review',
+    gHouseS: 'insertion candidates', gNepS: 'deletion candidates', bTop: 'Largest changes', bAll: 'All projects on BetterGov',
+    bHist: 'Enacted budget of the office (GAA), per year', bNotice: 'Independent and unofficial: this is BetterGov’s comparison of the published budget documents. An “insertion candidate” is a difference between two documents, not proof of wrongdoing, and it does not show that the representative asked for it.',
+    bMethod: 'How it was read', bSrc: 'Data from BetterGov Budget (budget.bettergov.ph), read from DBM and House budget documents. Retrieved',
     hElec: 'The election that put them in office', elecSrc: 'Vote counts from', elecNone: 'No matching election result yet.', votes: 'votes', votesGroup: g => `votes for ${g}`,
     eYear: 'Election', eRank: 'Finish', eSeats: 'Seats contested', eRunner: 'Runner-up', eMargin: 'Margin', seatsN: n => `${n}`, unopposed: 'Unopposed',
     rankOf: (r, n) => `${r} of ${n} candidates`, rankOfPL: (r, n) => `${r} of ${n} party-list groups`, rankOfSeats: (r, n, s) => `${r} of ${n} candidates (${s} seats)`,
@@ -961,6 +982,37 @@ function salnHtml(o) {
 /* "data as of": the newest refresh of the data this profile shows (the weekly agent moves it), plus the case check */
 const asOfLine = (o, dates) => { const d = [...dates, ...o.records.map(r => r.retrieved)].filter(Boolean).sort().pop(), ck = cases._meta.checked[o.id]?.date;
   return `${t('dataAsOf')} ${esc(fmtDay(d))}${ck ? ` · ${t('casesChecked')} ${esc(fmtDay(ck))}` : ''}`; };
+let budgetP;   // budget.json is ~100 KB gzipped: fetched only when a district profile opens
+const loadBudget = () => budgetP ||= fetch('data/budget.json').then(r => r.ok ? r.json() : null).catch(() => null);
+const bil = n => (n / 1e9).toFixed(n < 1e10 ? 1 : 0) + 'B';
+const pesoD = n => n == null ? '–' : (n > 0 ? '+' : n < 0 ? '−' : '') + peso(Math.abs(n));
+function budgetHtml(o, B) {
+  if (!B) return `<p class="soon">${t('bFail')}</p>`;
+  const d = B.districts[o.id];
+  if (!d || d.tier === 'none' || !d.offices.length) return `<p class="soon">${t('bNone')}</p>`;
+  const shared = [...new Set(d.offices.flatMap(f => f.shared_with))];
+  const G = [['house_only', 'gHouse', 'gHouseS'], ['nep_only', 'gNep', 'gNepS'], ['increased', 'gUp'], ['decreased', 'gDown'], ['unchanged', 'gSame'], ['scope_review', 'gReview']];
+  const yrs = Object.keys(d.gaa), max = Math.max(...Object.values(d.gaa), 1);
+  const proj = p => `<a class="bill" href="${esc(p.url)}" target="_blank" rel="noopener"><b>${esc(p.t)}</b><br>
+      <small>${esc(p.office)}${p.pap ? ' · ' + esc(p.pap) : ''} · ${p.g === 'nep_only' ? `NEP ${peso(p.nep)}` : p.g === 'house_only' ? `${t('bHB')} ${peso(p.house)}` : `${peso(p.nep)} → ${peso(p.house)}`}</small>
+      <span class="pill">${esc(t({house_only: 'gHouse', nep_only: 'gNep', increased: 'gUp', decreased: 'gDown'}[p.g]))}</span><span class="sr"> (opens BetterGov)</span></a>`;
+  return `<p class="note">${t('budgetIntro')}</p>
+    <p class="btier"><span class="pill">${t(d.tier === 'A' ? 'pLone' : 'pShared')}</span> ${shared.length ? esc(t('bShared', shared.join(', '))) : t('bLone')}</p>
+    <div class="panel"><h4>${t('b27')}</h4>
+      <div class="tiles bt"><div class="tile"><strong class="num">${peso(d.cmp27.nep)}</strong><span>${t('bNep')}</span></div>
+        <div class="tile"><strong class="num">${peso(d.cmp27.house)}</strong><span>${t('bHB')}</span></div>
+        <div class="tile"><strong class="num">${pesoD(d.cmp27.delta)}</strong><span>${t('bNet')}</span></div></div>
+      <p class="note">${t('bGaa27')}</p>
+      <h4>${t('bGroups')}</h4>
+      <ul class="bgrp">${G.filter(([k]) => d.groups[k]?.[0]).map(([k, l, sub]) => `<li><b class="num">${d.groups[k][0]}</b> ${t(l)}${sub ? ` <small>(${t(sub)})</small>` : ''} <span class="num">${peso(d.groups[k][1])}</span></li>`).join('')}</ul></div>
+    ${d.top.length ? `<h4>${t('bTop')}</h4>${more(d.top.map(proj))}` : ''}
+    <p class="note">${d.offices.map(f => `<a href="${esc(f.url)}" target="_blank" rel="noopener">${t('bAll')}: ${esc(f.name)} ↗</a>`).join(' · ')}</p>
+    ${yrs.length ? `<div class="panel"><h4>${t('bHist')}</h4>
+      <div class="chart" role="img" aria-label="${esc(t('bHist'))}: ${yrs.map(y => `${y} ${peso(d.gaa[y])}`).join(', ')}">${yrs.map(y => `<span title="${y}: ${peso(d.gaa[y])}"><small>${bil(d.gaa[y])}</small><i style="height:${d.gaa[y] / max * 85}%"></i></span>`).join('')}</div>
+      <div class="axis"><span>${yrs[0]}</span><span>₱, billions</span><span>${yrs[yrs.length - 1]}</span></div></div>` : ''}
+    <p class="bnote">${t('bNotice')} <a href="${esc(B._meta.methodology)}" target="_blank" rel="noopener">${t('bMethod')} ↗</a></p>
+    <p class="note">${t('bSrc')} ${esc(fmtDay(B._meta.retrieved))}. <a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.label)} ↗</a></p>`;
+}
 function houseProfile(o) {
   app.innerHTML = `${phero(o, `${o.constituency} · ${o.term}`, asOfLine(o, [houseMeta.retrieved]))}
     ${summary(o)}
@@ -969,10 +1021,11 @@ function houseProfile(o) {
       <div class="tile txt"><strong>${esc(o.bloc || '–')}</strong><span>${t('tBloc')}</span></div>
       <div class="tile txt"><strong>${{district: t('kDistrict'), 'at-large': t('kLone'), 'party-list': t('kPL')}[o.kind] || '–'}</strong><span>${t('tSeat')}</span></div></div>
     <p class="note">${esc(t('partyNote', o.records[0]?.retrieved || ''))}</p>
-    ${ptabs([['kaso', t('tabCases'), (cases.cases[o.id] || []).length], ['halalan', t('tabElec')], ...(fam[o.id] ? [['pamilya', t('tabFam')]] : []), ['puwesto', t('tabOffice')]])}
-    ${casesHtml(o)}${elecHtml(o)}${famHtml(o)}<h3 class="h" id="puwesto">${t('hOffice')}</h3>${recordsHtml(o)}
+    ${ptabs([['kaso', t('tabCases'), (cases.cases[o.id] || []).length], ...(o.kind !== 'party-list' ? [['pera', t('tabBudget')]] : []), ['halalan', t('tabElec')], ...(fam[o.id] ? [['pamilya', t('tabFam')]] : []), ['puwesto', t('tabOffice')]])}
+    ${casesHtml(o)}${o.kind !== 'party-list' ? `<h3 class="h" id="pera">${t('hBudget')}</h3><div id="budgetBox" aria-live="polite"><p class="soon">${t('bLoading')}</p></div>` : ''}${elecHtml(o)}${famHtml(o)}<h3 class="h" id="puwesto">${t('hOffice')}</h3>${recordsHtml(o)}
     <p class="note">${o.wikipedia ? `More about ${esc(clean(o.name))}: <a href="${esc(o.wikipedia)}" target="_blank" rel="noopener">Wikipedia ↗</a>. ` : ''}${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a>, background removed (see the file page for author and licence).` : ''}</p>
     <p class="note">${t('houseLater')}</p>`;
+  if (o.kind !== 'party-list') loadBudget().then(B => { const el = document.getElementById('budgetBox'); if (el && hashName() === o.id) el.innerHTML = budgetHtml(o, B); });
 }
 const recordsHtml = o => `<ul class="offices">${o.records.map(r => `<li><b>${esc(r.title)}</b><small>${r.type === 'membership' ? t('since') : esc(r.type) + ' · '}${esc(dayLabelFull(r.date))}</small><a href="${esc(r.source_url)}" rel="noopener" target="_blank">${t('source')}<span class="sr"> (opens in a new tab)</span> ↗</a></li>`).join('')}</ul>`;
 function profile(o) {

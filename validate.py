@@ -121,6 +121,17 @@ if os.path.exists("data/elections.json"):
     errors += [f"elections.json house: unknown id {k}" for k in el["house"] if k not in hids]
     groups = {p["party"] for p in house if p.get("kind") == "party-list"}
     errors += [f"elections.json partylist: unknown group {k}" for k in el["partylist"] if k not in groups]
+# district budget (tools/import_budget.py): keys are House district members, every link goes to BetterGov, Shared
+# offices name the districts they also serve, and the "not evidence of wrongdoing" notice is kept
+if os.path.exists("data/budget.json"):
+    bd = json.load(open("data/budget.json"))
+    if "wrongdoing" not in bd["_meta"].get("notice", ""): errors.append("budget.json: BetterGov's notice is missing")
+    for k, d in bd["districts"].items():
+        if k not in hids: errors.append(f"budget.json: unknown House id {k}")
+        urls = [d["url"]] + [f["url"] for f in d["offices"]] + [p["url"] for p in d["top"]]
+        errors += [f"budget.json {k}: link outside budget.bettergov.ph {u}" for u in urls if not u.startswith("https://budget.bettergov.ph/")]
+        errors += [f"budget.json {k}: shared office {f['name']} without its other districts" for f in d["offices"] if f["tier"] == "B" and not f["shared_with"]]
+        errors += [f"budget.json {k}: bad project group {p['g']}" for p in d["top"] if p["g"] not in ("house_only", "nep_only", "increased", "decreased")]
 
 print("\n".join(errors) or "ok")
 sys.exit(bool(errors))

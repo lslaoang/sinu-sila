@@ -63,6 +63,13 @@ If neither browser can open the site, skip this step and say so in the report.
 more than 3 new PROBLEM lines appear; list PROBLEM lines in the report either way. (Election results in
 `data/elections.json` change only after an election: don't re-run that tool weekly.)
 
+## 2c. District budget (DPWH)
+`python3 tools/import_budget.py` re-reads BetterGov's budget API (about 5 minutes). It refuses to write if fewer than
+240 districts match. Publish `data/budget.json` if it changed and `validate.py` passes. "CHECK name" lines are usually
+spelling differences (suffixes, hyphens); list any that look like a different person, and hold the file back
+(`git checkout data/budget.json`) if more than 5 do. When BetterGov adds the enacted FY2027 GAA, say so in the report:
+the page needs a GAA column, which is a code change for the maintainer.
+
 ## 3. Court cases: research only, never publish
 For up to 10 cases in `data/cases.json` whose latest event is the oldest among those with status
 `filed` / `pending` / `appealed` / `suspended`, search the news and court sites for anything newer.
@@ -78,7 +85,7 @@ Do **not** edit `data/cases.json`.
 ```bash
 B=s3://sino-sila-773994910221
 git status --short data assets            # see what changed
-aws s3 cp data/<file>.json $B/data/<file>.json --content-type application/json     # each changed data file
+aws s3 cp data/<file>.json $B/data/<file>.json --content-type application/json     # each changed data file (incl. budget.json)
 aws s3 sync assets/photos $B/assets/photos --size-only                              # if photos changed
 aws cloudfront create-invalidation --distribution-id E1QGRO3D7NQZVA --paths "/data/*" "/assets/photos/*"
 ```

@@ -16,6 +16,7 @@ Licensing is in [DATA_LICENSE.md](../DATA_LICENSE.md).
 | `data/cases.json` | Court, Ombudsman and election cases, as timelines of sourced events | News outlets and court/Ombudsman pages | research + `tools/ingest_cases.py` |
 | `data/saln.json` | Senators' declared assets, liabilities and net worth | [BetterGov.ph SALN Tracker](https://github.com/bettergovph/saln-tracker-ph) | `tools/import_saln.py` |
 | `data/elections.json` | The race that put each lawmaker in office | [BetterGov.ph Dynasties](https://dynasties.bettergov.ph/developers), from [Open Halalan](https://robertrleung.github.io/OpenHalalan/) | `tools/import_elections.py` |
+| `data/budget.json` | DPWH money per House district: serving engineering offices (Lone/Shared), enacted GAA 2020–2026, FY2027 NEP vs House bill on the same projects, the largest House-only / NEP-only / changed projects | [BetterGov Budget](https://budget.bettergov.ph/docs) (FY2027 House bill vs NEP), from DBM and House budget documents | `tools/import_budget.py` |
 | `data/pulitiklan.json` | Links to political-family pages | [Pulitiklan](https://pulitiklan.com) (links only) | `tools/link_pulitiklan.py` |
 | `assets/photos/*.webp` | 341 portraits, background removed so all share one colour | Wikimedia Commons | `tools/mirror_photos.py`, then `tools/cutout_photos.py` (macOS Vision, on-device) |
 

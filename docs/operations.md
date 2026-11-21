@@ -34,6 +34,7 @@ open) follows [`tools/weekly_update.md`](../tools/weekly_update.md):
 1. Senate bills and laws through a browser tab: the app's built-in browser (`tools/senate_fetch.js` → `tools/senate_diff.js` → `apply_senate.py --patch`), or Chrome as a fallback.
 2. House roster (`tools/import_house.py` prints ADDED / REMOVED / CHANGED) and photos (`tools/mirror_photos.py`).
 3. SALN totals (`tools/import_saln.py`).
+3b. District budgets (`tools/import_budget.py`, BetterGov budget API; refuses to write if fewer than 240 districts match).
 4. Court cases: research only, into `review/`, never published by the agent.
 5. `validate.py`, publish only the data files that changed, commit `DATA: Weekly refresh <date>`.
 
