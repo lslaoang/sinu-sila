@@ -427,7 +427,7 @@ const T = {
     bLone: 'Ang opisina ay para lang sa distritong ito, kaya ang halaga ay sa distritong ito.', bShared: n => `Kasama rin ang ${n}. Buo ang halaga at hindi hinati sa mga distrito.`,
     b27: 'Badyet 2027, parehong mga proyekto', bNep: 'NEP (mungkahi)', bHB: 'Bersyon ng Kamara', bNet: 'Pagbabago', bGaa27: 'GAA 2027: hindi pa naisasabatas.',
     bGroups: 'Paghahambing ng NEP at bersyon ng Kamara', gHouse: 'Nasa bersyon lang ng Kamara', gNep: 'Nasa NEP lang', gUp: 'Itinaas', gDown: 'Ibinaba', gSame: 'Walang pagbabago', gReview: 'Sinusuri pa',
-    gHouseS: 'kandidatong isiningit (insertion candidate)', gNepS: 'kandidatong tinanggal', bTop: 'Pinakamalalaking pagbabago', bAll: 'Lahat ng proyekto sa BetterGov',
+    gHouseS: 'kandidatong isiningit (insertion candidate)', gNepS: 'kandidatong tinanggal', bTop: 'Pinakamalalaking pagbabago', bTopNote: 'Ayon sa opisinang nakalista sa mga dokumento, kaya maaaring nasa labas ng distrito ang ilang proyekto. Hindi kasama ang mga linyang hindi pa tiyak ang pagtutugma.', bAll: 'Lahat ng proyekto sa BetterGov',
     bHist: 'Naisabatas na badyet ng opisina (GAA), bawat taon', bNotice: 'Hindi opisyal. Ito ay paghahambing ng BetterGov sa mga nailathalang dokumento ng badyet. Ang “kandidatong idinagdag” ay pagkakaiba ng dalawang dokumento, hindi patunay ng mali, at hindi nito ipinapakita na ang kinatawan ang humiling nito.',
     bMethod: 'Paano ito binasa', bSrc: 'Datos mula sa BetterGov Budget (budget.bettergov.ph), mula sa mga dokumento ng DBM at ng Kamara. Kinuha noong',
     hElec: 'Halalan na nagpanalo sa kanya', elecSrc: 'Bilang ng boto mula sa', elecNone: 'Wala pang tumugmang resulta ng halalan para sa kanya.', votes: 'boto', votesGroup: g => `boto ng ${g}`,
@@ -510,7 +510,7 @@ const T = {
     bLone: 'It serves only this district, so its figures are this district’s.', bShared: n => `It also serves ${n}. Its figures are the whole office’s and are not split between districts.`,
     b27: '2027 budget, same named projects', bNep: 'NEP (proposal)', bHB: 'House bill', bNet: 'Net change', bGaa27: 'GAA 2027: not yet enacted.',
     bGroups: 'NEP against the House bill', gHouse: 'Only in the House bill', gNep: 'Only in the NEP', gUp: 'Raised', gDown: 'Cut', gSame: 'Unchanged', gReview: 'Under review',
-    gHouseS: 'insertion candidates', gNepS: 'deletion candidates', bTop: 'Largest changes', bAll: 'All projects on BetterGov',
+    gHouseS: 'insertion candidates', gNepS: 'deletion candidates', bTop: 'Largest changes', bTopNote: 'Listed by the office the documents name, so a project can lie outside this district. Lines BetterGov could not match with confidence are left out.', bAll: 'All projects on BetterGov',
     bHist: 'Enacted budget of the office (GAA), per year', bNotice: 'Independent and unofficial: this is BetterGov’s comparison of the published budget documents. An “insertion candidate” is a difference between two documents, not proof of wrongdoing, and it does not show that the representative asked for it.',
     bMethod: 'How it was read', bSrc: 'Data from BetterGov Budget (budget.bettergov.ph), read from DBM and House budget documents. Retrieved',
     hElec: 'The election that put them in office', elecSrc: 'Vote counts from', elecNone: 'No matching election result yet.', votes: 'votes', votesGroup: g => `votes for ${g}`,
@@ -1039,7 +1039,7 @@ function budgetHtml(o, B) {
       <p class="note">${t('bGaa27')}</p>
       <h4>${t('bGroups')}</h4>
       <ul class="bgrp">${G.filter(([k]) => d.groups[k]?.[0]).map(([k, l, sub]) => `<li><b class="num">${d.groups[k][0]}</b> ${t(l)}${sub ? ` <small>(${t(sub)})</small>` : ''} <span class="num">${peso(d.groups[k][1])}</span></li>`).join('')}</ul></div>
-    ${d.top.length ? `<h4>${t('bTop')}</h4>${more(d.top.map(proj))}` : ''}
+    ${d.top.length ? `<h4>${t('bTop')}</h4><p class="note">${t('bTopNote')}</p>${more(d.top.map(proj))}` : ''}
     <p class="note">${d.offices.map(f => `<a href="${esc(f.url)}" target="_blank" rel="noopener">${t('bAll')}: ${esc(f.name)} ↗</a>`).join(' · ')}</p>
     ${yrs.length ? `<div class="panel"><h4>${t('bHist')}</h4>
       <div class="chart" role="img" aria-label="${esc(t('bHist'))}: ${yrs.map(y => `${y} ${peso(d.gaa[y])}`).join(', ')}">${yrs.map(y => `<span title="${y}: ${peso(d.gaa[y])}"><small>${bil(d.gaa[y])}</small><i style="height:${d.gaa[y] / max * 85}%"></i></span>`).join('')}</div>

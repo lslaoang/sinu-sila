@@ -63,7 +63,8 @@ for p in seats:
             rows = []
             for grp, (sort, order, n) in TOP.items():
                 if not o["fy2027"]["bridge"]["groups"].get(grp, {}).get("rows"): continue
-                for r in get(f"{o['projects_api']}&group={grp}&sort={sort}&order={order}&limit={n}")["data"]["rows"]:
+                # held=hide: skip BetterGov's unconfirmed ("possible match") lines, as its own ranked lists do
+                for r in get(f"{o['projects_api']}&group={grp}&held=hide&sort={sort}&order={order}&limit={n}")["data"]["rows"]:
                     rows.append({"t": clean(r["title"]), "g": grp,
                                  "nep": r["nep_php"], "house": r["house_php"], "pap": r.get("program"), "office": o["name"], "url": r["url"]})
             offices_cache[o["id"]] = rows
