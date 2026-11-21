@@ -233,6 +233,15 @@
   .panel{background:var(--paper);border:1.5px solid var(--rule);border-radius:var(--r);padding:1.1rem 1.2rem;margin:1rem 0}
   .panel h4{margin:0 0 .6rem;font-size:1rem}
   .stack{display:flex;height:1rem;border-radius:4px;overflow:hidden;margin:.6rem 0}
+  .bhow{margin:1rem 0} .bhow h4{margin:0 0 .6rem;font-size:1rem}
+  .bsteps{list-style:none;counter-reset:st;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.6rem}
+  .bsteps li{counter-increment:st;border-top:3px solid var(--line);padding-top:.5rem;font-size:.85rem;color:var(--mute);display:flex;flex-direction:column;gap:.2rem}
+  .bsteps li::before{content:counter(st);font:600 .8rem var(--mono);color:var(--mute)}
+  .bsteps b{color:var(--ink);font-size:.95rem} .bsteps [aria-current]{border-top-color:var(--yellow)}
+  .bsteps em{font-style:normal;font-weight:700;font-size:.75rem;background:var(--yellow);color:#1a1714;padding:.1rem .4rem;border-radius:4px;align-self:flex-start}
+  .bterms{margin:.9rem 0 0;display:grid;gap:.3rem;font-size:.88rem;max-width:70ch} .bterms dt{display:inline;font-weight:700;margin-right:.3rem} .bterms dt::after{content:":"} .bterms dd{display:inline;margin:0;color:var(--mute)}
+  @media (max-width:40rem){.bsteps{grid-template-columns:1fr;gap:.5rem} .bsteps li{border-top:0;border-left:3px solid var(--line);padding:0 0 0 .7rem}
+    .bsteps li::before{display:none} .bsteps [aria-current]{border-left-color:var(--yellow)}}
   .btier{margin:.8rem 0 0;max-width:62ch} .btier .pill{margin-right:.3rem}
   .bt{margin:.4rem 0 .2rem;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem} .bt .tile strong{font-size:clamp(1.15rem,4.5vw,2rem)} .bt .tile span{font-size:.8rem}
   .bgrp{list-style:none;padding:0;margin:0;display:grid;gap:.35rem} .bgrp li{display:flex;flex-wrap:wrap;gap:0 .4rem;align-items:baseline}
@@ -398,7 +407,14 @@ const T = {
     senK: n => `Mataas na Kapulungan · ${n} senador`, distSen: n => `Rekord sa kaso ng ${n} senador`, distHouse: n => `Rekord sa kaso ng ${n} kinatawan`, distPL: n => `Rekord sa kaso ng ${n} party-list rep`,
     billsLaws: (b, l) => `${b} panukala · ${l} batas`, inEnglish: 'Nasa Ingles ang detalye', sectionsAl: 'Mga seksyon', backTo: x => `← ${x}`,
     senator: 'Senador', dataAsOf: 'Datos hanggang', casesChecked: 'kaso sinuri', tCases: 'kaso nakatala',
-    tabCases: 'Kaso', tabLaws: 'Batas', tabBills: 'Panukala', tabEdu: 'Pinag-aralan', tabFam: 'Pamilya', tabOffice: 'Puwesto', tabElec: 'Halalan', tabBudget: 'Badyet', pLone: 'Sariling opisina', pShared: 'Hatid na opisina',
+    tabCases: 'Kaso', tabLaws: 'Batas', tabBills: 'Panukala', tabEdu: 'Pinag-aralan', tabFam: 'Pamilya', tabOffice: 'Puwesto', tabElec: 'Halalan', tabBudget: 'Badyet', bHow: 'Paano nagiging batas ang badyet', bHere: 'Dito na ang 2027 sa datos namin',
+    bSteps: [['NEP', 'Agosto: ang mungkahing badyet ng Pangulo (National Expenditure Program), inihanda ng DBM at ipinadala sa Kongreso.'],
+      ['Bersyon ng Kamara', 'Binabago ito ng Kamara de Representantes at ipinapasa ang sarili nilang bersyon.'],
+      ['Senado', 'Ipinapasa rin ng Senado ang sarili nilang bersyon.'],
+      ['Bicam', 'Pinagkakasundo ng pinagsamang komite ng Kamara at Senado ang pagkakaiba.'],
+      ['GAA', 'Pinipirmahan ng Pangulo: ang General Appropriations Act ang badyet na naging batas, karaniwang Disyembre.']],
+    bTerms: [['Kandidatong isiningit (insertion candidate)', 'proyektong nasa bersyon ng Kamara pero wala sa NEP.'], ['Kandidatong tinanggal', 'proyektong nasa NEP pero wala sa bersyon ng Kamara.'],
+      ['DEO', 'District Engineering Office: ang opisina ng DPWH na nagpapagawa ng kalsada, tulay at gusali sa isang lugar.']], pLone: 'Sariling opisina', pShared: 'Hatid na opisina',
     hBudget: 'Badyet ng DPWH sa distrito', budgetIntro: 'Pera ng DPWH na dumadaan sa district engineering office na nagtatayo sa distritong ito. Para makita mo ang distrito, hindi para sabihing hiniling o kontrolado ito ng kinatawan.',
     bLoading: 'Kinukuha ang datos ng badyet…', bNone: 'Walang district engineering office na itinugma sa distritong ito sa mga dokumento ng badyet.', bFail: 'Hindi makuha ang datos ng badyet ngayon.',
     bLone: 'Ang opisina ay para lang sa distritong ito, kaya ang halaga ay sa distritong ito.', bShared: n => `Kasama rin ang ${n}. Buo ang halaga at hindi hinati sa mga distrito.`,
@@ -474,7 +490,14 @@ const T = {
     senK: n => `Upper house · ${n} senators`, distSen: n => `Court-case record of ${n} senators`, distHouse: n => `Court-case record of ${n} representatives`, distPL: n => `Court-case record of ${n} party-list reps`,
     billsLaws: (b, l) => `${b} bills · ${l} laws`, inEnglish: '', sectionsAl: 'Sections', backTo: x => `← ${x}`,
     senator: 'Senator', dataAsOf: 'Data as of', casesChecked: 'cases checked', tCases: 'cases listed',
-    tabCases: 'Cases', tabLaws: 'Laws', tabBills: 'Bills', tabEdu: 'Education', tabFam: 'Family', tabOffice: 'Office', tabElec: 'Election', tabBudget: 'Budget', pLone: 'Lone office', pShared: 'Shared office',
+    tabCases: 'Cases', tabLaws: 'Laws', tabBills: 'Bills', tabEdu: 'Education', tabFam: 'Family', tabOffice: 'Office', tabElec: 'Election', tabBudget: 'Budget', bHow: 'How a budget becomes law', bHere: '2027 is here in our data',
+    bSteps: [['NEP', 'August: the President’s proposed budget (National Expenditure Program), prepared by DBM and sent to Congress.'],
+      ['House bill', 'The House of Representatives changes it and passes its own version.'],
+      ['Senate', 'The Senate passes its own version.'],
+      ['Bicam', 'A joint House–Senate committee settles the differences.'],
+      ['GAA', 'The President signs it: the General Appropriations Act is the budget that becomes law, usually in December.']],
+    bTerms: [['Insertion candidate', 'a project in the House bill that was not in the NEP.'], ['Deletion candidate', 'a project in the NEP that the House bill dropped.'],
+      ['DEO', 'District Engineering Office: the DPWH office that builds roads, bridges and buildings in an area.']], pLone: 'Lone office', pShared: 'Shared office',
     hBudget: 'District budget (DPWH)', budgetIntro: 'DPWH money through the district engineering office that builds in this district. The representative is shown so you can find the district, not because they asked for or control this money.',
     bLoading: 'Loading the budget data…', bNone: 'No DPWH district engineering office is matched to this district in the budget documents.', bFail: 'The budget data could not be loaded right now.',
     bLone: 'It serves only this district, so its figures are this district’s.', bShared: n => `It also serves ${n}. Its figures are the whole office’s and are not split between districts.`,
@@ -997,6 +1020,8 @@ function budgetHtml(o, B) {
       <small>${esc(p.office)}${p.pap ? ' · ' + esc(p.pap) : ''} · ${p.g === 'nep_only' ? `NEP ${peso(p.nep)}` : p.g === 'house_only' ? `${t('bHB')} ${peso(p.house)}` : `${peso(p.nep)} → ${peso(p.house)}`}</small>
       <span class="pill">${esc(t({house_only: 'gHouse', nep_only: 'gNep', increased: 'gUp', decreased: 'gDown'}[p.g]))}</span><span class="sr"> (opens BetterGov)</span></a>`;
   return `<p class="note">${t('budgetIntro')}</p>
+    <div class="bhow"><h4>${t('bHow')}</h4><ol class="bsteps">${t('bSteps').map(([k, v], i) => `<li${i === 1 ? ' aria-current="step"' : ''}><b>${k}</b><span>${v}</span>${i === 1 ? `<em>${t('bHere')}</em>` : ''}</li>`).join('')}</ol>
+      <dl class="bterms">${t('bTerms').map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl></div>
     <p class="btier"><span class="pill">${t(d.tier === 'A' ? 'pLone' : 'pShared')}</span> ${shared.length ? esc(t('bShared', shared.join(', '))) : t('bLone')}</p>
     <div class="panel"><h4>${t('b27')}</h4>
       <div class="tiles bt"><div class="tile"><strong class="num">${peso(d.cmp27.nep)}</strong><span>${t('bNep')}</span></div>
