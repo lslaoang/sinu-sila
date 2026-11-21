@@ -380,7 +380,9 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;
 const clean = n => n.replace(/"[^"]*"/g, '').replace(/\s+/g, ' ').trim();
 const initials = n => { const p = clean(n).split(' ').filter(w => /^[A-Za-z]/.test(w) && !/^(Jr\.?|Sr\.?|II|III|IV)$/.test(w)); return (p[0][0] + (p[p.length-1][0] || '')).toUpperCase(); };
 const hue = s => [...s].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 360, 7);
-const av = (n, photo, eager) => `<div class="av" style="background:hsl(${hue(n)} 60% 28%)" aria-hidden="true">${initials(n)}${photo ? `<img src="${esc(photo)}" alt="" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} referrerpolicy="no-referrer" onload="this.parentNode.classList.add('ph')" onerror="this.remove()">` : ''}</div>`;
+// Bump PHOTO_V whenever photos are replaced under the same file names, so every browser downloads the new ones
+const PHOTO_V = '2026-11-21', pv = u => u.startsWith('assets/') ? `${u}?v=${PHOTO_V}` : u;
+const av = (n, photo, eager) => `<div class="av" style="background:hsl(${hue(n)} 60% 28%)" aria-hidden="true">${initials(n)}${photo ? `<img src="${esc(pv(photo))}" alt="" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} referrerpolicy="no-referrer" onload="this.parentNode.classList.add('ph')" onerror="this.remove()">` : ''}</div>`;
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const app = document.getElementById('app'), q = document.getElementById('q'), tip = document.getElementById('tip');
 let data = [], house = [], houseMeta = {}, bills = {}, laws = {bills: []}, edu = {}, fam = {}, cases = {_meta: {checked: {}}, cases: {}}, saln = {_meta: {}, people: {}}, elec = {_meta: {}, senate: {}, house: {}, partylist: {}};
@@ -727,7 +729,7 @@ function updateWall() {
   const w = document.getElementById('wall'); if (!w) return;
   w.innerHTML = rows.map(o => `<li><a class="pt" href="#${esc(o.id)}" aria-label="${esc(clean(o.name))}, ${esc(o.position)}, ${esc(trackLabel(o.id))}, ${billCount(o.id)} bills, ${lawCount(o.id)} laws backed">
       ${isLead(o) ? `<span class="tag" aria-hidden="true">${esc(o.position.replace(/^Senate /, ''))}</span>` : ''}
-      <span class="ph"><span class="ini" aria-hidden="true">${initials(o.name)}</span>${o.photo ? `<img src="${esc(o.photo)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}</span>
+      <span class="ph"><span class="ini" aria-hidden="true">${initials(o.name)}</span>${o.photo ? `<img src="${esc(pv(o.photo))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}</span>
       <span class="cap"><b>${esc(lastName(o))}</b><span class="pos">${esc(clean(o.name))}</span>
         <span class="bd">${t('billsLaws', billCount(o.id), lawCount(o.id))}</span></span>${tkHtml(o.id, 'band')}</a></li>`).join('')
     || '<li class="soon" style="grid-column:1/-1">No senator matches that.</li>';
@@ -859,7 +861,7 @@ function home() {
         <div class="when"><dt>${t('gMembers')}</dt><span class="dots"></span><dd>${fmtDay(membersAsOf())}</dd></div>
         <div class="when"><dt>${t('gCases')}</dt><span class="dots"></span><dd>${fmtDay(casesAsOf())}</dd></div></dl></aside></section>
     <section class="out faces" aria-labelledby="fH"><div class="shead"><h2 id="fH">${t('facesH', data.length)}</h2><a href="#senado">${t('facesAll')} →</a></div>
-      <ul>${[...data].sort((a, b) => lastName(a).localeCompare(lastName(b))).map((o, _, all) => `<li><a href="#${esc(o.id)}" aria-label="${esc(clean(o.name))}"><span class="ph">${o.photo ? `<img src="${esc(o.photo)}" alt="" loading="lazy">` : `<span class="ini" aria-hidden="true">${initials(o.name)}</span>`}</span><small aria-hidden="true">${all.filter(x => lastName(x) === lastName(o)).length > 1 ? esc(clean(o.name)[0]) + '. ' : ''}${esc(lastName(o))}</small></a></li>`).join('')}</ul></section>
+      <ul>${[...data].sort((a, b) => lastName(a).localeCompare(lastName(b))).map((o, _, all) => `<li><a href="#${esc(o.id)}" aria-label="${esc(clean(o.name))}"><span class="ph">${o.photo ? `<img src="${esc(pv(o.photo))}" alt="" loading="lazy">` : `<span class="ini" aria-hidden="true">${initials(o.name)}</span>`}</span><small aria-hidden="true">${all.filter(x => lastName(x) === lastName(o)).length > 1 ? esc(clean(o.name)[0]) + '. ' : ''}${esc(lastName(o))}</small></a></li>`).join('')}</ul></section>
     <div class="out" id="homeOut" aria-live="polite"></div>
     <div class="out"><div class="shead"><h2>${t('browse')}</h2><small>${data.length + house.length} ${t('lawmakers')}</small></div><div class="browse">
       ${bc('#senado', t('bSen'), data.length, t('bSenS2'), t('ctaSen'), '#0038a8', 'var(--blue)')}

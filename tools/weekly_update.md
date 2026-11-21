@@ -85,8 +85,8 @@ Do **not** edit `data/cases.json`.
 ```bash
 B=s3://sino-sila-773994910221
 git status --short data assets            # see what changed
-aws s3 cp data/<file>.json $B/data/<file>.json --content-type application/json     # each changed data file (incl. budget.json)
-aws s3 sync assets/photos $B/assets/photos --size-only                              # if photos changed
+aws s3 cp data/<file>.json $B/data/<file>.json --content-type application/json --cache-control "public, max-age=300"   # each changed data file (incl. budget.json)
+aws s3 sync assets/photos $B/assets/photos --size-only --content-type image/webp --cache-control "public, max-age=86400"   # if photos changed
 aws cloudfront create-invalidation --distribution-id E1QGRO3D7NQZVA --paths "/data/*" "/assets/photos/*"
 ```
 Wait for the invalidation (`aws cloudfront wait invalidation-completed ...`), then confirm the live copy:
