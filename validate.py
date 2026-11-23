@@ -132,6 +132,23 @@ if os.path.exists("data/budget.json"):
         errors += [f"budget.json {k}: link outside budget.bettergov.ph {u}" for u in urls if not u.startswith("https://budget.bettergov.ph/")]
         errors += [f"budget.json {k}: shared office {f['name']} without its other districts" for f in d["offices"] if f["tier"] == "B" and not f["shared_with"]]
         errors += [f"budget.json {k}: bad project group {p['g']}" for p in d["top"] if p["g"] not in ("house_only", "nep_only", "increased", "decreased")]
+# House bill counts (tools/import_house_bills.py): known House ids, sane numbers (law <= passed <= filed, lead <= filed)
+if os.path.exists("data/house_bills.json"):
+    for k, v in json.load(open("data/house_bills.json"))["members"].items():
+        if k not in hids: errors.append(f"house_bills.json: unknown House id {k}")
+        f, lead, p, law = v
+        if not (0 <= law <= p <= f and lead <= f): errors.append(f"house_bills.json {k}: counts out of order {v}")
+# contacts (senate.gov.ph) and facts (Wikidata): known ids, emails look like emails, links are https
+if os.path.exists("data/contacts.json"):
+    cts = json.load(open("data/contacts.json"))
+    for k, v in list(cts["senate"].items()) + list(cts.get("house", {}).items()):
+        if k not in (ids if k in cts["senate"] else hids): errors.append(f"contacts.json: unknown id {k}")
+        errors += [f"contacts.json {k}: bad email {e}" for _, e in v["emails"] if not re.fullmatch(r"[^@\s]+@[^@\s]+\.[a-z]{2,}", e)]
+        errors += [f"contacts.json {k}: bad link {u}" for u in v["web"] + v["social"] if not u.startswith("http")]
+if os.path.exists("data/facts.json"):
+    for k, v in json.load(open("data/facts.json"))["people"].items():
+        if k not in ids | hids: errors.append(f"facts.json: unknown id {k}")
+        if "born" in v and not re.fullmatch(r"\d{4}(-\d\d-\d\d)?", v["born"]): errors.append(f"facts.json {k}: bad date {v['born']}")
 
 print("\n".join(errors) or "ok")
 sys.exit(bool(errors))

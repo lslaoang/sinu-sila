@@ -20,7 +20,8 @@
   "photo": "assets/photos/win-gatchalian.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/9ed79e7b-b6ee-4305-9058-f75b10030001.jpg",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Sherwin_%E2%80%9CWin%E2%80%9D_Gatchalian,_2025_portrait_(cropped).jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Sherwin_Gatchalian"
  },
  {
   "id": "vicente-c-sotto-iii",
@@ -43,7 +44,8 @@
   "photo": "assets/photos/vicente-c-sotto-iii.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/d99f0900-236f-4b6d-a45c-c56a842d6cad.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Vicente_Sotto_III_(2025)_(cropped_2).jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Tito_Sotto"
  },
  {
   "id": "juan-miguel-f-zubiri",
@@ -67,7 +69,8 @@
   "photo": "assets/photos/juan-miguel-f-zubiri.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/d973d122-7c83-469c-b864-9e692d14211e.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Juan_Miguel_Zubiri_(2022)_(cropped).jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Juan_Miguel_Zubiri"
  },
  {
   "id": "alan-peter-s-cayetano",
@@ -90,7 +93,8 @@
   "photo": "assets/photos/alan-peter-s-cayetano.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/504de602-02fe-475a-911b-75c52589b32c.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Alan_Peter_Cayetano_(2022)_(cropped).jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Alan_Peter_Cayetano"
  },
  {
   "id": "paolo-benigno-aquino-iv",
@@ -114,7 +118,8 @@
   "photo": "assets/photos/paolo-benigno-aquino-iv.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/863a1b50-b1f1-4d92-bbbf-66909b4fee0c.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Bam_Aquino_2025_(Cropped).png",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Bam_Aquino"
  },
  {
   "id": "pia-s-cayetano",
@@ -137,7 +142,8 @@
   "photo": "assets/photos/pia-s-cayetano.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/d9336dae-a4ba-4d7e-b94e-bd1da6d7715d.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Pia_Cayetano_(2025)_(cropped).jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Pia_Cayetano"
  },
  {
   "id": "ronald-m-dela-rosa",
@@ -160,7 +166,8 @@
   "photo": "assets/photos/ronald-m-dela-rosa.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/80653c43-8461-4aa2-a8c5-1ea6f7f2682c.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Ronald_Dela_Rosa_(2021)_(cropped).jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Ronald_dela_Rosa"
  },
  {
   "id": "joseph-victor-g-ejercito",
@@ -185,7 +192,8 @@
   "photo": "assets/photos/joseph-victor-g-ejercito.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/df09d1a2-6b44-45a7-8a69-55460df886ac.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:JV_Ejercito_2025_(cropped).jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/JV_Ejercito"
  },
  {
   "id": "francis-g-escudero",
@@ -208,7 +216,8 @@
   "photo": "assets/photos/francis-g-escudero.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/10ed2058-9445-46da-8927-0a6308c703a2.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senate_President_Francis_Escudero_(cropped).jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Francis_Escudero"
  },
  {
   "id": "jinggoy-ejercito-estrada",
@@ -231,7 +240,8 @@
   "photo": "assets/photos/jinggoy-ejercito-estrada.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/c9306349-e11c-4701-97c7-4e888daedfc2.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Jinggoy_Estrada_(Comission_on_Appointments_portrait).png",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Jinggoy_Estrada"
  },
  {
   "id": "christopher-lawrence-t-go",
@@ -254,7 +264,8 @@
   "photo": "assets/photos/christopher-lawrence-t-go.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/8017dc43-6f4a-4c74-a242-1865c09d970c.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Bong_Go_(Commission_on_Appointments_portrait).png",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Bong_Go"
  },
  {
   "id": "risa-hontiveros",
@@ -277,7 +288,8 @@
   "photo": "assets/photos/risa-hontiveros.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/f3a88c43-58c3-449d-b1d5-2a69a14f2ddb.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Risa_Hontiveros_2025_(Cropped).png",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Risa_Hontiveros"
  },
  {
   "id": "panfilo-m-lacson",
@@ -300,7 +312,8 @@
   "photo": "assets/photos/panfilo-m-lacson.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/9d0fdf32-c099-4428-b7ce-de6f94a4dad6.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Panfilo_Lacson_(Commission_on_Appointments_portrait).png",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Panfilo_Lacson"
  },
  {
   "id": "manuel-m-lapid",
@@ -323,7 +336,8 @@
   "photo": "assets/photos/manuel-m-lapid.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/28b528bd-a3c9-4033-805e-97992d261867.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Lito_Lapid_(Comission_on_Appointments_portrait).png",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Lito_Lapid"
  },
  {
   "id": "loren-legarda",
@@ -346,7 +360,8 @@
   "photo": "assets/photos/loren-legarda.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/50ef8465-2893-4ac8-b377-820b5d8fcacb.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Loren_Legarda_(Comission_on_Appointments_portrait).png",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Loren_Legarda"
  },
  {
   "id": "rodante-d-marcoleta",
@@ -369,7 +384,8 @@
   "photo": "assets/photos/rodante-d-marcoleta.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/42980717-7daa-4127-b452-6ec183a07603.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Rodante_D._Marcoleta.jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Rodante_Marcoleta"
  },
  {
   "id": "imee-r-marcos",
@@ -392,7 +408,8 @@
   "photo": "assets/photos/imee-r-marcos.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/54b384fa-a7b4-46a5-bb4f-432e9e0cebf5.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Imee_Marcos_(Comission_on_Appointments_portrait).png",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Imee_Marcos"
  },
  {
   "id": "robinhood-c-padilla",
@@ -415,7 +432,8 @@
   "photo": "assets/photos/robinhood-c-padilla.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/a8927643-da59-4d8f-811a-95f87cd1dff6.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Robin_Padilla_(2023)_(cropped).jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Robin_Padilla"
  },
  {
   "id": "francis-pangilinan",
@@ -438,7 +456,8 @@
   "photo": "assets/photos/francis-pangilinan.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/24507a6b-c2b0-491f-8d69-97f81286428a.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senkikopangilinan.jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Kiko_Pangilinan"
  },
  {
   "id": "erwin-t-tulfo",
@@ -461,7 +480,8 @@
   "photo": "assets/photos/erwin-t-tulfo.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/e841352b-62da-4933-849e-052434a75931.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Ewrin_Tulfo.jpg",
-  "photo_license": "CC0"
+  "photo_license": "CC0",
+  "wikipedia": "https://en.wikipedia.org/wiki/Erwin_Tulfo"
  },
  {
   "id": "raffy-t-tulfo",
@@ -484,7 +504,8 @@
   "photo": "assets/photos/raffy-t-tulfo.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/a8309c52-2125-4502-bf04-ed6cec4db2e1.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Raffy_Tulfo_(2022)_(cropped).jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Raffy_Tulfo"
  },
  {
   "id": "joel-villanueva",
@@ -507,7 +528,8 @@
   "photo": "assets/photos/joel-villanueva.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/3dd69f97-e12b-40bd-b875-a63880fcc88a.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Joel_Villanueva_(2022)_(cropped).jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Joel_Villanueva"
  },
  {
   "id": "camille-a-villar",
@@ -530,7 +552,8 @@
   "photo": "assets/photos/camille-a-villar.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/12b4fcb2-d3d8-4ad1-9d14-e35fb9f515f8.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Proclamation_of_Las_Pi%C3%B1as%27s_at-large_district_representative_Camille_Villar_as_the_Senator-elect_of_the_Philippines_(cropped).jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Camille_Villar"
  },
  {
   "id": "mark-a-villar",
@@ -553,6 +576,7 @@
   "photo": "assets/photos/mark-a-villar.webp",
   "photo_src": "https://senate.gov.ph/hq/uploads/senators/images/8bcfb39c-7974-4d50-b1fd-62494f637607.png",
   "photo_credit_url": "https://commons.wikimedia.org/wiki/File:Senator_Mark_Villar_(2022)_(cropped).jpg",
-  "photo_license": "Public domain"
+  "photo_license": "Public domain",
+  "wikipedia": "https://en.wikipedia.org/wiki/Mark_Villar"
  }
 ]

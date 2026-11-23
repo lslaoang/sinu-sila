@@ -63,6 +63,11 @@ If neither browser can open the site, skip this step and say so in the report.
 more than 3 new PROBLEM lines appear; list PROBLEM lines in the report either way. (Election results in
 `data/elections.json` change only after an election: don't re-run that tool weekly.)
 
+## 2b2. House bills (BatasWatch)
+`python3 tools/import_house_bills.py` re-reads BatasWatch (bills.juris.ph, CC0) and writes `data/house_bills.json` (counts)
+and `data/house_bills_detail.json` (titles). It refuses to write if fewer than 280 members match. Publish both if they
+changed and `validate.py` passes. List "NOT MATCHED" lines in the report (usually members who left or joined).
+
 ## 2c. District budget (DPWH)
 `python3 tools/import_budget.py` re-reads BetterGov's budget API (about 5 minutes). It refuses to write if fewer than
 240 districts match. Publish `data/budget.json` if it changed and `validate.py` passes. "CHECK name" lines are usually

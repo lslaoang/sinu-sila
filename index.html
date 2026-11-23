@@ -56,6 +56,15 @@
   @media (max-width:40rem){.top .wrap{flex-wrap:wrap}#q{order:3;flex:1 1 100%;max-width:none;margin-left:0}body.home #q{display:none}.nav{margin-left:auto}}
   .sec{scroll-margin-top:4.5rem}
   /* Kamara: one card per province, flowing top-to-bottom in columns so a province's districts stay together */
+  .cinfo{margin:1rem 0 0;display:grid;gap:.6rem;max-width:44rem} .cinfo div{display:grid;grid-template-columns:8rem minmax(0,1fr);gap:1rem;border-bottom:1px solid var(--line);padding-bottom:.6rem}
+  .cinfo dt{color:var(--mute);font-weight:600} .cinfo dd{margin:0;overflow-wrap:anywhere} @media (max-width:40rem){.cinfo div{grid-template-columns:1fr;gap:.2rem}}
+  .ladder{font-weight:600;margin:.4rem 0 0;max-width:70ch}
+  .rankbar{margin:1.2rem 0 1rem;max-width:44rem} .rankbar .note{margin-top:.5rem}
+  .rlist{list-style:none;padding:0;margin:0 0 1rem;border-top:1.5px solid var(--rule)} .rlist .rinfo{padding:.6rem 0;color:var(--mute);font-size:.9rem;border-bottom:1px solid var(--line)}
+  .rrow{display:grid;grid-template-columns:2.2rem 2.75rem minmax(0,1fr) auto;gap:.75rem;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+  .rrow:hover b{color:var(--blue);text-decoration:underline} .rrow .av{width:2.75rem;height:2.75rem;font-size:.85rem} .rrow .hn small{display:block;color:var(--mute);font-size:.85rem}
+  .rn{color:var(--mute);text-align:right} .rc{display:flex;gap:1rem;font-size:.85rem;color:var(--mute);white-space:nowrap} .rc b{color:var(--ink)} .rc .on b{background:var(--yellow);color:#1a1714;padding:0 .3rem;border-radius:4px}
+  @media (max-width:40rem){.rrow{grid-template-columns:1.6rem 2.5rem minmax(0,1fr);row-gap:.25rem} .rrow .av{width:2.5rem;height:2.5rem} .rc{grid-column:3;flex-wrap:wrap;gap:.1rem .8rem;white-space:normal}}
   .hlist{list-style:none;padding:0;margin:0 0 1rem;columns:20rem;column-gap:1.1rem}
   .hgrp{break-inside:avoid;margin:0 0 1.1rem;background:var(--paper);border:1.5px solid var(--rule);border-radius:var(--r);overflow:hidden}
   .hgrp h2{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;margin:0;padding:.55rem .9rem;border-bottom:1px solid var(--line);font:600 1.2rem/1.2 var(--serif)}
@@ -385,7 +394,7 @@ const PHOTO_V = '2026-11-21', pv = u => u.startsWith('assets/') ? `${u}?v=${PHOT
 const av = (n, photo, eager) => `<div class="av" style="background:hsl(${hue(n)} 60% 28%)" aria-hidden="true">${initials(n)}${photo ? `<img src="${esc(pv(photo))}" alt="" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} referrerpolicy="no-referrer" onload="this.parentNode.classList.add('ph')" onerror="this.remove()">` : ''}</div>`;
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const app = document.getElementById('app'), q = document.getElementById('q'), tip = document.getElementById('tip');
-let data = [], house = [], houseMeta = {}, bills = {}, laws = {bills: []}, edu = {}, fam = {}, cases = {_meta: {checked: {}}, cases: {}}, saln = {_meta: {}, people: {}}, elec = {_meta: {}, senate: {}, house: {}, partylist: {}};
+let contacts = {_meta: {}, senate: {}}, facts = {_meta: {}, people: {}}, hb = {_meta: {}, members: {}}, data = [], house = [], houseMeta = {}, bills = {}, laws = {bills: []}, edu = {}, fam = {}, cases = {_meta: {checked: {}}, cases: {}}, saln = {_meta: {}, people: {}}, elec = {_meta: {}, senate: {}, house: {}, partylist: {}};
 const TRACKS = [['convicted', 'Convicted in a case', '#8e1b1b'], ['pending', 'Pending case', '#e29a1f'], ['resolved', 'Dismissed, acquitted or decided', '#2b55a6'], ['none', 'No case found', '#2f7d4a'], ['unchecked', 'Not yet checked', '#8a8373']];
 const TR_ICON = {convicted: '<path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/>', pending: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
   resolved: '<circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/>', none: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>', unchecked: '<circle cx="12" cy="12" r="9" stroke-dasharray="3 3"/>'};
@@ -397,7 +406,7 @@ const trackOf = id => { const l = cases.cases[id] || [];
 const trackRank = id => TRACKS.findIndex(t => t[0] === trackOf(id));
 const trackLabel = id => TRACKS[trackRank(id)][1], trackColor = id => TRACKS[trackRank(id)][2];
 const CHECKED = ['convicted', 'pending', 'resolved', 'none'], ALLTR = [...CHECKED, 'unchecked'];
-const state = {lens: 'track', sel: 'everyone', ch: 'all', tr: new Set(ALLTR), school: null, q: '', leaders: false, sort: 'az', hpl: null, hp: null, hs: ''};
+const state = {lens: 'track', sel: 'everyone', ch: 'all', tr: new Set(ALLTR), school: null, q: '', leaders: false, sort: 'az', rank: '', hpl: null, hp: null, hs: ''};
 
 const hashName = () => decodeURIComponent(location.hash.slice(1)), onHome = () => !hashName(), onExplore = () => hashName() === 'explore';
 
@@ -416,7 +425,13 @@ const T = {
     senK: n => `Mataas na Kapulungan · ${n} senador`, distSen: n => `Rekord sa kaso ng ${n} senador`, distHouse: n => `Rekord sa kaso ng ${n} kinatawan`, distPL: n => `Rekord sa kaso ng ${n} party-list rep`,
     billsLaws: (b, l) => `${b} panukala · ${l} batas`, inEnglish: 'Nasa Ingles ang detalye', sectionsAl: 'Mga seksyon', backTo: x => `← ${x}`,
     senator: 'Senador', dataAsOf: 'Datos hanggang', casesChecked: 'kaso sinuri', tCases: 'kaso nakatala',
-    tabCases: 'Kaso', tabLaws: 'Batas', tabBills: 'Panukala', tabEdu: 'Pinag-aralan', tabFam: 'Pamilya', tabOffice: 'Puwesto', tabElec: 'Halalan', tabBudget: 'Badyet', facesH: n => `Ang ${n} senador mo`, facesAll: 'Tingnan ang Senado', bHow: 'Paano nagiging batas ang badyet', bHere: 'Dito na ang 2027 sa datos namin',
+    tabCases: 'Kaso', tabLaws: 'Batas', tabBills: 'Panukala', tabEdu: 'Pinag-aralan', tabFam: 'Pamilya', tabOffice: 'Puwesto', tabElec: 'Halalan', tabBudget: 'Badyet', tabContact: 'Kontak', hContact: 'Kontak at pinagmulan', cBorn: 'Ipinanganak', cAge: n => `${n} taong gulang`, cOffice: 'Opisina', cPhone: 'Telepono', cEmail: 'Email', cWeb: 'Website', cSocial: 'Social media', cOfficial: 'Opisyal na profile',
+    cSrcS: d => `Mga kontak ng opisina ayon sa Senado (senate.gov.ph), na-update ${d}. Opisyal na channel lang ng opisina ang nakalista.`, cSrcH: 'Nasa opisyal na profile sa congress.gov.ph ang telepono at email ng opisina.', cBornSrc: 'Petsa at lugar ng kapanganakan mula sa Wikidata.', cNone: 'Wala pang nakalistang kontak.', cSrcH2: d => `Mga kontak ng opisina ayon sa Kamara (congress.gov.ph), kinuha ${d}. Walang email na inilalathala ang Kamara para sa mga miyembro.`, rkL: 'Ranggo ayon sa panukala', rkName: 'Pangalan', rkFiled: 'Inihain', rkPassed: c => c === 'senate' ? 'Pumasa sa Senado' : 'Pumasa sa Kamara', rkLaw: 'Naging batas',
+    rkNoteS: 'Mga panukalang inihain ng bawat senador bilang may-akda, ilan ang pumasa sa Senado, at ilan ang naging batas. Mula sa Senate Legislative Information System.',
+    rkNoteH: d => `Mga panukalang inihain bilang principal author, ilan ang pumasa sa Kamara, at ilan ang naging batas. Bilang din ang panukalang isinama sa substitute bill kapag pumasa ito. Hindi naitatala ang co-author. Mula sa BatasWatch (bills.juris.ph), batay sa talaan ng Kamara hanggang ${d}.`,
+    rkShow: (n, tot, k, ch) => k === 'filed' ? `${n} sa ${tot} ang nakapaghain ng kahit isang panukala.` : `${n} sa ${tot} ang may kahit isang panukalang ${k === 'law' ? 'naging batas' : ch === 'senate' ? 'pumasa sa Senado' : 'pumasa sa Kamara'}.`, rkLine: r => `${r.filed} inihain · ${r.passed} pumasa · ${r.law} batas`,
+    hbLead: n => `${n} bilang unang nakalistang may-akda`, hbPassed: 'pumasa sa Kamara', hbLaw: 'naging batas', hbFiled: 'inihain', hbLatest: 'Pinakabagong panukala', hbLaws: 'Naging batas',
+    hbNone: 'Wala pang talaan ng panukala para sa miyembrong ito.', hbAll: 'Lahat ng panukala sa BatasWatch', ladder: (f, p, l, a) => `${f} inihain → ${p} pumasa sa Senado → ${l} naging batas bilang may-akda (${a} batas na sinuportahan sa anumang papel)`, facesH: n => `Ang ${n} senador mo`, facesAll: 'Tingnan ang Senado', bHow: 'Paano nagiging batas ang badyet', bHere: 'Dito na ang 2027 sa datos namin',
     bSteps: [['NEP', 'Agosto: ang mungkahing badyet ng Pangulo (National Expenditure Program), inihanda ng DBM at ipinadala sa Kongreso.'],
       ['Bersyon ng Kamara', 'Binabago ito ng Kamara de Representantes at ipinapasa ang sarili nilang bersyon.'],
       ['Senado', 'Ipinapasa rin ng Senado ang sarili nilang bersyon.'],
@@ -477,7 +492,7 @@ const T = {
     noneFound: (d, n) => `Walang nakitang kaso sa mga balita at rekord ng korte na sinuri noong ${d}${n ? ` (${n} paghahanap)` : ''}. Hindi ito patunay na wala talaga.`,
     uncheckedMsg: 'Hindi pa nasusuri. Ang mga ulat na nakita namin ay hindi pa kumpirmado ng dalawang magkahiwalay na source, kaya hindi ito malinis na rekord.',
     statusAsOf: 'status hanggang', lawsNone: 'Wala pa sa 20th Congress, bilang author, co-author o co-sponsor.', eduNone: 'Hindi nakasaad sa mga sinuring source.',
-    since: 'Nasa puwesto mula ', source: 'Source', houseLater: 'Susunod pa: mga panukalang batas, batas at edukasyon ng mga kinatawan sa Kamara.',
+    since: 'Nasa puwesto mula ', source: 'Source', houseLater: 'Susunod pa: pinag-aralan ng mga kinatawan sa Kamara.',
     partyNote: d => `Partido at bloc ayon sa Wikipedia noong ${d}. May mga miyembrong nagpapalit ng partido habang nasa termino, kaya i-double check bago umasa rito.`,
     st_filed: 'Naihain', st_pending: 'Nakabinbin', st_suspended: 'Suspendido', st_appealed: 'Inapela', st_dismissed: 'Na-dismiss', st_acquitted: 'Napawalang-sala', st_convicted: 'Nahatulan', st_decided: 'Napagpasyahan',
     k_criminal: 'Kriminal', k_administrative: 'Administratibo', k_election: 'Halalan', k_other: 'Iba pa',
@@ -499,7 +514,13 @@ const T = {
     senK: n => `Upper house · ${n} senators`, distSen: n => `Court-case record of ${n} senators`, distHouse: n => `Court-case record of ${n} representatives`, distPL: n => `Court-case record of ${n} party-list reps`,
     billsLaws: (b, l) => `${b} bills · ${l} laws`, inEnglish: '', sectionsAl: 'Sections', backTo: x => `← ${x}`,
     senator: 'Senator', dataAsOf: 'Data as of', casesChecked: 'cases checked', tCases: 'cases listed',
-    tabCases: 'Cases', tabLaws: 'Laws', tabBills: 'Bills', tabEdu: 'Education', tabFam: 'Family', tabOffice: 'Office', tabElec: 'Election', tabBudget: 'Budget', facesH: n => `Your ${n} senators`, facesAll: 'See the Senate', bHow: 'How a budget becomes law', bHere: '2027 is here in our data',
+    tabCases: 'Cases', tabLaws: 'Laws', tabBills: 'Bills', tabEdu: 'Education', tabFam: 'Family', tabOffice: 'Office', tabElec: 'Election', tabBudget: 'Budget', tabContact: 'Contact', hContact: 'Contact and background', cBorn: 'Born', cAge: n => `age ${n}`, cOffice: 'Office', cPhone: 'Phone', cEmail: 'Email', cWeb: 'Website', cSocial: 'Social media', cOfficial: 'Official profile',
+    cSrcS: d => `Office contacts as published by the Senate (senate.gov.ph), updated ${d}. Only official office channels are listed.`, cSrcH: 'Office phone and email are on the official profile at congress.gov.ph.', cBornSrc: 'Date and place of birth from Wikidata.', cNone: 'No contact details listed yet.', cSrcH2: d => `Office contacts as published by the House (congress.gov.ph), retrieved ${d}. The House does not publish members' emails.`, rkL: 'Rank by bills', rkName: 'Name', rkFiled: 'Filed', rkPassed: c => c === 'senate' ? 'Passed the Senate' : 'Passed the House', rkLaw: 'Became law',
+    rkNoteS: 'Bills each senator filed as author, how many passed the Senate, and how many of them became law. From the Senate Legislative Information System.',
+    rkNoteH: d => `Bills filed as a principal author, how many passed the House, and how many became law. A bill folded into a substitute bill counts when the substitute passed. Co-authors are not recorded. From BatasWatch (bills.juris.ph), House records as of ${d}.`,
+    rkShow: (n, tot, k, ch) => k === 'filed' ? `${n} of ${tot} have filed at least one bill.` : `${n} of ${tot} have at least one bill that ${k === 'law' ? 'became law' : ch === 'senate' ? 'passed the Senate' : 'passed the House'}.`, rkLine: r => `${r.filed} filed · ${r.passed} passed · ${r.law} ${r.law === 1 ? 'law' : 'laws'}`,
+    hbLead: n => `${n} as the first-listed author`, hbPassed: 'passed the House', hbLaw: 'became law', hbFiled: 'filed', hbLatest: 'Latest bills', hbLaws: 'Became law',
+    hbNone: 'No bill records for this member yet.', hbAll: 'All bills on BatasWatch', ladder: (f, p, l, a) => `${f} filed → ${p} passed the Senate → ${l} became law as author (${a} laws backed in any role)`, facesH: n => `Your ${n} senators`, facesAll: 'See the Senate', bHow: 'How a budget becomes law', bHere: '2027 is here in our data',
     bSteps: [['NEP', 'August: the President’s proposed budget (National Expenditure Program), prepared by DBM and sent to Congress.'],
       ['House bill', 'The House of Representatives changes it and passes its own version.'],
       ['Senate', 'The Senate passes its own version.'],
@@ -560,7 +581,7 @@ const T = {
     noneFound: (d, n) => `No court cases found in the news and court sources checked on ${d}${n ? ` (${n} searches)` : ''}. That is not proof that none exist.`,
     uncheckedMsg: 'Court cases: not yet checked. Any reports we found were not confirmed by two independent sources, so this is not a clean record.',
     statusAsOf: 'status as of', lawsNone: 'None yet in the 20th Congress, as author, co-author or co-sponsor.', eduNone: 'Not stated in the sources checked.',
-    since: 'In office since ', source: 'Source', houseLater: 'Coming later: bills, laws and education for House members.',
+    since: 'In office since ', source: 'Source', houseLater: 'Coming later: education for House members.',
     partyNote: d => `Party and bloc as listed on Wikipedia on ${d}. Members change parties during a term (several did in 2026), so check before relying on it.`,
     st_filed: 'Filed', st_pending: 'Pending', st_suspended: 'Suspended', st_appealed: 'On appeal', st_dismissed: 'Dismissed', st_acquitted: 'Acquitted', st_convicted: 'Convicted', st_decided: 'Decided',
     k_criminal: 'Criminal', k_administrative: 'Administrative', k_election: 'Election', k_other: 'Other',
@@ -618,6 +639,19 @@ const ROLES = [['author', 'Author'], ['coAuthors', 'Co-author'], ['coSponsors', 
 const rolesOf = id => laws.bills.map(l => ({...l, roles: ROLES.filter(([k]) => [].concat(l[k]).includes(id)).map(r => r[1]), law: !/^Enrolled/.test(l.status)})).filter(l => l.roles.length);
 const lawCount = id => rolesOf(id).filter(l => l.law).length;
 const billCount = id => bills[id]?.total || 0;
+// filed -> passed their chamber -> became law. Senate: our Senate data (author role). House: BatasWatch principal authors.
+const SEN_PASSED = /HOUSE OF REP|BOTH HOUSES|PRESIDENT|CONFEREN|LAPSED|ENROLLED/;
+const rec = o => { if (o.body !== 'house') { const b = bills[o.id];
+    return {filed: b?.total || 0, passed: b ? Object.entries(b.byStatus).reduce((n, [k, v]) => n + (SEN_PASSED.test(k) ? v : 0), 0) : 0,
+      law: laws.bills.filter(l => [].concat(l.author).includes(o.id) && !/^Enrolled/.test(l.status)).length}; }
+  const m = hb.members[o.id]; return m ? {filed: m[0], lead: m[1], passed: m[2], law: m[3]} : null; };
+const RANKS = [['', 'rkName'], ['filed', 'rkFiled'], ['passed', 'rkPassed'], ['law', 'rkLaw']];
+const rankBar = ch => `<div class="rankbar"><p class="pl" id="rkL">${t('rkL')}</p><div class="seg seg4" role="group" aria-labelledby="rkL">${RANKS.map(([k, l]) => `<button data-rank="${k}" aria-pressed="${state.rank === k}">${t(l, ch)}</button>`).join('')}</div>
+  <p class="note">${ch === 'senate' ? t('rkNoteS') : t('rkNoteH', fmtDay(hb._meta.discovered_as_of || hb._meta.retrieved || ''))}</p></div>`;
+const ranked = pool => pool.map(o => [o, rec(o)]).filter(([, r]) => r && r[state.rank] > 0).sort((a, b) => b[1][state.rank] - a[1][state.rank] || b[1].filed - a[1].filed || lastName(a[0]).localeCompare(lastName(b[0])));
+const rankList = (rows, ch) => rows.map(([o, r], i) => `<li><a class="rrow" href="#${esc(o.id)}" aria-label="${esc(clean(o.name))}, ${esc(t('rkLine', r))}"><span class="rn num">${i + 1}</span>${av(o.name, o.photo)}
+    <span class="hn"><b>${esc(clean(o.name))}</b><small>${esc(o.body === 'house' ? (o.kind === 'party-list' ? o.party : o.constituency) : o.position)}</small></span>
+    <span class="rc num">${RANKS.slice(1).map(([k]) => `<span${k === state.rank ? ' class="on"' : ''}><b>${r[k]}</b> ${esc({filed: t('hbFiled'), passed: ch === 'senate' ? (lang === 'fil' ? 'pumasa sa Senado' : 'passed the Senate') : t('hbPassed'), law: t('hbLaw')}[k])}</span>`).join('')}</span></a></li>`).join('');
 
 /* where they studied: group schools, skipping items flagged match:false */
 const GROUPS = [['Ateneo', /ateneo/i], ['UP', /university of the philippines/i], ['La Salle', /la salle/i], ['UST', /santo tomas/i], ['Harvard', /harvard/i], ['UE', /university of the east/i], ['PMA', /military academy/i], ['Georgetown', /georgetown/i]];
@@ -678,6 +712,7 @@ const distLabel = o => o.kind === 'at-large' ? t('kLone') : t('kNth', o.district
 const hFiltered = () => !!(state.hs.trim() || state.hpl || state.hp || state.sel !== 'everyone');
 function updateHouse() {
   const l = document.getElementById('hlist'); if (!l) return;
+  if (showRank('hlist', 'hrank', visibleHouse(), 'house')) { const i = document.getElementById('houseInfo'); if (i) i.textContent = ''; return; }
   const rows = visibleHouse(), by = new Map();
   rows.forEach(o => by.has(o.place) ? by.get(o.place).push(o) : by.set(o.place, [o]));
   l.innerHTML = [...by].sort((a, b) => a[0].localeCompare(b[0])).map(([p, m]) => `<li class="hgrp"><h2>${esc(p)}<small>${t('seats', m.length)}</small></h2><ul>
@@ -693,6 +728,7 @@ function visiblePL() { const t = onExplore() ? state.q.toLowerCase() : '';
   return house.filter(o => o.kind === 'party-list' && (!t || (o.name + ' ' + o.party).toLowerCase().includes(t)) && (t || state.tr.has(trackOf(o.id)))); }
 function updatePL() {
   const l = document.getElementById('plgrid'); if (!l) return;
+  if (showRank('plgrid', 'plrank', visiblePL(), 'house')) { const i = document.getElementById('plInfo'); if (i) i.textContent = ''; return; }
   const rows = visiblePL(), by = {};
   rows.forEach(o => (by[o.party] = by[o.party] || []).push(o));
   const list = Object.entries(by).sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]));
@@ -702,6 +738,13 @@ function updatePL() {
     || `<li class="soon" style="grid-column:1/-1">${t('noMatch')}</li>`;
   const info = document.getElementById('plInfo'), all = house.filter(o => o.kind === 'party-list').length;
   if (info) info.textContent = t('showing', rows.length, all);
+}
+function showRank(listId, rankId, pool, ch) {   // true when the ranked list is shown instead of the usual one
+  const l = document.getElementById(listId), r = document.getElementById(rankId); if (!l || !r) return false;
+  const on = !!state.rank && !onExplore(); l.hidden = on; r.hidden = !on; if (!on) return false;
+  const rows = ranked(pool.filter(o => state.tr.has(trackOf(o.id))));
+  r.innerHTML = `<li class="rinfo">${esc(t('rkShow', rows.length, pool.length, state.rank, ch))}</li>` + (rankList(rows, ch) || `<li class="soon">${t('noMatch')}</li>`);
+  return true;
 }
 function updateAll() {
   const vis = visibleIds();
@@ -721,8 +764,10 @@ function updateAll() {
     ti.textContent = state.sel === 'everyone' ? `Showing all ${pool.length} ${who}.`
       : `Showing only “${(TRACKS.find(t => t[0] === state.sel) || [0, ''])[1]}”: ${n} of ${pool.length} ${who}. Faces and cards that don't match are dimmed or hidden.`; }
   document.querySelectorAll('[data-school]').forEach(b => b.setAttribute('aria-pressed', b.dataset.school === state.school));
+  document.querySelectorAll('[data-rank]').forEach(b => b.setAttribute('aria-pressed', b.dataset.rank === (state.rank || '')));
 }
 function updateWall() {
+  if (showRank('wall', 'srank', data, 'senate')) return;
   const vis = visibleIds();
   const rows = data.filter(o => vis.has(o.id) && (!state.leaders || isLead(o)))
     .sort((x, y) => state.sort === 'bills' ? billCount(y.id) - billCount(x.id) : state.sort === 'laws' ? lawCount(y.id) - lawCount(x.id) : lastName(x).localeCompare(lastName(y)));
@@ -896,7 +941,7 @@ function placeView(place) {
 }
 const pageHead = (kick, h, note, pool, distLabel) => `<a class="back" href="#">${t('back')}</a><div class="ph1"><div><p class="kick">${kick}</p><h1>${h}</h1><p class="note">${note}</p></div>${distBar(pool, distLabel)}</div>${trChips(pool)}`;
 function senPage() {
-  app.innerHTML = pageHead(t('senK', data.length), t('senH'), t('senNote'), data, t('distSen', data.length)) + `<ul class="wall" id="wall"></ul>`;
+  app.innerHTML = pageHead(t('senK', data.length), t('senH'), t('senNote'), data, t('distSen', data.length)) + rankBar('senate') + `<ul class="wall" id="wall"></ul><ol class="rlist" id="srank" hidden></ol>`;
   state.school = null; state.leaders = false; updateAll();
 }
 function housePage() {
@@ -906,14 +951,14 @@ function housePage() {
       <label><span>${t('hsL')}</span><span class="fs"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="hs" type="search" value="${esc(state.hs)}" placeholder="${esc(t('hsPh'))}" autocomplete="off"></span></label>
       <label><span>${t('fPlace')}</span><select id="hplSel">${opt('', t('allPlaces'), !state.hpl)}${places().map(p => opt(p, p, p === state.hpl)).join('')}</select></label>
       <label><span>${t('fParty')}</span><select id="hpSel">${opt('', t('allParties'), !state.hp)}${Object.entries(dist.reduce((m, o) => (m[o.party] = (m[o.party] || 0) + 1, m), {})).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([p, n]) => opt(p, `${p} (${n})`, p === state.hp)).join('')}</select></label></div>
-    ${trChips(dist)}
-    <p class="hinfo" id="houseInfo" aria-live="polite"></p><ul class="hlist" id="hlist"></ul>`;
+    ${trChips(dist)}${rankBar('house')}
+    <p class="hinfo" id="houseInfo" aria-live="polite"></p><ul class="hlist" id="hlist"></ul><ol class="rlist" id="hrank" hidden></ol>`;
   updateAll();
 }
 function plPage() {
   const plm = partylist();
   app.innerHTML = pageHead(t('plS', plm.length, new Set(plm.map(o => o.party)).size), t('plH'), t('plNote'), plm, t('distPL', plm.length)) + `
-    <p class="info" id="plInfo" aria-live="polite" style="text-align:left;min-height:0"></p><ul class="plgrid" id="plgrid"></ul>`;
+    ${rankBar('house')}<p class="info" id="plInfo" aria-live="polite" style="text-align:left;min-height:0"></p><ul class="plgrid" id="plgrid"></ul><ol class="rlist" id="plrank" hidden></ol>`;
   updateAll();
 }
 
@@ -942,7 +987,8 @@ function billsHtml(id) {
   const b = bills[id]; if (!b) return '';
   const counts = {}; for (const [st, n] of Object.entries(b.byStatus)) counts[bucketOf(st)] = (counts[bucketOf(st)] || 0) + n;
   const max = Math.max(...MONTHS.map(m => b.byMonth[m] || 0), 1);
-  return `<h3 class="h" id="panukala">${t('hBills')}</h3><div class="panel"><h4>Filed per month</h4>
+  const r = rec({id, body: 'senate'});
+  return `<h3 class="h" id="panukala">${t('hBills')}</h3><p class="ladder">${esc(t('ladder', r.filed, r.passed, r.law, lawCount(id)))}</p><div class="panel"><h4>Filed per month</h4>
       <div class="chart" role="img" aria-label="Bills filed per month: ${MONTHS.map(m => `${monthName(m)} ${b.byMonth[m] || 0}`).join(', ')}">${MONTHS.map(m => { const n = b.byMonth[m] || 0;
         return `<span title="${monthName(m)}: ${n}"><small>${n || ''}</small><i style="height:${n / max * 85}%"></i></span>`; }).join('')}</div>
       <div class="axis"><span>${monthName(MONTHS[0])}</span><span>${monthName(MONTHS[Math.floor(MONTHS.length / 2)])}</span><span>${monthName(MONTHS[MONTHS.length - 1])}</span></div></div>
@@ -1016,6 +1062,37 @@ function salnHtml(o) {
 /* "data as of": the newest refresh of the data this profile shows (the weekly agent moves it), plus the case check */
 const asOfLine = (o, dates) => { const d = [...dates, ...o.records.map(r => r.retrieved)].filter(Boolean).sort().pop(), ck = cases._meta.checked[o.id]?.date;
   return `${t('dataAsOf')} ${esc(fmtDay(d))}${ck ? ` · ${t('casesChecked')} ${esc(fmtDay(ck))}` : ''}`; };
+const ageOf = d => { if (!/^\d{4}-\d\d-\d\d$/.test(d)) return null; const b = new Date(d + 'T00:00:00'), n = new Date(); return n.getFullYear() - b.getFullYear() - (n < new Date(n.getFullYear(), b.getMonth(), b.getDate()) ? 1 : 0); };
+const SOCIAL = [[/facebook/, 'Facebook'], [/instagram/, 'Instagram'], [/(^|\/\/|\.)(x|twitter)\.com/, 'X'], [/youtube/, 'YouTube'], [/tiktok/, 'TikTok']];
+function contactHtml(o) {
+  const c = contacts.senate[o.id] || contacts.house?.[o.id], f = facts.people[o.id], off = hb.official?.[o.id], ext = (u, l) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(l)} ↗</a>`;
+  const rows = [];
+  if (f?.born || f?.place) { const a = ageOf(f.born || ''); rows.push([t('cBorn'), [f.born ? (f.born.length === 4 ? f.born : fmtDay(f.born)) : '', a != null ? `(${t('cAge', a)})` : '', f.place ? `· ${f.place}` : ''].filter(Boolean).map(esc).join(' ')]); }
+  if (c) {
+    if (c.office) rows.push([t('cOffice'), esc(c.office)]);
+    if (c.phones.length) rows.push([t('cPhone'), c.phones.map(esc).join('<br>')]);
+    if (c.emails.length) rows.push([t('cEmail'), c.emails.map(([l, e]) => `${l ? esc(l) + ': ' : ''}<a href="mailto:${esc(e)}">${esc(e)}</a>`).join('<br>')]);
+    if (c.web.length) rows.push([t('cWeb'), c.web.map(u => ext(u, u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''))).join('<br>')]);
+    if (c.social.length) rows.push([t('cSocial'), c.social.map(u => ext(u, (SOCIAL.find(([re]) => re.test(u)) || [0, new URL(u).hostname])[1])).join(' · ')]);
+  }
+  if (off) rows.push([t('cOfficial'), ext(off, 'congress.gov.ph')]);
+  return `<h3 class="h" id="kontak">${t('hContact')}</h3>` + (rows.length ? `<dl class="cinfo">${rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>` : `<p class="soon">${t('cNone')}</p>`)
+    + `<p class="note">${c ? (o.body === 'house' ? t('cSrcH2', fmtDay(c.updated)) : t('cSrcS', fmtDay(c.updated))) + ' ' : o.body === 'house' ? t('cSrcH') + ' ' : ''}${f?.born || f?.place ? t('cBornSrc') : ''}</p>`;
+}
+let hbdP;   // bill titles for House profiles (~100 KB gzipped), fetched when one opens
+const loadHbd = () => hbdP ||= fetch('data/house_bills_detail.json').then(r => r.ok ? r.json() : null).catch(() => null);
+function hbHtml(o) {
+  const r = rec(o); if (!r) return `<h3 class="h" id="panukala">${t('hBills')}</h3><p class="soon">${t('hbNone')}</p>`;
+  return `<h3 class="h" id="panukala">${t('hBills')}</h3>
+    <div class="tiles"><div class="tile"><strong class="num">${r.filed}</strong><span>${t('hbFiled')} · ${t('hbLead', r.lead)}</span></div>
+      <div class="tile"><strong class="num">${r.passed}</strong><span>${t('hbPassed')}</span></div><div class="tile"><strong class="num">${r.law}</strong><span>${t('hbLaw')}</span></div></div>
+    <div id="hbBox" aria-live="polite"></div><p class="note">${t('rkNoteH', fmtDay(hb._meta.discovered_as_of || ''))}</p>`;
+}
+const hbDetail = (o, D) => { const m = D?.members[o.id]; if (!m) return '';
+  const row = ([no, ti, d, st, u]) => `<a class="bill" href="${esc(u || `https://bills.juris.ph/bills/house/${no.toLowerCase()}`)}" target="_blank" rel="noopener"><b>${esc(title(ti))}</b><br><small>${esc(no)}${d ? ' · ' + esc(fmtDay(d)) : ''}</small>${st ? ` <span class="pill">${esc(st.length > 60 ? st.slice(0, 58) + '…' : st)}</span>` : ''}<span class="sr"> (opens BatasWatch)</span></a>`;
+  return (m.laws.length ? `<h4>${t('hbLaws')}</h4>${more(m.laws.map(([no, ti, st]) => row([no, ti, '', st])))}` : '')
+    + (m.latest.length ? `<h4>${t('hbLatest')}</h4>${more(m.latest.map(row))}` : '')
+    + `<p class="note"><a href="${esc(m.bw)}" target="_blank" rel="noopener">${t('hbAll')} ↗</a></p>`; };
 let budgetP;   // budget.json is ~100 KB gzipped: fetched only when a district profile opens
 const loadBudget = () => budgetP ||= fetch('data/budget.json').then(r => r.ok ? r.json() : null).catch(() => null);
 const bil = n => (n / 1e9).toFixed(n < 1e10 ? 1 : 0) + 'B';
@@ -1057,10 +1134,11 @@ function houseProfile(o) {
       <div class="tile txt"><strong>${esc(o.bloc || '–')}</strong><span>${t('tBloc')}</span></div>
       <div class="tile txt"><strong>${{district: t('kDistrict'), 'at-large': t('kLone'), 'party-list': t('kPL')}[o.kind] || '–'}</strong><span>${t('tSeat')}</span></div></div>
     <p class="note">${esc(t('partyNote', o.records[0]?.retrieved || ''))}</p>
-    ${ptabs([['kaso', t('tabCases'), (cases.cases[o.id] || []).length], ...(o.kind !== 'party-list' ? [['pera', t('tabBudget')]] : []), ['halalan', t('tabElec')], ...(fam[o.id] ? [['pamilya', t('tabFam')]] : []), ['puwesto', t('tabOffice')]])}
-    ${casesHtml(o)}${o.kind !== 'party-list' ? `<h3 class="h" id="pera">${t('hBudget')}</h3><div id="budgetBox" aria-live="polite"><p class="soon">${t('bLoading')}</p></div>` : ''}${elecHtml(o)}${famHtml(o)}<h3 class="h" id="puwesto">${t('hOffice')}</h3>${recordsHtml(o)}
+    ${ptabs([['kaso', t('tabCases'), (cases.cases[o.id] || []).length], ['kontak', t('tabContact')], ['panukala', t('tabBills'), rec(o)?.filed], ...(o.kind !== 'party-list' ? [['pera', t('tabBudget')]] : []), ['halalan', t('tabElec')], ...(fam[o.id] ? [['pamilya', t('tabFam')]] : []), ['puwesto', t('tabOffice')]])}
+    ${casesHtml(o)}${contactHtml(o)}${hbHtml(o)}${o.kind !== 'party-list' ? `<h3 class="h" id="pera">${t('hBudget')}</h3><div id="budgetBox" aria-live="polite"><p class="soon">${t('bLoading')}</p></div>` : ''}${elecHtml(o)}${famHtml(o)}<h3 class="h" id="puwesto">${t('hOffice')}</h3>${recordsHtml(o)}
     <p class="note">${o.wikipedia ? `More about ${esc(clean(o.name))}: <a href="${esc(o.wikipedia)}" target="_blank" rel="noopener">Wikipedia ↗</a>. ` : ''}${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a>, background removed (see the file page for author and licence).` : ''}</p>
     <p class="note">${t('houseLater')}</p>`;
+  loadHbd().then(D => { const el = document.getElementById('hbBox'); if (el && hashName() === o.id) el.innerHTML = hbDetail(o, D); });
   if (o.kind !== 'party-list') loadBudget().then(B => { const el = document.getElementById('budgetBox'); if (el && hashName() === o.id) el.innerHTML = budgetHtml(o, B); });
 }
 const recordsHtml = o => `<ul class="offices">${o.records.map(r => `<li><b>${esc(r.title)}</b><small>${r.type === 'membership' ? t('since') : esc(r.type) + ' · '}${esc(dayLabelFull(r.date))}</small><a href="${esc(r.source_url)}" rel="noopener" target="_blank">${t('source')}<span class="sr"> (opens in a new tab)</span> ↗</a></li>`).join('')}</ul>`;
@@ -1069,8 +1147,8 @@ function profile(o) {
   const nc = (cases.cases[o.id] || []).length;
   app.innerHTML = `${phero(o, `${o.chamber === 'Senate' ? t('senator') : o.chamber} · ${o.term}`, asOfLine(o, [bills._meta?.retrieved, saln._meta?.retrieved]))}
     ${summary(o, [[bills[o.id]?.total ?? '–', t('tBills')], [lawCount(o.id), t('tLaws')], [nc, t('tCases')]])}
-    ${ptabs([['kaso', t('tabCases'), nc], ['batas', t('tabLaws'), lawCount(o.id)], ['panukala', t('tabBills'), bills[o.id]?.total], ['saln', 'SALN'], ['halalan', t('tabElec')], ['aral', t('tabEdu')], ...(fam[o.id] ? [['pamilya', t('tabFam')]] : []), ['puwesto', t('tabOffice')]])}
-    ${casesHtml(o)}${lawsHtml(o.id)}${billsHtml(o.id)}${salnHtml(o)}${elecHtml(o)}${eduHtml(o.id)}
+    ${ptabs([['kaso', t('tabCases'), nc], ['kontak', t('tabContact')], ['batas', t('tabLaws'), lawCount(o.id)], ['panukala', t('tabBills'), bills[o.id]?.total], ['saln', 'SALN'], ['halalan', t('tabElec')], ['aral', t('tabEdu')], ...(fam[o.id] ? [['pamilya', t('tabFam')]] : []), ['puwesto', t('tabOffice')]])}
+    ${casesHtml(o)}${contactHtml(o)}${lawsHtml(o.id)}${billsHtml(o.id)}${salnHtml(o)}${elecHtml(o)}${eduHtml(o.id)}
     ${famHtml(o)}<h3 class="h" id="puwesto">${t('hOffice')}</h3>${recordsHtml(o)}
     <p class="note">${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a>${o.photo_license ? ` (${esc(o.photo_license)})` : ''}, background removed. ` : ''}${t('laterVotes')}</p>`;
 }
@@ -1113,6 +1191,7 @@ app.onclick = e => {
   if (d.tr) { state.sel = state.sel === d.tr ? 'everyone' : d.tr; state.tr = new Set(state.sel === 'everyone' ? ALLTR : state.sel === 'checked' ? CHECKED : [state.sel]); }
   if (d.school) state.school = state.school === d.school ? null : d.school;
   if (d.sort) state.sort = d.sort;
+  if (d.rank != null) state.rank = d.rank;
   if (d.lead != null) state.leaders = d.lead === '1';
   updateAll();
 };
@@ -1144,9 +1223,9 @@ q.oninput = () => { state.q = q.value; if (onExplore()) return updateAll(); if (
 applyLang();
 onhashchange = route;
 function load() {
-  Promise.all(['data/officials.json', 'data/house.json', 'data/bills.json', 'data/laws.json', 'data/education.json', 'data/pulitiklan.json', 'data/cases.json', 'data/saln.json', 'data/elections.json'].map(u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); }).catch(e => { if (/pulitiklan/.test(u)) return {links: {}}; if (/cases/.test(u)) return {_meta: {checked: {}}, cases: {}}; if (/saln/.test(u)) return saln; if (/elections/.test(u)) return elec; throw e; })))
+  Promise.all(['data/officials.json', 'data/house.json', 'data/bills.json', 'data/laws.json', 'data/education.json', 'data/pulitiklan.json', 'data/cases.json', 'data/saln.json', 'data/elections.json', 'data/house_bills.json', 'data/contacts.json', 'data/facts.json'].map(u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); }).catch(e => { if (/pulitiklan/.test(u)) return {links: {}}; if (/cases/.test(u)) return {_meta: {checked: {}}, cases: {}}; if (/house_bills/.test(u)) return {_meta: {}, members: {}}; if (/contacts/.test(u)) return {_meta: {}, senate: {}}; if (/facts/.test(u)) return {_meta: {}, people: {}}; if (/saln/.test(u)) return saln; if (/elections/.test(u)) return elec; throw e; })))
     
-    .then(([d, h, b, l, e, f, cs, sa, el]) => { fam = f.links; cases = cs; saln = sa; elec = el; data = d.map(o => ({body: 'senate', constituency: 'Nationwide', ...o})); house = h.people; houseMeta = h._meta; bills = b; laws = l; edu = e; MONTHS = monthsTo((b._meta.retrieved || '2026-09').slice(0, 7)); buildGroups(); route(); })
+    .then(([d, h, b, l, e, f, cs, sa, el, hbs, ct, fc]) => { hb = hbs; contacts = ct; facts = fc; fam = f.links; cases = cs; saln = sa; elec = el; data = d.map(o => ({body: 'senate', constituency: 'Nationwide', ...o})); house = h.people; houseMeta = h._meta; bills = b; laws = l; edu = e; MONTHS = monthsTo((b._meta.retrieved || '2026-09').slice(0, 7)); buildGroups(); route(); })
     .catch(() => { app.removeAttribute('aria-busy'); app.innerHTML = '<div class="err" role="alert"><b>Couldn’t load the records.</b><p>Check your connection and try again.</p><button class="chip" data-f="retry">Retry</button></div>'; });
 }
 load();
