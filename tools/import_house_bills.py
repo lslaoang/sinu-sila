@@ -37,6 +37,7 @@ while True:
     if page * 100 >= meta["total"]: break
     page += 1
 byno = {b["number"]: b for b in bills}
+ALLNAMES = {n for b in bills for n in (b.get("primaryAuthors") or [])}
 
 CYR = str.maketrans("АВСЕНКМОРТХІаеорсхуі", "ABCEHKMOPTXIaeopcxyi")   # look-alike letters some titles use
 ENACTED = re.compile(r"republic act|lapsed into law|approved by the president", re.I)
@@ -85,9 +86,17 @@ for a in authors:
     if not pid: unmatched.append(f"{a['canonicalName']} ({a['representation']})"); continue
     if score.get(pid, -1) >= sc: print(f"  SAME SEAT, kept the better name match over {a['canonicalName']}"); continue   # e.g. a predecessor in the same seat
     score[pid] = sc
-    mine = [b for b in bills if a["canonicalName"] in (b.get("primaryAuthors") or [])]
+    names = {a["canonicalName"]}
+    if not any(a["canonicalName"] in (x.get("primaryAuthors") or []) for x in bills):
+        # the profile name can differ from the name printed on bills ("CRUZ, AGATHA PAULA AGUILAR" vs 'CRUZ, AGATHA "Agay"'):
+        # fall back to the bill-author names with the same surname and a given name in common
+        sur, given = (a["canonicalName"].split(",", 1) + [""])[:2]
+        gt = set(norm(re.sub(r'"[^"]*"', "", given)).split())
+        names = {n for n in ALLNAMES if n.split(",")[0].strip().upper() == sur.strip().upper() and gt & set(norm(re.sub(r'"[^"]*"', "", n.split(",", 1)[-1])).split())}
+        print(f"  NAME FALLBACK: {a['canonicalName']} -> {sorted(names)}")
+    mine = [b for b in bills if names & set(b.get("primaryAuthors") or [])]
+    lead = sum(1 for b in mine if b["primaryAuthors"][0] in names)
     lv = [(b, level(b)) for b in mine]
-    lead = sum(1 for b in mine if b["primaryAuthors"][0] == a["canonicalName"])
     recent = sorted(mine, key=lambda b: (b.get("filedAt") or "", b["sequence"]), reverse=True)[:5]
     laws = [b for b, l in lv if l == 2]
     out[pid] = {"filed": len(mine), "lead": lead, "passed": sum(1 for _, l in lv if l >= 1), "law": len(laws),

@@ -7,14 +7,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
-  :root{--bg:#f5efe2;--paper:#fffcf5;--ink:#1a1714;--rule:#1a1714;--mute:#5e574b;--line:#ddd3bf;--bar:#0038a8;--r:8px;
+  :root{--bg:#ffffff;--paper:#f4f7fc;--ink:#0c1b33;--rule:#0c1b33;--mute:#4a5872;--line:#d8e0ec;--bar:#0b4fd9;--navy:#0a44bd;--red:#c8102e;--hl:#efdfb9;--r:8px;
     --serif:"Newsreader",Georgia,serif;--sans:"Public Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
-  @media (prefers-color-scheme:dark){:root{--bg:#13110e;--paper:#1f1b17;--ink:#f4eee3;--rule:#8c8373;--mute:#bcb2a0;--line:#39332b;--bar:#9fbcff;color-scheme:dark}}
+  @media (prefers-color-scheme:dark){:root{--bg:#0b1424;--paper:#13213a;--ink:#eef3fb;--rule:#8a9bb8;--mute:#a9b7ce;--line:#253656;--bar:#8fb0ff;--navy:#2f5fd0;--red:#ff8a9a;--hl:#e8cf95;color-scheme:dark}}
   *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--sans)}
-  .flag{display:flex;height:6px} .flag i{flex:1} .flag i:nth-child(1){background:#0038a8} .flag i:nth-child(2){background:#ce1126} .flag i:nth-child(3){background:#fcd116}
+  .flag{display:flex;height:6px} .flag i{flex:1} .flag i{background:var(--navy)}
   .wrap{max-width:68rem;margin:0 auto;padding:0 1rem 3rem}
   header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.5rem 1rem;padding:1rem 0 .6rem;border-bottom:3px double var(--rule);margin-bottom:1.2rem}
-  .brand{font:700 1.5rem var(--serif);color:var(--ink);text-decoration:underline;text-decoration-color:#fcd116;text-decoration-thickness:.2em;text-underline-offset:.2em}
+  .brand{font:700 1.5rem var(--serif);color:var(--ink);text-decoration:underline;text-decoration-color:var(--hl);text-decoration-thickness:.2em;text-underline-offset:.2em}
   h1{font:600 2rem var(--serif);margin:0} .kick{font:500 .75rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0}
   .bar-row{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:0 0 1rem}
   button,select,input{font:inherit;color:var(--ink)} .chip{border:1.5px solid var(--rule);background:var(--paper);border-radius:99px;padding:.4rem .9rem;cursor:pointer;min-height:40px}
@@ -36,11 +36,11 @@
   .lock{max-width:26rem;margin:4rem auto;background:var(--paper);border:1.5px solid var(--rule);border-radius:var(--r);padding:1.2rem}
   .lock input{width:100%;padding:.6rem .8rem;border:1.5px solid var(--rule);border-radius:var(--r);background:var(--bg);margin:.5rem 0}
   details summary{cursor:pointer;font-weight:600;font-size:.85rem;margin-top:.7rem} table{border-collapse:collapse;font-size:.85rem;margin-top:.4rem} td,th{padding:.2rem .8rem .2rem 0;text-align:left;border-bottom:1px solid var(--line)}
-  .err{color:#b00e22;font-weight:600}
+  .err{color:var(--red);font-weight:600}
   .inbox{list-style:none;margin:0;padding:0} .inbox li{display:grid;grid-template-columns:1fr auto;gap:.3rem 1rem;padding:.8rem 0;border-bottom:1px solid var(--line)}
   .inbox li.done{opacity:.6} .inbox .meta{font:500 .78rem var(--mono);color:var(--mute)} .inbox .msg{grid-column:1/-1;white-space:pre-wrap;margin:0}
   .inbox .more{grid-column:1/-1;font-size:.85rem;display:flex;flex-wrap:wrap;gap:.2rem 1rem} .inbox a{color:inherit}
-  .badge{display:inline-block;font:700 .72rem var(--sans);padding:.1rem .45rem;border-radius:4px;border:1px solid var(--rule);margin-right:.4rem} .badge.new{background:#fcd116;color:#1a1714;border-color:#1a1714}
+  .badge{display:inline-block;font:700 .72rem var(--sans);padding:.1rem .45rem;border-radius:4px;border:1px solid var(--rule);margin-right:.4rem} .badge.new{background:var(--hl);color:#0c1b33;border-color:#0c1b33}
   .tabs2{display:flex;gap:.4rem;margin:0 0 .4rem}
 </style>
 <div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>

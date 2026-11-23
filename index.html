@@ -10,7 +10,7 @@
 <meta property="og:title" content="Sino Sila? Philippine lawmakers">
 <meta property="og:description" content="Find your senators and representatives: their bills, laws, court cases, SALN and election results. Every fact links to its source.">
 <meta property="og:url" content="https://sinu-sila.com/"><link rel="canonical" href="https://sinu-sila.com/">
-<meta property="og:image" content="https://sinu-sila.com/assets/og.png">
+<meta property="og:image" content="https://sinu-sila.com/assets/og.png?v=2026-11-23">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ffffff">
@@ -61,7 +61,9 @@
   .cinfo dt{color:var(--mute);font-weight:600} .cinfo dd{margin:0;overflow-wrap:anywhere} @media (max-width:40rem){.cinfo div{grid-template-columns:1fr;gap:.2rem}}
   .ladder{font-weight:600;margin:.4rem 0 0;max-width:70ch}
   @media (max-width:40rem){.rankbar .wide{display:none}}
-  .rankbar{margin:1.2rem 0 1rem;max-width:44rem} .rankbar .note{margin:.5rem 0 0} .rhow summary{padding:.4rem 0;min-height:0;font-size:.9rem}
+  .rankbar{margin:1.2rem 0 1rem;max-width:44rem} .rankbar .seg{display:inline-grid;width:min(100%,36rem);vertical-align:middle}
+  .rdir{margin:.5rem 0 0 .6rem;min-height:44px;padding:.4rem .9rem;border:1px solid var(--rule);border-radius:99px;background:var(--bg);color:var(--ink);font:600 .88rem var(--sans);cursor:pointer;vertical-align:middle} .rdir:hover{background:color-mix(in srgb,var(--blue) 12%,var(--bg))}
+  .rhead button.rkv{border:0;background:none;padding:.35rem 0;min-height:32px;font:inherit;color:inherit;cursor:pointer;text-align:right} .rhead button.rkv:hover{color:var(--blue);text-decoration:underline} .rankbar .note{margin:.5rem 0 0} .rhow summary{padding:.4rem 0;min-height:0;font-size:.9rem}
   .rlist{list-style:none;padding:0;margin:0 0 1rem;border-top:1.5px solid var(--rule)} .rlist .rinfo{padding:.6rem 0;color:var(--mute);font-size:.9rem;border-bottom:1px solid var(--line)}
   .rrow,.rhead{display:grid;grid-template-columns:2.4rem 2.75rem minmax(0,1fr) auto;gap:.9rem;align-items:center}
   .rrow{padding:.65rem .5rem;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:background-color .15s}
@@ -72,7 +74,7 @@
   .rn{color:var(--mute);text-align:right;font-size:1rem}
   .rvs{display:grid;grid-template-columns:repeat(3,7.5rem);gap:.5rem;text-align:right} .rkv{font-size:1rem;color:var(--mute)} .rkv.on{color:var(--ink);font-weight:700;font-size:1.15rem}
   .rhead .rkv{font-size:.8rem} .rhead .rkv.on{color:var(--ink);font-size:.8rem}
-  @media (max-width:40rem){.rhead{display:none} .rrow{grid-template-columns:1.8rem 2.5rem minmax(0,1fr);row-gap:.4rem;padding:.6rem .25rem} .rrow .av{width:2.5rem;height:2.5rem}
+  @media (max-width:40rem){.rdir{margin-left:0} .rhead{display:none} .rrow{grid-template-columns:1.8rem 2.5rem minmax(0,1fr);row-gap:.4rem;padding:.6rem .25rem} .rrow .av{width:2.5rem;height:2.5rem}
     .rvs{grid-column:3;grid-template-columns:repeat(3,minmax(0,1fr));text-align:left} .rkv{font-size:.95rem} .rkv.on{font-size:1rem} .rkv::after{content:attr(data-l);display:block;font:500 .72rem var(--sans);color:var(--mute)}}
   .hlist{list-style:none;padding:0;margin:0 0 1rem;columns:20rem;column-gap:1.1rem}
   .hgrp{break-inside:avoid;margin:0 0 1.1rem;background:var(--paper);border:1.5px solid var(--rule);border-radius:var(--r);overflow:hidden}
@@ -419,7 +421,7 @@ const trackOf = id => { const l = cases.cases[id] || [];
 const trackRank = id => TRACKS.findIndex(t => t[0] === trackOf(id));
 const trackLabel = id => TRACKS[trackRank(id)][1], trackColor = id => TRACKS[trackRank(id)][2];
 const CHECKED = ['convicted', 'pending', 'resolved', 'none'], ALLTR = [...CHECKED, 'unchecked'];
-const state = {lens: 'track', sel: 'everyone', ch: 'all', tr: new Set(ALLTR), school: null, q: '', leaders: false, sort: 'az', rank: '', hpl: null, hp: null, hs: ''};
+const state = {lens: 'track', sel: 'everyone', ch: 'all', tr: new Set(ALLTR), school: null, q: '', leaders: false, sort: 'az', rank: '', rdir: 'desc', hpl: null, hp: null, hs: ''};
 
 const hashName = () => decodeURIComponent(location.hash.slice(1)), onHome = () => !hashName(), onExplore = () => hashName() === 'explore';
 
@@ -442,7 +444,7 @@ const T = {
     cSrcS: d => `Mga kontak ng opisina ayon sa Senado (senate.gov.ph), na-update ${d}. Opisyal na channel lang ng opisina ang nakalista.`, cSrcH: 'Nasa opisyal na profile sa congress.gov.ph ang telepono at email ng opisina.', cBornSrc: 'Petsa at lugar ng kapanganakan mula sa Wikidata.', cNone: 'Wala pang nakalistang kontak.', cSrcH2: d => `Mga kontak ng opisina ayon sa Kamara (congress.gov.ph), kinuha ${d}. Walang email na inilalathala ang Kamara para sa mga miyembro.`, rkL: 'Ranggo ayon sa panukala', rkName: 'Pangalan', rkFiled: 'Inihain', rkPassed: c => c === 'senate' ? 'Pumasa<span class="wide"> sa Senado</span>' : 'Pumasa<span class="wide"> sa Kamara</span>', rkLaw: 'Naging batas',
     rkNoteS: 'Mga panukalang inihain ng bawat senador bilang may-akda, ilan ang pumasa sa Senado, at ilan ang naging batas. Mula sa Senate Legislative Information System.',
     rkNoteH: d => `Mga panukalang inihain bilang principal author, ilan ang pumasa sa Kamara, at ilan ang naging batas. Bilang din ang panukalang isinama sa substitute bill kapag pumasa ito. Hindi naitatala ang co-author. Mula sa BatasWatch (bills.juris.ph), batay sa talaan ng Kamara hanggang ${d}.`,
-    rkHow: 'Paano binibilang', rkVol: 'Dami ang ipinapakita, hindi kalidad o halaga ng mga panukala.', rkWho: 'Mambabatas', rkShow: (n, tot, k, ch) => k === 'filed' ? `${n} sa ${tot} ang nakapaghain ng kahit isang panukala.` : `${n} sa ${tot} ang may kahit isang panukalang ${k === 'law' ? 'naging batas' : ch === 'senate' ? 'pumasa sa Senado' : 'pumasa sa Kamara'}.`, rkLine: r => `${r.filed} inihain · ${r.passed} pumasa · ${r.law} batas`,
+    rkHow: 'Paano binibilang', rkMost: 'Pinakamarami muna', rkFewest: 'Pinakakaunti muna', rkDirAl: 'Baliktarin ang ayos', rkVol: 'Dami ang ipinapakita, hindi kalidad o halaga ng mga panukala.', rkWho: 'Mambabatas', rkShow: (n, tot, k, ch) => k === 'filed' ? `${n} sa ${tot} ang nakapaghain ng kahit isang panukala.` : `${n} sa ${tot} ang may kahit isang panukalang ${k === 'law' ? 'naging batas' : ch === 'senate' ? 'pumasa sa Senado' : 'pumasa sa Kamara'}.`, rkLine: r => `${r.filed} inihain · ${r.passed} pumasa · ${r.law} batas`,
     hbLead: n => `${n} bilang unang nakalistang may-akda`, hbPassed: 'pumasa sa Kamara', hbLaw: 'naging batas', hbFiled: 'inihain', hbLatest: 'Pinakabagong panukala', hbLaws: 'Naging batas',
     hbNone: 'Wala pang talaan ng panukala para sa miyembrong ito.', hbAll: 'Lahat ng panukala sa BatasWatch', ladder: (f, p, l, a) => `${f} inihain → ${p} pumasa sa Senado → ${l} naging batas bilang may-akda (${a} batas na sinuportahan sa anumang papel)`, facesH: n => `Ang ${n} senador mo`, facesAll: 'Tingnan ang Senado', bHow: 'Paano nagiging batas ang badyet', bHere: 'Dito na ang 2027 sa datos namin',
     bSteps: [['NEP', 'Agosto: ang mungkahing badyet ng Pangulo (National Expenditure Program), inihanda ng DBM at ipinadala sa Kongreso.'],
@@ -531,7 +533,7 @@ const T = {
     cSrcS: d => `Office contacts as published by the Senate (senate.gov.ph), updated ${d}. Only official office channels are listed.`, cSrcH: 'Office phone and email are on the official profile at congress.gov.ph.', cBornSrc: 'Date and place of birth from Wikidata.', cNone: 'No contact details listed yet.', cSrcH2: d => `Office contacts as published by the House (congress.gov.ph), retrieved ${d}. The House does not publish members' emails.`, rkL: 'Rank by bills', rkName: 'Name', rkFiled: 'Filed', rkPassed: c => c === 'senate' ? 'Passed<span class="wide"> the Senate</span>' : 'Passed<span class="wide"> the House</span>', rkLaw: 'Became law',
     rkNoteS: 'Bills each senator filed as author, how many passed the Senate, and how many of them became law. From the Senate Legislative Information System.',
     rkNoteH: d => `Bills filed as a principal author, how many passed the House, and how many became law. A bill folded into a substitute bill counts when the substitute passed. Co-authors are not recorded. From BatasWatch (bills.juris.ph), House records as of ${d}.`,
-    rkHow: 'How we count', rkVol: 'Counts show volume, not the quality or importance of the bills.', rkWho: 'Lawmaker', rkShow: (n, tot, k, ch) => k === 'filed' ? `${n} of ${tot} have filed at least one bill.` : `${n} of ${tot} have at least one bill that ${k === 'law' ? 'became law' : ch === 'senate' ? 'passed the Senate' : 'passed the House'}.`, rkLine: r => `${r.filed} filed · ${r.passed} passed · ${r.law} ${r.law === 1 ? 'law' : 'laws'}`,
+    rkHow: 'How we count', rkMost: 'Most first', rkFewest: 'Fewest first', rkDirAl: 'Reverse the order', rkVol: 'Counts show volume, not the quality or importance of the bills.', rkWho: 'Lawmaker', rkShow: (n, tot, k, ch) => k === 'filed' ? `${n} of ${tot} have filed at least one bill.` : `${n} of ${tot} have at least one bill that ${k === 'law' ? 'became law' : ch === 'senate' ? 'passed the Senate' : 'passed the House'}.`, rkLine: r => `${r.filed} filed · ${r.passed} passed · ${r.law} ${r.law === 1 ? 'law' : 'laws'}`,
     hbLead: n => `${n} as the first-listed author`, hbPassed: 'passed the House', hbLaw: 'became law', hbFiled: 'filed', hbLatest: 'Latest bills', hbLaws: 'Became law',
     hbNone: 'No bill records for this member yet.', hbAll: 'All bills on BatasWatch', ladder: (f, p, l, a) => `${f} filed → ${p} passed the Senate → ${l} became law as author (${a} laws backed in any role)`, facesH: n => `Your ${n} senators`, facesAll: 'See the Senate', bHow: 'How a budget becomes law', bHere: '2027 is here in our data',
     bSteps: [['NEP', 'August: the President’s proposed budget (National Expenditure Program), prepared by DBM and sent to Congress.'],
@@ -659,16 +661,17 @@ const rec = o => { if (o.body !== 'house') { const b = bills[o.id];
       law: laws.bills.filter(l => [].concat(l.author).includes(o.id) && !/^Enrolled/.test(l.status)).length}; }
   const m = hb.members[o.id]; return m ? {filed: m[0], lead: m[1], passed: m[2], law: m[3]} : null; };
 const RANKS = [['', 'rkName'], ['filed', 'rkFiled'], ['passed', 'rkPassed'], ['law', 'rkLaw']];
-const rankBar = ch => `<div class="rankbar"><p class="pl" id="rkL">${t('rkL')}</p><div class="seg seg4" role="group" aria-labelledby="rkL">${RANKS.map(([k, l]) => `<button data-rank="${k}" aria-pressed="${state.rank === k}">${t(l, ch)}</button>`).join('')}</div>
+const rankBar = ch => `<div class="rankbar"><p class="pl" id="rkL">${t('rkL')}</p><div class="seg seg4" role="group" aria-labelledby="rkL">${RANKS.map(([k, l]) => `<button data-rank="${k}" aria-pressed="${state.rank === k}">${t(l, ch)}</button>`).join('')}</div><button type="button" class="rdir" data-rdir aria-label="${esc(t('rkDirAl'))}" ${state.rank ? '' : 'hidden'}>${state.rdir === 'asc' ? '↑ ' + t('rkFewest') : '↓ ' + t('rkMost')}</button>
   <p class="note">${t('rkVol')}</p><details class="more rhow"><summary>${t('rkHow')}</summary><p class="note">${ch === 'senate' ? t('rkNoteS') : t('rkNoteH', fmtDay(hb._meta.discovered_as_of || hb._meta.retrieved || ''))}</p></details></div>`;
-const ranked = pool => pool.map(o => [o, rec(o)]).filter(([, r]) => r && r[state.rank] > 0).sort((a, b) => b[1][state.rank] - a[1][state.rank] || b[1].filed - a[1].filed || lastName(a[0]).localeCompare(lastName(b[0])));
+const ranked = pool => { const k = state.rank, d = state.rdir === 'asc' ? -1 : 1;
+  return pool.map(o => [o, rec(o)]).filter(([, r]) => r).sort((a, b) => d * (b[1][k] - a[1][k]) || lastName(a[0]).localeCompare(lastName(b[0]))); };
 const rkCol = (k, ch) => ({filed: t('rkFiled'), passed: t('rkPassed', ch).replace(/<[^>]+>/g, ''), law: t('rkLaw')})[k];
 const rankList = (rows, ch) => { if (!rows.length) return '';
-  const k = state.rank, max = rows[0][1][k] || 1;
-  return `<li class="rhead" aria-hidden="true"><span></span><span></span><span>${t('rkWho')}</span><span class="rvs">${RANKS.slice(1).map(([c]) => `<span class="rkv${c === k ? ' on' : ''}">${esc(rkCol(c, ch))}</span>`).join('')}</span></li>`
-    + rows.map(([o, r], i) => { const n = rows.findIndex(([, x]) => x[k] === r[k]) + 1;   // equal counts share a rank
+  const k = state.rank, max = Math.max(...rows.map(([, r]) => r[k]), 1), arrow = state.rdir === 'asc' ? ' ↑' : ' ↓';
+  return `<li class="rhead"><span></span><span></span><span>${t('rkWho')}</span><span class="rvs">${RANKS.slice(1).map(([c]) => `<button type="button" class="rkv${c === k ? ' on' : ''}" data-rank="${c}" aria-pressed="${c === k}">${esc(rkCol(c, ch))}${c === k ? arrow : ''}</button>`).join('')}</span></li>`
+    + rows.map(([o, r], i) => { const n = 1 + rows.filter(([, x]) => x[k] > r[k]).length;   // equal counts share a rank; rank counts from the top either way
       return `<li><a class="rrow" href="#${esc(o.id)}" aria-label="${n}. ${esc(clean(o.name))}: ${esc(t('rkLine', r))}"><span class="rn num">${n}</span>${av(o.name, o.photo)}
-      <span class="hn"><b>${esc(clean(o.name))}</b><small>${esc(o.body === 'house' ? (o.kind === 'party-list' ? o.party : o.constituency) : o.position)}</small><span class="rbar" aria-hidden="true"><i style="width:${Math.max(1.5, 100 * r[k] / max).toFixed(1)}%"></i></span></span>
+      <span class="hn"><b>${esc(clean(o.name))}</b><small>${esc(o.body === 'house' ? (o.kind === 'party-list' ? o.party : o.constituency) : o.position)}</small><span class="rbar" aria-hidden="true"><i style="width:${r[k] ? Math.max(1.5, 100 * r[k] / max).toFixed(1) : 0}%"></i></span></span>
       <span class="rvs">${RANKS.slice(1).map(([c]) => `<span class="rkv num${c === k ? ' on' : ''}" data-l="${esc(rkCol(c, ch))}">${r[c]}</span>`).join('')}</span></a></li>`; }).join(''); };
 
 /* where they studied: group schools, skipping items flagged match:false */
@@ -761,7 +764,7 @@ function showRank(listId, rankId, pool, ch) {   // true when the ranked list is 
   const l = document.getElementById(listId), r = document.getElementById(rankId); if (!l || !r) return false;
   const on = !!state.rank && !onExplore(); l.hidden = on; r.hidden = !on; if (!on) return false;
   const rows = ranked(pool.filter(o => state.tr.has(trackOf(o.id))));
-  r.innerHTML = `<li class="rinfo">${esc(t('rkShow', rows.length, pool.length, state.rank, ch))}</li>` + (rankList(rows, ch) || `<li class="soon">${t('noMatch')}</li>`);
+  r.innerHTML = `<li class="rinfo">${esc(t('rkShow', rows.filter(([, x]) => x[state.rank] > 0).length, pool.length, state.rank, ch))}</li>` + (rankList(rows, ch) || `<li class="soon">${t('noMatch')}</li>`);
   return true;
 }
 function updateAll() {
@@ -1209,7 +1212,10 @@ app.onclick = e => {
   if (d.tr) { state.sel = state.sel === d.tr ? 'everyone' : d.tr; state.tr = new Set(state.sel === 'everyone' ? ALLTR : state.sel === 'checked' ? CHECKED : [state.sel]); }
   if (d.school) state.school = state.school === d.school ? null : d.school;
   if (d.sort) state.sort = d.sort;
-  if (d.rank != null) state.rank = d.rank;
+  if (d.rank != null) { if (d.rank && d.rank === state.rank) state.rdir = state.rdir === 'asc' ? 'desc' : 'asc'; else { state.rank = d.rank; state.rdir = 'desc'; }
+    document.querySelectorAll('.rdir').forEach(x => x.hidden = !state.rank); }
+  if (d.rdir != null) state.rdir = state.rdir === 'asc' ? 'desc' : 'asc';
+  document.querySelectorAll('.rdir').forEach(x => x.textContent = state.rdir === 'asc' ? '↑ ' + t('rkFewest') : '↓ ' + t('rkMost'));
   if (d.lead != null) state.leaders = d.lead === '1';
   updateAll();
 };
