@@ -22,7 +22,7 @@
   /* dark: "night edition" — cool charcoal paper, warm cream ink, flag colours softened */
   /* dark: the same newspaper, printed on dark stock. Warm paper tones, cards clearly raised, borders visible like the light theme's ink rules */
   @media (prefers-color-scheme:dark){:root{--bg:#13110e;--paper:#1f1b17;--ink:#f4eee3;--rule:#8c8373;--mute:#bcb2a0;--line:#39332b;--blue:#9fbcff;--red:#ff9ba6;--gold:#f2d36b;--on-accent:#13110e;--photo:#2b2620;color-scheme:dark}}
-  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:5.5rem} @media (max-width:40rem){html{scroll-padding-top:1rem}}   /* focus and jumps stop below the sticky header */
   body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans);overflow-x:clip}
   .flag{display:flex;height:6px} .flag i{flex:1} .flag i:nth-child(1){background:#0038a8} .flag i:nth-child(2){background:#ce1126} .flag i:nth-child(3){background:#fcd116}
   .kick{font:500 .95rem var(--sans);color:var(--mute);margin:0 0 .6rem}
@@ -38,7 +38,7 @@
   @media (pointer:coarse){.lnk,.chip,.tg,footer a{min-height:44px;display:inline-flex;align-items:center}.tg{display:flex} .chip{padding-block:.5rem}} footer p a{padding-block:.35rem}
   #top{position:fixed;right:1rem;bottom:1rem;z-index:60;width:2.75rem;height:2.75rem;border-radius:50%;border:1px solid var(--ink);background:var(--bg);color:var(--ink);font-size:1.2rem;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25)} #top[hidden]{display:none}
   a{color:var(--blue)} :focus-visible{outline:3px solid var(--blue);outline-offset:2px} ::placeholder{color:var(--mute);opacity:1}
-  .skip{position:absolute;left:-99rem;background:#fff;color:#000;padding:.5rem 1rem;z-index:99} .skip:focus{left:0}
+  .skip{position:absolute;left:-99rem;background:#fff;color:#000;padding:.5rem 1rem;min-height:44px;display:inline-flex;align-items:center;z-index:99} .skip:focus{left:0}
   .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   .wrap{max-width:72rem;margin:0 auto;padding:0 1rem}
 
@@ -53,18 +53,27 @@
 
   .nav{display:flex;gap:.25rem;align-items:center} .lnk{background:none;border:0;font:inherit;font-weight:600;color:var(--ink);cursor:pointer;padding:.35rem .6rem;border-radius:var(--r);text-decoration:none} .lnk:hover{color:var(--blue);text-decoration:underline;text-underline-offset:.4em}
   .lnk[aria-current=page]{color:var(--blue);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:.5em}
+  @media (max-width:22rem){.nav .lnk{padding:.35rem .4rem}}   /* 320px: the nav fit without sideways scroll */
   @media (max-width:40rem){.top .wrap{flex-wrap:wrap}#q{order:3;flex:1 1 100%;max-width:none;margin-left:0}body.home #q{display:none}.nav{margin-left:auto}}
   .sec{scroll-margin-top:4.5rem}
   /* Kamara: one card per province, flowing top-to-bottom in columns so a province's districts stay together */
   .cinfo{margin:1rem 0 0;display:grid;gap:.6rem;max-width:44rem} .cinfo div{display:grid;grid-template-columns:8rem minmax(0,1fr);gap:1rem;border-bottom:1px solid var(--line);padding-bottom:.6rem}
   .cinfo dt{color:var(--mute);font-weight:600} .cinfo dd{margin:0;overflow-wrap:anywhere} @media (max-width:40rem){.cinfo div{grid-template-columns:1fr;gap:.2rem}}
   .ladder{font-weight:600;margin:.4rem 0 0;max-width:70ch}
-  .rankbar{margin:1.2rem 0 1rem;max-width:44rem} .rankbar .note{margin-top:.5rem}
+  @media (max-width:40rem){.rankbar .wide{display:none}}
+  .rankbar{margin:1.2rem 0 1rem;max-width:44rem} .rankbar .note{margin:.5rem 0 0} .rhow summary{padding:.4rem 0;min-height:0;font-size:.9rem}
   .rlist{list-style:none;padding:0;margin:0 0 1rem;border-top:1.5px solid var(--rule)} .rlist .rinfo{padding:.6rem 0;color:var(--mute);font-size:.9rem;border-bottom:1px solid var(--line)}
-  .rrow{display:grid;grid-template-columns:2.2rem 2.75rem minmax(0,1fr) auto;gap:.75rem;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
-  .rrow:hover b{color:var(--blue);text-decoration:underline} .rrow .av{width:2.75rem;height:2.75rem;font-size:.85rem} .rrow .hn small{display:block;color:var(--mute);font-size:.85rem}
-  .rn{color:var(--mute);text-align:right} .rc{display:flex;gap:1rem;font-size:.85rem;color:var(--mute);white-space:nowrap} .rc b{color:var(--ink)} .rc .on b{background:var(--yellow);color:#1a1714;padding:0 .3rem;border-radius:4px}
-  @media (max-width:40rem){.rrow{grid-template-columns:1.6rem 2.5rem minmax(0,1fr);row-gap:.25rem} .rrow .av{width:2.5rem;height:2.5rem} .rc{grid-column:3;flex-wrap:wrap;gap:.1rem .8rem;white-space:normal}}
+  .rrow,.rhead{display:grid;grid-template-columns:2.4rem 2.75rem minmax(0,1fr) auto;gap:.9rem;align-items:center}
+  .rrow{padding:.65rem .5rem;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);transition:background-color .15s}
+  .rrow:hover,.rrow:focus-visible{background:var(--paper)} .rrow:hover b{color:var(--blue);text-decoration:underline}
+  .rhead{padding:.5rem .5rem;border-bottom:1px solid var(--line);font-size:.8rem;font-weight:600;color:var(--mute)}
+  .rrow .av{width:2.75rem;height:2.75rem;font-size:.85rem} .rrow .hn{min-width:0} .rrow .hn small{display:block;color:var(--mute);font-size:.85rem}
+  .rbar{display:block;height:.4rem;max-width:20rem;margin-top:.4rem;background:var(--line);border-radius:4px;overflow:hidden} .rbar i{display:block;height:100%;background:var(--blue);border-radius:4px}
+  .rn{color:var(--mute);text-align:right;font-size:1rem}
+  .rvs{display:grid;grid-template-columns:repeat(3,7.5rem);gap:.5rem;text-align:right} .rkv{font-size:1rem;color:var(--mute)} .rkv.on{color:var(--ink);font-weight:700;font-size:1.15rem}
+  .rhead .rkv{font-size:.8rem} .rhead .rkv.on{color:var(--ink);font-size:.8rem}
+  @media (max-width:40rem){.rhead{display:none} .rrow{grid-template-columns:1.8rem 2.5rem minmax(0,1fr);row-gap:.4rem;padding:.6rem .25rem} .rrow .av{width:2.5rem;height:2.5rem}
+    .rvs{grid-column:3;grid-template-columns:repeat(3,minmax(0,1fr));text-align:left} .rkv{font-size:.95rem} .rkv.on{font-size:1rem} .rkv::after{content:attr(data-l);display:block;font:500 .72rem var(--sans);color:var(--mute)}}
   .hlist{list-style:none;padding:0;margin:0 0 1rem;columns:20rem;column-gap:1.1rem}
   .hgrp{break-inside:avoid;margin:0 0 1.1rem;background:var(--paper);border:1.5px solid var(--rule);border-radius:var(--r);overflow:hidden}
   .hgrp h2{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;margin:0;padding:.55rem .9rem;border-bottom:1px solid var(--line);font:600 1.2rem/1.2 var(--serif)}
@@ -142,7 +151,7 @@
   .panel{margin:1rem 0;padding:1rem;border:1px solid var(--line);border-radius:12px;background:var(--paper);display:grid;gap:1.1rem;text-align:left}
   .pl{margin:0 0 .5rem;font:600 .85rem var(--sans);color:var(--mute)} .pl small{font-size:.8rem;font-weight:500;letter-spacing:0;text-transform:none;margin-left:.4rem}
   .seg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ink);border-radius:99px;overflow:hidden}
-  .seg button{border:0;border-right:1px solid var(--line);background:transparent;color:var(--ink);padding:.5rem .3rem;font:inherit;font-size:.88rem;cursor:pointer} .seg button:last-child{border-right:0}
+  .seg button{border:0;border-right:1px solid var(--line);background:transparent;color:var(--ink);padding:.5rem .3rem;min-height:44px;font:inherit;font-size:.88rem;cursor:pointer;transition:background-color .15s,color .15s} .seg button:active{transform:scale(.98)} .seg button:last-child{border-right:0}
   .seg button:hover{background:var(--yellow);color:#15120f} .seg button[aria-pressed=true]{background:var(--ink);color:var(--bg);font-weight:700}
   .panel>*{min-width:0} 
   .tgs{display:grid;grid-template-columns:1fr;gap:.4rem} @media (min-width:48rem){.tgs{grid-template-columns:repeat(5,1fr)}.tgs .tg{flex-direction:column;align-items:flex-start;gap:.35rem;padding:.65rem .8rem}.tgs .tg b{order:-1;font:700 1.5rem/1 var(--serif)}.tgs .tg span{flex:0 1 auto;line-height:1.25}.tgs .tg::before{position:absolute;top:.7rem;right:.7rem}.tgs .tg{position:relative}}
@@ -209,6 +218,7 @@
   .phero h1{font:600 clamp(2.2rem,5.5vw,3.8rem)/1.02 var(--serif);letter-spacing:-.02em;margin:0 0 .5rem}
   .phero .meta{font:500 .8rem var(--mono);color:var(--mute);margin:.6rem 0 0}
   .ptabs{position:sticky;top:3.9rem;z-index:5;display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;margin:2rem 0 0;padding:.4rem 0;background:var(--bg);border-bottom:1px solid var(--rule)}
+  @media (max-width:40rem){.top{position:static;backdrop-filter:none} .ptabs{top:0}}   /* the full header is a third of a phone screen: let it scroll away */
   .ptabs button{border:0;background:none;color:var(--ink);font:700 .95rem var(--sans);padding:.55rem 0;cursor:pointer;border-bottom:3px solid transparent;min-height:44px}
   .ptabs button:hover{border-bottom-color:var(--rule)} .ptabs small{font:500 .85rem var(--mono);color:var(--mute);margin-left:.3rem}
   .role{display:inline-block;font-size:.78rem;font-weight:700;padding:.25rem .55rem;border-radius:4px;background:var(--yellow);color:#15120f}
@@ -280,13 +290,13 @@
   .hero2{display:grid;gap:2.5rem;padding:3rem 0 2.5rem;align-items:start} @media (min-width:60rem){.hero2{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}}
   .hero2 h1.big{font-weight:600;max-width:14ch;font-size:clamp(2.6rem,6.5vw,5rem);line-height:1}
   .hero2 .lede{color:var(--mute);margin:1.2rem 0 1.8rem}
-  .faces{margin:0 0 1rem} .faces .shead a{font-weight:600;white-space:nowrap}
+  .faces{margin:0 0 1rem} .faces .shead a{font-weight:600;white-space:nowrap;display:inline-flex;align-items:center;min-height:44px}
   .faces ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:.75rem .5rem}
   @media (max-width:60rem){.faces ul{grid-template-columns:repeat(8,minmax(0,1fr))}} @media (max-width:40rem){.faces ul{grid-template-columns:repeat(6,minmax(0,1fr))}}
   .faces a{display:grid;gap:.3rem;text-decoration:none;color:var(--mute);font-size:.75rem;text-align:center;min-width:0}
   .faces .ph{position:relative;display:grid;place-items:center;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--photo);border:1px solid var(--line);transition:border-color .15s}
   .faces img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
-  .faces small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .15s}
+  .faces small{line-height:1.25;overflow-wrap:anywhere;transition:color .15s}
   .faces a:hover .ph,.faces a:focus-visible .ph{border-color:var(--rule)} .faces a:hover small{color:var(--ink)}
   .hsearch{max-width:40rem} .hsearch>label{display:block;font-weight:700;margin-bottom:.4rem}
   .hsearch .box{display:flex;align-items:center;gap:.6rem;height:3.6rem;padding:0 1rem;background:var(--paper);border:2px solid var(--rule);border-radius:var(--r)}
@@ -336,8 +346,12 @@
   .back{font-size:.9rem;font-weight:600}
 
   /* motion */
-  .rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s} .rv.in{opacity:1;transform:none}
-  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.seat,.pt img{transition:none}html{scroll-behavior:auto}}
+  .rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s} .rv.in,.rv:focus-within{opacity:1;transform:none}   /* keyboard focus never lands on something still faded out */
+  /* hover feedback: linked cards lift, portraits zoom inside their frame, buttons press */
+  .gl,.bc,.pc{transition:transform .2s,box-shadow .2s,border-color .2s} .gl:hover,.bc:hover,.pc:hover{transform:translateY(-2px)}
+  .faces img,.pt img{transition:transform .3s} .faces a:hover img,.pt:hover img{transform:scale(1.03)}
+  button:active,.chip:active,.try button:active{transform:scale(.98)}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.seat,.pt img,.faces img,.gl,.bc,.pc{transition:none}.gl:hover,.bc:hover,.pc:hover,.pt:hover,.faces a:hover img,.pt:hover img,button:active{transform:none}html{scroll-behavior:auto}}
   @media (prefers-reduced-motion:no-preference){.skel{animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{50%{opacity:.5}}}
   /* dark-mode overrides: last in the sheet so they win over the base rules above */
   @media (prefers-color-scheme:dark){
@@ -426,10 +440,10 @@ const T = {
     billsLaws: (b, l) => `${b} panukala · ${l} batas`, inEnglish: 'Nasa Ingles ang detalye', sectionsAl: 'Mga seksyon', backTo: x => `← ${x}`,
     senator: 'Senador', dataAsOf: 'Datos hanggang', casesChecked: 'kaso sinuri', tCases: 'kaso nakatala',
     tabCases: 'Kaso', tabLaws: 'Batas', tabBills: 'Panukala', tabEdu: 'Pinag-aralan', tabFam: 'Pamilya', tabOffice: 'Puwesto', tabElec: 'Halalan', tabBudget: 'Badyet', tabContact: 'Kontak', hContact: 'Kontak at pinagmulan', cBorn: 'Ipinanganak', cAge: n => `${n} taong gulang`, cOffice: 'Opisina', cPhone: 'Telepono', cEmail: 'Email', cWeb: 'Website', cSocial: 'Social media', cOfficial: 'Opisyal na profile',
-    cSrcS: d => `Mga kontak ng opisina ayon sa Senado (senate.gov.ph), na-update ${d}. Opisyal na channel lang ng opisina ang nakalista.`, cSrcH: 'Nasa opisyal na profile sa congress.gov.ph ang telepono at email ng opisina.', cBornSrc: 'Petsa at lugar ng kapanganakan mula sa Wikidata.', cNone: 'Wala pang nakalistang kontak.', cSrcH2: d => `Mga kontak ng opisina ayon sa Kamara (congress.gov.ph), kinuha ${d}. Walang email na inilalathala ang Kamara para sa mga miyembro.`, rkL: 'Ranggo ayon sa panukala', rkName: 'Pangalan', rkFiled: 'Inihain', rkPassed: c => c === 'senate' ? 'Pumasa sa Senado' : 'Pumasa sa Kamara', rkLaw: 'Naging batas',
+    cSrcS: d => `Mga kontak ng opisina ayon sa Senado (senate.gov.ph), na-update ${d}. Opisyal na channel lang ng opisina ang nakalista.`, cSrcH: 'Nasa opisyal na profile sa congress.gov.ph ang telepono at email ng opisina.', cBornSrc: 'Petsa at lugar ng kapanganakan mula sa Wikidata.', cNone: 'Wala pang nakalistang kontak.', cSrcH2: d => `Mga kontak ng opisina ayon sa Kamara (congress.gov.ph), kinuha ${d}. Walang email na inilalathala ang Kamara para sa mga miyembro.`, rkL: 'Ranggo ayon sa panukala', rkName: 'Pangalan', rkFiled: 'Inihain', rkPassed: c => c === 'senate' ? 'Pumasa<span class="wide"> sa Senado</span>' : 'Pumasa<span class="wide"> sa Kamara</span>', rkLaw: 'Naging batas',
     rkNoteS: 'Mga panukalang inihain ng bawat senador bilang may-akda, ilan ang pumasa sa Senado, at ilan ang naging batas. Mula sa Senate Legislative Information System.',
     rkNoteH: d => `Mga panukalang inihain bilang principal author, ilan ang pumasa sa Kamara, at ilan ang naging batas. Bilang din ang panukalang isinama sa substitute bill kapag pumasa ito. Hindi naitatala ang co-author. Mula sa BatasWatch (bills.juris.ph), batay sa talaan ng Kamara hanggang ${d}.`,
-    rkShow: (n, tot, k, ch) => k === 'filed' ? `${n} sa ${tot} ang nakapaghain ng kahit isang panukala.` : `${n} sa ${tot} ang may kahit isang panukalang ${k === 'law' ? 'naging batas' : ch === 'senate' ? 'pumasa sa Senado' : 'pumasa sa Kamara'}.`, rkLine: r => `${r.filed} inihain · ${r.passed} pumasa · ${r.law} batas`,
+    rkHow: 'Paano binibilang', rkVol: 'Dami ang ipinapakita, hindi kalidad o halaga ng mga panukala.', rkWho: 'Mambabatas', rkShow: (n, tot, k, ch) => k === 'filed' ? `${n} sa ${tot} ang nakapaghain ng kahit isang panukala.` : `${n} sa ${tot} ang may kahit isang panukalang ${k === 'law' ? 'naging batas' : ch === 'senate' ? 'pumasa sa Senado' : 'pumasa sa Kamara'}.`, rkLine: r => `${r.filed} inihain · ${r.passed} pumasa · ${r.law} batas`,
     hbLead: n => `${n} bilang unang nakalistang may-akda`, hbPassed: 'pumasa sa Kamara', hbLaw: 'naging batas', hbFiled: 'inihain', hbLatest: 'Pinakabagong panukala', hbLaws: 'Naging batas',
     hbNone: 'Wala pang talaan ng panukala para sa miyembrong ito.', hbAll: 'Lahat ng panukala sa BatasWatch', ladder: (f, p, l, a) => `${f} inihain → ${p} pumasa sa Senado → ${l} naging batas bilang may-akda (${a} batas na sinuportahan sa anumang papel)`, facesH: n => `Ang ${n} senador mo`, facesAll: 'Tingnan ang Senado', bHow: 'Paano nagiging batas ang badyet', bHere: 'Dito na ang 2027 sa datos namin',
     bSteps: [['NEP', 'Agosto: ang mungkahing badyet ng Pangulo (National Expenditure Program), inihanda ng DBM at ipinadala sa Kongreso.'],
@@ -515,10 +529,10 @@ const T = {
     billsLaws: (b, l) => `${b} bills · ${l} laws`, inEnglish: '', sectionsAl: 'Sections', backTo: x => `← ${x}`,
     senator: 'Senator', dataAsOf: 'Data as of', casesChecked: 'cases checked', tCases: 'cases listed',
     tabCases: 'Cases', tabLaws: 'Laws', tabBills: 'Bills', tabEdu: 'Education', tabFam: 'Family', tabOffice: 'Office', tabElec: 'Election', tabBudget: 'Budget', tabContact: 'Contact', hContact: 'Contact and background', cBorn: 'Born', cAge: n => `age ${n}`, cOffice: 'Office', cPhone: 'Phone', cEmail: 'Email', cWeb: 'Website', cSocial: 'Social media', cOfficial: 'Official profile',
-    cSrcS: d => `Office contacts as published by the Senate (senate.gov.ph), updated ${d}. Only official office channels are listed.`, cSrcH: 'Office phone and email are on the official profile at congress.gov.ph.', cBornSrc: 'Date and place of birth from Wikidata.', cNone: 'No contact details listed yet.', cSrcH2: d => `Office contacts as published by the House (congress.gov.ph), retrieved ${d}. The House does not publish members' emails.`, rkL: 'Rank by bills', rkName: 'Name', rkFiled: 'Filed', rkPassed: c => c === 'senate' ? 'Passed the Senate' : 'Passed the House', rkLaw: 'Became law',
+    cSrcS: d => `Office contacts as published by the Senate (senate.gov.ph), updated ${d}. Only official office channels are listed.`, cSrcH: 'Office phone and email are on the official profile at congress.gov.ph.', cBornSrc: 'Date and place of birth from Wikidata.', cNone: 'No contact details listed yet.', cSrcH2: d => `Office contacts as published by the House (congress.gov.ph), retrieved ${d}. The House does not publish members' emails.`, rkL: 'Rank by bills', rkName: 'Name', rkFiled: 'Filed', rkPassed: c => c === 'senate' ? 'Passed<span class="wide"> the Senate</span>' : 'Passed<span class="wide"> the House</span>', rkLaw: 'Became law',
     rkNoteS: 'Bills each senator filed as author, how many passed the Senate, and how many of them became law. From the Senate Legislative Information System.',
     rkNoteH: d => `Bills filed as a principal author, how many passed the House, and how many became law. A bill folded into a substitute bill counts when the substitute passed. Co-authors are not recorded. From BatasWatch (bills.juris.ph), House records as of ${d}.`,
-    rkShow: (n, tot, k, ch) => k === 'filed' ? `${n} of ${tot} have filed at least one bill.` : `${n} of ${tot} have at least one bill that ${k === 'law' ? 'became law' : ch === 'senate' ? 'passed the Senate' : 'passed the House'}.`, rkLine: r => `${r.filed} filed · ${r.passed} passed · ${r.law} ${r.law === 1 ? 'law' : 'laws'}`,
+    rkHow: 'How we count', rkVol: 'Counts show volume, not the quality or importance of the bills.', rkWho: 'Lawmaker', rkShow: (n, tot, k, ch) => k === 'filed' ? `${n} of ${tot} have filed at least one bill.` : `${n} of ${tot} have at least one bill that ${k === 'law' ? 'became law' : ch === 'senate' ? 'passed the Senate' : 'passed the House'}.`, rkLine: r => `${r.filed} filed · ${r.passed} passed · ${r.law} ${r.law === 1 ? 'law' : 'laws'}`,
     hbLead: n => `${n} as the first-listed author`, hbPassed: 'passed the House', hbLaw: 'became law', hbFiled: 'filed', hbLatest: 'Latest bills', hbLaws: 'Became law',
     hbNone: 'No bill records for this member yet.', hbAll: 'All bills on BatasWatch', ladder: (f, p, l, a) => `${f} filed → ${p} passed the Senate → ${l} became law as author (${a} laws backed in any role)`, facesH: n => `Your ${n} senators`, facesAll: 'See the Senate', bHow: 'How a budget becomes law', bHere: '2027 is here in our data',
     bSteps: [['NEP', 'August: the President’s proposed budget (National Expenditure Program), prepared by DBM and sent to Congress.'],
@@ -647,11 +661,16 @@ const rec = o => { if (o.body !== 'house') { const b = bills[o.id];
   const m = hb.members[o.id]; return m ? {filed: m[0], lead: m[1], passed: m[2], law: m[3]} : null; };
 const RANKS = [['', 'rkName'], ['filed', 'rkFiled'], ['passed', 'rkPassed'], ['law', 'rkLaw']];
 const rankBar = ch => `<div class="rankbar"><p class="pl" id="rkL">${t('rkL')}</p><div class="seg seg4" role="group" aria-labelledby="rkL">${RANKS.map(([k, l]) => `<button data-rank="${k}" aria-pressed="${state.rank === k}">${t(l, ch)}</button>`).join('')}</div>
-  <p class="note">${ch === 'senate' ? t('rkNoteS') : t('rkNoteH', fmtDay(hb._meta.discovered_as_of || hb._meta.retrieved || ''))}</p></div>`;
+  <p class="note">${t('rkVol')}</p><details class="more rhow"><summary>${t('rkHow')}</summary><p class="note">${ch === 'senate' ? t('rkNoteS') : t('rkNoteH', fmtDay(hb._meta.discovered_as_of || hb._meta.retrieved || ''))}</p></details></div>`;
 const ranked = pool => pool.map(o => [o, rec(o)]).filter(([, r]) => r && r[state.rank] > 0).sort((a, b) => b[1][state.rank] - a[1][state.rank] || b[1].filed - a[1].filed || lastName(a[0]).localeCompare(lastName(b[0])));
-const rankList = (rows, ch) => rows.map(([o, r], i) => `<li><a class="rrow" href="#${esc(o.id)}" aria-label="${esc(clean(o.name))}, ${esc(t('rkLine', r))}"><span class="rn num">${i + 1}</span>${av(o.name, o.photo)}
-    <span class="hn"><b>${esc(clean(o.name))}</b><small>${esc(o.body === 'house' ? (o.kind === 'party-list' ? o.party : o.constituency) : o.position)}</small></span>
-    <span class="rc num">${RANKS.slice(1).map(([k]) => `<span${k === state.rank ? ' class="on"' : ''}><b>${r[k]}</b> ${esc({filed: t('hbFiled'), passed: ch === 'senate' ? (lang === 'fil' ? 'pumasa sa Senado' : 'passed the Senate') : t('hbPassed'), law: t('hbLaw')}[k])}</span>`).join('')}</span></a></li>`).join('');
+const rkCol = (k, ch) => ({filed: t('rkFiled'), passed: t('rkPassed', ch).replace(/<[^>]+>/g, ''), law: t('rkLaw')})[k];
+const rankList = (rows, ch) => { if (!rows.length) return '';
+  const k = state.rank, max = rows[0][1][k] || 1;
+  return `<li class="rhead" aria-hidden="true"><span></span><span></span><span>${t('rkWho')}</span><span class="rvs">${RANKS.slice(1).map(([c]) => `<span class="rkv${c === k ? ' on' : ''}">${esc(rkCol(c, ch))}</span>`).join('')}</span></li>`
+    + rows.map(([o, r], i) => { const n = rows.findIndex(([, x]) => x[k] === r[k]) + 1;   // equal counts share a rank
+      return `<li><a class="rrow" href="#${esc(o.id)}" aria-label="${n}. ${esc(clean(o.name))}: ${esc(t('rkLine', r))}"><span class="rn num">${n}</span>${av(o.name, o.photo)}
+      <span class="hn"><b>${esc(clean(o.name))}</b><small>${esc(o.body === 'house' ? (o.kind === 'party-list' ? o.party : o.constituency) : o.position)}</small><span class="rbar" aria-hidden="true"><i style="width:${Math.max(1.5, 100 * r[k] / max).toFixed(1)}%"></i></span></span>
+      <span class="rvs">${RANKS.slice(1).map(([c]) => `<span class="rkv num${c === k ? ' on' : ''}" data-l="${esc(rkCol(c, ch))}">${r[c]}</span>`).join('')}</span></a></li>`; }).join(''); };
 
 /* where they studied: group schools, skipping items flagged match:false */
 const GROUPS = [['Ateneo', /ateneo/i], ['UP', /university of the philippines/i], ['La Salle', /la salle/i], ['UST', /santo tomas/i], ['Harvard', /harvard/i], ['UE', /university of the east/i], ['PMA', /military academy/i], ['Georgetown', /georgetown/i]];
