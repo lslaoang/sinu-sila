@@ -26,8 +26,9 @@ ALIAS = {"christopher-lawrence-t-go": ["BONG"], "ronald-m-dela-rosa": ["BATO"], 
          "francis-g-escudero": ["CHIZ"], "panfilo-m-lacson": ["PING"], "manuel-m-lapid": ["LITO"], "robinhood-c-padilla": ["ROBIN"],
          "francis-pangilinan": ["KIKO"], "paolo-benigno-aquino-iv": ["BAM"], "win-gatchalian": ["SHERWIN"], "juan-miguel-f-zubiri": ["MIGZ"],
          "vicente-c-sotto-iii": ["TITO"], "pia-s-cayetano": ["PILAR"], "risa-hontiveros": ["ANA"], "jinggoy-ejercito-estrada": ["JOSE"], "imee-r-marcos": ["MARIA"]}
-# Senators' local and House records, picked by hand from the review list (name and province on Dynasties)
-SEN_LOCAL = {"win-gatchalian": [("SHERWIN TING GATCHALIAN", "NCR THIRD DISTRICT")],
+# Records picked by hand from the review list: (name, province on Dynasties[, town to leave out because another person's races are mixed in])
+HAND = {"jenny-barzaga": [("JENNY AUSTRIA BARZAGA", "CAVITE"), ("JENNIFER AUSTRIA BARZAGA", "CAVITE", "CARMONA")],   # her son Kiko won the seat in 2025; she took it in 2026
+             "win-gatchalian": [("SHERWIN TING GATCHALIAN", "NCR THIRD DISTRICT")],
              "juan-miguel-f-zubiri": [("JUAN MIGUEL F. ZUBIRI", "BUKIDNON"), ("JUAN MIGUEL ZUBIRI", "BUKIDNON")],
              "alan-peter-s-cayetano": [("ALAN PETER S. CAYETANO", "NCR FOURTH DISTRICT"), ("ALAN PETER MANILA CAYETANO", "NCR FOURTH DISTRICT")],
              "pia-s-cayetano": [("PIA CAYETANO", "NCR FOURTH DISTRICT")],
@@ -113,6 +114,14 @@ def merge(rows):
         k = (r[0], r[1]); best[k] = max(best.get(k, r), r, key=lambda z: (z[3] is not None, z[4] or 0))
     return sorted(best.values(), key=lambda r: (r[0], r[1]), reverse=True)
 
+def hand(oid, last):
+    rows, want = [], HAND.get(oid, [])
+    for name, prov, *skip in want:
+        ps = [p for p in search(last) if fold(p["display_name"]) == name and fold(p["province"]) == prov]
+        if not ps: review.append(f"HAND {oid}: {name} ({prov}) not found")
+        rows += [row(x, p) for p in ps for x in races(person(p["id"])) if fold(x.get("city")) not in skip]
+    return rows
+
 ORD = ["", "FIRST", "SECOND", "THIRD", "FOURTH", "FIFTH", "SIXTH", "SEVENTH", "EIGHTH", "NINTH", "TENTH", "ELEVENTH", "TWELFTH"]
 officials = json.load(open(D("data/officials.json")))
 house = json.load(open(D("data/house.json")))["people"]
@@ -124,6 +133,8 @@ for o in house:
     parts = [x for x in re.split(r"[-–\s]+", last) if x not in PART]   # "BANAS-NOGRALES", "DEL MAR": try each part and the whole
     same = list({p["id"]: p for q in dict.fromkeys([last, last.replace(" ", ""), *parts]) for p in search(q)}.values())
     anchor = []
+    if o["id"] in HAND:
+        rows = merge(hand(o["id"], last)); out[o["id"]] = {"races": rows}; continue
     if o["kind"] == "party-list":
         anchor = [p for p in same if (words(p["first_name"]) | words(p["display_name"])) & given and fold(p.get("suffix")) == suf]
         if len(anchor) == 1 and o["id"] not in PL_OK: review.append(f"PARTY-LIST UNCONFIRMED {o['id']} = {anchor[0]['display_name']} ({anchor[0]['province']})")
@@ -162,9 +173,7 @@ for o in officials:
             sur, _, rest = x["name"].partition(",")
             if f" {last} " in f" {' '.join(re.split(r'[-\s]+', fold(sur)))} " and words(rest) & given:   # "HONTIVEROS-BARAQUEL", "EJERCITO ESTRADA"
                 rows.append([y, "Senator", "Nationwide", won(x), x.get("votes"), x.get("rank"), x.get("party") or "", f"/national/{y}"])
-    picks = [p for name, prov in SEN_LOCAL.get(o["id"], []) for p in search(last) if fold(p["display_name"]) == name and fold(p["province"]) == prov]
-    if len(picks) != len(SEN_LOCAL.get(o["id"], [])): review.append(f"SENATOR {o['id']}: a hand-picked record was not found")
-    loc = [row(x, p) for p in picks for x in races(person(p["id"]))]
+    loc = hand(o["id"], last)
     rows += loc
     if loc: review.append(f"SENATOR {o['id']}: " + "; ".join(f"{r[0]} {r[1]} {r[2]}" for r in sorted(loc)))
     if rows: out[o["id"]] = {"races": merge(rows)}
