@@ -251,6 +251,13 @@
   .tl li::before{content:"";position:absolute;left:-1.7rem;top:1.1rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--rule)}
   .badge{font-size:.8rem;font-weight:600;color:var(--red)} .tl small{color:var(--mute)}
   .soon{border:2px dashed var(--line);border-radius:var(--r);padding:1rem;color:var(--mute);text-align:center}
+  .cterms{margin:0 0 .8rem;display:flex;flex-wrap:wrap;gap:.4rem 1.2rem} .cterms b{font-weight:700} .cterms span{color:var(--mute)}
+  .career{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);max-width:52rem}
+  .career li,.career details>div{display:grid;grid-template-columns:3.4rem minmax(0,1fr) auto;gap:.2rem 1rem;align-items:baseline;padding:.6rem 0;border-bottom:1px solid var(--line)}
+  .career .yr{font:600 .95rem var(--mono)} .career b{display:block} .career small{display:block;color:var(--mute);font-size:.85rem}
+  .career .res{font-size:.75rem;font-weight:700;padding:.15rem .45rem;border-radius:4px;border:1.5px solid currentColor;white-space:nowrap}
+  .career .w{color:var(--sage)} .career .l{color:var(--mute)} .career .u{color:var(--mute);border-style:dashed;font-weight:600}
+  .career a{color:inherit;text-decoration:none} .career a:hover b{color:var(--blue);text-decoration:underline}
   .elec{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;background:var(--paper);border:1.5px solid var(--rule);border-radius:var(--r);padding:1.1rem 1.3rem}
   .elec .eb{flex:0 0 auto;display:flex;flex-direction:column} .elec .eb .num{font:600 2.2rem/1 var(--mono)} .elec .eb small{color:var(--mute);margin-top:.3rem}
   .elec .ub{font:600 1.6rem var(--serif)} .elec dl{flex:1 1 18rem;margin:0;display:grid;gap:.35rem}
@@ -455,7 +462,7 @@ const T = {
     senK: n => `Mataas na Kapulungan · ${n} senador`, distSen: n => `Rekord sa kaso ng ${n} senador`, distHouse: n => `Rekord sa kaso ng ${n} kinatawan`, distPL: n => `Rekord sa kaso ng ${n} party-list rep`,
     billsLaws: (b, l) => `${b} panukala · ${l} batas`, inEnglish: 'Nasa Ingles ang detalye', sectionsAl: 'Mga seksyon', backTo: x => `← ${x}`,
     senator: 'Senador', dataAsOf: 'Datos hanggang', casesChecked: 'kaso sinuri', tCases: 'kaso nakatala',
-    tabCases: 'Kaso', tabLaws: 'Batas', tabBills: 'Panukala', tabEdu: 'Pinag-aralan', tabFam: 'Pamilya', tabOffice: 'Puwesto', tabElec: 'Halalan', tabBudget: 'Badyet', sbH: 'Lahat ng panukala', sbTerm: 'Termino', sbAllT: n => `Lahat ng termino (${n})`, sbCong: c => `Ika-${c} Kongreso`, hVer: 'Bersyon sa Kamara', sVer: 'Bersyon sa Senado',
+    tabCases: 'Kaso', tabLaws: 'Batas', tabBills: 'Panukala', tabEdu: 'Pinag-aralan', tabFam: 'Pamilya', tabOffice: 'Puwesto', tabElec: 'Halalan', tabCareer: 'Karera', tabBudget: 'Badyet', sbH: 'Lahat ng panukala', sbTerm: 'Termino', sbAllT: n => `Lahat ng termino (${n})`, sbCong: c => `Ika-${c} Kongreso`, hVer: 'Bersyon sa Kamara', sVer: 'Bersyon sa Senado',
     sbNote: d => `Mga panukalang may-akda ang mambabatas. Ika-13 hanggang Ika-19 na Kongreso mula sa open-congress-data ng BetterGov; Ika-20 mula sa Senado at BatasWatch. Ang bersyon sa kabilang kapulungan ay mula sa kasaysayan ng bawat panukala. Kinuha ${d}.`, tabContact: 'Kontak', hContact: 'Kontak at pinagmulan', cBorn: 'Ipinanganak', cAge: n => `${n} taong gulang`, cOffice: 'Opisina', cPhone: 'Telepono', cEmail: 'Email', cWeb: 'Website', cSocial: 'Social media', cOfficial: 'Opisyal na profile',
     cSrcS: d => `Mga kontak ng opisina ayon sa Senado (senate.gov.ph), na-update ${d}. Opisyal na channel lang ng opisina ang nakalista.`, cSrcH: 'Nasa opisyal na profile sa congress.gov.ph ang telepono at email ng opisina.', cBornSrc: 'Petsa at lugar ng kapanganakan mula sa Wikidata.', cNone: 'Wala pang nakalistang kontak.', cSrcH2: d => `Mga kontak ng opisina ayon sa Kamara (congress.gov.ph), kinuha ${d}. Walang email na inilalathala ang Kamara para sa mga miyembro.`, rkL: 'Ranggo ayon sa panukala', rkName: 'Pangalan', rkFiled: 'Inihain', rkPassed: c => c === 'senate' ? 'Pumasa<span class="wide"> sa Senado</span>' : 'Pumasa<span class="wide"> sa Kamara</span>', rkLaw: 'Naging batas',
     rkNoteS: 'Mga panukalang inihain ng bawat senador bilang may-akda, ilan ang pumasa sa Senado, at ilan ang naging batas. Mula sa Senate Legislative Information System.',
@@ -478,7 +485,8 @@ const T = {
     gHouseS: 'kandidatong isiningit (insertion candidate)', gNepS: 'kandidatong tinanggal', bTop: 'Pinakamalalaking pagbabago', bTopNote: 'Ayon sa opisinang nakalista sa mga dokumento, kaya maaaring nasa labas ng distrito ang ilang proyekto. Hindi kasama ang mga linyang hindi pa tiyak ang pagtutugma.', bAll: 'Lahat ng proyekto sa BetterGov',
     bHist: 'Naisabatas na badyet ng opisina (GAA), bawat taon', bNotice: 'Hindi opisyal. Ito ay paghahambing ng BetterGov sa mga nailathalang dokumento ng badyet. Ang “kandidatong idinagdag” ay pagkakaiba ng dalawang dokumento, hindi patunay ng mali, at hindi nito ipinapakita na ang kinatawan ang humiling nito.',
     bMethod: 'Paano ito binasa', bSrc: 'Datos mula sa BetterGov Budget (budget.bettergov.ph), mula sa mga dokumento ng DBM at ng Kamara. Kinuha noong',
-    hElec: 'Halalan na nagpanalo sa kanya', elecSrc: 'Bilang ng boto mula sa', elecNone: 'Wala pang tumugmang resulta ng halalan para sa kanya.', votes: 'boto', votesGroup: g => `boto ng ${g}`,
+    hElec: 'Halalan na nagpanalo sa kanya', hCareer: 'Karera sa puwesto', cInCong: 'Sa Kongreso', cHouse: 'Kamara', cSenate: 'Senado', cNow: 'kasalukuyan', cWon: 'Nanalo', cLost: 'Natalo', cUnk: 'Walang resulta sa source', cRaces: n => `${n} takbo sa halalan mula 2001`, cWins: n => `${n} panalo`, cNone: 'Wala pang tumugmang talaan ng halalan para sa kanya.', cLoading: 'Kinukuha ang karera…',
+    cNote: 'Mga takbo sa halalan mula 2001 hanggang 2025 mula sa BetterGov Dynasties (batay sa Open Halalan); Senado mula 2010 lang. Itinutugma ayon sa pangalan, kaya maaaring may kulang. Mga termino sa Kongreso mula sa open-congress-data ng BetterGov.', elecSrc: 'Bilang ng boto mula sa', elecNone: 'Wala pang tumugmang resulta ng halalan para sa kanya.', votes: 'boto', votesGroup: g => `boto ng ${g}`,
     eYear: 'Halalan', eRank: 'Puwesto sa bilangan', eSeats: 'Mga puwestong pinaglabanan', eRunner: 'Pumangalawa', eMargin: 'Lamang', seatsN: n => `${n}`, unopposed: 'Walang kalaban',
     rankOf: (r, n) => `ika-${r} sa ${n} kandidato`, rankOfPL: (r, n) => `ika-${r} sa ${n} party-list`, rankOfSeats: (r, n, s) => `ika-${r} sa ${n} kandidato (${s} puwesto)`,
     hSaln: 'Yaman ayon sa SALN', salnNote: 'Ayon sa idineklara ng senador sa kanyang SALN (Statement of Assets, Liabilities and Net Worth) at sa iniulat ng nakalink na source. Hindi ito na-audit.',
@@ -545,7 +553,7 @@ const T = {
     senK: n => `Upper house · ${n} senators`, distSen: n => `Court-case record of ${n} senators`, distHouse: n => `Court-case record of ${n} representatives`, distPL: n => `Court-case record of ${n} party-list reps`,
     billsLaws: (b, l) => `${b} bills · ${l} laws`, inEnglish: '', sectionsAl: 'Sections', backTo: x => `← ${x}`,
     senator: 'Senator', dataAsOf: 'Data as of', casesChecked: 'cases checked', tCases: 'cases listed',
-    tabCases: 'Cases', tabLaws: 'Laws', tabBills: 'Bills', tabEdu: 'Education', tabFam: 'Family', tabOffice: 'Office', tabElec: 'Election', tabBudget: 'Budget', sbH: 'All bills', sbTerm: 'Term', sbAllT: n => `All terms (${n})`, sbCong: c => `${c}th Congress`, hVer: 'House version', sVer: 'Senate version',
+    tabCases: 'Cases', tabLaws: 'Laws', tabBills: 'Bills', tabEdu: 'Education', tabFam: 'Family', tabOffice: 'Office', tabElec: 'Election', tabCareer: 'Career', tabBudget: 'Budget', sbH: 'All bills', sbTerm: 'Term', sbAllT: n => `All terms (${n})`, sbCong: c => `${c}th Congress`, hVer: 'House version', sVer: 'Senate version',
     sbNote: d => `Bills where this lawmaker is listed as author. 13th to 19th Congress from BetterGov's open-congress-data; 20th Congress from the Senate and BatasWatch. The other chamber's version is read from each bill's history. Retrieved ${d}.`, tabContact: 'Contact', hContact: 'Contact and background', cBorn: 'Born', cAge: n => `age ${n}`, cOffice: 'Office', cPhone: 'Phone', cEmail: 'Email', cWeb: 'Website', cSocial: 'Social media', cOfficial: 'Official profile',
     cSrcS: d => `Office contacts as published by the Senate (senate.gov.ph), updated ${d}. Only official office channels are listed.`, cSrcH: 'Office phone and email are on the official profile at congress.gov.ph.', cBornSrc: 'Date and place of birth from Wikidata.', cNone: 'No contact details listed yet.', cSrcH2: d => `Office contacts as published by the House (congress.gov.ph), retrieved ${d}. The House does not publish members' emails.`, rkL: 'Rank by bills', rkName: 'Name', rkFiled: 'Filed', rkPassed: c => c === 'senate' ? 'Passed<span class="wide"> the Senate</span>' : 'Passed<span class="wide"> the House</span>', rkLaw: 'Became law',
     rkNoteS: 'Bills each senator filed as author, how many passed the Senate, and how many of them became law. From the Senate Legislative Information System.',
@@ -568,7 +576,8 @@ const T = {
     gHouseS: 'insertion candidates', gNepS: 'deletion candidates', bTop: 'Largest changes', bTopNote: 'Listed by the office the documents name, so a project can lie outside this district. Lines BetterGov could not match with confidence are left out.', bAll: 'All projects on BetterGov',
     bHist: 'Enacted budget of the office (GAA), per year', bNotice: 'Independent and unofficial: this is BetterGov’s comparison of the published budget documents. An “insertion candidate” is a difference between two documents, not proof of wrongdoing, and it does not show that the representative asked for it.',
     bMethod: 'How it was read', bSrc: 'Data from BetterGov Budget (budget.bettergov.ph), read from DBM and House budget documents. Retrieved',
-    hElec: 'The election that put them in office', elecSrc: 'Vote counts from', elecNone: 'No matching election result yet.', votes: 'votes', votesGroup: g => `votes for ${g}`,
+    hElec: 'The election that put them in office', hCareer: 'Career in elected office', cInCong: 'In Congress', cHouse: 'House', cSenate: 'Senate', cNow: 'now', cWon: 'Won', cLost: 'Lost', cUnk: 'Result not in source', cRaces: n => `${n} race${n === 1 ? '' : 's'} since 2001`, cWins: n => `${n} won`, cNone: 'No election record matched yet.', cLoading: 'Loading career…',
+    cNote: 'Races from 2001 to 2025 from BetterGov Dynasties (built on Open Halalan); Senate races from 2010 only. Matched by name, so a race may be missing. Terms in Congress from BetterGov open-congress-data.', elecSrc: 'Vote counts from', elecNone: 'No matching election result yet.', votes: 'votes', votesGroup: g => `votes for ${g}`,
     eYear: 'Election', eRank: 'Finish', eSeats: 'Seats contested', eRunner: 'Runner-up', eMargin: 'Margin', seatsN: n => `${n}`, unopposed: 'Unopposed',
     rankOf: (r, n) => `${r} of ${n} candidates`, rankOfPL: (r, n) => `${r} of ${n} party-list groups`, rankOfSeats: (r, n, s) => `${r} of ${n} candidates (${s} seats)`,
     hSaln: 'Wealth declared in SALNs', salnNote: 'As declared by the senator in their Statement of Assets, Liabilities and Net Worth (SALN) and as reported by the linked source. Not audited.',
@@ -1156,6 +1165,22 @@ function sbHtml(D) {   // a lawmaker's bills in every term (both chambers), filt
     ${more(shown.map(row), 10)}<p class="note">${esc(t('sbNote', fmtDay(D._meta.retrieved)))}</p>`;
 }
 const showSb = id => loadSb(id).then(D => { const el = document.getElementById('sbBox'); if (el && hashName() === id) el.innerHTML = sbHtml(D); });   // senators and House members
+let careerP;   // career.json: fetched when a profile opens
+const loadCareer = () => careerP ||= fetch('data/career.json').then(r => r.ok ? r.json() : null).catch(() => null);
+const congYears = n => n === 8 ? [1987, 1992] : [1992 + 3 * (n - 9), 1995 + 3 * (n - 9)];
+function careerHtml(o, C) {
+  const c = C?.people?.[o.id], site = C?._meta?.site || 'https://dynasties.bettergov.ph';
+  if (!c) return `<p class="soon">${t('cNone')}</p>`;
+  const runs = ns => { const out = []; ns.forEach(n => out.length && out.at(-1)[1] === n - 1 ? out.at(-1)[1] = n : out.push([n, n])); return out; };
+  const span = ([a, b]) => { const y0 = congYears(a)[0], y1 = congYears(b)[1]; return `${a === b ? t('sbCong', a) : `${t('sbCong', a).replace(/ .*/, '')}–${t('sbCong', b)}`} <span>(${y0}–${y1 > new Date().getFullYear() ? t('cNow') : y1})</span>`; };
+  const terms = c.terms ? `<p class="cterms"><b>${t('cInCong')}:</b>${[['house', t('cHouse')], ['senate', t('cSenate')]].filter(([k]) => c.terms[k]).map(([k, l]) => `<span><b>${l}</b> ${runs(c.terms[k]).map(span).join(', ')}</span>`).join('')}</p>` : '';
+  const rs = c.races || [];
+  const row = ([y, pos, place, w, v, rank, party, path]) => `<li><span class="yr">${y}</span><a href="${esc(site + path)}" target="_blank" rel="noopener"><b>${esc(pos)}</b><small>${esc(place)}${party ? ' · ' + esc(party) : ''}${v ? ' · ' + num(v) + ' ' + t('votes') : ''}</small><span class="sr"> (opens in a new tab)</span></a>
+    <span class="res ${w === 1 ? 'w' : w === 0 ? 'l' : 'u'}">${w === 1 ? t('cWon') : w === 0 ? t('cLost') : t('cUnk')}</span></li>`;
+  return terms + (rs.length ? `<p class="note">${t('cRaces', rs.length)} · ${t('cWins', rs.filter(r => r[3] === 1).length)}</p><ol class="career">${more(rs.map(row), 8)}</ol>` : '')
+    + `<p class="note">${t('cNote')} ${srcA(site, 'BetterGov Dynasties')}</p>`;
+}
+const showCareer = o => loadCareer().then(C => { const el = document.getElementById('careerBox'); if (el && hashName() === o.id) el.innerHTML = careerHtml(o, C); });
 let budgetP;   // budget.json is ~100 KB gzipped: fetched only when a district profile opens
 const loadBudget = () => budgetP ||= fetch('data/budget.json').then(r => r.ok ? r.json() : null).catch(() => null);
 const bil = n => (n / 1e9).toFixed(n < 1e10 ? 1 : 0) + 'B';
@@ -1197,12 +1222,12 @@ function houseProfile(o) {
       <div class="tile txt"><strong>${esc(o.bloc || '–')}</strong><span>${t('tBloc')}</span></div>
       <div class="tile txt"><strong>${{district: t('kDistrict'), 'at-large': t('kLone'), 'party-list': t('kPL')}[o.kind] || '–'}</strong><span>${t('tSeat')}</span></div></div>
     <p class="note">${esc(t('partyNote', o.records[0]?.retrieved || ''))}</p>
-    ${ptabs([['kaso', t('tabCases'), (cases.cases[o.id] || []).length], ['kontak', t('tabContact')], ['panukala', t('tabBills'), rec(o)?.filed], ...(o.kind !== 'party-list' ? [['pera', t('tabBudget')]] : []), ['halalan', t('tabElec')], ...(fam[o.id] ? [['pamilya', t('tabFam')]] : []), ['puwesto', t('tabOffice')]])}
-    ${casesHtml(o)}${contactHtml(o)}${hbHtml(o)}${o.kind !== 'party-list' ? `<h3 class="h" id="pera">${t('hBudget')}</h3><div id="budgetBox" aria-live="polite"><p class="soon">${t('bLoading')}</p></div>` : ''}${elecHtml(o)}${famHtml(o)}<h3 class="h" id="puwesto">${t('hOffice')}</h3>${recordsHtml(o)}
+    ${ptabs([['kaso', t('tabCases'), (cases.cases[o.id] || []).length], ['kontak', t('tabContact')], ['panukala', t('tabBills'), rec(o)?.filed], ...(o.kind !== 'party-list' ? [['pera', t('tabBudget')]] : []), ['halalan', t('tabElec')], ['karera', t('tabCareer')], ...(fam[o.id] ? [['pamilya', t('tabFam')]] : []), ['puwesto', t('tabOffice')]])}
+    ${casesHtml(o)}${contactHtml(o)}${hbHtml(o)}${o.kind !== 'party-list' ? `<h3 class="h" id="pera">${t('hBudget')}</h3><div id="budgetBox" aria-live="polite"><p class="soon">${t('bLoading')}</p></div>` : ''}${elecHtml(o)}<h3 class="h" id="karera">${t('hCareer')}</h3><div id="careerBox" aria-live="polite"><p class="soon">${t('cLoading')}</p></div>${famHtml(o)}<h3 class="h" id="puwesto">${t('hOffice')}</h3>${recordsHtml(o)}
     <p class="note">${o.wikipedia ? `More about ${esc(clean(o.name))}: <a href="${esc(o.wikipedia)}" target="_blank" rel="noopener">Wikipedia ↗</a>. ` : ''}${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a>, background removed (see the file page for author and licence).` : ''}</p>
     <p class="note">${t('houseLater')}</p>`;
   Promise.all([loadHbd(), loadPairs()]).then(([D, P]) => { const el = document.getElementById('hbBox'); if (el && hashName() === o.id) el.innerHTML = hbDetail(o, D, P); });
-  state.sbterm = 0; showSb(o.id);
+  state.sbterm = 0; showSb(o.id); showCareer(o);
   if (o.kind !== 'party-list') loadBudget().then(B => { const el = document.getElementById('budgetBox'); if (el && hashName() === o.id) el.innerHTML = budgetHtml(o, B); });
 }
 const recordsHtml = o => `<ul class="offices">${o.records.map(r => `<li><b>${esc(r.title)}</b><small>${r.type === 'membership' ? t('since') : esc(r.type) + ' · '}${esc(dayLabelFull(r.date))}</small><a href="${esc(r.source_url)}" rel="noopener" target="_blank">${t('source')}<span class="sr"> (opens in a new tab)</span> ↗</a></li>`).join('')}</ul>`;
@@ -1211,11 +1236,11 @@ function profile(o) {
   const nc = (cases.cases[o.id] || []).length;
   app.innerHTML = `${phero(o, `${o.chamber === 'Senate' ? t('senator') : o.chamber} · ${o.term}`, asOfLine(o, [bills._meta?.retrieved, saln._meta?.retrieved]))}
     ${summary(o, [[bills[o.id]?.total ?? '–', t('tBills')], [lawCount(o.id), t('tLaws')], [nc, t('tCases')]])}
-    ${ptabs([['kaso', t('tabCases'), nc], ['kontak', t('tabContact')], ['batas', t('tabLaws'), lawCount(o.id)], ['panukala', t('tabBills'), bills[o.id]?.total], ['saln', 'SALN'], ['halalan', t('tabElec')], ['aral', t('tabEdu')], ...(fam[o.id] ? [['pamilya', t('tabFam')]] : []), ['puwesto', t('tabOffice')]])}
-    ${casesHtml(o)}${contactHtml(o)}${lawsHtml(o.id)}${billsHtml(o.id)}${salnHtml(o)}${elecHtml(o)}${eduHtml(o.id)}
+    ${ptabs([['kaso', t('tabCases'), nc], ['kontak', t('tabContact')], ['batas', t('tabLaws'), lawCount(o.id)], ['panukala', t('tabBills'), bills[o.id]?.total], ['saln', 'SALN'], ['halalan', t('tabElec')], ['karera', t('tabCareer')], ['aral', t('tabEdu')], ...(fam[o.id] ? [['pamilya', t('tabFam')]] : []), ['puwesto', t('tabOffice')]])}
+    ${casesHtml(o)}${contactHtml(o)}${lawsHtml(o.id)}${billsHtml(o.id)}${salnHtml(o)}${elecHtml(o)}<h3 class="h" id="karera">${t('hCareer')}</h3><div id="careerBox" aria-live="polite"><p class="soon">${t('cLoading')}</p></div>${eduHtml(o.id)}
     ${famHtml(o)}<h3 class="h" id="puwesto">${t('hOffice')}</h3>${recordsHtml(o)}
     <p class="note">${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a>${o.photo_license ? ` (${esc(o.photo_license)})` : ''}, background removed. ` : ''}${t('laterVotes')}</p>`;
-  state.sbterm = 0; showSb(o.id);
+  state.sbterm = 0; showSb(o.id); showCareer(o);
 }
 
 /* ---------- events ---------- */

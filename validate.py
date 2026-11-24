@@ -160,6 +160,14 @@ for f in glob.glob("data/billhist/*.json"):
 if os.path.exists("data/bill_pairs.json"):
     for k, v in json.load(open("data/bill_pairs.json"))["pairs"].items():
         if not k.startswith("HBN-") or not str(v[0]).startswith("SBN-"): errors.append(f"bill_pairs.json: bad pair {k} {v}")
+# career (BetterGov Dynasties + open-congress-data): known ids, rows [year, position, place, won 1/0/null, votes, rank, party, path]
+if os.path.exists("data/career.json"):
+    for k, v in json.load(open("data/career.json"))["people"].items():
+        if k not in ids | hids: errors.append(f"career.json: unknown id {k}")
+        for r in v.get("races", []):
+            if len(r) != 8 or not 2001 <= r[0] <= 2025 or r[3] not in (0, 1, None) or not r[7].startswith("/"): errors.append(f"career.json {k}: bad row {r}")
+        for ch, ns in v.get("terms", {}).items():
+            if ch not in ("house", "senate") or not all(8 <= n <= 20 for n in ns): errors.append(f"career.json {k}: bad terms {ch} {ns}")
 
 print("\n".join(errors) or "ok")
 sys.exit(bool(errors))
