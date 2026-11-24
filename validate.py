@@ -149,6 +149,17 @@ if os.path.exists("data/facts.json"):
     for k, v in json.load(open("data/facts.json"))["people"].items():
         if k not in ids | hids: errors.append(f"facts.json: unknown id {k}")
         if "born" in v and not re.fullmatch(r"\d{4}(-\d\d-\d\d)?", v["born"]): errors.append(f"facts.json {k}: bad date {v['born']}")
+# bill history (tools/import_bill_history.py): one file per known lawmaker, sane rows, House-Senate pairs
+import glob
+for f in glob.glob("data/billhist/*.json"):
+    k = os.path.basename(f)[:-5]
+    if k not in ids | hids: errors.append(f"billhist: unknown lawmaker file {f}")
+    for r in json.load(open(f))["bills"]:
+        if len(r) != 8 or not (13 <= r[0] <= 20) or r[1] not in ("S", "H") or not re.fullmatch(r"(SBN|HBN)-\d+", str(r[2])) or (r[6] and not re.fullmatch(r"(SBN|HBN)-\d+", str(r[6]))):
+            errors.append(f"{f}: bad row {r[:3]}"); break
+if os.path.exists("data/bill_pairs.json"):
+    for k, v in json.load(open("data/bill_pairs.json"))["pairs"].items():
+        if not k.startswith("HBN-") or not str(v[0]).startswith("SBN-"): errors.append(f"bill_pairs.json: bad pair {k} {v}")
 
 print("\n".join(errors) or "ok")
 sys.exit(bool(errors))

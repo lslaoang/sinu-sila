@@ -63,6 +63,7 @@ validate.py           data checks, run before every publish
 | House roster | Wikipedia's list of current members (each record cites the exact revision) |
 | SALN | [BetterGov.ph SALN Tracker](https://github.com/bettergovph/saln-tracker-ph) |
 | House bills | [BatasWatch](https://bills.juris.ph) (CC0), from House of Representatives records |
+| Bills in past terms, other chamber's version | [BetterGov open-congress-data](https://github.com/bettergovph/open-congress-data) (CC0) |
 | District budgets (DPWH) | [BetterGov Budget](https://budget.bettergov.ph), from DBM and House budget documents |
 | Election results | [BetterGov.ph Dynasties](https://dynasties.bettergov.ph), built from [Open Halalan](https://robertrleung.github.io/OpenHalalan/) |
 | Court cases | News outlets and court or Ombudsman records, linked per event |

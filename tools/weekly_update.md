@@ -63,6 +63,14 @@ If neither browser can open the site, skip this step and say so in the report.
 more than 3 new PROBLEM lines appear; list PROBLEM lines in the report either way. (Election results in
 `data/elections.json` change only after an election: don't re-run that tool weekly.)
 
+## 2a. Bill history in every term (monthly, not weekly)
+Past Congresses do not change, so `data/billhist/` and `data/bill_pairs.json` only need a refresh about once a month for
+the current Congress. Clone (or `git pull`) https://github.com/bettergovph/open-congress-data, run
+`python3 tools/import_bill_history.py --print-js` in a senate.gov.ph tab (20th Congress only, about 10 minutes; it paces
+itself and backs off on HTTP 429), save the file with its button, then
+`python3 tools/import_bill_history.py --ocd <clone> --senate20 <file>`. It refuses to write if a senator with bills
+has no 20th Congress rows. Skip it in the weekly run unless the maintainer asks.
+
 ## 2b2. House bills (BatasWatch)
 `python3 tools/import_house_bills.py` re-reads BatasWatch (bills.juris.ph, CC0) and writes `data/house_bills.json` (counts)
 and `data/house_bills_detail.json` (titles). It refuses to write if fewer than 280 members match. Publish both if they

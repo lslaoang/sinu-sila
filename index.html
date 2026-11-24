@@ -59,6 +59,9 @@
   /* Kamara: one card per province, flowing top-to-bottom in columns so a province's districts stay together */
   .cinfo{margin:1rem 0 0;display:grid;gap:.6rem;max-width:44rem} .cinfo div{display:grid;grid-template-columns:8rem minmax(0,1fr);gap:1rem;border-bottom:1px solid var(--line);padding-bottom:.6rem}
   .cinfo dt{color:var(--mute);font-weight:600} .cinfo dd{margin:0;overflow-wrap:anywhere} @media (max-width:40rem){.cinfo div{grid-template-columns:1fr;gap:.2rem}}
+  .sbr a{color:inherit;text-decoration:none} .sbr a:hover b{color:var(--blue);text-decoration:underline} .sbr .ver{display:block;margin-top:.3rem;font-size:.85rem;color:var(--mute)} .sbr .ver a{color:var(--blue);text-decoration:underline}
+  .sbr .chb{font:600 .72rem var(--sans);padding:.05rem .35rem;border:1px solid var(--line);border-radius:4px;color:var(--ink)}
+  .sbt{margin:.4rem 0 .8rem;flex-wrap:wrap} .sbt .n{font:500 .78rem var(--mono);color:var(--mute);margin-left:.2rem}
   .ladder{font-weight:600;margin:.4rem 0 0;max-width:70ch}
   @media (max-width:40rem){.rankbar .wide{display:none}}
   .rankbar{margin:1.2rem 0 1rem;max-width:44rem} .rankbar .seg{display:inline-grid;width:min(100%,36rem);vertical-align:middle}
@@ -440,7 +443,8 @@ const T = {
     senK: n => `Mataas na Kapulungan · ${n} senador`, distSen: n => `Rekord sa kaso ng ${n} senador`, distHouse: n => `Rekord sa kaso ng ${n} kinatawan`, distPL: n => `Rekord sa kaso ng ${n} party-list rep`,
     billsLaws: (b, l) => `${b} panukala · ${l} batas`, inEnglish: 'Nasa Ingles ang detalye', sectionsAl: 'Mga seksyon', backTo: x => `← ${x}`,
     senator: 'Senador', dataAsOf: 'Datos hanggang', casesChecked: 'kaso sinuri', tCases: 'kaso nakatala',
-    tabCases: 'Kaso', tabLaws: 'Batas', tabBills: 'Panukala', tabEdu: 'Pinag-aralan', tabFam: 'Pamilya', tabOffice: 'Puwesto', tabElec: 'Halalan', tabBudget: 'Badyet', tabContact: 'Kontak', hContact: 'Kontak at pinagmulan', cBorn: 'Ipinanganak', cAge: n => `${n} taong gulang`, cOffice: 'Opisina', cPhone: 'Telepono', cEmail: 'Email', cWeb: 'Website', cSocial: 'Social media', cOfficial: 'Opisyal na profile',
+    tabCases: 'Kaso', tabLaws: 'Batas', tabBills: 'Panukala', tabEdu: 'Pinag-aralan', tabFam: 'Pamilya', tabOffice: 'Puwesto', tabElec: 'Halalan', tabBudget: 'Badyet', sbH: 'Lahat ng panukala', sbTerm: 'Termino', sbAllT: n => `Lahat ng termino (${n})`, sbCong: c => `Ika-${c} Kongreso`, hVer: 'Bersyon sa Kamara', sVer: 'Bersyon sa Senado',
+    sbNote: d => `Mga panukalang may-akda ang mambabatas. Ika-13 hanggang Ika-19 na Kongreso mula sa open-congress-data ng BetterGov; Ika-20 mula sa Senado at BatasWatch. Ang bersyon sa kabilang kapulungan ay mula sa kasaysayan ng bawat panukala. Kinuha ${d}.`, tabContact: 'Kontak', hContact: 'Kontak at pinagmulan', cBorn: 'Ipinanganak', cAge: n => `${n} taong gulang`, cOffice: 'Opisina', cPhone: 'Telepono', cEmail: 'Email', cWeb: 'Website', cSocial: 'Social media', cOfficial: 'Opisyal na profile',
     cSrcS: d => `Mga kontak ng opisina ayon sa Senado (senate.gov.ph), na-update ${d}. Opisyal na channel lang ng opisina ang nakalista.`, cSrcH: 'Nasa opisyal na profile sa congress.gov.ph ang telepono at email ng opisina.', cBornSrc: 'Petsa at lugar ng kapanganakan mula sa Wikidata.', cNone: 'Wala pang nakalistang kontak.', cSrcH2: d => `Mga kontak ng opisina ayon sa Kamara (congress.gov.ph), kinuha ${d}. Walang email na inilalathala ang Kamara para sa mga miyembro.`, rkL: 'Ranggo ayon sa panukala', rkName: 'Pangalan', rkFiled: 'Inihain', rkPassed: c => c === 'senate' ? 'Pumasa<span class="wide"> sa Senado</span>' : 'Pumasa<span class="wide"> sa Kamara</span>', rkLaw: 'Naging batas',
     rkNoteS: 'Mga panukalang inihain ng bawat senador bilang may-akda, ilan ang pumasa sa Senado, at ilan ang naging batas. Mula sa Senate Legislative Information System.',
     rkNoteH: d => `Mga panukalang inihain bilang principal author, ilan ang pumasa sa Kamara, at ilan ang naging batas. Bilang din ang panukalang isinama sa substitute bill kapag pumasa ito. Hindi naitatala ang co-author. Mula sa BatasWatch (bills.juris.ph), batay sa talaan ng Kamara hanggang ${d}.`,
@@ -529,7 +533,8 @@ const T = {
     senK: n => `Upper house · ${n} senators`, distSen: n => `Court-case record of ${n} senators`, distHouse: n => `Court-case record of ${n} representatives`, distPL: n => `Court-case record of ${n} party-list reps`,
     billsLaws: (b, l) => `${b} bills · ${l} laws`, inEnglish: '', sectionsAl: 'Sections', backTo: x => `← ${x}`,
     senator: 'Senator', dataAsOf: 'Data as of', casesChecked: 'cases checked', tCases: 'cases listed',
-    tabCases: 'Cases', tabLaws: 'Laws', tabBills: 'Bills', tabEdu: 'Education', tabFam: 'Family', tabOffice: 'Office', tabElec: 'Election', tabBudget: 'Budget', tabContact: 'Contact', hContact: 'Contact and background', cBorn: 'Born', cAge: n => `age ${n}`, cOffice: 'Office', cPhone: 'Phone', cEmail: 'Email', cWeb: 'Website', cSocial: 'Social media', cOfficial: 'Official profile',
+    tabCases: 'Cases', tabLaws: 'Laws', tabBills: 'Bills', tabEdu: 'Education', tabFam: 'Family', tabOffice: 'Office', tabElec: 'Election', tabBudget: 'Budget', sbH: 'All bills', sbTerm: 'Term', sbAllT: n => `All terms (${n})`, sbCong: c => `${c}th Congress`, hVer: 'House version', sVer: 'Senate version',
+    sbNote: d => `Bills where this lawmaker is listed as author. 13th to 19th Congress from BetterGov's open-congress-data; 20th Congress from the Senate and BatasWatch. The other chamber's version is read from each bill's history. Retrieved ${d}.`, tabContact: 'Contact', hContact: 'Contact and background', cBorn: 'Born', cAge: n => `age ${n}`, cOffice: 'Office', cPhone: 'Phone', cEmail: 'Email', cWeb: 'Website', cSocial: 'Social media', cOfficial: 'Official profile',
     cSrcS: d => `Office contacts as published by the Senate (senate.gov.ph), updated ${d}. Only official office channels are listed.`, cSrcH: 'Office phone and email are on the official profile at congress.gov.ph.', cBornSrc: 'Date and place of birth from Wikidata.', cNone: 'No contact details listed yet.', cSrcH2: d => `Office contacts as published by the House (congress.gov.ph), retrieved ${d}. The House does not publish members' emails.`, rkL: 'Rank by bills', rkName: 'Name', rkFiled: 'Filed', rkPassed: c => c === 'senate' ? 'Passed<span class="wide"> the Senate</span>' : 'Passed<span class="wide"> the House</span>', rkLaw: 'Became law',
     rkNoteS: 'Bills each senator filed as author, how many passed the Senate, and how many of them became law. From the Senate Legislative Information System.',
     rkNoteH: d => `Bills filed as a principal author, how many passed the House, and how many became law. A bill folded into a substitute bill counts when the substitute passed. Co-authors are not recorded. From BatasWatch (bills.juris.ph), House records as of ${d}.`,
@@ -1018,7 +1023,7 @@ function billsHtml(id) {
       <div class="legend">${BUCKETS.filter(x => counts[x[0]]).map(x => `<span><span class="dot" style="background:${x[1]}"></span><b>${counts[x[0]]}</b> ${x[0]}</span>`).join('')}</div></div>
     <h4>Latest bills</h4>${b.latest.map(([no, t, d, st, bid]) => `<a class="bill" href="https://senate.gov.ph/legislative-documents/bills/${esc(bid)}" target="_blank" rel="noopener">
       <b>${esc(title(t))}</b><br><small>${esc(no)} · filed ${esc(d)}</small> <span class="pill">${esc(bucketOf(st))}</span></a>`).join('')}
-    <p class="note">Bills where this senator is listed as author, 20th Congress. Source: <a href="${esc(bills._meta.source)}" target="_blank" rel="noopener">Senate Legislative Information System</a>, retrieved ${esc(bills._meta.retrieved)}.</p>`;
+    <p class="note">Bills where this senator is listed as author, 20th Congress. Source: <a href="${esc(bills._meta.source)}" target="_blank" rel="noopener">Senate Legislative Information System</a>, retrieved ${esc(bills._meta.retrieved)}.</p><div id="sbBox" aria-live="polite"></div>`;
 }
 const KIND = {criminal: 'Criminal', administrative: 'Administrative', election: 'Election', other: 'Other'};
 const STATUS = {filed: 'Filed', pending: 'Pending', suspended: 'Suspended', appealed: 'On appeal', dismissed: 'Dismissed', acquitted: 'Acquitted', convicted: 'Convicted', decided: 'Decided'};
@@ -1107,13 +1112,33 @@ function hbHtml(o) {
   return `<h3 class="h" id="panukala">${t('hBills')}</h3>
     <div class="tiles"><div class="tile"><strong class="num">${r.filed}</strong><span>${t('hbFiled')} · ${t('hbLead', r.lead)}</span></div>
       <div class="tile"><strong class="num">${r.passed}</strong><span>${t('hbPassed')}</span></div><div class="tile"><strong class="num">${r.law}</strong><span>${t('hbLaw')}</span></div></div>
-    <div id="hbBox" aria-live="polite"></div><p class="note">${t('rkNoteH', fmtDay(hb._meta.discovered_as_of || ''))}</p>`;
+    <div id="hbBox" aria-live="polite"></div><div id="sbBox" aria-live="polite"></div><p class="note">${t('rkNoteH', fmtDay(hb._meta.discovered_as_of || ''))}</p>`;
 }
-const hbDetail = (o, D) => { const m = D?.members[o.id]; if (!m) return '';
-  const row = ([no, ti, d, st, u]) => `<a class="bill" href="${esc(u || `https://bills.juris.ph/bills/house/${no.toLowerCase()}`)}" target="_blank" rel="noopener"><b>${esc(title(ti))}</b><br><small>${esc(no)}${d ? ' · ' + esc(fmtDay(d)) : ''}</small>${st ? ` <span class="pill">${esc(st.length > 60 ? st.slice(0, 58) + '…' : st)}</span>` : ''}<span class="sr"> (opens BatasWatch)</span></a>`;
+const hbDetail = (o, D, P) => { const m = D?.members[o.id]; if (!m) return ''; const pr = P?.pairs || {};
+  const sv = no => { const x = pr['HBN-' + parseInt(String(no).replace(/\D/g, ''), 10)]; return x ? `<span class="ver">${t('sVer')}: <a href="https://senate.gov.ph/legislative-documents/bills/${esc(x[1])}" target="_blank" rel="noopener">${esc(x[0])} ↗</a></span>` : ''; };
+  const row = ([no, ti, d, st, u]) => `<div class="bill sbr"><a href="${esc(u || `https://bills.juris.ph/bills/house/${no.toLowerCase()}`)}" target="_blank" rel="noopener"><b>${esc(title(ti))}</b><span class="sr"> (opens BatasWatch)</span></a><br><small>${esc(no)}${d ? ' · ' + esc(fmtDay(d)) : ''}</small>${st ? ` <span class="pill">${esc(st.length > 60 ? st.slice(0, 58) + '…' : st)}</span>` : ''}${sv(no)}</div>`;
   return (m.laws.length ? `<h4>${t('hbLaws')}</h4>${more(m.laws.map(([no, ti, st]) => row([no, ti, '', st])))}` : '')
-    + (m.latest.length ? `<h4>${t('hbLatest')}</h4>${more(m.latest.map(row))}` : '')
     + `<p class="note"><a href="${esc(m.bw)}" target="_blank" rel="noopener">${t('hbAll')} ↗</a></p>`; };
+const sbP = {}, loadSb = id => sbP[id] ||= Promise.all([fetch(`data/billhist/${id}.json`).then(r => r.ok ? r.json() : null).catch(() => null), loadPairs()]).then(([D, P]) => D && {...D, pairs: P?.pairs || {}});
+let pairsP; const loadPairs = () => pairsP ||= fetch('data/bill_pairs.json').then(r => r.ok ? r.json() : null).catch(() => null);
+const hbUrl = no => `https://bills.juris.ph/bills/house/hb${String(no).replace(/\D/g, '').padStart(5, '0')}`;   // 20th Congress House bill on BatasWatch
+function sbHtml(D) {   // a lawmaker's bills in every term (both chambers), filterable by Congress, with the other chamber's version
+  if (!D || !D.bills.length) return '';
+  const rows = D.bills, terms = [...new Set(rows.map(r => r[0]))].sort((a, b) => b - a), k = state.sbterm && terms.includes(state.sbterm) ? state.sbterm : 0;
+  const both = new Set(rows.map(r => r[1])).size > 1, shown = k ? rows.filter(r => r[0] === k) : rows;
+  const senUrl = no => { const x = Object.values(D.pairs).find(v => v[0] === no); return x ? `https://senate.gov.ph/legislative-documents/bills/${x[1]}` : ''; };
+  const verLink = (c, ch, no, cp) => { if (!cp) return '';
+    const u = c !== 20 ? '' : ch === 'S' ? hbUrl(cp) : senUrl(cp);
+    return `<span class="ver">${t(ch === 'S' ? 'hVer' : 'sVer')}: ${u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(cp)} ↗</a>` : esc(cp)}</span>`; };
+  const stat = st => { if (!st) return ''; const bk = bucketOf(st);
+    return ` <span class="pill">${esc(/PRESIDENT|LAPSED|Republic Act|enacted/i.test(st) ? t('rkLaw') : bk !== 'Other' ? bk : st.length > 48 ? st.slice(0, 46) + '…' : st)}</span>`; };
+  const row = ([c, ch, no, ti, d, st, cp, url]) => `<div class="bill sbr"><a href="${esc(url)}" target="_blank" rel="noopener"><b>${esc(title(ti))}</b><span class="sr"> (opens the source)</span></a><br>
+      <small>${both ? `<span class="chb">${ch === 'S' ? 'Senate' : 'House'}</span> ` : ''}${esc(no)} · ${esc(t('sbCong', c))}${d ? ' · ' + esc(/^\d{4}-\d\d-\d\d/.test(d) ? fmtDay(d.slice(0, 10)) : d) : ''}</small>${stat(st)}${verLink(c, ch, no, cp)}</div>`;
+  return `<h4>${t('sbH')}</h4><div class="chips sbt" role="group" aria-label="${esc(t('sbTerm'))}">
+      <button class="chip" data-sbterm="0" aria-pressed="${!k}">${esc(t('sbAllT', rows.length))}</button>${terms.map(c => `<button class="chip" data-sbterm="${c}" aria-pressed="${k === c}">${esc(t('sbCong', c))} <span class="n">${rows.filter(r => r[0] === c).length}</span></button>`).join('')}</div>
+    ${more(shown.map(row), 10)}<p class="note">${esc(t('sbNote', fmtDay(D._meta.retrieved)))}</p>`;
+}
+const showSb = id => loadSb(id).then(D => { const el = document.getElementById('sbBox'); if (el && hashName() === id) el.innerHTML = sbHtml(D); });   // senators and House members
 let budgetP;   // budget.json is ~100 KB gzipped: fetched only when a district profile opens
 const loadBudget = () => budgetP ||= fetch('data/budget.json').then(r => r.ok ? r.json() : null).catch(() => null);
 const bil = n => (n / 1e9).toFixed(n < 1e10 ? 1 : 0) + 'B';
@@ -1159,7 +1184,8 @@ function houseProfile(o) {
     ${casesHtml(o)}${contactHtml(o)}${hbHtml(o)}${o.kind !== 'party-list' ? `<h3 class="h" id="pera">${t('hBudget')}</h3><div id="budgetBox" aria-live="polite"><p class="soon">${t('bLoading')}</p></div>` : ''}${elecHtml(o)}${famHtml(o)}<h3 class="h" id="puwesto">${t('hOffice')}</h3>${recordsHtml(o)}
     <p class="note">${o.wikipedia ? `More about ${esc(clean(o.name))}: <a href="${esc(o.wikipedia)}" target="_blank" rel="noopener">Wikipedia ↗</a>. ` : ''}${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a>, background removed (see the file page for author and licence).` : ''}</p>
     <p class="note">${t('houseLater')}</p>`;
-  loadHbd().then(D => { const el = document.getElementById('hbBox'); if (el && hashName() === o.id) el.innerHTML = hbDetail(o, D); });
+  Promise.all([loadHbd(), loadPairs()]).then(([D, P]) => { const el = document.getElementById('hbBox'); if (el && hashName() === o.id) el.innerHTML = hbDetail(o, D, P); });
+  state.sbterm = 0; showSb(o.id);
   if (o.kind !== 'party-list') loadBudget().then(B => { const el = document.getElementById('budgetBox'); if (el && hashName() === o.id) el.innerHTML = budgetHtml(o, B); });
 }
 const recordsHtml = o => `<ul class="offices">${o.records.map(r => `<li><b>${esc(r.title)}</b><small>${r.type === 'membership' ? t('since') : esc(r.type) + ' · '}${esc(dayLabelFull(r.date))}</small><a href="${esc(r.source_url)}" rel="noopener" target="_blank">${t('source')}<span class="sr"> (opens in a new tab)</span> ↗</a></li>`).join('')}</ul>`;
@@ -1172,6 +1198,7 @@ function profile(o) {
     ${casesHtml(o)}${contactHtml(o)}${lawsHtml(o.id)}${billsHtml(o.id)}${salnHtml(o)}${elecHtml(o)}${eduHtml(o.id)}
     ${famHtml(o)}<h3 class="h" id="puwesto">${t('hOffice')}</h3>${recordsHtml(o)}
     <p class="note">${o.photo_credit_url ? `Photo: <a href="${esc(o.photo_credit_url)}" target="_blank" rel="noopener">Wikimedia Commons ↗</a>${o.photo_license ? ` (${esc(o.photo_license)})` : ''}, background removed. ` : ''}${t('laterVotes')}</p>`;
+  state.sbterm = 0; showSb(o.id);
 }
 
 /* ---------- events ---------- */
@@ -1212,6 +1239,7 @@ app.onclick = e => {
   if (d.tr) { state.sel = state.sel === d.tr ? 'everyone' : d.tr; state.tr = new Set(state.sel === 'everyone' ? ALLTR : state.sel === 'checked' ? CHECKED : [state.sel]); }
   if (d.school) state.school = state.school === d.school ? null : d.school;
   if (d.sort) state.sort = d.sort;
+  if (d.sbterm != null) { state.sbterm = +d.sbterm; const id = hashName(); return loadSb(id).then(D => { const el = document.getElementById('sbBox'); if (el) el.innerHTML = sbHtml(D); }); }
   if (d.rank != null) { if (d.rank && d.rank === state.rank) state.rdir = state.rdir === 'asc' ? 'desc' : 'asc'; else { state.rank = d.rank; state.rdir = 'desc'; }
     document.querySelectorAll('.rdir').forEach(x => x.hidden = !state.rank); }
   if (d.rdir != null) state.rdir = state.rdir === 'asc' ? 'desc' : 'asc';
