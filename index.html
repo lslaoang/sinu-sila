@@ -48,13 +48,24 @@
   .brand{font:700 1.65rem var(--serif);letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap;display:inline-block;padding:.6rem 0 .55rem;background:linear-gradient(var(--yellow),var(--yellow)) 0 calc(100% - .35rem)/100% .2em no-repeat}
   .brand mark{background:none;color:inherit}
   mark{color:inherit;background:linear-gradient(transparent 60%,var(--yellow) 60%);padding:0 .08em}
-  #q{flex:1;min-width:0;max-width:20rem;margin-left:auto;padding:.6rem 1rem;border:1.5px solid var(--rule);border-radius:99px;background:var(--paper);color:var(--ink);font:inherit}
-  body.home #q{visibility:hidden}
+  .qs{position:relative;flex:1;min-width:0;max-width:22rem;margin-left:auto}
+  #q{width:100%;padding:.6rem 1rem;border:1.5px solid var(--rule);border-radius:99px;background:var(--paper);color:var(--ink);font:inherit}
+  body.home .qs{visibility:hidden}
+  /* global search: live results grouped by place and chamber */
+  #qd{position:absolute;top:calc(100% + .4rem);right:0;width:min(26rem,calc(100vw - 2rem));max-height:min(70vh,32rem);overflow:auto;margin:0;padding:.4rem;list-style:none;background:var(--bg);border:1.5px solid var(--rule);border-radius:var(--r);box-shadow:0 12px 32px rgb(12 27 51/.16);z-index:30}
+  .qh{font-size:.75rem;font-weight:700;color:var(--mute);padding:.55rem .6rem .2rem}
+  .qo{display:flex;gap:.6rem;align-items:center;padding:.45rem .6rem;border-radius:var(--r);cursor:pointer;color:var(--ink)}
+  .qo .av,.qo .qp{width:2.2rem;height:2.2rem;font-size:.7rem;flex:none} .qp{display:grid;place-items:center;border-radius:50%;background:var(--paper);color:var(--blue)}
+  .qo b{display:block;line-height:1.25} .qo small{display:block;color:var(--mute);font-size:.82rem}
+  .qo:hover,.qo[aria-selected=true]{background:var(--paper)} .qo[aria-selected=true]{outline:2px solid var(--blue);outline-offset:-2px}
+  .qall{justify-content:center;font-weight:600;color:var(--blue);border-top:1px solid var(--line);margin-top:.3rem;border-radius:0 0 var(--r) var(--r)}
+  .qnone{padding:.7rem .6rem;color:var(--mute)}
+  .finder.one{grid-template-columns:minmax(0,28rem)}
 
   .nav{display:flex;gap:.25rem;align-items:center} .lnk{background:none;border:0;font:inherit;font-weight:600;color:var(--ink);cursor:pointer;padding:.35rem .6rem;border-radius:var(--r);text-decoration:none} .lnk:hover{color:var(--blue);text-decoration:underline;text-underline-offset:.4em}
   .lnk[aria-current=page]{color:var(--blue);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:.5em}
   @media (max-width:22rem){.nav .lnk{padding:.35rem .4rem}}   /* 320px: the nav fit without sideways scroll */
-  @media (max-width:40rem){.top .wrap{flex-wrap:wrap}#q{order:3;flex:1 1 100%;max-width:none;margin-left:0}body.home #q{display:none}.nav{margin-left:auto}}
+  @media (max-width:40rem){.top .wrap{flex-wrap:wrap}.qs{order:3;flex:1 1 100%;max-width:none;margin-left:0}body.home .qs{display:none}.nav{margin-left:auto}}
   .sec{scroll-margin-top:4.5rem}
   /* Kamara: one card per province, flowing top-to-bottom in columns so a province's districts stay together */
   .cinfo{margin:1rem 0 0;display:grid;gap:.6rem;max-width:44rem} .cinfo div{display:grid;grid-template-columns:8rem minmax(0,1fr);gap:1rem;border-bottom:1px solid var(--line);padding-bottom:.6rem}
@@ -382,7 +393,8 @@
 <div class="top"><div class="wrap">
   <a class="brand" href="#" aria-label="Sino Sila? Home" data-i18n-al="homeAl">Sino <mark>Sila?</mark></a>
   <nav class="nav" aria-label="Sections"><a class="lnk" href="#senado" data-i18n="navSen">Senate</a><a class="lnk" href="#kamara" data-i18n="navHouse">House</a><a class="lnk" href="#party-list" data-i18n="navPL">Party-list</a><button class="lnk lang" id="langB" type="button" lang="fil">Filipino</button></nav>
-  <input id="q" type="search" placeholder="Search a name, place or party…" aria-label="Search lawmakers" data-i18n-ph="searchPh" data-i18n-al="searchAl">
+  <div class="qs" role="search"><input id="q" type="search" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="qd" aria-autocomplete="list" placeholder="Search a name, place or party…" aria-label="Search lawmakers" data-i18n-ph="searchPh" data-i18n-al="searchAl">
+    <ul id="qd" role="listbox" aria-label="Search results" hidden></ul></div>
 </div></div>
 <main class="wrap" id="app" tabindex="-1" aria-busy="true"><div class="skel"></div><div class="skel"></div><div class="skel"></div></main>
 <noscript><p class="wrap">This site needs JavaScript to show the records.</p></noscript>
@@ -424,7 +436,7 @@ const trackOf = id => { const l = cases.cases[id] || [];
 const trackRank = id => TRACKS.findIndex(t => t[0] === trackOf(id));
 const trackLabel = id => TRACKS[trackRank(id)][1], trackColor = id => TRACKS[trackRank(id)][2];
 const CHECKED = ['convicted', 'pending', 'resolved', 'none'], ALLTR = [...CHECKED, 'unchecked'];
-const state = {lens: 'track', sel: 'everyone', ch: 'all', tr: new Set(ALLTR), school: null, q: '', leaders: false, sort: 'az', rank: '', rdir: 'desc', hpl: null, hp: null, hs: ''};
+const state = {lens: 'track', sel: 'everyone', ch: 'all', tr: new Set(ALLTR), school: null, q: '', leaders: false, sort: 'az', rank: '', rdir: 'desc', hpl: null, hp: null, hs: '', ss: '', ps: ''};
 
 const hashName = () => decodeURIComponent(location.hash.slice(1)), onHome = () => !hashName(), onExplore = () => hashName() === 'explore';
 
@@ -505,7 +517,7 @@ const T = {
     s_unchecked: 'Hindi pa namin nakukumpirma ang rekord niya sa kaso mula sa dalawang source.',
    
     tBills: 'panukalang batas na inihain', tLaws: 'batas na sinuportahan', tParty: 'partido', tPLGroup: 'party-list na grupo', tBloc: 'panig (bloc)', tSeat: 'uri ng puwesto',
-    kDistrict: 'Distrito', kLone: 'Iisang distrito', kNth: n => `Ika-${n} distrito`, showingB: (n, tot, p) => `<b>${n}</b> sa ${tot} kinatawan · ${p} lugar`, clearF: 'I-clear ang filter', hsL: 'Hanapin', hsPh: 'Pangalan, lugar o partido', kPL: 'Party-list',
+    kDistrict: 'Distrito', kLone: 'Iisang distrito', kNth: n => `Ika-${n} distrito`, showingB: (n, tot, p) => `<b>${n}</b> sa ${tot} kinatawan · ${p} lugar`, clearF: 'I-clear ang filter', hsL: 'Hanapin', hsPh: 'Pangalan, lugar o partido', ssPh: 'Pangalan o puwesto, hal. Majority Leader', psPh: 'Grupo o nominado', qPlaces: 'Mga lugar', qPlaceS: 'Ang kinatawan at mga senador mo', qAll: n => `Tingnan ang lahat ng ${n} resulta`, qNone: 'Walang tumugma. Subukan ang apelyido o probinsya.', kPL: 'Party-list',
     hCases: 'Mga kaso at reklamo', hLaws: 'Mga batas at panukalang ipinadala sa Pangulo', hBills: 'Mga panukalang batas', hEdu: 'Saan nag-aral', hFam: 'Political na pamilya', hOffice: 'Sa puwesto',
     casesNote: 'Galing sa rekord ng korte at mga balita, bawat isa may link. Ang reklamo o kaso ay paratang lamang hangga’t walang desisyon ang korte, at ang suspensyon ay hindi hatol. Kasama rin ang mga na-dismiss at napawalang-sala, pati ang sagot ng tao kung naiulat. Ang mga detalye ay nasa Ingles, gaya ng sa pinagmulan.',
     noneFound: (d, n) => `Walang nakitang kaso sa mga balita at rekord ng korte na sinuri noong ${d}${n ? ` (${n} paghahanap)` : ''}. Hindi ito patunay na wala talaga.`,
@@ -595,7 +607,7 @@ const T = {
     s_unchecked: 'We have not yet confirmed their court-case record from two sources.',
    
     tBills: 'bills authored', tLaws: 'laws backed', tParty: 'party', tPLGroup: 'party-list group', tBloc: 'bloc', tSeat: 'seat type',
-    kDistrict: 'District', kLone: 'Lone district', kNth: n => `${n}${[, 'st', 'nd', 'rd'][n % 100 > 10 && n % 100 < 14 ? 0 : n % 10] || 'th'} district`, showingB: (n, tot, p) => `<b>${n}</b> of ${tot} representatives · ${p} places`, clearF: 'Clear filters', hsL: 'Search', hsPh: 'Name, place or party', kPL: 'Party-list',
+    kDistrict: 'District', kLone: 'Lone district', kNth: n => `${n}${[, 'st', 'nd', 'rd'][n % 100 > 10 && n % 100 < 14 ? 0 : n % 10] || 'th'} district`, showingB: (n, tot, p) => `<b>${n}</b> of ${tot} representatives · ${p} places`, clearF: 'Clear filters', hsL: 'Search', hsPh: 'Name, place or party', ssPh: 'Name or post, e.g. Majority Leader', psPh: 'Group or nominee', qPlaces: 'Places', qPlaceS: 'Your representative and senators', qAll: n => `See all ${n} results`, qNone: 'No match. Try a surname or a province.', kPL: 'Party-list',
     hCases: 'Court cases and proceedings', hLaws: 'Laws and bills sent to the President', hBills: 'Bills', hEdu: 'Where they studied', hFam: 'Political families', hOffice: 'In office',
     casesNote: 'From court records and news reports, each linked. A complaint or charge is an allegation until a court decides, and a suspension is not a verdict. Dismissals and acquittals are listed too, along with the person\'s own response when it was reported. Status is as of the date shown, and the list may not be complete.',
     noneFound: (d, n) => `No court cases found in the news and court sources checked on ${d}${n ? ` (${n} searches)` : ''}. That is not proof that none exist.`,
@@ -626,6 +638,11 @@ const firstName = n => clean(n).split(' ')[0];
 const lastName = o => { const w = clean(o.name).split(' ').filter(w => !/^(Jr\.?|II|III|IV)$/.test(w)), n = w.length;   // keep particles: "Dela Rosa", "De Lima"
   return n > 2 && /^(de|dela|del|delos|de los|san|santa|sta\.)$/i.test(w[n - 2]) ? w.slice(-2).join(' ') : w[n - 1]; };
 const everyone = () => [...data, ...house];
+/* search: accent- and case-insensitive, every word must appear somewhere (name, nickname, place, party, position), any order */
+const fold = s => (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const matches = (o, q) => { const ws = fold(q).split(/\s+/).filter(Boolean), h = fold([o.name, o.constituency, o.place, o.party, o.position].join(' ')); return ws.every(w => h.includes(w)); };
+const score = (o, q) => { const f = fold(q).trim(), n = fold(clean(o.name)); return n.startsWith(f) ? 0 : fold(lastName(o)).startsWith(f) ? 1 : n.includes(f) ? 2 : 3; };
+const findAll = (xs, q) => xs.filter(o => matches(o, q)).sort((a, b) => score(a, q) - score(b, q) || lastName(a).localeCompare(lastName(b)));
 const findPerson = id => data.find(o => o.id === id) || house.find(o => o.id === id);
 const nameOf = id => clean((findPerson(id) || {}).name || '');
 const POS = ['Senate President', 'Senate President Pro Tempore', 'Senate Majority Leader', 'Senate Minority Leader'];
@@ -713,8 +730,8 @@ function layoutSeats() {
     el.style.zIndex = eq ? 1 : Math.round(lensVal(o.id) / max * 20);
   });
 }
-const visibleIds = () => { const t = onHome() || onExplore() ? state.q.toLowerCase() : '';
-  return new Set(data.filter(o => (!t || o.name.toLowerCase().includes(t)) && (!state.school || groups[state.school]?.has(o.id)) && (!state.leaders || isLead(o)) && (t || state.tr.has(trackOf(o.id)))).map(o => o.id)); };
+const visibleIds = () => { const g = onHome() || onExplore() ? state.q.trim() : '', s = hashName() === 'senado' ? state.ss : '';
+  return new Set(data.filter(o => matches(o, g + ' ' + s) && (!state.school || groups[state.school]?.has(o.id)) && (!state.leaders || isLead(o)) && (g || state.tr.has(trackOf(o.id)))).map(o => o.id)); };
 
 function updateInfo() {
   const el = document.getElementById('hemiInfo'); if (!el) return;
@@ -732,7 +749,7 @@ function updateInfo() {
 function visibleHouse() {
   const t = (onExplore() ? state.q : state.hs).trim().toLowerCase();
   return house.filter(o => o.kind !== 'party-list' && (!state.hpl || o.place === state.hpl) && (!state.hp || o.party === state.hp) && (onExplore() && t || state.tr.has(trackOf(o.id)))
-    && (!t || (o.name + ' ' + o.constituency + ' ' + o.party).toLowerCase().includes(t)));
+    && matches(o, t));
 }
 const distLabel = o => o.kind === 'at-large' ? t('kLone') : t('kNth', o.district);
 const hFiltered = () => !!(state.hs.trim() || state.hpl || state.hp || state.sel !== 'everyone');
@@ -750,8 +767,8 @@ function updateHouse() {
   if (info) { const tot = districts().length;
     info.innerHTML = `<span>${t('showingB', rows.length, tot, by.size)}</span>${hFiltered() ? `<button class="lnk" data-f="hclear">${t('clearF')}</button>` : ''}`; }
 }
-function visiblePL() { const t = onExplore() ? state.q.toLowerCase() : '';
-  return house.filter(o => o.kind === 'party-list' && (!t || (o.name + ' ' + o.party).toLowerCase().includes(t)) && (t || state.tr.has(trackOf(o.id)))); }
+function visiblePL() { const t = (onExplore() ? state.q : state.ps).trim();
+  return house.filter(o => o.kind === 'party-list' && matches(o, t) && (onExplore() && t || state.tr.has(trackOf(o.id)))); }
 function updatePL() {
   const l = document.getElementById('plgrid'); if (!l) return;
   if (showRank('plgrid', 'plrank', visiblePL(), 'house')) { const i = document.getElementById('plInfo'); if (i) i.textContent = ''; return; }
@@ -793,7 +810,7 @@ function updateAll() {
   document.querySelectorAll('[data-rank]').forEach(b => b.setAttribute('aria-pressed', b.dataset.rank === (state.rank || '')));
 }
 function updateWall() {
-  if (showRank('wall', 'srank', data, 'senate')) return;
+  if (showRank('wall', 'srank', data.filter(o => matches(o, state.ss)), 'senate')) return;
   const vis = visibleIds();
   const rows = data.filter(o => vis.has(o.id) && (!state.leaders || isLead(o)))
     .sort((x, y) => state.sort === 'bills' ? billCount(y.id) - billCount(x.id) : state.sort === 'laws' ? lawCount(y.id) - lawCount(x.id) : lastName(x).localeCompare(lastName(y)));
@@ -931,9 +948,9 @@ function home() {
         <div><dt>Party-list <small>(${t('gGroups', groupsN)})</small></dt><span class="dots"></span><dd>${plm.length}</dd></div>
         <div class="when"><dt>${t('gMembers')}</dt><span class="dots"></span><dd>${fmtDay(membersAsOf())}</dd></div>
         <div class="when"><dt>${t('gCases')}</dt><span class="dots"></span><dd>${fmtDay(casesAsOf())}</dd></div></dl></aside></section>
+    <div class="out" id="homeOut" aria-live="polite"></div>
     <section class="out faces" aria-labelledby="fH"><div class="shead"><h2 id="fH">${t('facesH', data.length)}</h2><a href="#senado">${t('facesAll')} →</a></div>
       <ul>${[...data].sort((a, b) => lastName(a).localeCompare(lastName(b))).map((o, _, all) => `<li><a href="#${esc(o.id)}" aria-label="${esc(clean(o.name))}"><span class="ph">${o.photo ? `<img src="${esc(pv(o.photo))}" alt="" loading="lazy">` : `<span class="ini" aria-hidden="true">${initials(o.name)}</span>`}</span><small aria-hidden="true">${all.filter(x => lastName(x) === lastName(o)).length > 1 ? esc(clean(o.name)[0]) + '. ' : ''}${esc(lastName(o))}</small></a></li>`).join('')}</ul></section>
-    <div class="out" id="homeOut" aria-live="polite"></div>
     <div class="out"><div class="shead"><h2>${t('browse')}</h2><small>${data.length + house.length} ${t('lawmakers')}</small></div><div class="browse">
       ${bc('#senado', t('bSen'), data.length, t('bSenS2'), t('ctaSen'), 'var(--navy)', 'var(--blue)')}
       ${bc('#kamara', t('bHouse'), districts().length, t('bHouseS2'), t('ctaHouse'), 'var(--sage)', 'var(--blue)')}
@@ -952,7 +969,7 @@ function homeOut() {
   const pm = qq && (places().find(p => p.toLowerCase() === qq) || (qq.length > 2 && places().filter(p => p.toLowerCase().startsWith(qq)).length === 1 ? places().find(p => p.toLowerCase().startsWith(qq)) : null));
   if (pm) { el.innerHTML = placeView(pm); return; }   // "Pampanga", "quezon c…": same answer as picking it in the dropdown
   if (qq) {
-    const hits = everyone().filter(o => (o.name + ' ' + (o.constituency || '') + ' ' + (o.place || '') + ' ' + (o.party || '') + ' ' + (o.position || '')).toLowerCase().includes(qq)).slice(0, 80);
+    const hits = findAll(everyone(), qq).slice(0, 80);
     el.innerHTML = `<h2>${esc(t('results', hits.length, state.q.trim()))}</h2>` + (hits.length ? `<ul class="pcs">${hits.map(pcard).join('')}</ul>` : `<p class="soon">${t('noResults')}</p>`);
     return;
   }
@@ -967,7 +984,7 @@ function placeView(place) {
 }
 const pageHead = (kick, h, note, pool, distLabel) => `<a class="back" href="#">${t('back')}</a><div class="ph1"><div><p class="kick">${kick}</p><h1>${h}</h1><p class="note">${note}</p></div>${distBar(pool, distLabel)}</div>${trChips(pool)}`;
 function senPage() {
-  app.innerHTML = pageHead(t('senK', data.length), t('senH'), t('senNote'), data, t('distSen', data.length)) + rankBar('senate') + `<ul class="wall" id="wall"></ul><ol class="rlist" id="srank" hidden></ol>`;
+  app.innerHTML = pageHead(t('senK', data.length), t('senH'), t('senNote'), data, t('distSen', data.length)) + `<div class="finder one" role="search"><label><span>${t('hsL')}</span><span class="fs"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="ss" type="search" value="${esc(state.ss)}" placeholder="${esc(t('ssPh'))}" autocomplete="off"></span></label></div>` + rankBar('senate') + `<ul class="wall" id="wall"></ul><ol class="rlist" id="srank" hidden></ol>`;
   state.school = null; state.leaders = false; updateAll();
 }
 function housePage() {
@@ -984,7 +1001,7 @@ function housePage() {
 function plPage() {
   const plm = partylist();
   app.innerHTML = pageHead(t('plS', plm.length, new Set(plm.map(o => o.party)).size), t('plH'), t('plNote'), plm, t('distPL', plm.length)) + `
-    ${rankBar('house')}<p class="info" id="plInfo" aria-live="polite" style="text-align:left;min-height:0"></p><ul class="plgrid" id="plgrid"></ul><ol class="rlist" id="plrank" hidden></ol>`;
+    <div class="finder one" role="search"><label><span>${t('hsL')}</span><span class="fs"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="ps" type="search" value="${esc(state.ps)}" placeholder="${esc(t('psPh'))}" autocomplete="off"></span></label></div>${rankBar('house')}<p class="info" id="plInfo" aria-live="polite" style="text-align:left;min-height:0"></p><ul class="plgrid" id="plgrid"></ul><ol class="rlist" id="plrank" hidden></ol>`;
   updateAll();
 }
 
@@ -1205,7 +1222,7 @@ function profile(o) {
 const PAGES = {'': home, explore, senado: senPage, kamara: housePage, 'party-list': plPage};
 function route() {
   const h = hashName(), o = findPerson(h);
-  tip.classList.remove('on');
+  tip.classList.remove('on'); qclose();
   const page = o ? null : PAGES[h] || home;
   o ? profile(o) : page();
   document.body.classList.toggle('home', page === home);
@@ -1250,7 +1267,8 @@ app.onclick = e => {
 app.onchange = e => { const v = e.target.value;
   if (e.target.id === 'placeSel') { place = v; try { localStorage.setItem('place', v); } catch {} return homeOut(); }
   if (e.target.id === 'hplSel') { state.hpl = e.target.value || null; updateAll(); } if (e.target.id === 'hpSel') { state.hp = e.target.value || null; updateAll(); } };
-app.oninput = e => { if (e.target.id === 'hq') { state.q = q.value = e.target.value; homeOut(); } if (e.target.id === 'hs') { state.hs = e.target.value; updateHouse(); } };
+app.oninput = e => { if (e.target.id === 'hq') { state.q = q.value = e.target.value; homeOut(); } if (e.target.id === 'hs') { state.hs = e.target.value; updateHouse(); }
+  if (e.target.id === 'ss' || e.target.id === 'ps') { state[e.target.id] = e.target.value; updateAll(); } };
 (() => { const t = document.getElementById('top'); if (!t) return; addEventListener('scroll', () => { t.hidden = scrollY < 1500; }, {passive: true}); t.onclick = () => scrollTo({top: 0, behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth'}); })();
 const REPORT_URL = 'https://nx3hxaffgkf7ufau7cyb6zfa6i0wigzc.lambda-url.ap-southeast-1.on.aws/';   // set to the Lambda function URL printed by tools/create_contact_form.sh
 (() => { const b = document.getElementById('repB'), dlg = document.getElementById('rep'), f = document.getElementById('repF'), msg = document.getElementById('repMsg');
@@ -1271,7 +1289,45 @@ function showTip(s) {
   tip.style.left = Math.min(Math.max(r.left + r.width / 2, 90), innerWidth - 90) + 'px'; tip.style.top = r.top + 'px'; tip.classList.add('on');
 }
 document.getElementById('langB').onclick = () => { lang = lang === 'fil' ? 'en' : 'fil'; try { localStorage.setItem('lang', lang); } catch {} applyLang(); if (data.length) route(); };
-q.oninput = () => { state.q = q.value; if (onExplore()) return updateAll(); if (!onHome()) location.hash = ''; else homeOut(); };
+/* header search: a live list on every page; Enter opens the one match, else all results on the home page */
+const qd = document.getElementById('qd'); let qi = -1, qopts = [], qn = 0;
+const pin = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
+function qclose() { qd.hidden = true; qi = -1; q.setAttribute('aria-expanded', 'false'); q.removeAttribute('aria-activedescendant'); }
+function qdraw() {
+  const v = q.value.trim(); if (!v || onHome() || onExplore()) return qclose();
+  const hits = findAll(everyone(), v), pl = places().filter(p => fold(p).includes(fold(v))).slice(0, 3); qn = hits.length + pl.length;
+  const grp = (h, xs) => xs.length ? `<li class="qh" role="presentation">${esc(h)}</li>${xs.join('')}` : '';
+  const row = o => `<li role="option" class="qo" data-href="#${esc(o.id)}">${av(o.name, o.photo)}<span><b>${esc(clean(o.name))}</b><small>${esc(sub(o))}</small></span></li>`;
+  const sen = hits.filter(o => o.body !== 'house').slice(0, 4), hd = hits.filter(o => o.body === 'house' && o.kind !== 'party-list').slice(0, 4), pls = hits.filter(o => o.kind === 'party-list').slice(0, 3);
+  qd.innerHTML = grp(t('qPlaces'), pl.map(p => `<li role="option" class="qo" data-place="${esc(p)}"><span class="qp" aria-hidden="true">${pin}</span><span><b>${esc(p)}</b><small>${esc(t('qPlaceS'))}</small></span></li>`))
+    + grp(t('bSen'), sen.map(row))
+    + grp(t('bHouse'), hd.map(row))
+    + grp(t('bPL'), pls.map(row))
+    + (hits.length > sen.length + hd.length + pls.length ? `<li role="option" class="qo qall" data-all>${t('qAll', hits.length)}</li>` : hits.length || pl.length ? '' : `<li class="qnone" role="presentation">${t('qNone')}</li>`);
+  qopts = [...qd.querySelectorAll('.qo')]; qopts.forEach((e, i) => e.id = 'qo' + i); qi = -1;
+  q.removeAttribute('aria-activedescendant'); qd.hidden = false; q.setAttribute('aria-expanded', 'true');
+}
+function qpick(el) {
+  if (!el) return; const d = el.dataset;
+  if (d.href) { q.value = state.q = ''; qclose(); location.hash = d.href; return; }
+  if (d.place) q.value = d.place;
+  state.q = q.value.trim(); qclose(); location.hash = '';
+}
+q.oninput = () => { state.q = q.value; if (onExplore()) return updateAll(); qdraw(); };
+q.onfocus = qdraw;
+q.onblur = qclose;
+q.onkeydown = e => {
+  if (e.key === 'Escape') { if (!qd.hidden) qclose(); else q.value = ''; return; }
+  if (qd.hidden || !qopts.length) return;
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault();
+    qi = (qi + (e.key === 'ArrowDown' ? 1 : qopts.length - 1 + (qi < 0 ? 1 : 0))) % qopts.length;
+    qopts.forEach((o, i) => o.setAttribute('aria-selected', i === qi)); q.setAttribute('aria-activedescendant', qopts[qi].id); qopts[qi].scrollIntoView({block: 'nearest'}); }
+  if (e.key === 'Enter') { e.preventDefault(); qpick(qopts[qi] || (qn === 1 ? qopts[0] : qd.querySelector('[data-all]') || qopts[0])); }
+};
+qd.onpointerdown = e => e.preventDefault();   // keep focus in the box so the click lands
+qd.onclick = e => qpick(e.target.closest('.qo'));
+addEventListener('keydown', e => { if (e.key !== '/' || e.ctrlKey || e.metaKey || /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName)) return;
+  e.preventDefault(); (onHome() ? document.getElementById('hq') : q)?.focus(); });
 applyLang();
 onhashchange = route;
 function load() {
