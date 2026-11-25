@@ -101,6 +101,10 @@ Do **not** edit `data/cases.json`.
 - `python3 validate.py` must pass. If it fails, restore the files you changed this run and report.
 - Spot-check: `python3 -m json.tool data/bills.json >/dev/null` (same for laws, house).
 
+### Smoke test
+
+Before publishing, run `node tools/smoke_test.mjs` from the repository root with Node 22+ and Google Chrome installed. Set `CHROME` to the browser executable if it is outside the default macOS location. The script checks the main routes and sample profiles at desktop and mobile sizes and loads the home page in all eight languages. Publish only after the script exits 0. If it fails, use the per-page reasons to diagnose the problem and rerun it.
+
 ## 5. Publish (only the files that changed)
 ```bash
 B=s3://sino-sila-773994910221
