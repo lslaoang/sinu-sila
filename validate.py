@@ -160,6 +160,15 @@ for f in glob.glob("data/billhist/*.json"):
 if os.path.exists("data/bill_pairs.json"):
     for k, v in json.load(open("data/bill_pairs.json"))["pairs"].items():
         if not k.startswith("HBN-") or not str(v[0]).startswith("SBN-"): errors.append(f"bill_pairs.json: bad pair {k} {v}")
+# draft translations: every value is text, placeholders and <mark> are kept
+import glob as _g
+for f in _g.glob("i18n/*.json"):
+    d = json.load(open(f))
+    for k, v in d.items():
+        if k == "_meta": continue
+        if not isinstance(v, str) or not v.strip(): errors.append(f"{f}: {k} is not text")
+        elif v.count("<mark>") != v.count("</mark>"): errors.append(f"{f}: {k} has an unclosed <mark>")
+        elif any(f"{{{i}}}" in v for i in range(4)) and k in ("title", "h1", "lede"): errors.append(f"{f}: {k} has a placeholder")
 # per-term bill counts: known ids, [filed, passed, law] with law <= passed <= filed
 if os.path.exists("data/billterms.json"):
     for k, v in json.load(open("data/billterms.json"))["people"].items():

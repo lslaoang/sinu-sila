@@ -4,7 +4,7 @@
 file, the laws they pass, their court cases, their declared wealth, how they were elected and where they studied.
 Every fact links to its public source.
 
-**Live site: https://sinu-sila.com** · English and Filipino · works on any phone
+**Live site: https://sinu-sila.com** · English and Filipino, with drafts in Bisaya, Ilokano, Hiligaynon, Winaray, Bikol and Kapampangan · works on any phone
 
 ![Sino Sila? link preview](assets/og.png)
 
@@ -76,6 +76,8 @@ Methods, coverage and known gaps: **[docs/data.md](docs/data.md)**. Hosting, dep
 **[docs/operations.md](docs/operations.md)**.
 
 ## Contributing
+
+Speak Bisaya, Ilokano, Hiligaynon, Winaray, Bikol or Kapampangan? The translations in `i18n/` are drafts; see [i18n/README.md](i18n/README.md) to check and correct one.
 
 Corrections, new sources, translations and code are all welcome. Read **[CONTRIBUTING.md](CONTRIBUTING.md)** first;
 the rules for court cases are strict on purpose. To report a factual error, use the "Report an error" button on the

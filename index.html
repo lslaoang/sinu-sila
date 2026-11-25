@@ -323,7 +323,9 @@
   #rep .hp{position:absolute;left:-99rem} #rep .row{display:flex;gap:.5rem;justify-content:flex-end;margin-top:.8rem} #repMsg{min-height:1.4rem;margin:.3rem 0}
 
   /* plain home + list pages */
-  .lang{border:1.5px solid var(--rule)!important;border-radius:99px!important;font:600 .8rem var(--mono)!important;margin-left:.4rem}
+  .lang{border:1.5px solid var(--rule);border-radius:99px;font:600 .8rem var(--mono);margin-left:.4rem;padding:.4rem .6rem;background:var(--bg);color:var(--ink);cursor:pointer;max-width:9rem}
+  .nav .lnk{white-space:nowrap} @media (max-width:40rem){.lang{max-width:6.2rem;padding:.35rem .35rem;margin-left:.2rem}} @media (max-width:22rem){.lang{max-width:6rem;font-size:.72rem} .nav{flex-wrap:wrap;justify-content:flex-end;row-gap:.3rem}}
+  .langnote{margin-top:.8rem;margin-bottom:0;padding-top:.6rem;padding-bottom:.6rem;font-size:.85rem;background:var(--paper);border:1px dashed var(--rule);border-radius:var(--r)} .langnote .lnk{padding:0;font-size:inherit;text-decoration:underline}
   .hero2{display:grid;gap:2.5rem;padding:3rem 0 2.5rem;align-items:start} @media (min-width:60rem){.hero2{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}}
   .hero2 h1.big{font-weight:600;max-width:14ch;font-size:clamp(2.6rem,6.5vw,5rem);line-height:1}
   .hero2 .lede{color:var(--mute);margin:1.2rem 0 1.8rem}
@@ -413,10 +415,11 @@
 <div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="top"><div class="wrap">
   <a class="brand" href="#" aria-label="Sino Sila? Home" data-i18n-al="homeAl">Sino <mark>Sila?</mark></a>
-  <nav class="nav" aria-label="Sections"><a class="lnk" href="#senado" data-i18n="navSen">Senate</a><a class="lnk" href="#kamara" data-i18n="navHouse">House</a><a class="lnk" href="#party-list" data-i18n="navPL">Party-list</a><button class="lnk lang" id="langB" type="button" lang="fil">Filipino</button></nav>
+  <nav class="nav" aria-label="Sections"><a class="lnk" href="#senado" data-i18n="navSen">Senate</a><a class="lnk" href="#kamara" data-i18n="navHouse">House</a><a class="lnk" href="#party-list" data-i18n="navPL">Party-list</a><select class="lang" id="langSel" aria-label="Language / Wika / Pinulongan"><option value="en">English</option><option value="fil" lang="fil">Filipino</option><option value="ceb" lang="ceb">Bisaya</option><option value="ilo" lang="ilo">Ilokano</option><option value="hil" lang="hil">Hiligaynon</option><option value="war" lang="war">Winaray</option><option value="bcl" lang="bcl">Bikol</option><option value="pam" lang="pam">Kapampangan</option></select></nav>
   <div class="qs" role="search"><input id="q" type="search" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="qd" aria-autocomplete="list" placeholder="Search a name, place or party…" aria-label="Search lawmakers" data-i18n-ph="searchPh" data-i18n-al="searchAl">
     <ul id="qd" role="listbox" aria-label="Search results" hidden></ul></div>
 </div></div>
+<p class="langnote wrap" id="langNote" role="note" hidden></p>
 <main class="wrap" id="app" tabindex="-1" aria-busy="true"><div class="skel"></div><div class="skel"></div><div class="skel"></div></main>
 <noscript><p class="wrap">This site needs JavaScript to show the records.</p></noscript>
 <button id="top" type="button" aria-label="Back to top" data-i18n-al="topAl" hidden>↑</button>
@@ -462,7 +465,10 @@ const state = {lens: 'track', sel: 'everyone', ch: 'all', tr: new Set(ALLTR), sc
 const hashName = () => decodeURIComponent(location.hash.slice(1)), onHome = () => !hashName(), onExplore = () => hashName() === 'explore';
 
 /* ---------- language (Filipino by default, English on request) ---------- */
-let lang = (() => { try { return localStorage.getItem('lang') === 'fil' ? 'fil' : 'en'; } catch { return 'en'; } })();   // English unless the visitor picked Filipino
+/* Languages: English and Filipino are built in. The local languages are drafts in i18n/<code>.json, fetched when picked;
+   a string they do not have yet falls back to Filipino, then English. "{0}" in a draft string is the first value passed in. */
+const LANGS = ['en', 'fil', 'ceb', 'ilo', 'hil', 'war', 'bcl', 'pam'], isLocal = l => !['en', 'fil'].includes(l);
+let lang = (() => { try { const l = localStorage.getItem('lang'); return LANGS.includes(l) ? l : 'en'; } catch { return 'en'; } })();   // English unless the visitor picked another
 const T = {
   fil: {
     kicker: 'Talaan ng mga mambabatas · Ika-20 Kongreso', searchL: 'Hanapin ang mambabatas mo', tryL: 'Subukan:',
@@ -550,7 +556,7 @@ const T = {
     st_filed: 'Naihain', st_pending: 'Nakabinbin', st_suspended: 'Suspendido', st_appealed: 'Inapela', st_dismissed: 'Na-dismiss', st_acquitted: 'Napawalang-sala', st_convicted: 'Nahatulan', st_decided: 'Napagpasyahan',
     lk_national: 'Pambansa', lk_local: 'Lokal', lk_franchise: 'Prangkisa', lk_day: 'Paggunita', lkAmends: 'Nag-aamyenda ng batas', lkMix: m => `Sa mga batas na ito: ${m}.`,
     lkNote: 'Pambansa, lokal (isang lugar: paaralan, ospital, kalsada, korte, bagong lungsod), prangkisa ng kumpanya, o araw ng paggunita: inuuri ayon sa mga salita sa pamagat, kaya maaaring may mali. Pindutin ang "Report an error" kung may mali.',
-    guideL: 'Paano gamitin', newL: 'Ano ang bago', newBar: 'Mula sa mga mungkahi ninyo: listahan ng may kaso, ranggo ayon sa termino, uri ng bawat batas, at gabay sa botante.', newSee: 'Tingnan ang bago',
+    newPill: 'Bago', guideL: 'Paano gamitin', newL: 'Ano ang bago', newBar: 'Mula sa mga mungkahi ninyo: listahan ng may kaso, ranggo ayon sa termino, uri ng bawat batas, at gabay sa botante.', newSee: 'Tingnan ang bago',
     csK: n => `${n} mambabatas na may nakatalang kaso`, csH: 'Mga mambabatas na may kaso', csLink: 'Tingnan ang lahat ng may kaso',
     csNote: 'Bawat kaso na nakita namin sa mga rekord ng korte at sa balita, sa lahat ng senador at kinatawan. Ang kaso o reklamo ay paratang lang hangga\'t walang desisyon. Hindi pa namin naitatala kung sino ang nakakulong.',
     csSearch: 'Pangalan o salita sa kaso', csAllCh: 'Senado at Kamara', csAllSt: 'Lahat ng status', csAllCg: 'Lahat ng uri', csInfo: (n, p) => `${n} kaso · ${p} mambabatas`, csSt: 'Status', csCg: 'Uri ng kaso',
@@ -660,14 +666,18 @@ const T = {
     repB: 'Report an error', repIntro: 'Tell us what is wrong or out of date on this page. A link to the right source helps most. We keep your note (and your email, if you give one) privately so we can follow up. It is never published.',
     repWhat: 'What is wrong', repSrc: 'Link to a source', optional: '(optional)', repEmail: 'Your email', optReply: '(optional, only if you want a reply)', close: 'Close', send: 'Send',
   }};
-const t = (k, ...a) => { const v = T[lang][k] ?? T.en[k] ?? k; return typeof v === 'function' ? v(...a) : v; };
+const t = (k, ...a) => { const v = T[lang]?.[k] ?? (lang !== 'en' ? T.fil[k] : undefined) ?? T.en[k] ?? k;
+  return typeof v === 'function' ? v(...a) : a.length && typeof v === 'string' ? v.replace(/\{(\d)\}/g, (m, i) => a[i] ?? m) : v; };
+const loadLang = l => T[l] || !isLocal(l) ? Promise.resolve() : fetch(`i18n/${l}.json`).then(r => r.ok ? r.json() : {}).catch(() => ({})).then(j => { T[l] = j; });
 function applyLang() {
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-i18n]').forEach(e => e.textContent = t(e.dataset.i18n));
   document.querySelectorAll('[data-i18n-html]').forEach(e => e.innerHTML = t(e.dataset.i18nHtml));
   document.querySelectorAll('[data-i18n-ph]').forEach(e => e.placeholder = t(e.dataset.i18nPh));
   document.querySelectorAll('[data-i18n-al]').forEach(e => e.setAttribute('aria-label', t(e.dataset.i18nAl)));
-  const b = document.getElementById('langB'); b.textContent = t('langOther'); b.lang = lang === 'fil' ? 'en' : 'fil';
+  document.getElementById('langSel').value = lang;
+  const n = document.getElementById('langNote'), draft = isLocal(lang) && !T[lang]?._meta?.reviewed; n.hidden = !draft;   // reviewed languages drop the note
+  if (draft) n.innerHTML = `${esc(T[lang]?._draft || 'Draft translation, still being checked. Parts not translated yet are in Filipino.')} <button class="lnk" type="button" onclick="document.getElementById('repB').click()">${esc(T[lang]?._fix || t('repB'))}</button> · <a href="https://github.com/lslaoang/sinu-sila/blob/main/i18n/${lang}.json" target="_blank" rel="noopener">GitHub ↗</a>`;
   TRACKS.forEach(r => r[1] = t('tr_' + r[0]));
 }
 
@@ -695,7 +705,7 @@ const BUCKETS = [
 const bucketOf = st => (BUCKETS.find(b => b[2](st)) || ['Other', '#6b7280'])[0];
 let MONTHS = [];   // July 2025 (start of the 20th Congress) to the month of the latest Senate refresh; set in load()
 const monthsTo = end => { const m = []; for (let y = 2025, mo = 7; `${y}-${String(mo).padStart(2, '0')}` <= end; mo === 12 ? (mo = 1, y++) : mo++) m.push(`${y}-${String(mo).padStart(2, '0')}`); return m; };
-const fmtDay = d => d ? new Date(d + 'T00:00:00').toLocaleDateString(lang === 'fil' ? 'fil-PH' : 'en-US', {month: 'short', day: 'numeric', year: 'numeric'}) : '–';
+const fmtDay = d => d ? new Date(d + 'T00:00:00').toLocaleDateString(lang === 'en' ? 'en-US' : 'fil-PH', {month: 'short', day: 'numeric', year: 'numeric'}) : '–';
 const membersAsOf = () => [bills._meta?.retrieved, houseMeta.retrieved].filter(Boolean).sort().pop();
 const casesAsOf = () => [cases._meta.retrieved, ...Object.values(cases._meta.checked || {}).map(c => c.date)].filter(Boolean).sort().pop();
 const monthName = k => new Date(k + '-01T00:00:00').toLocaleString('en', {month: 'short', year: '2-digit'});
@@ -989,7 +999,7 @@ function home() {
         <div><dt>Party-list <small>(${t('gGroups', groupsN)})</small></dt><span class="dots"></span><dd>${plm.length}</dd></div>
         <div class="when"><dt>${t('gMembers')}</dt><span class="dots"></span><dd>${fmtDay(membersAsOf())}</dd></div>
         <div class="when"><dt>${t('gCases')}</dt><span class="dots"></span><dd>${fmtDay(casesAsOf())}</dd></div></dl></aside></section>
-    <a class="newbar" href="#bago"><span class="pill">${lang === 'fil' ? 'Bago' : 'New'}</span> ${t('newBar')} <b>${t('newSee')} →</b></a>
+    <a class="newbar" href="#bago"><span class="pill">${lang === 'en' ? 'New' : t('newPill')}</span> ${t('newBar')} <b>${t('newSee')} →</b></a>
     <div class="out" id="homeOut" aria-live="polite"></div>
     <section class="out faces" aria-labelledby="fH"><div class="shead"><h2 id="fH">${t('facesH', data.length)}</h2><a href="#senado">${t('facesAll')} →</a></div>
       <ul>${[...data].sort((a, b) => lastName(a).localeCompare(lastName(b))).map((o, _, all) => `<li><a href="#${esc(o.id)}" aria-label="${esc(clean(o.name))}"><span class="ph">${o.photo ? `<img src="${esc(pv(o.photo))}" alt="" loading="lazy">` : `<span class="ini" aria-hidden="true">${initials(o.name)}</span>`}</span><small aria-hidden="true">${all.filter(x => lastName(x) === lastName(o)).length > 1 ? esc(clean(o.name)[0]) + '. ' : ''}${esc(lastName(o))}</small></a></li>`).join('')}</ul></section>
@@ -1091,7 +1101,7 @@ function casesHtml(o) {
   const list = cases.cases[o.id] || [], ck = cases._meta.checked[o.id], checked = ck && ck.date;
   const links = e => e.sources.map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(srcName(u))}<span class="sr"> (opens in a new tab)</span> ↗</a>`).join(' · ');
   const body = list.length ? `<p class="note">${t('casesNote')}</p>`
-      + list.map(c => `<article class="case"><div class="ch"><span class="pill">${esc(t('st_' + c.status))}</span><span class="pill">${esc(t('k_' + c.kind))}</span>${lang === 'fil' ? `<span class="pill">${t('inEnglish')}</span>` : ''}</div><h4>${esc(c.title)}</h4>
+      + list.map(c => `<article class="case"><div class="ch"><span class="pill">${esc(t('st_' + c.status))}</span><span class="pill">${esc(t('k_' + c.kind))}</span>${lang !== 'en' ? `<span class="pill">${t('inEnglish')}</span>` : ''}</div><h4>${esc(c.title)}</h4>
         <small>${esc(t('r_' + c.role))}${c.status_date ? ` · ${t('statusAsOf')} ${esc(c.status_date)}` : ''}</small>
         <ol class="ev">${c.events.map(e => `<li><time>${esc(e.date)}</time>${esc(e.text)}<div class="srcs">${links(e)}</div></li>`).join('')}</ol></article>`).join('')
     : checked ? `<p class="soon">${esc(t('noneFound', checked, ck.queries))}</p>` : `<p class="soon">${t('uncheckedMsg')}</p>`;
@@ -1110,7 +1120,7 @@ const ptabs = tabs => `<nav class="ptabs" aria-label="${esc(t('sectionsAl'))}">$
 const phero = (o, sub, meta) => `<a class="back" href="#${o.body === 'house' ? (o.kind === 'party-list' ? 'party-list' : 'kamara') : 'senado'}">${t('backTo', o.body === 'house' ? (o.kind === 'party-list' ? t('plH') : t('houseH')) : t('senH'))}</a>
     <div class="phero">${av(o.name, o.photo, true)}<div><p class="kick">${esc(sub)}</p><h1>${esc(o.name)}</h1>${isLead(o) ? `<span class="role">${esc(o.position)}</span>` : ''}${meta ? `<p class="meta">${meta}</p>` : ''}</div>
       <button class="chip share" data-f="share">${t('share')}</button></div>`;
-const loc = () => lang === 'fil' ? 'fil-PH' : 'en-PH';
+const loc = () => lang === 'en' ? 'en-PH' : 'fil-PH';
 const peso = n => n == null ? '–' : new Intl.NumberFormat(loc(), {style: 'currency', currency: 'PHP', notation: 'compact', maximumFractionDigits: 1}).format(n);
 const num = n => n == null ? '–' : n.toLocaleString(loc());
 const srcA = (u, label) => `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(label)}<span class="sr"> (opens in a new tab)</span> ↗</a>`;
@@ -1326,7 +1336,7 @@ function updateCases() {
 /* ---------- guide for voters, and what's new ---------- */
 const prose = (h1, kick, body) => { app.innerHTML = `<a class="back" href="#">${t('back')}</a><article class="prose"><p class="kick">${kick}</p><h1>${h1}</h1>${body}</article>`; };
 function guidePage() {
-  const fil = lang === 'fil';
+  const fil = lang !== 'en';   // local languages show the Filipino text until translated
   const steps = fil ? [
     ['Hanapin ang mambabatas mo', 'I-type ang probinsya o lungsod mo sa paghahanap sa itaas. Lalabas ang kinatawan mo sa Kamara at ang 24 na senador na para sa buong bansa.', '#', 'Pumunta sa paghahanap'],
     ['Tingnan kung may kaso', 'Ang kulay sa itaas ng bawat profile ang nagsasabi: may hatol, nakabinbin, na-dismiss, o walang nakitang kaso. Ang kaso ay paratang lang hangga\'t walang desisyon ang korte.', '#mga-kaso', 'Lahat ng may kaso'],
@@ -1348,7 +1358,7 @@ function guidePage() {
     <p class="note">${fil ? 'Dami ang ipinapakita ng bilang ng panukala, hindi kalidad. Gamitin ito para magtanong, hindi bilang marka.' : 'Bill counts show volume, not quality. Use them to ask questions, not as a score.'}</p>`);
 }
 function newsPage() {
-  const fil = lang === 'fil';
+  const fil = lang !== 'en';   // local languages show the Filipino text until translated
   const E = (date, items) => `<section class="rel"><h2><time>${fmtDay(date)}</time></h2><ul>${items.map(([h, p, href]) => `<li><b>${href ? `<a href="${href}">${h}</a>` : h}</b><br>${p}</li>`).join('')}</ul></section>`;
   const asked = `<span class="pill">${fil ? 'Mungkahi ng mambabasa' : 'Readers asked'}</span> `;
   prose(fil ? 'Ano ang bago' : "What's new", 'Sino Sila?', `<p class="lede">${fil ? 'Ang mga idinagdag at pinahusay, pinakabago muna. Marami rito ay galing sa mga komento ninyo sa BetterGov.PH. Salamat!' : 'What we added and improved, newest first. Much of it came from your comments in the BetterGov.PH group. Salamat!'}</p>`
@@ -1356,12 +1366,14 @@ function newsPage() {
       [asked + 'Lahat ng may kaso sa iisang pahina', 'Bawat senador at kinatawan na may nakatalang kaso, may filter ayon sa status (nakabinbin, may hatol, na-dismiss) at uri (plunder, graft, malversation, flood control at iba pa).', '#mga-kaso'],
       [asked + 'Ranggo ayon sa termino', 'Sa "Ranggo", pumili ng Kongreso mula ika-13 hanggang ika-20 para ihambing sila sa iisang panahon: inihain, pumasa, at naging batas.', '#senado'],
       [asked + 'Pambansa o lokal na batas', 'Bawat batas ay may tatak: pambansa, lokal (isang paaralan, ospital o kalsada), prangkisa ng kumpanya, o araw ng paggunita, at kung nag-aamyenda ito ng ibang batas. May bilang din sa bawat profile.', ''],
-      [asked + 'Gabay sa botante', 'Limang hakbang at mga tanong para sa kandidato, sa simpleng salita.', '#gabay']]
+      [asked + 'Gabay sa botante', 'Limang hakbang at mga tanong para sa kandidato, sa simpleng salita.', '#gabay'],
+      ['Anim pang wika (draft)', 'Bisaya, Ilokano, Hiligaynon, Winaray, Bikol at Kapampangan: piliin sa itaas. Draft pa ito; tulungan kaming itama.', '']]
     : [
       [asked + 'Everyone with a court case, on one page', 'Every senator and representative with a case on record, filtered by status (pending, convicted, dismissed) and kind (plunder, graft, malversation, flood control and more).', '#mga-kaso'],
       [asked + 'Rankings by term', 'Under "Rank by bills", pick a Congress from the 13th to the 20th to compare lawmakers over the same period: filed, passed and became law.', '#senado'],
       [asked + 'National or local laws', 'Every law now carries a tag: national, local (one school, hospital or road), a company franchise, or a commemorative day, and whether it amends another law. Each profile counts them.', ''],
-      [asked + 'A guide for voters', 'Five steps and questions to ask a candidate, in plain words.', '#gabay']])
+      [asked + 'A guide for voters', 'Five steps and questions to ask a candidate, in plain words.', '#gabay'],
+      ['Six more languages (draft)', 'Bisaya, Ilokano, Hiligaynon, Winaray, Bikol and Kapampangan: pick one at the top. These are drafts; help us correct them.', '']])
     + E('2026-11-24', fil ? [
       ['Karera sa puwesto', 'Bawat halalan mula 2001, nanalo man o natalo, at ang mga termino sa Kongreso. Mula sa BetterGov Dynasties at open-congress-data.', ''],
       ['Mas mahusay na paghahanap', 'Lumalabas agad ang resulta habang nagta-type, nakagrupo ayon sa lugar, Senado, Kamara at party-list. May sariling paghahanap din ang bawat pahina.', '#']]
@@ -1464,7 +1476,8 @@ function showTip(s) {
   tip.innerHTML = `<b>${esc(clean(o.name))}</b><br>${esc(o.position)} · ${billCount(id)} bills · ${lawCount(id)} laws`;
   tip.style.left = Math.min(Math.max(r.left + r.width / 2, 90), innerWidth - 90) + 'px'; tip.style.top = r.top + 'px'; tip.classList.add('on');
 }
-document.getElementById('langB').onclick = () => { lang = lang === 'fil' ? 'en' : 'fil'; try { localStorage.setItem('lang', lang); } catch {} applyLang(); if (data.length) route(); };
+document.getElementById('langSel').onchange = e => { const l = e.target.value; try { localStorage.setItem('lang', l); } catch {}
+  loadLang(l).then(() => { lang = l; applyLang(); if (data.length) route(); }); };
 /* header search: a live list on every page; Enter opens the one match, else all results on the home page */
 const qd = document.getElementById('qd'); let qi = -1, qopts = [], qn = 0;
 const pin = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
@@ -1504,7 +1517,7 @@ qd.onpointerdown = e => e.preventDefault();   // keep focus in the box so the cl
 qd.onclick = e => qpick(e.target.closest('.qo'));
 addEventListener('keydown', e => { if (e.key !== '/' || e.ctrlKey || e.metaKey || /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName)) return;
   e.preventDefault(); (onHome() ? document.getElementById('hq') : q)?.focus(); });
-applyLang();
+applyLang(); if (isLocal(lang)) loadLang(lang).then(() => { applyLang(); if (data.length) route(); });
 onhashchange = route;
 function load() {
   Promise.all(['data/officials.json', 'data/house.json', 'data/bills.json', 'data/laws.json', 'data/education.json', 'data/pulitiklan.json', 'data/cases.json', 'data/saln.json', 'data/elections.json', 'data/house_bills.json', 'data/contacts.json', 'data/facts.json'].map(u => fetch(u).then(r => { if (!r.ok) throw new Error(u); return r.json(); }).catch(e => { if (/pulitiklan/.test(u)) return {links: {}}; if (/cases/.test(u)) return {_meta: {checked: {}}, cases: {}}; if (/house_bills/.test(u)) return {_meta: {}, members: {}}; if (/contacts/.test(u)) return {_meta: {}, senate: {}}; if (/facts/.test(u)) return {_meta: {}, people: {}}; if (/saln/.test(u)) return saln; if (/elections/.test(u)) return elec; throw e; })))
