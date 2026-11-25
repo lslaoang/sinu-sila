@@ -1,0 +1,1133 @@
+{
+ "_meta": {
+  "retrieved": "2026-11-25",
+  "source": "Wikipedia, each district article's list of towns or barangays (CC BY-SA 4.0)",
+  "note": "Only districts whose DPWH office also serves other districts. Used to say which district a project's title names."
+ },
+ "districts": {
+  "jess-marquez": {
+   "label": "Aklan, 1st District",
+   "places": [
+    "Altavas",
+    "Balete",
+    "Banga",
+    "Batan",
+    "Kalibo",
+    "Libacao",
+    "Madalag",
+    "New Washington"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Aklan%27s_1st_congressional_district"
+  },
+  "florencio-miraflores": {
+   "label": "Aklan, 2nd District",
+   "places": [
+    "Buruanga",
+    "Ibajay",
+    "Lezo",
+    "Makato",
+    "Malay",
+    "Malinao",
+    "Nabas",
+    "Numancia",
+    "Tangalan"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Aklan%27s_2nd_congressional_district"
+  },
+  "ronaldo-puno": {
+   "label": "Antipolo City, 1st District",
+   "places": [
+    "Bagong Nayon",
+    "Beverly Hills",
+    "De La Paz",
+    "Mambugan",
+    "Mayamot",
+    "Munting Dilao",
+    "San Isidro",
+    "Santa Cruz"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Antipolo%27s_1st_congressional_district"
+  },
+  "bong-acop": {
+   "label": "Antipolo City, 2nd District",
+   "places": [
+    "Calawis",
+    "Cupang",
+    "Dalig",
+    "Inarawan",
+    "San Jose",
+    "San Juan",
+    "San Luis",
+    "San Roque"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Antipolo%27s_2nd_congressional_district"
+  },
+  "gerville-luistro": {
+   "label": "Batangas, 2nd District",
+   "places": [
+    "Bauan",
+    "Lobo",
+    "Mabini",
+    "San Luis",
+    "San Pascual",
+    "Tingloy"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Batangas%27s_2nd_congressional_district"
+  },
+  "caloy-bolilia": {
+   "label": "Batangas, 4th District",
+   "places": [
+    "Ibaan",
+    "Padre Garcia",
+    "Rosario",
+    "San Jose",
+    "San Juan",
+    "Taysan"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Batangas%27s_4th_congressional_district"
+  },
+  "beverley-dimacuha": {
+   "label": "Batangas, 5th District",
+   "places": [
+    "Batangas City"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Batangas%27s_5th_congressional_district"
+  },
+  "ryan-recto": {
+   "label": "Batangas, 6th District",
+   "places": [
+    "Lipa"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Batangas%27s_6th_congressional_district"
+  },
+  "arman-dimaguila": {
+   "label": "City of Biñan, Lone District",
+   "places": [
+    "Biñan"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Bi%C3%B1an%27s_at-large_congressional_district"
+  },
+  "danny-domingo": {
+   "label": "Bulacan, 1st District",
+   "places": [
+    "Bulakan",
+    "Calumpit",
+    "Hagonoy",
+    "Malolos",
+    "Paombong",
+    "Pulilan"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Bulacan%27s_1st_congressional_district"
+  },
+  "tina-pancho": {
+   "label": "Bulacan, 2nd District",
+   "places": [
+    "Baliwag",
+    "Bustos",
+    "Plaridel"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Bulacan%27s_2nd_congressional_district"
+  },
+  "linabelle-villarica": {
+   "label": "Bulacan, 4th District",
+   "places": [
+    "Marilao",
+    "Meycauayan",
+    "Obando"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Bulacan%27s_4th_congressional_district"
+  },
+  "agay-cruz": {
+   "label": "Bulacan, 5th District",
+   "places": [
+    "Balagtas",
+    "Bocaue",
+    "Guiguinto",
+    "Pandi"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Bulacan%27s_5th_congressional_district"
+  },
+  "salvador-pleyto": {
+   "label": "Bulacan, 6th District",
+   "places": [
+    "Angat",
+    "Norzagaray",
+    "Santa Maria"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Bulacan%27s_6th_congressional_district"
+  },
+  "cha-hernandez": {
+   "label": "City of Calamba, Lone District",
+   "places": [
+    "Calamba"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Calamba%27s_at-large_congressional_district"
+  },
+  "jolo-revilla": {
+   "label": "Cavite, 1st District",
+   "places": [
+    "Cavite City",
+    "Kawit",
+    "Noveleta",
+    "Rosario"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Cavite%27s_1st_congressional_district"
+  },
+  "lani-mercado": {
+   "label": "Cavite, 2nd District",
+   "places": [
+    "Bacoor"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Cavite%27s_2nd_congressional_district"
+  },
+  "adrian-jay-advincula": {
+   "label": "Cavite, 3rd District",
+   "places": [
+    "Imus"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Cavite%27s_3rd_congressional_district"
+  },
+  "jenny-barzaga": {
+   "label": "Cavite, 4th District",
+   "places": [
+    "Dasmariñas"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Cavite%27s_4th_congressional_district"
+  },
+  "roy-loyola": {
+   "label": "Cavite, 5th District",
+   "places": [
+    "Carmona",
+    "General Mariano Alvarez",
+    "Silang"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Cavite%27s_5th_congressional_district"
+  },
+  "antonio-ferrer": {
+   "label": "Cavite, 6th District",
+   "places": [
+    "General Trias"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Cavite%27s_6th_congressional_district"
+  },
+  "crispin-diego-remulla": {
+   "label": "Cavite, 7th District",
+   "places": [
+    "Amadeo",
+    "Indang",
+    "Tanza",
+    "Trece Martires"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Cavite%27s_7th_congressional_district"
+  },
+  "rachel-del-mar": {
+   "label": "Cebu City, 1st District",
+   "places": [
+    "Adlaon",
+    "Agsungot",
+    "Apas",
+    "Bacayan",
+    "Banilad",
+    "Binaliw",
+    "Budlaan",
+    "Busay",
+    "Cambinocot",
+    "Capitol Site",
+    "Carreta",
+    "Cogon Ramos",
+    "Ermita",
+    "Guba",
+    "Hipodromo",
+    "Kalubihan",
+    "Kamagayan",
+    "Kasambagan",
+    "Lahug",
+    "Lusaran",
+    "Luz",
+    "Mabini",
+    "Mabolo",
+    "Malubog",
+    "Pahina Central",
+    "Pari-an",
+    "Paril",
+    "Pit-os",
+    "Pulangbato",
+    "Sambag I",
+    "Sambag II",
+    "San Antonio",
+    "San Jose",
+    "San Roque",
+    "Santa Cruz",
+    "Santo Niño",
+    "Sirao",
+    "Talamban",
+    "Taptap",
+    "Tejero",
+    "Tinago",
+    "Zapatera"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Cebu_City%27s_1st_congressional_district"
+  },
+  "eduardo-rama-jr": {
+   "label": "Cebu City, 2nd District",
+   "places": [
+    "Babag",
+    "Basak Pardo",
+    "Basak San Nicolas",
+    "Bonbon",
+    "Buhisan",
+    "Bulacao",
+    "Buot",
+    "Calamba",
+    "Cogon Pardo",
+    "Duljo Fatima",
+    "Guadalupe",
+    "Inayawan",
+    "Kalunasan",
+    "Labangon",
+    "Mambaling",
+    "Pahina San Nicolas",
+    "Pamutan",
+    "Pasil",
+    "Poblacion Pardo",
+    "Pung-ol Sibugay",
+    "Punta Princesa",
+    "Quiot",
+    "San Nicolas Proper",
+    "Sapangdaku",
+    "Sawang Calero",
+    "Sinsin",
+    "Suba",
+    "Sudlon I",
+    "Sudlon II",
+    "Tabunan",
+    "Tagbao",
+    "Tisa",
+    "Toong"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Cebu_City%27s_2nd_congressional_district"
+  },
+  "daphne-lagon": {
+   "label": "Cebu, 6th District",
+   "places": [
+    "Consolacion",
+    "Cordova"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Cebu%27s_6th_congressional_district"
+  },
+  "shirlyn-banas-nograles": {
+   "label": "General Santos City, Lone District",
+   "places": [
+    "General Santos"
+   ],
+   "source": "https://en.wikipedia.org/wiki/General_Santos%27s_at-large_congressional_district"
+  },
+  "ed-christopher-go": {
+   "label": "Isabela, 2nd District",
+   "places": [
+    "Benito Soliven",
+    "Gamu",
+    "Naguilian",
+    "Palanan",
+    "Reina Mercedes",
+    "San Mariano"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Isabela%27s_2nd_congressional_district"
+  },
+  "ian-paul-dy": {
+   "label": "Isabela, 3rd District",
+   "places": [
+    "Alicia",
+    "Angadanan",
+    "Cabatuan",
+    "Ramon",
+    "San Mateo"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Isabela%27s_3rd_congressional_district"
+  },
+  "joseph-tan": {
+   "label": "Isabela, 4th District",
+   "places": [
+    "Cordon",
+    "Dinapigue",
+    "Jones",
+    "San Agustin",
+    "Santiago"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Isabela%27s_4th_congressional_district"
+  },
+  "bojie-dy": {
+   "label": "Isabela, 6th District",
+   "places": [
+    "Cauayan",
+    "Echague",
+    "San Guillermo",
+    "San Isidro"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Isabela%27s_6th_congressional_district"
+  },
+  "ann-matibag": {
+   "label": "Laguna, 1st District",
+   "places": [
+    "San Pedro"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Laguna%27s_1st_congressional_district"
+  },
+  "ramil-hernandez": {
+   "label": "Laguna, 2nd District",
+   "places": [
+    "Bay",
+    "Cabuyao",
+    "Los Baños"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Laguna%27s_2nd_congressional_district"
+  },
+  "junard-chan": {
+   "label": "Lapu-Lapu City, Lone District",
+   "places": [
+    "Lapu-Lapu City"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Lapu-Lapu_City%27s_at-large_congressional_district"
+  },
+  "mark-anthony-santos": {
+   "label": "City of Las Piñas, Lone District",
+   "places": [
+    "Las Piñas"
+   ],
+   "source": "the district is the whole city"
+  },
+  "monique-lagdameo": {
+   "label": "City of Makati, 1st District",
+   "places": [
+    "Bangkal",
+    "Bel-Air",
+    "Carmona",
+    "Dasmariñas",
+    "Forbes Park",
+    "Kasilawan",
+    "La Paz",
+    "Magallanes",
+    "Olympia",
+    "Palanan",
+    "Pio del Pilar",
+    "Poblacion",
+    "San Antonio",
+    "San Isidro",
+    "San Lorenzo",
+    "Santa Cruz",
+    "Singkamas",
+    "Tejeros",
+    "Urdaneta",
+    "Valenzuela"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Makati%27s_1st_congressional_district"
+  },
+  "alden-almario": {
+   "label": "City of Makati, 2nd District",
+   "places": [
+    "Guadalupe Nuevo",
+    "Guadalupe Viejo",
+    "Pinagkaisahan"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Makati%27s_2nd_congressional_district"
+  },
+  "antolin-oreta-iii": {
+   "label": "Malabon City, Lone District",
+   "places": [
+    "Malabon"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Malabon%27s_at-large_congressional_district"
+  },
+  "alexandria-gonzales": {
+   "label": "City of Mandaluyong, Lone District",
+   "places": [
+    "Mandaluyong"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Mandaluyong%27s_at-large_congressional_district"
+  },
+  "emmarie-dizon": {
+   "label": "Mandaue City, Lone District",
+   "places": [
+    "Mandaue"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Mandaue%27s_at-large_congressional_district"
+  },
+  "ernix-dionisio": {
+   "label": "Manila City, 1st District",
+   "places": [
+    "Tondo"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Manila%27s_1st_congressional_district"
+  },
+  "rolan-valeriano": {
+   "label": "Manila City, 2nd District",
+   "places": [
+    "Tondo"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Manila%27s_2nd_congressional_district"
+  },
+  "joel-chua": {
+   "label": "Manila City, 3rd District",
+   "places": [
+    "Binondo",
+    "Quiapo",
+    "San Nicolas",
+    "Santa Cruz"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Manila%27s_3rd_congressional_district"
+  },
+  "giselle-lazaro-maceda": {
+   "label": "Manila City, 4th District",
+   "places": [
+    "Sampaloc"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Manila%27s_4th_congressional_district"
+  },
+  "irwin-tieng": {
+   "label": "Manila City, 5th District",
+   "places": [
+    "Ermita",
+    "Intramuros",
+    "Malate",
+    "Paco",
+    "Port Area",
+    "San Andres"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Manila%27s_5th_congressional_district"
+  },
+  "benny-abante": {
+   "label": "Manila City, 6th District",
+   "places": [
+    "Paco",
+    "Pandacan",
+    "San Miguel",
+    "Santa Ana",
+    "Santa Mesa"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Manila%27s_6th_congressional_district"
+  },
+  "marcelino-teodoro": {
+   "label": "City of Marikina, 1st District",
+   "places": [
+    "Barangka",
+    "Calumpang",
+    "Industrial Valley Complex",
+    "Jesus de la Peña",
+    "Malanday",
+    "San Roque",
+    "Santa Elena",
+    "Santo Niño",
+    "Tañong"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Marikina%27s_1st_congressional_district"
+  },
+  "miro-quimbo": {
+   "label": "City of Marikina, 2nd District",
+   "places": [
+    "Concepcion Dos",
+    "Concepcion Uno",
+    "Fortune",
+    "Marikina Heights",
+    "Nangka",
+    "Parang",
+    "Tumana"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Marikina%27s_2nd_congressional_district"
+  },
+  "jaime-fresnedi": {
+   "label": "City of Muntinlupa, Lone District",
+   "places": [
+    "Muntinlupa"
+   ],
+   "source": "the district is the whole city"
+  },
+  "toby-tiangco": {
+   "label": "Navotas City, Lone District",
+   "places": [
+    "Navotas"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Navotas%27s_at-large_congressional_district"
+  },
+  "alfredo-maranon-iii": {
+   "label": "Negros Occidental, 2nd District",
+   "places": [
+    "Cadiz",
+    "Manapla",
+    "Sagay"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Negros_Occidental%27s_2nd_congressional_district"
+  },
+  "javi-benitez": {
+   "label": "Negros Occidental, 3rd District",
+   "places": [
+    "Enrique B. Magalona",
+    "Murcia",
+    "Silay",
+    "Talisay",
+    "Victorias"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Negros_Occidental%27s_3rd_congressional_district"
+  },
+  "mika-suansing": {
+   "label": "Nueva Ecija, 1st District",
+   "places": [
+    "Aliaga",
+    "Cuyapo",
+    "Guimba",
+    "Licab",
+    "Nampicuan",
+    "Quezon",
+    "Santo Domingo",
+    "Talavera",
+    "Zaragoza"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Nueva_Ecija%27s_1st_congressional_district"
+  },
+  "kokoy-salvador": {
+   "label": "Nueva Ecija, 2nd District",
+   "places": [
+    "Carranglan",
+    "Llanera",
+    "Lupao",
+    "Muñoz",
+    "Pantabangan",
+    "Rizal",
+    "San Jose",
+    "Talugtug"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Nueva_Ecija%27s_2nd_congressional_district"
+  },
+  "jay-vergara": {
+   "label": "Nueva Ecija, 3rd District",
+   "places": [
+    "Bongabon",
+    "Cabanatuan",
+    "Gabaldon",
+    "General Mamerto Natividad",
+    "Laur",
+    "Palayan",
+    "Santa Rosa"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Nueva_Ecija%27s_3rd_congressional_district"
+  },
+  "emerson-pascual": {
+   "label": "Nueva Ecija, 4th District",
+   "places": [
+    "Cabiao",
+    "Gapan",
+    "General Tinio",
+    "Jaen",
+    "Peñaranda",
+    "San Antonio",
+    "San Isidro",
+    "San Leonardo"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Nueva_Ecija%27s_4th_congressional_district"
+  },
+  "mica-gonzales": {
+   "label": "Pampanga, 3rd District",
+   "places": [
+    "Arayat",
+    "Bacolor",
+    "Mexico",
+    "San Fernando",
+    "Santa Ana"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Pampanga%27s_3rd_congressional_district"
+  },
+  "anna-york-bondoc": {
+   "label": "Pampanga, 4th District",
+   "places": [
+    "Apalit",
+    "Candaba",
+    "Macabebe",
+    "Masantol",
+    "Minalin",
+    "San Luis",
+    "San Simon",
+    "Santo Tomas"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Pampanga%27s_4th_congressional_district"
+  },
+  "mark-cojuangco": {
+   "label": "Pangasinan, 2nd District",
+   "places": [
+    "Aguilar",
+    "Basista",
+    "Binmaley",
+    "Bugallon",
+    "Labrador",
+    "Lingayen",
+    "Mangatarem",
+    "Urbiztondo"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Pangasinan%27s_2nd_congressional_district"
+  },
+  "gina-de-venecia": {
+   "label": "Pangasinan, 4th District",
+   "places": [
+    "Dagupan",
+    "Manaoag",
+    "Mangaldan",
+    "San Fabian",
+    "San Jacinto"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Pangasinan%27s_4th_congressional_district"
+  },
+  "ramon-guico-jr": {
+   "label": "Pangasinan, 5th District",
+   "places": [
+    "Alcala",
+    "Bautista",
+    "Binalonan",
+    "Laoac",
+    "Pozorrubio",
+    "Santo Tomas",
+    "Sison",
+    "Urdaneta",
+    "Villasis"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Pangasinan%27s_5th_congressional_district"
+  },
+  "marlyn-primicias-agabas": {
+   "label": "Pangasinan, 6th District",
+   "places": [
+    "Asingan",
+    "Balungao",
+    "Natividad",
+    "Rosales",
+    "San Manuel",
+    "San Nicolas",
+    "San Quintin",
+    "Santa Maria",
+    "Tayug",
+    "Umingan"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Pangasinan%27s_6th_congressional_district"
+  },
+  "eric-olivarez": {
+   "label": "City of Parañaque, 1st District",
+   "places": [
+    "Baclaran",
+    "Don Galo",
+    "La Huerta",
+    "San Dionisio",
+    "San Isidro",
+    "Santo Niño",
+    "Tambo",
+    "Vitalez"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Para%C3%B1aque%27s_1st_congressional_district"
+  },
+  "brian-yamsuan": {
+   "label": "City of Parañaque, 2nd District",
+   "places": [
+    "BF Homes",
+    "Don Bosco",
+    "Marcelo Green",
+    "Merville",
+    "Moonwalk",
+    "San Antonio",
+    "San Martin de Porres",
+    "Sun Valley"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Para%C3%B1aque%27s_2nd_congressional_district"
+  },
+  "antonino-calixto": {
+   "label": "Pasay City, Lone District",
+   "places": [
+    "Pasay"
+   ],
+   "source": "the district is the whole city"
+  },
+  "roman-romulo": {
+   "label": "Pasig City, Lone District",
+   "places": [
+    "Pasig"
+   ],
+   "source": "the district is the whole city"
+  },
+  "arjo-atayde": {
+   "label": "Quezon City, 1st District",
+   "places": [
+    "Alicia",
+    "Bagong Pag-asa",
+    "Bahay Toro",
+    "Balingasa",
+    "Bungad",
+    "Damar",
+    "Damayan",
+    "Del Monte",
+    "Katipunan",
+    "Lourdes",
+    "Maharlika",
+    "Manresa",
+    "Mariblo",
+    "Masambong",
+    "N.S. Amoranto",
+    "Nayong Kanluran",
+    "Paang Bundok",
+    "Pag-ibig sa Nayon",
+    "Paltok",
+    "Paraiso",
+    "Phil-Am",
+    "Ramon Magsaysay",
+    "Saint Peter",
+    "Salvacion",
+    "San Antonio",
+    "San Isidro Labrador",
+    "San Jose",
+    "Santa Cruz",
+    "Santa Teresita",
+    "Santo Cristo",
+    "Santo Domingo",
+    "Siena",
+    "Talayan",
+    "Triangle",
+    "Vasra",
+    "Veterans Village"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Quezon_City%27s_1st_congressional_district"
+  },
+  "ralph-tulfo": {
+   "label": "Quezon City, 2nd District",
+   "places": [
+    "Bagong Silangan",
+    "Batasan Hills",
+    "Commonwealth",
+    "Holy Spirit",
+    "Payatas"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Quezon_City%27s_2nd_congressional_district"
+  },
+  "franz-pumaren": {
+   "label": "Quezon City, 3rd District",
+   "places": [
+    "Amihan",
+    "Bagumbayan",
+    "Bagumbuhay",
+    "Bayanihan",
+    "Blue Ridge A",
+    "Blue Ridge B",
+    "Camp Aguinaldo",
+    "Claro",
+    "Dioquino Zobel",
+    "Duyan-Duyan",
+    "E. Rodriguez",
+    "Escopa I",
+    "Escopa II",
+    "Escopa III",
+    "Escopa IV",
+    "Kamias",
+    "Libis",
+    "Loyola Heights",
+    "Mangga",
+    "Marilag",
+    "Masagana",
+    "Matandang Balara",
+    "Milagrosa",
+    "Pansol",
+    "Saint Ignatius",
+    "San Roque",
+    "Silangan",
+    "Socorro",
+    "Tagumpay",
+    "Ugong Norte",
+    "Villa Maria Clara",
+    "White Plains"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Quezon_City%27s_3rd_congressional_district"
+  },
+  "bong-suntay": {
+   "label": "Quezon City, 4th District",
+   "places": [
+    "Bagong Lipunan ng Crame",
+    "Botocan",
+    "Central",
+    "Damayang Lagi",
+    "Don Manuel",
+    "Doña Aurora",
+    "Doña Imelda",
+    "Doña Josefa",
+    "Horseshoe",
+    "Immaculate Conception",
+    "Kalusugan",
+    "Kamuning",
+    "Kaunlaran",
+    "Kristong Hari",
+    "Krus na Ligas",
+    "Laging Handa",
+    "Malaya",
+    "Mariana",
+    "Obrero",
+    "Old Capitol Site",
+    "Paligsahan",
+    "Pinagkaisahan",
+    "Pinyahan",
+    "QMC",
+    "Roxas",
+    "Sacred Heart",
+    "San Isidro",
+    "San Martin de Porres",
+    "San Vicente",
+    "Santo Niño",
+    "Santol",
+    "Sikatuna Village",
+    "Tatalon",
+    "Teachers Village East",
+    "Teachers Village West",
+    "Triangle",
+    "U.P. Campus",
+    "U.P. Village",
+    "Valencia"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Quezon_City%27s_4th_congressional_district"
+  },
+  "patrick-michael-vargas": {
+   "label": "Quezon City, 5th District",
+   "places": [
+    "Bagbag",
+    "Capri",
+    "Fairview",
+    "Greater Lagro",
+    "Gulod",
+    "Kaligayahan",
+    "Nagkaisang Nayon",
+    "Novaliches Proper",
+    "Pasong Putik Proper",
+    "San Agustin",
+    "San Bartolome",
+    "Santa Lucia",
+    "Santa Monica"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Quezon_City%27s_5th_congressional_district"
+  },
+  "marivic-co-pilar": {
+   "label": "Quezon City, 6th District",
+   "places": [
+    "Apolonio Samson",
+    "Baesa",
+    "Balon-Bato",
+    "Culiat",
+    "New Era",
+    "Pasong Tamo",
+    "Sangandaan",
+    "Sauyo",
+    "Talipapa",
+    "Tandang Sora",
+    "Unang Sigaw"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Quezon_City%27s_6th_congressional_district"
+  },
+  "mia-ynares": {
+   "label": "Rizal, 1st District",
+   "places": [
+    "Angono",
+    "Binangonan",
+    "Cainta",
+    "Taytay"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Rizal%27s_1st_congressional_district"
+  },
+  "dino-tanjuatco": {
+   "label": "Rizal, 2nd District",
+   "places": [
+    "Baras",
+    "Cardona",
+    "Jalajala",
+    "Morong",
+    "Pililla",
+    "Tanay",
+    "Teresa"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Rizal%27s_2nd_congressional_district"
+  },
+  "jose-arturo-garcia-jr": {
+   "label": "Rizal, 3rd District",
+   "places": [
+    "San Mateo"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Rizal%27s_3rd_congressional_district"
+  },
+  "dennis-hernandez": {
+   "label": "Rizal, 4th District",
+   "places": [
+    "Rodriguez"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Rizal%27s_4th_congressional_district"
+  },
+  "arthur-robes": {
+   "label": "City of San Jose del Monte, Lone District",
+   "places": [
+    "San Jose del Monte"
+   ],
+   "source": "the district is the whole city"
+  },
+  "bel-zamora": {
+   "label": "San Juan City, Lone District",
+   "places": [
+    "San Juan"
+   ],
+   "source": "https://en.wikipedia.org/wiki/San_Juan%27s_at-large_congressional_district"
+  },
+  "roy-gonzales": {
+   "label": "City of Sta. Rosa, Lone District",
+   "places": [
+    "Santa Rosa"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Santa_Rosa%27s_at-large_congressional_district"
+  },
+  "ed-lumayag": {
+   "label": "South Cotabato, 1st District",
+   "places": [
+    "Polomolok",
+    "Tampakan",
+    "Tupi"
+   ],
+   "source": "https://en.wikipedia.org/wiki/South_Cotabato%27s_1st_congressional_district"
+  },
+  "dinand-hernandez": {
+   "label": "South Cotabato, 2nd District",
+   "places": [
+    "Banga",
+    "Koronadal",
+    "Tantangan"
+   ],
+   "source": "https://en.wikipedia.org/wiki/South_Cotabato%27s_2nd_congressional_district"
+  },
+  "dibu-tuan": {
+   "label": "South Cotabato, 3rd District",
+   "places": [
+    "Lake Sebu",
+    "Norala",
+    "Santo Niño",
+    "Surallah",
+    "T'boli"
+   ],
+   "source": "https://en.wikipedia.org/wiki/South_Cotabato%27s_3rd_congressional_district"
+  },
+  "ading-cruz": {
+   "label": "Taguig City, Lone District",
+   "places": [
+    "Aguho",
+    "Bagumbayan",
+    "Bambang",
+    "Calzada",
+    "Comembo",
+    "Hagonoy",
+    "Ibayo-Tipas",
+    "Ligid-Tipas",
+    "Lower Bicutan",
+    "Magtanggol",
+    "Napindan",
+    "New Lower Bicutan",
+    "Palingon",
+    "Pembo",
+    "Poblacion",
+    "Rizal",
+    "San Miguel",
+    "San Pedro",
+    "San Roque",
+    "Santa Ana",
+    "Tabacalera",
+    "Tuktukan",
+    "Ususan",
+    "Wawa"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Taguig%E2%80%93Pateros%27s_1st_congressional_district"
+  },
+  "jorge-daniel-bocobo": {
+   "label": "Taguig City, 2nd District",
+   "places": [
+    "Cembo",
+    "Central Bicutan",
+    "Central Signal Village",
+    "Daang Hari",
+    "Fort Bonifacio",
+    "Katuparan",
+    "Maharlika Village",
+    "Pinagsama",
+    "Pitogo",
+    "Post Proper Northside",
+    "Post Proper Southside",
+    "Rembo",
+    "Signal Village",
+    "Tanyag",
+    "Upper Bicutan",
+    "Western Bicutan"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Taguig%E2%80%93Pateros%27s_2nd_congressional_district"
+  },
+  "jaime-cojuangco": {
+   "label": "Tarlac, 1st District",
+   "places": [
+    "Anao",
+    "Camiling",
+    "Mayantoc",
+    "Moncada",
+    "Paniqui",
+    "Pura",
+    "Ramos",
+    "San Clemente",
+    "San Manuel",
+    "Santa Ignacia"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Tarlac%27s_1st_congressional_district"
+  },
+  "cristy-angeles": {
+   "label": "Tarlac, 2nd District",
+   "places": [
+    "Gerona",
+    "San Jose",
+    "Tarlac City",
+    "Victoria"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Tarlac%27s_2nd_congressional_district"
+  },
+  "kenneth-gatchalian": {
+   "label": "Valenzuela City, 1st District",
+   "places": [
+    "Arkong Bato",
+    "Balangkas",
+    "Bignay",
+    "Bisig",
+    "Canumay East",
+    "Canumay West",
+    "Coloong",
+    "Dalandanan",
+    "Isla",
+    "Lawang Bato",
+    "Lingunan",
+    "Mabolo",
+    "Malanday",
+    "Malinta",
+    "Palasan",
+    "Pariancillo Villa",
+    "Pasolo",
+    "Poblacion",
+    "Polo",
+    "Punturin",
+    "Rincon",
+    "Tagalag",
+    "Veinte Reales",
+    "Wawang Pulo"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Valenzuela%27s_1st_congressional_district"
+  },
+  "gerald-galang": {
+   "label": "Valenzuela City, 2nd District",
+   "places": [
+    "Bagbaguin",
+    "General T. De Leon",
+    "Karuhatan",
+    "Mapulang Lupa",
+    "Marulas",
+    "Maysan",
+    "Parada",
+    "Paso de Blas",
+    "Ugong"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Valenzuela%27s_2nd_congressional_district"
+  }
+ }
+}

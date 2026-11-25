@@ -87,7 +87,8 @@ changed and `validate.py` passes. List "NOT MATCHED" lines in the report (usuall
 240 districts match. Publish `data/budget.json` if it changed and `validate.py` passes. "CHECK name" lines are usually
 spelling differences (suffixes, hyphens); list any that look like a different person, and hold the file back
 (`git checkout data/budget.json`) if more than 5 do. When BetterGov adds the enacted FY2027 GAA, say so in the report:
-the page needs a GAA column, which is a code change for the maintainer.
+the page needs a GAA column, which is a code change for the maintainer. If districts were added or redrawn, also run
+`python3 tools/import_district_places.py` and publish `data/district_places.json` (it lists the districts with no place list).
 
 ## 3. Court cases: research only, never publish
 For up to 10 cases in `data/cases.json` whose latest event is the oldest among those with status

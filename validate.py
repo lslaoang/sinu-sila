@@ -160,6 +160,11 @@ for f in glob.glob("data/billhist/*.json"):
 if os.path.exists("data/bill_pairs.json"):
     for k, v in json.load(open("data/bill_pairs.json"))["pairs"].items():
         if not k.startswith("HBN-") or not str(v[0]).startswith("SBN-"): errors.append(f"bill_pairs.json: bad pair {k} {v}")
+# places per district for shared DPWH offices: known ids, a non-empty list of names
+if os.path.exists("data/district_places.json"):
+    for k, v in json.load(open("data/district_places.json"))["districts"].items():
+        if k not in hids: errors.append(f"district_places.json: unknown id {k}")
+        if not v.get("places") or not all(isinstance(x, str) and len(x) > 2 for x in v["places"]): errors.append(f"district_places.json {k}: bad places")
 # draft translations: every value is text, placeholders and <mark> are kept
 import glob as _g
 for f in _g.glob("i18n/*.json"):
