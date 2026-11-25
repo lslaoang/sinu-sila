@@ -28,6 +28,7 @@ ALIAS = {"christopher-lawrence-t-go": ["BONG"], "ronald-m-dela-rosa": ["BATO"], 
          "vicente-c-sotto-iii": ["TITO"], "pia-s-cayetano": ["PILAR"], "risa-hontiveros": ["ANA"], "jinggoy-ejercito-estrada": ["JOSE"], "imee-r-marcos": ["MARIA"]}
 # Records picked by hand from the review list: (name, province on Dynasties[, town to leave out because another person's races are mixed in])
 HAND = {"jenny-barzaga": [("JENNY AUSTRIA BARZAGA", "CAVITE"), ("JENNIFER AUSTRIA BARZAGA", "CAVITE", "CARMONA")],   # her son Kiko won the seat in 2025; she took it in 2026
+             "bong-acop": [("PHILIP CONRAD ACOP", "RIZAL")],   # his father Romeo won the seat in 2025 and died; Bong won the 2026 special election
              "win-gatchalian": [("SHERWIN TING GATCHALIAN", "NCR THIRD DISTRICT")],
              "juan-miguel-f-zubiri": [("JUAN MIGUEL F. ZUBIRI", "BUKIDNON"), ("JUAN MIGUEL ZUBIRI", "BUKIDNON")],
              "alan-peter-s-cayetano": [("ALAN PETER S. CAYETANO", "NCR FOURTH DISTRICT"), ("ALAN PETER MANILA CAYETANO", "NCR FOURTH DISTRICT")],
