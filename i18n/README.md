@@ -35,5 +35,5 @@ request on GitHub, or send the corrections through "Report an error" on the site
   speaker has reviewed it, change `"status"` and the `_draft` line shown on the site.
 
 Anything a file does not have yet shows in Filipino. To translate more of the site, copy a key and its Filipino
-text from `const T` → `fil` in `index.html` into the file and translate it. Plain text only: keys whose Filipino
+text from `const T` → `fil` in `assets/js/messages.mjs` into the file and translate it. Plain text only: keys whose Filipino
 value is a function can take a string with `{0}`, `{1}` in place of the values.

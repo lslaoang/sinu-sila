@@ -22,6 +22,6 @@ SOFTWARE.
 
 ---
 
-The MIT License above covers the code (index.html, stats.html, validate.py and
-everything in tools/). The data in data/ and the images in assets/ are licensed
+The MIT License above covers the code (index.html, stats.html, assets/css/,
+assets/js/, validate.py and everything in tools/). The data in data/ and the images in assets/ are licensed
 separately: see DATA_LICENSE.md.

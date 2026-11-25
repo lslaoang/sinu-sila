@@ -15,21 +15,32 @@ For maintainers. Everything runs on AWS; there is no build step.
 
 ## Deploying a change
 
+For a public frontend release, upload the stylesheet and modules before publishing the HTML. JavaScript modules
+require a JavaScript content type.
+
 ```bash
-export AWS_PROFILE=<your deploy profile>
-python3 validate.py                                           # must print "ok"
-aws s3 cp index.html s3://sino-sila-773994910221/index.html --content-type "text/html; charset=utf-8" --cache-control "public, max-age=300"
-aws s3 cp data/<file>.json s3://sino-sila-773994910221/data/<file>.json --content-type application/json --cache-control "public, max-age=300"
-aws cloudfront create-invalidation --distribution-id E1QGRO3D7NQZVA --paths /index.html / "/data/*"
+export AWS_PROFILE=sino-sila   # use your configured deploy profile
+SITE_BUCKET=s3://sino-sila-773994910221
+python3 validate.py
+node tools/smoke_test.mjs
+aws s3 cp assets/css/site.css "$SITE_BUCKET/assets/css/site.css" --content-type "text/css; charset=utf-8" --cache-control "public, max-age=300"
+aws s3 cp assets/js/ "$SITE_BUCKET/assets/js/" --recursive --content-type "text/javascript; charset=utf-8" --cache-control "public, max-age=300"
+aws s3 cp index.html "$SITE_BUCKET/index.html" --content-type "text/html; charset=utf-8" --cache-control "public, max-age=300"
+aws cloudfront create-invalidation --distribution-id E1QGRO3D7NQZVA --paths /index.html / "/assets/css/*" "/assets/js/*"
 ```
 
-Browser caching: pages and data say `max-age=300` (5 minutes), images `max-age=86400` (a day); keep the
-`--cache-control` flags on every upload. Photo links carry `?v=PHOTO_V` (set in `index.html`): when photos are
+For data updates, upload the changed files under `data/` with `application/json` and invalidate their paths. See
+the [weekly update runbook](../tools/weekly_update.md) for data and image uploads.
+
+Pages, styles, scripts and data use `max-age=300` (five minutes). Images use `max-age=86400` (a day). Keep the
+`--cache-control` flags on every upload. Photo links carry `?v=PHOTO_V` (set in `assets/js/ui.mjs`). When photos are
 replaced under the same file names, bump `PHOTO_V` so every browser downloads them again. New members' photos have new
 names and need no bump.
 
-Staging: copy `index.html` to `s3://…/staging/index.html` with a `<meta name="robots" content="noindex,nofollow">`
-added, sync `data/` and `assets/` under `staging/`, and invalidate `/staging/*`.
+For staging, use `s3://sino-sila-773994910221/staging` as the destination prefix. Publish the assets, data,
+translations and web manifest under that prefix, keeping the same relative paths and content types. Add
+`<meta name="robots" content="noindex,nofollow">` to the staging copy of `index.html`, publish it last,
+and invalidate `/staging/*`.
 
 ## Weekly update agent
 
@@ -71,7 +82,7 @@ senator has no bills, a total drops by more than 5, or fewer laws come back than
 
 ## Visit counter
 
-Privacy-first: no cookies, no IP addresses, no visitor IDs, only daily totals. `index.html` sends one beacon per page
+Privacy-first: no cookies, no IP addresses, no visitor IDs, only daily totals. `assets/js/app.mjs` sends one beacon per page
 to `/e` (only on sinu-sila.com, never on localhost or staging). The Lambda adds 1 to that day's counters (Manila time):
 views, visits (first page of a browser-tab session), page, referrer site, country (CloudFront's
 `CloudFront-Viewer-Country`), device and language. Bots and link-preview crawlers are skipped.

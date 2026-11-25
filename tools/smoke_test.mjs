@@ -7,17 +7,19 @@ import { createServer } from 'node:http';
 import { extname, join } from 'node:path';
 import { setTimeout as delay } from 'node:timers/promises';
 import { fileURLToPath } from 'node:url';
+import { T } from '../assets/js/messages.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const chromePath = process.env.CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const types = {
   '.html': 'text/html; charset=utf-8', '.json': 'application/json',
-  '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml',
+  '.css': 'text/css', '.js': 'text/javascript', '.mjs': 'text/javascript', '.svg': 'image/svg+xml',
   '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg',
 };
 const server = createServer(async (req, res) => {
   try {
-    const path = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
+    // Mirror the staging prefix while serving the same static files.
+    const path = decodeURIComponent(new URL(req.url, 'http://localhost').pathname).replace(/^\/staging\//, '/');
     if (path.includes('\\') || path.split('/').some(part => part.startsWith('.'))) {
       res.writeHead(404).end();
       return;
@@ -110,6 +112,7 @@ async function devtools(url, onEvent) {
 function inspect(keys, lang) {
   const problems = [];
   if (!document.querySelector('h1')) problems.push('missing h1');
+  if (getComputedStyle(document.querySelector('.flag')).display !== 'flex') problems.push('site stylesheet did not apply');
   if (document.documentElement.scrollWidth > innerWidth) {
     problems.push('horizontal overflow (' + document.documentElement.scrollWidth + ' > ' + innerWidth + ')');
   }
@@ -137,7 +140,34 @@ function inspect(keys, lang) {
   return problems;
 }
 
-async function testPage(debug, url, width, height, lang, keys) {
+async function checkSearchAndLanguage(evaluate, person) {
+  await evaluate(`(() => {
+    const q = document.getElementById('q');
+    q.focus();
+    q.value = ${JSON.stringify(person.name)};
+    q.dispatchEvent(new Event('input', {bubbles: true}));
+  })()`);
+  const profileHash = JSON.stringify('#' + person.id);
+  await until(() => evaluate(`!document.getElementById('qd').hidden &&
+    [...document.querySelectorAll('#qd [data-href]')].some(el => el.dataset.href === ${profileHash})`),
+  'header search did not find the sample senator');
+  await evaluate(`[...document.querySelectorAll('#qd [data-href]')]
+    .find(el => el.dataset.href === ${profileHash}).click()`);
+  await until(() => evaluate(`location.hash === ${profileHash} && !!document.querySelector('#app .ptabs')`),
+  'selecting a search result did not open the profile');
+  await evaluate(`(() => {
+    const picker = document.getElementById('langSel');
+    picker.value = 'fil';
+    picker.dispatchEvent(new Event('change', {bubbles: true}));
+  })()`);
+  await until(() => evaluate(`document.documentElement.lang === 'fil' && !!document.querySelector('#app .ptabs')`),
+  'changing language did not render the Filipino profile');
+  await evaluate(`document.getElementById('repB').click()`);
+  await until(() => evaluate(`document.getElementById('rep').open`), 'report dialog did not open');
+  await evaluate(`document.getElementById('repX').click()`);
+}
+
+async function testPage(debug, url, width, height, lang, keys, searchPerson) {
   const problems = new Set();
   const response = await fetch(debug + '/json/new?about:blank', { method: 'PUT', signal: AbortSignal.timeout(5_000) });
   if (!response.ok) throw new Error('Could not open Chrome tab: HTTP ' + response.status);
@@ -181,6 +211,7 @@ async function testPage(debug, url, width, height, lang, keys) {
     for (const problem of await evaluate(`(${inspect})(${JSON.stringify(keys)}, ${JSON.stringify(lang)})`)) {
       problems.add(problem);
     }
+    if (searchPerson) await checkSearchAndLanguage(evaluate, searchPerson);
   } catch (error) {
     problems.add(error.message);
   } finally {
@@ -199,9 +230,9 @@ async function run() {
     ...languages.slice(2).map(lang => json('i18n/' + lang + '.json')),
   ]);
   const keys = [...new Set([
+    ...Object.keys(T.en), ...Object.keys(T.fil),
     ...translations.flatMap(table => Object.keys(table)),
-    ...Array.from(html.matchAll(/\bt\(['"]([\w-]+)['"]|data-i18n(?:-html|-ph|-al)?="([\w-]+)"/g),
-      match => match[1] ?? match[2]),
+    ...Array.from(html.matchAll(/data-i18n(?:-html|-ph|-al)?="([\w-]+)"/g), match => match[1]),
   ])];
   const profiles = [senators[0], house.people.find(p => p.kind === 'district'),
     house.people.find(p => p.kind === 'party-list')];
@@ -228,13 +259,15 @@ async function run() {
   const pages = [[1280, 900], [375, 812]].flatMap(([width, height]) =>
     routes.map(route => ({ route, width, height, lang: 'en' })));
   pages.push(...languages.map(lang => ({ route: '', width: 1280, height: 900, lang })));
+  pages.push({ route: 'senado', width: 1280, height: 900, lang: 'en', searchPerson: senators[0] });
   let failed = 0;
-  for (const { route, width, height, lang } of pages) {
-    const problems = await testPage(debug, origin + '/#' + route, width, height, lang, keys)
+  for (const { route, width, height, lang, searchPerson } of pages) {
+    const page = (searchPerson ? '/staging/index.html' : '/') + '#' + route;
+    const problems = await testPage(debug, origin + page, width, height, lang, keys, searchPerson)
       .catch(error => [error.message]);
     if (problems.length) failed++;
     const detail = problems.length ? ' — ' + problems.join(' | ').replace(/\s+/g, ' ') : '';
-    console.log(`${problems.length ? 'FAIL' : 'PASS'} #${route} ${width}x${height} (${lang})${detail}`);
+    console.log(`${problems.length ? 'FAIL' : 'PASS'} ${page} ${width}x${height} (${lang})${detail}`);
   }
   console.log(`Smoke test: ${pages.length - failed} passed, ${failed} failed (${pages.length} total)`);
   return failed ? 1 : 0;
