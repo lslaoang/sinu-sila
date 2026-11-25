@@ -68,7 +68,7 @@ Past Congresses do not change, so `data/billhist/` and `data/bill_pairs.json` on
 the current Congress. Clone (or `git pull`) https://github.com/bettergovph/open-congress-data, run
 `python3 tools/import_bill_history.py --print-js` in a senate.gov.ph tab (20th Congress only, about 10 minutes; it paces
 itself and backs off on HTTP 429), save the file with its button, then
-`python3 tools/import_bill_history.py --ocd <clone> --senate20 <file>`. It refuses to write if a senator with bills
+`python3 tools/import_bill_history.py --ocd <clone> --senate20 <file>`. Then run `python3 tools/bill_terms.py` to refresh `data/billterms.json`. It refuses to write if a senator with bills
 has no 20th Congress rows. Skip it in the weekly run unless the maintainer asks.
 
 ## 2c. Career in office (after an election, not weekly)

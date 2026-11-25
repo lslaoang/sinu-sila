@@ -75,7 +75,7 @@
   .sbt{margin:.4rem 0 .8rem;flex-wrap:wrap} .sbt .n{font:500 .78rem var(--mono);color:var(--mute);margin-left:.2rem}
   .ladder{font-weight:600;margin:.4rem 0 0;max-width:70ch}
   @media (max-width:40rem){.rankbar .wide{display:none}}
-  .rankbar{margin:1.2rem 0 1rem;max-width:44rem} .rankbar .seg{display:inline-grid;width:min(100%,36rem);vertical-align:middle}
+  .rankbar{margin:1.2rem 0 1rem;max-width:44rem} .rterm{display:inline-flex;align-items:center;gap:.5rem;margin:.6rem 1rem 0 0;font-size:.9rem;font-weight:700} .rterm select{height:2.4rem;padding:0 .6rem;border:1.5px solid var(--rule);border-radius:var(--r);background:var(--paper);color:var(--ink);font:inherit;font-weight:400} .rankbar .seg{display:inline-grid;width:min(100%,36rem);vertical-align:middle}
   .rdir{margin:.5rem 0 0 .6rem;min-height:44px;padding:.4rem .9rem;border:1px solid var(--rule);border-radius:99px;background:var(--bg);color:var(--ink);font:600 .88rem var(--sans);cursor:pointer;vertical-align:middle} .rdir:hover{background:color-mix(in srgb,var(--blue) 12%,var(--bg))}
   .rhead button.rkv{border:0;background:none;padding:.35rem 0;min-height:32px;font:inherit;color:inherit;cursor:pointer;text-align:right} .rhead button.rkv:hover{color:var(--blue);text-decoration:underline} .rankbar .note{margin:.5rem 0 0} .rhow summary{padding:.4rem 0;min-height:0;font-size:.9rem}
   .rlist{list-style:none;padding:0;margin:0 0 1rem;border-top:1.5px solid var(--rule)} .rlist .rinfo{padding:.6rem 0;color:var(--mute);font-size:.9rem;border-bottom:1px solid var(--line)}
@@ -251,6 +251,20 @@
   .tl li::before{content:"";position:absolute;left:-1.7rem;top:1.1rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--rule)}
   .badge{font-size:.8rem;font-weight:600;color:var(--red)} .tl small{color:var(--mute)}
   .soon{border:2px dashed var(--line);border-radius:var(--r);padding:1rem;color:var(--mute);text-align:center}
+  .lk{background:none;border:1px solid var(--line)} .lk-local{border-color:var(--sage);color:var(--sage)} .lk-national{border-color:var(--blue);color:var(--blue)} .lkmix b{color:var(--ink)} .lkn{display:block;margin-top:.2rem;font-size:.8rem}
+  .newbar{display:block;margin:1.2rem 0 0;padding:.8rem 1rem;border:1.5px solid var(--rule);border-radius:var(--r);background:var(--paper);color:var(--ink);text-decoration:none;line-height:1.5} .newbar:hover b{text-decoration:underline} .newbar b{color:var(--blue);white-space:nowrap} .newbar .pill{background:var(--yellow);color:#0c1b33;font-weight:700}
+  .prose{max-width:44rem} .prose h1{margin:.2rem 0 .6rem;font:700 clamp(2.2rem,5vw,3.2rem)/1.05 var(--serif);letter-spacing:-.02em} .prose .lede{font-size:1.15rem;color:var(--mute)} .prose h2{font:700 1.35rem var(--serif);margin:1.8rem 0 .5rem}
+  .steps{padding-left:1.4rem;margin:1.5rem 0} .steps li{margin:0 0 1.2rem;padding-left:.3rem} .steps h2{margin:0 0 .3rem;font-size:1.2rem} .steps p{margin:0 0 .3rem}
+  .asks{padding-left:1.2rem} .asks li{margin:.4rem 0}
+  .rel{border-top:1.5px solid var(--rule);margin-top:1.5rem} .rel h2{font:600 1rem var(--mono);margin:1rem 0 .6rem} .rel ul{list-style:none;padding:0;margin:0;display:grid;gap:1rem} .rel li{line-height:1.5}
+  .cslist{list-style:none;margin:.5rem 0 2rem;padding:0;border-top:1.5px solid var(--rule)}
+  .csr{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:.5rem 1.5rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+  .csp{display:flex;gap:.7rem;align-items:center;color:var(--ink);text-decoration:none;align-self:start} .csp:hover b{color:var(--blue);text-decoration:underline}
+  .csp .av{width:2.75rem;height:2.75rem;font-size:.85rem;flex:none} .csp b{display:block;line-height:1.25} .csp small{display:block;color:var(--mute);font-size:.85rem}
+  .csr ul{list-style:none;margin:0;padding:0;display:grid;gap:.7rem} .csr ul li{line-height:1.45} .csr ul small{display:block;color:var(--mute);font-size:.85rem;margin-top:.15rem}
+  .cs-convicted{background:var(--red);color:#fff} .cs-pending,.cs-filed,.cs-appealed{background:var(--yellow);color:#0c1b33}
+  .cslnk{font-size:.9rem;align-self:center;white-space:nowrap} .cspl{margin:.9rem 0 .35rem}
+  @media (max-width:40rem){.csr{grid-template-columns:1fr}}
   .cterms{margin:0 0 .8rem;display:flex;flex-wrap:wrap;gap:.4rem 1.2rem} .cterms b{font-weight:700} .cterms span{color:var(--mute)}
   .career{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);max-width:52rem}
   .career li,.career details>div{display:grid;grid-template-columns:3.4rem minmax(0,1fr) auto;gap:.2rem 1rem;align-items:baseline;padding:.6rem 0;border-bottom:1px solid var(--line)}
@@ -407,7 +421,7 @@
 <noscript><p class="wrap">This site needs JavaScript to show the records.</p></noscript>
 <button id="top" type="button" aria-label="Back to top" data-i18n-al="topAl" hidden>↑</button>
 <footer><div class="wrap">
-  <div class="row1"><span data-i18n-html="footShort"><b>Sino Sila?</b> is an independent project, not affiliated with the Senate or the House.</span><button class="lnk" id="repB" data-i18n="repB" hidden>Report an error</button></div>
+  <div class="row1"><span data-i18n-html="footShort"><b>Sino Sila?</b> is an independent project, not affiliated with the Senate or the House.</span><a class="lnk" href="#gabay" data-i18n="guideL">How to use this</a><a class="lnk" href="#bago" data-i18n="newL">What's new</a><button class="lnk" id="repB" data-i18n="repB" hidden>Report an error</button></div>
   <details><summary data-i18n="howH">How we do this</summary>
     <p data-i18n-html="foot1">Every fact links to the public source it came from. Senate data comes from the Senate's Legislative Information System. House rosters come from Wikipedia and are still being checked against other sources. Portraits come from Wikimedia Commons, credited on each profile. School seals come from Wikipedia and Wikimedia Commons and belong to their institutions.</p>
     <p data-i18n="foot2">Court cases come from news and court records, one person at a time. “Not yet checked” means we have not confirmed a record from two independent sources, which is not the same as a clean record. A case listed here is a public record, not a finding of guilt. If you spot a mistake or something out of date, we want to fix it.</p></details>
@@ -443,7 +457,7 @@ const trackOf = id => { const l = cases.cases[id] || [];
 const trackRank = id => TRACKS.findIndex(t => t[0] === trackOf(id));
 const trackLabel = id => TRACKS[trackRank(id)][1], trackColor = id => TRACKS[trackRank(id)][2];
 const CHECKED = ['convicted', 'pending', 'resolved', 'none'], ALLTR = [...CHECKED, 'unchecked'];
-const state = {lens: 'track', sel: 'everyone', ch: 'all', tr: new Set(ALLTR), school: null, q: '', leaders: false, sort: 'az', rank: '', rdir: 'desc', hpl: null, hp: null, hs: '', ss: '', ps: ''};
+const state = {lens: 'track', sel: 'everyone', ch: 'all', tr: new Set(ALLTR), school: null, q: '', leaders: false, sort: 'az', rank: '', rdir: 'desc', hpl: null, hp: null, hs: '', ss: '', ps: '', rterm: 20, cst: '', cg: '', cq: '', cch: ''};
 
 const hashName = () => decodeURIComponent(location.hash.slice(1)), onHome = () => !hashName(), onExplore = () => hashName() === 'explore';
 
@@ -467,7 +481,7 @@ const T = {
     cSrcS: d => `Mga kontak ng opisina ayon sa Senado (senate.gov.ph), na-update ${d}. Opisyal na channel lang ng opisina ang nakalista.`, cSrcH: 'Nasa opisyal na profile sa congress.gov.ph ang telepono at email ng opisina.', cBornSrc: 'Petsa at lugar ng kapanganakan mula sa Wikidata.', cNone: 'Wala pang nakalistang kontak.', cSrcH2: d => `Mga kontak ng opisina ayon sa Kamara (congress.gov.ph), kinuha ${d}. Walang email na inilalathala ang Kamara para sa mga miyembro.`, rkL: 'Ranggo ayon sa panukala', rkName: 'Pangalan', rkFiled: 'Inihain', rkPassed: c => c === 'senate' ? 'Pumasa<span class="wide"> sa Senado</span>' : 'Pumasa<span class="wide"> sa Kamara</span>', rkLaw: 'Naging batas',
     rkNoteS: 'Mga panukalang inihain ng bawat senador bilang may-akda, ilan ang pumasa sa Senado, at ilan ang naging batas. Mula sa Senate Legislative Information System.',
     rkNoteH: d => `Mga panukalang inihain bilang principal author, ilan ang pumasa sa Kamara, at ilan ang naging batas. Bilang din ang panukalang isinama sa substitute bill kapag pumasa ito. Hindi naitatala ang co-author. Mula sa BatasWatch (bills.juris.ph), batay sa talaan ng Kamara hanggang ${d}.`,
-    rkHow: 'Paano binibilang', rkMost: 'Pinakamarami muna', rkFewest: 'Pinakakaunti muna', rkDirAl: 'Baliktarin ang ayos', rkVol: 'Dami ang ipinapakita, hindi kalidad o halaga ng mga panukala.', rkWho: 'Mambabatas', rkShow: (n, tot, k, ch) => k === 'filed' ? `${n} sa ${tot} ang nakapaghain ng kahit isang panukala.` : `${n} sa ${tot} ang may kahit isang panukalang ${k === 'law' ? 'naging batas' : ch === 'senate' ? 'pumasa sa Senado' : 'pumasa sa Kamara'}.`, rkLine: r => `${r.filed} inihain · ${r.passed} pumasa · ${r.law} batas`,
+    rkTerm: 'Termino', rkPast: c => `Mga senador at kinatawan ngayon, sa ${c} nila. Mula sa open-congress-data ng BetterGov: lahat ng panukala kung saan nakalista sila bilang may-akda o co-author. Sa Kamara bago ang ika-20 Kongreso, 1 sa bawat 4 na panukala ang walang status sa source, kaya maaaring kulang ang bilang ng pumasa at naging batas.`, rkHow: 'Paano binibilang', rkMost: 'Pinakamarami muna', rkFewest: 'Pinakakaunti muna', rkDirAl: 'Baliktarin ang ayos', rkVol: 'Dami ang ipinapakita, hindi kalidad o halaga ng mga panukala.', rkWho: 'Mambabatas', rkShow: (n, tot, k, ch) => k === 'filed' ? `${n} sa ${tot} ang nakapaghain ng kahit isang panukala.` : `${n} sa ${tot} ang may kahit isang panukalang ${k === 'law' ? 'naging batas' : ch === 'senate' ? 'pumasa sa Senado' : 'pumasa sa Kamara'}.`, rkLine: r => `${r.filed} inihain · ${r.passed} pumasa · ${r.law} batas`,
     hbLead: n => `${n} bilang unang nakalistang may-akda`, hbPassed: 'pumasa sa Kamara', hbLaw: 'naging batas', hbFiled: 'inihain', hbLatest: 'Pinakabagong panukala', hbLaws: 'Naging batas',
     hbNone: 'Wala pang talaan ng panukala para sa miyembrong ito.', hbAll: 'Lahat ng panukala sa BatasWatch', ladder: (f, p, l, a) => `${f} inihain → ${p} pumasa sa Senado → ${l} naging batas bilang may-akda (${a} batas na sinuportahan sa anumang papel)`, facesH: n => `Ang ${n} senador mo`, facesAll: 'Tingnan ang Senado', bHow: 'Paano nagiging batas ang badyet', bHere: 'Dito na ang 2027 sa datos namin',
     bSteps: [['NEP', 'Agosto: ang mungkahing badyet ng Pangulo (National Expenditure Program), inihanda ng DBM at ipinadala sa Kongreso.'],
@@ -534,6 +548,13 @@ const T = {
     since: 'Nasa puwesto mula ', source: 'Source', houseLater: 'Susunod pa: pinag-aralan ng mga kinatawan sa Kamara.',
     partyNote: d => `Partido at bloc ayon sa Wikipedia noong ${d}. May mga miyembrong nagpapalit ng partido habang nasa termino, kaya i-double check bago umasa rito.`,
     st_filed: 'Naihain', st_pending: 'Nakabinbin', st_suspended: 'Suspendido', st_appealed: 'Inapela', st_dismissed: 'Na-dismiss', st_acquitted: 'Napawalang-sala', st_convicted: 'Nahatulan', st_decided: 'Napagpasyahan',
+    lk_national: 'Pambansa', lk_local: 'Lokal', lk_franchise: 'Prangkisa', lk_day: 'Paggunita', lkAmends: 'Nag-aamyenda ng batas', lkMix: m => `Sa mga batas na ito: ${m}.`,
+    lkNote: 'Pambansa, lokal (isang lugar: paaralan, ospital, kalsada, korte, bagong lungsod), prangkisa ng kumpanya, o araw ng paggunita: inuuri ayon sa mga salita sa pamagat, kaya maaaring may mali. Pindutin ang "Report an error" kung may mali.',
+    guideL: 'Paano gamitin', newL: 'Ano ang bago', newBar: 'Mula sa mga mungkahi ninyo: listahan ng may kaso, ranggo ayon sa termino, uri ng bawat batas, at gabay sa botante.', newSee: 'Tingnan ang bago',
+    csK: n => `${n} mambabatas na may nakatalang kaso`, csH: 'Mga mambabatas na may kaso', csLink: 'Tingnan ang lahat ng may kaso',
+    csNote: 'Bawat kaso na nakita namin sa mga rekord ng korte at sa balita, sa lahat ng senador at kinatawan. Ang kaso o reklamo ay paratang lang hangga\'t walang desisyon. Hindi pa namin naitatala kung sino ang nakakulong.',
+    csSearch: 'Pangalan o salita sa kaso', csAllCh: 'Senado at Kamara', csAllSt: 'Lahat ng status', csAllCg: 'Lahat ng uri', csInfo: (n, p) => `${n} kaso · ${p} mambabatas`, csSt: 'Status', csCg: 'Uri ng kaso',
+    cg_plunder: 'Plunder', cg_graft: 'Graft', cg_malversation: 'Malversation', cg_flood: 'Flood control', cg_libel: 'Libel', cg_violence: 'Pagpatay', cg_election: 'Halalan', cg_admin: 'Administratibo',
     k_criminal: 'Kriminal', k_administrative: 'Administratibo', k_election: 'Halalan', k_other: 'Iba pa',
     r_accused: 'akusado', r_respondent: 'respondent', r_petitioner: 'nagpetisyon', r_party: 'partido sa kaso',
     foot1: 'Bawat impormasyon ay may link sa pampublikong pinagmulan nito. Ang datos ng Senado ay mula sa Legislative Information System ng Senado. Ang listahan ng Kamara ay mula sa Wikipedia at sinusuri pa laban sa ibang source. Ang mga larawan ay mula sa Wikimedia Commons, may kredito sa bawat profile. Ang mga selyo ng paaralan ay pag-aari ng kani-kanilang institusyon.',
@@ -558,7 +579,7 @@ const T = {
     cSrcS: d => `Office contacts as published by the Senate (senate.gov.ph), updated ${d}. Only official office channels are listed.`, cSrcH: 'Office phone and email are on the official profile at congress.gov.ph.', cBornSrc: 'Date and place of birth from Wikidata.', cNone: 'No contact details listed yet.', cSrcH2: d => `Office contacts as published by the House (congress.gov.ph), retrieved ${d}. The House does not publish members' emails.`, rkL: 'Rank by bills', rkName: 'Name', rkFiled: 'Filed', rkPassed: c => c === 'senate' ? 'Passed<span class="wide"> the Senate</span>' : 'Passed<span class="wide"> the House</span>', rkLaw: 'Became law',
     rkNoteS: 'Bills each senator filed as author, how many passed the Senate, and how many of them became law. From the Senate Legislative Information System.',
     rkNoteH: d => `Bills filed as a principal author, how many passed the House, and how many became law. A bill folded into a substitute bill counts when the substitute passed. Co-authors are not recorded. From BatasWatch (bills.juris.ph), House records as of ${d}.`,
-    rkHow: 'How we count', rkMost: 'Most first', rkFewest: 'Fewest first', rkDirAl: 'Reverse the order', rkVol: 'Counts show volume, not the quality or importance of the bills.', rkWho: 'Lawmaker', rkShow: (n, tot, k, ch) => k === 'filed' ? `${n} of ${tot} have filed at least one bill.` : `${n} of ${tot} have at least one bill that ${k === 'law' ? 'became law' : ch === 'senate' ? 'passed the Senate' : 'passed the House'}.`, rkLine: r => `${r.filed} filed · ${r.passed} passed · ${r.law} ${r.law === 1 ? 'law' : 'laws'}`,
+    rkTerm: 'Term', rkPast: c => `Today's senators and representatives, in the ${c}. From BetterGov open-congress-data: every bill that lists them as an author or co-author. House records before the 20th Congress have no status for about 1 in 4 bills, so passed and law counts there can be low.`, rkHow: 'How we count', rkMost: 'Most first', rkFewest: 'Fewest first', rkDirAl: 'Reverse the order', rkVol: 'Counts show volume, not the quality or importance of the bills.', rkWho: 'Lawmaker', rkShow: (n, tot, k, ch) => k === 'filed' ? `${n} of ${tot} have filed at least one bill.` : `${n} of ${tot} have at least one bill that ${k === 'law' ? 'became law' : ch === 'senate' ? 'passed the Senate' : 'passed the House'}.`, rkLine: r => `${r.filed} filed · ${r.passed} passed · ${r.law} ${r.law === 1 ? 'law' : 'laws'}`,
     hbLead: n => `${n} as the first-listed author`, hbPassed: 'passed the House', hbLaw: 'became law', hbFiled: 'filed', hbLatest: 'Latest bills', hbLaws: 'Became law',
     hbNone: 'No bill records for this member yet.', hbAll: 'All bills on BatasWatch', ladder: (f, p, l, a) => `${f} filed → ${p} passed the Senate → ${l} became law as author (${a} laws backed in any role)`, facesH: n => `Your ${n} senators`, facesAll: 'See the Senate', bHow: 'How a budget becomes law', bHere: '2027 is here in our data',
     bSteps: [['NEP', 'August: the President’s proposed budget (National Expenditure Program), prepared by DBM and sent to Congress.'],
@@ -625,6 +646,13 @@ const T = {
     since: 'In office since ', source: 'Source', houseLater: 'Coming later: education for House members.',
     partyNote: d => `Party and bloc as listed on Wikipedia on ${d}. Members change parties during a term (several did in 2026), so check before relying on it.`,
     st_filed: 'Filed', st_pending: 'Pending', st_suspended: 'Suspended', st_appealed: 'On appeal', st_dismissed: 'Dismissed', st_acquitted: 'Acquitted', st_convicted: 'Convicted', st_decided: 'Decided',
+    lk_national: 'National', lk_local: 'Local', lk_franchise: 'Franchise', lk_day: 'Commemorative day', lkAmends: 'Amends a law', lkMix: m => `Of these laws: ${m}.`,
+    lkNote: 'National, local (one place: a school, hospital, road, court or new city), a company franchise, or a commemorative day: sorted by words in the title, so a few may be wrong. Tap "Report an error" if you spot one.',
+    guideL: 'How to use this', newL: "What's new", newBar: 'From your suggestions: everyone with a court case on one page, rankings by term, the kind of each law, and a guide for voters.', newSee: "See what's new",
+    csK: n => `${n} lawmakers with a case on record`, csH: 'Lawmakers with court cases', csLink: 'See everyone with a case',
+    csNote: 'Every case we found in court records and the news, across all senators and representatives. A case or complaint is an allegation until it is decided. We do not track yet who is in detention.',
+    csSearch: 'Name or word in the case', csAllCh: 'Senate and House', csAllSt: 'All statuses', csAllCg: 'All kinds', csInfo: (n, p) => `${n} case${n === 1 ? '' : 's'} · ${p} lawmaker${p === 1 ? '' : 's'}`, csSt: 'Status', csCg: 'Kind of case',
+    cg_plunder: 'Plunder', cg_graft: 'Graft', cg_malversation: 'Malversation', cg_flood: 'Flood control', cg_libel: 'Libel', cg_violence: 'Killings', cg_election: 'Election', cg_admin: 'Administrative',
     k_criminal: 'Criminal', k_administrative: 'Administrative', k_election: 'Election', k_other: 'Other',
     r_accused: 'accused', r_respondent: 'respondent', r_petitioner: 'petitioner', r_party: 'party',
     foot1: 'Every fact links to the public source it came from. Senate data comes from the Senate\'s Legislative Information System. House rosters come from Wikipedia and are still being checked against other sources. Portraits come from Wikimedia Commons, credited on each profile. School seals come from Wikipedia and Wikimedia Commons and belong to their institutions.',
@@ -687,15 +715,19 @@ const lawCount = id => rolesOf(id).filter(l => l.law).length;
 const billCount = id => bills[id]?.total || 0;
 // filed -> passed their chamber -> became law. Senate: our Senate data (author role). House: BatasWatch principal authors.
 const SEN_PASSED = /HOUSE OF REP|BOTH HOUSES|PRESIDENT|CONFEREN|LAPSED|ENROLLED/;
+let terms = null;   // data/billterms.json: per-term counts before the 20th Congress, fetched when a past term is picked
+const loadTerms = () => terms ? Promise.resolve(terms) : fetch('data/billterms.json').then(r => r.ok ? r.json() : {people: {}}).catch(() => ({people: {}})).then(j => terms = j);
+const termRec = o => { const x = terms?.people?.[o.id]?.[o.body === 'house' ? 'H' : 'S']?.[state.rterm]; return x ? {filed: x[0], passed: x[1], law: x[2]} : null; };
 const rec = o => { if (o.body !== 'house') { const b = bills[o.id];
     return {filed: b?.total || 0, passed: b ? Object.entries(b.byStatus).reduce((n, [k, v]) => n + (SEN_PASSED.test(k) ? v : 0), 0) : 0,
       law: laws.bills.filter(l => [].concat(l.author).includes(o.id) && !/^Enrolled/.test(l.status)).length}; }
   const m = hb.members[o.id]; return m ? {filed: m[0], lead: m[1], passed: m[2], law: m[3]} : null; };
 const RANKS = [['', 'rkName'], ['filed', 'rkFiled'], ['passed', 'rkPassed'], ['law', 'rkLaw']];
 const rankBar = ch => `<div class="rankbar"><p class="pl" id="rkL">${t('rkL')}</p><div class="seg seg4" role="group" aria-labelledby="rkL">${RANKS.map(([k, l]) => `<button data-rank="${k}" aria-pressed="${state.rank === k}">${t(l, ch)}</button>`).join('')}</div><button type="button" class="rdir" data-rdir aria-label="${esc(t('rkDirAl'))}" ${state.rank ? '' : 'hidden'}>${state.rdir === 'asc' ? '↑ ' + t('rkFewest') : '↓ ' + t('rkMost')}</button>
+  <label class="rterm"><span>${t('rkTerm')}</span><select id="rtSel">${[20, 19, 18, 17, 16, 15, 14, 13].map(c => opt(c, t('sbCong', c) + (c === 20 ? ` (${t('cNow')})` : ''), state.rterm === c)).join('')}</select></label>
   <p class="note">${t('rkVol')}</p><details class="more rhow"><summary>${t('rkHow')}</summary><p class="note">${ch === 'senate' ? t('rkNoteS') : t('rkNoteH', fmtDay(hb._meta.discovered_as_of || hb._meta.retrieved || ''))}</p></details></div>`;
 const ranked = pool => { const k = state.rank, d = state.rdir === 'asc' ? -1 : 1;
-  return pool.map(o => [o, rec(o)]).filter(([, r]) => r).sort((a, b) => d * (b[1][k] - a[1][k]) || lastName(a[0]).localeCompare(lastName(b[0]))); };
+  return pool.map(o => [o, state.rterm < 20 ? termRec(o) : rec(o)]).filter(([, r]) => r).sort((a, b) => d * (b[1][k] - a[1][k]) || lastName(a[0]).localeCompare(lastName(b[0]))); };
 const rkCol = (k, ch) => ({filed: t('rkFiled'), passed: t('rkPassed', ch).replace(/<[^>]+>/g, ''), law: t('rkLaw')})[k];
 const rankList = (rows, ch) => { if (!rows.length) return '';
   const k = state.rank, max = Math.max(...rows.map(([, r]) => r[k]), 1), arrow = state.rdir === 'asc' ? ' ↑' : ' ↓';
@@ -795,7 +827,7 @@ function showRank(listId, rankId, pool, ch) {   // true when the ranked list is 
   const l = document.getElementById(listId), r = document.getElementById(rankId); if (!l || !r) return false;
   const on = !!state.rank && !onExplore(); l.hidden = on; r.hidden = !on; if (!on) return false;
   const rows = ranked(pool.filter(o => state.tr.has(trackOf(o.id))));
-  r.innerHTML = `<li class="rinfo">${esc(t('rkShow', rows.filter(([, x]) => x[state.rank] > 0).length, pool.length, state.rank, ch))}</li>` + (rankList(rows, ch) || `<li class="soon">${t('noMatch')}</li>`);
+  r.innerHTML = `<li class="rinfo">${esc(t('rkShow', rows.filter(([, x]) => x[state.rank] > 0).length, state.rterm < 20 ? rows.length : pool.length, state.rank, ch))}${state.rterm < 20 ? `<br><small>${esc(t('rkPast', t('sbCong', state.rterm)))}</small>` : ''}</li>` + (rankList(rows, ch) || `<li class="soon">${t('noMatch')}</li>`);
   return true;
 }
 function updateAll() {
@@ -929,7 +961,7 @@ const tkHtml = (id, cls) => trChip(trackOf(id), trackLabel(id), cls);
 const trCounts = pool => Object.fromEntries(ALLTR.map(k => [k, pool.filter(o => trackOf(o.id) === k).length]));
 const trChips = pool => { const c = trCounts(pool);
   return `<div class="trs" role="group" aria-label="${esc(t('fStatus'))}"><button class="chip" data-tr="everyone" aria-pressed="${state.sel === 'everyone'}">${t('allStatus')} <small class="num">${pool.length}</small></button>`
-    + TRACKS.filter(([k]) => c[k] || state.sel === k).map(([k, l]) => `<button class="chip" data-tr="${k}" aria-pressed="${state.sel === k}">${esc(l)} <small class="num">${c[k]}</small></button>`).join('') + '</div>'; };
+    + TRACKS.filter(([k]) => c[k] || state.sel === k).map(([k, l]) => `<button class="chip" data-tr="${k}" aria-pressed="${state.sel === k}">${esc(l)} <small class="num">${c[k]}</small></button>`).join('') + `<a class="lnk cslnk" href="#mga-kaso">${t('csLink')} →</a></div>`; };
 const distBar = (pool, label) => { const c = trCounts(pool), on = TRACKS.filter(([k]) => c[k]);
   return `<figure class="dist"><figcaption><b>${esc(label)}</b><span class="num">${fmtDay(casesAsOf())}</span></figcaption>
     <div class="stack" role="img" aria-label="${esc(on.map(([k, l]) => `${c[k]} ${l}`).join(', '))}">${on.map(([k]) => `<span class="st-${k}" style="flex:${c[k]}"></span>`).join('')}</div>
@@ -957,6 +989,7 @@ function home() {
         <div><dt>Party-list <small>(${t('gGroups', groupsN)})</small></dt><span class="dots"></span><dd>${plm.length}</dd></div>
         <div class="when"><dt>${t('gMembers')}</dt><span class="dots"></span><dd>${fmtDay(membersAsOf())}</dd></div>
         <div class="when"><dt>${t('gCases')}</dt><span class="dots"></span><dd>${fmtDay(casesAsOf())}</dd></div></dl></aside></section>
+    <a class="newbar" href="#bago"><span class="pill">${lang === 'fil' ? 'Bago' : 'New'}</span> ${t('newBar')} <b>${t('newSee')} →</b></a>
     <div class="out" id="homeOut" aria-live="polite"></div>
     <section class="out faces" aria-labelledby="fH"><div class="shead"><h2 id="fH">${t('facesH', data.length)}</h2><a href="#senado">${t('facesAll')} →</a></div>
       <ul>${[...data].sort((a, b) => lastName(a).localeCompare(lastName(b))).map((o, _, all) => `<li><a href="#${esc(o.id)}" aria-label="${esc(clean(o.name))}"><span class="ph">${o.photo ? `<img src="${esc(pv(o.photo))}" alt="" loading="lazy">` : `<span class="ini" aria-hidden="true">${initials(o.name)}</span>`}</span><small aria-hidden="true">${all.filter(x => lastName(x) === lastName(o)).length > 1 ? esc(clean(o.name)[0]) + '. ' : ''}${esc(lastName(o))}</small></a></li>`).join('')}</ul></section>
@@ -1029,9 +1062,9 @@ function eduHtml(id) {
 const more = (items, n = 3) => items.slice(0, n).join('') + (items.length > n ? `<details class="more"><summary>${t('showMore', items.length - n)}</summary>${items.slice(n).join('')}</details>` : '');
 function lawsHtml(id) {
   const rs = rolesOf(id);
-  return `<h3 class="h" id="batas">${t('hLaws')}</h3>` + (rs.length ? more(rs.map(l => `<a class="bill" href="https://senate.gov.ph/legislative-documents/bills/${esc(l.id)}" target="_blank" rel="noopener">
+  return `<h3 class="h" id="batas">${t('hLaws')}</h3>` + (rs.length ? lawMix(rs.map(l => l.title)) + more(rs.map(l => `<a class="bill" href="https://senate.gov.ph/legislative-documents/bills/${esc(l.id)}" target="_blank" rel="noopener">
       <b>${esc(title(l.title))}</b><br><small>${esc(l.no)} · ${esc(l.status)}</small>
-      ${l.roles.map(r => `<span class="pill">${r}</span>`).join(' ')}</a>`))
+      ${l.roles.map(r => `<span class="pill">${r}</span>`).join(' ')} ${lawTags(l.title)}</a>`))
     : `<p class="soon">${t('lawsNone')}</p>`)
     + `<p class="note">As listed by the Senate for the 20th Congress. Bills folded into another bill are not detected unless the Senate marks them so.</p>`;
 }
@@ -1142,9 +1175,21 @@ function hbHtml(o) {
 }
 const hbDetail = (o, D, P) => { const m = D?.members[o.id]; if (!m) return ''; const pr = P?.pairs || {};
   const sv = no => { const x = pr['HBN-' + parseInt(String(no).replace(/\D/g, ''), 10)]; return x ? `<span class="ver">${t('sVer')}: <a href="https://senate.gov.ph/legislative-documents/bills/${esc(x[1])}" target="_blank" rel="noopener">${esc(x[0])} ↗</a></span>` : ''; };
-  const row = ([no, ti, d, st, u]) => `<div class="bill sbr"><a href="${esc(u || `https://bills.juris.ph/bills/house/${no.toLowerCase()}`)}" target="_blank" rel="noopener"><b>${esc(title(ti))}</b><span class="sr"> (opens BatasWatch)</span></a><br><small>${esc(no)}${d ? ' · ' + esc(fmtDay(d)) : ''}</small>${st ? ` <span class="pill">${esc(st.length > 60 ? st.slice(0, 58) + '…' : st)}</span>` : ''}${sv(no)}</div>`;
-  return (m.laws.length ? `<h4>${t('hbLaws')}</h4>${more(m.laws.map(([no, ti, st]) => row([no, ti, '', st])))}` : '')
+  const row = ([no, ti, d, st, u]) => `<div class="bill sbr"><a href="${esc(u || `https://bills.juris.ph/bills/house/${no.toLowerCase()}`)}" target="_blank" rel="noopener"><b>${esc(title(ti))}</b><span class="sr"> (opens BatasWatch)</span></a><br><small>${esc(no)}${d ? ' · ' + esc(fmtDay(d)) : ''}</small>${st ? ` <span class="pill">${esc(st.length > 60 ? st.slice(0, 58) + '…' : st)}</span>` : ''} ${lawTags(ti)}${sv(no)}</div>`;
+  return (m.laws.length ? `<h4>${t('hbLaws')}</h4>${lawMix(m.laws.map(l => l[1]))}${more(m.laws.map(([no, ti, st]) => row([no, ti, '', st])))}` : '')
     + `<p class="note"><a href="${esc(m.bw)}" target="_blank" rel="noopener">${t('hbAll')} ↗</a></p>`; };
+/* what kind of law: from title words (the Senate's short titles put the place in brackets: "REGIONAL TRIAL COURT (DANAO, CEBU)") */
+const LK_FR = /franchise|telecom|\bcompany\b|electric cooperative|broadcast|\bradio\b|television|\bcable\b|communications,? inc|\binc\.?\s*$|incorporated\s*$|\bco\.,? inc/i;
+const LK_DAY = /(^|[^-\d])\b(day|week|month)\b|holiday|anniversary|araw ng|of every year/i;
+const LK_LOC = /hospital|medical center|high school|integrated school|elementary school|\bcampus|engineering office|trial court|\brtc\b|charter of the city|\bcity of\b|municipality of|province of|barangay|\broad\b|highway|bridge|\bave(nue)?\b|\bstreet\b|state university|state college|tourism development area|schools division|district office|extension office|\brenam|\bconvert|\bseparat|bed capacity|\bport\b|airport|protected (area|landscape)|watershed|cityhood/i;
+let placeRe_; const placeRe = () => placeRe_ ||= new RegExp(`\\b(${places().map(p => fold(p).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})\\b`, 'i');
+const lawKind = ti => { const p = ti.match(/\(([^)]*)\)\s*$/);
+  if (LK_FR.test(ti) || /corporation\s*$/i.test(ti) && !/^(extending|amending|creating|strengthening)|charter|code/i.test(ti)) return 'franchise';
+  if (LK_DAY.test(ti)) return 'day';
+  return LK_LOC.test(ti) || p && (p[1].includes(',') || /city/i.test(p[1]) || placeRe().test(fold(p[1]))) ? 'local' : 'national'; };
+const lawTags = ti => `<span class="pill lk lk-${lawKind(ti)}">${t('lk_' + lawKind(ti))}</span>${/\bamend|\brepeal/i.test(ti) ? ` <span class="pill lk">${t('lkAmends')}</span>` : ''}`;
+const lawMix = titles => { if (!titles.length) return ''; const c = {}; titles.forEach(x => c[lawKind(x)] = (c[lawKind(x)] || 0) + 1);
+  return `<p class="note lkmix">${t('lkMix', ['national', 'local', 'franchise', 'day'].filter(k => c[k]).map(k => `<b>${c[k]}</b> ${esc(t('lk_' + k).toLowerCase())}`).join(' · '))} <span class="lkn">${esc(t('lkNote'))}</span></p>`; };
 const sbP = {}, loadSb = id => sbP[id] ||= Promise.all([fetch(`data/billhist/${id}.json`).then(r => r.ok ? r.json() : null).catch(() => null), loadPairs()]).then(([D, P]) => D && {...D, pairs: P?.pairs || {}});
 let pairsP; const loadPairs = () => pairsP ||= fetch('data/bill_pairs.json').then(r => r.ok ? r.json() : null).catch(() => null);
 const hbUrl = no => `https://bills.juris.ph/bills/house/hb${String(no).replace(/\D/g, '').padStart(5, '0')}`;   // 20th Congress House bill on BatasWatch
@@ -1156,13 +1201,14 @@ function sbHtml(D) {   // a lawmaker's bills in every term (both chambers), filt
   const verLink = (c, ch, no, cp) => { if (!cp) return '';
     const u = c !== 20 ? '' : ch === 'S' ? hbUrl(cp) : senUrl(cp);
     return `<span class="ver">${t(ch === 'S' ? 'hVer' : 'sVer')}: ${u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(cp)} ↗</a>` : esc(cp)}</span>`; };
-  const stat = st => { if (!st) return ''; const bk = bucketOf(st);
-    return ` <span class="pill">${esc(/PRESIDENT|LAPSED|Republic Act|enacted/i.test(st) ? t('rkLaw') : bk !== 'Other' ? bk : st.length > 48 ? st.slice(0, 46) + '…' : st)}</span>`; };
+  const isLaw = st => /PRESIDENT|LAPSED|Republic Act|enacted/i.test(st || '');
+  const stat = (st, ti) => { if (!st) return ''; const bk = bucketOf(st);
+    return ` <span class="pill">${esc(isLaw(st) ? t('rkLaw') : bk !== 'Other' ? bk : st.length > 48 ? st.slice(0, 46) + '…' : st)}</span>${isLaw(st) ? ' ' + lawTags(ti) : ''}`; };
   const row = ([c, ch, no, ti, d, st, cp, url]) => `<div class="bill sbr"><a href="${esc(url)}" target="_blank" rel="noopener"><b>${esc(title(ti))}</b><span class="sr"> (opens the source)</span></a><br>
-      <small>${both ? `<span class="chb">${ch === 'S' ? 'Senate' : 'House'}</span> ` : ''}${esc(no)} · ${esc(t('sbCong', c))}${d ? ' · ' + esc(/^\d{4}-\d\d-\d\d/.test(d) ? fmtDay(d.slice(0, 10)) : d) : ''}</small>${stat(st)}${verLink(c, ch, no, cp)}</div>`;
+      <small>${both ? `<span class="chb">${ch === 'S' ? 'Senate' : 'House'}</span> ` : ''}${esc(no)} · ${esc(t('sbCong', c))}${d ? ' · ' + esc(/^\d{4}-\d\d-\d\d/.test(d) ? fmtDay(d.slice(0, 10)) : d) : ''}</small>${stat(st, ti)}${verLink(c, ch, no, cp)}</div>`;
   return `<h4>${t('sbH')}</h4><div class="chips sbt" role="group" aria-label="${esc(t('sbTerm'))}">
       <button class="chip" data-sbterm="0" aria-pressed="${!k}">${esc(t('sbAllT', rows.length))}</button>${terms.map(c => `<button class="chip" data-sbterm="${c}" aria-pressed="${k === c}">${esc(t('sbCong', c))} <span class="n">${rows.filter(r => r[0] === c).length}</span></button>`).join('')}</div>
-    ${more(shown.map(row), 10)}<p class="note">${esc(t('sbNote', fmtDay(D._meta.retrieved)))}</p>`;
+    ${lawMix(shown.filter(r => isLaw(r[5])).map(r => r[3]))}${more(shown.map(row), 10)}<p class="note">${esc(t('sbNote', fmtDay(D._meta.retrieved)))}</p>`;
 }
 const showSb = id => loadSb(id).then(D => { const el = document.getElementById('sbBox'); if (el && hashName() === id) el.innerHTML = sbHtml(D); });   // senators and House members
 let careerP;   // career.json: fetched when a profile opens
@@ -1244,7 +1290,106 @@ function profile(o) {
 }
 
 /* ---------- events ---------- */
-const PAGES = {'': home, explore, senado: senPage, kamara: housePage, 'party-list': plPage};
+/* ---------- everyone with a case ---------- */
+const CHG = {plunder: c => /plunder/i.test(c.title), graft: c => /graft|3019/i.test(c.title), malversation: c => /malversation/i.test(c.title), flood: c => /flood/i.test(c.title),
+  libel: c => /libel/i.test(c.title), violence: c => /murder|homicide|killing/i.test(c.title), election: c => c.kind === 'election', admin: c => c.kind === 'administrative'};
+const ST_ORDER = ['convicted', 'appealed', 'pending', 'filed', 'suspended', 'decided', 'acquitted', 'dismissed'];
+const chOf = o => o.body !== 'house' ? 'senate' : o.kind === 'party-list' ? 'partylist' : 'house';
+function casesPage() {
+  const cs = Object.values(cases.cases).flat(), n = (f) => cs.filter(f).length;
+  const people = everyone().filter(o => (cases.cases[o.id] || []).length);
+  const chip = (attr, v, label, cnt, on) => `<button class="chip" ${attr}="${esc(v)}" aria-pressed="${on}">${esc(label)}${cnt != null ? ` <small class="num">${cnt}</small>` : ''}</button>`;
+  app.innerHTML = `<a class="back" href="#">${t('back')}</a><div class="ph1"><div><p class="kick">${t('csK', people.length)}</p><h1>${t('csH')}</h1><p class="note">${t('csNote')}</p></div></div>
+    <div class="finder one" role="search">
+      <label><span>${t('hsL')}</span><span class="fs"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="cq" type="search" value="${esc(state.cq)}" placeholder="${esc(t('csSearch'))}" autocomplete="off"></span></label>
+      <label><span>${t('bSen')} / ${t('bHouse')}</span><select id="cchSel">${opt('', t('csAllCh'), !state.cch)}${[['senate', t('bSen')], ['house', t('bHouse')], ['partylist', t('bPL')]].map(([k, l]) => opt(k, l, state.cch === k)).join('')}</select></label></div>
+    <p class="pl cspl">${t('csSt')}</p><div class="trs" role="group" aria-label="${esc(t('csSt'))}">${chip('data-cst', '', t('csAllSt'), cs.length, !state.cst)}${ST_ORDER.filter(k => n(c => c.status === k)).map(k => chip('data-cst', k, t('st_' + k), n(c => c.status === k), state.cst === k)).join('')}</div>
+    <p class="pl cspl">${t('csCg')}</p><div class="trs" role="group" aria-label="${esc(t('csCg'))}">${chip('data-cg', '', t('csAllCg'), null, !state.cg)}${Object.keys(CHG).map(k => chip('data-cg', k, t('cg_' + k), n(CHG[k]), state.cg === k)).join('')}</div>
+    <p class="hinfo" id="csInfo" aria-live="polite"></p><ul class="cslist" id="cslist"></ul>`;
+  updateCases();
+}
+function updateCases() {
+  const l = document.getElementById('cslist'); if (!l) return;
+  const q = state.cq.trim();
+  const rows = everyone().filter(o => !state.cch || chOf(o) === state.cch)
+    .map(o => [o, (cases.cases[o.id] || []).filter(c => (!state.cst || c.status === state.cst) && (!state.cg || CHG[state.cg](c)) && (!q || matches(o, q) || fold(c.title).includes(fold(q))))])
+    .filter(([, cs]) => cs.length)
+    .map(([o, cs]) => [o, cs.sort((a, b) => ST_ORDER.indexOf(a.status) - ST_ORDER.indexOf(b.status))])
+    .sort((a, b) => ST_ORDER.indexOf(a[1][0].status) - ST_ORDER.indexOf(b[1][0].status) || b[1].length - a[1].length || lastName(a[0]).localeCompare(lastName(b[0])));
+  l.innerHTML = rows.map(([o, cs]) => `<li class="csr"><a class="csp" href="#${esc(o.id)}">${av(o.name, o.photo)}<span><b>${esc(clean(o.name))}</b><small>${esc(sub(o))}</small></span></a>
+    <ul>${cs.map(c => `<li><span class="pill cs-${esc(c.status)}">${esc(t('st_' + c.status))}</span> ${esc(c.title)}<small>${esc(t('k_' + c.kind))}${/^(house|senate)$/i.test(c.body) ? '' : ' · ' + esc(c.body)}${c.status_date ? ` · ${t('statusAsOf')} ${esc(c.status_date)}` : ''}</small></li>`).join('')}</ul></li>`).join('')
+    || `<li class="soon">${t('noMatch')}</li>`;
+  document.getElementById('csInfo').textContent = t('csInfo', rows.reduce((n, [, cs]) => n + cs.length, 0), rows.length);
+  document.querySelectorAll('[data-cst]').forEach(b => b.setAttribute('aria-pressed', b.dataset.cst === state.cst));
+  document.querySelectorAll('[data-cg]').forEach(b => b.setAttribute('aria-pressed', b.dataset.cg === state.cg));
+}
+/* ---------- guide for voters, and what's new ---------- */
+const prose = (h1, kick, body) => { app.innerHTML = `<a class="back" href="#">${t('back')}</a><article class="prose"><p class="kick">${kick}</p><h1>${h1}</h1>${body}</article>`; };
+function guidePage() {
+  const fil = lang === 'fil';
+  const steps = fil ? [
+    ['Hanapin ang mambabatas mo', 'I-type ang probinsya o lungsod mo sa paghahanap sa itaas. Lalabas ang kinatawan mo sa Kamara at ang 24 na senador na para sa buong bansa.', '#', 'Pumunta sa paghahanap'],
+    ['Tingnan kung may kaso', 'Ang kulay sa itaas ng bawat profile ang nagsasabi: may hatol, nakabinbin, na-dismiss, o walang nakitang kaso. Ang kaso ay paratang lang hangga\'t walang desisyon ang korte.', '#mga-kaso', 'Lahat ng may kaso'],
+    ['Alamin kung ano ang ginawa nila', 'Sa "Panukala" at "Batas" makikita ang mga inihain nilang panukala at alin ang naging batas. Tingnan kung pambansa ang batas (para sa lahat) o lokal (isang paaralan, kalsada o ospital). Ihambing sila sa iisang termino sa "Ranggo".', '#senado', 'Ihambing ang mga senador'],
+    ['Tingnan ang karera nila', 'Sa "Karera": bawat halalan mula 2001, nanalo man o natalo, at ilang termino na sila sa Kongreso.', '', ''],
+    ['Tingnan ang yaman (senador)', 'Sa "SALN": ang idineklarang yaman ng senador. Tanungin kung tugma ito sa sahod nila.', '', '']
+  ] : [
+    ['Find your lawmakers', 'Type your province or city in the search at the top. You get your House representative and the 24 senators, who serve the whole country.', '#', 'Go to search'],
+    ['Check for court cases', 'The colour at the top of each profile tells you: convicted, pending, dismissed, or no case found. A case is only an allegation until a court decides it.', '#mga-kaso', 'Everyone with a case'],
+    ['See what they did', 'Under "Bills" and "Laws" you see the bills they filed and which became law. Check whether a law is national (for everyone) or local (one school, road or hospital). Compare lawmakers in the same term under "Rank by bills".', '#senado', 'Compare the senators'],
+    ['Look at their career', 'Under "Career": every election since 2001, won or lost, and how many terms they have served in Congress.', '', ''],
+    ['Look at their wealth (senators)', 'Under "SALN": what the senator declared they own. Ask whether it fits their pay.', '', '']];
+  const asks = fil ? ['Anong batas mo ang nakatulong sa amin dito? Pambansa ba o lokal?', 'May kaso ka ba? Ano ang status nito ngayon?', 'Ilang taon ka nang nasa puwesto, at ano ang nagbago?', 'Saan galing ang yaman mo?']
+    : ['Which of your laws helped us here? Was it national or local?', 'Do you have a court case? Where does it stand now?', 'How long have you held office, and what changed?', 'Where does your wealth come from?'];
+  prose(fil ? 'Paano gamitin ang Sino Sila? sa pagpili' : 'How to use Sino Sila? when you choose', fil ? 'Gabay sa botante' : 'A guide for voters',
+    `<p class="lede">${fil ? 'Limang hakbang, ilang minuto lang. Lahat ng nakasulat dito ay may link sa pinagmulan.' : 'Five steps, a few minutes. Everything on the site links to where it came from.'}</p>
+    <ol class="steps">${steps.map(([h, p, href, cta]) => `<li><h2>${h}</h2><p>${p}</p>${href ? `<a href="${href}">${cta} →</a>` : ''}</li>`).join('')}</ol>
+    <h2>${fil ? 'Mga tanong para sa kandidato' : 'Questions to ask a candidate'}</h2><ul class="asks">${asks.map(a => `<li>${a}</li>`).join('')}</ul>
+    <p class="note">${fil ? 'Dami ang ipinapakita ng bilang ng panukala, hindi kalidad. Gamitin ito para magtanong, hindi bilang marka.' : 'Bill counts show volume, not quality. Use them to ask questions, not as a score.'}</p>`);
+}
+function newsPage() {
+  const fil = lang === 'fil';
+  const E = (date, items) => `<section class="rel"><h2><time>${fmtDay(date)}</time></h2><ul>${items.map(([h, p, href]) => `<li><b>${href ? `<a href="${href}">${h}</a>` : h}</b><br>${p}</li>`).join('')}</ul></section>`;
+  const asked = `<span class="pill">${fil ? 'Mungkahi ng mambabasa' : 'Readers asked'}</span> `;
+  prose(fil ? 'Ano ang bago' : "What's new", 'Sino Sila?', `<p class="lede">${fil ? 'Ang mga idinagdag at pinahusay, pinakabago muna. Marami rito ay galing sa mga komento ninyo sa BetterGov.PH. Salamat!' : 'What we added and improved, newest first. Much of it came from your comments in the BetterGov.PH group. Salamat!'}</p>`
+    + E('2026-11-25', fil ? [
+      [asked + 'Lahat ng may kaso sa iisang pahina', 'Bawat senador at kinatawan na may nakatalang kaso, may filter ayon sa status (nakabinbin, may hatol, na-dismiss) at uri (plunder, graft, malversation, flood control at iba pa).', '#mga-kaso'],
+      [asked + 'Ranggo ayon sa termino', 'Sa "Ranggo", pumili ng Kongreso mula ika-13 hanggang ika-20 para ihambing sila sa iisang panahon: inihain, pumasa, at naging batas.', '#senado'],
+      [asked + 'Pambansa o lokal na batas', 'Bawat batas ay may tatak: pambansa, lokal (isang paaralan, ospital o kalsada), prangkisa ng kumpanya, o araw ng paggunita, at kung nag-aamyenda ito ng ibang batas. May bilang din sa bawat profile.', ''],
+      [asked + 'Gabay sa botante', 'Limang hakbang at mga tanong para sa kandidato, sa simpleng salita.', '#gabay']]
+    : [
+      [asked + 'Everyone with a court case, on one page', 'Every senator and representative with a case on record, filtered by status (pending, convicted, dismissed) and kind (plunder, graft, malversation, flood control and more).', '#mga-kaso'],
+      [asked + 'Rankings by term', 'Under "Rank by bills", pick a Congress from the 13th to the 20th to compare lawmakers over the same period: filed, passed and became law.', '#senado'],
+      [asked + 'National or local laws', 'Every law now carries a tag: national, local (one school, hospital or road), a company franchise, or a commemorative day, and whether it amends another law. Each profile counts them.', ''],
+      [asked + 'A guide for voters', 'Five steps and questions to ask a candidate, in plain words.', '#gabay']])
+    + E('2026-11-24', fil ? [
+      ['Karera sa puwesto', 'Bawat halalan mula 2001, nanalo man o natalo, at ang mga termino sa Kongreso. Mula sa BetterGov Dynasties at open-congress-data.', ''],
+      ['Mas mahusay na paghahanap', 'Lumalabas agad ang resulta habang nagta-type, nakagrupo ayon sa lugar, Senado, Kamara at party-list. May sariling paghahanap din ang bawat pahina.', '#']]
+    : [
+      ['Career in elected office', 'Every election since 2001, won or lost, and terms in Congress. From BetterGov Dynasties and open-congress-data.', ''],
+      ['Better search', 'Results show as you type, grouped by place, Senate, House and party-list. Each chamber page has its own filter too.', '#']])
+    + E('2026-11-23', fil ? [
+      [asked + 'Mga panukala sa bawat termino', 'Lahat ng panukala ng mambabatas mula ika-13 Kongreso, may filter ayon sa termino at link sa bersyon ng kabilang kapulungan.', ''],
+      ['Baligtad na ayos sa ranggo', 'Pinakamarami o pinakakaunti muna.', '#kamara']]
+    : [
+      [asked + 'Bills in every term', 'Every bill a lawmaker filed since the 13th Congress, with a term filter and a link to the other chamber\'s version.', ''],
+      ['Reverse the ranking', 'Most first or fewest first.', '#kamara']])
+    + `<section class="rel"><h2>${fil ? 'Hindi pa, at bakit' : 'Not yet, and why'}</h2><ul>${(fil ? [
+      ['SALN ng mga kinatawan', 'Senador, Pangulo at Pangalawang Pangulo lang ang nasa SALN Tracker ng BetterGov. Idadagdag namin kapag may mapagkukunan na.'],
+      ['Ugnayan sa kontratista o mining', 'Mula lang dapat sa opisyal na rekord (SALN, SEC, DPWH). Inihahanda pa ang paraan.'],
+      ['Sino ang nanguna sa bawat panukala', 'Sponsor, chair ng komite, o pumirma lang: kinokolekta pa mula sa rekord ng Senado at Kamara.'],
+      ['Ano ang talagang binago ng batas', 'Kailangan muna ng patas at malinaw na paraan, hindi opinyon namin.'],
+      ['Sino ang nakakulong', 'Itatala lang mula sa rekord ng korte o kulungan.'],
+      ['Mga kandidato sa 2028', 'Pagkalabas ng listahan ng COMELEC (bandang Oktubre 2027).']] : [
+      ["Representatives' SALN", "BetterGov's SALN Tracker covers only senators, the President and the Vice President. We will add House members once there is a source."],
+      ['Links to contractors or mining firms', 'Only from official records (SALN, SEC, DPWH). We are still working out a fair method.'],
+      ['Who led each bill', 'Sponsor, committee chair, or only signed on: still being collected from Senate and House records.'],
+      ['What a law actually changed', 'This needs a fair, clear method first, not our opinion.'],
+      ['Who is in detention', 'Only from a court or jail record.'],
+      ['Candidates for 2028', 'Once COMELEC publishes the list (around October 2027).']]).map(([h, p]) => `<li><b>${h}</b><br>${p}</li>`).join('')}</ul></section>
+    <p class="note">${fil ? 'May mungkahi? Pindutin ang "Report an error" sa ibaba, o magbukas ng issue sa' : 'Have an idea? Tap "Report an error" below, or open an issue on'} <a href="https://github.com/lslaoang/sinu-sila" target="_blank" rel="noopener">GitHub ↗</a>.</p>`);
+}
+const PAGES = {'': home, explore, senado: senPage, kamara: housePage, 'party-list': plPage, 'mga-kaso': casesPage, gabay: guidePage, bago: newsPage};
 function route() {
   const h = hashName(), o = findPerson(h);
   tip.classList.remove('on'); qclose();
@@ -1281,6 +1426,8 @@ app.onclick = e => {
   if (d.tr) { state.sel = state.sel === d.tr ? 'everyone' : d.tr; state.tr = new Set(state.sel === 'everyone' ? ALLTR : state.sel === 'checked' ? CHECKED : [state.sel]); }
   if (d.school) state.school = state.school === d.school ? null : d.school;
   if (d.sort) state.sort = d.sort;
+  if (d.cst != null) { state.cst = d.cst; return updateCases(); }
+  if (d.cg != null) { state.cg = d.cg; return updateCases(); }
   if (d.sbterm != null) { state.sbterm = +d.sbterm; const id = hashName(); return loadSb(id).then(D => { const el = document.getElementById('sbBox'); if (el) el.innerHTML = sbHtml(D); }); }
   if (d.rank != null) { if (d.rank && d.rank === state.rank) state.rdir = state.rdir === 'asc' ? 'desc' : 'asc'; else { state.rank = d.rank; state.rdir = 'desc'; }
     document.querySelectorAll('.rdir').forEach(x => x.hidden = !state.rank); }
@@ -1291,9 +1438,13 @@ app.onclick = e => {
 };
 app.onchange = e => { const v = e.target.value;
   if (e.target.id === 'placeSel') { place = v; try { localStorage.setItem('place', v); } catch {} return homeOut(); }
+  if (e.target.id === 'cchSel') { state.cch = v; return updateCases(); }
+  if (e.target.id === 'rtSel') { state.rterm = +v; if (!state.rank) state.rank = 'filed'; document.querySelectorAll('.rdir').forEach(x => x.hidden = false);
+    return loadTerms().then(() => { document.querySelectorAll('[data-rank]').forEach(b => b.setAttribute('aria-pressed', b.dataset.rank === state.rank)); updateAll(); }); }
   if (e.target.id === 'hplSel') { state.hpl = e.target.value || null; updateAll(); } if (e.target.id === 'hpSel') { state.hp = e.target.value || null; updateAll(); } };
 app.oninput = e => { if (e.target.id === 'hq') { state.q = q.value = e.target.value; homeOut(); } if (e.target.id === 'hs') { state.hs = e.target.value; updateHouse(); }
-  if (e.target.id === 'ss' || e.target.id === 'ps') { state[e.target.id] = e.target.value; updateAll(); } };
+  if (e.target.id === 'ss' || e.target.id === 'ps') { state[e.target.id] = e.target.value; updateAll(); }
+  if (e.target.id === 'cq') { state.cq = e.target.value; updateCases(); } };
 (() => { const t = document.getElementById('top'); if (!t) return; addEventListener('scroll', () => { t.hidden = scrollY < 1500; }, {passive: true}); t.onclick = () => scrollTo({top: 0, behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth'}); })();
 const REPORT_URL = 'https://nx3hxaffgkf7ufau7cyb6zfa6i0wigzc.lambda-url.ap-southeast-1.on.aws/';   // set to the Lambda function URL printed by tools/create_contact_form.sh
 (() => { const b = document.getElementById('repB'), dlg = document.getElementById('rep'), f = document.getElementById('repF'), msg = document.getElementById('repMsg');
