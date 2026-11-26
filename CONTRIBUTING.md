@@ -27,10 +27,13 @@ A link to the right source helps most. Officials and their staff are welcome to 
 
 ## Working on the code
 
-- The site is one file, `index.html`, with no build step and no framework. Keep it that way: plain HTML, CSS and
-  JavaScript, readable without tooling.
+- The public site uses static HTML, CSS and native JavaScript modules. Serve it directly with any static HTTP server.
+- Start in `index.html` for the page shell and `assets/css/site.css` for styles. In `assets/js/`, `app.mjs` starts the
+  app and handles hash navigation. Page modules render their views. `data.mjs` loads records, and `locale.mjs` handles
+  language selection and fallback. Keep site-wide routing and setup in the entry point and feature code with its view.
 - Run it with `python3 -m http.server 8000` and check desktop, phone width, light and dark mode.
-- Text appears in English and Filipino: add new strings to both the `en` and `fil` blocks of `T` in `index.html`.
+- Run `python3 validate.py` for data validation and `node tools/smoke_test.mjs` for Chrome checks (Node.js 22+).
+- Add new English and Filipino strings to both blocks of `T` in `assets/js/messages.mjs`.
 - Accessibility basics: real buttons and links, labels on inputs, status never shown by colour alone.
 - Keep pull requests small and focused, and describe what you checked.
 

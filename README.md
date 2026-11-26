@@ -45,7 +45,9 @@ python3 validate.py              # checks every record has a valid source
 ## Repository layout
 
 ```
-index.html            the whole site (HTML, CSS and JavaScript in one file)
+index.html            public page markup and entry point
+assets/css/site.css   public site styles
+assets/js/            browser modules for routes, page views, records and translations
 stats.html            private visit dashboard (key-protected, not linked)
 data/                 JSON data, one file per topic (see docs/data.md)
 assets/photos/        portraits (Wikimedia Commons, background removed, credited on each profile)

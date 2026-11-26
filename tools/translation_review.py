@@ -7,7 +7,7 @@
       copies every filled-in correction into i18n/<code>.json and adds the reviewer to "reviewed_by".
       --done names the languages the reviewer checked in full; those drop the site's "draft" note.
 
-Needs openpyxl (pip install openpyxl) and node (to read the English and Filipino text from index.html).
+Needs openpyxl (pip install openpyxl) and Node.js to load the site's base translations.
 """
 import json, os, re, subprocess, sys
 
@@ -18,12 +18,24 @@ HOME = re.compile(r"^(title|kicker|h1|lede|search|tryL|where|pickPlace|glance|gD
 
 
 def source_text():
-    """English and Filipino strings from index.html; functions shown with {0}, {1} where the values go."""
-    js = r"""const s=require('fs').readFileSync(process.argv[1],'utf8').split('\n');const a=s.findIndex(l=>l.startsWith('const T = {'));
-const b=s.findIndex((l,i)=>i>a&&/^  \}\};?$/.test(l));const T=eval('('+s.slice(a,b+1).join('\n').replace(/^const T = /,'').replace(/;\s*$/,'')+')');
-const f=o=>Object.fromEntries(Object.entries(o).map(([k,v])=>[k,typeof v==='function'?(()=>{try{return String(v('{0}','{1}','{2}'))}catch(e){return ''}})():v]));
-console.log(JSON.stringify({en:f(T.en),fil:f(T.fil)}))"""
-    return json.loads(subprocess.check_output(["node", "-e", js, os.path.join(ROOT, "index.html")]))
+    """Load the base translations and show placeholders where functions take values."""
+    js = """
+import {pathToFileURL} from 'node:url';
+const {T} = await import(pathToFileURL(process.argv[1]));
+
+function withPlaceholders(table) {
+  return Object.fromEntries(Object.entries(table).map(([key, value]) => {
+    if (typeof value !== 'function') return [key, value];
+    try { return [key, String(value('{0}', '{1}', '{2}'))]; }
+    catch { return [key, '']; }
+  }));
+}
+
+console.log(JSON.stringify({en: withPlaceholders(T.en), fil: withPlaceholders(T.fil)}));
+"""
+    return json.loads(subprocess.check_output([
+        "node", "--input-type=module", "-e", js, os.path.join(ROOT, "assets", "js", "messages.mjs"),
+    ]))
 
 
 def where(k):
