@@ -9,7 +9,6 @@ const hue = s => [...s].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 360, 7);
 // Bump PHOTO_V whenever photos are replaced under the same file names, so every browser downloads the new ones
 const PHOTO_V = '2026-11-21', pv = u => u.startsWith('assets/') ? `${u}?v=${PHOTO_V}` : u;
 const av = (n, photo, eager) => `<div class="av" style="background:hsl(${hue(n)} 60% 28%)" aria-hidden="true">${initials(n)}${photo ? `<img src="${esc(pv(photo))}" alt="" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} referrerpolicy="no-referrer" onload="this.parentNode.classList.add('ph')" onerror="this.remove()">` : ''}</div>`;
-const motion = matchMedia('(prefers-reduced-motion: reduce)');
 const app = document.getElementById('app'), q = document.getElementById('q'), tip = document.getElementById('tip');
 
 /* icons: one set on a 24px grid with 2px round strokes (assets/icons has the brand mark). Status: gavel, hourglass, check, nothing found, not yet checked */
@@ -38,4 +37,4 @@ const opt = (v, label, on) => `<option value="${esc(v)}"${on ? ' selected' : ''}
 const meaning = () => `<section class="howto" aria-labelledby="mH"><h2 id="mH">${t('meaningH')}</h2><p>${t('meaningS')}</p>
   <ul class="meaning">${TRACKS.map(([k, l]) => `<li>${trChip(k, l)}<span>${esc(t('m_' + k))}</span></li>`).join('')}</ul></section>`;
 
-export { app, av, distBar, distLabel, ico, initials, meaning, motion, opt, pcard, pv, q, sub, tip, tkHtml, trChips };
+export { app, av, distBar, distLabel, ico, initials, meaning, opt, pcard, pv, q, sub, tip, tkHtml, trChips };

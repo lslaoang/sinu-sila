@@ -167,7 +167,31 @@ async function checkSearchAndLanguage(evaluate, person) {
   await evaluate(`document.getElementById('repX').click()`);
 }
 
-async function testPage(debug, url, width, height, lang, keys, searchPerson) {
+async function checkSenateMotion(evaluate, reducedMotion) {
+  const result = await evaluate(`(() => {
+    const seats = [...document.querySelectorAll('#hemi .seat')];
+    const bills = document.querySelector('[data-lens="bills"]');
+    const first = seats.map(seat => getComputedStyle(seat).translate);
+    const noEmptyCounts = [...document.querySelectorAll('.fact .n')].every(el => el.textContent.trim() !== '');
+    bills.click();
+    return {
+      selected: bills.getAttribute('aria-pressed') === 'true',
+      noEmptyCounts,
+      animating: seats.some(seat => {
+        getComputedStyle(seat).translate;
+        return seat.getAnimations().some(animation => animation.transitionProperty === 'translate');
+      }),
+      moved: seats.some((seat, i) => getComputedStyle(seat).translate !== first[i]),
+    };
+  })()`);
+  if (!result.selected || !result.noEmptyCounts) throw new Error('Senate filters or figures did not render');
+  if (reducedMotion && (result.animating || !result.moved)) throw new Error('reduced motion should move seats immediately');
+  if (!reducedMotion && !result.animating) throw new Error('changing the Senate lens did not animate seat movement');
+  await until(() => evaluate(`!document.getElementById('hemi').getAnimations({subtree: true}).length`),
+    'Senate chart did not settle');
+}
+
+async function testPage(debug, url, width, height, lang, keys, { searchPerson, checkMotion, reducedMotion }) {
   const problems = new Set();
   const response = await fetch(debug + '/json/new?about:blank', { method: 'PUT', signal: AbortSignal.timeout(5_000) });
   if (!response.ok) throw new Error('Could not open Chrome tab: HTTP ' + response.status);
@@ -193,6 +217,9 @@ async function testPage(debug, url, width, height, lang, keys, searchPerson) {
     await cdp.send('Emulation.setDeviceMetricsOverride', {
       width, height, deviceScaleFactor: 1, mobile: width < 600,
     });
+    if (reducedMotion) {
+      await cdp.send('Emulation.setEmulatedMedia', {features: [{name: 'prefers-reduced-motion', value: 'reduce'}]});
+    }
     await cdp.send('Page.addScriptToEvaluateOnNewDocument', { source: `
       localStorage.setItem('lang', ${JSON.stringify(lang)});
       globalThis.smokeImageErrors = new Set();
@@ -212,6 +239,7 @@ async function testPage(debug, url, width, height, lang, keys, searchPerson) {
       problems.add(problem);
     }
     if (searchPerson) await checkSearchAndLanguage(evaluate, searchPerson);
+    if (checkMotion) await checkSenateMotion(evaluate, reducedMotion);
   } catch (error) {
     problems.add(error.message);
   } finally {
@@ -257,17 +285,18 @@ async function run() {
   const debug = 'http://127.0.0.1:' + port;
 
   const pages = [[1280, 900], [375, 812]].flatMap(([width, height]) =>
-    routes.map(route => ({ route, width, height, lang: 'en' })));
+    routes.map(route => ({ route, width, height, lang: 'en', checkMotion: route === 'explore' })));
   pages.push(...languages.map(lang => ({ route: '', width: 1280, height: 900, lang })));
   pages.push({ route: 'senado', width: 1280, height: 900, lang: 'en', searchPerson: senators[0] });
+  pages.push({ route: 'explore', width: 375, height: 812, lang: 'en', checkMotion: true, reducedMotion: true });
   let failed = 0;
-  for (const { route, width, height, lang, searchPerson } of pages) {
-    const page = (searchPerson ? '/staging/index.html' : '/') + '#' + route;
-    const problems = await testPage(debug, origin + page, width, height, lang, keys, searchPerson)
+  for (const { route, width, height, lang, ...options } of pages) {
+    const page = (options.searchPerson ? '/staging/index.html' : '/') + '#' + route;
+    const problems = await testPage(debug, origin + page, width, height, lang, keys, options)
       .catch(error => [error.message]);
     if (problems.length) failed++;
     const detail = problems.length ? ' — ' + problems.join(' | ').replace(/\s+/g, ' ') : '';
-    console.log(`${problems.length ? 'FAIL' : 'PASS'} ${page} ${width}x${height} (${lang})${detail}`);
+    console.log(`${problems.length ? 'FAIL' : 'PASS'} ${page} ${width}x${height} (${lang}${options.reducedMotion ? ', reduced motion' : ''})${detail}`);
   }
   console.log(`Smoke test: ${pages.length - failed} passed, ${failed} failed (${pages.length} total)`);
   return failed ? 1 : 0;
