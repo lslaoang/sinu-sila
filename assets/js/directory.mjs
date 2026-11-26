@@ -45,16 +45,33 @@ const SLOTS = ARCS.flatMap(([n, r], a) => Array.from({length: n}, (_, i) => { co
 const lensVal = (id) => state.lens === 'bills' ? billCount(id) : state.lens === 'laws' ? lawCount(id) : 0;
 
 function layoutSeats() {
+  const chart = document.getElementById('hemi');
+  if (!chart) return;
+  const lensChanged = chart.dataset.lens != null && chart.dataset.lens !== state.lens;
+  chart.dataset.lens = state.lens;
   const eq = state.lens === 'equal' || state.lens === 'track';
   const order = [...data].sort((a, b) => state.lens === 'track' ? trackRank(a.id) - trackRank(b.id) || lastName(a).localeCompare(lastName(b)) : eq ? posRank(a) - posRank(b) || lastName(a).localeCompare(lastName(b))
     : lensVal(b.id) - lensVal(a.id) || lastName(a).localeCompare(lastName(b)));
   const max = Math.max(...order.map(o => lensVal(o.id)), 1);
   order.forEach((o, i) => {
-    const el = document.querySelector(`.seat[data-id="${o.id}"]`); if (!el) return;
+    const el = chart.querySelector(`.seat[data-id="${o.id}"]`); if (!el) return;
     el.style.setProperty('--x', SLOTS[i].x); el.style.setProperty('--y', SLOTS[i].y);
     el.style.setProperty('--k', eq ? 1 : (.78 + .42 * lensVal(o.id) / max).toFixed(3));
     el.style.zIndex = eq ? 1 : Math.round(lensVal(o.id) / max * 20);
   });
+  if (!lensChanged || !matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
+
+  // Make room for portraits crossing the chart, then restore their full size at the destination.
+  const duration = parseFloat(getComputedStyle(chart).getPropertyValue('--motion-seat'));
+  for (const portrait of chart.querySelectorAll('.seat .av')) {
+    portrait.getAnimations().find(animation => animation.id === 'lens-reorder')?.cancel();
+    portrait.animate([
+      {transform: 'scale(1)'},
+      {transform: 'scale(.68)', offset: .13},
+      {transform: 'scale(.78)', offset: .35},
+      {transform: 'scale(1)'},
+    ], {duration, id: 'lens-reorder'});
+  }
 }
 const visibleIds = () => { const g = onHome() || onExplore() ? state.q.trim() : '', s = hashName() === 'senado' ? state.ss : '';
   return new Set(data.filter(o => matches(o, g + ' ' + s) && (!state.school || groups[state.school]?.has(o.id)) && (!state.leaders || isLead(o)) && (g || state.tr.has(trackOf(o.id)))).map(o => o.id)); };

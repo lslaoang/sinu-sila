@@ -1,4 +1,5 @@
 :root{--bg:#ffffff;--paper:#f4f7fc;--ink:#0c1b33;--rule:#0c1b33;--mute:#4a5872;--line:#d8e0ec;--edge:#818da2;--blue:#0b4fd9;--navy:#0a44bd;--red:#c8102e;--sage:#4a6b5a;--yellow:#efdfb9;--gold:#b8893a;--on-accent:#fff;--photo:#e8eef7;--r:8px;
+  --motion-out:cubic-bezier(.16,1,.3,1);--motion-fast:140ms;--motion-seat:440ms;
   --serif:"Newsreader",ui-serif,Georgia,serif;--sans:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;color-scheme:light}
 /* colours follow the BetterGov design system (bettergov.ph/design): ink on paper, one working blue, red held for alerts,
    sage and gold as rare non-interactive accents (gold never as text); --yellow is a pale gold fill behind ink. Dark: the same on deep navy. */
@@ -108,10 +109,10 @@ h1.big{font:600 clamp(2.3rem,7.2vw,4.6rem)/1.02 var(--serif);letter-spacing:-.02
 @media (min-width:60rem){.herogrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:2.5rem;align-items:center;padding:1rem 0}.herogrid .eyebrow{margin-top:0}.herogrid .hemi{margin-top:0}.herogrid .ctl{justify-content:flex-start}.herogrid .info{text-align:left}}
 .hemi{position:relative;width:100%;max-width:48rem;margin:1.5rem auto .5rem;padding-bottom:56%;container-type:inline-size}
 .seat{position:absolute;left:0;top:0;width:9%;aspect-ratio:1;border-radius:50%;translate:calc(var(--x,50) * 1cqw - 50%) calc(var(--y,50) * .56cqw - 50%);scale:var(--k,1);
-  transition:translate .8s cubic-bezier(.2,.8,.2,1),scale .2s cubic-bezier(.2,.8,.2,1),opacity .3s,filter .3s;display:block}
-.seat .av{width:100%;height:100%;font-size:clamp(.55rem,1.8vw,1.1rem);box-shadow:0 0 0 2px var(--bg)}
+  transition:translate var(--motion-seat) var(--motion-out),scale var(--motion-seat) var(--motion-out);display:block}
+.seat .av{width:100%;height:100%;font-size:clamp(.55rem,1.8vw,1.1rem);box-shadow:0 0 0 2px var(--bg);transition:opacity var(--motion-fast) ease-out,scale var(--motion-seat) var(--motion-out)}
 .seat.lead .av{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--gold)}
-.seat:hover,.seat:focus-visible{z-index:50!important;scale:calc(var(--k,1) * 1.2)}
+.seat:hover,.seat:focus-visible{z-index:50!important}
 .seat.dim .av{opacity:.14;filter:grayscale(1)} .seat.dim:focus-visible .av{opacity:1;filter:none}
 .hemi.trk .seat .av{box-shadow:0 0 0 2px var(--bg),0 0 0 5px var(--tc)} .hemi.trk .seat.lead .av{box-shadow:0 0 0 2px var(--bg),0 0 0 5px var(--tc),0 0 0 7px var(--gold)}
 .hm .tk{margin-left:.4rem}
@@ -124,7 +125,7 @@ h1.big{font:600 clamp(2.3rem,7.2vw,4.6rem)/1.02 var(--serif);letter-spacing:-.02
 .fbar{margin:1.2rem 0 2rem;padding:1rem;border:1.5px solid var(--rule);border-radius:var(--r);background:var(--paper)}
 .fbar .pl{margin-bottom:.5rem} .frow+.frow{margin-top:1rem} [hidden]{display:none!important}
 .seg.seg4{grid-template-columns:repeat(4,1fr)} .seg.seg2{grid-template-columns:repeat(2,1fr);max-width:26rem} .seg small{opacity:.7;margin-left:.2rem;font-variant-numeric:tabular-nums}
-.senviz{display:grid;gap:1rem;align-items:center} @media (min-width:60rem){.senviz{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}.senviz .hemi{margin:0}}
+.senviz{display:grid;gap:1rem;align-items:center} @media (min-width:60rem){.senviz{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}.senviz .hemi{margin:0}.senviz .panel{align-self:start;margin-top:1.25rem}}
 h3.sub{font:700 1.3rem var(--serif);margin:2.5rem 0 .8rem} h3.sub small{font:500 .9rem system-ui;color:var(--mute);margin-left:.4rem}
 .plgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr));gap:.75rem;margin:0 0 1rem;padding:0;list-style:none}
 .plc{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.8rem .9rem;min-width:0}
@@ -149,6 +150,7 @@ h3.sub{font:700 1.3rem var(--serif);margin:2.5rem 0 .8rem} h3.sub small{font:500
 .pl{margin:0 0 .5rem;font:600 .85rem var(--sans);color:var(--mute)} .pl small{font-size:.8rem;font-weight:500;letter-spacing:0;text-transform:none;margin-left:.4rem}
 .seg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ink);border-radius:99px;overflow:hidden}
 .seg button{border:0;border-right:1px solid var(--line);background:transparent;color:var(--ink);padding:.5rem .3rem;min-height:44px;font:inherit;font-size:.88rem;cursor:pointer;transition:background-color .15s,color .15s} .seg button:active{transform:scale(.98)} .seg button:last-child{border-right:0}
+.seg button[data-lens]{transition:none}
 .seg button:focus-visible{outline-offset:-4px} .seg button[aria-pressed=true]:focus-visible{outline-color:var(--bg)}
 .seg button:hover{background:color-mix(in srgb,var(--blue) 12%,var(--bg));color:var(--ink)} .seg button[aria-pressed=true]{background:var(--ink);color:var(--bg);font-weight:700}
 .panel>*{min-width:0}
@@ -188,8 +190,8 @@ h3.sub{font:700 1.3rem var(--serif);margin:2.5rem 0 .8rem} h3.sub small{font:500
 .sp{flex:1}
 .wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr));gap:1.1rem;list-style:none;padding:0;margin:0}
 .wall>li{display:flex}
-.pt{position:relative;flex:1;display:flex;flex-direction:column;border:1.5px solid var(--rule);border-radius:var(--r);overflow:hidden;color:var(--ink);text-decoration:none;background:var(--paper);transition:transform .2s,box-shadow .2s}
-.pt:hover{box-shadow:0 0 0 1.5px var(--rule);transform:translateY(-2px)}
+.pt{position:relative;flex:1;display:flex;flex-direction:column;border:1.5px solid var(--rule);border-radius:var(--r);overflow:hidden;color:var(--ink);text-decoration:none;background:var(--paper);transition:box-shadow var(--motion-fast) ease-out}
+.pt:hover{box-shadow:0 0 0 1.5px var(--rule)}
 .pt .ph{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:var(--photo);color:var(--mute);border-bottom:1.5px solid var(--rule)}
 .pt .ini{position:absolute;inset:0;display:grid;place-items:center;font:700 2.6rem var(--serif);opacity:.6}
 .pt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
@@ -372,10 +374,15 @@ dialog#rep{max-width:30rem;max-height:calc(100% - 2rem);overflow:auto;width:calc
 .back{font-size:.9rem;font-weight:600}
 
 /* motion */
-.rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s} .rv.in,.rv:focus-within{opacity:1;transform:none}   /* keyboard focus never lands on something still faded out */
-/* hover feedback: linked cards lift, portraits zoom inside their frame, buttons press */
-.gl,.bc,.pc{transition:transform .2s,box-shadow .2s,border-color .2s} .gl:hover,.bc:hover,.pc:hover{transform:translateY(-2px)}
-.faces img,.pt img{transition:transform .3s} .faces a:hover img,.pt:hover img{transform:scale(1.03)}
+.gl,.bc,.pc{transition:box-shadow var(--motion-fast) ease-out,border-color var(--motion-fast) ease-out}
+.faces img,.pt img{transition:transform 240ms var(--motion-out)}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .faces a:hover img,.pt:hover img{transform:scale(1.03)}
+}
+@media (prefers-reduced-motion:no-preference){
+  #qd:not([hidden]),#qEmpty:not([hidden]){animation:search-arrival var(--motion-fast) var(--motion-out)}
+  @keyframes search-arrival{from{opacity:.75;translate:0 -4px}}
+}
 button:active,.chip:active,.try button:active{transform:scale(.98)}
 .sch,.tg,.try button,#rep textarea,#rep input{border-color:var(--edge)}
 .back{min-height:24px} .lang{min-height:24px}
@@ -385,8 +392,7 @@ button:active,.chip:active,.try button:active{transform:scale(.98)}
 @media (max-width:56rem){.top{position:static;backdrop-filter:none}html{scroll-padding-top:1rem}}
 @media (min-width:56.01rem){.ptabs{position:sticky;top:3.9rem;z-index:5}html{scroll-padding-top:8rem}}   /* wide screens keep the section tabs in view; the padding keeps focus clear of them */
 @media (max-width:40rem) and (pointer:coarse){
-  .seat{min-width:24px;--hit-scale:1;scale:1}
-  .seat:hover,.seat:focus-visible{scale:1}
+  .seat{min-width:24px;scale:1}
   .seat .av{scale:var(--k,1)}
 }
 .finder label,.ph1>div,.rterm select{min-width:0} .rterm{max-width:100%;flex-wrap:wrap}
@@ -407,8 +413,7 @@ button:active,.chip:active,.try button:active{transform:scale(.98)}
 @media (pointer:coarse){.back,.lang,.rterm select,.rhow summary{min-height:44px}.back{display:inline-flex;align-items:center}}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto} *,*::before,*::after{transition:none!important}
-  .rv{opacity:1;transform:none} .seat:hover,.seat:focus-visible{scale:var(--hit-scale,var(--k,1))}
-  .gl:hover,.bc:hover,.pc:hover,.pt:hover,.faces a:hover img,.pt:hover img,button:active,.chip:active,.seg button:active,.try button:active{transform:none}
+  button:active,.chip:active,.seg button:active,.try button:active{transform:none}
 }
 @media (prefers-reduced-motion:no-preference){.skel{animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{50%{opacity:.5}}}
 /* dark-mode overrides: last in the sheet so they win over the base rules above */
